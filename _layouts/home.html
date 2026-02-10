@@ -1,0 +1,13 @@
+---
+layout: base
+---
+
+<section class="home-intro">
+  {% if page.title %}
+    <h1 class="home-title">{{ page.title | escape }}</h1>
+  {% endif %}
+  <div class="home-content">
+    {{ content }}
+  </div>
+</section>
+

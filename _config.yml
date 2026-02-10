@@ -1,0 +1,23 @@
+title: Lectura
+description: "Lectura — projets autour de la lecture, du langage et de l'apprentissage."
+# URL temporaire GitHub Pages : https://maxcarriere.github.io/lectura-site
+# URL finale avec domaine personnalisé : https://www.lec-tu-ra.com
+url: "https://www.lec-tu-ra.com"
+baseurl: ""
+
+lang: fr
+theme: minima
+
+# Plugins GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+header_pages:
+  - produits/index.md
+  - projets/index.md
+  - methode/index.md
+  - vision/index.md
+
+markdown: kramdown
+

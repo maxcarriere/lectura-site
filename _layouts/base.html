@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'fr' }}">
+
+  {%- include head.html -%}
+
+  <body class="{% if page.layout == 'home' %}page-home{% endif %}">
+
+    {%- include header.html -%}
+
+    <main class="page-wrapper" aria-label="Contenu principal">
+      <div class="page-inner">
+        <div class="page-content">
+          {{ content }}
+        </div>
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
+
