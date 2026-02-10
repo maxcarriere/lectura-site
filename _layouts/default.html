@@ -2,15 +2,8 @@
 layout: base
 ---
 
-<article class="post">
-  <header class="post-header">
-    {% if page.title %}
-      <h1 class="post-title">{{ page.title | escape }}</h1>
-    {% endif %}
-  </header>
+{% if page.title %}
+<h1 class="post-title">{{ page.title }}</h1>
+{% endif %}
 
-  <div class="post-body">
-    {{ content }}
-  </div>
-</article>
-
+{{ content }}

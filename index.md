@@ -1,6 +1,6 @@
 ---
 title: Lectura
-layout: home
+layout: default
 ---
 
 Lectura est un **site vitrine professionnel** consacré à la lecture, au langage et à l’apprentissage.

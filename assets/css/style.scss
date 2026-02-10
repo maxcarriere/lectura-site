@@ -1,288 +1,663 @@
-/* ===== Reset simple ===== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+---
+---
 
-html, body {
+/* ===== 1. Fond général ===== */
+html {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  /* Empêche Dark Reader et autres extensions de modifier les couleurs */
+  color-scheme: light !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+html[data-darkreader-mode],
+html[data-darkreader-mode] *,
+html[data-darkreader-scheme],
+html[data-darkreader-scheme] * {
+  color-scheme: light !important;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
-  color: #e5e7eb;
+  margin: 0;
+  padding: 0;
+  background: #0b0b0b !important;
+  font-family: Georgia, "Times New Roman", serif;
+  min-height: 100vh;
+  width: 100%;
+  /* Protection contre les modifications de couleur par les extensions */
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  color: inherit !important;
 }
 
-/* ===== Layout global ===== */
+/* Protection absolue contre toutes les extensions de modification de couleur */
+body *,
+body *::before,
+body *::after {
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* ===== 2. Bannière — cadre fixe en haut ===== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(15, 23, 42, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  flex-shrink: 0;
+  background: #0e0e0e;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-inner {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   text-decoration: none;
   color: inherit;
-  display: flex;
-  flex-direction: column;
 }
 
-.site-title-text {
-  letter-spacing: 0.18em;
-  font-size: 1.1rem;
+.header-brand:hover .site-title {
+  text-decoration: underline;
+}
+
+.site-title {
+  color: #f3e8cf;
+  letter-spacing: 0.3em;
+  font-size: 1.9rem;
+  margin: 0;
   text-transform: uppercase;
-  font-weight: 600;
 }
 
 .site-subtitle {
-  font-size: 0.8rem;
-  color: #9ca3af;
+  color: #d8ccb0;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-top: 0.2rem;
 }
 
 .site-nav {
   display: flex;
-  gap: 1.25rem;
-  align-items: center;
+  gap: 0;
 }
 
 .site-nav a {
-  color: #e5e7eb;
+  color: #d8ccb0;
   text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  margin-right: 1.8rem;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
   text-transform: uppercase;
 }
 
 .site-nav a:hover {
-  color: #a5b4fc;
+  text-decoration: underline;
 }
 
 .menu-toggle {
   display: none;
   background: none;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  padding: 0.4rem;
-  border-radius: 999px;
-  color: #e5e7eb;
+  border: none;
+  padding: 0.5rem;
   cursor: pointer;
-}
-
-.menu-toggle-icon {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: currentColor;
-  box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor;
+  color: #d8ccb0;
 }
 
 .nav-menu {
   display: none;
 }
 
-/* Mobile */
-@media (max-width: 720px) {
+/* Mobile / tablette : header compact, menu hamburger (inclut paysage) */
+@media (max-width: 1199px) {
+  .site-header {
+    padding: 0.6rem 1rem;
+  }
+
+  .header-inner {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    gap: 0;
+  }
+
+  .header-brand {
+    flex-shrink: 0;
+    gap: 0.5rem;
+  }
+
+  .site-title {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .site-subtitle {
+    font-size: 0.7rem;
+  }
+
   .site-nav {
     display: none;
   }
 
   .menu-toggle {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle-icon {
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
   }
 
   .nav-menu {
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    top: 100%;
-    background: #020617;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    background: #0e0e0e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 0;
+    z-index: 10;
+    max-height: 70vh;
+    overflow-y: auto;
   }
 
   .nav-menu[aria-hidden="true"] {
     display: none;
   }
 
-  .nav-menu[aria-hidden="false"] {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
   .nav-menu a {
-    padding: 0.6rem 1.5rem;
-    color: #e5e7eb;
+    color: #d8ccb0;
     text-decoration: none;
-    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   .nav-menu a:hover {
-    background: #020617;
-    color: #a5b4fc;
+    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .nav-menu-sep {
     height: 1px;
-    margin: 0.4rem 1.5rem;
-    background: rgba(148, 163, 184, 0.35);
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.5rem 1rem;
+  }
+
+  .page-wrapper {
+    padding: 0;
+  }
+
+  /* Liens footer dans le menu quand hamburger affiché */
+  .footer-inner {
+    justify-content: center;
+  }
+
+  .footer-right {
+    display: none;
   }
 }
 
+/* ===== 3. Parchemin : image statique bannière→footer, texte défile dessus ===== */
+/* Fond parchemin fixe sur toute la hauteur du viewport (sous bannière et pied) */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #666 #1a1a1a;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* TODO: Remplacer par l'image de parchemin Lectura */
+  background: url("{{ '/assets/images/parchemin_pc.png' | relative_url }}") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* Contenu : padding pour éviter header/footer, défile sur le parchemin */
 .page-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 3.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 140px;
+  padding-bottom: 180px;
 }
 
-.page-inner {
-  background: radial-gradient(circle at top, rgba(129, 140, 248, 0.15), transparent 55%),
-              radial-gradient(circle at bottom, rgba(56, 189, 248, 0.12), transparent 50%);
-  border-radius: 1.25rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  padding: 2rem clamp(1.5rem, 4vw, 2.5rem);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+.parchment {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
-.page-content {
-  color: #e5e7eb;
-}
-
-/* ===== Typo ===== */
-.home-title,
-.post-title {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.parchment-middle {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
   font-size: 1rem;
-  color: #9ca3af;
+  color: #0d0d0d !important;
+  text-transform: none;
+  overflow-x: hidden;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
 }
 
-.home-intro p,
-.post-body p {
-  line-height: 1.7;
-  margin: 0.25rem 0 0.9rem;
+/* Protection ultra-spécifique pour .parchment-middle et tous ses enfants */
+.parchment-middle,
+.parchment-middle *,
+.parchment-middle *::before,
+.parchment-middle *::after,
+html[data-darkreader-mode] .parchment-middle,
+html[data-darkreader-mode] .parchment-middle *,
+html[data-darkreader-scheme] .parchment-middle,
+html[data-darkreader-scheme] .parchment-middle * {
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
 }
 
-.home-intro strong,
-.post-body strong {
-  color: #e5e7eb;
+/* Mobile : parchemin_mobile2 en fond fixe, padding réduit */
+@media (max-width: 1199px) {
+  body::before {
+    /* TODO: Remplacer par l'image de parchemin mobile Lectura */
+    background-image: url("{{ '/assets/images/parchemin_mobile2.png' | relative_url }}");
+  }
+
+  .page-wrapper {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
 }
 
+.parchment-content {
+  position: relative;
+  z-index: 1;
+  max-width: min(72ch, calc(100% - 160px));
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 4rem 2.5rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* Protection ultra-spécifique pour .parchment-content et tous ses enfants */
+.parchment-content,
+.parchment-content *,
+.parchment-content *::before,
+.parchment-content *::after,
+html[data-darkreader-mode] .parchment-content,
+html[data-darkreader-mode] .parchment-content *,
+html[data-darkreader-scheme] .parchment-content,
+html[data-darkreader-scheme] .parchment-content *,
+body .parchment-content,
+body .parchment-content * {
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* Page d'accueil : texte centré (mobile et PC) */
+.page-home .parchment-content {
+  text-align: center;
+}
+
+.page-home .home-grid {
+  display: inline-block;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.parchment-content .post-title,
+.parchment-content h1,
+html[data-darkreader-mode] .parchment-content .post-title,
+html[data-darkreader-mode] .parchment-content h1 {
+  text-align: center;
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* Protection absolue de tous les éléments de texte dans le parchemin */
+.parchment-content *,
+.parchment-content *::before,
+.parchment-content *::after,
+html[data-darkreader-mode] .parchment-content *,
+html[data-darkreader-scheme] .parchment-content *,
+body .parchment-content * {
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.parchment-content h1,
+.parchment-content h2,
+.parchment-content h3,
+.parchment-content h4,
+.parchment-content h5,
+.parchment-content h6,
+html[data-darkreader-mode] .parchment-content h1,
+html[data-darkreader-mode] .parchment-content h2,
+html[data-darkreader-mode] .parchment-content h3,
+html[data-darkreader-mode] .parchment-content h4,
+html[data-darkreader-mode] .parchment-content h5,
+html[data-darkreader-mode] .parchment-content h6 {
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.parchment-content p,
+.parchment-content li,
+.parchment-content span,
+.parchment-content div,
+.parchment-content blockquote,
+.parchment-content code,
+.parchment-content pre,
+.parchment-content strong,
+.parchment-content em,
+.parchment-content b,
+.parchment-content i,
+.parchment-content u,
+html[data-darkreader-mode] .parchment-content p,
+html[data-darkreader-mode] .parchment-content li,
+html[data-darkreader-mode] .parchment-content span,
+html[data-darkreader-mode] .parchment-content div,
+html[data-darkreader-mode] .parchment-content blockquote,
+html[data-darkreader-mode] .parchment-content code,
+html[data-darkreader-mode] .parchment-content pre {
+  color: #0d0d0d !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.post-meta,
+.post-meta *,
+html[data-darkreader-mode] .post-meta,
+html[data-darkreader-mode] .post-meta * {
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(13, 13, 13, 0.6) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.post-date,
+.post-modified {
+  font-style: italic;
+}
+
+.meta-separator {
+  margin: 0 0.5rem;
+}
+
+.parchment-content > *:first-child {
+  margin-top: 0;
+}
+
+.parchment-middle p {
+  margin-bottom: 1em;
+}
+
+/* Liens dans le contenu */
+.parchment-content a,
+.parchment-content a:link,
+.parchment-content a:visited,
+.parchment-content a:hover,
+.parchment-content a:active,
+.parchment-content a:focus,
+html[data-darkreader-mode] .parchment-content a,
+html[data-darkreader-mode] .parchment-content a:link,
+html[data-darkreader-mode] .parchment-content a:visited,
+html[data-darkreader-mode] .parchment-content a:hover,
+html[data-darkreader-mode] .parchment-content a:active,
+html[data-darkreader-mode] .parchment-content a:focus {
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.3) !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.parchment-content a:hover,
+html[data-darkreader-mode] .parchment-content a:hover {
+  color: #0d0d0d !important;
+  border-bottom-color: rgba(13, 13, 13, 0.6) !important;
+}
+
+/* < 1200px : ajustements mobile */
+@media (max-width: 1199px) {
+  .page-wrapper {
+    align-items: stretch;
+  }
+
+  .parchment {
+    width: 100%;
+    max-width: none;
+    flex: 1;
+    min-height: 100%;
+  }
+
+  .parchment-content {
+    max-width: calc(100% - 10vw);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 5vw;
+    font-size: 1rem;
+  }
+
+  .parchment-content img,
+  .parchment-content video,
+  .parchment-content iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .site-footer {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Séparateurs Markdown (---) */
+.parchment-content hr {
+  border: none;
+  height: 24px;
+  margin: 2em 0;
+  background: url("{{ '/assets/images/separateur.png' | relative_url }}") no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+/* ===== 4. Grille d'accueil ===== */
 .home-grid {
+  list-style: none;
+  padding-left: 0;
+  margin: 2em 0;
+  color: #0d0d0d !important;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .home-card {
-  padding: 1.1rem 1.2rem;
-  border-radius: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: rgba(15, 23, 42, 0.85);
+  padding: 1.5rem;
+  border: 1px solid rgba(13, 13, 13, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .home-card h2 {
-  margin: 0 0 0.5rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #c7d2fe;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0d0d0d !important;
+  font-size: 1.1rem;
 }
 
 .home-card p {
-  margin: 0;
+  margin-bottom: 0.75rem;
+  color: #0d0d0d !important;
+}
+
+.home-card .more-link {
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.3) !important;
   font-size: 0.9rem;
-  color: #d1d5db;
 }
 
-.home-card a.more-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-top: 0.7rem;
-  font-size: 0.9rem;
-  color: #a5b4fc;
-  text-decoration: none;
+.home-card .more-link:hover {
+  border-bottom-color: rgba(13, 13, 13, 0.6) !important;
 }
 
-.home-card a.more-link:hover {
-  text-decoration: underline;
+/* ===== 5. Liste de projets/produits ===== */
+.project-list,
+.product-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5em 0;
 }
 
-/* Listes sur les pages internes */
-.post-body ul {
-  padding-left: 1.2rem;
+.project-list li,
+.product-list li {
+  margin: 1em 0;
+  padding-left: 0;
 }
 
-.post-body li {
-  margin: 0.25rem 0;
+.project-list a,
+.product-list a {
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.3) !important;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
-.post-body a {
-  color: #a5b4fc;
+.project-list a:hover,
+.product-list a:hover {
+  border-bottom-color: rgba(13, 13, 13, 0.6) !important;
 }
 
-.post-body a:hover {
-  text-decoration: underline;
-}
-
-/* Petites étiquettes (statut, public, etc.) */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  color: #e5e7eb;
-}
-
-/* ===== Pied de page ===== */
+/* ===== 7. Pied de page — cadre fixe en bas ===== */
 .site-footer {
-  border-top: 1px solid rgba(148, 163, 184, 0.3);
-  padding: 1.2rem 1.5rem 1.8rem;
-  font-size: 0.8rem;
-  color: #9ca3af;
+  flex-shrink: 0;
+  background: #0e0e0e;
+  color: #a89f8a;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 2rem 1rem;
+  border-top: 1px solid #222;
 }
 
 .footer-inner {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.footer-left,
 .footer-right {
   display: flex;
-  gap: 0.55rem;
   align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-right span {
+  opacity: 0.6;
 }
 
 .site-footer a {
-  color: #e5e7eb;
+  color: #a89f8a;
   text-decoration: none;
 }
 
@@ -290,3 +665,38 @@ body {
   text-decoration: underline;
 }
 
+/* ===== 8. Protection absolue contre toutes les extensions de modification de couleur ===== */
+html[data-darkreader-mode],
+html[data-darkreader-mode] body,
+html[data-darkreader-mode] .parchment-middle,
+html[data-darkreader-mode] .parchment-content,
+html[data-darkreader-mode] .parchment-content *,
+html[data-darkreader-scheme],
+html[data-darkreader-scheme] body,
+html[data-darkreader-scheme] .parchment-middle,
+html[data-darkreader-scheme] .parchment-content,
+html[data-darkreader-scheme] .parchment-content * {
+  color-scheme: light !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+html[data-darkreader-mode] .parchment-content,
+html[data-darkreader-mode] .parchment-content *,
+html[data-darkreader-scheme] .parchment-content,
+html[data-darkreader-scheme] .parchment-content * {
+  filter: none !important;
+  -webkit-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.parchment-middle,
+.parchment-content,
+.parchment-content *,
+.parchment-content *::before,
+.parchment-content *::after {
+  -webkit-text-fill-color: #0d0d0d !important;
+  text-fill-color: #0d0d0d !important;
+}

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'fr' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'fr' }}" data-darkreader-mode="off" data-darkreader-scheme="light">
 
   {%- include head.html -%}
 
-  <body class="{% if page.layout == 'home' %}page-home{% endif %}">
+  <body>
 
     {%- include header.html -%}
 
-    <main class="page-wrapper" aria-label="Contenu principal">
-      <div class="page-inner">
-        <div class="page-content">
-          {{ content }}
+    <main class="page-wrapper" aria-label="Content">
+      <div class="parchment">
+        <div class="parchment-middle">
+          <div class="parchment-content">{{ content }}</div>
         </div>
       </div>
     </main>
@@ -20,4 +20,3 @@
   </body>
 
 </html>
-
