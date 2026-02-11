@@ -87,9 +87,9 @@ body *::after {
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.25em;
   display: flex;
-  gap: 0.35em;
+  gap: 0.15em;
   justify-content: center;
 }
 
