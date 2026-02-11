@@ -25,6 +25,7 @@ body {
   padding: 0;
   background: url("{{ '/assets/images/fond_perdu.png' | relative_url }}") no-repeat center center !important;
   background-size: cover !important;
+  background-attachment: fixed !important;
   font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
   width: 100%;
