@@ -87,10 +87,13 @@ body *::after {
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0;
+  display: flex;
+  gap: 0.35em;
+  justify-content: center;
 }
 
-/* Animation surlignage syllabique */
+/* Animation surlignage syllabique (traits discontinus, bords arrondis) */
 .title-syl {
   position: relative;
   display: inline-block;
@@ -106,6 +109,7 @@ body *::after {
   background: rgba(139, 99, 77, 0.45);
   width: 0;
   z-index: -1;
+  border-radius: 2px;
   animation: highlight-syl 1s ease forwards;
 }
 
@@ -406,14 +410,14 @@ html[data-darkreader-scheme] .parchment-middle * {
   color-adjust: exact !important;
 }
 
-/* Desktop: contenu plus large (100px de plus de chaque côté) */
+/* Desktop: contenu plus large (100px de plus de chaque côté), centré */
 @media (min-width: 1200px) {
   .parchment-content {
-    max-width: min(calc(72ch + 200px), calc(100% + 40px));
-    margin-left: -100px;
-    margin-right: -100px;
-    padding-left: calc(2rem + 100px);
-    padding-right: calc(2.5rem + 100px);
+    max-width: min(calc(72ch + 200px), 100%);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(2rem + 50px);
+    padding-right: calc(2.5rem + 50px);
   }
 }
 
