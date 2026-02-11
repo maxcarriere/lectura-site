@@ -1,34 +1,37 @@
 ---
-title: Service d’édition de textes enrichis
+title: Service d'édition de textes enrichis
 layout: default
 permalink: /produits/service-edition-textes/
 ---
 
 ## Description
 
-Service transformant un texte de base en une version enrichie, avec différentes options configurables :
+Le service d'édition de textes enrichis permet de transformer un texte brut en une version visuellement augmentée, pensée pour faciliter la lecture et l'apprentissage.
 
-- découpage syllabique ;
-- affichage des liaisons ;
-- affichage des lettres muettes ;
-- coloration des lettres selon leur nature (voyelles / consonnes, sons).
+À partir d'un texte en français, le service propose plusieurs options d'enrichissement configurables :
 
-Ce service pourrait évoluer vers la publication de **versions vidéo** de textes ou de livres, sous la forme de lectures syllabiques animées et synchronisées.
+- **Découpage syllabique** : chaque mot est visuellement découpé en syllabes.
+- **Affichage des liaisons** : les liaisons entre les mots sont rendues visibles.
+- **Lettres muettes** : les lettres non prononcées sont identifiées et marquées.
+- **Coloration phonétique** : les lettres sont colorées selon leur nature (voyelles, consonnes) ou selon le son qu'elles portent.
 
-## Public visé
+## À qui s'adresse ce service ?
 
-- Enseignants
-- Orthophonistes
-- Auteurs
+- Enseignants préparant des supports de lecture
+- Orthophonistes créant du matériel adapté
 - Éditeurs pédagogiques
+- Auteurs souhaitant proposer des versions accessibles de leurs textes
+
+## Perspectives
+
+Ce service pourrait évoluer vers :
+- la génération de **versions vidéo** de textes (lectures syllabiques animées et synchronisées),
+- l'enrichissement automatique de livres entiers pour publication pédagogique,
+- une API permettant l'intégration dans d'autres outils éducatifs.
 
 ## Statut
 
-**En conception**
-
-## Lien
-
-À venir (page dédiée ou dépôt).
+**En conception** — Les briques techniques nécessaires (phonémisation, alignement, syllabation) existent et sont testées. L'assemblage sous forme de service accessible est en cours de réflexion.
 
 ---
 

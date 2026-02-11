@@ -6,24 +6,27 @@ permalink: /projets/humanuscrit/
 
 ## Objectif
 
-Projet d’écriture et de réflexion critique sur l’IA, complémentaire aux développements opérationnels de Lectura.
+Humanuscrit est un projet d'écriture et de réflexion critique qui explore les implications humaines, philosophiques et sociétales de l'intelligence artificielle.
 
-## Description
+Il ne s'agit pas d'un projet technique au sens classique, mais d'un **manuscrit évolutif** — un corpus vivant de textes qui interrogent les systèmes, la conscience, la condition humaine et les transformations en cours.
 
-Manuscrit évolutif, hébergé sur un site dédié, qui explore les implications humaines, philosophiques et sociétales de l’intelligence artificielle.
+## Relation avec Lectura
 
-Humanuscrit est conçu comme un espace complémentaire et réflexif au développement opérationnel de Lectura.
+Humanuscrit et Lectura sont deux projets indépendants, portés par la même personne, mais répondant à des objectifs différents :
 
-## État d’avancement
+- **Lectura** expose le *comment* et le *faire* : outils, méthodes, productions concrètes.
+- **Humanuscrit** explore le *pourquoi* et le *sens* : réflexion sur ce que signifie créer, travailler et penser à l'ère de l'IA.
 
-**En cours**
+Les deux projets se nourrissent mutuellement, mais aucun ne dépend structurellement de l'autre. Ils peuvent être lus, compris et utilisés de façon totalement indépendante.
 
-À ce stade, seuls un **prescriptum** (avertissement et trois préfaces) ont été rédigés.  
-Bien que peu avancé sur le plan de la production, ce projet a joué un rôle déterminant : il a servi de **déclencheur intellectuel**, amenant à reconsidérer en profondeur la méthode de travail, le rôle de l’IA, et la philosophie générale du projet Lectura.
+## Ce qui existe
+
+À ce stade, un **prescriptum** (avertissement et trois préfaces) a été rédigé. Bien que peu avancé en volume, Humanuscrit a joué un rôle déterminant dans l'évolution du projet Lectura : il a servi de déclencheur intellectuel, amenant à reconsidérer en profondeur la méthode de travail, le rôle de l'IA et la philosophie de l'ensemble du projet.
 
 ## Lien
 
-Site [Humanuscrit](https://humanuscrit.com) (indépendant de Lectura, mais relié par la vision).
+Le site Humanuscrit est indépendant et accessible à l'adresse :
+[humanuscrit.com](https://humanuscrit.com)
 
 ---
 

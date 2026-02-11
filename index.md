@@ -3,35 +3,29 @@ title: Lectura
 layout: default
 ---
 
-Lectura est un **site vitrine professionnel** consacré à la lecture, au langage et à l’apprentissage.
+Lectura conçoit des **outils numériques pour la lecture et l'apprentissage du langage**.
 
-Il présente :
-
-- des **produits** utilisables ou en préparation ;
-- des **projets** en cours de développement ou déjà réalisés ;
-- une **méthode de travail Humain / IA** claire et reproductible ;
-- une **vision** plus profonde du projet et de ses liens avec *Humanuscrit*.
+Lecteurs syllabiques, applications de lecture des nombres, services d'enrichissement de texte : chaque projet est développé avec une méthode de travail originale, fondée sur une collaboration étroite entre l'humain et l'intelligence artificielle.
 
 <div class="home-grid">
   <div class="home-card">
     <h2>Produits</h2>
-    <p>Outils et services concrets autour de la lecture et de l’apprentissage, prêts à l’usage ou en construction.</p>
+    <p>Des outils concrets pour apprendre et enseigner la lecture : lecteur syllabique, lecture de nombres, enrichissement de textes.</p>
     <a class="more-link" href="{{ '/produits/' | relative_url }}">Découvrir les produits</a>
   </div>
   <div class="home-card">
     <h2>Projets</h2>
-    <p>Prototypes, services et briques techniques illustrant la capacité de production et d’expérimentation de Lectura.</p>
+    <p>Les projets techniques derrière les produits : architecture, code source, prototypes et briques réutilisables.</p>
     <a class="more-link" href="{{ '/projets/' | relative_url }}">Voir les projets</a>
   </div>
   <div class="home-card">
     <h2>Méthode</h2>
-    <p>Une manière de travailler avec l’IA : idée → cadrage → production assistée → validation humaine → diffusion.</p>
+    <p>Comment un projet naît, se construit et se livre quand l'IA devient un outil de production à part entière.</p>
     <a class="more-link" href="{{ '/methode/' | relative_url }}">Comprendre la méthode</a>
   </div>
   <div class="home-card">
     <h2>Vision</h2>
-    <p>Lecture approfondie du projet, démarche globale et lien avec le manuscrit réflexif <em>Humanuscrit</em>.</p>
+    <p>La démarche globale du projet, son origine et son lien avec le manuscrit réflexif Humanuscrit.</p>
     <a class="more-link" href="{{ '/vision/' | relative_url }}">Lire la vision</a>
   </div>
 </div>
-

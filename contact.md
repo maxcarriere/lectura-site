@@ -4,9 +4,12 @@ layout: default
 permalink: /contact/
 ---
 
-Cette page centralise les moyens de **contact** autour du projet Lectura.
+## Contact
 
-Le mode de contact exact (adresse e‑mail, formulaire, réseaux professionnels, etc.) sera défini et ajouté ici au moment de la mise en ligne publique.
+Pour toute question, retour ou proposition de collaboration autour du projet Lectura :
 
-En attendant, cette page sert de repère dans l’interface et assure que la navigation du site est déjà complète.
+- **E-mail** : *(adresse à ajouter)*
+- **GitHub** : *(lien vers le profil ou l'organisation à ajouter)*
+- **LinkedIn** : *(lien vers le profil professionnel à ajouter)*
 
+Les contributions, retours d'usage et suggestions sont les bienvenus.

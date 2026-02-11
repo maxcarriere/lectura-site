@@ -1,32 +1,36 @@
 ---
-title: Mega-lexique linguistique
+title: Mega-Lexique — Base lexicale unifiée
 layout: default
 permalink: /projets/mega-lexique/
 ---
 
 ## Objectif
 
-Unifier plusieurs ressources linguistiques (Lexique383, Morphalou, Wikidata, Wiktionary) en une base réutilisable pour les projets Lectura.
+Constituer une base de données linguistique unifiée du français, en fusionnant plusieurs sources de référence, pour servir de fondation aux outils de lecture et d'analyse développés par Lectura.
 
-## Description
+## Sources
 
-Base lexicale structurée servant de socle à :
+Le Mega-Lexique vise à unifier les données issues de :
 
-- la tokenisation ;
-- les lecteurs augmentés ;
-- les futurs outils de Lectura.
+- **Lexique383** : base lexicale de référence du français (fréquences, phonologie, morphologie)
+- **Morphalou** : lexique morphologique du français
+- **Wikidata** : données structurées multilingues
+- **Wiktionary** : définitions, étymologies, prononciations
 
-L’objectif est d’obtenir une base de données structurée, notamment destinée à servir de fondation à une tokenisation plus robuste.
+## Usage prévu
 
-## État d’avancement
+Cette base unifiée est destinée à alimenter :
+- la **tokenisation** des textes (découpage en unités linguistiques exploitables),
+- les **lecteurs augmentés** (enrichissement des mots avec des informations linguistiques : fréquence, catégorie grammaticale, famille de mots),
+- les futures applications d'analyse et d'apprentissage de Lectura.
 
-**En cours de consolidation**
+## État d'avancement
 
-Ce travail est principalement porté par Ying.
+**En cours de consolidation** — Le travail de fusion et de nettoyage des sources est en cours, principalement porté par un contributeur data (Ying).
 
 ## Lien GitHub
 
-À préciser.
+*(lien à ajouter)*
 
 ---
 
