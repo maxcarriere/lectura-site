@@ -73,6 +73,11 @@ body *::after {
   text-decoration: underline;
 }
 
+.logo img {
+  width: 90px;
+  display: block;
+}
+
 .site-title {
   color: #f3e8cf;
   letter-spacing: 0.3em;
@@ -135,6 +140,10 @@ body *::after {
   .header-brand {
     flex-shrink: 0;
     gap: 0.5rem;
+  }
+
+  .logo img {
+    width: 48px;
   }
 
   .site-title {
