@@ -83,7 +83,7 @@ body *::after {
 
 .site-title {
   color: #F5F5F5;
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
@@ -100,18 +100,18 @@ body *::after {
 .title-syl::after {
   content: "";
   position: absolute;
-  bottom: 0.1em;
+  bottom: -0.15em;
   left: 0;
   height: 0.2em;
   background: rgba(139, 99, 77, 0.45);
   width: 0;
   z-index: -1;
-  animation: highlight-syl 0.65s ease forwards;
+  animation: highlight-syl 1s ease forwards;
 }
 
 .title-syl:nth-child(1)::after { animation-delay: 0s; }
-.title-syl:nth-child(2)::after { animation-delay: 0.65s; }
-.title-syl:nth-child(3)::after { animation-delay: 1.3s; }
+.title-syl:nth-child(2)::after { animation-delay: 1s; }
+.title-syl:nth-child(3)::after { animation-delay: 2s; }
 
 @keyframes highlight-syl {
   to { width: 100%; }
@@ -188,7 +188,7 @@ body *::after {
 
   .title-syl::after {
     height: 0.18em;
-    bottom: 0.08em;
+    bottom: -0.12em;
   }
 
   .site-subtitle {
@@ -404,6 +404,17 @@ html[data-darkreader-scheme] .parchment-middle * {
   print-color-adjust: exact !important;
   -webkit-print-color-adjust: exact !important;
   color-adjust: exact !important;
+}
+
+/* Desktop: contenu plus large (100px de plus de chaque côté) */
+@media (min-width: 1200px) {
+  .parchment-content {
+    max-width: min(calc(72ch + 200px), calc(100% + 40px));
+    margin-left: -100px;
+    margin-right: -100px;
+    padding-left: calc(2rem + 100px);
+    padding-right: calc(2.5rem + 100px);
+  }
 }
 
 /* Protection ultra-spécifique pour .parchment-content et tous ses enfants */
