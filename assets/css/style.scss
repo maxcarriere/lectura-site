@@ -58,9 +58,10 @@ body *::after {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .header-brand {
@@ -72,20 +73,47 @@ body *::after {
 }
 
 .header-brand:hover .site-title {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .logo img {
-  width: 90px;
+  width: 72px;
   display: block;
 }
 
 .site-title {
   color: #F5F5F5;
-  letter-spacing: 0.3em;
-  font-size: 1.9rem;
+  font-size: 2.2rem;
+  font-weight: 400;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Animation surlignage syllabique */
+.title-syl {
+  position: relative;
+  display: inline-block;
+}
+
+.title-syl::after {
+  content: "";
+  position: absolute;
+  bottom: 0.15em;
+  left: 0;
+  height: 0.4em;
+  background: rgba(139, 99, 77, 0.45);
+  width: 0;
+  animation: highlight-syl 0.65s ease forwards;
+}
+
+.title-syl:nth-child(1)::after { animation-delay: 0s; }
+.title-syl:nth-child(2)::after { animation-delay: 0.65s; }
+.title-syl:nth-child(3)::after { animation-delay: 1.3s; }
+
+@keyframes highlight-syl {
+  to { width: 100%; }
 }
 
 .site-subtitle {
@@ -149,12 +177,16 @@ body *::after {
   }
 
   .logo img {
-    width: 48px;
+    width: 38px;
   }
 
   .site-title {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+    font-size: 1.25rem;
+  }
+
+  .title-syl::after {
+    height: 0.35em;
+    bottom: 0.1em;
   }
 
   .site-subtitle {
