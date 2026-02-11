@@ -83,28 +83,29 @@ body *::after {
 
 .site-title {
   color: #F5F5F5;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 400;
   margin: 0;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  font-family: Georgia, "Times New Roman", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 
 /* Animation surlignage syllabique */
 .title-syl {
   position: relative;
   display: inline-block;
+  z-index: 1;
 }
 
 .title-syl::after {
   content: "";
   position: absolute;
-  bottom: 0.15em;
+  bottom: 0.1em;
   left: 0;
-  height: 0.4em;
+  height: 0.2em;
   background: rgba(139, 99, 77, 0.45);
   width: 0;
+  z-index: -1;
   animation: highlight-syl 0.65s ease forwards;
 }
 
@@ -181,12 +182,13 @@ body *::after {
   }
 
   .site-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
   }
 
   .title-syl::after {
-    height: 0.35em;
-    bottom: 0.1em;
+    height: 0.18em;
+    bottom: 0.08em;
   }
 
   .site-subtitle {
