@@ -47,7 +47,7 @@ body *::after {
 /* ===== 2. Bannière — cadre fixe en haut ===== */
 .site-header {
   flex-shrink: 0;
-  background: #2d6a4f;
+  background: #3B2F2A;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -80,7 +80,7 @@ body *::after {
 }
 
 .site-title {
-  color: #d8f3dc;
+  color: #F5F5F5;
   letter-spacing: 0.3em;
   font-size: 1.9rem;
   margin: 0;
@@ -100,16 +100,20 @@ body *::after {
 }
 
 .site-nav a {
-  color: #d8f3dc;
+  color: #F5F5F5;
   text-decoration: none;
   margin-right: 1.8rem;
   letter-spacing: 0.15em;
   font-size: 0.85rem;
   text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
 
 .site-nav a:hover {
-  text-decoration: underline;
+  background: #4A3A34;
+  text-decoration: none;
 }
 
 .menu-toggle {
@@ -118,7 +122,7 @@ body *::after {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
-  color: #d8f3dc;
+  color: #F5F5F5;
 }
 
 .nav-menu {
@@ -183,7 +187,7 @@ body *::after {
     top: 100%;
     left: 0;
     right: 0;
-    background: #2d6a4f;
+    background: #3B2F2A;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 0;
     z-index: 10;
@@ -196,7 +200,7 @@ body *::after {
   }
 
   .nav-menu a {
-    color: #d8f3dc;
+    color: #F5F5F5;
     text-decoration: none;
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -205,8 +209,8 @@ body *::after {
   }
 
   .nav-menu a:hover {
-    text-decoration: underline;
-    background: rgba(255, 255, 255, 0.05);
+    background: #4A3A34;
+    text-decoration: none;
   }
 
   .nav-menu-sep {
@@ -636,7 +640,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
 /* ===== 7. Pied de page — cadre fixe en bas ===== */
 .site-footer {
   flex-shrink: 0;
-  background: #2d6a4f;
+  background: #3B2F2A;
   color: #a89f8a;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -665,11 +669,12 @@ html[data-darkreader-mode] .parchment-content a:hover {
 }
 
 .site-footer a {
-  color: #a89f8a;
+  color: #F5F5F5;
   text-decoration: none;
 }
 
 .site-footer a:hover {
+  color: #F5F5F5;
   text-decoration: underline;
 }
 
