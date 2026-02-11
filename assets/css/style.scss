@@ -47,7 +47,7 @@ body *::after {
 /* ===== 2. Bannière — cadre fixe en haut ===== */
 .site-header {
   flex-shrink: 0;
-  background: #3B2F2A;
+  background: #120B08;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -112,7 +112,7 @@ body *::after {
 }
 
 .site-nav a:hover {
-  background: #4A3A34;
+  background: #1A120D;
   text-decoration: none;
 }
 
@@ -187,7 +187,7 @@ body *::after {
     top: 100%;
     left: 0;
     right: 0;
-    background: #3B2F2A;
+    background: #120B08;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 0;
     z-index: 10;
@@ -209,7 +209,7 @@ body *::after {
   }
 
   .nav-menu a:hover {
-    background: #4A3A34;
+    background: #1A120D;
     text-decoration: none;
   }
 
@@ -640,7 +640,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
 /* ===== 7. Pied de page — cadre fixe en bas ===== */
 .site-footer {
   flex-shrink: 0;
-  background: #3B2F2A;
+  background: #120B08;
   color: #a89f8a;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
