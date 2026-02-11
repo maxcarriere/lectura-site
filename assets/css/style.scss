@@ -23,7 +23,8 @@ html[data-darkreader-scheme] * {
 body {
   margin: 0;
   padding: 0;
-  background: #0b0b0b !important;
+  background: url("{{ '/assets/images/fond_perdu.png' | relative_url }}") no-repeat center center !important;
+  background-size: cover !important;
   font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
   width: 100%;
@@ -46,7 +47,7 @@ body *::after {
 /* ===== 2. Bannière — cadre fixe en haut ===== */
 .site-header {
   flex-shrink: 0;
-  background: #0e0e0e;
+  background: #2d6a4f;
   padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -79,7 +80,7 @@ body *::after {
 }
 
 .site-title {
-  color: #f3e8cf;
+  color: #d8f3dc;
   letter-spacing: 0.3em;
   font-size: 1.9rem;
   margin: 0;
@@ -99,7 +100,7 @@ body *::after {
 }
 
 .site-nav a {
-  color: #d8ccb0;
+  color: #d8f3dc;
   text-decoration: none;
   margin-right: 1.8rem;
   letter-spacing: 0.15em;
@@ -117,7 +118,7 @@ body *::after {
   border: none;
   padding: 0.5rem;
   cursor: pointer;
-  color: #d8ccb0;
+  color: #d8f3dc;
 }
 
 .nav-menu {
@@ -182,7 +183,7 @@ body *::after {
     top: 100%;
     left: 0;
     right: 0;
-    background: #0e0e0e;
+    background: #2d6a4f;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 0;
     z-index: 10;
@@ -195,7 +196,7 @@ body *::after {
   }
 
   .nav-menu a {
-    color: #d8ccb0;
+    color: #d8f3dc;
     text-decoration: none;
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -635,7 +636,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
 /* ===== 7. Pied de page — cadre fixe en bas ===== */
 .site-footer {
   flex-shrink: 0;
-  background: #0e0e0e;
+  background: #2d6a4f;
   color: #a89f8a;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
