@@ -118,7 +118,7 @@ body *::after {
 .title-syl:nth-child(3)::after { animation-delay: 2s; }
 
 @keyframes highlight-syl {
-  to { width: 100%; }
+  to { width: calc(100% - 0.2em); }
 }
 
 .site-subtitle {
