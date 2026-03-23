@@ -17,6 +17,5 @@ defaults:
 header_pages:
   - produits/index.md
   - projets/index.md
-  - methode/index.md
   - vision/index.md
   - a-propos.md

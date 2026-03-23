@@ -5,27 +5,27 @@ layout: default
 
 Lectura conçoit des **outils numériques pour la lecture et l'apprentissage du langage**.
 
-Lecteurs syllabiques, applications de lecture des nombres, services d'enrichissement de texte : chaque projet est développé avec une méthode de travail originale, fondée sur une collaboration étroite entre l'humain et l'intelligence artificielle.
+Lecteurs syllabiques, applications de lecture, ressources éducatives, outils de traitement linguistique : chaque projet est développé avec une méthode originale, fondée sur une collaboration structurée entre l'humain et l'intelligence artificielle.
 
 <div class="home-grid">
   <div class="home-card">
     <h2>Produits</h2>
-    <p>Des outils concrets pour apprendre et enseigner la lecture : lecteur syllabique, lecture de nombres, enrichissement de textes.</p>
+    <p>Livres, applications, ressources éducatives, outils de développement et services éditoriaux pour l'apprentissage de la lecture.</p>
     <a class="more-link" href="{{ '/produits/' | relative_url }}">Découvrir les produits</a>
   </div>
   <div class="home-card">
     <h2>Projets</h2>
-    <p>Les projets techniques derrière les produits : architecture, code source, prototypes et briques réutilisables.</p>
+    <p>Les deux axes de recherche et développement : lecture augmentée et synthèse vocale phonétique.</p>
     <a class="more-link" href="{{ '/projets/' | relative_url }}">Voir les projets</a>
   </div>
   <div class="home-card">
-    <h2>Méthode</h2>
-    <p>Comment un projet naît, se construit et se livre quand l'IA devient un outil de production à part entière.</p>
-    <a class="more-link" href="{{ '/methode/' | relative_url }}">Comprendre la méthode</a>
+    <h2>Vision</h2>
+    <p>La philosophie du projet, son origine, et la méthode de travail IA-first qui structure chaque réalisation.</p>
+    <a class="more-link" href="{{ '/vision/' | relative_url }}">Lire la vision</a>
   </div>
   <div class="home-card">
-    <h2>Vision</h2>
-    <p>La démarche globale du projet, son origine et son lien avec le manuscrit réflexif Humanuscrit.</p>
-    <a class="more-link" href="{{ '/vision/' | relative_url }}">Lire la vision</a>
+    <h2>À propos</h2>
+    <p>Qui porte ce projet, pourquoi, et quel lien avec le manuscrit réflexif Humanuscrit.</p>
+    <a class="more-link" href="{{ '/a-propos/' | relative_url }}">En savoir plus</a>
   </div>
 </div>

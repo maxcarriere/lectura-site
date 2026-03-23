@@ -5,24 +5,30 @@ layout: default
 
 Les produits Lectura sont des outils numériques dédiés à la lecture et à l'apprentissage du langage. Ils s'adressent aux enseignants, parents, orthophonistes, formateurs et à toute personne accompagnant un apprenant.
 
-Chaque produit est conçu pour être simple d'utilisation, même lorsqu'il repose sur une mécanique technique complexe en arrière-plan.
-
-## Produits disponibles
-
-<ul class="product-list">
-  <li>
-    <a href="{{ '/produits/numreader/' | relative_url }}">NumReader — Lecture des nombres</a>
-    <span class="status-badge status-fonctionnel">Prototype fonctionnel</span><br>
-    <span class="product-resume">Application de lecture des nombres jusqu'à 4 chiffres, avec affichage simultané en chiffres, en lettres et en chiffres romains, accompagné d'une lecture audio synchronisée.</span>
-  </li>
-  <li>
-    <a href="{{ '/produits/lecteur-syllabique-web/' | relative_url }}">Lecteur syllabique (web)</a>
-    <span class="status-badge status-proto">Prototype</span><br>
-    <span class="product-resume">Lecteur affichant un texte découpé en syllabes, avec lecture audio progressive et surlignage synchronisé.</span>
-  </li>
-  <li>
-    <a href="{{ '/produits/service-edition-textes/' | relative_url }}">Service d'édition de textes enrichis</a>
-    <span class="status-badge status-conception">En conception</span><br>
-    <span class="product-resume">Service transformant un texte brut en version enrichie : découpage syllabique, liaisons, lettres muettes, coloration phonétique.</span>
-  </li>
-</ul>
+<div class="home-grid">
+  <div class="home-card">
+    <h2>Livres & Vidéos</h2>
+    <p>Manuel syllabique, histoires illustrées et vidéos de lecture guidée.</p>
+    <a class="more-link" href="{{ '/produits/livres-videos/' | relative_url }}">Découvrir</a>
+  </div>
+  <div class="home-card">
+    <h2>Applications & Jeux</h2>
+    <p>Lecteur syllabique interactif, NumReader et mini-jeux éducatifs.</p>
+    <a class="more-link" href="{{ '/produits/applications-jeux/' | relative_url }}">Découvrir</a>
+  </div>
+  <div class="home-card">
+    <h2>Ressources éducatives</h2>
+    <p>Corpus syllabique, base lexicale Lexique383 et imagier illustré.</p>
+    <a class="more-link" href="{{ '/produits/ressources-educatives/' | relative_url }}">Découvrir</a>
+  </div>
+  <div class="home-card">
+    <h2>Outils de développement</h2>
+    <p>Syllabeur, G2P, P2G, détection des liaisons, POS-tagger, conversion des nombres.</p>
+    <a class="more-link" href="{{ '/produits/outils-developpement/' | relative_url }}">Découvrir</a>
+  </div>
+  <div class="home-card">
+    <h2>Services éditoriaux</h2>
+    <p>Histoires syllabiques sur commande, enrichissement de texte et vidéos de lecture.</p>
+    <a class="more-link" href="{{ '/produits/services-editoriaux/' | relative_url }}">Découvrir</a>
+  </div>
+</div>
