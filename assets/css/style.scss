@@ -337,7 +337,7 @@ body *::after {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   min-width: 0;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -378,7 +378,7 @@ html[data-darkreader-scheme] .parchment-middle * {
 .parchment-content {
   position: relative;
   z-index: 1;
-  max-width: min(72ch, calc(100% - 80px));
+  max-width: min(96ch, calc(100% - 60px));
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem 2rem 4rem 2.5rem;
@@ -932,6 +932,8 @@ html[data-darkreader-mode] .parchment-content a:hover {
 .parchment-content pre {
   font-size: 0.8rem;
   line-height: 1.5;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .parchment-content code {

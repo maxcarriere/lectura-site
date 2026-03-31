@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/outils/modules/
 ---
 
-Cinq packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Cinq packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -64,12 +64,15 @@ Cinq packages Python autonomes pour le traitement linguistique du francais, dist
 ## Installation rapide
 
 ```bash
+# Tous les modules d'un coup
+pip install lectura
+
+# Avec backends ONNX pour G2P/P2G (recommande)
+pip install lectura[onnx]
+
 # Un seul module
 pip install lectura-tokeniseur
 
-# G2P avec backend ONNX (recommande)
+# G2P avec backend ONNX
 pip install lectura-g2p[onnx]
-
-# Tous les modules
-pip install lectura-tokeniseur lectura-g2p[onnx] lectura-p2g[onnx] lectura-syllabeur lectura-formules
 ```
