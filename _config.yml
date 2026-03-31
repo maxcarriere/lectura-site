@@ -4,6 +4,9 @@ url: "https://www.lec-tu-ra.com"
 title: Lectura
 theme: minima
 
+plugins:
+  - jekyll-redirect-from
+
 defaults:
   - scope:
       path: ""
@@ -13,9 +16,3 @@ defaults:
       path: "vision/index.md"
     values:
       permalink: /vision/
-
-header_pages:
-  - produits/index.md
-  - projets/index.md
-  - vision/index.md
-  - a-propos.md

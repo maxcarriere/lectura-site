@@ -8,7 +8,7 @@ permalink: /contact/
 
 Pour toute question, retour ou proposition de collaboration autour du projet Lectura :
 
-- **E-mail** : *(adresse à ajouter)*
+- **E-mail** : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
 - **GitHub** : *(lien vers le profil ou l'organisation à ajouter)*
 - **LinkedIn** : *(lien vers le profil professionnel à ajouter)*
 

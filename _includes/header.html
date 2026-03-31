@@ -6,24 +6,50 @@
       </div>
       <h1 class="site-title"><span class="title-syl">Lec</span><span class="title-syl">tu</span><span class="title-syl">ra</span></h1>
     </a>
-    <nav class="site-nav">
-      <a href="{{ '/produits/' | relative_url }}">Produits</a>
-      <a href="{{ '/projets/' | relative_url }}">Projets</a>
-      <a href="{{ '/vision/' | relative_url }}">Vision</a>
-      <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
-    </nav>
-    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+    <span class="header-tags">Outils NLP · Ressources educatives · Applications</span>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
       <span class="menu-toggle-icon"></span>
     </button>
-    <div id="nav-menu" class="nav-menu" aria-hidden="true">
-      <a href="{{ '/produits/' | relative_url }}">Produits</a>
-      <a href="{{ '/projets/' | relative_url }}">Projets</a>
-      <a href="{{ '/vision/' | relative_url }}">Vision</a>
-      <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
-      <span class="nav-menu-sep"></span>
-      <a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
-      <a href="{{ '/confidentialite/' | relative_url }}">Confidentialité</a>
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
-    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+      {% for item in site.data.navigation %}
+        {% if item.children %}
+          <div class="mobile-nav-group">
+            <div class="mobile-nav-header">
+              <a href="{{ item.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l1">{{ item.title }}</a>
+              <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-label="Ouvrir {{ item.title }}">
+                <span class="mobile-nav-toggle-icon"></span>
+              </button>
+            </div>
+            <div class="mobile-nav-children" aria-hidden="true">
+              {% for child in item.children %}
+                {% if child.children %}
+                  <div class="mobile-nav-group mobile-nav-group--nested">
+                    <div class="mobile-nav-header">
+                      <a href="{{ child.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l2">{{ child.title }}</a>
+                      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-label="Ouvrir {{ child.title }}">
+                        <span class="mobile-nav-toggle-icon"></span>
+                      </button>
+                    </div>
+                    <div class="mobile-nav-children" aria-hidden="true">
+                      {% for leaf in child.children %}
+                        <a href="{{ leaf.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l3">{{ leaf.title }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% else %}
+                  <a href="{{ child.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l2">{{ child.title }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ item.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l1">{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+      <span class="mobile-nav-sep"></span>
+      <a href="{{ '/mentions-legales/' | relative_url }}" class="mobile-nav-link">Mentions legales</a>
+      <a href="{{ '/confidentialite/' | relative_url }}" class="mobile-nav-link">Confidentialite</a>
+      <a href="{{ '/contact/' | relative_url }}" class="mobile-nav-link">Contact</a>
+    </nav>
   </div>
 </header>

@@ -1,0 +1,48 @@
+# Navigation principale du site lec-tu-ra.com
+# 3 niveaux : racine > section > feuille
+
+- title: Solutions
+  url: /solutions/
+  children:
+    - title: Outils de developpement
+      url: /solutions/outils/
+      children:
+        - title: Modules
+          url: /solutions/outils/modules/
+        - title: Ressources
+          url: /solutions/outils/ressources/
+    - title: Logiciels
+      url: /solutions/logiciels/
+      children:
+        - title: Programmes
+          url: /solutions/logiciels/programmes/
+        - title: Applications
+          url: /solutions/logiciels/applications/
+    - title: "Livres & Medias"
+      url: /solutions/livres-medias/
+      children:
+        - title: "Methode de lecture"
+          url: /solutions/livres-medias/methode-lecture/
+        - title: "Histoires syllabiques"
+          url: /solutions/livres-medias/histoires-syllabiques/
+    - title: Services
+      url: /solutions/services/
+      children:
+        - title: "Integration logicielle"
+          url: /solutions/services/integration/
+        - title: "Services editoriaux"
+          url: /solutions/services/services-editoriaux/
+
+- title: Projets
+  url: /projets/
+  children:
+    - title: "Lecture augmentee"
+      url: /projets/lecture-augmentee/
+    - title: "Synthese vocale (TTS)"
+      url: /projets/tts/
+
+- title: Vision
+  url: /vision/
+
+- title: "A propos"
+  url: /a-propos/

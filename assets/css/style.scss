@@ -1,12 +1,18 @@
 ---
 ---
 
-/* ===== 1. Fond général ===== */
+/* ===== 0. Custom Properties ===== */
+:root {
+  --header-height: 90px;
+  --footer-height: 50px;
+  --sidebar-width: 240px;
+}
+
+/* ===== 1. Fond general ===== */
 html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Empêche Dark Reader et autres extensions de modifier les couleurs */
   color-scheme: light !important;
   print-color-adjust: exact !important;
   -webkit-print-color-adjust: exact !important;
@@ -29,14 +35,13 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
   width: 100%;
-  /* Protection contre les modifications de couleur par les extensions */
   print-color-adjust: exact !important;
   -webkit-print-color-adjust: exact !important;
   color-adjust: exact !important;
   color: inherit !important;
+  overflow: hidden;
 }
 
-/* Protection absolue contre toutes les extensions de modification de couleur */
 body *,
 body *::before,
 body *::after {
@@ -45,8 +50,13 @@ body *::after {
   color-adjust: exact !important;
 }
 
-/* ===== 2. Bannière — cadre fixe en haut ===== */
+/* ===== 2. Banniere — cadre fixe en haut ===== */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   flex-shrink: 0;
   background: #120B08;
   padding: 1rem 2rem;
@@ -54,7 +64,7 @@ body *::after {
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -93,7 +103,7 @@ body *::after {
   justify-content: center;
 }
 
-/* Animation surlignage syllabique (traits discontinus, bords arrondis) */
+/* Animation surlignage syllabique */
 .title-syl {
   position: relative;
   display: inline-block;
@@ -128,28 +138,18 @@ body *::after {
   margin-top: 0.2rem;
 }
 
-.site-nav {
-  display: flex;
-  gap: 0;
-}
-
-.site-nav a {
-  color: #F5F5F5;
-  text-decoration: none;
-  margin-right: 1.8rem;
-  letter-spacing: 0.15em;
+/* Mots-cles dans le header */
+.header-tags {
+  color: #d8ccb0;
+  font-style: italic;
   font-size: 0.85rem;
-  text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background 0.2s;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.site-nav a:hover {
-  background: #1A120D;
-  text-decoration: none;
-}
-
+/* Menu hamburger (masque en desktop) */
 .menu-toggle {
   display: none;
   background: none;
@@ -159,195 +159,189 @@ body *::after {
   color: #F5F5F5;
 }
 
-.nav-menu {
+/* Menu mobile (masque par defaut) */
+.mobile-nav {
   display: none;
 }
 
-/* Mobile / tablette : header compact, menu hamburger (inclut paysage) */
-@media (max-width: 1199px) {
-  .site-header {
-    padding: 0.5rem 1rem;
-  }
-
-  .header-inner {
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    position: relative;
-    gap: 0;
-  }
-
-  .header-brand {
-    flex-shrink: 0;
-    gap: 0.5rem;
-  }
-
-  .logo img {
-    width: 38px;
-  }
-
-  .site-title {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-  }
-
-  .title-syl::after {
-    height: 0.18em;
-    bottom: -0.12em;
-  }
-
-  .site-subtitle {
-    font-size: 0.7rem;
-  }
-
-  .site-nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-  }
-
-  .menu-toggle-icon {
-    width: 24px;
-    height: 2px;
-    background: currentColor;
-    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #120B08;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 0;
-    z-index: 10;
-    max-height: 70vh;
-    overflow-y: auto;
-  }
-
-  .nav-menu[aria-hidden="true"] {
-    display: none;
-  }
-
-  .nav-menu a {
-    color: #F5F5F5;
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .nav-menu a:hover {
-    background: #1A120D;
-    text-decoration: none;
-  }
-
-  .nav-menu-sep {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 0.5rem 1rem;
-  }
-
-  .page-wrapper {
-    padding: 0;
-  }
-
-  /* Liens footer dans le menu quand hamburger affiché */
-  .footer-inner {
-    justify-content: center;
-  }
-
-  .footer-right {
-    display: none;
-  }
+/* ===== 3. Site-body : grid fixe entre header et footer ===== */
+.site-body {
+  position: fixed;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  z-index: 1;
 }
 
-/* ===== 3. Parchemin : image statique bannière→footer, texte défile dessus ===== */
-/* Fond parchemin fixe sur toute la hauteur du viewport (sous bannière et pied) */
-body {
+/* ===== 4. Sidebar ===== */
+.site-sidebar {
+  background: #120B08;
+  overflow-y: auto;
+  padding: 1rem 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  scrollbar-width: thin;
+  scrollbar-color: #444 #120B08;
+}
+
+.site-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.site-sidebar::-webkit-scrollbar-track {
+  background: #120B08;
+}
+
+.site-sidebar::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Liens de navigation sidebar */
+.nav-link {
+  display: block;
+  color: #d8ccb0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.15s, background 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  color: #F5F5F5;
+  background: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+.nav-link--active {
+  color: #F5F5F5;
+  border-left-color: #d8ccb0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link--l1 {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nav-link--l2 {
+  padding: 0.45rem 1rem 0.45rem 1.5rem;
+}
+
+.nav-link--l3 {
+  padding: 0.35rem 1rem 0.35rem 2.2rem;
+  font-size: 0.8rem;
+}
+
+/* Groupe de navigation (accordeon) */
+.nav-group-header {
+  display: flex;
+  align-items: center;
+}
+
+.nav-group-header .nav-link {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-toggle-icon {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid #d8ccb0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.2s;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  transform: rotate(90deg);
+}
+
+/* Accordeon : enfants masques/visibles */
+.nav-children {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+}
+
+.nav-children[aria-hidden="false"] {
+  max-height: 500px;
+}
+
+/* ===== 5. Page-wrapper : zone de contenu scrollable ===== */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #666 #1a1a1a;
 }
 
-body::-webkit-scrollbar {
+.page-wrapper::-webkit-scrollbar {
   width: 10px;
 }
 
-body::-webkit-scrollbar-track {
+.page-wrapper::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
 
-body::-webkit-scrollbar-thumb {
+.page-wrapper::-webkit-scrollbar-thumb {
   background: #666;
   border-radius: 4px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+.page-wrapper::-webkit-scrollbar-thumb:hover {
   background: #888;
 }
 
-body::before {
+/* Fond parchemin en ::before sur le page-wrapper uniquement */
+.page-wrapper::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
+  top: var(--header-height);
+  left: var(--sidebar-width);
   right: 0;
-  bottom: 0;
+  bottom: var(--footer-height);
   background: url("{{ '/assets/images/fond_pc.png' | relative_url }}") no-repeat center center;
   background-size: cover;
   z-index: 0;
   pointer-events: none;
 }
 
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-.site-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-/* Contenu : padding pour éviter header/footer, défile sur le parchemin */
-.page-wrapper {
+.parchment {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
   width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-  padding-top: 125px;
-  padding-bottom: 160px;
-}
-
-.parchment {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   min-width: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .parchment-middle {
@@ -366,7 +360,7 @@ body::before {
   color-adjust: exact !important;
 }
 
-/* Protection ultra-spécifique pour .parchment-middle et tous ses enfants */
+/* Protection ultra-specifique pour .parchment-middle et tous ses enfants */
 .parchment-middle,
 .parchment-middle *,
 .parchment-middle *::before,
@@ -381,22 +375,10 @@ html[data-darkreader-scheme] .parchment-middle * {
   color-adjust: exact !important;
 }
 
-/* Mobile : parchemin_mobile2 en fond fixe, padding réduit */
-@media (max-width: 1199px) {
-  body::before {
-    background-image: url("{{ '/assets/images/fond_mobile.png' | relative_url }}");
-  }
-
-  .page-wrapper {
-    padding-top: 90px;
-    padding-bottom: 105px;
-  }
-}
-
 .parchment-content {
   position: relative;
   z-index: 1;
-  max-width: min(72ch, calc(100% - 160px));
+  max-width: min(72ch, calc(100% - 80px));
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem 2rem 4rem 2.5rem;
@@ -410,18 +392,7 @@ html[data-darkreader-scheme] .parchment-middle * {
   color-adjust: exact !important;
 }
 
-/* Desktop: contenu plus large (100px de plus de chaque côté), centré */
-@media (min-width: 1200px) {
-  .parchment-content {
-    max-width: min(calc(72ch + 200px), 100%);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: calc(2rem + 50px);
-    padding-right: calc(2.5rem + 50px);
-  }
-}
-
-/* Protection ultra-spécifique pour .parchment-content et tous ses enfants */
+/* Protection ultra-specifique pour .parchment-content et tous ses enfants */
 .parchment-content,
 .parchment-content *,
 .parchment-content *::before,
@@ -438,7 +409,7 @@ body .parchment-content * {
   color-adjust: exact !important;
 }
 
-/* Page d'accueil : texte centré (mobile et PC) */
+/* Page d'accueil : texte centre */
 .page-home .parchment-content {
   text-align: center;
 }
@@ -460,7 +431,7 @@ html[data-darkreader-mode] .parchment-content h1 {
   color-adjust: exact !important;
 }
 
-/* Protection absolue de tous les éléments de texte dans le parchemin */
+/* Protection absolue de tous les elements de texte dans le parchemin */
 .parchment-content *,
 .parchment-content *::before,
 .parchment-content *::after,
@@ -574,41 +545,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
   border-bottom-color: rgba(13, 13, 13, 0.6) !important;
 }
 
-/* < 1200px : ajustements mobile */
-@media (max-width: 1199px) {
-  .page-wrapper {
-    align-items: stretch;
-  }
-
-  .parchment {
-    width: 100%;
-    max-width: none;
-    flex: 1;
-    min-height: 100%;
-  }
-
-  .parchment-content {
-    max-width: calc(100% - 10vw);
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem 5vw;
-    font-size: 1rem;
-  }
-
-  .parchment-content img,
-  .parchment-content video,
-  .parchment-content iframe {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .site-footer {
-    padding: 0.75rem 1rem;
-    font-size: 0.75rem;
-  }
-}
-
-/* Séparateurs Markdown (---) */
+/* Separateurs Markdown (---) */
 .parchment-content hr {
   border: none;
   height: 24px;
@@ -618,7 +555,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
   opacity: 0.8;
 }
 
-/* ===== 4. Grille d'accueil ===== */
+/* ===== 6. Grille d'accueil ===== */
 .home-grid {
   list-style: none;
   padding-left: 0;
@@ -659,7 +596,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
   border-bottom-color: rgba(13, 13, 13, 0.6) !important;
 }
 
-/* ===== 5. Liste de projets/produits ===== */
+/* ===== 7. Liste de projets/produits ===== */
 .project-list,
 .product-list {
   list-style: none;
@@ -732,8 +669,13 @@ html[data-darkreader-mode] .parchment-content a:hover {
   color: #5a2d7a;
 }
 
-/* ===== 7. Pied de page — cadre fixe en bas ===== */
+/* ===== 8. Pied de page — cadre fixe en bas ===== */
 .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   flex-shrink: 0;
   background: #120B08;
   color: #a89f8a;
@@ -744,7 +686,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -773,7 +715,220 @@ html[data-darkreader-mode] .parchment-content a:hover {
   text-decoration: underline;
 }
 
-/* ===== 8. Protection absolue contre toutes les extensions de modification de couleur ===== */
+/* ===== 9. Mobile / tablette (< 1200px) ===== */
+@media (max-width: 1199px) {
+  /* Header compact */
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .header-inner {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    gap: 0;
+  }
+
+  .header-brand {
+    flex-shrink: 0;
+    gap: 0.5rem;
+  }
+
+  .logo img {
+    width: 38px;
+  }
+
+  .site-title {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .title-syl::after {
+    height: 0.18em;
+    bottom: -0.12em;
+  }
+
+  .site-subtitle {
+    font-size: 0.7rem;
+  }
+
+  /* Mots-cles masques sur mobile */
+  .header-tags {
+    display: none;
+  }
+
+  /* Hamburger visible */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle-icon {
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+  }
+
+  /* Menu mobile accordeon */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #120B08;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 0;
+    z-index: 10;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .mobile-nav[aria-hidden="true"] {
+    display: none;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    color: #d8ccb0;
+    text-decoration: none;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .mobile-nav-link:hover {
+    color: #F5F5F5;
+    background: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+  }
+
+  .mobile-nav-link--l1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #F5F5F5;
+    font-size: 1rem;
+  }
+
+  .mobile-nav-link--l2 {
+    padding-left: 1.5rem;
+  }
+
+  .mobile-nav-link--l3 {
+    padding-left: 2.2rem;
+    font-size: 0.85rem;
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-nav-header .mobile-nav-link {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-toggle-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #d8ccb0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.2s;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] .mobile-nav-toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  .mobile-nav-children {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease;
+  }
+
+  .mobile-nav-children[aria-hidden="false"] {
+    max-height: 500px;
+  }
+
+  .mobile-nav-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.5rem 1rem;
+  }
+
+  /* Sidebar masquee */
+  .site-body {
+    grid-template-columns: 1fr;
+  }
+
+  .site-sidebar {
+    display: none;
+  }
+
+  /* Fond parchemin mobile : couvre tout */
+  .page-wrapper::before {
+    left: 0;
+    background-image: url("{{ '/assets/images/fond_mobile.png' | relative_url }}");
+  }
+
+  .parchment {
+    width: 100%;
+    max-width: none;
+  }
+
+  .parchment-content {
+    max-width: calc(100% - 10vw);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 5vw;
+    font-size: 1rem;
+  }
+
+  .parchment-content img,
+  .parchment-content video,
+  .parchment-content iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Footer compact */
+  .site-footer {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .footer-inner {
+    justify-content: center;
+  }
+
+  .footer-right {
+    display: none;
+  }
+}
+
+/* ===== 10. Protection absolue contre toutes les extensions de modification de couleur ===== */
 html[data-darkreader-mode],
 html[data-darkreader-mode] body,
 html[data-darkreader-mode] .parchment-middle,
