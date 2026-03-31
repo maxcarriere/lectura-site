@@ -33,10 +33,32 @@
                   </div>
                   <div class="nav-children" aria-hidden="{% if child_active or child_ancestor %}false{% else %}true{% endif %}">
                     {% for leaf in child.children %}
-                      {%- comment -%} Niveau 3 — feuille {%- endcomment -%}
                       {% assign leaf_active = false %}
+                      {% assign leaf_ancestor = false %}
                       {% if page.url == leaf.url %}{% assign leaf_active = true %}{% endif %}
-                      <a href="{{ leaf.url | relative_url }}" class="nav-link nav-link--l3{% if leaf_active %} nav-link--active{% endif %}">{{ leaf.title }}</a>
+                      {% if leaf.children and page.url contains leaf.url %}{% assign leaf_ancestor = true %}{% endif %}
+
+                      {% if leaf.children %}
+                        {%- comment -%} Niveau 3 avec enfants {%- endcomment -%}
+                        <div class="nav-group nav-group--nested{% if leaf_active or leaf_ancestor %} nav-group--open{% endif %}">
+                          <div class="nav-group-header">
+                            <a href="{{ leaf.url | relative_url }}" class="nav-link nav-link--l3{% if leaf_active %} nav-link--active{% endif %}">{{ leaf.title }}</a>
+                            <button class="nav-toggle" type="button" aria-expanded="{{ leaf_active | default: leaf_ancestor }}" aria-label="Ouvrir {{ leaf.title }}">
+                              <span class="nav-toggle-icon"></span>
+                            </button>
+                          </div>
+                          <div class="nav-children" aria-hidden="{% if leaf_active or leaf_ancestor %}false{% else %}true{% endif %}">
+                            {% for subleaf in leaf.children %}
+                              {% assign subleaf_active = false %}
+                              {% if page.url == subleaf.url %}{% assign subleaf_active = true %}{% endif %}
+                              <a href="{{ subleaf.url | relative_url }}" class="nav-link nav-link--l4{% if subleaf_active %} nav-link--active{% endif %}">{{ subleaf.title }}</a>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      {% else %}
+                        {%- comment -%} Niveau 3 — feuille {%- endcomment -%}
+                        <a href="{{ leaf.url | relative_url }}" class="nav-link nav-link--l3{% if leaf_active %} nav-link--active{% endif %}">{{ leaf.title }}</a>
+                      {% endif %}
                     {% endfor %}
                   </div>
                 </div>

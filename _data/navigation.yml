@@ -9,6 +9,17 @@
       children:
         - title: Modules
           url: /solutions/outils/modules/
+          children:
+            - title: Tokeniseur
+              url: /solutions/outils/modules/tokeniseur/
+            - title: G2P
+              url: /solutions/outils/modules/g2p/
+            - title: P2G
+              url: /solutions/outils/modules/p2g/
+            - title: Syllabeur
+              url: /solutions/outils/modules/syllabeur/
+            - title: Formules
+              url: /solutions/outils/modules/formules/
         - title: Ressources
           url: /solutions/outils/ressources/
     - title: Logiciels

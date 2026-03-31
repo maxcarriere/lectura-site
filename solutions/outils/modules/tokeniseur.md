@@ -33,21 +33,22 @@ Le Tokeniseur identifie et classifie plus de 15 types de formules :
 ## Exemple
 
 ```python
-from lectura_tokeniseur import tokenise
+from lectura_tokeniseur import tokenise, Formule
 
 tokens = tokenise("Le 25 decembre 2024, il faisait -3°C a Paris.")
 
 for token in tokens:
-    print(f"{token.text:25s}  {token.type.name}")
+    detail = token.formule_type.name if isinstance(token, Formule) else ""
+    print(f"{token.text:25s}  {token.type.name:12s}  {detail}")
 ```
 
 ```
 Le                         MOT
-25 decembre 2024           FORMULE
+25 decembre 2024           FORMULE       DATE
 ,                          PONCTUATION
 il                         MOT
 faisait                    MOT
--3°C                       FORMULE
+-3°C                       FORMULE       NOMBRE
 a                          MOT
 Paris                      MOT
 .                          PONCTUATION
@@ -58,11 +59,12 @@ Paris                      MOT
 ## Essayer en ligne
 
 <div class="pyodide-demo" data-package="lectura-tokeniseur" data-code="
-from lectura_tokeniseur import tokenise
+from lectura_tokeniseur import tokenise, Formule
 tokens = tokenise('{INPUT}')
 lines = []
 for t in tokens:
-    lines.append(f'{t.text:25s} {t.type.name}')
+    detail = t.formule_type.name if isinstance(t, Formule) else ''
+    lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
 '\n'.join(lines)
 ">
   <input type="text" class="demo-input" value="Le 25 decembre 2024, il a lu 42 pages." placeholder="Tapez du texte francais...">

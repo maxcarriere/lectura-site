@@ -243,6 +243,12 @@ body *::after {
   font-size: 0.8rem;
 }
 
+.nav-link--l4 {
+  padding: 0.3rem 1rem 0.3rem 3rem;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
 /* Groupe de navigation (accordeon) */
 .nav-group-header {
   display: flex;
@@ -823,6 +829,12 @@ html[data-darkreader-mode] .parchment-content a:hover {
   .mobile-nav-link--l3 {
     padding-left: 2.2rem;
     font-size: 0.85rem;
+  }
+
+  .mobile-nav-link--l4 {
+    padding-left: 3rem;
+    font-size: 0.8rem;
+    opacity: 0.85;
   }
 
   .mobile-nav-header {

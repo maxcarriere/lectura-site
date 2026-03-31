@@ -18,14 +18,27 @@ permalink: /solutions/outils/modules/g2p/
 
 Un seul modele **BiLSTM char-level multi-tete** (1.75M parametres, ONNX INT8 = 1.8 Mo) qui predit simultanement 4 taches a partir du texte francais :
 
-| Tache | Description | Performance |
+| Tache | Description | Performance (par mot) |
 |-------|-------------|-------------|
-| **G2P** | Transcription phonemique IPA | 98.5% word accuracy |
+| **G2P** | Transcription phonemique IPA | 98.5% accuracy |
 | **POS** | Etiquetage morpho-syntaxique (19 tags) | 98.2% accuracy |
-| **Morphologie** | Genre, nombre, temps, mode, personne | 95-99% |
+| **Morphologie** | Genre, nombre, temps, mode, personne | 95-99% accuracy |
 | **Liaison** | Liaisons obligatoires/facultatives | F1 90.6% |
 
+*Performances mesurees sur un corpus de test de phrases francaises completes (mots en contexte).*
+
 Trois backends d'inference : **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zero dependance).
+
+### G2P vs eSpeak-NG
+
+Le modele Lectura G2P se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : il predit la prononciation, la categorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonemise chaque mot isolement, sans desambiguisation contextuelle (homographes, liaisons).
+
+Une comparaison en ligne n'est pas possible (eSpeak-NG est un binaire systeme, non disponible dans le navigateur), mais vous pouvez comparer localement :
+
+```bash
+pip install lectura-g2p[onnx]
+sudo apt install espeak-ng    # ou brew install espeak
+```
 
 ---
 
