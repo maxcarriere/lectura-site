@@ -4,50 +4,72 @@ layout: default
 permalink: /solutions/outils/modules/
 ---
 
-Des briques logicielles reutilisables pour le traitement du francais ecrit et parle. Toutes sont developpees en Python et distribuees sur PyPI.
+Cinq packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
-## Syllabeur
-
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
-
-Moteur de syllabation du francais : decoupe un mot en syllabes a partir de sa transcription phonetique, en respectant les regles de la structure syllabique du francais (attaque maximale, traitement des groupes consonantiques, schwas).
+<div class="home-grid">
+  <div class="home-card">
+    <h2>Tokeniseur</h2>
+    <p>Normalisation et tokenisation du francais, detection de 15+ types de formules.</p>
+    <code class="card-install">pip install lectura-tokeniseur</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/tokeniseur/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tokeniseur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Tokeniseur">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>G2P — Grapheme vers Phoneme</h2>
+    <p>Modele unifie BiLSTM : phonemisation IPA (98.5%), POS-tagging, morphologie, liaison.</p>
+    <code class="card-install">pip install lectura-g2p</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/g2p/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-g2p/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>P2G — Phoneme vers Grapheme</h2>
+    <p>Conversion IPA → orthographe avec word feedback (93.1%), POS-tagging, morphologie.</p>
+    <code class="card-install">pip install lectura-p2g</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/p2g/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-p2g/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Syllabeur</h2>
+    <p>Analyse syllabique, groupes de lecture, gestion des liaisons et enchainements.</p>
+    <code class="card-install">pip install lectura-syllabeur</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/syllabeur/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-syllabeur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Syllabeur">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Formules</h2>
+    <p>Lecture des nombres, dates, heures, sigles, monnaies, fractions — avec phonetique IPA.</p>
+    <code class="card-install">pip install lectura-formules</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/formules/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-formules/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Formules">GitHub</a>
+    </div>
+  </div>
+</div>
 
 ---
 
-## G2P — Grapheme vers Phoneme
+## Installation rapide
 
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
+```bash
+# Un seul module
+pip install lectura-tokeniseur
 
-Conversion automatique de l'orthographe francaise vers la transcription phonetique IPA. Utilise un ensemble de regles contextuelles et la base Lexique383 pour les cas irreguliers.
+# G2P avec backend ONNX (recommande)
+pip install lectura-g2p[onnx]
 
----
-
-## P2G — Phoneme vers Grapheme
-
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
-
-Conversion inverse : a partir d'une syllabe en IPA, retrouver l'orthographe la plus probable. Table de 3 493 syllabes (62 % par consultation Lexique383, 38 % par regles de correspondance). Utilise par le moteur TTS concatenatif pour synthetiser des syllabes isolees.
-
----
-
-## Detection des liaisons
-
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
-
-Identification et traitement des liaisons obligatoires et facultatives en francais. Resyllabification des codas consonantiques pour produire une prononciation naturelle des groupes de mots.
-
----
-
-## POS-tagger
-
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
-
-Etiquetage morphosyntaxique (Part-of-Speech) du texte francais, utilise en amont pour informer la phonemisation (desambiguisation des homographes) et la detection des liaisons.
-
----
-
-## Conversion des nombres
-
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
-
-Pipeline de conversion entre trois ecritures d'un nombre (chiffres, texte francais, chiffres romains). Gestion des regles orthographiques du francais (trait d'union, accord de « vingt » et « cent », etc.). Moteur utilise par NumReader.
+# Tous les modules
+pip install lectura-tokeniseur lectura-g2p[onnx] lectura-p2g[onnx] lectura-syllabeur lectura-formules
+```
