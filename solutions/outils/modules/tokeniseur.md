@@ -35,23 +35,22 @@ Le Tokeniseur identifie et classifie plus de 15 types de formules :
 ```python
 from lectura_tokeniseur import tokenise
 
-resultat = tokenise("Le 25 decembre 2024, il faisait -3°C a Paris.")
+tokens = tokenise("Le 25 decembre 2024, il faisait -3°C a Paris.")
 
-for phrase in resultat.phrases:
-    for token in phrase:
-        print(f"{token.texte:20s}  {token.type.name}")
+for token in tokens:
+    print(f"{token.text:25s}  {token.type.name}")
 ```
 
 ```
-Le                    MOT
-25 decembre 2024      FORMULE
-,                     PONCTUATION
-il                    MOT
-faisait               MOT
--3°C                  FORMULE
-a                     MOT
-Paris                 MOT
-.                     PONCTUATION
+Le                         MOT
+25 decembre 2024           FORMULE
+,                          PONCTUATION
+il                         MOT
+faisait                    MOT
+-3°C                       FORMULE
+a                          MOT
+Paris                      MOT
+.                          PONCTUATION
 ```
 
 ---
@@ -60,11 +59,10 @@ Paris                 MOT
 
 <div class="pyodide-demo" data-package="lectura-tokeniseur" data-code="
 from lectura_tokeniseur import tokenise
-r = tokenise('{INPUT}')
+tokens = tokenise('{INPUT}')
 lines = []
-for ph in r.phrases:
-    for t in ph:
-        lines.append(f'{t.texte:25s} {t.type.name}')
+for t in tokens:
+    lines.append(f'{t.text:25s} {t.type.name}')
 '\n'.join(lines)
 ">
   <input type="text" class="demo-input" value="Le 25 decembre 2024, il a lu 42 pages." placeholder="Tapez du texte francais...">
@@ -81,7 +79,7 @@ for ph in r.phrases:
 | **Normalisation** | Typographie francaise, espaces, nettoyage Unicode |
 | **Tokenisation** | Decoupage en mots, ponctuation, separateurs |
 | **Detection de formules** | 15+ types : nombres, dates, heures, sigles, monnaies... |
-| **API simple** | `tokenise(texte)` renvoie un objet structure |
+| **API simple** | `tokenise(texte)` renvoie une liste de tokens |
 
 ---
 

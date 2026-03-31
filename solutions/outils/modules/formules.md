@@ -44,11 +44,11 @@ Nombres, sigles, dates, telephones, heures, monnaies, ordinaux, fractions, notat
 ```python
 from lectura_formules import lire_formule
 
-result = lire_formule("42")
+result = lire_formule("NOMBRE", "42")
 print(result.display_fr)    # "quarante-deux"
-print(result.phonetique)    # "ka.ʁɑ̃t.dø"
+print(result.phone)         # "ka.ʁɑ̃t.dø"
 
-result = lire_formule("25/12/2024")
+result = lire_formule("DATE", "25/12/2024")
 print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
 ```
 
@@ -58,8 +58,8 @@ print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
 
 <div class="pyodide-demo" data-package="lectura-formules" data-code="
 from lectura_formules import lire_formule
-r = lire_formule('{INPUT}')
-f'Formule :    {r.texte_original}\nLecture :    {r.display_fr}\nPhonetique : {r.phonetique}\nType :       {r.type_f}'
+r = lire_formule('NOMBRE', '{INPUT}')
+f'Formule :    {INPUT}\nLecture :    {r.display_fr}\nPhonetique : {r.phone}'
 ">
   <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
   <button class="demo-btn" type="button">Essayer</button>

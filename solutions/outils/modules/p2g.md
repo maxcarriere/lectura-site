@@ -45,25 +45,23 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Essayer en ligne
+## Exemple de sortie
 
-<div class="pyodide-demo" data-package="lectura-p2g" data-code="
-from lectura_p2g import get_model_path
-from lectura_p2g.inference_pure import PurePythonInferenceEngine
-weights_path = get_model_path('unifie_p2g_v2_weights.json')
-vocab_path = get_model_path('unifie_p2g_v2_vocab.json')
-engine = PurePythonInferenceEngine(str(weights_path), str(vocab_path))
-ipa_words = '{INPUT}'.split()
-r = engine.analyser(ipa_words)
-lines = []
-for i, w in enumerate(r['ipa_words']):
-    lines.append(f'{w:15s} → {r[&quot;ortho&quot;][i]:15s} {r[&quot;pos&quot;][i]}')
-'IPA             → Orthographe     POS\n' + '-'*45 + '\n' + '\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des mots en IPA separes par des espaces...">
-  <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la demo (backend pur Python).</pre>
-</div>
+Entree IPA : *le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃*
+
+```
+IPA             → Orthographe     POS
+---------------------------------------------
+le              → les             ART:def
+ɑ̃fɑ̃            → enfants         NOM
+sɔ̃              → sont            AUX
+aʁive           → arrives         VER
+a               → a               PRE
+la              → la              ART:def
+mɛzɔ̃            → maison          NOM
+```
+
+*La demo interactive P2G necessite les poids du modele (26 Mo), non inclus dans le package pip. Installez localement pour tester : `pip install lectura-p2g[onnx]`.*
 
 ---
 

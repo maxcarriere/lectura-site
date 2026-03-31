@@ -56,22 +56,22 @@ cour              cour
 
 ---
 
-## Essayer en ligne
+## Exemple de sortie
 
-<div class="pyodide-demo" data-package="lectura-syllabeur" data-code="
-from lectura_syllabeur import LecturaSyllabeur
-s = LecturaSyllabeur()
-r = s.syllabifier('{INPUT}')
-lines = []
-for mot in r.mots:
-    syllabes = '-'.join(sl.texte for sl in mot.syllabes)
-    lines.append(f'{mot.forme:15s}  {syllabes}')
-'Mot              Syllabes\n' + '-'*35 + '\n' + '\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="Les enfants jouent dans la cour." placeholder="Tapez une phrase francaise...">
-  <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la demo.</pre>
-</div>
+Phrase : *Les enfants jouent dans la cour.*
+
+```
+Mot              Syllabes (IPA)
+-----------------------------------
+Les              /le/ (1 syll.)
+enfants          /ɑ̃.fɑ̃/ (2 syll.)
+jouent           /ʒu/ (1 syll.)
+dans             /dɑ̃/ (1 syll.)
+la               /la/ (1 syll.)
+cour             /kuʁ/ (1 syll.)
+```
+
+*La demo interactive Syllabeur necessite eSpeak-NG (phonemiseur), non disponible dans le navigateur. Installez localement pour tester : `pip install lectura-syllabeur`.*
 
 ---
 

@@ -49,27 +49,23 @@ print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 
 ---
 
-## Essayer en ligne
+## Exemple de sortie
 
-<div class="pyodide-demo" data-package="lectura-g2p" data-code="
-from lectura_nlp import get_model_path
-from lectura_nlp.inference_pure import PurePythonInferenceEngine
-from lectura_nlp.tokeniseur import tokeniser
-import json, pathlib
-weights_path = get_model_path('unifie_weights.json')
-vocab_path = get_model_path('unifie_vocab.json')
-engine = PurePythonInferenceEngine(str(weights_path), str(vocab_path))
-tokens = tokeniser('{INPUT}')
-r = engine.analyser(tokens)
-lines = []
-for i, t in enumerate(r['tokens']):
-    lines.append(f'{t:15s} {r[&quot;g2p&quot;][i]:10s} {r[&quot;pos&quot;][i]:10s} {r[&quot;liaison&quot;][i]}')
-'Token           IPA        POS        Liaison\n' + '-'*50 + '\n' + '\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison." placeholder="Tapez une phrase francaise...">
-  <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la demo (backend pur Python, ~200 ms/phrase).</pre>
-</div>
+Phrase : *Les enfants sont arrives a la maison.*
+
+```
+Token           IPA        POS        Liaison
+--------------------------------------------------
+Les             le         ART:def    Lz
+enfants         ɑ̃fɑ̃       NOM        none
+sont            sɔ̃         AUX        Lt
+arrives         aʁive      VER        none
+a               a          PRE        none
+la              la         ART:def    none
+maison          mɛzɔ̃       NOM        none
+```
+
+*La demo interactive G2P necessite les poids du modele (18 Mo), non inclus dans le package pip. Installez localement pour tester : `pip install lectura-g2p[onnx]`.*
 
 ---
 
