@@ -29,7 +29,47 @@ Trois backends d'inference : **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms)
 
 ---
 
-## Exemple
+## Tester en ligne
+
+*Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-g2p[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
+
+<div class="pyodide-demo" data-package="lectura-g2p" data-numpy="1">
+  <script type="text/x-python" class="demo-setup">
+from pyodide.http import pyfetch
+from pathlib import Path
+
+response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/G2P/modeles_numpy/unifie_weights.json')
+weights_text = await response.string()
+Path('/tmp/unifie_weights.json').write_text(weights_text)
+
+from lectura_nlp import get_model_path
+from lectura_nlp.inference_numpy import NumpyInferenceEngine
+from lectura_nlp.tokeniseur import tokeniser as _g2p_tokeniser
+
+global _g2p_engine
+_g2p_engine = NumpyInferenceEngine('/tmp/unifie_weights.json', str(get_model_path('unifie_vocab.json')))
+  </script>
+  <script type="text/x-python" class="demo-run">
+tokens = _g2p_tokeniser('{INPUT}')
+result = _g2p_engine.analyser(tokens)
+lines = []
+lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
+lines.append('-' * 56)
+for i, tok in enumerate(tokens):
+    ipa = result['g2p'][i] if i < len(result['g2p']) else ''
+    pos = result['pos'][i] if i < len(result['pos']) else ''
+    lia = result['liaison'][i] if i < len(result['liaison']) else ''
+    lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
+'\n'.join(lines)
+  </script>
+  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison." placeholder="Entrez une phrase francaise...">
+  <button class="demo-btn" type="button">Charger et tester (~18 Mo)</button>
+  <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
+</div>
+
+---
+
+## Exemple de code
 
 ```python
 from lectura_nlp import get_model_path
@@ -49,36 +89,16 @@ print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 
 ---
 
-## Exemple de sortie
-
-Phrase : *Les enfants sont arrives a la maison.*
-
-```
-Token           IPA        POS        Liaison
---------------------------------------------------
-Les             le         ART:def    Lz
-enfants         ɑ̃fɑ̃       NOM        none
-sont            sɔ̃         AUX        Lt
-arrives         aʁive      VER        none
-a               a          PRE        none
-la              la         ART:def    none
-maison          mɛzɔ̃       NOM        none
-```
-
-*La demo interactive G2P necessite les poids du modele (18 Mo), non inclus dans le package pip. Installez localement pour tester : `pip install lectura-g2p[onnx]`.*
-
----
-
 ## Architecture du modele
 
 ```
-Phrase → Char Embedding (64d) → Shared BiLSTM (2×160h → 320d)
-                                        │
-                    ┌───────────────────┼───────────────────┐
-                    ↓                                       ↓
+Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
+                                        |
+                    +-------------------+-------------------+
+                    v                                       v
               G2P Head (per-char)              Word BiLSTM (128h → 256d)
-              Linear(320→40)                        │
-                                    ┌───┬───┬───┬───┬───┬───┬───┐
+              Linear(320→40)                        |
+                                    +---+---+---+---+---+---+---+
                                    POS Num Gen VF  Mood Tns Per Liaison
 ```
 
@@ -97,6 +117,6 @@ pip install lectura-g2p[onnx]       # backend ONNX Runtime (le plus rapide)
 ## Caracteristiques techniques
 
 - **1.75M parametres**, modele ONNX INT8 = 1.8 Mo
-- **3 backends** : ONNX Runtime, NumPy, pur Python
+- **3 backends** : ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Double licence** : AGPL-3.0 (libre) / Licence commerciale

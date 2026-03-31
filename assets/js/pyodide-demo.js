@@ -3,9 +3,10 @@
 
   var pyodideReady = null;
   var pyodideInstance = null;
+  var installedPackages = {};
 
   /**
-   * Charge Pyodide une seule fois (lazy, au premier clic "Essayer").
+   * Charge Pyodide une seule fois (lazy, au premier clic).
    */
   function loadPyodide() {
     if (pyodideReady) return pyodideReady;
@@ -27,26 +28,50 @@
   }
 
   /**
-   * Installe un package depuis PyPI via micropip.
+   * Installe un package depuis PyPI via micropip (cache par nom).
    */
   function installPackage(py, pkg) {
+    if (installedPackages[pkg]) return Promise.resolve();
     return py.loadPackage('micropip').then(function () {
       return py.runPythonAsync('import micropip; await micropip.install("' + pkg + '")');
+    }).then(function () {
+      installedPackages[pkg] = true;
     });
   }
 
   /**
+   * Installe plusieurs packages (comma-separated).
+   */
+  function installPackages(py, pkgStr) {
+    var packages = pkgStr.split(',').map(function (p) { return p.trim(); });
+    return packages.reduce(function (promise, p) {
+      return promise.then(function () { return installPackage(py, p); });
+    }, Promise.resolve());
+  }
+
+  /**
    * Lance la demo pour un bloc .pyodide-demo.
-   * Attributs data- :
-   *   data-package : nom pip (ex: "lectura-tokeniseur")
-   *   data-code    : code Python a executer (le placeholder {INPUT} est remplace)
+   *
+   * Attributs / elements :
+   *   data-package  : nom(s) pip, comma-separated
+   *   data-code     : code Python inline (simple demos)
+   *   data-numpy    : "1" si numpy est requis (charge le built-in Pyodide)
+   *   <script class="demo-setup"> : code Python async execute une seule fois (model download)
+   *   <script class="demo-run">   : code Python execute a chaque clic ({INPUT} remplace)
    */
   function runDemo(block) {
     var input = block.querySelector('.demo-input');
     var output = block.querySelector('.demo-output');
     var btn = block.querySelector('.demo-btn');
     var pkg = block.getAttribute('data-package');
-    var codeTpl = block.getAttribute('data-code');
+    var needsNumpy = block.getAttribute('data-numpy') === '1';
+
+    // Code sources : script elements (priorite) ou data-code attribute
+    var setupEl = block.querySelector('script.demo-setup');
+    var runEl = block.querySelector('script.demo-run');
+    var setupCode = setupEl ? setupEl.textContent.trim() : null;
+    var codeTpl = runEl ? runEl.textContent.trim() : block.getAttribute('data-code');
+
     var text = input ? input.value.trim() : '';
     if (!text) return;
 
@@ -55,8 +80,30 @@
 
     loadPyodide()
       .then(function (py) {
-        output.textContent = 'Installation de ' + pkg + '...';
-        return installPackage(py, pkg).then(function () { return py; });
+        // Charger numpy depuis le CDN Pyodide si necessaire
+        if (needsNumpy && !block._numpyLoaded) {
+          output.textContent = 'Chargement de NumPy...';
+          return py.loadPackage('numpy').then(function () {
+            block._numpyLoaded = true;
+            return py;
+          });
+        }
+        return py;
+      })
+      .then(function (py) {
+        output.textContent = 'Installation des packages...';
+        return installPackages(py, pkg).then(function () { return py; });
+      })
+      .then(function (py) {
+        // Setup unique : telechargement du modele, creation du moteur
+        if (setupCode && !block._setupDone) {
+          output.textContent = 'Telechargement du modele...';
+          return py.runPythonAsync(setupCode).then(function () {
+            block._setupDone = true;
+            return py;
+          });
+        }
+        return py;
       })
       .then(function (py) {
         output.textContent = 'Execution...';
@@ -66,6 +113,8 @@
       .then(function (result) {
         output.textContent = result;
         btn.disabled = false;
+        // Apres premier chargement du modele, changer le libelle du bouton
+        if (setupCode) btn.textContent = 'Essayer';
       })
       .catch(function (err) {
         output.textContent = 'Erreur : ' + err.message;
@@ -81,7 +130,6 @@
       if (btn) {
         btn.addEventListener('click', function () { runDemo(block); });
       }
-      // Enter dans le champ input
       var input = block.querySelector('.demo-input');
       if (input) {
         input.addEventListener('keydown', function (e) {

@@ -28,7 +28,45 @@ Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zer
 
 ---
 
-## Exemple
+## Tester en ligne
+
+*Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~26 Mo). En local, `pip install lectura-p2g[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
+
+<div class="pyodide-demo" data-package="lectura-p2g" data-numpy="1">
+  <script type="text/x-python" class="demo-setup">
+from pyodide.http import pyfetch
+from pathlib import Path
+
+response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/P2G/modeles_numpy/unifie_p2g_v2_weights.json')
+weights_text = await response.string()
+Path('/tmp/unifie_p2g_v2_weights.json').write_text(weights_text)
+
+from lectura_p2g import get_model_path
+from lectura_p2g.inference_numpy import NumpyInferenceEngine
+
+global _p2g_engine
+_p2g_engine = NumpyInferenceEngine('/tmp/unifie_p2g_v2_weights.json', str(get_model_path('unifie_p2g_v2_vocab.json')))
+  </script>
+  <script type="text/x-python" class="demo-run">
+tokens = '{INPUT}'.split()
+result = _p2g_engine.analyser(tokens)
+lines = []
+lines.append(f"{'IPA':<16}{'Orthographe':<20}{'POS'}")
+lines.append('-' * 48)
+for i, tok in enumerate(tokens):
+    ortho = result['ortho'][i] if i < len(result['ortho']) else ''
+    pos = result['pos'][i] if i < len(result['pos']) else ''
+    lines.append(f"{tok:<16}{ortho:<20}{pos}")
+'\n'.join(lines)
+  </script>
+  <input type="text" class="demo-input" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
+  <button class="demo-btn" type="button">Charger et tester (~26 Mo)</button>
+  <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
+</div>
+
+---
+
+## Exemple de code
 
 ```python
 from lectura_p2g import get_model_path
@@ -45,39 +83,19 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Exemple de sortie
-
-Entree IPA : *le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃*
-
-```
-IPA             → Orthographe     POS
----------------------------------------------
-le              → les             ART:def
-ɑ̃fɑ̃            → enfants         NOM
-sɔ̃              → sont            AUX
-aʁive           → arrives         VER
-a               → a               PRE
-la              → la              ART:def
-mɛzɔ̃            → maison          NOM
-```
-
-*La demo interactive P2G necessite les poids du modele (26 Mo), non inclus dans le package pip. Installez localement pour tester : `pip install lectura-p2g[onnx]`.*
-
----
-
 ## Architecture du modele (v2)
 
 Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
 
 ```
-Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2×160h → 320d)
-                                          │
-                  ┌───────────────────────┼────────────────────┐
-                  ↓                                             ↓
-        Word representations                          Word BiLSTM (192h → 384d)
-        (fwd[last] || bwd[first])                          │
-                                            ┌──────────────┼──────────────┐
-                                           POS        Morpho (×6)    Word Feedback
+Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
+                                          |
+                  +-----------------------+--------------------+
+                  v                                             v
+        Word representations                     Word BiLSTM (192h → 384d)
+        (fwd[last] || bwd[first])                          |
+                                            +--------------+--------------+
+                                           POS        Morpho (x6)    Word Feedback
                                                                     → P2G Head (704d → 1198)
 ```
 
@@ -96,7 +114,7 @@ pip install lectura-p2g[onnx]       # backend ONNX Runtime (le plus rapide)
 ## Caracteristiques techniques
 
 - **2.56M parametres**, modele ONNX INT8 = 2.6 Mo
-- **3 backends** : ONNX Runtime, NumPy, pur Python
+- **3 backends** : ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Double licence** : AGPL-3.0 (libre) / Licence commerciale
