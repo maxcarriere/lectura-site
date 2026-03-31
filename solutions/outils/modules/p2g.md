@@ -32,6 +32,27 @@ Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zer
 
 *Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~26 Mo). En local, `pip install lectura-p2g[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
 
+<div class="ipa-keyboard">
+  <span class="ipa-key" data-char="ɑ̃" title="an, en">ɑ̃ <small>(an)</small></span>
+  <span class="ipa-key" data-char="ɛ̃" title="in, ain">ɛ̃ <small>(in)</small></span>
+  <span class="ipa-key" data-char="ɔ̃" title="on">ɔ̃ <small>(on)</small></span>
+  <span class="ipa-key" data-char="œ̃" title="un">œ̃ <small>(un)</small></span>
+  <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
+  <span class="ipa-key" data-char="ø" title="eu ferme">ø <small>(eu)</small></span>
+  <span class="ipa-key" data-char="œ" title="eu ouvert">œ <small>(eur)</small></span>
+  <span class="ipa-key" data-char="ə" title="e muet">ə <small>(e)</small></span>
+  <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(or)</small></span>
+  <span class="ipa-key" data-char="ɑ" title="a posterieur">ɑ <small>(a)</small></span>
+  <span class="ipa-key" data-char="ʃ" title="ch">ʃ <small>(ch)</small></span>
+  <span class="ipa-key" data-char="ʒ" title="j, ge">ʒ <small>(j)</small></span>
+  <span class="ipa-key" data-char="ɲ" title="gn">ɲ <small>(gn)</small></span>
+  <span class="ipa-key" data-char="ʁ" title="r">ʁ <small>(r)</small></span>
+  <span class="ipa-key" data-char="ɡ" title="g dur">ɡ <small>(gu)</small></span>
+  <span class="ipa-key" data-char="j" title="y, ill">j <small>(ill)</small></span>
+  <span class="ipa-key" data-char="w" title="ou semi-voyelle">w <small>(ou)</small></span>
+  <span class="ipa-key" data-char="ɥ" title="u semi-voyelle">ɥ <small>(u)</small></span>
+</div>
+
 <div class="pyodide-demo" data-package="lectura-p2g" data-numpy="1">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
@@ -59,7 +80,7 @@ for i, tok in enumerate(tokens):
     lines.append(f"{tok:<16}{ortho:<20}{pos}")
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
+  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
   <button class="demo-btn" type="button">Charger et tester (~26 Mo)</button>
   <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
 </div>

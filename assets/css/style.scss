@@ -1090,6 +1090,11 @@ html[data-darkreader-mode] .parchment-content a:hover {
   -webkit-text-fill-color: #0d0d0d !important;
 }
 
+.demo-input--ipa {
+  font-family: "Noto Sans", "DejaVu Sans", "Lucida Grande", Arial, sans-serif;
+  font-size: 1.1rem;
+}
+
 .demo-output {
   margin-top: 0.75rem;
   padding: 0.75rem;
@@ -1102,6 +1107,39 @@ html[data-darkreader-mode] .parchment-content a:hover {
   white-space: pre-wrap;
   overflow-x: auto;
   min-height: 2rem;
+  color: #0d0d0d !important;
+  -webkit-text-fill-color: #0d0d0d !important;
+}
+
+/* Clavier IPA */
+.ipa-keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.ipa-key {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(13, 13, 13, 0.2) !important;
+  border-radius: 4px;
+  font-family: "Noto Sans", "DejaVu Sans", Arial, sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: #0d0d0d !important;
+  -webkit-text-fill-color: #0d0d0d !important;
+}
+
+.ipa-key:hover {
+  background: rgba(13, 13, 13, 0.08) !important;
+}
+
+.ipa-key small {
+  font-size: 0.65rem;
+  opacity: 0.6;
   color: #0d0d0d !important;
   -webkit-text-fill-color: #0d0d0d !important;
 }

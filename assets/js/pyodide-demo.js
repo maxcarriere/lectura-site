@@ -122,6 +122,33 @@
       });
   }
 
+  /**
+   * Clavier IPA : insere un caractere dans le champ input le plus proche.
+   */
+  function initIpaKeyboards() {
+    var keyboards = document.querySelectorAll('.ipa-keyboard');
+    keyboards.forEach(function (kb) {
+      var input = kb.nextElementSibling;
+      // Chercher le .demo-input dans le bloc demo suivant
+      if (input) input = input.querySelector('.demo-input');
+      if (!input) return;
+
+      var keys = kb.querySelectorAll('.ipa-key');
+      keys.forEach(function (key) {
+        key.addEventListener('click', function () {
+          var ch = key.getAttribute('data-char');
+          if (!ch) return;
+          var start = input.selectionStart || input.value.length;
+          var end = input.selectionEnd || input.value.length;
+          input.value = input.value.substring(0, start) + ch + input.value.substring(end);
+          input.focus();
+          var newPos = start + ch.length;
+          input.setSelectionRange(newPos, newPos);
+        });
+      });
+    });
+  }
+
   // Attache les handlers au chargement
   document.addEventListener('DOMContentLoaded', function () {
     var demos = document.querySelectorAll('.pyodide-demo');
@@ -137,5 +164,7 @@
         });
       }
     });
+
+    initIpaKeyboards();
   });
 })();

@@ -66,11 +66,12 @@ _syllabeur = LecturaSyllabeur(phonemizer=_G2PPhonemizer())
   <script type="text/x-python" class="demo-run">
 results = _syllabeur.analyze_text('{INPUT}')
 lines = []
-lines.append(f"{'Mot':<18}{'Phonetique':<16}{'Syllabes'}")
-lines.append('-' * 50)
+lines.append(f"{'Mot':<18}{'Phonetique':<16}{'Syllabes (ortho)':<20}{'Syllabes (IPA)'}")
+lines.append('-' * 70)
 for r in results:
-    syl_str = '.'.join(r.syllabes) if r.syllabes else r.phone
-    lines.append(f"{r.mot:<18}{r.phone:<16}{syl_str}")
+    syl_ortho = '-'.join(s.ortho for s in r.syllabes) if r.syllabes else r.mot
+    syl_ipa = '.'.join(s.phone for s in r.syllabes) if r.syllabes else r.phone
+    lines.append(f"{r.mot:<18}{r.phone:<16}{syl_ortho:<20}{syl_ipa}")
 '\n'.join(lines)
   </script>
   <input type="text" class="demo-input" value="Les enfants jouent dans la cour." placeholder="Entrez une phrase francaise...">
