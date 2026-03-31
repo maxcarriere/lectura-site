@@ -928,6 +928,16 @@ html[data-darkreader-mode] .parchment-content a:hover {
   }
 }
 
+/* ===== Blocs de code dans le parchemin ===== */
+.parchment-content pre {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.parchment-content code {
+  font-size: 0.8rem;
+}
+
 /* ===== 10. Pages modules — header, badges, install ===== */
 .module-header {
   text-align: center;
@@ -1022,18 +1032,18 @@ html[data-darkreader-mode] .parchment-content a:hover {
   padding: 0.5rem 1.5rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.9rem;
-  background: #120B08 !important;
-  color: #F5F5F5 !important;
-  -webkit-text-fill-color: #F5F5F5 !important;
-  text-fill-color: #F5F5F5 !important;
-  border: none;
+  background: #F5F5F5 !important;
+  color: #120B08 !important;
+  -webkit-text-fill-color: #120B08 !important;
+  text-fill-color: #120B08 !important;
+  border: 1px solid rgba(13, 13, 13, 0.3);
   border-radius: 4px;
   cursor: pointer;
   letter-spacing: 0.05em;
 }
 
 .demo-btn:hover {
-  background: #2a1f18 !important;
+  background: #e8e0d0 !important;
 }
 
 .demo-btn:disabled {
