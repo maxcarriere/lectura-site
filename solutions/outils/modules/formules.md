@@ -20,6 +20,10 @@ Module autonome, **zero dependance** externe. Transforme toute formule ecrite en
 
 Nombres, sigles, dates, telephones, heures, monnaies, ordinaux, fractions, notations scientifiques, expressions mathematiques, coordonnees GPS — tout est couvert.
 
+Chaque formule est decomposee en **events alignes** : chaque composant de la formule est associe a son texte lu, sa transcription IPA, et sa position dans la formule source. Cet alignement permet la lecture synchronisee et la **lecture audio** a partir d'une banque de sons WAV (~12 Mo, 289 fichiers disponibles sur GitHub).
+
+*Pour une demo complete avec lecture audio et alignement visuel, voir le programme [Lectura Formule]({{ '/solutions/logiciels/programmes/' | relative_url }}).*
+
 ---
 
 ## Types de formules supportes
@@ -46,7 +50,13 @@ from lectura_formules import lire_formule
 
 result = lire_formule("NOMBRE", "42")
 print(result.display_fr)    # "quarante-deux"
-print(result.phone)         # "ka.ʁɑ̃t.dø"
+print(result.phone)         # "kaʁɑ̃tdø"
+
+# Events alignes : chaque composant avec son texte, IPA et position
+for event in result.events:
+    print(f"  {event.ortho:15s}  {event.phone:10s}  sound_id={event.sound_id}")
+# quarante         kaʁɑ̃t       sound_id=
+# deux             dø           sound_id=
 
 result = lire_formule("DATE", "25/12/2024")
 print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
@@ -59,7 +69,16 @@ print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
 <div class="pyodide-demo" data-package="lectura-formules" data-code="
 from lectura_formules import lire_formule
 r = lire_formule('NOMBRE', '{INPUT}')
-f'Formule :    {INPUT}\nLecture :    {r.display_fr}\nPhonetique : {r.phone}'
+lines = []
+lines.append(f'Formule :    {INPUT}')
+lines.append(f'Lecture :    {r.display_fr}')
+lines.append(f'Phonetique : {r.phone}')
+if r.events:
+    lines.append('')
+    lines.append('Events alignes :')
+    for e in r.events:
+        lines.append(f'  {e.ortho:20s} {e.phone:15s} composant={e.composant}')
+'\n'.join(lines)
 ">
   <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
   <button class="demo-btn" type="button">Essayer</button>
@@ -68,11 +87,32 @@ f'Formule :    {INPUT}\nLecture :    {r.display_fr}\nPhonetique : {r.phone}'
 
 ---
 
+## Alignement et lecture audio
+
+Chaque formule est decomposee en **events** (`EventFormuleLecture`) qui fournissent :
+
+| Champ | Description |
+|-------|-------------|
+| `ortho` | Texte lu du composant (ex: "quarante") |
+| `phone` | Transcription IPA (ex: "kaʁɑ̃t") |
+| `span_source` | Position dans la formule source |
+| `composant` | Index du composant (pour regroupement) |
+| `sound_id` | Identifiant du son WAV correspondant |
+
+Cet alignement permet de :
+- **Surligner** chaque partie de la formule pendant la lecture
+- **Jouer les sons** WAV composant par composant
+- **Synchroniser** l'affichage visuel avec l'audio
+
+Les fichiers WAV (~12 Mo, 289 sons) sont disponibles sur GitHub. Le programme **Lectura Formule** offre une demo interactive complete avec lecture audio synchronisee.
+
+---
+
 ## API principale
 
 | Fonction | Description |
 |----------|-------------|
-| `lire_formule(texte)` | Point d'entree principal — detecte le type et lit |
+| `lire_formule(type, texte)` | Point d'entree principal — lit une formule typee |
 | `lire_nombre(texte)` | Nombres : "42" → "quarante-deux" |
 | `lire_date(texte)` | Dates : "25/12/2024" → "vingt-cinq decembre..." |
 | `lire_heure(texte)` | Heures : "14h30" → "quatorze heures trente" |
@@ -82,8 +122,8 @@ f'Formule :    {INPUT}\nLecture :    {r.display_fr}\nPhonetique : {r.phone}'
 | `lire_fraction(texte)` | Fractions : "3/4" → "trois quarts" |
 | `lire_monnaie(texte)` | Monnaies : "42 EUR" → "quarante-deux euros" |
 | `lire_pourcentage(texte)` | Pourcentages : "50%" → "cinquante pour cent" |
-| `int_to_roman(n)` / `roman_to_int(s)` | Chiffres romains |
 | `enrichir_formules(tokens)` | Enrichit les tokens d'une phrase |
+| `int_to_roman(n)` / `roman_to_int(s)` | Chiffres romains |
 
 ---
 
@@ -100,6 +140,7 @@ pip install lectura-formules
 - **Zero dependance** Python
 - **15+ types de formules** reconnus
 - **Transcription phonetique IPA** automatique
+- **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Double licence** : AGPL-3.0 (libre) / Licence commerciale
