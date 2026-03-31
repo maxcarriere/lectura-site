@@ -940,6 +940,25 @@ html[data-darkreader-mode] .parchment-content a:hover {
   font-size: 0.8rem;
 }
 
+/* ===== Tableaux centres dans le parchemin ===== */
+.parchment-content table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+.parchment-content th,
+.parchment-content td {
+  padding: 0.4em 0.8em;
+  border: 1px solid rgba(13, 13, 13, 0.2);
+  text-align: left;
+}
+
+.parchment-content th {
+  font-weight: bold;
+  border-bottom: 2px solid rgba(13, 13, 13, 0.3);
+}
+
 /* ===== 10. Pages modules — header, badges, install ===== */
 .module-header {
   text-align: center;
