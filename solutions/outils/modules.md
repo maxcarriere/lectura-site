@@ -38,8 +38,8 @@ Cinq packages Python autonomes pour le traitement linguistique du francais, dist
     </div>
   </div>
   <div class="home-card">
-    <h2>Syllabeur</h2>
-    <p>Analyse syllabique, groupes de lecture, gestion des liaisons et enchainements.</p>
+    <h2>Aligneur-Syllabeur</h2>
+    <p>Pivot central : alignement grapheme-phoneme, groupes de lecture, syllabation avec attaque/noyau/coda.</p>
     <code class="card-install">pip install lectura-syllabeur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/outils/modules/syllabeur/' | relative_url }}">Details & Demo</a>
