@@ -44,7 +44,7 @@ Cinq packages Python autonomes pour le traitement linguistique du francais, dist
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/outils/modules/syllabeur/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-aligneur/">PyPI</a>
-      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Syllabeur">GitHub</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur">GitHub</a>
     </div>
   </div>
   <div class="home-card">

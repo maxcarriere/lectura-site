@@ -9,7 +9,7 @@ permalink: /solutions/outils/modules/syllabeur/
   <p class="module-tagline">Aligneur grapheme-phoneme et syllabeur phonologique du francais</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-aligneur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Syllabeur" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-aligneur</code>
   </div>
 </div>
@@ -51,7 +51,7 @@ Path('/tmp/unifie_weights.json').write_text(weights_text)
 from lectura_nlp import get_model_path
 from lectura_nlp.inference_numpy import NumpyInferenceEngine
 from lectura_nlp.tokeniseur import tokeniser as _syl_tokeniser
-from lectura_syllabeur import LecturaSyllabeur, MotAnalyse
+from lectura_aligneur import LecturaSyllabeur, MotAnalyse
 
 _syl_g2p_engine = NumpyInferenceEngine('/tmp/unifie_weights.json', str(get_model_path('unifie_vocab.json')))
 
@@ -121,7 +121,7 @@ for gi, rg in enumerate(result.groupes, 1):
 ### Analyse d'un mot (API simple)
 
 ```python
-from lectura_syllabeur import LecturaSyllabeur
+from lectura_aligneur import LecturaSyllabeur
 
 syllabeur = LecturaSyllabeur()    # eSpeak-NG par defaut
 result = syllabeur.analyze("chocolat")
@@ -142,7 +142,7 @@ for s in result.syllabes:
 ### Analyse complete avec groupes de lecture
 
 ```python
-from lectura_syllabeur import LecturaSyllabeur, MotAnalyse
+from lectura_aligneur import LecturaSyllabeur, MotAnalyse
 
 syllabeur = LecturaSyllabeur()
 
@@ -166,7 +166,7 @@ print(f"Syllabes : {result.format_ligne2()}")
 ### Avec Lectura G2P comme phonemiseur
 
 ```python
-from lectura_syllabeur import LecturaSyllabeur
+from lectura_aligneur import LecturaSyllabeur
 from lectura_nlp.inference_onnx import OnnxInferenceEngine
 from lectura_nlp import get_model_path
 
