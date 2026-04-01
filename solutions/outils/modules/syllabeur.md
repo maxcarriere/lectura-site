@@ -68,15 +68,30 @@ global _tokeniser_syl
 _tokeniser_syl = _syl_tokeniser
   </script>
   <script type="text/x-python" class="demo-run">
+import re
+_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
 text = '{INPUT}'
 tokens = _tokeniser_syl(text)
 g2p_result = _g2p_engine_syl.analyser(tokens)
 
+phones = list(g2p_result.get('g2p', []))
+liaisons = list(g2p_result.get('liaison', []))
+
+# Appliquer les liaisons (insere la consonne latente dans le phone du mot precedent)
+from lectura_nlp.posttraitement import appliquer_liaison
+phones = appliquer_liaison(tokens, phones, liaisons)
+
+# Filtrer la ponctuation et construire les MotAnalyse
+class _Tok:
+    def __init__(self, text): self.text = text
+
 mots = []
 for i, tok in enumerate(tokens):
-    phone = g2p_result['g2p'][i] if i < len(g2p_result.get('g2p', [])) else ''
-    liaison = g2p_result['liaison'][i] if i < len(g2p_result.get('liaison', [])) else 'none'
-    mots.append(MotAnalyse(phone=phone, liaison=liaison))
+    if _punct_re.match(tok):
+        continue
+    phone = phones[i] if i < len(phones) else ''
+    liaison = liaisons[i] if i < len(liaisons) else 'none'
+    mots.append(MotAnalyse(token=_Tok(tok), phone=phone, liaison=liaison))
 
 result = _syllabeur.analyser_complet(mots)
 
@@ -109,7 +124,7 @@ for gi, rg in enumerate(result.groupes, 1):
 
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison." placeholder="Entrez une phrase francaise...">
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase francaise...">
   <button class="demo-btn" type="button">Charger et tester (~18 Mo)</button>
   <pre class="demo-output">Cliquez sur le bouton pour charger le modele G2P et lancer la demo.</pre>
 </div>

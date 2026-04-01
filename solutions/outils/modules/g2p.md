@@ -63,19 +63,23 @@ global _g2p_engine
 _g2p_engine = NumpyInferenceEngine('/tmp/unifie_weights.json', str(get_model_path('unifie_vocab.json')))
   </script>
   <script type="text/x-python" class="demo-run">
+import re
+_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
 tokens = _g2p_tokeniser('{INPUT}')
 result = _g2p_engine.analyser(tokens)
 lines = []
 lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
 lines.append('-' * 56)
 for i, tok in enumerate(tokens):
+    if _punct_re.match(tok):
+        continue
     ipa = result['g2p'][i] if i < len(result['g2p']) else ''
     pos = result['pos'][i] if i < len(result['pos']) else ''
     lia = result['liaison'][i] if i < len(result['liaison']) else ''
     lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison." placeholder="Entrez une phrase francaise...">
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase francaise...">
   <button class="demo-btn" type="button">Charger et tester (~18 Mo)</button>
   <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
 </div>
@@ -92,11 +96,11 @@ from lectura_nlp.tokeniseur import tokeniser
 engine = OnnxInferenceEngine(get_model_path("unifie_int8.onnx"),
                               get_model_path("unifie_vocab.json"))
 
-tokens = tokeniser("Les enfants sont arrives a la maison.")
+tokens = tokeniser("Les enfants sont arrivés à la maison.")
 result = engine.analyser(tokens)
 
 print(result["g2p"])      # ['le', 'ɑ̃fɑ̃', 'sɔ̃', 'aʁive', 'a', 'la', 'mɛzɔ̃']
-print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'NOM']
+print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER:pper', 'PRE', 'ART:def', 'NOM']
 print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 ```
 
