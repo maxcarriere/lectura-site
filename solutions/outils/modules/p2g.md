@@ -33,37 +33,65 @@ Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zer
 *Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~26 Mo). En local, `pip install lectura-p2g[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
 
 <div class="ipa-keyboard">
+  <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
+  <span class="ipa-key" data-char="e" title="e ferme">e <small>(e)</small></span>
+  <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
+  <span class="ipa-key" data-char="a" title="a">a <small>(a)</small></span>
+  <span class="ipa-key" data-char="ɑ" title="a posterieur">ɑ <small>(a)</small></span>
+  <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(o)</small></span>
+  <span class="ipa-key" data-char="o" title="o ferme">o <small>(o)</small></span>
+  <span class="ipa-key" data-char="u" title="ou">u <small>(ou)</small></span>
+  <span class="ipa-key" data-char="y" title="u">y <small>(u)</small></span>
+  <span class="ipa-key" data-char="ø" title="eu ferme">ø <small>(oeu)</small></span>
+  <span class="ipa-key" data-char="œ" title="eu ouvert">œ <small>(eu)</small></span>
+  <span class="ipa-key" data-char="ə" title="e muet">ə <small>(e)</small></span>
   <span class="ipa-key" data-char="ɑ̃" title="an, en">ɑ̃ <small>(an)</small></span>
   <span class="ipa-key" data-char="ɛ̃" title="in, ain">ɛ̃ <small>(in)</small></span>
   <span class="ipa-key" data-char="ɔ̃" title="on">ɔ̃ <small>(on)</small></span>
   <span class="ipa-key" data-char="œ̃" title="un">œ̃ <small>(un)</small></span>
-  <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
-  <span class="ipa-key" data-char="ø" title="eu ferme">ø <small>(eu)</small></span>
-  <span class="ipa-key" data-char="œ" title="eu ouvert">œ <small>(eur)</small></span>
-  <span class="ipa-key" data-char="ə" title="e muet">ə <small>(e)</small></span>
-  <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(or)</small></span>
-  <span class="ipa-key" data-char="ɑ" title="a posterieur">ɑ <small>(a)</small></span>
+  <span class="ipa-key" data-char="j" title="yod">j <small>(y)</small></span>
+  <span class="ipa-key" data-char="w" title="semi-voyelle ou">w <small>(w)</small></span>
+  <span class="ipa-key" data-char="ɥ" title="semi-voyelle u">ɥ <small>(u)</small></span>
+  <span class="ipa-key" data-char="p" title="p">p</span>
+  <span class="ipa-key" data-char="b" title="b">b</span>
+  <span class="ipa-key" data-char="t" title="t">t</span>
+  <span class="ipa-key" data-char="d" title="d">d</span>
+  <span class="ipa-key" data-char="k" title="k">k</span>
+  <span class="ipa-key" data-char="ɡ" title="g dur">ɡ <small>(gu)</small></span>
+  <span class="ipa-key" data-char="f" title="f">f</span>
+  <span class="ipa-key" data-char="v" title="v">v</span>
+  <span class="ipa-key" data-char="s" title="s">s</span>
+  <span class="ipa-key" data-char="z" title="z">z</span>
   <span class="ipa-key" data-char="ʃ" title="ch">ʃ <small>(ch)</small></span>
   <span class="ipa-key" data-char="ʒ" title="j, ge">ʒ <small>(j)</small></span>
+  <span class="ipa-key" data-char="m" title="m">m</span>
+  <span class="ipa-key" data-char="n" title="n">n</span>
   <span class="ipa-key" data-char="ɲ" title="gn">ɲ <small>(gn)</small></span>
+  <span class="ipa-key" data-char="ŋ" title="ng">ŋ <small>(ng)</small></span>
+  <span class="ipa-key" data-char="l" title="l">l</span>
   <span class="ipa-key" data-char="ʁ" title="r">ʁ <small>(r)</small></span>
-  <span class="ipa-key" data-char="ɡ" title="g dur">ɡ <small>(gu)</small></span>
-  <span class="ipa-key" data-char="j" title="y, ill">j <small>(ill)</small></span>
-  <span class="ipa-key" data-char="w" title="ou semi-voyelle">w <small>(ou)</small></span>
-  <span class="ipa-key" data-char="ɥ" title="u semi-voyelle">ɥ <small>(u)</small></span>
 </div>
 
 <div class="pyodide-demo" data-package="lectura-p2g" data-numpy="1">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
 from pathlib import Path
+import importlib
 
 response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/P2G/modeles_numpy/unifie_p2g_v2_weights.json')
 weights_text = await response.string()
 Path('/tmp/unifie_p2g_v2_weights.json').write_text(weights_text)
 
-from lectura_p2g import get_model_path
+import lectura_p2g
+pkg_dir = Path(lectura_p2g.__file__).parent
+response2 = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/P2G/src/lectura_p2g/inference_numpy.py')
+fixed_code = await response2.string()
+(pkg_dir / 'inference_numpy.py').write_text(fixed_code)
+
+from lectura_p2g import inference_numpy
+importlib.reload(inference_numpy)
 from lectura_p2g.inference_numpy import NumpyInferenceEngine
+from lectura_p2g import get_model_path
 
 global _p2g_engine
 _p2g_engine = NumpyInferenceEngine('/tmp/unifie_p2g_v2_weights.json', str(get_model_path('unifie_p2g_v2_vocab.json')))
