@@ -8,9 +8,9 @@ permalink: /solutions/outils/modules/syllabeur/
   <h1>Lectura Aligneur-Syllabeur</h1>
   <p class="module-tagline">Aligneur grapheme-phoneme et syllabeur phonologique du francais</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-syllabeur/" class="module-badge">PyPI</a>
+    <a href="https://pypi.org/project/lectura-aligneur/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Syllabeur" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-syllabeur</code>
+    <code class="module-install">pip install lectura-aligneur</code>
   </div>
 </div>
 
@@ -37,9 +37,9 @@ C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/
 
 ## Tester en ligne
 
-*Le test en ligne utilise Lectura G2P comme phonemiseur et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-syllabeur` + eSpeak-NG fonctionne sans telechargement supplementaire.*
+*Le test en ligne utilise Lectura G2P comme phonemiseur et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-aligneur` + eSpeak-NG fonctionne sans telechargement supplementaire.*
 
-<div class="pyodide-demo" data-package="lectura-g2p,lectura-syllabeur" data-numpy="1">
+<div class="pyodide-demo" data-package="lectura-g2p,lectura-aligneur" data-numpy="1">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
 from pathlib import Path
@@ -230,7 +230,7 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 ## Installation
 
 ```bash
-pip install lectura-syllabeur
+pip install lectura-aligneur
 ```
 
 **Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura G2P]({{ '/solutions/outils/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.

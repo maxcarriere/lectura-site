@@ -40,10 +40,10 @@ Cinq packages Python autonomes pour le traitement linguistique du francais, dist
   <div class="home-card">
     <h2>Aligneur-Syllabeur</h2>
     <p>Pivot central : alignement grapheme-phoneme, groupes de lecture, syllabation avec attaque/noyau/coda.</p>
-    <code class="card-install">pip install lectura-syllabeur</code>
+    <code class="card-install">pip install lectura-aligneur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/outils/modules/syllabeur/' | relative_url }}">Details & Demo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-syllabeur/">PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-aligneur/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Syllabeur">GitHub</a>
     </div>
   </div>
