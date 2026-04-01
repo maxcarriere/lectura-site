@@ -67,7 +67,7 @@ for t in tokens:
     lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
 '\n'.join(lines)
 ">
-  <input type="text" class="demo-input" value="Le 25 decembre 2024, il a lu 42 pages." placeholder="Tapez du texte francais...">
+  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages." placeholder="Tapez du texte francais...">
   <button class="demo-btn" type="button">Essayer</button>
   <pre class="demo-output">Cliquez sur « Essayer » pour lancer la demo.</pre>
 </div>
