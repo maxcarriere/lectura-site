@@ -138,16 +138,47 @@ body *::after {
   margin-top: 0.2rem;
 }
 
-/* Mots-cles dans le header */
-.header-tags {
-  color: #d8ccb0;
+/* Slogan central dans le header */
+.header-slogan {
+  color: #F5F5F5;
   font-style: italic;
   font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Mots-cles colores a droite dans le header */
+.header-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 0.5rem;
+  max-width: 340px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.kw {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.kw-1  { color: #ff8a7a; }  /* Outils NLP — coral */
+.kw-2  { color: #f0c040; }  /* TTS — or */
+.kw-3  { color: #7ec8f0; }  /* STT — ciel */
+.kw-4  { color: #6ee0b0; }  /* VC — menthe */
+.kw-5  { color: #c0a0f0; }  /* Programmes — lavande */
+.kw-6  { color: #f0a060; }  /* Apps mobiles — orange */
+.kw-7  { color: #f09aba; }  /* Methodes de lecture — rose */
+.kw-8  { color: #90d890; }  /* Ressources pedagogiques — vert */
+.kw-9  { color: #60d0d0; }  /* Lecture syllabique — turquoise */
+.kw-10 { color: #d0a0e0; }  /* e-books / audio-books — mauve */
 
 /* Menu hamburger (masque en desktop) */
 .menu-toggle {
@@ -758,8 +789,9 @@ html[data-darkreader-mode] .parchment-content a:hover {
     font-size: 0.7rem;
   }
 
-  /* Mots-cles masques sur mobile */
-  .header-tags {
+  /* Slogan et mots-cles masques sur mobile */
+  .header-slogan,
+  .header-keywords {
     display: none;
   }
 
