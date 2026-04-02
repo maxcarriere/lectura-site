@@ -385,6 +385,30 @@ body *::after {
   pointer-events: none;
 }
 
+/* Effet feuille de classeur : marge rouge + 4 perforations */
+.page-wrapper::after {
+  content: "";
+  position: fixed;
+  top: var(--header-height);
+  left: var(--sidebar-width);
+  right: 0;
+  bottom: var(--footer-height);
+  z-index: 0;
+  pointer-events: none;
+  /* Marge rouge verticale a 60px du bord gauche */
+  background:
+    /* Trait de marge rouge */
+    linear-gradient(to right, transparent 59px, #d4707a 59px, #d4707a 61px, transparent 61px),
+    /* Trou 1 — 20% du haut */
+    radial-gradient(circle 8px at 30px 20%, #120B08 7px, rgba(18,11,8,0.3) 7px, transparent 9px),
+    /* Trou 2 — 40% */
+    radial-gradient(circle 8px at 30px 40%, #120B08 7px, rgba(18,11,8,0.3) 7px, transparent 9px),
+    /* Trou 3 — 60% */
+    radial-gradient(circle 8px at 30px 60%, #120B08 7px, rgba(18,11,8,0.3) 7px, transparent 9px),
+    /* Trou 4 — 80% */
+    radial-gradient(circle 8px at 30px 80%, #120B08 7px, rgba(18,11,8,0.3) 7px, transparent 9px);
+}
+
 .parchment {
   position: relative;
   z-index: 1;
@@ -430,10 +454,10 @@ html[data-darkreader-scheme] .parchment-middle * {
 .parchment-content {
   position: relative;
   z-index: 1;
-  max-width: min(96ch, calc(100% - 60px));
+  max-width: min(96ch, calc(100% - 120px));
   width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 2rem 4rem 2.5rem;
+  padding: 1.25rem 2rem 4rem 80px;
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -946,10 +970,14 @@ html[data-darkreader-mode] .parchment-content a:hover {
     display: none;
   }
 
-  /* Fond parchemin mobile : couvre tout */
+  /* Fond parchemin mobile : couvre tout, pas de classeur */
   .page-wrapper::before {
     left: 0;
     background-image: url("{{ '/assets/images/fond_mobile.png' | relative_url }}");
+  }
+
+  .page-wrapper::after {
+    display: none;
   }
 
   .parchment {
