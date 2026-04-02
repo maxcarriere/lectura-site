@@ -23,11 +23,11 @@ Le module ne fournit pas de donnees : vous apportez votre propre base lexicale. 
 ### Bases compatibles
 
 | Base | Entrees | Colonnes reconnues | Lien |
-|------|---------|-------------------|------|
-| **Lexique383** | 142 000 | ortho, lemme, cgram, genre, nombre, phon, freqfilms2, nbsyll... | [lexique.org](http://www.lexique.org/) |
-| **GLAFF** | 1 500 000 | graphie, lemme, cgram, genre, nombre, phone... | [glaff.atilf.fr](http://redac.univ-tlse2.fr/lexiques/glaff.html) |
-| **Morphalou** | 540 000 | graphie, lemma, category, gender, number... | [ortolang.fr](https://www.ortolang.fr/market/lexicons/morphalou) |
-| **LeXiK Lectura** | 1 350 000 | 25 colonnes (ortho, phone, synonymes, definition...) | [En savoir plus]({{ '/solutions/ressources/lexik/' | relative_url }}) |
+|------|--------:|-------------------|------|
+| **Lexique383** | 142&nbsp;000 | ortho, lemme, cgram, genre, nombre, phon, freqfilms2, nbsyll... | [lexique.org](http://www.lexique.org/) |
+| **GLAFF** | 1&nbsp;400&nbsp;000 | graphie, lemme, cgram, genre, nombre, phone... | [glaff.atilf.fr](http://redac.univ-tlse2.fr/lexiques/glaff.html) |
+| **Morphalou** | 540&nbsp;000 | graphie, lemma, category, gender, number... | [ortolang.fr](https://www.ortolang.fr/market/lexicons/morphalou) |
+| **LeXiK Lectura** | 1&nbsp;350&nbsp;000 | 25 colonnes (ortho, phone, synonymes, definition...) | [En savoir plus]({{ '/solutions/ressources/lexik/' | relative_url }}) |
 
 ### Colonnes standard
 
