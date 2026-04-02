@@ -1,7 +1,7 @@
 ---
 title: Tokeniseur
 layout: default
-permalink: /solutions/outils/modules/tokeniseur/
+permalink: /solutions/modules/tokeniseur/
 ---
 
 <div class="module-header">

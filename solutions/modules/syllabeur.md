@@ -1,7 +1,7 @@
 ---
 title: Aligneur-Syllabeur
 layout: default
-permalink: /solutions/outils/modules/syllabeur/
+permalink: /solutions/modules/syllabeur/
 ---
 
 <div class="module-header">
@@ -18,7 +18,7 @@ permalink: /solutions/outils/modules/syllabeur/
 
 **Pivot central du pipeline Lectura.** Module autonome, **zero dependance** Python. Realise l'alignement lettre-par-lettre entre orthographe et phonetique, construit les groupes de lecture en gerant les phenomenes de chaine parlee, et decompose chaque syllabe en ses constituants phonologiques.
 
-C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/solutions/outils/modules/g2p/' | relative_url }}) et [P2G]({{ '/solutions/outils/modules/p2g/' | relative_url }}) ont ete prepares. Sans lui, rien n'aurait ete possible.
+C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/solutions/modules/g2p/' | relative_url }}) et [P2G]({{ '/solutions/modules/p2g/' | relative_url }}) ont ete prepares. Sans lui, rien n'aurait ete possible.
 
 ---
 
@@ -248,7 +248,7 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 pip install lectura-aligneur
 ```
 
-**Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura G2P]({{ '/solutions/outils/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
+**Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura G2P]({{ '/solutions/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
 
 ---
 

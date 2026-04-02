@@ -1,7 +1,7 @@
 ---
 title: Formules
 layout: default
-permalink: /solutions/outils/modules/formules/
+permalink: /solutions/modules/formules/
 ---
 
 <div class="module-header">
@@ -22,7 +22,7 @@ Nombres, sigles, dates, telephones, heures, monnaies, ordinaux, fractions, notat
 
 Chaque formule est decomposee en **events alignes** : chaque composant de la formule est associe a son texte lu, sa transcription IPA, et sa position dans la formule source. Cet alignement permet la lecture synchronisee et la **lecture audio** a partir d'une banque de sons WAV (~12 Mo, 289 fichiers disponibles sur GitHub).
 
-*Pour une demo complete avec lecture audio et alignement visuel, voir le programme [Lectura Formule]({{ '/solutions/logiciels/programmes/' | relative_url }}).*
+*Pour une demo complete avec lecture audio et alignement visuel, voir le programme [Lectura Formule]({{ '/solutions/programmes/' | relative_url }}).*
 
 ---
 

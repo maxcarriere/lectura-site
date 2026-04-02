@@ -1,7 +1,7 @@
 ---
 title: Kit G2P / P2G
 layout: default
-permalink: /solutions/outils/ressources/kit-g2p-p2g/
+permalink: /solutions/ressources/kit-g2p-p2g/
 ---
 
 <div class="module-header">
@@ -11,7 +11,7 @@ permalink: /solutions/outils/ressources/kit-g2p-p2g/
 
 ## Presentation
 
-Kit complet pour entrainer et reproduire les modeles [G2P]({{ '/solutions/outils/modules/g2p/' | relative_url }}) (grapheme vers phoneme) et [P2G]({{ '/solutions/outils/modules/p2g/' | relative_url }}) (phoneme vers grapheme) de Lectura. Contient les donnees, les scripts et les modeles exportes.
+Kit complet pour entrainer et reproduire les modeles [G2P]({{ '/solutions/modules/g2p/' | relative_url }}) (grapheme vers phoneme) et [P2G]({{ '/solutions/modules/p2g/' | relative_url }}) (phoneme vers grapheme) de Lectura. Contient les donnees, les scripts et les modeles exportes.
 
 | | |
 |---|---|

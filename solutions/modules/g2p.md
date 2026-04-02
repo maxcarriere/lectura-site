@@ -1,7 +1,7 @@
 ---
 title: G2P — Grapheme vers Phoneme
 layout: default
-permalink: /solutions/outils/modules/g2p/
+permalink: /solutions/modules/g2p/
 ---
 
 <div class="module-header">

@@ -1,7 +1,7 @@
 ---
 title: Lexique
 layout: default
-permalink: /solutions/outils/modules/lexique/
+permalink: /solutions/modules/lexique/
 ---
 
 <div class="module-header">
@@ -18,7 +18,7 @@ permalink: /solutions/outils/modules/lexique/
 
 Module generique d'acces a un lexique francais. Fonctionne avec **n'importe quel fichier CSV, TSV ou SQLite** contenant des colonnes standard. Fournit 18 methodes de requetage organisees en 4 familles.
 
-Le module ne fournit pas de donnees : vous apportez votre propre base lexicale. Il est compatible avec les principales bases disponibles pour le francais ainsi qu'avec le [LeXiK de Lectura]({{ '/solutions/outils/ressources/lexik/' | relative_url }}).
+Le module ne fournit pas de donnees : vous apportez votre propre base lexicale. Il est compatible avec les principales bases disponibles pour le francais ainsi qu'avec le [LeXiK de Lectura]({{ '/solutions/ressources/lexik/' | relative_url }}).
 
 ### Bases compatibles
 
@@ -27,7 +27,7 @@ Le module ne fournit pas de donnees : vous apportez votre propre base lexicale. 
 | **Lexique383** | 142 000 | ortho, lemme, cgram, genre, nombre, phon, freqfilms2, nbsyll... | [lexique.org](http://www.lexique.org/) |
 | **GLAFF** | 1 500 000 | graphie, lemme, cgram, genre, nombre, phone... | [glaff.atilf.fr](http://redac.univ-tlse2.fr/lexiques/glaff.html) |
 | **Morphalou** | 540 000 | graphie, lemma, category, gender, number... | [ortolang.fr](https://www.ortolang.fr/market/lexicons/morphalou) |
-| **LeXiK Lectura** | 1 350 000 | 25 colonnes (ortho, phone, synonymes, definition...) | [En savoir plus]({{ '/solutions/outils/ressources/lexik/' | relative_url }}) |
+| **LeXiK Lectura** | 1 350 000 | 25 colonnes (ortho, phone, synonymes, definition...) | [En savoir plus]({{ '/solutions/ressources/lexik/' | relative_url }}) |
 
 ### Colonnes standard
 

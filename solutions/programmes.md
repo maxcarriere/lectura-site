@@ -1,7 +1,7 @@
 ---
 title: Programmes
 layout: default
-permalink: /solutions/logiciels/programmes/
+permalink: /solutions/programmes/
 ---
 
 Des applications desktop et web pour l'apprentissage interactif de la lecture.

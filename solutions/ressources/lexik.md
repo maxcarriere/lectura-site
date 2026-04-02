@@ -1,7 +1,7 @@
 ---
 title: LeXiK
 layout: default
-permalink: /solutions/outils/ressources/lexik/
+permalink: /solutions/ressources/lexik/
 ---
 
 <div class="module-header">
@@ -45,7 +45,7 @@ Synonymes, antonymes, domaine semantique, definition, registre, etymologie et ex
 
 ## Utilisation avec le module Lexique
 
-LeXiK est directement compatible avec le module [`lectura-lexique`]({{ '/solutions/outils/modules/lexique/' | relative_url }}). Le module reconnait automatiquement les 25 colonnes et expose toutes ses methodes : conjugaison, rimes, synonymes, anagrammes, recherche multi-critere.
+LeXiK est directement compatible avec le module [`lectura-lexique`]({{ '/solutions/modules/lexique/' | relative_url }}). Le module reconnait automatiquement les 25 colonnes et expose toutes ses methodes : conjugaison, rimes, synonymes, anagrammes, recherche multi-critere.
 
 ```python
 from lectura_lexique import Lexique

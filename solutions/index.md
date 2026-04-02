@@ -4,23 +4,23 @@ layout: default
 permalink: /solutions/
 ---
 
-Lectura propose des outils numeriques dedies a la lecture et a l'apprentissage du langage. Ils s'adressent aux enseignants, parents, orthophonistes, formateurs et a toute personne accompagnant un apprenant.
+Lectura propose des outils et services professionnels pour le traitement linguistique du francais. Ils s'adressent aux developpeurs, editeurs, chercheurs et a toute structure souhaitant integrer des briques de lecture et de traitement du langage.
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Outils de developpement</h2>
-    <p>Modules Python pour le traitement linguistique du francais : syllabation, phonemisation, POS-tagging.</p>
-    <a class="more-link" href="{{ '/solutions/outils/' | relative_url }}">Decouvrir</a>
+    <h2>Modules</h2>
+    <p>Six packages Python pour le traitement linguistique du francais : syllabation, phonemisation, POS-tagging, lexique.</p>
+    <a class="more-link" href="{{ '/solutions/modules/' | relative_url }}">Voir les modules</a>
   </div>
   <div class="home-card">
-    <h2>Logiciels</h2>
-    <p>Applications interactives pour s'entrainer a lire et manipuler les sons et les nombres.</p>
-    <a class="more-link" href="{{ '/solutions/logiciels/' | relative_url }}">Decouvrir</a>
+    <h2>Ressources</h2>
+    <p>Corpus annotes, base lexicale de 1,35 million d'entrees et modeles pre-entraines.</p>
+    <a class="more-link" href="{{ '/solutions/ressources/' | relative_url }}">Voir les ressources</a>
   </div>
   <div class="home-card">
-    <h2>Livres & Medias</h2>
-    <p>Supports de lecture progressifs, methode syllabique et histoires illustrees.</p>
-    <a class="more-link" href="{{ '/solutions/livres-medias/' | relative_url }}">Decouvrir</a>
+    <h2>Programmes</h2>
+    <p>Applications desktop et web : lecteur syllabique, NumReader, mini-jeux educatifs.</p>
+    <a class="more-link" href="{{ '/solutions/programmes/' | relative_url }}">Voir les programmes</a>
   </div>
   <div class="home-card">
     <h2>Services</h2>

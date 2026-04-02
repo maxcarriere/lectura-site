@@ -1,4 +1,4 @@
 ---
-redirect_to: /solutions/outils/
+redirect_to: /solutions/modules/
 permalink: /produits/outils-developpement/
 ---

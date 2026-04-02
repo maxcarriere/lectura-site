@@ -10,8 +10,13 @@ Lecteurs syllabiques, applications de lecture, ressources educatives, outils de 
 <div class="home-grid">
   <div class="home-card">
     <h2>Solutions</h2>
-    <p>Outils de developpement, logiciels, livres, medias et services editoriaux pour l'apprentissage de la lecture.</p>
+    <p>Modules Python, ressources linguistiques, programmes et services professionnels pour le traitement du francais.</p>
     <a class="more-link" href="{{ '/solutions/' | relative_url }}">Decouvrir les solutions</a>
+  </div>
+  <div class="home-card">
+    <h2>Produits</h2>
+    <p>Applications interactives, methode de lecture syllabique et histoires illustrees pour les familles.</p>
+    <a class="more-link" href="{{ '/produits/' | relative_url }}">Decouvrir les produits</a>
   </div>
   <div class="home-card">
     <h2>Projets</h2>

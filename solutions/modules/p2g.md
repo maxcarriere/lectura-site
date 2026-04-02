@@ -1,7 +1,7 @@
 ---
 title: P2G — Phoneme vers Grapheme
 layout: default
-permalink: /solutions/outils/modules/p2g/
+permalink: /solutions/modules/p2g/
 ---
 
 <div class="module-header">

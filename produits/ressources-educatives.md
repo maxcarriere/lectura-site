@@ -1,4 +1,4 @@
 ---
-redirect_to: /solutions/outils/ressources/
+redirect_to: /solutions/ressources/
 permalink: /produits/ressources-educatives/
 ---

@@ -1,7 +1,7 @@
 ---
 title: Applications
 layout: default
-permalink: /solutions/logiciels/applications/
+permalink: /produits/applications/
 ---
 
 Des applications mobiles et jeux interactifs pour manipuler les sons et les syllabes.

@@ -1,7 +1,7 @@
 ---
 title: Histoires syllabiques
 layout: default
-permalink: /solutions/livres-medias/histoires-syllabiques/
+permalink: /produits/livres-medias/histoires-syllabiques/
 ---
 
 Des petites histoires au vocabulaire controle par la progression syllabique.

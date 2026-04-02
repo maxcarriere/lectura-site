@@ -4,45 +4,30 @@
 - title: Solutions
   url: /solutions/
   children:
-    - title: Outils de developpement
-      url: /solutions/outils/
+    - title: Modules
+      url: /solutions/modules/
       children:
-        - title: Modules
-          url: /solutions/outils/modules/
-          children:
-            - title: Tokeniseur
-              url: /solutions/outils/modules/tokeniseur/
-            - title: G2P
-              url: /solutions/outils/modules/g2p/
-            - title: P2G
-              url: /solutions/outils/modules/p2g/
-            - title: Aligneur-Syllabeur
-              url: /solutions/outils/modules/syllabeur/
-            - title: Lexique
-              url: /solutions/outils/modules/lexique/
-            - title: Formules
-              url: /solutions/outils/modules/formules/
-        - title: Ressources
-          url: /solutions/outils/ressources/
-          children:
-            - title: LeXiK
-              url: /solutions/outils/ressources/lexik/
-            - title: Kit G2P / P2G
-              url: /solutions/outils/ressources/kit-g2p-p2g/
-    - title: Logiciels
-      url: /solutions/logiciels/
+        - title: Tokeniseur
+          url: /solutions/modules/tokeniseur/
+        - title: G2P
+          url: /solutions/modules/g2p/
+        - title: P2G
+          url: /solutions/modules/p2g/
+        - title: Aligneur-Syllabeur
+          url: /solutions/modules/syllabeur/
+        - title: Lexique
+          url: /solutions/modules/lexique/
+        - title: Formules
+          url: /solutions/modules/formules/
+    - title: Ressources
+      url: /solutions/ressources/
       children:
-        - title: Programmes
-          url: /solutions/logiciels/programmes/
-        - title: Applications
-          url: /solutions/logiciels/applications/
-    - title: "Livres & Medias"
-      url: /solutions/livres-medias/
-      children:
-        - title: "Methode de lecture"
-          url: /solutions/livres-medias/methode-lecture/
-        - title: "Histoires syllabiques"
-          url: /solutions/livres-medias/histoires-syllabiques/
+        - title: LeXiK
+          url: /solutions/ressources/lexik/
+        - title: Kit G2P / P2G
+          url: /solutions/ressources/kit-g2p-p2g/
+    - title: Programmes
+      url: /solutions/programmes/
     - title: Services
       url: /solutions/services/
       children:
@@ -50,6 +35,19 @@
           url: /solutions/services/integration/
         - title: "Services editoriaux"
           url: /solutions/services/services-editoriaux/
+
+- title: Produits
+  url: /produits/
+  children:
+    - title: Applications
+      url: /produits/applications/
+    - title: "Livres & Medias"
+      url: /produits/livres-medias/
+      children:
+        - title: "Methode de lecture"
+          url: /produits/livres-medias/methode-lecture/
+        - title: "Histoires syllabiques"
+          url: /produits/livres-medias/histoires-syllabiques/
 
 - title: Projets
   url: /projets/

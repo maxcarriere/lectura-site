@@ -1,4 +1,4 @@
 ---
-redirect_to: /solutions/logiciels/
+redirect_to: /produits/applications/
 permalink: /produits/applications-jeux/
 ---

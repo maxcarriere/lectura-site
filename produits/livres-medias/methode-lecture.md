@@ -1,7 +1,7 @@
 ---
 title: Methode de lecture
 layout: default
-permalink: /solutions/livres-medias/methode-lecture/
+permalink: /produits/livres-medias/methode-lecture/
 ---
 
 Des supports de lecture progressifs, concus pour accompagner l'apprentissage syllabique etape par etape.
