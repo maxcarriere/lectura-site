@@ -35,6 +35,18 @@ Compatible avec le module [`lectura-lexique`]({{ '/solutions/outils/modules/lexi
 
 ---
 
+## Kit d'entrainement G2P / P2G
+
+<span class="status-badge status-fonctionnel">Fonctionnel</span>
+
+Kit complet pour reproduire les modeles [G2P]({{ '/solutions/outils/modules/g2p/' | relative_url }}) et [P2G]({{ '/solutions/outils/modules/p2g/' | relative_url }}) : 22 649 phrases annotees (phonetique, POS, morphologie, liaison), 1,16 million de mots avec alignement phone-grapheme, scripts d'entrainement PyTorch en 2 phases, et modeles pre-entraines ONNX + NumPy.
+
+Sources : UD French-GSD, GLAFF, Lexique383 (licences CC BY-SA).
+
+<a class="more-link" href="{{ '/solutions/outils/ressources/kit-g2p-p2g/' | relative_url }}">En savoir plus</a>
+
+---
+
 ## Base lexicale Lexique383
 
 <span class="status-badge status-fonctionnel">Fonctionnel</span>
