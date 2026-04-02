@@ -23,6 +23,18 @@ Organisation en 5 parties :
 
 ---
 
+## LeXiK — Lexique francais Lectura
+
+<span class="status-badge status-fonctionnel">Fonctionnel</span>
+
+Base lexicale de 1,35 million d'entrees et 25 colonnes : orthographe, morphologie, phonetique IPA, 4 corpus de frequences, synonymes, antonymes, definitions. Compilation de sources libres (GLAFF, Wiktionnaire, OpenSubtitles...) dans un format unifie CSV/SQLite.
+
+Compatible avec le module [`lectura-lexique`]({{ '/solutions/outils/modules/lexique/' | relative_url }}) pour des requetes avancees : conjugaison, rimes, anagrammes, recherche multi-critere.
+
+<a class="more-link" href="{{ '/solutions/outils/ressources/lexik/' | relative_url }}">En savoir plus</a>
+
+---
+
 ## Base lexicale Lexique383
 
 <span class="status-badge status-fonctionnel">Fonctionnel</span>

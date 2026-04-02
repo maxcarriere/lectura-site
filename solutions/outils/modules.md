@@ -49,7 +49,7 @@ Six packages Python autonomes pour le traitement linguistique du francais, distr
   </div>
   <div class="home-card">
     <h2>Lexique</h2>
-    <p>Acces unifie au lexique francais : conjugaison, rimes, synonymes, anagrammes, recherche multi-critere.</p>
+    <p>Outil generique d'acces a un lexique francais (Lexique383, GLAFF, LeXiK...) : conjugaison, rimes, synonymes, anagrammes.</p>
     <code class="card-install">pip install lectura-lexique</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/outils/modules/lexique/' | relative_url }}">Details</a>
