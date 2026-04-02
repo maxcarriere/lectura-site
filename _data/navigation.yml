@@ -18,10 +18,17 @@
               url: /solutions/outils/modules/p2g/
             - title: Aligneur-Syllabeur
               url: /solutions/outils/modules/syllabeur/
+            - title: Lexique
+              url: /solutions/outils/modules/lexique/
             - title: Formules
               url: /solutions/outils/modules/formules/
         - title: Ressources
           url: /solutions/outils/ressources/
+          children:
+            - title: LeXiK
+              url: /solutions/outils/ressources/lexik/
+            - title: Kit G2P / P2G
+              url: /solutions/outils/ressources/kit-g2p-p2g/
     - title: Logiciels
       url: /solutions/logiciels/
       children:
