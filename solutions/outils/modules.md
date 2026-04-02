@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/outils/modules/
 ---
 
-Cinq packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Six packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -45,6 +45,16 @@ Cinq packages Python autonomes pour le traitement linguistique du francais, dist
       <a class="more-link" href="{{ '/solutions/outils/modules/syllabeur/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-aligneur/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Lexique</h2>
+    <p>Acces unifie au lexique francais : conjugaison, rimes, synonymes, anagrammes, recherche multi-critere.</p>
+    <code class="card-install">pip install lectura-lexique</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/outils/modules/lexique/' | relative_url }}">Details</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-lexique/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Lexique">GitHub</a>
     </div>
   </div>
   <div class="home-card">
