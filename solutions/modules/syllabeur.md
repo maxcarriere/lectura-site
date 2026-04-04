@@ -39,7 +39,7 @@ C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/
 
 *Le test en ligne utilise Lectura G2P comme phonemiseur et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-aligneur` + eSpeak-NG fonctionne sans telechargement supplementaire.*
 
-<div class="pyodide-demo" data-package="lectura-g2p,lectura-aligneur" data-numpy="1">
+<div class="pyodide-demo" data-package="lectura-g2p>=1.1.0,lectura-aligneur>=2.3.0" data-numpy="1">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
 from pathlib import Path
