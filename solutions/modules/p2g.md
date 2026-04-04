@@ -34,12 +34,12 @@ Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zer
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
-  <span class="ipa-key" data-char="e" title="e ferme">e <small>(e)</small></span>
+  <span class="ipa-key" data-char="e" title="e ferme">e <small>(é)</small></span>
   <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
   <span class="ipa-key" data-char="a" title="a">a <small>(a)</small></span>
   <span class="ipa-key" data-char="ɑ" title="a posterieur">ɑ <small>(a)</small></span>
   <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(o)</small></span>
-  <span class="ipa-key" data-char="o" title="o ferme">o <small>(o)</small></span>
+  <span class="ipa-key" data-char="o" title="o ferme">o <small>(ô)</small></span>
   <span class="ipa-key" data-char="u" title="ou">u <small>(ou)</small></span>
   <span class="ipa-key" data-char="y" title="u">y <small>(u)</small></span>
   <span class="ipa-key" data-char="ø" title="eu ferme">ø <small>(oeu)</small></span>
