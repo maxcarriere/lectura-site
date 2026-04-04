@@ -103,10 +103,33 @@ lines.append('')
 
 for gi, rg in enumerate(result.groupes, 1):
     g = rg.groupe
-    jonc = ', '.join(g.jonctions) if g.jonctions else '-'
     mots_txt = ' + '.join(m.text if hasattr(m, 'text') and m.text else '?' for m in g.mots)
-    lines.append(f'G{gi}: [{mots_txt}]  /{g.phone_groupe}/  jonctions: {jonc}')
+    lines.append(f'G{gi}: [{mots_txt}]  /{g.phone_groupe}/')
+
+    # Liaisons et jonctions
+    if g.jonctions:
+        for j in g.jonctions:
+            if j.startswith('liaison_'):
+                cons = j.split('_')[1]
+                lines.append(f'  ‿ Liaison en /{cons}/')
+            elif j == 'elision':
+                lines.append(f"  ' Elision")
+            elif j == 'enchainement':
+                lines.append(f'  ‿ Enchainement')
+
     for si, s in enumerate(rg.syllabes, 1):
+        # Detecter lettres muettes et doublees dans ortho
+        muettes = []
+        doublees = []
+        ortho_clean = s.ortho
+        for ci, c in enumerate(s.ortho):
+            if c == '\u00b0' and ci > 0:
+                muettes.append(s.ortho[ci - 1])
+            elif c == '\u00b2' and ci > 0:
+                doublees.append(s.ortho[ci - 1])
+        # Afficher l'ortho avec marqueurs visibles
+        ortho_display = s.ortho.replace('\u00b0', '\u0336').replace('\u00b2', '\u0324')
+
         att_parts = []
         for p in s.attaque.phonemes:
             att_parts.append(f'{p.ipa}={p.grapheme}' if p.grapheme else p.ipa)
@@ -119,7 +142,15 @@ for gi, rg in enumerate(result.groupes, 1):
         att = ','.join(att_parts) if att_parts else '-'
         noy = ','.join(noy_parts) if noy_parts else '-'
         cod = ','.join(cod_parts) if cod_parts else '-'
-        lines.append(f'  σ{si} /{s.phone}/ <<{s.ortho}>>  att=[{att}] noy=[{noy}] cod=[{cod}]')
+        line = f'  \u03c3{si} /{s.phone}/ <<{ortho_display}>>  att=[{att}] noy=[{noy}] cod=[{cod}]'
+        annotations = []
+        if muettes:
+            annotations.append(f'muettes: {",".join(muettes)}')
+        if doublees:
+            annotations.append(f'doublees: {",".join(doublees)}')
+        if annotations:
+            line += '  (' + ', '.join(annotations) + ')'
+        lines.append(line)
     lines.append('')
 
 '\n'.join(lines)
