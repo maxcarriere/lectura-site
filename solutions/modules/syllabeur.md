@@ -144,6 +144,8 @@ for gi, rg in enumerate(result.groupes, 1):
         lines.append(f'  \u03c3{si} /{s.phone}/ <<{s.ortho}>> [{s.span[0]}:{s.span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]')
     lines.append('')
 
+lines.append('---')
+lines.append('\u00b0 = lettre muette   \u00b2 = lettre correspondant a deux phonemes')
 '\n'.join(lines)
   </script>
   <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase francaise...">
