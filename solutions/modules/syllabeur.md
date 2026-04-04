@@ -81,9 +81,19 @@ liaisons = list(g2p_result.get('liaison', []))
 from lectura_nlp.posttraitement import appliquer_liaison
 phones = appliquer_liaison(tokens, phones, liaisons)
 
-# Filtrer la ponctuation et construire les MotAnalyse
+# Filtrer la ponctuation et construire les MotAnalyse avec spans
 class _Tok:
-    def __init__(self, text): self.text = text
+    def __init__(self, text, span=(0,0)):
+        self.text = text
+        self.span = span
+
+# Calculer les positions de chaque token dans le texte source
+_spans = []
+_pos = 0
+for tok in tokens:
+    _idx = text.find(tok, _pos)
+    _spans.append((_idx, _idx + len(tok)) if _idx >= 0 else (0, 0))
+    if _idx >= 0: _pos = _idx + len(tok)
 
 mots = []
 for i, tok in enumerate(tokens):
@@ -91,7 +101,7 @@ for i, tok in enumerate(tokens):
         continue
     phone = phones[i] if i < len(phones) else ''
     liaison = liaisons[i] if i < len(liaisons) else 'none'
-    mots.append(MotAnalyse(token=_Tok(tok), phone=phone, liaison=liaison))
+    mots.append(MotAnalyse(token=_Tok(tok, _spans[i]), phone=phone, liaison=liaison))
 
 result = _syllabeur.analyser_complet(mots)
 
@@ -104,7 +114,7 @@ lines.append('')
 for gi, rg in enumerate(result.groupes, 1):
     g = rg.groupe
     mots_txt = ' + '.join(m.text if hasattr(m, 'text') and m.text else '?' for m in g.mots)
-    lines.append(f'G{gi}: [{mots_txt}]  /{g.phone_groupe}/')
+    lines.append(f'G{gi}: [{mots_txt}]  /{g.phone_groupe}/  [{g.span[0]}:{g.span[1]}]')
 
     # Liaisons et jonctions
     if g.jonctions:
@@ -131,7 +141,7 @@ for gi, rg in enumerate(result.groupes, 1):
         noy = ','.join(noy_parts) if noy_parts else '-'
         cod = ','.join(cod_parts) if cod_parts else '-'
         # Garder les marqueurs ° (muettes) et ² (doublees) visibles directement
-        lines.append(f'  \u03c3{si} /{s.phone}/ <<{s.ortho}>>  att=[{att}] noy=[{noy}] cod=[{cod}]')
+        lines.append(f'  \u03c3{si} /{s.phone}/ <<{s.ortho}>> [{s.span[0]}:{s.span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]')
     lines.append('')
 
 '\n'.join(lines)
