@@ -118,18 +118,6 @@ for gi, rg in enumerate(result.groupes, 1):
                 lines.append(f'  ‿ Enchainement')
 
     for si, s in enumerate(rg.syllabes, 1):
-        # Detecter lettres muettes et doublees dans ortho
-        muettes = []
-        doublees = []
-        ortho_clean = s.ortho
-        for ci, c in enumerate(s.ortho):
-            if c == '\u00b0' and ci > 0:
-                muettes.append(s.ortho[ci - 1])
-            elif c == '\u00b2' and ci > 0:
-                doublees.append(s.ortho[ci - 1])
-        # Afficher l'ortho avec marqueurs visibles
-        ortho_display = s.ortho.replace('\u00b0', '\u0336').replace('\u00b2', '\u0324')
-
         att_parts = []
         for p in s.attaque.phonemes:
             att_parts.append(f'{p.ipa}={p.grapheme}' if p.grapheme else p.ipa)
@@ -142,15 +130,8 @@ for gi, rg in enumerate(result.groupes, 1):
         att = ','.join(att_parts) if att_parts else '-'
         noy = ','.join(noy_parts) if noy_parts else '-'
         cod = ','.join(cod_parts) if cod_parts else '-'
-        line = f'  \u03c3{si} /{s.phone}/ <<{ortho_display}>>  att=[{att}] noy=[{noy}] cod=[{cod}]'
-        annotations = []
-        if muettes:
-            annotations.append(f'muettes: {",".join(muettes)}')
-        if doublees:
-            annotations.append(f'doublees: {",".join(doublees)}')
-        if annotations:
-            line += '  (' + ', '.join(annotations) + ')'
-        lines.append(line)
+        # Garder les marqueurs ° (muettes) et ² (doublees) visibles directement
+        lines.append(f'  \u03c3{si} /{s.phone}/ <<{s.ortho}>>  att=[{att}] noy=[{noy}] cod=[{cod}]')
     lines.append('')
 
 '\n'.join(lines)
