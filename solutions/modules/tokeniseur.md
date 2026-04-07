@@ -58,7 +58,7 @@ pages                      MOT
 
 ## Essayer en ligne
 
-<div class="pyodide-demo" data-package="lectura-tokeniseur" data-code="
+<div class="pyodide-demo" data-package="lectura-tokeniseur>=2.2.1" data-code="
 from lectura_tokeniseur import tokenise, Formule
 tokens = tokenise('{INPUT}')
 lines = []
