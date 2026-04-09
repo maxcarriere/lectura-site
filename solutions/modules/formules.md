@@ -77,7 +77,8 @@ if r.events:
     lines.append('')
     lines.append('Events alignes :')
     for e in r.events:
-        lines.append(f'  {e.ortho:20s} {e.phone:15s} composant={e.composant}')
+        s, end = e.span_num if e.span_num else (0, 0)
+        lines.append(f'  {e.ortho:20s} {e.phone:15s} span_num=[{s}:{end}]')
 '\n'.join(lines)
 ">
   <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
