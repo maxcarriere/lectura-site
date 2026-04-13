@@ -379,8 +379,8 @@ body *::after {
   left: var(--sidebar-width);
   right: 0;
   bottom: var(--footer-height);
-  background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=4") no-repeat center top;
-  background-size: 100% 100%;
+  background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=4") no-repeat center center;
+  background-size: cover;
   z-index: 0;
   pointer-events: none;
 }
@@ -768,8 +768,8 @@ html[data-darkreader-mode] .parchment-content a:hover {
   text-decoration: underline;
 }
 
-/* ===== 9. Mobile / tablette (< 1200px) ===== */
-@media (max-width: 1199px) {
+/* ===== 9. Mobile / tablette (< 1400px) ===== */
+@media (max-width: 1399px) {
   /* Header compact */
   .site-header {
     padding: 0.5rem 1rem;
