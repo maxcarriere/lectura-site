@@ -348,6 +348,7 @@ body *::after {
 .page-wrapper {
   position: relative;
   z-index: 1;
+  min-width: 0;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -390,9 +391,8 @@ body *::after {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: min(1100px, 100%);
+  max-width: 100%;
   min-width: 0;
-  flex-shrink: 1;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -431,10 +431,10 @@ html[data-darkreader-scheme] .parchment-middle * {
 .parchment-content {
   position: relative;
   z-index: 1;
-  max-width: min(96ch, calc(100% - 60px));
+  max-width: calc(100% - 4rem);
   width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 2rem 4rem 6rem;
+  padding: 1.25rem 2rem 4rem 5rem;
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
