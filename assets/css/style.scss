@@ -768,8 +768,23 @@ html[data-darkreader-mode] .parchment-content a:hover {
   text-decoration: underline;
 }
 
-/* ===== 9. Mobile / tablette (< 1400px) ===== */
-@media (max-width: 1399px) {
+/* ===== 8b. Petit desktop (1200px - 1499px) ===== */
+@media (min-width: 1200px) and (max-width: 1499px) {
+  :root {
+    --sidebar-width: 200px;
+  }
+
+  .parchment {
+    max-width: 100%;
+  }
+
+  .parchment-content {
+    padding-left: 5rem;
+  }
+}
+
+/* ===== 9. Mobile / tablette (< 1200px) ===== */
+@media (max-width: 1199px) {
   /* Header compact */
   .site-header {
     padding: 0.5rem 1rem;
