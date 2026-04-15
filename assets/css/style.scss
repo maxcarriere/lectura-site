@@ -380,7 +380,7 @@ body *::after {
   left: var(--sidebar-width);
   right: 0;
   bottom: var(--footer-height);
-  background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=6") repeat-y center top;
+  background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") no-repeat center top;
   background-size: 100% auto;
   z-index: 0;
   pointer-events: none;
