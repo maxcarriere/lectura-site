@@ -779,7 +779,13 @@ html[data-darkreader-mode] .parchment-content a:hover {
   }
 
   .parchment-content {
-    padding-left: 5rem;
+    max-width: calc(100% - 2rem);
+    padding-left: 4.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
