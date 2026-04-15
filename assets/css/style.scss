@@ -348,6 +348,7 @@ body *::after {
 .page-wrapper {
   position: relative;
   z-index: 1;
+  min-width: 0;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -395,6 +396,7 @@ body *::after {
   flex-shrink: 0;
   box-sizing: border-box;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .parchment-middle {
