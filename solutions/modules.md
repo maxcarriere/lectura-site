@@ -77,12 +77,11 @@ Six packages Python autonomes pour le traitement linguistique du francais, distr
 # Tous les modules d'un coup
 pip install lectura
 
-# Avec backends ONNX pour G2P/P2G (recommande)
-pip install lectura[onnx]
-
 # Un seul module
 pip install lectura-tokeniseur
 
-# G2P avec backend ONNX
-pip install lectura-g2p[onnx]
+# G2P — fonctionne immediatement via l'API (zero config)
+pip install lectura-g2p
 ```
+
+Par defaut, les modules G2P, P2G et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-g2p[onnx]`).

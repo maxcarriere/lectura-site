@@ -24,13 +24,13 @@ Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G 
 | **POS** | Etiquetage morpho-syntaxique (19 tags) | 97.0% accuracy |
 | **Morphologie** | Genre, nombre, temps, mode, personne | 92-97% |
 
-Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
+Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
 
 ---
 
 ## Tester en ligne
 
-*Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~26 Mo). En local, `pip install lectura-p2g[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
+*Le test en ligne utilise l'API Lectura — aucun telechargement de modele necessaire.*
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
@@ -72,33 +72,23 @@ Trois backends d'inference : **ONNX Runtime**, **NumPy**, ou **pur Python** (zer
   <span class="ipa-key" data-char="ʁ" title="r">ʁ <small>(r)</small></span>
 </div>
 
-<div class="pyodide-demo" data-package="lectura-p2g" data-numpy="1">
+<div class="pyodide-demo" data-package="lectura-p2g" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
-from pathlib import Path
-import importlib
+import json
 
-response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/P2G/modeles_numpy/unifie_p2g_v2_weights.json')
-weights_text = await response.string()
-Path('/tmp/unifie_p2g_v2_weights.json').write_text(weights_text)
+async def _p2g_api_call(ipa_words):
+    resp = await pyfetch('https://api.lec-tu-ra.com/p2g/analyser',
+        method='POST',
+        headers={'Content-Type': 'application/json'},
+        body=json.dumps({'ipa_words': ipa_words}))
+    return await resp.json()
 
-import lectura_p2g
-pkg_dir = Path(lectura_p2g.__file__).parent
-response2 = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/P2G/src/lectura_p2g/inference_numpy.py')
-fixed_code = await response2.string()
-(pkg_dir / 'inference_numpy.py').write_text(fixed_code)
-
-from lectura_p2g import inference_numpy
-importlib.reload(inference_numpy)
-from lectura_p2g.inference_numpy import NumpyInferenceEngine
-from lectura_p2g import get_model_path
-
-global _p2g_engine
-_p2g_engine = NumpyInferenceEngine('/tmp/unifie_p2g_v2_weights.json', str(get_model_path('unifie_p2g_v2_vocab.json')))
+global _p2g_api_call
   </script>
   <script type="text/x-python" class="demo-run">
 tokens = '{INPUT}'.split()
-result = _p2g_engine.analyser(tokens)
+result = await _p2g_api_call(tokens)
 lines = []
 lines.append(f"{'IPA':<16}{'Orthographe':<20}{'POS'}")
 lines.append('-' * 48)
@@ -109,8 +99,8 @@ for i, tok in enumerate(tokens):
 '\n'.join(lines)
   </script>
   <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
-  <button class="demo-btn" type="button">Charger et tester (~26 Mo)</button>
-  <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
+  <button class="demo-btn" type="button">Tester</button>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
 </div>
 
 ---
@@ -118,11 +108,9 @@ for i, tok in enumerate(tokens):
 ## Exemple de code
 
 ```python
-from lectura_p2g import get_model_path
-from lectura_p2g.inference_onnx import OnnxInferenceEngine
+from lectura_p2g import creer_engine
 
-engine = OnnxInferenceEngine(get_model_path("unifie_p2g_v2_int8.onnx"),
-                              get_model_path("unifie_p2g_v2_vocab.json"))
+engine = creer_engine()   # mode API par defaut (zero config)
 
 result = engine.analyser(["le", "ɑ̃fɑ̃", "sɔ̃", "aʁive", "a", "la", "mɛzɔ̃"])
 
@@ -153,9 +141,9 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-p2g             # zero dependance (backend pur Python)
-pip install lectura-p2g[numpy]      # backend NumPy
-pip install lectura-p2g[onnx]       # backend ONNX Runtime (le plus rapide)
+pip install lectura-p2g             # mode API (zero config, zero dependance)
+pip install lectura-p2g[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
+pip install lectura-p2g[numpy]      # backend NumPy local
 ```
 
 ---
@@ -163,7 +151,8 @@ pip install lectura-p2g[onnx]       # backend ONNX Runtime (le plus rapide)
 ## Caracteristiques techniques
 
 - **2.56M parametres**, modele ONNX INT8 = 2.6 Mo
-- **3 backends** : ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
+- **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Double licence** : AGPL-3.0 (libre) / Licence commerciale

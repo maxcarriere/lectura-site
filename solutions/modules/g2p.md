@@ -27,46 +27,37 @@ Un seul modele **BiLSTM char-level multi-tete** (1.75M parametres, ONNX INT8 = 1
 
 *Performances mesurees sur un corpus de test de phrases francaises completes (mots en contexte).*
 
-Trois backends d'inference : **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zero dependance).
+Quatre backends d'inference : **API** (zero config), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zero dependance).
 
 ### G2P vs eSpeak-NG
 
 Le modele Lectura G2P se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : il predit la prononciation, la categorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonemise chaque mot isolement, sans desambiguisation contextuelle (homographes, liaisons).
 
-Une comparaison en ligne n'est pas possible (eSpeak-NG est un binaire systeme, non disponible dans le navigateur), mais vous pouvez comparer localement :
-
-```bash
-pip install lectura-g2p[onnx]
-sudo apt install espeak-ng    # ou brew install espeak
-```
-
 ---
 
 ## Tester en ligne
 
-*Le test en ligne utilise le backend NumPy et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-g2p[onnx]` offre une inference ~25x plus rapide (~2 ms/phrase).*
+*Le test en ligne utilise l'API Lectura — aucun telechargement de modele necessaire.*
 
-<div class="pyodide-demo" data-package="lectura-g2p" data-numpy="1">
+<div class="pyodide-demo" data-package="lectura-g2p" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
-from pathlib import Path
+import json
 
-response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/G2P/modeles_numpy/unifie_weights.json')
-weights_text = await response.string()
-Path('/tmp/unifie_weights.json').write_text(weights_text)
+async def _g2p_api_call(tokens):
+    resp = await pyfetch('https://api.lec-tu-ra.com/g2p/analyser',
+        method='POST',
+        headers={'Content-Type': 'application/json'},
+        body=json.dumps({'tokens': tokens}))
+    return await resp.json()
 
-from lectura_nlp import get_model_path
-from lectura_nlp.inference_numpy import NumpyInferenceEngine
-from lectura_nlp.tokeniseur import tokeniser as _g2p_tokeniser
-
-global _g2p_engine
-_g2p_engine = NumpyInferenceEngine('/tmp/unifie_weights.json', str(get_model_path('unifie_vocab.json')))
+global _g2p_api_call
   </script>
   <script type="text/x-python" class="demo-run">
 import re
 _punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-tokens = _g2p_tokeniser('{INPUT}')
-result = _g2p_engine.analyser(tokens)
+tokens = '{INPUT}'.split()
+result = await _g2p_api_call(tokens)
 lines = []
 lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
 lines.append('-' * 56)
@@ -80,8 +71,8 @@ for i, tok in enumerate(tokens):
 '\n'.join(lines)
   </script>
   <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase francaise...">
-  <button class="demo-btn" type="button">Charger et tester (~18 Mo)</button>
-  <pre class="demo-output">Cliquez sur le bouton pour charger le modele et lancer la demo.</pre>
+  <button class="demo-btn" type="button">Tester</button>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
 </div>
 
 ---
@@ -89,15 +80,11 @@ for i, tok in enumerate(tokens):
 ## Exemple de code
 
 ```python
-from lectura_nlp import get_model_path
-from lectura_nlp.inference_onnx import OnnxInferenceEngine
-from lectura_nlp.tokeniseur import tokeniser
+from lectura_nlp import creer_engine
 
-engine = OnnxInferenceEngine(get_model_path("unifie_int8.onnx"),
-                              get_model_path("unifie_vocab.json"))
+engine = creer_engine()   # mode API par defaut (zero config)
 
-tokens = tokeniser("Les enfants sont arrivés à la maison.")
-result = engine.analyser(tokens)
+result = engine.analyser(["Les", "enfants", "sont", "arrivés", "à", "la", "maison"])
 
 print(result["g2p"])      # ['le', 'ɑ̃fɑ̃', 'sɔ̃', 'aʁive', 'a', 'la', 'mɛzɔ̃']
 print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER:pper', 'PRE', 'ART:def', 'NOM']
@@ -124,9 +111,9 @@ Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-g2p             # zero dependance (backend pur Python)
-pip install lectura-g2p[numpy]      # backend NumPy
-pip install lectura-g2p[onnx]       # backend ONNX Runtime (le plus rapide)
+pip install lectura-g2p             # mode API (zero config, zero dependance)
+pip install lectura-g2p[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
+pip install lectura-g2p[numpy]      # backend NumPy local
 ```
 
 ---
@@ -134,6 +121,7 @@ pip install lectura-g2p[onnx]       # backend ONNX Runtime (le plus rapide)
 ## Caracteristiques techniques
 
 - **1.75M parametres**, modele ONNX INT8 = 1.8 Mo
-- **3 backends** : ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Double licence** : AGPL-3.0 (libre) / Licence commerciale

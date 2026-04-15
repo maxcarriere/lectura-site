@@ -16,7 +16,7 @@ permalink: /solutions/modules/formules/
 
 ## Presentation
 
-Module autonome, **zero dependance** externe. Transforme toute formule ecrite en sa lecture francaise avec transcription phonetique IPA.
+Module autonome, **zero dependance** externe. Transforme toute formule ecrite en sa lecture francaise avec transcription phonetique IPA. Fonctionne en local (zero config) ou via l'API Lectura.
 
 Nombres, sigles, dates, telephones, heures, monnaies, ordinaux, fractions, notations scientifiques, expressions mathematiques, coordonnees GPS — tout est couvert.
 

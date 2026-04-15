@@ -37,120 +37,72 @@ C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/
 
 ## Tester en ligne
 
-*Le test en ligne utilise Lectura G2P comme phonemiseur et necessite le telechargement des poids du modele (~18 Mo). En local, `pip install lectura-aligneur` + eSpeak-NG fonctionne sans telechargement supplementaire.*
+*Le test en ligne utilise l'API Lectura (G2P + Aligneur) — aucun telechargement necessaire.*
 
-<div class="pyodide-demo" data-package="lectura-g2p>=1.1.0,lectura-aligneur>=2.3.0" data-numpy="1">
+<div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
-from pathlib import Path
+import json
 
-response = await pyfetch('https://raw.githubusercontent.com/maxcarriere/lectura-modules/main/G2P/modeles_numpy/unifie_weights.json')
-weights_text = await response.string()
-Path('/tmp/unifie_weights.json').write_text(weights_text)
+async def _aligneur_api_call(word, phone=None):
+    resp = await pyfetch('https://api.lec-tu-ra.com/aligneur/analyze',
+        method='POST',
+        headers={'Content-Type': 'application/json'},
+        body=json.dumps({'word': word, 'phone': phone}))
+    return await resp.json()
 
-from lectura_nlp import get_model_path
-from lectura_nlp.inference_numpy import NumpyInferenceEngine
-from lectura_nlp.tokeniseur import tokeniser as _syl_tokeniser
-from lectura_aligneur import LecturaSyllabeur, MotAnalyse
+async def _g2p_api_call(tokens):
+    resp = await pyfetch('https://api.lec-tu-ra.com/g2p/analyser',
+        method='POST',
+        headers={'Content-Type': 'application/json'},
+        body=json.dumps({'tokens': tokens}))
+    return await resp.json()
 
-_syl_g2p_engine = NumpyInferenceEngine('/tmp/unifie_weights.json', str(get_model_path('unifie_vocab.json')))
-
-class _G2PPhonemizer:
-    def predict(self, word):
-        result = _syl_g2p_engine.analyser([word])
-        return result['g2p'][0] if result.get('g2p') else ''
-
-global _syllabeur
-_syllabeur = LecturaSyllabeur(phonemizer=_G2PPhonemizer())
-global _g2p_engine_syl
-_g2p_engine_syl = _syl_g2p_engine
-global _tokeniser_syl
-_tokeniser_syl = _syl_tokeniser
+global _aligneur_api_call, _g2p_api_call
   </script>
   <script type="text/x-python" class="demo-run">
 import re
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
 text = '{INPUT}'
-tokens = _tokeniser_syl(text)
-g2p_result = _g2p_engine_syl.analyser(tokens)
+tokens = text.split()
+tokens = [t for t in tokens if t]
 
-phones = list(g2p_result.get('g2p', []))
-liaisons = list(g2p_result.get('liaison', []))
+# G2P
+g2p = await _g2p_api_call(tokens)
 
-# Appliquer les liaisons (insere la consonne latente dans le phone du mot precedent)
-from lectura_nlp.posttraitement import appliquer_liaison
-phones = appliquer_liaison(tokens, phones, liaisons)
+lines = []
+_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
 
-# Filtrer la ponctuation et construire les MotAnalyse avec spans
-class _Tok:
-    def __init__(self, text, span=(0,0)):
-        self.text = text
-        self.span = span
-
-# Calculer les positions de chaque token dans le texte source
-_spans = []
-_pos = 0
-for tok in tokens:
-    _idx = text.find(tok, _pos)
-    _spans.append((_idx, _idx + len(tok)) if _idx >= 0 else (0, 0))
-    if _idx >= 0: _pos = _idx + len(tok)
-
-mots = []
 for i, tok in enumerate(tokens):
     if _punct_re.match(tok):
         continue
-    phone = phones[i] if i < len(phones) else ''
-    liaison = liaisons[i] if i < len(liaisons) else 'none'
-    mots.append(MotAnalyse(token=_Tok(tok, _spans[i]), phone=phone, liaison=liaison))
-
-result = _syllabeur.analyser_complet(mots)
-
-lines = []
-lines.append(f'Groupes de lecture : {result.nb_groupes}   Syllabes : {result.nb_syllabes}')
-lines.append(f'Lecture :  {result.format_ligne1()}')
-lines.append(f'Syllabes : {result.format_ligne2()}')
-lines.append('')
-
-for gi, rg in enumerate(result.groupes, 1):
-    g = rg.groupe
-    mots_txt = ' + '.join(m.text if hasattr(m, 'text') and m.text else '?' for m in g.mots)
-    lines.append(f'G{gi}: [{mots_txt}]  /{g.phone_groupe}/  [{g.span[0]}:{g.span[1]}]')
-
-    # Liaisons et jonctions
-    if g.jonctions:
-        for j in g.jonctions:
-            if j.startswith('liaison_'):
-                cons = j.split('_')[1]
-                lines.append(f'  ‿ Liaison en /{cons}/')
-            elif j == 'elision':
-                lines.append(f"  ' Elision")
-            elif j == 'enchainement':
-                lines.append(f'  ‿ Enchainement')
-
-    for si, s in enumerate(rg.syllabes, 1):
+    phone = g2p['g2p'][i] if i < len(g2p['g2p']) else ''
+    if not phone:
+        continue
+    # Aligneur
+    res = await _aligneur_api_call(tok, phone)
+    lines.append(f"{tok} -> /{phone}/")
+    for si, s in enumerate(res.get('syllabes', []), 1):
         att_parts = []
-        for p in s.attaque.phonemes:
-            att_parts.append(f'{p.ipa}={p.grapheme}' if p.grapheme else p.ipa)
+        for p in s.get('attaque', {}).get('phonemes', []):
+            att_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
         noy_parts = []
-        for p in s.noyau.phonemes:
-            noy_parts.append(f'{p.ipa}={p.grapheme}' if p.grapheme else p.ipa)
+        for p in s.get('noyau', {}).get('phonemes', []):
+            noy_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
         cod_parts = []
-        for p in s.coda.phonemes:
-            cod_parts.append(f'{p.ipa}={p.grapheme}' if p.grapheme else p.ipa)
+        for p in s.get('coda', {}).get('phonemes', []):
+            cod_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
         att = ','.join(att_parts) if att_parts else '-'
         noy = ','.join(noy_parts) if noy_parts else '-'
         cod = ','.join(cod_parts) if cod_parts else '-'
-        # Garder les marqueurs ° (muettes) et ² (doublees) visibles directement
-        lines.append(f'  \u03c3{si} /{s.phone}/ <<{s.ortho}>> [{s.span[0]}:{s.span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]')
+        span = s.get('span', [0,0])
+        lines.append(f"  \u03c3{si} /{s['phone']}/ <<{s['ortho']}>> [{span[0]}:{span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]")
     lines.append('')
 
-lines.append('---')
-lines.append('\u00b0 = lettre muette   \u00b2 = lettre correspondant a deux phonemes')
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase francaise...">
-  <button class="demo-btn" type="button">Charger et tester (~18 Mo)</button>
-  <pre class="demo-output">Cliquez sur le bouton pour charger le modele G2P et lancer la demo.</pre>
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase francaise...">
+  <button class="demo-btn" type="button">Tester</button>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
 </div>
 
 ---
@@ -162,7 +114,7 @@ lines.append('\u00b0 = lettre muette   \u00b2 = lettre correspondant a deux phon
 ```python
 from lectura_aligneur import LecturaSyllabeur
 
-syllabeur = LecturaSyllabeur()    # eSpeak-NG par defaut
+syllabeur = LecturaSyllabeur()    # mode API par defaut
 result = syllabeur.analyze("chocolat")
 
 print(result.format_detail())
@@ -206,11 +158,9 @@ print(f"Syllabes : {result.format_ligne2()}")
 
 ```python
 from lectura_aligneur import LecturaSyllabeur
-from lectura_nlp.inference_onnx import OnnxInferenceEngine
-from lectura_nlp import get_model_path
+from lectura_nlp import creer_engine
 
-g2p = OnnxInferenceEngine(get_model_path("unifie_int8.onnx"),
-                           get_model_path("unifie_vocab.json"))
+g2p = creer_engine()    # mode API par defaut
 
 class G2PPhonemizer:
     def predict(self, word):
@@ -269,7 +219,7 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 ## Installation
 
 ```bash
-pip install lectura-aligneur
+pip install lectura-aligneur       # mode API par defaut (zero dependance)
 ```
 
 **Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura G2P]({{ '/solutions/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
@@ -279,6 +229,7 @@ pip install lectura-aligneur
 ## Caracteristiques techniques
 
 - **Zero dependance** Python
+- **Bi-modal** : mode API (zero config) ou mode local avec donnees embarquees
 - **Alignement DFS** grapheme-phoneme avec gestion des lettres muettes et fusionnees
 - **Modele de sonorite** pour la syllabation (5 classes phonologiques)
 - **Architecture E1/E2** : construction des groupes puis syllabation, utilisables separement
