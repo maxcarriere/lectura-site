@@ -775,20 +775,6 @@ html[data-darkreader-mode] .parchment-content a:hover {
   :root {
     --sidebar-width: 200px;
   }
-
-  .parchment {
-    max-width: 100%;
-  }
-
-  .parchment-content {
-    max-width: calc(100% - 2rem);
-    padding-left: 4.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .home-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
 }
 
 /* ===== 9. Mobile / tablette (< 1200px) ===== */
