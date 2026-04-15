@@ -774,6 +774,10 @@ html[data-darkreader-mode] .parchment-content a:hover {
     --sidebar-width: 200px;
   }
 
+  .page-wrapper::before {
+    background-size: 100% 100%;
+  }
+
   .parchment {
     max-width: 100%;
   }
