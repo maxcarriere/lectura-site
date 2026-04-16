@@ -83,8 +83,6 @@ async def _p2g_api_call(ipa_words):
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'ipa_words': ipa_words}))
     return await resp.json()
-
-global _p2g_api_call
   </script>
   <script type="text/x-python" class="demo-run">
 tokens = '{INPUT}'.split()

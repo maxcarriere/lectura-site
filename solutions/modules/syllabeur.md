@@ -57,8 +57,6 @@ async def _g2p_api_call(tokens):
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'tokens': tokens}))
     return await resp.json()
-
-global _aligneur_api_call, _g2p_api_call
   </script>
   <script type="text/x-python" class="demo-run">
 import re
