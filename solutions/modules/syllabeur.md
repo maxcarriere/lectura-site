@@ -233,4 +233,4 @@ pip install lectura-aligneur       # mode API par defaut (zero dependance)
 - **Architecture E1/E2** : construction des groupes puis syllabation, utilisables separement
 - **Phonemiseur pluggable** : eSpeak-NG, Lectura G2P, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Double licence** : AGPL-3.0 (libre) / Licence commerciale — [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
