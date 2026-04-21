@@ -118,7 +118,7 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Architecture du modele (v2)
+## Architecture du modele (v3)
 
 Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
 
@@ -127,12 +127,16 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
                                           |
                   +-----------------------+--------------------+
                   v                                             v
-        Word representations                     Word BiLSTM (192h → 384d)
+        Word representations              Word repr (320d) + Lex Features (24d)
         (fwd[last] || bwd[first])                          |
+                                                 Word BiLSTM (192h → 384d)
+                                                       |
                                             +--------------+--------------+
                                            POS        Morpho (x6)    Word Feedback
                                                                     → P2G Head (704d → 1198)
 ```
+
+**Features lexicales (optionnel)** : si le module `lectura-lexique` est installe ou qu'un fichier `lexique_pos_candidates.json` est present, le modele recoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela ameliore la prediction POS et la morphologie, ce qui ameliore aussi la reconstruction orthographique via le word feedback. Sans lexique, le modele fonctionne normalement.
 
 ---
 
@@ -152,5 +156,6 @@ pip install lectura-p2g[numpy]      # backend NumPy local
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
+- **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour ameliorer POS/morpho
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)

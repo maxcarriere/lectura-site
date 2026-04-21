@@ -98,11 +98,15 @@ Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
                                         |
                     +-------------------+-------------------+
                     v                                       v
-              G2P Head (per-char)              Word BiLSTM (128h → 256d)
+              G2P Head (per-char)         Word repr (320d) + Lex Features (24d)
               Linear(320→40)                        |
+                                          Word BiLSTM (128h → 256d)
+                                                |
                                     +---+---+---+---+---+---+---+
                                    POS Num Gen VF  Mood Tns Per Liaison
 ```
+
+**Features lexicales (optionnel)** : si le module `lectura-lexique` est installe ou qu'un fichier `lexique_pos_candidates.json` est present, le modele recoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela ameliore la prediction POS, la morphologie et les liaisons. Sans lexique, le modele fonctionne normalement.
 
 ---
 
@@ -121,5 +125,6 @@ pip install lectura-g2p[numpy]      # backend NumPy local
 - **1.75M parametres**, modele ONNX INT8 = 1.8 Mo
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
+- **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour ameliorer POS/morpho/liaison
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
