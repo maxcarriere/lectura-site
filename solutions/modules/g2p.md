@@ -122,4 +122,4 @@ pip install lectura-g2p[numpy]      # backend NumPy local
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Double licence** : AGPL-3.0 (libre) / Licence commerciale
+- **Double licence** : AGPL-3.0 (libre) / Licence commerciale — [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)

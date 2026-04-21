@@ -89,4 +89,4 @@ for t in tokens:
 
 - **Zero dependance** Python
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Double licence** : AGPL-3.0 (libre) / Licence commerciale
+- **Double licence** : AGPL-3.0 (libre) / Licence commerciale — [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)

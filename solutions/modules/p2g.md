@@ -153,4 +153,4 @@ pip install lectura-p2g[numpy]      # backend NumPy local
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Double licence** : AGPL-3.0 (libre) / Licence commerciale
+- **Double licence** : AGPL-3.0 (libre) / Licence commerciale — [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
