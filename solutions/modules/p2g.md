@@ -136,7 +136,7 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
                                                                     → P2G Head (704d → 1198)
 ```
 
-**Features lexicales (optionnel)** : si le module `lectura-lexique` est installe ou qu'un fichier `lexique_pos_candidates.json` est present, le modele recoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela ameliore la prediction POS et la morphologie, ce qui ameliore aussi la reconstruction orthographique via le word feedback. Sans lexique, le modele fonctionne normalement.
+**Features lexicales (optionnel)** : si un fichier `lexique_pos_candidates.json` est present dans le dossier modeles, le modele recoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela ameliore la prediction POS et la morphologie, ce qui ameliore aussi la reconstruction orthographique via le word feedback. Sans lexique, le modele fonctionne normalement. Ce fichier est inclus avec les modeles (licence commerciale).
 
 ---
 
@@ -156,6 +156,6 @@ pip install lectura-p2g[numpy]      # backend NumPy local
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
-- **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour ameliorer POS/morpho
+- **Features lexicales** (optionnel) : candidats POS pour ameliorer POS/morpho (inclus avec les modeles)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
