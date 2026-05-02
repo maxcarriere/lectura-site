@@ -19,6 +19,10 @@
           url: /solutions/modules/lexique/
         - title: Formules
           url: /solutions/modules/formules/
+        - title: Correcteur
+          url: /solutions/modules/correcteur/
+        - title: TTS Monospeaker
+          url: /solutions/modules/tts/
     - title: Ressources
       url: /solutions/ressources/
       children:
