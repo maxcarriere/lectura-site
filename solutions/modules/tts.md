@@ -97,15 +97,10 @@ Le pipeline complet est split en **3 modeles ONNX** independants pour une flexib
 ## Installation
 
 ```bash
-# Mode API (zero dependance, zero config)
 pip install lectura-tts-monospeaker
-
-# Mode local avec inference ONNX
-pip install lectura-tts-monospeaker[onnx]
-
-# Avec G2P integre (texte → audio complet)
-pip install lectura-tts-monospeaker[onnx,g2p]
 ```
+
+Fonctionne immediatement via l'API Lectura — aucune configuration necessaire. Pour l'inference locale (offline), les modeles ONNX sont disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
 
 ---
 
@@ -113,8 +108,7 @@ pip install lectura-tts-monospeaker[onnx,g2p]
 
 - **FastPitch-Lite** : 3.8M parametres, encodeur + decodeur
 - **HiFi-GAN** : vocoder universel, signal 22050 Hz
-- **3 modeles ONNX** : encoder (2.1 Mo), decoder (4.8 Mo), hifigan (5.2 Mo)
-- **2 backends** : API (zero config) ou ONNX Runtime local (~20 ms/phrase)
+- **2 backends** : API (zero config) ou ONNX Runtime local (modeles sous licence commerciale)
 - **Controles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
 - **Factory `creer_engine()`** : detection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)
