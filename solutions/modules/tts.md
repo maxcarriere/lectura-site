@@ -118,4 +118,4 @@ pip install lectura-tts-monospeaker[onnx,g2p]
 - **Controles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
 - **Factory `creer_engine()`** : detection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : Proprietaire — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
