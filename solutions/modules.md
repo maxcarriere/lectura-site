@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/modules/
 ---
 
-Six packages Python autonomes pour le traitement linguistique du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Huit packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -65,6 +65,26 @@ Six packages Python autonomes pour le traitement linguistique du francais, distr
       <a class="more-link" href="{{ '/solutions/modules/formules/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-formules/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Formules">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Correcteur</h2>
+    <p>Correction orthographique et grammaticale : homophones, accords, conjugaison, participes passes.</p>
+    <code class="card-install">pip install lectura-correcteur</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/correcteur/' | relative_url }}">Details</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-correcteur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Correcteur">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>TTS Monospeaker</h2>
+    <p>Synthese vocale neuronale francais : FastPitch-Lite + HiFi-GAN, controles prosodiques, ~50x temps-reel.</p>
+    <code class="card-install">pip install lectura-tts-monospeaker</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/tts/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-monospeaker/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Monospeaker">GitHub</a>
     </div>
   </div>
 </div>
