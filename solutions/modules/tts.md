@@ -97,10 +97,12 @@ Le pipeline complet est split en **3 modeles ONNX** independants pour une flexib
 ## Installation
 
 ```bash
-pip install lectura-tts-monospeaker
+pip install lectura-tts-monospeaker           # mode API (zero config, zero dependance)
+pip install lectura-tts-monospeaker[onnx]     # backend ONNX Runtime local
+pip install lectura-tts-monospeaker[onnx,g2p] # avec G2P integre (texte → audio)
 ```
 
-Fonctionne immediatement via l'API Lectura — aucune configuration necessaire. Pour l'inference locale (offline), les modeles ONNX sont disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Le backend local ONNX necessite les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
 
 ---
 

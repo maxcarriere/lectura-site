@@ -118,6 +118,8 @@ pip install lectura-g2p[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-g2p[numpy]      # backend NumPy local
 ```
 
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+
 ---
 
 ## Caracteristiques techniques
