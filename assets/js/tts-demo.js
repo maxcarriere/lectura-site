@@ -138,7 +138,10 @@
   function renderTimings(timings) {
     let html = "<tr><th>Phoneme</th><th>Debut</th><th>Fin</th></tr>";
     for (const t of timings) {
-      html += `<tr><td>${t.phone}</td><td>${t.start.toFixed(3)}s</td><td>${t.end.toFixed(3)}s</td></tr>`;
+      const phone = t.ipa || t.phone || "";
+      const start = (t.start_ms != null ? t.start_ms / 1000 : t.start) || 0;
+      const end = (t.end_ms != null ? t.end_ms / 1000 : t.end) || 0;
+      html += `<tr><td>${phone}</td><td>${start.toFixed(3)}s</td><td>${end.toFixed(3)}s</td></tr>`;
     }
     timingsTable.innerHTML = html;
   }
