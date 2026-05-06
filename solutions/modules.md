@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/modules/
 ---
 
-Huit packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Neuf packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -85,6 +85,16 @@ Huit packages Python autonomes pour le traitement linguistique et la synthese vo
       <a class="more-link" href="{{ '/solutions/modules/tts/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-tts-monospeaker/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Monospeaker">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>TTS Multi-Speaker</h2>
+    <p>Synthese vocale multi-speaker : 6 voix francaises + 8 styles, encodeur unifie ONNX, ~17 Mo INT8.</p>
+    <code class="card-install">pip install lectura-tts-multispeaker</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/tts-multispeaker/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-multispeaker/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-MultiSpeaker">GitHub</a>
     </div>
   </div>
 </div>

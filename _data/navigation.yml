@@ -23,6 +23,8 @@
           url: /solutions/modules/correcteur/
         - title: TTS Monospeaker
           url: /solutions/modules/tts/
+        - title: TTS Multi-Speaker
+          url: /solutions/modules/tts-multispeaker/
     - title: Ressources
       url: /solutions/ressources/
       children:
