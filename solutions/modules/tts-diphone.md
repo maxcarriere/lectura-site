@@ -31,6 +31,36 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 
 ---
 
+## Essayer en ligne
+
+*La demo utilise l'API Lectura — aucun telechargement necessaire.*
+
+<div class="tts-diphone-demo">
+  <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte francais...">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap;">
+    <select class="tts-mode">
+      <option value="FLUIDE">Fluide</option>
+      <option value="MOT_A_MOT">Mot a mot</option>
+      <option value="SYLLABES">Syllabes</option>
+    </select>
+    <select class="tts-style">
+      <option value="auto">Style auto</option>
+      <option value="declaratif">Declaratif</option>
+      <option value="question">Question</option>
+      <option value="exclamation">Exclamation</option>
+      <option value="suspensif">Suspensif</option>
+      <option value="neutre">Neutre</option>
+    </select>
+    <button class="tts-btn" type="button">Synthetiser</button>
+  </div>
+  <div class="tts-progress-container"><div class="tts-progress"></div></div>
+  <pre class="tts-output">Cliquez sur le bouton pour synthetiser.</pre>
+</div>
+
+<script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}"></script>
+
+---
+
 ## Exemple de code
 
 ```python
