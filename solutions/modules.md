@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/modules/
 ---
 
-Neuf packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Dix packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -105,6 +105,16 @@ Neuf packages Python autonomes pour le traitement linguistique et la synthese vo
       <a class="more-link" href="{{ '/solutions/modules/tts-multispeaker/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-tts-multispeaker/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-MultiSpeaker">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>VC (Voice Conversion)</h2>
+    <p>Conversion vocale neuronale : 6 voix RVC + zero-shot OpenVoice v2, ONNX pur, ~1.52 Go.</p>
+    <code class="card-install">pip install lectura-vc</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/vc/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-vc/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC">GitHub</a>
     </div>
   </div>
 </div>

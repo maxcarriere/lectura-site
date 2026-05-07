@@ -27,6 +27,8 @@
           url: /solutions/modules/tts-diphone/
         - title: TTS Multi-Speaker
           url: /solutions/modules/tts-multispeaker/
+        - title: VC
+          url: /solutions/modules/vc/
     - title: Ressources
       url: /solutions/ressources/
       children:
