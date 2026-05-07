@@ -108,7 +108,7 @@ Dix packages Python autonomes pour le traitement linguistique et la synthese voc
     </div>
   </div>
   <div class="home-card">
-    <h2>VC (Voice Conversion)</h2>
+    <h2>VoiceConversion</h2>
     <p>Conversion vocale neuronale : 6 voix RVC + zero-shot OpenVoice v2, ONNX pur, ~1.52 Go.</p>
     <code class="card-install">pip install lectura-vc</code>
     <div class="card-links">

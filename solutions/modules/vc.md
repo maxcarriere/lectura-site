@@ -1,11 +1,11 @@
 ---
-title: VC (Voice Conversion)
+title: VoiceConversion
 layout: default
 permalink: /solutions/modules/vc/
 ---
 
 <div class="module-header">
-  <h1>Lectura VC</h1>
+  <h1>Lectura VoiceConversion</h1>
   <p class="module-tagline">Conversion vocale neuronale francais — RVC + OpenVoice zero-shot, ONNX pur</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc/" class="module-badge">PyPI</a>
