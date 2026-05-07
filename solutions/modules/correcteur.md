@@ -18,7 +18,7 @@ permalink: /solutions/modules/correcteur/
 
 Pipeline de correction à base de **règles linguistiques** avec support optionnel de modèles statistiques (BiLSTM edit tagger, modèle de langue n-gram). Corrige l'orthographe, la grammaire, les homophones, les accords, la conjugaison et les participes passés.
 
-Fonctionne en mode règles sans aucun modèle (~F1 0.77) ou avec modèles optionnels pour une précision améliorée (~F1 0.82). Dépendance unique : `lectura-lexique`.
+Fonctionne en mode règles (~F1 0.70) ou avec scoring unifié pour une précision améliorée (~F1 0.70, meilleur rappel). Trois modes : lexique complet (`lectura-lexique`), lexique léger intégré, ou API.
 
 ---
 
@@ -37,18 +37,18 @@ Fonctionne en mode règles sans aucun modèle (~F1 0.77) ou avec modèles option
 
 ## Benchmark comparatif
 
-Évaluation sur un corpus de 800 phrases issues de Wicopaco (Wikipedia français), contenant des erreurs réelles d'apprenants et de rédacteurs.
+Évaluation GEC débiaisée sur 180 phrases (158 erronées, 22 correctes) couvrant orthographe, accords, conjugaison, homophones et phrases correctes.
 
-| Correcteur | Précision | Rappel | F1 | F0.5 | Vitesse |
-|------------|-----------|--------|----|------|---------|
-| **Lectura** (règles + modèles) | **0.94** | **0.73** | **0.82** | **0.89** | ~55 ms/phrase |
-| **Lectura** (règles seules) | **0.93** | **0.65** | **0.77** | **0.86** | ~15 ms/phrase |
-| Grammalecte | 0.54 | 0.26 | 0.35 | 0.44 | ~40 ms/phrase |
-| LanguageTool | 0.30 | 0.37 | 0.33 | 0.31 | ~12 600 ms/phrase |
+| Correcteur | Précision | Rappel | F0.5 | F1 |
+|------------|-----------|--------|------|-----|
+| **Lectura** (règles) | **0.805** | 0.612 | **0.757** | 0.695 |
+| **Lectura** (règles + scoring) | 0.782 | **0.633** | 0.747 | **0.700** |
+| Grammalecte | 0.465 | 0.388 | 0.447 | 0.423 |
+| Baseline (ne rien faire) | 1.000 | 0.000 | 0.000 | 0.000 |
 
 *Précision = corrections correctes / total corrections proposées. Rappel = erreurs détectées / total erreurs dans le corpus. F0.5 privilégie la précision (éviter les faux positifs).*
 
-Le correcteur Lectura privilégie la **précision** : il propose peu de corrections erronées, ce qui est essentiel pour un usage non supervisé. Les modèles optionnels (BiLSTM + n-gram) améliorent surtout le rappel sur les homophones phonétiques.
+Le correcteur Lectura privilégie la **précision** : il propose peu de corrections erronées, ce qui est essentiel pour un usage non supervisé.
 
 ---
 
@@ -97,11 +97,15 @@ Le Correcteur fonctionne avec n'importe quelle base lexicale chargée via `lectu
 
 ---
 
-## Dépendances
+## Modes de fonctionnement
 
-| Package | Rôle |
-|---------|------|
-| `lectura-lexique` | Accès au lexique français (formes, fréquences, POS, morphologie) |
+| Mode | Dépendance | Taille | Installation |
+|------|------------|--------|--------------|
+| **Lexique complet** | `lectura-lexique` | ~900 Mo | `pip install lectura-correcteur[sqlite]` |
+| **Lexique léger** | aucune | ~50 Mo | Inclus dans le wheel privé |
+| **API** | aucune | 0 Mo | `pip install lectura-correcteur` |
+
+La factory `creer_correcteur()` détecte automatiquement le mode disponible (lexique complet → léger → API).
 
 ## Licence
 
