@@ -88,6 +88,16 @@ Neuf packages Python autonomes pour le traitement linguistique et la synthese vo
     </div>
   </div>
   <div class="home-card">
+    <h2>TTS Diphone</h2>
+    <p>Synthese vocale par concatenation de diphones WORLD : prosodie reglee, 3 modes de lecture, 44.1 kHz.</p>
+    <code class="card-install">pip install lectura-tts-diphone</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/tts-diphone/' | relative_url }}">Details</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-diphone/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Diphone">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
     <h2>TTS Multi-Speaker</h2>
     <p>Synthese vocale multi-speaker : 6 voix francaises + 8 styles, encodeur unifie ONNX, ~17 Mo INT8.</p>
     <code class="card-install">pip install lectura-tts-multispeaker</code>
