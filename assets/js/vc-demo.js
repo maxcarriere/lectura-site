@@ -16,6 +16,8 @@
   var zeroshotOptions = container.querySelector(".vc-zeroshot-options");
   var referenceInput = document.getElementById("vc-reference");
   var audioFileInput = document.getElementById("vc-audio-file");
+  var fileBtn = document.getElementById("vc-file-btn");
+  var fileName = document.getElementById("vc-file-name");
   var recordBtn = document.getElementById("vc-record-btn");
   var recordStatus = document.getElementById("vc-record-status");
   var audioPreview = document.getElementById("vc-audio-preview");
@@ -41,14 +43,21 @@
     }
   });
 
-  // Upload fichier -> preview
+  // Bouton Parcourir -> ouvre le file input cache
+  fileBtn.addEventListener("click", function () {
+    audioFileInput.click();
+  });
+
+  // Upload fichier -> preview + afficher le nom
   audioFileInput.addEventListener("change", function () {
     recordedBlob = null;
     if (audioFileInput.files.length > 0) {
+      fileName.textContent = audioFileInput.files[0].name;
       var url = URL.createObjectURL(audioFileInput.files[0]);
       audioPreview.src = url;
       audioPreview.style.display = "";
     } else {
+      fileName.textContent = "(Aucun fichier selectionne)";
       audioPreview.style.display = "none";
     }
   });
@@ -88,12 +97,13 @@
           audioPreview.style.display = "";
           // Clear file input so recorded audio takes priority
           audioFileInput.value = "";
+          fileName.textContent = "(Aucun fichier selectionne)";
           recordStatus.textContent = "";
         };
 
         mediaRecorder.start();
         isRecording = true;
-        recordBtn.textContent = "Arreter";
+        recordBtn.textContent = "\uD83D\uDED1 Arreter";
         recordStatus.textContent = "Enregistrement en cours...";
       })
       .catch(function (err) {
@@ -106,7 +116,7 @@
       mediaRecorder.stop();
     }
     isRecording = false;
-    recordBtn.textContent = "Enregistrer";
+    recordBtn.textContent = "\uD83C\uDFA4 Enregistrer";
   }
 
   function setStatus(msg, isError) {

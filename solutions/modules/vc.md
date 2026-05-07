@@ -68,8 +68,13 @@ Module de conversion vocale (voice conversion) pour le francais, combinant deux 
   <div class="vc-input-section">
     <label>Audio source :</label>
     <div class="vc-input-buttons">
-      <input type="file" id="vc-audio-file" accept="audio/*">
-      <button type="button" id="vc-record-btn" class="vc-btn-secondary">Enregistrer</button>
+      <span class="vc-file-wrapper">
+        <input type="file" id="vc-audio-file" accept="audio/*" style="display:none;">
+        <button type="button" id="vc-file-btn" class="vc-btn-secondary">Parcourir</button>
+        <span id="vc-file-name">(Aucun fichier selectionne)</span>
+      </span>
+      <span class="vc-separator">ou</span>
+      <button type="button" id="vc-record-btn" class="vc-btn-secondary">&#x1F3A4; Enregistrer</button>
       <span id="vc-record-status"></span>
     </div>
     <audio id="vc-audio-preview" controls style="display:none; width:100%; margin-top:8px;"></audio>
