@@ -1,16 +1,16 @@
 ---
-title: P2G — Phoneme vers Grapheme
+title: Graphemiseur (P2G)
 layout: default
 permalink: /solutions/modules/p2g/
 ---
 
 <div class="module-header">
-  <h1>Lectura P2G</h1>
+  <h1>Lectura Graphemiseur</h1>
   <p class="module-tagline">Modele unifie P2G + POS + Morphologie pour le francais (IPA → orthographe)</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-p2g/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-p2g</code>
+    <a href="https://pypi.org/project/lectura-graphemiseur/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Graphemiseur" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-graphemiseur</code>
   </div>
 </div>
 
@@ -72,7 +72,7 @@ Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**
   <span class="ipa-key" data-char="ʁ" title="r">ʁ <small>(r)</small></span>
 </div>
 
-<div class="pyodide-demo" data-package="lectura-p2g" data-numpy="0">
+<div class="pyodide-demo" data-package="lectura-graphemiseur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
 import json
@@ -106,7 +106,7 @@ for i, tok in enumerate(tokens):
 ## Exemple de code
 
 ```python
-from lectura_p2g import creer_engine
+from lectura_graphemiseur import creer_engine
 
 engine = creer_engine()   # mode API par defaut (zero config)
 
@@ -143,9 +143,9 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-p2g             # mode API (zero config, zero dependance)
-pip install lectura-p2g[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
-pip install lectura-p2g[numpy]      # backend NumPy local
+pip install lectura-graphemiseur             # mode API (zero config, zero dependance)
+pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
+pip install lectura-graphemiseur[numpy]      # backend NumPy local
 ```
 
 Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).

@@ -41,7 +41,7 @@ Fonctionne en mode règles (~F1 0.70) ou avec scoring unifié pour une précisio
 
 | Correcteur | Précision | Rappel | F0.5 | F1 |
 |------------|-----------|--------|------|-----|
-| **Lectura** (règles) | **0.805** | 0.612 | **0.757** | 0.695 |
+| **Lectura** (règles) | **0.790** | 0.599 | **0.742** | 0.681 |
 | **Lectura** (règles + scoring) | 0.782 | **0.633** | 0.747 | **0.700** |
 | Grammalecte | 0.465 | 0.388 | 0.447 | 0.423 |
 | Baseline (ne rien faire) | 1.000 | 0.000 | 0.000 | 0.000 |

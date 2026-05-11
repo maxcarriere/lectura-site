@@ -18,23 +18,23 @@ Dix packages Python autonomes pour le traitement linguistique et la synthese voc
     </div>
   </div>
   <div class="home-card">
-    <h2>G2P — Grapheme vers Phoneme</h2>
-    <p>Modele unifie BiLSTM : phonemisation IPA (98.5%), POS-tagging, morphologie, liaison.</p>
-    <code class="card-install">pip install lectura-g2p</code>
+    <h2>Phonemiseur (G2P)</h2>
+    <p>Modele unifie BiLSTM : phonemisation IPA (98.5%), POS-tagging, morphologie, liaison, groupes de lecture.</p>
+    <code class="card-install">pip install lectura-phonemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/g2p/' | relative_url }}">Details & Demo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-g2p/">PyPI</a>
-      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P">GitHub</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-phonemiseur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur">GitHub</a>
     </div>
   </div>
   <div class="home-card">
-    <h2>P2G — Phoneme vers Grapheme</h2>
+    <h2>Graphemiseur (P2G)</h2>
     <p>Conversion IPA → orthographe avec word feedback (93.1%), POS-tagging, morphologie.</p>
-    <code class="card-install">pip install lectura-p2g</code>
+    <code class="card-install">pip install lectura-graphemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/p2g/' | relative_url }}">Details & Demo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-p2g/">PyPI</a>
-      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G">GitHub</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-graphemiseur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Graphemiseur">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -130,8 +130,11 @@ pip install lectura
 # Un seul module
 pip install lectura-tokeniseur
 
-# G2P — fonctionne immediatement via l'API (zero config)
+# Phonemiseur (G2P) — fonctionne immediatement via l'API (zero config)
+pip install lectura-phonemiseur
+
+# Pipeline complet (tokeniseur + formules + phonemiseur + groupes de lecture)
 pip install lectura-g2p
 ```
 
-Par defaut, les modules G2P, P2G et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-g2p[onnx]`).
+Par defaut, les modules Phonemiseur, Graphemiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-phonemiseur[onnx]`).

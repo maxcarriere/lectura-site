@@ -1,16 +1,16 @@
 ---
-title: G2P — Grapheme vers Phoneme
+title: Phonemiseur (G2P)
 layout: default
 permalink: /solutions/modules/g2p/
 ---
 
 <div class="module-header">
-  <h1>Lectura G2P</h1>
+  <h1>Lectura Phonemiseur</h1>
   <p class="module-tagline">Modele unifie G2P + POS + Morphologie + Liaison pour le francais</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-g2p/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-g2p</code>
+    <a href="https://pypi.org/project/lectura-phonemiseur/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-phonemiseur</code>
   </div>
 </div>
 
@@ -31,7 +31,7 @@ Quatre backends d'inference : **API** (zero config), **ONNX Runtime** (~2 ms/phr
 
 ### G2P vs eSpeak-NG
 
-Le modele Lectura G2P se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : il predit la prononciation, la categorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonemise chaque mot isolement, sans desambiguisation contextuelle (homographes, liaisons).
+Le Phonemiseur Lectura se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : il predit la prononciation, la categorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonemise chaque mot isolement, sans desambiguisation contextuelle (homographes, liaisons).
 
 ---
 
@@ -39,7 +39,7 @@ Le modele Lectura G2P se distingue d'eSpeak-NG par sa prise en compte du **conte
 
 *Le test en ligne utilise l'API Lectura — aucun telechargement de modele necessaire.*
 
-<div class="pyodide-demo" data-package="lectura-g2p" data-numpy="0">
+<div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
 from pyodide.http import pyfetch
 import json
@@ -78,7 +78,7 @@ for i, tok in enumerate(tokens):
 ## Exemple de code
 
 ```python
-from lectura_nlp import creer_engine
+from lectura_phonemiseur import creer_engine
 
 engine = creer_engine()   # mode API par defaut (zero config)
 
@@ -113,9 +113,9 @@ Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-g2p             # mode API (zero config, zero dependance)
-pip install lectura-g2p[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
-pip install lectura-g2p[numpy]      # backend NumPy local
+pip install lectura-phonemiseur             # mode API (zero config, zero dependance)
+pip install lectura-phonemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
+pip install lectura-phonemiseur[numpy]      # backend NumPy local
 ```
 
 Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).

@@ -152,11 +152,11 @@ print(f"Syllabes : {result.format_ligne2()}")
 # Syllabes : le.zɑ̃.fɑ̃ | ʒu
 ```
 
-### Avec Lectura G2P comme phonemiseur
+### Avec Lectura Phonemiseur
 
 ```python
 from lectura_aligneur import LecturaSyllabeur
-from lectura_nlp import creer_engine
+from lectura_phonemiseur import creer_engine
 
 g2p = creer_engine()    # mode API par defaut
 
@@ -220,7 +220,7 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 pip install lectura-aligneur       # mode API par defaut (zero dependance)
 ```
 
-**Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura G2P]({{ '/solutions/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
+**Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonemiseur]({{ '/solutions/modules/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
 
 ---
 
@@ -231,6 +231,6 @@ pip install lectura-aligneur       # mode API par defaut (zero dependance)
 - **Alignement DFS** grapheme-phoneme avec gestion des lettres muettes et fusionnees
 - **Modele de sonorite** pour la syllabation (5 classes phonologiques)
 - **Architecture E1/E2** : construction des groupes puis syllabation, utilisables separement
-- **Phonemiseur pluggable** : eSpeak-NG, Lectura G2P, ou tout objet compatible
+- **Phonemiseur pluggable** : eSpeak-NG, Lectura Phonemiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
