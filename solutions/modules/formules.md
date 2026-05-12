@@ -66,7 +66,7 @@ print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
 
 ## Essayer en ligne
 
-<div class="pyodide-demo" data-package="lectura-formules" data-code="
+<div class="pyodide-demo" data-package="lectura-formules>=3.1.0" data-code="
 from lectura_formules import lire_formule
 r = lire_formule('NOMBRE', '{INPUT}')
 lines = []
@@ -138,10 +138,11 @@ pip install lectura-formules
 
 ## Caracteristiques techniques
 
-- **Zero dependance** Python
+- **Zero dependance** Python (aucune dependance tierce, independant du Tokeniseur)
 - **15+ types de formules** reconnus
 - **Transcription phonetique IPA** automatique
 - **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
+- **Version** : 3.1.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
