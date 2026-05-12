@@ -9,7 +9,7 @@ Lectura propose des outils et services professionnels pour le traitement linguis
 <div class="home-grid">
   <div class="home-card">
     <h2>Modules</h2>
-    <p>Six packages Python pour le traitement linguistique du francais : syllabation, phonemisation, POS-tagging, lexique.</p>
+    <p>Packages Python pour le traitement linguistique du francais : tokenisation, phonemisation, formules, synthese vocale, correction.</p>
     <a class="more-link" href="{{ '/solutions/modules/' | relative_url }}">Voir les modules</a>
   </div>
   <div class="home-card">
