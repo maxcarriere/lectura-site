@@ -1,5 +1,6 @@
 /**
  * VC Demo — conversion vocale interactive avec upload audio ou enregistrement micro.
+ * Supporte RVC (speakers), zero-shot (presets ou fichier de reference), et trick SR.
  * Envoie une requete multipart/form-data a l'API Lectura et joue le resultat.
  */
 (function () {
@@ -14,7 +15,12 @@
   var speakerSelect = document.getElementById("vc-speaker");
   var rvcOptions = container.querySelector(".vc-rvc-options");
   var zeroshotOptions = container.querySelector(".vc-zeroshot-options");
+  var zsSourceSelect = document.getElementById("vc-zs-source");
+  var presetOptions = document.getElementById("vc-preset-options");
+  var presetSelect = document.getElementById("vc-preset");
+  var fileReferenceDiv = document.getElementById("vc-file-reference");
   var referenceInput = document.getElementById("vc-reference");
+  var srOverrideSelect = document.getElementById("vc-sr-override");
   var audioFileInput = document.getElementById("vc-audio-file");
   var fileBtn = document.getElementById("vc-file-btn");
   var fileName = document.getElementById("vc-file-name");
@@ -31,7 +37,7 @@
   var recordedBlob = null;
   var isRecording = false;
 
-  // Toggle UI selon le mode
+  // Toggle UI selon le mode (RVC vs zero-shot)
   modeSelect.addEventListener("change", function () {
     var mode = modeSelect.value;
     if (mode === "rvc") {
@@ -42,6 +48,19 @@
       zeroshotOptions.style.display = "";
     }
   });
+
+  // Toggle UI dans zero-shot : preset vs fichier
+  if (zsSourceSelect) {
+    zsSourceSelect.addEventListener("change", function () {
+      if (zsSourceSelect.value === "preset") {
+        presetOptions.style.display = "";
+        fileReferenceDiv.style.display = "none";
+      } else {
+        presetOptions.style.display = "none";
+        fileReferenceDiv.style.display = "";
+      }
+    });
+  }
 
   // Bouton Parcourir -> ouvre le file input cache
   fileBtn.addEventListener("click", function () {
@@ -157,12 +176,23 @@
     if (mode === "rvc") {
       formData.append("speaker", speakerSelect.value);
     } else {
-      // zeroshot : reference requise
-      if (!referenceInput.files.length) {
-        setStatus("Mode zero-shot : selectionnez un audio de reference.", true);
-        return;
+      // Zero-shot : preset ou fichier de reference
+      var zsSource = zsSourceSelect ? zsSourceSelect.value : "file";
+
+      if (zsSource === "preset") {
+        formData.append("reference_preset", presetSelect.value);
+      } else {
+        if (!referenceInput.files.length) {
+          setStatus("Mode zero-shot : selectionnez un audio de reference.", true);
+          return;
+        }
+        formData.append("reference", referenceInput.files[0], referenceInput.files[0].name);
       }
-      formData.append("reference", referenceInput.files[0], referenceInput.files[0].name);
+
+      // Trick SR (variante formants)
+      if (srOverrideSelect && srOverrideSelect.value) {
+        formData.append("sr_override", srOverrideSelect.value);
+      }
     }
 
     convertBtn.disabled = true;

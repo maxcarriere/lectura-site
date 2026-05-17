@@ -16,6 +16,28 @@
   const progressBar = container.querySelector(".tts-progress");
   const modeSelect = container.querySelector(".tts-mode");
   const styleSelect = container.querySelector(".tts-style");
+  const voixSelect = container.querySelector(".tts-voix");
+  const varianteSlider = container.querySelector(".tts-variante");
+  const varianteVal = container.querySelector(".tts-variante-val");
+
+  // Afficher la valeur du slider variante
+  if (varianteSlider && varianteVal) {
+    varianteSlider.addEventListener("input", function () {
+      varianteVal.textContent = varianteSlider.value;
+    });
+  }
+
+  // Masquer/afficher le slider variante selon la voix
+  function updateVarianteVisibility() {
+    var label = container.querySelector(".tts-variante-label");
+    if (label) {
+      label.style.display = (voixSelect && voixSelect.value) ? "flex" : "none";
+    }
+  }
+  if (voixSelect) {
+    voixSelect.addEventListener("change", updateVarianteVisibility);
+    updateVarianteVisibility();
+  }
 
   let audioCtx = null;
   let currentSource = null;
@@ -65,6 +87,15 @@
         prosody_style: styleSelect ? styleSelect.value : "auto",
       };
 
+      // Retimbre OpenVoice
+      if (voixSelect && voixSelect.value) {
+        payload.voix = voixSelect.value;
+        if (varianteSlider) {
+          var v = parseFloat(varianteSlider.value);
+          if (v !== 0) payload.voix_variante = v;
+        }
+      }
+
       const resp = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -82,7 +113,8 @@
       const sr = data.sample_rate || 44100;
 
       var modeLabel = modeSelect ? modeSelect.value : "FLUIDE";
-      setStatus("Audio genere : " + duration.toFixed(2) + "s, " + sr + " Hz, mode " + modeLabel + " — Lecture...");
+      var voixLabel = (voixSelect && voixSelect.value) ? ", voix " + voixSelect.value : "";
+      setStatus("Audio genere : " + duration.toFixed(2) + "s, " + sr + " Hz, mode " + modeLabel + voixLabel + " — Lecture...");
 
       // Jouer l'audio
       var ctx = getAudioContext();

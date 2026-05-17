@@ -38,7 +38,7 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 
 <div class="tts-diphone-demo">
   <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte francais...">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap;">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <select class="tts-mode">
       <option value="FLUIDE">Fluide</option>
       <option value="MOT_A_MOT">Mot a mot</option>
@@ -52,6 +52,19 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
       <option value="suspensif">Suspensif</option>
       <option value="neutre">Neutre</option>
     </select>
+    <select class="tts-voix">
+      <option value="">Sans retimbre</option>
+      <option value="siwis" selected>Siwis (F)</option>
+      <option value="ezwa">Ezwa (F)</option>
+      <option value="nadine">Nadine (F)</option>
+      <option value="bernard">Bernard (M)</option>
+      <option value="gilles">Gilles (M)</option>
+      <option value="zeckou">Zeckou (M)</option>
+    </select>
+    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.9em;">
+      Variante: <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
+      <span class="tts-variante-val">0</span>
+    </label>
     <button class="tts-btn" type="button">Synthetiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>

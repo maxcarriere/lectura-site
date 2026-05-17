@@ -62,8 +62,38 @@ Le meta-package `lectura-vc` offre une facade unifiee `VCEngine` qui delegue aut
     </div>
 
     <div class="vc-zeroshot-options" style="display:none;">
-      <label for="vc-reference">Audio de reference :</label>
-      <input type="file" id="vc-reference" accept="audio/*">
+      <div style="display:flex; gap:0.5em; align-items:center; flex-wrap:wrap; margin-bottom:0.3em;">
+        <label for="vc-zs-source">Source :</label>
+        <select id="vc-zs-source">
+          <option value="preset" selected>Preset</option>
+          <option value="file">Fichier audio</option>
+        </select>
+      </div>
+      <div id="vc-preset-options">
+        <label for="vc-preset">Preset :</label>
+        <select id="vc-preset">
+          <option value="siwis" selected>Siwis (F)</option>
+          <option value="ezwa">Ezwa (F)</option>
+          <option value="nadine">Nadine (F)</option>
+          <option value="bernard">Bernard (M)</option>
+          <option value="gilles">Gilles (M)</option>
+          <option value="zeckou">Zeckou (M)</option>
+        </select>
+      </div>
+      <div id="vc-file-reference" style="display:none;">
+        <label for="vc-reference">Audio de reference :</label>
+        <input type="file" id="vc-reference" accept="audio/*">
+      </div>
+      <div style="display:flex; gap:0.3em; align-items:center; margin-top:0.3em;">
+        <label for="vc-sr-override" style="font-size:0.9em;">Variante formants :</label>
+        <select id="vc-sr-override">
+          <option value="">Neutre</option>
+          <option value="16000">Legerement aigu</option>
+          <option value="11025">Aigu (enfant)</option>
+          <option value="33000">Legerement grave</option>
+          <option value="44100">Grave (homme)</option>
+        </select>
+      </div>
     </div>
   </div>
 
