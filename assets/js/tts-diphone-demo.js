@@ -84,7 +84,7 @@
       const payload = {
         text: text,
         mode: modeSelect ? modeSelect.value : "FLUIDE",
-        prosody_style: styleSelect ? styleSelect.value : "auto",
+        prosody_style: styleSelect ? styleSelect.value : "regles",
       };
 
       // Retimbre OpenVoice

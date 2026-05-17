@@ -45,12 +45,8 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
       <option value="SYLLABES">Syllabes</option>
     </select>
     <select class="tts-style">
-      <option value="auto">Style auto</option>
-      <option value="declaratif">Declaratif</option>
-      <option value="question">Question</option>
-      <option value="exclamation">Exclamation</option>
-      <option value="suspensif">Suspensif</option>
-      <option value="neutre">Neutre</option>
+      <option value="regles" selected>Regles</option>
+      <option value="corpus">Corpus</option>
     </select>
     <select class="tts-voix">
       <option value="">Sans retimbre</option>
@@ -165,7 +161,7 @@ pip install "lectura-tts-diphone[all]"        # local + G2P + retimbre
 | macro_expressivity | 2.0 | Gestes prosodiques aux ponctuations (0=neutre, 4=exagere) |
 | micro_expressivity | 5.0 | Micro-variations (0=robot, 10=tres expressif) |
 | spectral_contrast | 1.5 | Contraste spectral GV (1.0=off, 2.0=fort) |
-| prosody_style | "auto" | Force le style : "declaratif", "question", "exclamation", "suspensif", "neutre" |
+| prosody_style | "regles" | Style prosodique : "regles" (LHiLH*, stable) ou "corpus" (extrait du corpus SIWIS, plus varie) |
 | seed | None | Graine aleatoire pour micro-prosodie reproductible |
 
 ---
