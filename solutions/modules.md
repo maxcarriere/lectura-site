@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/modules/
 ---
 
-Dix packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Treize packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -89,7 +89,7 @@ Dix packages Python autonomes pour le traitement linguistique et la synthese voc
   </div>
   <div class="home-card">
     <h2>TTS Diphone</h2>
-    <p>Synthese vocale par concatenation de diphones WORLD : prosodie reglee, 3 modes de lecture, 44.1 kHz.</p>
+    <p>Synthese vocale par concatenation de diphones WORLD : prosodie reglee, retimbre multi-voix, 3 modes de lecture, 44.1 kHz.</p>
     <code class="card-install">pip install lectura-tts-diphone</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/tts-diphone/' | relative_url }}">Details & Demo</a>
@@ -109,12 +109,32 @@ Dix packages Python autonomes pour le traitement linguistique et la synthese voc
   </div>
   <div class="home-card">
     <h2>VoiceConversion</h2>
-    <p>Conversion vocale neuronale : 6 voix RVC + zero-shot OpenVoice v2, ONNX pur, ~1.52 Go.</p>
+    <p>Conversion vocale neuronale : meta-package unifie RVC + OpenVoice zero-shot, presets, blend de voix.</p>
     <code class="card-install">pip install lectura-vc</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/vc/' | relative_url }}">Details & Demo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-vc/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>VC ZeroShot</h2>
+    <p>Conversion vocale zero-shot via OpenVoice v2 : presets, blend pondere, trick SR formants, ~126 Mo.</p>
+    <code class="card-install">pip install lectura-vc-zeroshot</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/vc-zeroshot/' | relative_url }}">Details</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-vc-zeroshot/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>VC Locuteurs</h2>
+    <p>Conversion vocale RVC vers 6 voix francaises pre-entrainees (3F + 3M), ONNX pur, ~1.4 Go.</p>
+    <code class="card-install">pip install lectura-vc-locuteurs</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/vc-locuteurs/' | relative_url }}">Details</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-vc-locuteurs/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-Locuteurs">GitHub</a>
     </div>
   </div>
 </div>
