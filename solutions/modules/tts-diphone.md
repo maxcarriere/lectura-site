@@ -157,7 +157,8 @@ pip install "lectura-tts-diphone[all]"        # local + G2P + retimbre
 | Parametre | Defaut | Description |
 |-----------|--------|-------------|
 | duration_scale | 1.0 | Vitesse globale (>1 = plus lent) |
-| pause_scale | 1.0 | Duree des pauses inter-groupes |
+| pause_scale | 1.0 | Duree des pauses intra-phrase (virgules, etc.) |
+| sentence_pause_ms | 400 | Pause inter-phrase en ms (entre phrases separees par . ! ? ...) |
 | macro_expressivity | 2.0 | Gestes prosodiques aux ponctuations (0=neutre, 4=exagere) |
 | micro_expressivity | 5.0 | Micro-variations (0=robot, 10=tres expressif) |
 | spectral_contrast | 1.5 | Contraste spectral GV (1.0=off, 2.0=fort) |
