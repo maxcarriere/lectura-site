@@ -12,6 +12,7 @@
 
   const input = container.querySelector(".tts-input");
   const btn = container.querySelector(".tts-btn");
+  const voixSelect = container.querySelector(".tts-voix");
   const outputArea = container.querySelector(".tts-output");
   const timingsTable = container.querySelector(".tts-timings");
   const progressBar = container.querySelector(".tts-progress");
@@ -59,6 +60,9 @@
 
     try {
       const payload = { text: text };
+      if (voixSelect && voixSelect.value) {
+        payload.voix = voixSelect.value;
+      }
       const resp = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

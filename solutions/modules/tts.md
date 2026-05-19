@@ -38,7 +38,18 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
 
 <div class="tts-demo">
   <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte francais...">
-  <button class="tts-btn" type="button">Synthetiser</button>
+  <div class="tts-controls">
+    <select class="tts-voix">
+      <option value="">SIWIS (original)</option>
+      <option value="siwis">Siwis (retimbre)</option>
+      <option value="nadine">Nadine</option>
+      <option value="ezwa">Ezwa</option>
+      <option value="bernard">Bernard</option>
+      <option value="gilles">Gilles</option>
+      <option value="zeckou">Zeckou</option>
+    </select>
+    <button class="tts-btn" type="button">Synthetiser</button>
+  </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthetiser.</pre>
   <table class="tts-timings"></table>
