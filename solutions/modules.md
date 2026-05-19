@@ -79,7 +79,7 @@ Treize packages Python autonomes pour le traitement linguistique et la synthese 
   </div>
   <div class="home-card">
     <h2>TTS Monospeaker</h2>
-    <p>Synthese vocale neuronale francais : FastPitch-Lite + HiFi-GAN, controles prosodiques, ~50x temps-reel.</p>
+    <p>Synthese vocale neuronale francais : FastPitch-Lite V6 + HiFi-GAN, controles prosodiques, retimbre multi-voix optionnel, ~50x temps-reel.</p>
     <code class="card-install">pip install lectura-tts-monospeaker</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/tts/' | relative_url }}">Details & Demo</a>
