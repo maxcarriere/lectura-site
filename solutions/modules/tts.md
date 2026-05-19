@@ -59,7 +59,7 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=2"></script>
 
 ---
 
