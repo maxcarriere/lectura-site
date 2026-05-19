@@ -14,17 +14,9 @@
   const btn = container.querySelector(".tts-btn");
   const voixSelect = container.querySelector(".tts-voix");
   const varianteSlider = container.querySelector(".tts-variante");
-  const varianteVal = container.querySelector(".tts-variante-val");
   const outputArea = container.querySelector(".tts-output");
   const timingsTable = container.querySelector(".tts-timings");
   const progressBar = container.querySelector(".tts-progress");
-
-  // Afficher la valeur du slider variante
-  if (varianteSlider && varianteVal) {
-    varianteSlider.addEventListener("input", function () {
-      varianteVal.textContent = varianteSlider.value;
-    });
-  }
 
   // Masquer/afficher le slider variante selon la voix
   function updateVarianteVisibility() {

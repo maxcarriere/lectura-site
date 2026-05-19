@@ -48,9 +48,10 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
       <option value="gilles">Gilles</option>
       <option value="zeckou">Zeckou</option>
     </select>
-    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.9em;">
-      Variante: <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
-      <span class="tts-variante-val">0</span>
+    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
+      <span style="opacity:0.7">Homme</span>
+      <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
+      <span style="opacity:0.7">Enfant</span>
     </label>
     <button class="tts-btn" type="button">Synthetiser</button>
   </div>
@@ -59,7 +60,7 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=2"></script>
+<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=3"></script>
 
 ---
 
