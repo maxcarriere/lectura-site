@@ -38,7 +38,7 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
 
 <div class="tts-demo">
   <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte francais...">
-  <div class="tts-controls">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <select class="tts-voix">
       <option value="">SIWIS (original)</option>
       <option value="siwis">Siwis (retimbre)</option>
@@ -48,6 +48,10 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
       <option value="gilles">Gilles</option>
       <option value="zeckou">Zeckou</option>
     </select>
+    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.9em;">
+      Variante: <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
+      <span class="tts-variante-val">0</span>
+    </label>
     <button class="tts-btn" type="button">Synthetiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
