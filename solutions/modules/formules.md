@@ -66,7 +66,7 @@ print(result.display_fr)    # "vingt-cinq decembre deux-mille-vingt-quatre"
 
 ## Essayer en ligne
 
-<div class="pyodide-demo" data-package="lectura-formules>=3.1.0" data-code="
+<div class="pyodide-demo" data-package="lectura-formules>=3.2.0" data-code="
 from lectura_formules import lire_formule
 r = lire_formule('NOMBRE', '{INPUT}')
 lines = []
@@ -109,6 +109,29 @@ Les fichiers WAV (~12 Mo, 289 sons) sont disponibles sur GitHub. Le programme **
 
 ---
 
+## Reconnaissance IPA → formule
+
+**Nouveau en 3.2.0** — Le chemin inverse : a partir d'une transcription IPA, retrouver la formule source et le texte francais.
+
+```python
+from lectura_formules import reconnaitre_ipa
+
+result = reconnaitre_ipa("kaʁɑ̃t dø")
+print(result.display_num)   # "42"
+print(result.display_fr)    # "quarante-deux"
+print(result.phone)         # "kaʁɑ̃t dø"
+
+# Fonctionne pour tous les types de formules
+reconnaitre_ipa("kɛ̃z maʁs dø mil vɛ̃ katʁ")     # → "15/03/2024"
+reconnaitre_ipa("katɔʁz œʁ tʁɑ̃t")               # → "14h30"
+reconnaitre_ipa("kaʁɑ̃t dø øʁo")                  # → "42€"
+reconnaitre_ipa("sɛ̃kɑ̃t puʁ sɑ̃")                 # → "50%"
+```
+
+La reconnaissance est **tolerante aux espaces** (manquants, supplementaires ou corrects) et **verifiee par aller-retour** : la formule reconstruite est relue par le moteur forward, et le resultat n'est retourne que si l'IPA produit correspond a l'entree.
+
+---
+
 ## API principale
 
 | Fonction | Description |
@@ -123,6 +146,7 @@ Les fichiers WAV (~12 Mo, 289 sons) sont disponibles sur GitHub. Le programme **
 | `lire_fraction(texte)` | Fractions : "3/4" → "trois quarts" |
 | `lire_monnaie(texte)` | Monnaies : "42 EUR" → "quarante-deux euros" |
 | `lire_pourcentage(texte)` | Pourcentages : "50%" → "cinquante pour cent" |
+| `reconnaitre_ipa(ipa)` | **Inverse** : IPA → formule source (nombre, date, heure, monnaie, %) |
 | `enrichir_formules(tokens)` | Enrichit les tokens d'une phrase |
 | `int_to_roman(n)` / `roman_to_int(s)` | Chiffres romains |
 
@@ -144,5 +168,5 @@ pip install lectura-formules
 - **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 3.1.0
+- **Version** : 3.2.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
