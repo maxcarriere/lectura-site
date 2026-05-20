@@ -99,7 +99,7 @@ Treize packages Python autonomes pour le traitement linguistique et la synthese 
   </div>
   <div class="home-card">
     <h2>TTS Multi-Speaker</h2>
-    <p>Synthese vocale multi-speaker : 6 voix francaises + 8 styles, encodeur unifie ONNX, ~17 Mo INT8.</p>
+    <p>Synthese vocale multi-speaker : 6 voix francaises + 8 styles, encodeur unifie ONNX, ~40 Mo INT8.</p>
     <code class="card-install">pip install lectura-tts-multispeaker</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/tts-multispeaker/' | relative_url }}">Details & Demo</a>

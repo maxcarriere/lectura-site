@@ -16,13 +16,13 @@ permalink: /solutions/modules/tts-multispeaker/
 
 ## Presentation
 
-Moteur de synthese vocale neuronale multi-speaker pour le francais, base sur **FastPitch-Lite** (modele acoustique unifie) et **HiFi-GAN** (vocoder). Supporte **6 voix** et **8 presets de style** avec un modele unique de ~17 Mo.
+Moteur de synthese vocale neuronale multi-speaker pour le francais, base sur **FastPitch-Lite v6** (modele acoustique unifie, d_model=256) et **HiFi-GAN** (vocoder). Supporte **6 voix** et **8 presets de style** avec un modele unique.
 
 | Caracteristique | Valeur |
 |-----------------|--------|
 | **Voix** | 6 speakers (3F + 3M) : Siwis, Ezwa, Nadine, Bernard, Gilles, Zeckou |
 | **Style** | 8 presets : neutral, expressive, calm, dialogue, fast, slow, rising, suspense |
-| **Taille modele** | ~17.6 Mo (ONNX INT8, 3 fichiers unifies) |
+| **Taille modele** | ~40 Mo (ONNX INT8) / ~118 Mo (ONNX FP32) |
 | **Debit** | ~50x temps-reel sur CPU (ONNX) |
 | **Entree** | Texte francais ou phonemes IPA |
 | **Sortie** | Audio 22050 Hz, float32 |
@@ -145,7 +145,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 
 ## Caracteristiques techniques
 
-- **FastPitch-Lite unifie** : 3.8M parametres, 6 speakers + style conditioning (5 dims)
+- **FastPitch-Lite v6 unifie** : 24.3M parametres (d_model=256, 4 layers, 4 heads, d_ff=1024), 6 speakers + style conditioning (5 dims)
 - **HiFi-GAN** : vocoder universel, signal 22050 Hz
 - **2 backends** : API (zero config) ou ONNX Runtime local (modeles sous licence commerciale)
 - **6 voix** : Siwis, Ezwa, Nadine (F) — Bernard, Gilles, Zeckou (M)

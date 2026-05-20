@@ -16,10 +16,11 @@ Cela implique des contraintes spécifiques : articulation lente et distincte, po
 
 ## Architecture multi-moteurs
 
-Plutôt qu'un moteur unique, le système intègre **7 moteurs TTS** derrière une interface commune (`TTSEngine`), chacun avec ses caractéristiques :
+Plutôt qu'un moteur unique, le système intègre **8 moteurs TTS** derrière une interface commune (`TTSEngine`), chacun avec ses caractéristiques :
 
 | Moteur | Type | Qualité | Vitesse | Licence |
 |--------|------|---------|---------|---------|
+| **Lectura Multi-Speaker** | FastPitch-Lite v6 + HiFi-GAN | Bonne (6 voix, 8 styles) | Rapide | AGPL / Commercial |
 | Kokoro-82M | ONNX neural | Bonne | Rapide | Apache 2.0 |
 | Piper VITS | Neural léger | Bonne (vitesse lente) | Rapide | MIT |
 | MBROLA | Diphones | Correcte | Très rapide | AGPL |
@@ -28,7 +29,7 @@ Plutôt qu'un moteur unique, le système intègre **7 moteurs TTS** derrière un
 | Chatterbox | Neural 500M | Très bonne | Lent (GPU) | MIT |
 | Zonos | Transformer 1.6B | Excellente | Lent (GPU) | Apache 2.0 |
 
-Cette diversité permet de choisir le moteur adapté au contexte : Kokoro ou Piper pour un usage courant, MBROLA pour le temps réel, Zonos pour la meilleure qualité.
+Le moteur **Lectura Multi-Speaker** est le modèle propriétaire du projet : 6 voix françaises (3F + 3M), 8 presets de style, architecture FastPitch-Lite 256D entraînée en deux phases (L1 55K + GAN 20K steps), avec inference ONNX ~50x temps-réel sur CPU. Les autres moteurs sont des intégrations de projets open-source.
 
 ---
 
@@ -65,9 +66,11 @@ L'objectif est de produire un audio qui reste naturel même en lecture lente, sa
 
 ## État d'avancement
 
-Les 7 moteurs sont intégrés et fonctionnels. Le moteur concaténatif avec P2G fonctionne avec n'importe quel backend TTS. La prosodie est opérationnelle.
+Les 8 moteurs sont intégrés et fonctionnels. Le moteur concaténatif avec P2G fonctionne avec n'importe quel backend TTS. La prosodie est opérationnelle.
+
+Le modèle multi-speaker propriétaire (v6) est en production : 6 voix, 8 styles, export ONNX FP32 + INT8, disponible via API et en local.
 
 Les travaux en cours portent sur :
 - l'amélioration de la qualité des transitions entre syllabes concaténées,
-- l'ajout de voix supplémentaires,
+- l'ajout de voix supplémentaires au modèle multi-speaker,
 - l'optimisation des temps de chargement des modèles GPU.
