@@ -20,7 +20,7 @@ Plutôt qu'un moteur unique, le système intègre **8 moteurs TTS** derrière un
 
 | Moteur | Type | Qualité | Vitesse | Licence |
 |--------|------|---------|---------|---------|
-| **Lectura Multi-Speaker** | FastPitch-Lite v6 + HiFi-GAN | Bonne (6 voix, 8 styles) | Rapide | AGPL / Commercial |
+| **Lectura Multi-Speaker** | FastPitch-Lite v6 + HiFi-GAN | Bonne (6 voix, 7 styles) | Rapide | AGPL / Commercial |
 | Kokoro-82M | ONNX neural | Bonne | Rapide | Apache 2.0 |
 | Piper VITS | Neural léger | Bonne (vitesse lente) | Rapide | MIT |
 | MBROLA | Diphones | Correcte | Très rapide | AGPL |

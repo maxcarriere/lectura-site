@@ -21,7 +21,7 @@ Moteur de synthese vocale neuronale multi-speaker pour le francais, base sur **F
 | Caracteristique | Valeur |
 |-----------------|--------|
 | **Voix** | 6 speakers (3F + 3M) : Siwis, Ezwa, Nadine, Bernard, Gilles, Zeckou |
-| **Style** | 8 presets : neutral, expressive, calm, dialogue, fast, slow, rising, suspense |
+| **Style** | 7 presets : neutre, narratif, dialogue, expressif, meditatif, rapide, lent |
 | **Taille modele** | ~40 Mo (ONNX INT8) / ~118 Mo (ONNX FP32) |
 | **Debit** | ~50x temps-reel sur CPU (ONNX) |
 | **Entree** | Texte francais ou phonemes IPA |
@@ -49,14 +49,13 @@ Deux modes d'utilisation : **API** (zero dependance, zero config) ou **local** (
     </select>
     <label for="tts-style">Style :</label>
     <select id="tts-style" class="tts-style">
-      <option value="" selected>neutral</option>
-      <option value="expressive">expressive</option>
-      <option value="calm">calm</option>
+      <option value="neutre" selected>neutre</option>
+      <option value="narratif">narratif</option>
       <option value="dialogue">dialogue</option>
-      <option value="fast">fast</option>
-      <option value="slow">slow</option>
-      <option value="rising">rising</option>
-      <option value="suspense">suspense</option>
+      <option value="expressif">expressif</option>
+      <option value="meditatif">meditatif</option>
+      <option value="rapide">rapide</option>
+      <option value="lent">lent</option>
     </select>
   </div>
   <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte francais...">
@@ -86,7 +85,7 @@ engine = creer_engine()
 audio = engine.synthesize(
     text="Bonjour, comment allez-vous ?",
     speaker="bernard",
-    style="expressive",
+    style="expressif",
 )
 print(f"Duree : {len(audio.samples) / audio.sample_rate:.2f}s")
 
@@ -94,7 +93,7 @@ print(f"Duree : {len(audio.samples) / audio.sample_rate:.2f}s")
 engine.set_speaker("nadine")
 audio = engine.synthesize(
     text="Je suis Nadine, enchantee.",
-    style="calm",
+    style="narratif",
 )
 
 # Synthese a partir de phonemes IPA avec style personnalise
@@ -149,7 +148,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **HiFi-GAN** : vocoder universel, signal 22050 Hz
 - **2 backends** : API (zero config) ou ONNX Runtime local (modeles sous licence commerciale)
 - **6 voix** : Siwis, Ezwa, Nadine (F) — Bernard, Gilles, Zeckou (M)
-- **8 presets de style** : neutral, expressive, calm, dialogue, fast, slow, rising, suspense
+- **7 presets de style** : neutre, narratif, dialogue, expressif, meditatif, rapide, lent
 - **Controles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
 - **Factory `creer_engine()`** : detection automatique du meilleur mode
 - **`set_speaker()`** : changement de voix dynamique sans recharger les modeles
