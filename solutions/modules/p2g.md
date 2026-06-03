@@ -16,13 +16,15 @@ permalink: /solutions/modules/p2g/
 
 ## Presentation
 
-Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G reconstruit l'orthographe francaise. Un seul modele **BiLSTM char-level multi-tete avec word feedback** (2.56M parametres, ONNX INT8 = 2.6 Mo).
+Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G reconstruit l'orthographe francaise. Un seul modele **BiLSTM char-level multi-tete V6 avec word feedback et phone_lex_features** (2.56M parametres, ONNX INT8 = 2.6 Mo).
 
 | Tache | Description | Performance |
 |-------|-------------|-------------|
-| **P2G** | IPA vers orthographe | 93.1% word accuracy, 2.2% CER |
-| **POS** | Etiquetage morpho-syntaxique (19 tags) | 97.0% accuracy |
-| **Morphologie** | Genre, nombre, temps, mode, personne | 92-97% |
+| **P2G** | IPA vers orthographe (pipeline complet) | 90.95% word accuracy |
+| **POS** | Etiquetage morpho-syntaxique (19 tags) | 98.3% accuracy |
+| **Morphologie** | Genre, nombre, temps, mode, personne | 94.7-99.7% |
+
+Le score P2G inclut la reconnaissance de formules (nombres, sigles, dates) via `lectura_formules`.
 
 Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
 
@@ -118,16 +120,18 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Architecture du modele (v3)
+## Architecture du modele (V6)
 
 Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
+
+Pipeline complet : raw (82.32%) → lex_select (87.33%) → post-traitement formules/coherence/accents (90.95%).
 
 ```
 Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
                                           |
                   +-----------------------+--------------------+
                   v                                             v
-        Word representations              Word repr (320d) + Lex Features (24d)
+        Word representations              Word repr (320d) + Phone Lex Features (28d)
         (fwd[last] || bwd[first])                          |
                                                  Word BiLSTM (192h → 384d)
                                                        |
@@ -136,7 +140,7 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
                                                                     → P2G Head (704d → 1198)
 ```
 
-**Features lexicales (optionnel)** : si un fichier `lexique_pos_candidates.json` est present dans le dossier modeles, le modele recoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela ameliore la prediction POS et la morphologie, ce qui ameliore aussi la reconstruction orthographique via le word feedback. Sans lexique, le modele fonctionne normalement. Ce fichier est inclus avec les modeles (licence commerciale).
+**Phone_lex_features (28d)** : le modele V6 recoit un vecteur de 28 dimensions par mot, construit a partir du `phone_lexicon.db` (lexique phonetique SQLite) : 19d POS one-hot + 3d morpho (genre, nombre) + 6d features lexicales. Le **lex_select** choisit parmi les candidats phonetiquement compatibles du lexique. Sans phone_lexicon, le modele fonctionne en mode degrade (features = zeros).
 
 ---
 
@@ -157,7 +161,9 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **2.56M parametres**, modele ONNX INT8 = 2.6 Mo
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
+- **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
+- **Lex_select** : selection lexicale parmi candidats phonetiques
+- **Formules** : reconnaissance deterministe de nombres, sigles, dates via `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
-- **Features lexicales** (optionnel) : candidats POS pour ameliorer POS/morpho (inclus avec les modeles)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
