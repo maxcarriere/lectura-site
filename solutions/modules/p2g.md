@@ -34,7 +34,7 @@ En miroir de l'architecture G2P (lectura-phonemiseur + lectura-g2p) :
 | Couche | Package | Contenu |
 |--------|---------|---------|
 | **Couche 1** | `lectura-graphemiseur` | Modele P2G core + lex_select + coherence morpho + accents |
-| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules + noms propres + entites |
+| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules (nombres, maths) + noms propres + entites |
 
 Le graphemiseur (couche 1) est **zero dependance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, fusion de composes, coherence morpho, noms propres et reconnaissance d'entites notables.
 
@@ -178,7 +178,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
 - **Lex_select** : selection lexicale parmi candidats phonetiques
-- **Pipeline `lectura-p2g`** : formules (nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2
+- **Pipeline `lectura-p2g`** : formules (expressions mathematiques, nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2
 - **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)

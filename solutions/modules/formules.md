@@ -39,6 +39,7 @@ Chaque formule est decomposee en **events alignes** : chaque composant de la for
 | **Fraction** | `3/4` | trois quarts |
 | **Monnaie** | `42 EUR` | quarante-deux euros |
 | **Pourcentage** | `50%` | cinquante pour cent |
+| **Maths** | `2x²+5x-3` | deux x au carre plus cinq x moins trois |
 | **Romain** | `XIV` | quatorze |
 
 ---
@@ -132,6 +133,34 @@ La reconnaissance est **tolerante aux espaces** (manquants, supplementaires ou c
 
 ---
 
+## Reconnaissance de formules mathematiques
+
+**Nouveau en 3.3.0** — Reconnaissance inverse des expressions mathematiques : operateurs, fonctions, lettres grecques, exposants, racines et parentheses intelligentes.
+
+```python
+from lectura_formules import reconnaitre_maths_ipa
+
+reconnaitre_maths_ipa("dø plys tʁwa eɡal sɛ̃k")                  # → "2+3=5"
+reconnaitre_maths_ipa("ɛf də iks eɡal dø iks o kaʁe plys sɛ̃k iks mwɛ̃ tʁwa")  # → "f(x)=2x²+5x-3"
+reconnaitre_maths_ipa("ø eɡal ɛm se o kaʁe")                     # → "E=mc²"
+reconnaitre_maths_ipa("sinys də iks")                              # → "sin(x)"
+reconnaitre_maths_ipa("ʁasin kaʁe də nœf")                        # → "√9"
+reconnaitre_maths_ipa("alfa plys bɛta eɡal ɡama")                 # → "α+β=γ"
+```
+
+La detection de **spans** permet de reconnaitre les formules a l'interieur de phrases IPA completes :
+
+```python
+from lectura_formules import detect_formula_spans
+
+spans = detect_formula_spans(["la", "fɔʁmyl", "dø", "plys", "tʁwa", "eɡal", "sɛ̃k", "ɛ", "kɔnɥ"])
+# → [(2, 7, <result: "2+3=5">)]
+```
+
+Des variantes **tolerantes STT** (`reconnaitre_maths_ipa_stt`, `detect_formula_spans_stt`) gerent les approximations des moteurs de reconnaissance vocale (normalisation vocalique, variantes CTC, tolerance Levenshtein).
+
+---
+
 ## API principale
 
 | Fonction | Description |
@@ -147,6 +176,10 @@ La reconnaissance est **tolerante aux espaces** (manquants, supplementaires ou c
 | `lire_monnaie(texte)` | Monnaies : "42 EUR" → "quarante-deux euros" |
 | `lire_pourcentage(texte)` | Pourcentages : "50%" → "cinquante pour cent" |
 | `reconnaitre_ipa(ipa)` | **Inverse** : IPA → formule source (nombre, date, heure, monnaie, %) |
+| `reconnaitre_maths_ipa(ipa)` | **Inverse maths** : IPA → formule mathematique |
+| `detect_formula_spans(words)` | Detection de formules math dans une phrase IPA |
+| `detect_number_spans(words)` | Detection de nombres dans une phrase IPA |
+| `detect_sigle_spans(words)` | Detection de sigles dans une phrase IPA |
 | `enrichir_formules(tokens)` | Enrichit les tokens d'une phrase |
 | `int_to_roman(n)` / `roman_to_int(s)` | Chiffres romains |
 
@@ -168,5 +201,5 @@ pip install lectura-formules
 - **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 3.2.0
+- **Version** : 3.3.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
