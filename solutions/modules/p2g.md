@@ -34,9 +34,9 @@ En miroir de l'architecture G2P (lectura-phonemiseur + lectura-g2p) :
 | Couche | Package | Contenu |
 |--------|---------|---------|
 | **Couche 1** | `lectura-graphemiseur` | Modele P2G core + lex_select + coherence morpho + accents |
-| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules + noms propres |
+| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules + noms propres + entites |
 
-Le graphemiseur (couche 1) est **zero dependance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, coherence morpho et noms propres.
+Le graphemiseur (couche 1) est **zero dependance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, fusion de composes, coherence morpho, noms propres et reconnaissance d'entites notables.
 
 ---
 
@@ -135,7 +135,7 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
 
 Modele core : raw (82.32%) → lex_select (87.33%) → coherence morpho + accents (~88%).
-Pipeline complet (`lectura-p2g`) : + formules + noms propres (90.95%).
+Pipeline complet (`lectura-p2g`) : + formules + composés + noms propres + entités (90.95%).
 
 ```
 Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
@@ -178,7 +178,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
 - **Lex_select** : selection lexicale parmi candidats phonetiques
-- **Pipeline `lectura-p2g`** : formules (nombres, sigles, dates) + noms propres via couche 2
+- **Pipeline `lectura-p2g`** : formules (nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2
 - **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
