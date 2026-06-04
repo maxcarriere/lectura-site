@@ -35,6 +35,22 @@ Module de transcription phonetique du francais : convertit un signal audio en un
 
 *La demo utilise l'API Lectura — aucun telechargement necessaire.*
 
+<style>
+#ctc-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.8;
+  font-size: 1.05em;
+}
+#ctc-output .ctc-word {
+  display: inline-block;
+  background: var(--code-bg, #f5f5f5);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 2px 4px 2px 0;
+}
+</style>
+
 <div class="ctc-demo">
   <div class="ctc-input-section">
     <label>Audio source :</label>

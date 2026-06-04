@@ -105,6 +105,23 @@
     outputArea.classList.toggle("error", !!isError);
   }
 
+  function displayIpa(ipa) {
+    // Decouper par separateur de mots | et afficher un mot par ligne
+    outputArea.classList.remove("error");
+    outputArea.textContent = "";
+
+    var words = ipa.split(" | ");
+    words.forEach(function (word, i) {
+      if (i > 0) {
+        outputArea.appendChild(document.createTextNode("\n"));
+      }
+      var span = document.createElement("span");
+      span.className = "ctc-word";
+      span.textContent = word;
+      outputArea.appendChild(span);
+    });
+  }
+
   // Transcription
   transcribeBtn.addEventListener("click", function () {
     doTranscribe();
@@ -163,7 +180,7 @@
       }
 
       if (data.ipa) {
-        setStatus(data.ipa);
+        displayIpa(data.ipa);
       } else {
         setStatus("(silence — aucun phone detecte)");
       }
