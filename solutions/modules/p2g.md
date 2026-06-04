@@ -20,13 +20,23 @@ Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G 
 
 | Tache | Description | Performance |
 |-------|-------------|-------------|
-| **P2G** | IPA vers orthographe (pipeline complet) | 90.95% word accuracy |
+| **P2G** | IPA vers orthographe (modele core) | ~88% word accuracy |
+| **P2G** | Pipeline complet (+ formules + noms propres) | 90.95% word accuracy |
 | **POS** | Etiquetage morpho-syntaxique (19 tags) | 98.3% accuracy |
 | **Morphologie** | Genre, nombre, temps, mode, personne | 94.7-99.7% |
 
-Le score P2G inclut la reconnaissance de formules (nombres, sigles, dates) via `lectura_formules`.
-
 Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
+
+### Architecture en deux couches
+
+En miroir de l'architecture G2P (lectura-phonemiseur + lectura-g2p) :
+
+| Couche | Package | Contenu |
+|--------|---------|---------|
+| **Couche 1** | `lectura-graphemiseur` | Modele P2G core + lex_select + coherence morpho + accents |
+| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules + noms propres |
+
+Le graphemiseur (couche 1) est **zero dependance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, coherence morpho et noms propres.
 
 ---
 
@@ -124,7 +134,8 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
 
-Pipeline complet : raw (82.32%) → lex_select (87.33%) → post-traitement formules/coherence/accents (90.95%).
+Modele core : raw (82.32%) → lex_select (87.33%) → coherence morpho + accents (~88%).
+Pipeline complet (`lectura-p2g`) : + formules + noms propres (90.95%).
 
 ```
 Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
@@ -147,9 +158,13 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-graphemiseur             # mode API (zero config, zero dependance)
+# Modele core (zero dependance)
+pip install lectura-graphemiseur             # mode API (zero config)
 pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-graphemiseur[numpy]      # backend NumPy local
+
+# Pipeline complet (graphemiseur + formules + noms propres)
+pip install lectura-p2g
 ```
 
 Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
@@ -163,7 +178,8 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
 - **Lex_select** : selection lexicale parmi candidats phonetiques
-- **Formules** : reconnaissance deterministe de nombres, sigles, dates via `lectura_formules`
+- **Pipeline `lectura-p2g`** : formules (nombres, sigles, dates) + noms propres via couche 2
+- **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)

@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/modules/
 ---
 
-Treize packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
+Quatorze packages Python autonomes pour le traitement linguistique et la synthese vocale du francais, distribues sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module independamment. Zero dependance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
@@ -29,7 +29,7 @@ Treize packages Python autonomes pour le traitement linguistique et la synthese 
   </div>
   <div class="home-card">
     <h2>Graphemiseur (P2G)</h2>
-    <p>Conversion IPA → orthographe avec word feedback (93.1%), POS-tagging, morphologie.</p>
+    <p>Modele core P2G : conversion IPA → orthographe avec word feedback (93.1%), POS-tagging, morphologie. Pipeline complet (formules + noms propres) : <code>pip install lectura-p2g</code>.</p>
     <code class="card-install">pip install lectura-graphemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/p2g/' | relative_url }}">Details & Demo</a>
@@ -163,8 +163,11 @@ pip install lectura-tokeniseur
 # Phonemiseur (G2P) — fonctionne immediatement via l'API (zero config)
 pip install lectura-phonemiseur
 
-# Pipeline complet (tokeniseur + formules + phonemiseur + groupes de lecture)
+# Pipeline G2P complet (tokeniseur + formules + phonemiseur + groupes de lecture)
 pip install lectura-g2p
+
+# Pipeline P2G complet (graphemiseur + formules + noms propres)
+pip install lectura-p2g
 ```
 
 Par defaut, les modules Phonemiseur, Graphemiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-phonemiseur[onnx]`).
