@@ -178,7 +178,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
 - **Lex_select** : selection lexicale parmi candidats phonetiques
-- **Pipeline `lectura-p2g`** : formules (expressions mathematiques, nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2
+- **Pipeline `lectura-p2g`** : formules (expressions mathematiques, nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2. Mode `formule_tolerance="stt"` pour la reconnaissance tolerante depuis un pipeline STT
 - **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
