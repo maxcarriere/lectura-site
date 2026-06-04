@@ -1,22 +1,34 @@
 ---
-title: CTC
+title: STT
 layout: default
 permalink: /solutions/modules/ctc/
 ---
 
 <div class="module-header">
-  <h1>Lectura CTC</h1>
-  <p class="module-tagline">Decodeur phonetique CTC du francais — audio vers phones IPA (CNN-BiGRU-CTC)</p>
+  <h1>Lectura STT</h1>
+  <p class="module-tagline">Transcription audio du francais — phones IPA et texte orthographique</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-ctc/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/CTC" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-ctc</code>
+    <a href="https://pypi.org/project/lectura-stt/" class="module-badge">STT PyPI</a>
+    <a href="https://pypi.org/project/lectura-ctc/" class="module-badge">CTC PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/STT" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-stt[p2g]</code>
   </div>
 </div>
 
 ## Presentation
 
-Module de transcription phonetique du francais : convertit un signal audio en une sequence de phones IPA. Le modele CNN-BiGRU-CTC (3.5M parametres, PER ~6%) a ete entraine sur un corpus de parole francaise et produit une transcription phonetique fine avec separateurs de mots.
+Deux modules pour la transcription audio du francais :
+
+| Module | Couche | Entree | Sortie | pip install |
+|--------|--------|--------|--------|-------------|
+| **Lectura CTC** | couche 1 | audio 16 kHz | phones IPA | `pip install lectura-ctc` |
+| **Lectura STT** | couche 2 | audio 16 kHz | texte orthographique | `pip install lectura-stt[p2g]` |
+
+**CTC** est le decodeur phonetique neural (CNN-BiGRU-CTC, 3.5M parametres, PER ~6%). Il convertit un signal audio en une sequence de phones IPA avec separateurs de mots, liaisons et ponctuation.
+
+**STT** est le pipeline complet qui chaine CTC avec le graphemiseur P2G pour reconstituer le texte francais, avec gestion des elisions, de la ponctuation et des majuscules. Si `lectura-p2g` est installe, les formules (nombres, sigles) et les noms propres sont aussi traites.
+
+### Specifications CTC
 
 | Caracteristique | Valeur |
 |-----------------|--------|
@@ -36,18 +48,31 @@ Module de transcription phonetique du francais : convertit un signal audio en un
 *La demo utilise l'API Lectura — aucun telechargement necessaire.*
 
 <style>
-#ctc-output {
+#ctc-output-ipa, #ctc-output-texte {
   white-space: pre-wrap;
   word-wrap: break-word;
   line-height: 1.8;
   font-size: 1.05em;
 }
-#ctc-output .ctc-word {
+#ctc-output-ipa .ctc-word {
   display: inline-block;
   background: var(--code-bg, #f5f5f5);
   border-radius: 4px;
   padding: 2px 6px;
   margin: 2px 4px 2px 0;
+}
+.ctc-output-label {
+  font-weight: bold;
+  font-size: 0.85em;
+  color: var(--muted-fg, #888);
+  margin-bottom: 4px;
+}
+.ctc-output-block {
+  margin-bottom: 12px;
+}
+.ctc-muted {
+  color: var(--muted-fg, #888);
+  font-style: italic;
 }
 </style>
 
@@ -69,7 +94,15 @@ Module de transcription phonetique du francais : convertit un signal audio en un
 
   <button type="button" id="ctc-transcribe-btn" class="tts-btn">Transcrire</button>
   <div class="tts-progress-container"><div class="tts-progress" id="ctc-progress"></div></div>
-  <pre class="tts-output" id="ctc-output">Selectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
+
+  <div class="ctc-output-block">
+    <div class="ctc-output-label">Phonetique (IPA)</div>
+    <pre class="tts-output" id="ctc-output-ipa">Selectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
+  </div>
+  <div class="ctc-output-block">
+    <div class="ctc-output-label">Texte (STT)</div>
+    <pre class="tts-output" id="ctc-output-texte"></pre>
+  </div>
 </div>
 
 <script src="{{ '/assets/js/ctc-demo.js' | relative_url }}"></script>
@@ -77,6 +110,8 @@ Module de transcription phonetique du francais : convertit un signal audio en un
 ---
 
 ## Exemple de code
+
+### CTC seul (phones IPA)
 
 ```python
 import numpy as np
@@ -96,23 +131,75 @@ ipa = engine.transcrire(audio, sr=sr)
 print(ipa)  # "b ɔ̃ ʒ u ʁ"
 ```
 
+### Pipeline STT (audio → texte)
+
+```python
+from lectura_stt import creer_engine
+
+engine = creer_engine()  # CTC + P2G automatique
+
+result = engine.transcrire(audio, sr=16000)
+print(result.ipa)    # "b ɔ̃ ʒ u ʁ | l ə | m ɔ̃ d ."
+print(result.texte)  # "Bonjour le monde."
+```
+
 ```bash
-# CLI : transcrire un fichier
+# CLI CTC : transcrire un fichier
 python -m lectura_ctc bonjour.wav
 
-# CLI : enregistrer au micro
+# CLI CTC : enregistrer au micro
 python -m lectura_ctc --micro
 
-# CLI : enregistrer 5 secondes
+# CLI CTC : enregistrer 5 secondes
 python -m lectura_ctc --micro --duree 5
 
-# CLI : mode continu (Ctrl+C pour quitter)
+# CLI CTC : mode continu (Ctrl+C pour quitter)
 python -m lectura_ctc --micro --continu
 ```
 
 ---
 
 ## Architecture
+
+### Pipeline STT (audio → texte)
+
+```
+Audio 16kHz mono
+     │
+     ▼
+┌─────────────┐
+│ lectura-ctc  │  CNN-BiGRU-CTC (3.5M params)
+└─────┬───────┘
+      │
+      ▼
+  "b ɔ̃ ʒ u ʁ | l ə | m ɔ̃ d ."     (IPA brut)
+      │
+      ▼
+┌─────────────┐
+│ _parse_ctc   │  extraction mots IPA + ponctuation + liaisons
+└─────┬───────┘
+      │
+      ▼
+  ["bɔ̃ʒuʁ", "lə", "mɔ̃d"]          (mots IPA)
+      │
+      ▼
+┌─────────────┐
+│ lectura-p2g  │  graphemiseur + formules + noms propres
+└─────┬───────┘
+      │
+      ▼
+  ["bonjour", "le", "monde"]        (mots ortho)
+      │
+      ▼
+┌─────────────┐
+│ _assembler   │  majuscules + elisions + ponctuation
+└─────┬───────┘
+      │
+      ▼
+  "Bonjour le monde."               (texte final)
+```
+
+### Modele CTC (detail)
 
 ```
 Audio 16kHz mono
@@ -153,7 +240,13 @@ Audio 16kHz mono
 ## Installation
 
 ```bash
-# Avec backend ONNX (recommande)
+# Pipeline STT complet (audio → texte, avec P2G + formules)
+pip install lectura-stt[p2g]
+
+# STT avec backend ONNX (inference locale rapide)
+pip install lectura-stt[onnx,p2g]
+
+# CTC seul (audio → phones IPA)
 pip install lectura-ctc[onnx]
 
 # Mode API uniquement (sans ONNX)
@@ -163,11 +256,13 @@ pip install lectura-ctc
 pip install lectura-ctc[onnx,micro]
 ```
 
-Par defaut, le module utilise l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/ctc/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com)).
+Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com)).
 
 ---
 
 ## Caracteristiques techniques
+
+### CTC (couche 1)
 
 - **CNN-BiGRU-CTC** : 3.5M parametres, PER ~6%
 - **Mel spectrogram numpy pur** : pas de dependance torchaudio
@@ -176,5 +271,14 @@ Par defaut, le module utilise l'**API Lectura** si aucun modele local n'est trou
 - **ONNX INT8** : modele quantifie ~13 Mo
 - **CLI integree** : `python -m lectura_ctc` (fichier WAV ou micro)
 - **Factory `creer_engine()`** : cascade auto ONNX → API
+
+### STT (couche 2)
+
+- **Pipeline CTC + P2G** : audio → texte francais en une ligne de code
+- **P2G optionnel** : fonctionne en mode phones seuls si P2G non installe
+- **Cascade P2G** : `lectura-p2g` (complet) → `lectura-graphemiseur` (core) → aucun
+- **Elisions automatiques** : l', d', j', n', s', qu', m', t', c'
+- **Ponctuation et majuscules** : reconstruction fidele du texte
+- **Formules** : nombres, sigles (via `lectura-p2g`)
 - **Python 3.10+** avec type hints complets
 - **Licence** : AGPL-3.0 (code) — modeles sous [licence commerciale](mailto:contact@lec-tu-ra.com)

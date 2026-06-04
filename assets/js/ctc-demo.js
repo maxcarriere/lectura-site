@@ -1,11 +1,13 @@
 /**
- * CTC Demo — transcription phonetique interactive avec upload audio ou micro.
- * Envoie l'audio a l'API Lectura /ctc/transcribe et affiche la transcription IPA.
+ * CTC/STT Demo — transcription phonetique et orthographique interactive.
+ * Envoie l'audio a l'API Lectura /stt/transcribe-file et affiche :
+ *   - la transcription phonetique IPA (CTC)
+ *   - la transcription orthographique (STT = CTC + P2G)
  */
 (function () {
   "use strict";
 
-  var API_URL = "https://api.lec-tu-ra.com/ctc/transcribe-file";
+  var API_URL = "https://api.lec-tu-ra.com/stt/transcribe-file";
 
   var container = document.querySelector(".ctc-demo");
   if (!container) return;
@@ -18,7 +20,8 @@
   var audioPreview = document.getElementById("ctc-audio-preview");
   var transcribeBtn = document.getElementById("ctc-transcribe-btn");
   var progressBar = document.getElementById("ctc-progress");
-  var outputArea = document.getElementById("ctc-output");
+  var ipaOutput = document.getElementById("ctc-output-ipa");
+  var texteOutput = document.getElementById("ctc-output-texte");
 
   var mediaRecorder = null;
   var recordedChunks = [];
@@ -101,25 +104,36 @@
   }
 
   function setStatus(msg, isError) {
-    outputArea.textContent = msg;
-    outputArea.classList.toggle("error", !!isError);
+    ipaOutput.textContent = msg;
+    ipaOutput.classList.toggle("error", !!isError);
+    texteOutput.textContent = "";
+    texteOutput.classList.remove("error");
   }
 
   function displayIpa(ipa) {
-    // Decouper par separateur de mots | et afficher un mot par ligne
-    outputArea.classList.remove("error");
-    outputArea.textContent = "";
+    ipaOutput.classList.remove("error");
+    ipaOutput.textContent = "";
 
     var words = ipa.split(" | ");
     words.forEach(function (word, i) {
       if (i > 0) {
-        outputArea.appendChild(document.createTextNode("\n"));
+        ipaOutput.appendChild(document.createTextNode("\n"));
       }
       var span = document.createElement("span");
       span.className = "ctc-word";
       span.textContent = word;
-      outputArea.appendChild(span);
+      ipaOutput.appendChild(span);
     });
+  }
+
+  function displayTexte(texte) {
+    texteOutput.classList.remove("error");
+    if (texte) {
+      texteOutput.textContent = texte;
+    } else {
+      texteOutput.textContent = "(P2G non disponible sur le serveur)";
+      texteOutput.classList.add("ctc-muted");
+    }
   }
 
   // Transcription
@@ -181,6 +195,7 @@
 
       if (data.ipa) {
         displayIpa(data.ipa);
+        displayTexte(data.texte);
       } else {
         setStatus("(silence — aucun phone detecte)");
       }

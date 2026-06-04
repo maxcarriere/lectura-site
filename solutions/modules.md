@@ -78,13 +78,14 @@ Quatorze packages Python autonomes pour le traitement linguistique et la synthes
     </div>
   </div>
   <div class="home-card">
-    <h2>CTC</h2>
-    <p>Decodeur phonetique CTC : audio → phones IPA (CNN-BiGRU-CTC, 3.5M params, PER ~6%).</p>
-    <code class="card-install">pip install lectura-ctc</code>
+    <h2>STT</h2>
+    <p>Transcription audio du francais : decodeur CTC (audio → phones IPA, 3.5M params, PER ~6%) + pipeline STT (audio → texte via CTC + P2G).</p>
+    <code class="card-install">pip install lectura-stt[p2g]</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/ctc/' | relative_url }}">Details & Demo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-ctc/">PyPI</a>
-      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/CTC">GitHub</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-ctc/">CTC PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-stt/">STT PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/STT">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -168,6 +169,9 @@ pip install lectura-g2p
 
 # Pipeline P2G complet (graphemiseur + formules + noms propres)
 pip install lectura-p2g
+
+# Pipeline STT complet (audio → texte, CTC + P2G)
+pip install lectura-stt[p2g]
 ```
 
 Par defaut, les modules Phonemiseur, Graphemiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-phonemiseur[onnx]`).
