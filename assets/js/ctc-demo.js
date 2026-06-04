@@ -117,7 +117,7 @@
     var words = ipa.split(" | ");
     words.forEach(function (word, i) {
       if (i > 0) {
-        ipaOutput.appendChild(document.createTextNode("\n"));
+        ipaOutput.appendChild(document.createTextNode(" "));
       }
       var span = document.createElement("span");
       span.className = "ctc-word";

@@ -49,7 +49,7 @@ Deux modules pour la transcription audio du francais :
 
 <style>
 #ctc-output-ipa, #ctc-output-texte {
-  white-space: pre-wrap;
+  white-space: normal;
   word-wrap: break-word;
   line-height: 1.8;
   font-size: 1.05em;
