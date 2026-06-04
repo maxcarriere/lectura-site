@@ -78,6 +78,16 @@ Treize packages Python autonomes pour le traitement linguistique et la synthese 
     </div>
   </div>
   <div class="home-card">
+    <h2>CTC</h2>
+    <p>Decodeur phonetique CTC : audio → phones IPA (CNN-BiGRU-CTC, 3.5M params, PER ~6%).</p>
+    <code class="card-install">pip install lectura-ctc</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/solutions/modules/ctc/' | relative_url }}">Details & Demo</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-ctc/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/CTC">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
     <h2>TTS Monospeaker</h2>
     <p>Synthese vocale neuronale francais : FastPitch-Lite V6 + HiFi-GAN, controles prosodiques, retimbre multi-voix optionnel, ~50x temps-reel.</p>
     <code class="card-install">pip install lectura-tts-monospeaker</code>

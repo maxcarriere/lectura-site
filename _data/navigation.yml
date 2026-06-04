@@ -21,6 +21,8 @@
           url: /solutions/modules/formules/
         - title: Correcteur
           url: /solutions/modules/correcteur/
+        - title: CTC
+          url: /solutions/modules/ctc/
         - title: TTS Monospeaker
           url: /solutions/modules/tts/
         - title: TTS Diphone
