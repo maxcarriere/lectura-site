@@ -161,6 +161,44 @@ Des variantes **tolerantes STT** (`reconnaitre_maths_ipa_stt`, `detect_formula_s
 
 ---
 
+## Tolerance CTC pour la reconnaissance STT
+
+**Nouveau en 3.5.0** — Le pipeline STT (CTC + P2G) produit de l'IPA globalement correct, mais avec des variantes phonetiques mineures qui faisaient echouer la detection de formules. La version 3.5.0 gere automatiquement ces confusions CTC :
+
+| Confusion | Exemple | Effet |
+|-----------|---------|-------|
+| Nasales (`ɛ̃` / `œ̃` / `ɑ̃`) | "un" : `ɛ̃` → `ɑ̃` | Reconnu |
+| Voisement (`k`/`ɡ`, `t`/`d`, `p`/`b`) | "quarante" : `kaʁɑ̃t` → `ɡaʁɑ̃t` | Reconnu |
+| Glides manquantes (`lj` → `l`) | "million" : `miljɔ̃` → `milɔ̃` | Reconnu |
+| Consonnes finales (`tʁ` → `t`) | "quatre" : `katʁ` → `kat` | Reconnu |
+
+Les variantes sont generees automatiquement pour toutes les entrees de la table de lookup (nombres, mois, devises, symboles).
+
+### Modes de detection des nombres
+
+La fonction `detect_number_spans` propose trois modes de detection :
+
+| Mode | Usage | Comportement |
+|------|-------|-------------|
+| `"num"` | Conversion explicite | Convertit tous les nombres, y compris isoles |
+| `"auto"` | Mode par defaut STT | Exige 2+ tokens nombre consecutifs — jamais de conversion pour un mot isole (trois, cent, vingt) |
+| `"texte"` | Pas de formules | Aucune conversion numerique |
+
+```python
+from lectura_formules import detect_number_spans
+
+# Mode auto : "sɑ̃" seul (cent) n'est pas converti
+detect_number_spans(["sɑ̃"], min_span=1, mode="auto")       # → []
+
+# Mode auto : "sɑ̃ dø" (cent deux) est converti
+detect_number_spans(["sɑ̃", "dø"], min_span=1, mode="auto") # → [(0, 2, <102>)]
+
+# Mode num : tout est converti
+detect_number_spans(["sɑ̃"], min_span=1, mode="num")         # → [(0, 1, <100>)]
+```
+
+---
+
 ## API principale
 
 | Fonction | Description |
@@ -176,9 +214,12 @@ Des variantes **tolerantes STT** (`reconnaitre_maths_ipa_stt`, `detect_formula_s
 | `lire_monnaie(texte)` | Monnaies : "42 EUR" → "quarante-deux euros" |
 | `lire_pourcentage(texte)` | Pourcentages : "50%" → "cinquante pour cent" |
 | `reconnaitre_ipa(ipa)` | **Inverse** : IPA → formule source (nombre, date, heure, monnaie, %) |
+| `reconnaitre_ipa_stt(ipa)` | **Inverse STT** : idem avec tolerance CTC (variantes, Levenshtein) |
 | `reconnaitre_maths_ipa(ipa)` | **Inverse maths** : IPA → formule mathematique |
+| `reconnaitre_maths_ipa_stt(ipa)` | **Inverse maths STT** : idem avec tolerance CTC |
 | `detect_formula_spans(words)` | Detection de formules math dans une phrase IPA |
-| `detect_number_spans(words)` | Detection de nombres dans une phrase IPA |
+| `detect_formula_spans_stt(words)` | Idem avec tolerance STT |
+| `detect_number_spans(words, mode=)` | Detection de nombres (modes : `num`, `auto`, `texte`) |
 | `detect_sigle_spans(words)` | Detection de sigles dans une phrase IPA |
 | `enrichir_formules(tokens)` | Enrichit les tokens d'une phrase |
 | `int_to_roman(n)` / `roman_to_int(s)` | Chiffres romains |
@@ -201,5 +242,5 @@ pip install lectura-formules
 - **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 3.3.0
+- **Version** : 3.5.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
