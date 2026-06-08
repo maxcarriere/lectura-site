@@ -29,7 +29,7 @@ Quatorze packages Python autonomes pour le traitement linguistique et la synthes
   </div>
   <div class="home-card">
     <h2>Graphemiseur (P2G)</h2>
-    <p>Modele core P2G : conversion IPA → orthographe avec word feedback (93.1%), POS-tagging, morphologie. Pipeline complet (formules + noms propres) : <code>pip install lectura-p2g</code>.</p>
+    <p>Modele core P2G V7 : conversion IPA → orthographe avec attention cross et lex_select (~95%), POS-tagging (98%), morphologie. Pipeline complet (formules + noms propres) : <code>pip install lectura-p2g</code>.</p>
     <code class="card-install">pip install lectura-graphemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/p2g/' | relative_url }}">Details & Demo</a>

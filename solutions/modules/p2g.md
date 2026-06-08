@@ -16,14 +16,14 @@ permalink: /solutions/modules/p2g/
 
 ## Presentation
 
-Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G reconstruit l'orthographe francaise. Un seul modele **BiLSTM char-level multi-tete V6 avec word feedback et phone_lex_features** (2.56M parametres, ONNX INT8 = 2.6 Mo).
+Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G reconstruit l'orthographe francaise. Un seul modele **BiLSTM char-level multi-tete V7 avec attention cross word-char et lex_select** (3.2M parametres, ONNX INT8 = 4.4 Mo).
 
 | Tache | Description | Performance |
 |-------|-------------|-------------|
-| **P2G** | IPA vers orthographe (modele core) | ~88% word accuracy |
-| **P2G** | Pipeline complet (+ formules + noms propres) | 90.95% word accuracy |
-| **POS** | Etiquetage morpho-syntaxique (19 tags) | 98.3% accuracy |
-| **Morphologie** | Genre, nombre, temps, mode, personne | 94.7-99.7% |
+| **P2G** | IPA vers orthographe (modele core + lex_select) | ~95% word accuracy |
+| **P2G** | Pipeline complet (+ formules + noms propres) | ~96% word accuracy |
+| **POS** | Etiquetage morpho-syntaxique (19 tags) | ~98% accuracy |
+| **Morphologie** | Genre, nombre, temps, mode, personne | 95-98% |
 
 Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
 
@@ -130,28 +130,29 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Architecture du modele (V6)
+## Architecture du modele (V7)
 
-Le P2G utilise un mecanisme de **word feedback** : les representations de mots issues des tetes POS/Morpho sont diffusees aux positions caractere correspondantes avant la prediction P2G finale.
+Le P2G V7 ajoute un mecanisme d'**attention cross word-char** : les representations de mots issues des tetes POS/Morpho sont projetees vers les positions caractere par attention, ameliorant la resolution des ambiguites contextuelles. Le **lex_select** choisit parmi les candidats phonetiquement compatibles du lexique par une tete neuronale dediee.
 
-Modele core : raw (82.32%) → lex_select (87.33%) → coherence morpho + accents (~88%).
-Pipeline complet (`lectura-p2g`) : + formules + composés + noms propres + entités (90.95%).
+Modele core : raw → lex_select → coherence morpho + accents (~95%).
+Pipeline complet (`lectura-p2g`) : + formules + composes + noms propres + entites (~96%).
 
 ```
-Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
+Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x192h → 384d)
                                           |
                   +-----------------------+--------------------+
                   v                                             v
-        Word representations              Word repr (320d) + Phone Lex Features (28d)
+        Word representations              Word repr (384d) + Phone Lex Features (28d)
         (fwd[last] || bwd[first])                          |
                                                  Word BiLSTM (192h → 384d)
                                                        |
                                             +--------------+--------------+
-                                           POS        Morpho (x6)    Word Feedback
-                                                                    → P2G Head (704d → 1198)
+                                           POS        Morpho (x6)    Attention Cross
+                                                                    → P2G Head
+                                                                    → Lex_Select Head
 ```
 
-**Phone_lex_features (28d)** : le modele V6 recoit un vecteur de 28 dimensions par mot, construit a partir du `phone_lexicon.db` (lexique phonetique SQLite) : 19d POS one-hot + 3d morpho (genre, nombre) + 6d features lexicales. Le **lex_select** choisit parmi les candidats phonetiquement compatibles du lexique. Sans phone_lexicon, le modele fonctionne en mode degrade (features = zeros).
+**Phone_lex_features (28d)** : le modele recoit un vecteur de 28 dimensions par mot, construit a partir du `phone_lexicon.db` (lexique phonetique SQLite) : 19d POS one-hot + 3d morpho (genre, nombre) + 6d features lexicales. Le **lex_select** selectionne la meilleure forme orthographique parmi les candidats phonetiquement compatibles du lexique. Sans phone_lexicon, le modele fonctionne en mode degrade (features = zeros).
 
 ---
 
@@ -173,7 +174,7 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 
 ## Caracteristiques techniques
 
-- **2.56M parametres**, modele ONNX INT8 = 2.6 Mo
+- **3.2M parametres**, modele ONNX INT8 = 4.4 Mo
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
