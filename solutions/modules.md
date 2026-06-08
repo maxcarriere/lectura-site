@@ -79,7 +79,7 @@ Quatorze packages Python autonomes pour le traitement linguistique et la synthes
   </div>
   <div class="home-card">
     <h2>STT</h2>
-    <p>Transcription audio du francais : decodeur CTC (audio → phones IPA, 3.5M params, PER ~6%) + pipeline STT (audio → texte via CTC + P2G).</p>
+    <p>Transcription audio du francais : decodeur CTC medium (audio → phones IPA, 10.6M params, PER ~4.34%) + pipeline STT optimal (audio → texte via CTC + postproc + P2G, WER ~19.7%).</p>
     <code class="card-install">pip install lectura-stt[p2g]</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/solutions/modules/ctc/' | relative_url }}">Details & Demo</a>

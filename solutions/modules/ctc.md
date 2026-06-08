@@ -24,7 +24,7 @@ Deux modules pour la transcription audio du francais :
 | **Lectura CTC** | couche 1 | audio 16 kHz | phones IPA | `pip install lectura-ctc` |
 | **Lectura STT** | couche 2 | audio 16 kHz | texte orthographique | `pip install lectura-stt[p2g]` |
 
-**CTC** est le decodeur phonetique neural (CNN-BiGRU-CTC, 3.5M parametres, PER ~6%). Il convertit un signal audio en une sequence de phones IPA avec separateurs de mots, liaisons et ponctuation.
+**CTC** est le decodeur phonetique neural (CNN-BiGRU-CTC medium, 10.6M parametres, PER ~4.34%). Il convertit un signal audio en une sequence de phones IPA avec separateurs de mots, liaisons et ponctuation. Le modele medium supporte les sigles et formules grace a un fine-tuning specialise.
 
 **STT** est le pipeline complet qui chaine CTC avec le graphemiseur P2G pour reconstituer le texte francais, avec gestion des elisions, de la ponctuation et des majuscules. Si `lectura-p2g` est installe, les formules (nombres, sigles) et les noms propres sont aussi traites.
 
@@ -32,13 +32,13 @@ Deux modules pour la transcription audio du francais :
 
 | Caracteristique | Valeur |
 |-----------------|--------|
-| **Architecture** | CNN Frontend (2 couches) + BiGRU (3 couches) + CTC head |
-| **Parametres** | 3.5M |
-| **Performance** | PER ~6% sur le corpus de test |
+| **Architecture** | CNN [48, 96] (2 couches) + BiGRU 384x4 + CTC head |
+| **Parametres** | 10.6M |
+| **Performance** | PER ~4.34% (formules v2) |
 | **Vocabulaire** | 59 tokens (46 phones IPA + liaisons + ponctuation + speciaux) |
 | **Audio** | PCM float32 mono, 16 kHz |
 | **Mel** | 80 bins, n_fft=512, hop=160, win=400 |
-| **Modele** | ONNX INT8, ~13 Mo |
+| **Modele** | ONNX INT8, ~38 Mo |
 | **Backends** | ONNX Runtime (local) ou API serveur |
 
 ---
@@ -168,7 +168,7 @@ Audio 16kHz mono
      │
      ▼
 ┌─────────────┐
-│ lectura-ctc  │  CNN-BiGRU-CTC (3.5M params)
+│ lectura-ctc  │  CNN-BiGRU-CTC medium (10.6M params)
 └─────┬───────┘
       │
       ▼
@@ -217,7 +217,7 @@ Audio 16kHz mono
       │  (1, T/4, 1280)
       ▼
 ┌─────────────┐
-│ BiGRU ×3     │  3 couches bidirectionnelles
+│ BiGRU ×4     │  4 couches bidirectionnelles (384h)
 └─────┬───────┘
       │  (1, T/4, 512)
       ▼
@@ -264,11 +264,11 @@ Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est 
 
 ### CTC (couche 1)
 
-- **CNN-BiGRU-CTC** : 3.5M parametres, PER ~6%
+- **CNN-BiGRU-CTC medium** : 10.6M parametres, PER ~4.34%
 - **Mel spectrogram numpy pur** : pas de dependance torchaudio
 - **Decodage CTC greedy** : zero dependance
 - **59 tokens** : 46 phones IPA francais + 6 liaisons + 5 ponctuations + 2 speciaux
-- **ONNX INT8** : modele quantifie ~13 Mo
+- **ONNX INT8** : modele quantifie ~38 Mo
 - **CLI integree** : `python -m lectura_ctc` (fichier WAV ou micro)
 - **Factory `creer_engine()`** : cascade auto ONNX → API
 
