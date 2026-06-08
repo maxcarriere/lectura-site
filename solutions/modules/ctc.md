@@ -41,6 +41,14 @@ Deux modules pour la transcription audio du francais :
 | **Modele** | ONNX INT8, ~38 Mo |
 | **Backends** | ONNX Runtime (local) ou API serveur |
 
+### Benchmark STT (pipeline complet)
+
+| Metrique | Corpus | Score |
+|----------|--------|-------|
+| **WER** | all (lectures + conversations + formules) | **~23.5%** |
+| **WER** | parole courante (sans formules) | **~19.7%** |
+| **PER** | CTC seul (phone error rate) | **~4.34%** |
+
 ---
 
 ## Essayer en ligne
@@ -274,6 +282,8 @@ Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est 
 
 ### STT (couche 2)
 
+- **WER ~23.5%** (all) / **~19.7%** (parole courante)
+- **Pipeline optimal** : CTC → postproc (strip_liaisons, split_elisions, merge_and_rescore) → P2G → texte
 - **Pipeline CTC + P2G** : audio → texte francais en une ligne de code
 - **P2G optionnel** : fonctionne en mode phones seuls si P2G non installe
 - **Cascade P2G** : `lectura-p2g` (complet) → `lectura-graphemiseur` (core) → aucun
