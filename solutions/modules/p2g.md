@@ -100,12 +100,21 @@ async def _p2g_api_call(ipa_words):
 tokens = '{INPUT}'.split()
 result = await _p2g_api_call(tokens)
 lines = []
-lines.append(f"{'IPA':<16}{'Orthographe':<20}{'POS'}")
-lines.append('-' * 48)
+lines.append(f"{'IPA':<16}{'Orthographe':<16}{'POS':<12}{'Morphologie'}")
+lines.append('-' * 72)
+morpho = result.get('morpho', {})
+traits = ['Number', 'Gender', 'VerbForm', 'Mood', 'Tense', 'Person']
 for i, tok in enumerate(tokens):
     ortho = result['ortho'][i] if i < len(result['ortho']) else ''
     pos = result['pos'][i] if i < len(result['pos']) else ''
-    lines.append(f"{tok:<16}{ortho:<20}{pos}")
+    m = []
+    for t in traits:
+        v = morpho.get(t, ['_'] * len(tokens))
+        val = v[i] if i < len(v) else '_'
+        if val != '_':
+            m.append(f"{t}={val}")
+    morpho_str = ' | '.join(m) if m else ''
+    lines.append(f"{tok:<16}{ortho:<16}{pos:<12}{morpho_str}")
 '\n'.join(lines)
   </script>
   <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
