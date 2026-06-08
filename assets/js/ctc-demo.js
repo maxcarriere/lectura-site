@@ -20,6 +20,7 @@
   var audioPreview = document.getElementById("ctc-audio-preview");
   var transcribeBtn = document.getElementById("ctc-transcribe-btn");
   var progressBar = document.getElementById("ctc-progress");
+  var modeSelect = document.getElementById("ctc-mode");
   var ipaOutput = document.getElementById("ctc-output-ipa");
   var texteOutput = document.getElementById("ctc-output-texte");
 
@@ -173,7 +174,10 @@
     }
 
     try {
-      var resp = await fetch(API_URL, {
+      var mode = modeSelect ? modeSelect.value : "standard";
+      var url = API_URL + "?mode=" + encodeURIComponent(mode);
+
+      var resp = await fetch(url, {
         method: "POST",
         body: formData,
       });
@@ -195,7 +199,12 @@
 
       if (data.ipa) {
         displayIpa(data.ipa);
-        displayTexte(data.texte);
+        if (mode === "ipa") {
+          texteOutput.textContent = "(mode CTC seul — pas de conversion texte)";
+          texteOutput.classList.add("ctc-muted");
+        } else {
+          displayTexte(data.texte);
+        }
       } else {
         setStatus("(silence — aucun phone detecte)");
       }

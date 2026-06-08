@@ -100,6 +100,15 @@ Deux modules pour la transcription audio du francais :
     <audio id="ctc-audio-preview" controls style="display:none; width:100%; margin-top:8px;"></audio>
   </div>
 
+  <div class="ctc-input-section" style="margin-top:8px;">
+    <label for="ctc-mode">Mode :</label>
+    <select id="ctc-mode" class="vc-btn-secondary" style="padding:4px 8px;">
+      <option value="standard">Standard</option>
+      <option value="formules">Formules (nombres, sigles…)</option>
+      <option value="ipa">CTC seul (IPA)</option>
+    </select>
+  </div>
+
   <button type="button" id="ctc-transcribe-btn" class="tts-btn">Transcrire</button>
   <div class="tts-progress-container"><div class="tts-progress" id="ctc-progress"></div></div>
 
