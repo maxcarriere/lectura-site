@@ -161,6 +161,32 @@ Des variantes **tolerantes STT** (`reconnaitre_maths_ipa_stt`, `detect_formula_s
 
 ---
 
+## Detecteur unifie STT (heures, dates, fractions)
+
+**Nouveau en 3.6.0** — Le detecteur `detect_formule_spans_stt` remplace `detect_number_spans` en mode STT. Il detecte automatiquement tous les types de formules (nombres, heures, dates, monnaies, pourcentages, fractions, ordinaux) dans une phrase IPA produite par un pipeline STT.
+
+```python
+from lectura_formules import detect_formule_spans_stt
+
+# Heure : "quinze heures cinquante-sept"
+spans = detect_formule_spans_stt(["kɛ̃z", "œʁ", "sɛ̃kɑ̃t", "sɛt"])
+# → [(0, 4, <result: "15h57">)]
+
+# Date : "treize decembre mille neuf cents"
+spans = detect_formule_spans_stt(["tʁɛz", "desɑ̃bʁ", "mil", "nœf", "sɑ̃"])
+# → [(0, 5, <result: "13/12/1900">)]
+
+# Fraction : "trois cinquieme"
+spans = detect_formule_spans_stt(["tʁwa", "sɛ̃kjɛm"])
+# → [(0, 2, <result: "3/5">)]
+```
+
+La distinction fraction/ordinal repose sur le contexte multi-mots : "trois cinquieme" (2 mots) → fraction 3/5, "cinquieme" seul → ordinal 5e.
+
+Le pre-filtre `_is_formule_token` accepte les categories nombre, mois, heure_word, devise, pourcent et ordinal (plus large que l'ancien `_is_number_token` qui n'acceptait que nombre et special).
+
+---
+
 ## Tolerance CTC pour la reconnaissance STT
 
 **Nouveau en 3.5.0** — Le pipeline STT (CTC + P2G) produit de l'IPA globalement correct, mais avec des variantes phonetiques mineures qui faisaient echouer la detection de formules. La version 3.5.0 gere automatiquement ces confusions CTC :
@@ -171,6 +197,7 @@ Des variantes **tolerantes STT** (`reconnaitre_maths_ipa_stt`, `detect_formula_s
 | Voisement (`k`/`ɡ`, `t`/`d`, `p`/`b`) | "quarante" : `kaʁɑ̃t` → `ɡaʁɑ̃t` | Reconnu |
 | Glides manquantes (`lj` → `l`) | "million" : `miljɔ̃` → `milɔ̃` | Reconnu |
 | Consonnes finales (`tʁ` → `t`) | "quatre" : `katʁ` → `kat` | Reconnu |
+| Consonne finale `/s/` optionnelle (`ys` → `y`) | "plus" : `plys` → `ply` | Reconnu |
 
 Les variantes sont generees automatiquement pour toutes les entrees de la table de lookup (nombres, mois, devises, symboles).
 
@@ -219,6 +246,7 @@ detect_number_spans(["sɑ̃"], min_span=1, mode="num")         # → [(0, 1, <10
 | `reconnaitre_maths_ipa_stt(ipa)` | **Inverse maths STT** : idem avec tolerance CTC |
 | `detect_formula_spans(words)` | Detection de formules math dans une phrase IPA |
 | `detect_formula_spans_stt(words)` | Idem avec tolerance STT |
+| `detect_formule_spans_stt(words)` | **Detecteur unifie STT** : heures, dates, monnaies, %, fractions, nombres |
 | `detect_number_spans(words, mode=)` | Detection de nombres (modes : `num`, `auto`, `texte`) |
 | `detect_sigle_spans(words)` | Detection de sigles dans une phrase IPA |
 | `enrichir_formules(tokens)` | Enrichit les tokens d'une phrase |
@@ -242,5 +270,5 @@ pip install lectura-formules
 - **Events alignes** : decomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 3.5.0
+- **Version** : 3.6.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
