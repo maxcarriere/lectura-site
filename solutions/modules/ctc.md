@@ -17,16 +17,19 @@ permalink: /solutions/modules/ctc/
 
 ## Presentation
 
-Deux modules pour la transcription audio du francais :
+Trois modules pour la transcription audio du francais :
 
 | Module | Couche | Entree | Sortie | pip install |
 |--------|--------|--------|--------|-------------|
 | **Lectura CTC** | couche 1 | audio 16 kHz | phones IPA | `pip install lectura-ctc` |
 | **Lectura STT** | couche 2 | audio 16 kHz | texte orthographique | `pip install lectura-stt[p2g]` |
+| **Lectura STT-Formules** | specialise | audio 16 kHz | tokens semantiques | `pip install lectura-stt-formules[inference]` |
 
 **CTC** est le decodeur phonetique neural (CNN-BiGRU-CTC medium, 10.6M parametres, PER ~4.34%). Il convertit un signal audio en une sequence de phones IPA avec separateurs de mots, liaisons et ponctuation. Le modele medium supporte les sigles et formules grace a un fine-tuning specialise.
 
 **STT** est le pipeline complet qui chaine CTC avec le graphemiseur P2G pour reconstituer le texte francais, avec gestion des elisions, de la ponctuation et des majuscules. Si `lectura-p2g` est installe, les formules (nombres, sigles) et les noms propres sont aussi traites.
+
+**STT-Formules** est un modele CTC autonome et leger (~600K parametres) entraine specifiquement pour la reconnaissance de formules. Au lieu de phonemes IPA, il produit directement des tokens semantiques (87 classes : nombres, mois, devises, lettres, etc.), avec un TER de ~1.17%. Ideal pour les applications de saisie vocale de donnees structurees.
 
 ### Specifications CTC
 
@@ -174,6 +177,21 @@ python -m lectura_ctc --micro --duree 5
 python -m lectura_ctc --micro --continu
 ```
 
+### STT-Formules (audio → tokens semantiques)
+
+```python
+from lectura_stt_formules import creer_engine
+
+engine = creer_engine()
+
+result = engine.transcrire("nombre.wav")
+print(result["names"])   # ["DEUX", "CENT", "VINGT", "ET", "UN"]
+print(result["tokens"])  # [4, 25, 20, 29, 3]
+print(" ".join(result["names"]))  # "DEUX CENT VINGT ET UN"
+```
+
+Le vocabulaire de sortie comprend 87 tokens semantiques : nombres atomiques (0-16), dizaines, echelles, connecteurs, mois, heures, devises, pourcentages, ordinaux, fractions et lettres A-Z pour les sigles.
+
 ---
 
 ## Architecture
@@ -271,6 +289,9 @@ pip install lectura-ctc
 
 # Avec support micro (CLI)
 pip install lectura-ctc[onnx,micro]
+
+# STT-Formules (tokens semantiques, inference locale)
+pip install lectura-stt-formules[inference]
 ```
 
 Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com)).

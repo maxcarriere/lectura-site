@@ -127,6 +127,21 @@
     });
   }
 
+  function displayTokens(names) {
+    ipaOutput.classList.remove("error");
+    ipaOutput.textContent = "";
+
+    names.forEach(function (name, i) {
+      if (i > 0) {
+        ipaOutput.appendChild(document.createTextNode(" "));
+      }
+      var span = document.createElement("span");
+      span.className = "ctc-word";
+      span.textContent = name;
+      ipaOutput.appendChild(span);
+    });
+  }
+
   function displayTexte(texte) {
     texteOutput.classList.remove("error");
     if (texte) {
@@ -197,7 +212,11 @@
         progressBar.style.width = "100%";
       }
 
-      if (data.ipa) {
+      if (data.tokens) {
+        // Mode formules — tokens semantiques
+        displayTokens(data.names);
+        displayTexte(data.texte);
+      } else if (data.ipa) {
         displayIpa(data.ipa);
         if (mode === "ipa") {
           texteOutput.textContent = "(mode CTC seul — pas de conversion texte)";
