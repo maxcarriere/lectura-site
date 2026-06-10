@@ -212,18 +212,9 @@
         progressBar.style.width = "100%";
       }
 
-      if (data.tokens) {
-        // Mode formules — tokens semantiques
-        displayTokens(data.names);
-        displayTexte(data.texte);
-      } else if (data.ipa) {
+      if (data.ipa) {
         displayIpa(data.ipa);
-        if (mode === "ipa") {
-          texteOutput.textContent = "(mode CTC seul — pas de conversion texte)";
-          texteOutput.classList.add("ctc-muted");
-        } else {
-          displayTexte(data.texte);
-        }
+        displayTexte(data.texte);
       } else {
         setStatus("(silence — aucun phone detecte)");
       }

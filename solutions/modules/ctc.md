@@ -106,9 +106,9 @@ Trois modules pour la transcription audio du francais :
   <div class="ctc-input-section" style="margin-top:8px;">
     <label for="ctc-mode">Mode :</label>
     <select id="ctc-mode" class="vc-btn-secondary" style="padding:4px 8px;">
-      <option value="standard">Standard</option>
-      <option value="formules">Formules (nombres, sigles…)</option>
-      <option value="ipa">CTC seul (IPA)</option>
+      <option value="auto">Auto (nombres, dates, sigles…)</option>
+      <option value="formule">Formule (tout detecter)</option>
+      <option value="texte">Texte (sigles uniquement)</option>
     </select>
   </div>
 
