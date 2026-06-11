@@ -236,4 +236,4 @@ audio = synthetiser("Bonjour.",
 - **3 modes** : FLUIDE, MOT_A_MOT, SYLLABES
 - **Retimbre OpenVoice** (optionnel) : presets, blend pondere, variantes formantiques
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:admin@lectura.world)

@@ -150,7 +150,7 @@ Formule : `factor = 22050 / sr_override`
 pip install lectura-vc-zeroshot   # module public (~7 Ko)
 ```
 
-Le module public utilise l'API Lectura pour l'inference. Le backend local ONNX necessite les modeles pre-entraines (~126 Mo), disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Le module public utilise l'API Lectura pour l'inference. Le backend local ONNX necessite les modeles pre-entraines (~126 Mo), disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
@@ -163,4 +163,4 @@ Le module public utilise l'API Lectura pour l'inference. Le backend local ONNX n
 - **Lazy loading** : sessions ONNX chargees a la premiere utilisation
 - **ONNX Runtime pur** : pas de dependance PyTorch
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:admin@lectura.world)

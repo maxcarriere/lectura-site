@@ -238,7 +238,7 @@ pip install lectura-vc-zeroshot
 pip install lectura-vc-locuteurs
 ```
 
-Les modules publics utilisent l'API Lectura pour l'inference. Les backends locaux ONNX necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Les modules publics utilisent l'API Lectura pour l'inference. Les backends locaux ONNX necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
@@ -265,4 +265,4 @@ Les modules publics utilisent l'API Lectura pour l'inference. Les backends locau
 - **Factory `creer_engine()`** : detection automatique des modeles
 - **Lazy loading** : chaque backend charge a la demande
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:admin@lectura.world)

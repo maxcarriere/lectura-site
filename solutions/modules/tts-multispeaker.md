@@ -138,7 +138,7 @@ pip install lectura-tts-multispeaker[onnx]     # backend ONNX Runtime local
 pip install lectura-tts-multispeaker[onnx,g2p] # avec G2P integre (texte → audio)
 ```
 
-Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Le backend local ONNX necessite les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Le backend local ONNX necessite les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
@@ -153,4 +153,4 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Factory `creer_engine()`** : detection automatique du meilleur mode
 - **`set_speaker()`** : changement de voix dynamique sans recharger les modeles
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:admin@lectura.world)

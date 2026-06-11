@@ -121,7 +121,7 @@ pip install lectura-tts-monospeaker[onnx,g2p,vc] # + retimbre multi-voix (OpenVo
 pip install lectura-tts-monospeaker[all]         # tout
 ```
 
-Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Le backend local ONNX necessite les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Le backend local ONNX necessite les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ### Retimbre (optionnel)
 
@@ -153,4 +153,4 @@ Presets disponibles : siwis, ezwa, nadine, bernard, gilles, zeckou.
 - **Retimbre optionnel** `[vc]` : changement de voix via OpenVoice zero-shot (6 presets, blend pondere, variante formants)
 - **Factory `creer_engine()`** : detection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — les modeles pre-entraines sont sous [licence commerciale](mailto:admin@lectura.world)

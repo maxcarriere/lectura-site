@@ -271,4 +271,4 @@ pip install lectura-formules
 - **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 3.6.0
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

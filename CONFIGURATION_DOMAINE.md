@@ -2,7 +2,7 @@
 
 ## Étape 1 : Configurer les DNS
 
-Chez votre registrar de domaine (`www.lec-tu-ra.com`), configurez :
+Chez votre registrar de domaine (`www.lectura.world`), configurez :
 
 ### Enregistrements A (pour la racine @)
 ```
@@ -40,7 +40,7 @@ TTL: 3600
 Une fois les DNS configurés, créez un fichier `CNAME` à la racine du dépôt avec uniquement :
 
 ```
-www.lec-tu-ra.com
+www.lectura.world
 ```
 
 **Important** : Le fichier CNAME ne doit contenir QUE le nom de domaine, sans commentaires ni espaces.
@@ -49,7 +49,7 @@ www.lec-tu-ra.com
 
 1. Allez dans les **Settings** du dépôt `lectura-site`
 2. Section **Pages**
-3. Dans **Custom domain**, entrez `www.lec-tu-ra.com`
+3. Dans **Custom domain**, entrez `www.lectura.world`
 4. Cochez **Enforce HTTPS** (recommandé)
 
 ## Étape 4 : Mettre à jour _config.yml
@@ -57,15 +57,15 @@ www.lec-tu-ra.com
 Une fois le domaine actif, vérifiez que `_config.yml` contient bien :
 
 ```yaml
-url: "https://www.lec-tu-ra.com"
+url: "https://www.lectura.world"
 baseurl: ""
 ```
 
 ## Vérification
 
 Après configuration (propagation DNS : 24-48h), le site devrait être accessible sur :
-- `https://www.lec-tu-ra.com`
-- `https://lec-tu-ra.com` (si redirection configurée)
+- `https://www.lectura.world`
+- `https://lectura.world` (si redirection configurée)
 
 ## En cas de problème
 

@@ -90,7 +90,7 @@ from pyodide.http import pyfetch
 import json
 
 async def _p2g_api_call(ipa_words):
-    resp = await pyfetch('https://api.lec-tu-ra.com/p2g/analyser',
+    resp = await pyfetch('https://api.lectura.world/p2g/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'ipa_words': ipa_words}))
@@ -182,7 +182,7 @@ pip install lectura-graphemiseur[numpy]      # backend NumPy local
 pip install lectura-p2g
 ```
 
-Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
@@ -197,4 +197,4 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : detection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

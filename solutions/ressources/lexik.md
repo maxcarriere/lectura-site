@@ -69,4 +69,4 @@ pip install lectura-lexique
 
 LeXiK n'est pas encore distribue publiquement. Si vous etes interesse par cette base lexicale pour un projet de recherche, un outil educatif ou un produit commercial, contactez-nous :
 
-<a href="mailto:contact@lec-tu-ra.com" class="module-badge">contact@lec-tu-ra.com</a>
+<a href="mailto:admin@lectura.world" class="module-badge">admin@lectura.world</a>

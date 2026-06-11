@@ -45,7 +45,7 @@ from pyodide.http import pyfetch
 import json
 
 async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lec-tu-ra.com/g2p/analyser',
+    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'tokens': tokens}))
@@ -118,7 +118,7 @@ pip install lectura-phonemiseur[onnx]       # backend ONNX Runtime local (~2 ms/
 pip install lectura-phonemiseur[numpy]      # backend NumPy local
 ```
 
-Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com).
+Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
@@ -131,4 +131,4 @@ Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). L
 - **30 000 corrections lexicales** integrees (table plate + homographes POS-aware)
 - **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour ameliorer POS/morpho/liaison
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

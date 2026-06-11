@@ -45,14 +45,14 @@ from pyodide.http import pyfetch
 import json
 
 async def _aligneur_api_call(word, phone=None):
-    resp = await pyfetch('https://api.lec-tu-ra.com/aligneur/analyze',
+    resp = await pyfetch('https://api.lectura.world/aligneur/analyze',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'word': word, 'phone': phone}))
     return await resp.json()
 
 async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lec-tu-ra.com/g2p/analyser',
+    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'tokens': tokens}))
@@ -233,4 +233,4 @@ pip install lectura-aligneur       # mode API par defaut (zero dependance)
 - **Architecture E1/E2** : construction des groupes puis syllabation, utilisables separement
 - **Phonemiseur pluggable** : eSpeak-NG, Lectura Phonemiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

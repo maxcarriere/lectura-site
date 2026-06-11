@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const API_URL = "https://api.lec-tu-ra.com/tts-diphone/synthesize";
+  const API_URL = "https://api.lectura.world/tts-diphone/synthesize";
 
   const container = document.querySelector(".tts-diphone-demo");
   if (!container) return;

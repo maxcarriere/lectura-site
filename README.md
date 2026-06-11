@@ -32,7 +32,7 @@ Le site sera accessible sur `http://localhost:4000`
 
 Le site est automatiquement déployé sur GitHub Pages à chaque push sur la branche `main`.
 
-Pour configurer un domaine personnalisé (`www.lec-tu-ra.com`) :
+Pour configurer un domaine personnalisé (`www.lectura.world`) :
 
 1. Ajouter un fichier `CNAME` à la racine avec le nom de domaine
 2. Configurer les enregistrements DNS selon la documentation GitHub Pages

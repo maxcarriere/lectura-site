@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var API_URL = "https://api.lec-tu-ra.com/vc/convert";
+  var API_URL = "https://api.lectura.world/vc/convert";
 
   var container = document.querySelector(".vc-demo");
   if (!container) return;

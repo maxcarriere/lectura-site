@@ -295,7 +295,7 @@ pip install lectura-ctc[onnx,micro]
 pip install lectura-stt-formules[inference]
 ```
 
-Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:contact@lec-tu-ra.com)).
+Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:admin@lectura.world)).
 
 ---
 
@@ -322,4 +322,4 @@ Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est 
 - **Ponctuation et majuscules** : reconstruction fidele du texte
 - **Formules** : nombres, sigles (via `lectura-p2g`)
 - **Python 3.10+** avec type hints complets
-- **Licence** : AGPL-3.0 (code) — modeles sous [licence commerciale](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (code) — modeles sous [licence commerciale](mailto:admin@lectura.world)

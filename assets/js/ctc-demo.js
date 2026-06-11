@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var API_URL = "https://api.lec-tu-ra.com/stt/transcribe-file";
+  var API_URL = "https://api.lectura.world/stt/transcribe-file";
 
   var container = document.querySelector(".ctc-demo");
   if (!container) return;

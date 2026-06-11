@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  const API_URL = "https://api.lec-tu-ra.com/tts-multi/synthesize";
+  const API_URL = "https://api.lectura.world/tts-multi/synthesize";
 
   const container = document.querySelector(".tts-multi-demo");
   if (!container) return;

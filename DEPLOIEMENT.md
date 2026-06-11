@@ -75,7 +75,7 @@ Une fois le site en ligne sur `https://maxcarriere.github.io/lectura-site`, vér
 
 ## Configuration du domaine personnalisé
 
-Une fois le domaine `www.lec-tu-ra.com` prêt :
+Une fois le domaine `www.lectura.world` prêt :
 
 1. Suivre les instructions dans `CONFIGURATION_DOMAINE.md`
 2. Créer le fichier `CNAME` avec le nom de domaine

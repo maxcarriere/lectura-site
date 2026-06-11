@@ -145,4 +145,4 @@ Entree → Char Embedding (64d) → Shared BiLSTM (2×160h → 320d)
 
 Le kit d'entrainement G2P/P2G n'est pas encore distribue publiquement. Si vous etes interesse pour reproduire les modeles, entrainer sur vos propres donnees ou adapter les modeles a votre usage, contactez-nous :
 
-<a href="mailto:contact@lec-tu-ra.com" class="module-badge">contact@lec-tu-ra.com</a>
+<a href="mailto:admin@lectura.world" class="module-badge">admin@lectura.world</a>

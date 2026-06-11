@@ -174,4 +174,4 @@ pip install lectura-p2g
 pip install lectura-stt[p2g]
 ```
 
-Par defaut, les modules Phonemiseur, Graphemiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lec-tu-ra.com`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-phonemiseur[onnx]`).
+Par defaut, les modules Phonemiseur, Graphemiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration necessaire. Pour l'inference locale, installez les modeles et les backends optionnels (`lectura-phonemiseur[onnx]`).

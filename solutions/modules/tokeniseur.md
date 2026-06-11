@@ -91,4 +91,4 @@ for t in tokens:
 - **Independant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installe)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 2.3.0
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [contact@lec-tu-ra.com](mailto:contact@lec-tu-ra.com)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
