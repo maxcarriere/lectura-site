@@ -48,9 +48,12 @@ Trois modules pour la transcription audio du francais :
 
 | Metrique | Corpus | Score |
 |----------|--------|-------|
-| **WER** | all (lectures + conversations + formules) | **~23.5%** |
-| **WER** | parole courante (sans formules) | **~19.7%** |
+| **WER moyen** | parole courante (5000 phrases) | **14.5%** |
+| **WER median** | parole courante (5000 phrases) | **8.3%** |
+| **% parfait** | parole courante (5000 phrases) | **44.3%** |
 | **PER** | CTC seul (phone error rate) | **~4.34%** |
+
+Pipeline CTC + P2G v7 + post-traitement grammatical (13 regles) sur 5000 phrases CommonVoice held-out. A titre de comparaison, Whisper small (241M params, 461 Mo) obtient 16.1% WER moyen sur le meme jeu de donnees.
 
 ---
 
@@ -312,8 +315,8 @@ Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est 
 
 ### STT (couche 2)
 
-- **WER ~23.5%** (all) / **~19.7%** (parole courante)
-- **Pipeline optimal** : CTC → postproc (strip_liaisons, split_elisions, merge_and_rescore) → P2G → texte
+- **WER 14.5%** (parole courante, 5000 phrases) / **8.3% median** / **44.3% parfait**
+- **Pipeline optimal** : CTC → segmentation phonetique → P2G v7 (lex-select) → merge_and_rescore → post-traitement grammatical → texte
 - **Pipeline CTC + P2G** : audio → texte francais en une ligne de code
 - **P2G optionnel** : fonctionne en mode phones seuls si P2G non installe
 - **Cascade P2G** : `lectura-p2g` (complet) → `lectura-graphemiseur` (core) → aucun
