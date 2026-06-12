@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura Graphemiseur</h1>
-  <p class="module-tagline">Modele unifie P2G + POS + Morphologie pour le francais (IPA → orthographe)</p>
+  <p class="module-tagline">Modèle unifié P2G + POS + Morphologie pour le français (IPA → orthographe)</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-graphemiseur/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Graphemiseur" class="module-badge">GitHub</a>
@@ -16,18 +16,18 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Le pendant inverse du G2P : a partir d'une transcription phonetique IPA, le P2G reconstruit l'orthographe francaise. Un seul modele **BiLSTM char-level multi-tete V7 avec attention cross word-char et lex_select** (3.2M parametres, ONNX INT8 = 4.4 Mo).
+Le pendant inverse du G2P : à partir d'une transcription phonétique IPA, le P2G reconstruit l'orthographe française. Un seul modèle **BiLSTM char-level multi-tête V7 avec attention cross word-char et lex_select** (3.2M paramètres, ONNX INT8 = 4.4 Mo).
 
-| Tache | Description | Performance |
+| Tâche | Description | Performance |
 |-------|-------------|-------------|
-| **P2G** | IPA vers orthographe (modele core + lex_select) | ~95% word accuracy |
+| **P2G** | IPA vers orthographe (modèle core + lex_select) | ~95% word accuracy |
 | **P2G** | Pipeline complet (+ formules + noms propres) | ~96% word accuracy |
-| **POS** | Etiquetage morpho-syntaxique (19 tags) | ~98% accuracy |
+| **POS** | Étiquetage morpho-syntaxique (19 tags) | ~98% accuracy |
 | **Morphologie** | Genre, nombre, temps, mode, personne | 95-98% |
 
-Quatre backends d'inference : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zero dependance).
+Quatre backends d'inférence : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zéro dépendance).
 
 ### Architecture en deux couches
 
@@ -35,16 +35,16 @@ En miroir de l'architecture G2P (lectura-phonemiseur + lectura-g2p) :
 
 | Couche | Package | Contenu |
 |--------|---------|---------|
-| **Couche 1** | `lectura-graphemiseur` | Modele P2G core + lex_select + coherence morpho + accents |
-| **Couche 2** | `lectura-p2g` | Pipeline complet = graphemiseur + formules (nombres, maths) + noms propres + entites |
+| **Couche 1** | `lectura-graphemiseur` | Modèle P2G core + lex_select + cohérence morpho + accents |
+| **Couche 2** | `lectura-p2g` | Pipeline complet = graphémiseur + formules (nombres, maths) + noms propres + entités |
 
-Le graphemiseur (couche 1) est **zero dependance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, fusion de composes, coherence morpho, noms propres et reconnaissance d'entites notables.
+Le graphémiseur (couche 1) est **zéro dépendance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, fusion de composés, cohérence morpho, noms propres et reconnaissance d'entités notables.
 
 ---
 
 ## Tester en ligne
 
-*Le test en ligne utilise l'API Lectura — aucun telechargement de modele necessaire.*
+*Le test en ligne utilise l'API Lectura — aucun téléchargement de modèle nécessaire.*
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
@@ -124,9 +124,9 @@ for i, tok in enumerate(tokens):
         lines.append(f"{tok:<16}{ortho:<16}{pos:<12}")
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
+  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonèmes IPA séparés par des espaces...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
@@ -136,7 +136,7 @@ for i, tok in enumerate(tokens):
 ```python
 from lectura_graphemiseur import creer_engine
 
-engine = creer_engine()   # mode API par defaut (zero config)
+engine = creer_engine()   # mode API par défaut (zero config)
 
 result = engine.analyser(["le", "ɑ̃fɑ̃", "sɔ̃", "aʁive", "a", "la", "mɛzɔ̃"])
 
@@ -146,12 +146,12 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 
 ---
 
-## Architecture du modele (V7)
+## Architecture du modèle (V7)
 
-Le P2G V7 ajoute un mecanisme d'**attention cross word-char** : les representations de mots issues des tetes POS/Morpho sont projetees vers les positions caractere par attention, ameliorant la resolution des ambiguites contextuelles. Le **lex_select** choisit parmi les candidats phonetiquement compatibles du lexique par une tete neuronale dediee.
+Le P2G V7 ajoute un mécanisme d'**attention cross word-char** : les représentations de mots issues des têtes POS/Morpho sont projetées vers les positions caractère par attention, améliorant la résolution des ambiguïtés contextuelles. Le **lex_select** choisit parmi les candidats phonétiquement compatibles du lexique par une tête neuronale dédiée.
 
-Modele core : raw → lex_select → coherence morpho + accents (~95%).
-Pipeline complet (`lectura-p2g`) : + formules + composes + noms propres + entites (~96%).
+Modèle core : raw → lex_select → cohérence morpho + accents (~95%).
+Pipeline complet (`lectura-p2g`) : + formules + composés + noms propres + entités (~96%).
 
 ```
 Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x192h → 384d)
@@ -168,14 +168,14 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x192h → 384d)
                                                                     → Lex_Select Head
 ```
 
-**Phone_lex_features (28d)** : le modele recoit un vecteur de 28 dimensions par mot, construit a partir du `phone_lexicon.db` (lexique phonetique SQLite) : 19d POS one-hot + 3d morpho (genre, nombre) + 6d features lexicales. Le **lex_select** selectionne la meilleure forme orthographique parmi les candidats phonetiquement compatibles du lexique. Sans phone_lexicon, le modele fonctionne en mode degrade (features = zeros).
+**Phone_lex_features (28d)** : le modèle reçoit un vecteur de 28 dimensions par mot, construit à partir du `phone_lexicon.db` (lexique phonétique SQLite) : 19d POS one-hot + 3d morpho (genre, nombre) + 6d features lexicales. Le **lex_select** sélectionne la meilleure forme orthographique parmi les candidats phonétiquement compatibles du lexique. Sans phone_lexicon, le modèle fonctionne en mode dégradé (features = zeros).
 
 ---
 
 ## Installation
 
 ```bash
-# Modele core (zero dependance)
+# Modèle core (zéro dépendance)
 pip install lectura-graphemiseur             # mode API (zero config)
 pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-graphemiseur[numpy]      # backend NumPy local
@@ -184,19 +184,19 @@ pip install lectura-graphemiseur[numpy]      # backend NumPy local
 pip install lectura-p2g
 ```
 
-Par defaut, le module utilise l'API Lectura (aucune configuration necessaire). Les backends locaux (ONNX, NumPy) necessitent les modeles pre-entraines, disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
-- **3.2M parametres**, modele ONNX INT8 = 4.4 Mo
+- **3.2M paramètres**, modèle ONNX INT8 = 4.4 Mo
 - **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
-- **Word feedback** : les informations POS/morpho enrichissent la prediction P2G
-- **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonetique SQLite)
-- **Lex_select** : selection lexicale parmi candidats phonetiques
-- **Pipeline `lectura-p2g`** : formules (expressions mathematiques, nombres, sigles — mode chiffres par defaut), fusion de mots composes, noms propres, et reconnaissance de ~9000 entites notables via couche 2. Mode `formule_tolerance="stt"` pour la reconnaissance tolerante depuis un pipeline STT
-- **Zero dependance** : le graphemiseur core n'importe pas `lectura_formules`
-- **Factory `creer_engine()`** : detection automatique du meilleur backend
+- **Word feedback** : les informations POS/morpho enrichissent la prédiction P2G
+- **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonétique SQLite)
+- **Lex_select** : sélection lexicale parmi candidats phonétiques
+- **Pipeline `lectura-p2g`** : formules (expressions mathématiques, nombres, sigles — mode chiffres par défaut), fusion de mots composés, noms propres, et reconnaissance de ~9000 entités notables via couche 2. Mode `formule_tolerance="stt"` pour la reconnaissance tolérante depuis un pipeline STT
+- **Zéro dépendance** : le graphémiseur core n'importe pas `lectura_formules`
+- **Factory `creer_engine()`** : détection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

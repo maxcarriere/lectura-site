@@ -6,7 +6,7 @@
   children:
     - title: Analyse du langage
       url: /solutions/analyse-langage/
-    - title: "Synthese vocale"
+    - title: "Synthèse vocale"
       url: /solutions/synthese-vocale/
     - title: Reconnaissance vocale
       url: /solutions/reconnaissance-vocale/
@@ -17,11 +17,11 @@
       children:
         - title: Licences commerciales
           url: /solutions/services/licences/
-        - title: "Integration logicielle"
+        - title: "Intégration logicielle"
           url: /solutions/services/integration/
-        - title: "Preparation corpus"
+        - title: "Préparation corpus"
           url: /solutions/services/corpus-modeles/
-        - title: "Services editoriaux"
+        - title: "Services éditoriaux"
           url: /solutions/services/services-editoriaux/
 
 - title: Produits
@@ -31,10 +31,10 @@
       url: /produits/programmes/
     - title: Applications
       url: /produits/applications/
-    - title: "Medias"
+    - title: "Médias"
       url: /produits/medias/
 
-- title: "Developpement"
+- title: "Développement"
   url: /developpement/
   children:
     - title: Modules
@@ -42,7 +42,7 @@
       children:
         - title: Modules outils
           url: /developpement/modules/outils/
-        - title: "Modules metiers"
+        - title: "Modules métiers"
           url: /developpement/modules/metiers/
     - title: Ressources
       url: /developpement/ressources/
@@ -56,24 +56,24 @@
     - title: Recherche
       url: /developpement/recherche/
       children:
-        - title: "Phonetique"
+        - title: "Phonétique"
           url: /developpement/recherche/phonetique/
-        - title: "Synthese vocale"
+        - title: "Synthèse vocale"
           url: /developpement/recherche/synthese-vocale/
         - title: "Reconnaissance vocale"
           url: /developpement/recherche/reconnaissance/
     - title: Projets
       url: /developpement/projets/
       children:
-        - title: "Pistes d'amelioration"
+        - title: "Pistes d'amélioration"
           url: /developpement/projets/pistes/
         - title: Correcteur
           url: /developpement/projets/correcteur/
 
-- title: "A propos"
+- title: "À propos"
   url: /a-propos/
   children:
-    - title: "Methode"
+    - title: "Méthode"
       url: /a-propos/methode/
     - title: Vision
       url: /a-propos/vision/

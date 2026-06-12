@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura VC Locuteurs</h1>
-  <p class="module-tagline">Conversion vocale RVC vers 6 voix francaises pre-entrainees — ONNX pur</p>
+  <p class="module-tagline">Conversion vocale RVC vers 6 voix françaises pré-entraînées — ONNX pur</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc-locuteurs/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-Locuteurs" class="module-badge">GitHub</a>
@@ -16,29 +16,29 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Sous-module de conversion vocale base sur **RVC** (Retrieval-based Voice Conversion) avec 6 voix francaises pre-entrainees. Chaque voix dispose de son propre modele synthesizer, entraine sur un corpus de haute qualite.
+Sous-module de conversion vocale basé sur **RVC** (Retrieval-based Voice Conversion) avec 6 voix françaises pré-entraînées. Chaque voix dispose de son propre modèle synthesizer, entraîné sur un corpus de haute qualité.
 
-| Caracteristique | Valeur |
+| Caractéristique | Valeur |
 |-----------------|--------|
 | **Voix** | 6 speakers (3F + 3M) : Ezwa, Nadine, Siwis, Bernard, Gilles, Zeckou |
 | **Backend** | HuBERT + RMVPE + Synthesizer — ONNX Runtime pur |
-| **Modeles** | 8 fichiers ONNX (~1.4 Go total) |
+| **Modèles** | 8 fichiers ONNX (~1.4 Go total) |
 | **Sortie** | Audio @ 48000 Hz |
-| **Controles** | protect, pitch_modification |
-| **Auto-adaptation** | Pitch et protection ajustes selon le genre du speaker |
+| **Contrôles** | protect, pitch_modification |
+| **Auto-adaptation** | Pitch et protection ajustés selon le genre du speaker |
 
 ---
 
 ## Voix disponibles
 
-| Speaker | Genre | Caractere |
+| Speaker | Genre | Caractère |
 |---------|-------|-----------|
-| siwis | F | Voix feminine claire, studio |
-| ezwa | F | Voix feminine douce, chaleureuse |
-| nadine | F | Voix feminine naturelle |
-| bernard | M | Voix masculine posee |
+| siwis | F | Voix féminine claire, studio |
+| ezwa | F | Voix féminine douce, chaleureuse |
+| nadine | F | Voix féminine naturelle |
+| bernard | M | Voix masculine posée |
 | gilles | M | Voix masculine grave |
 | zeckou | M | Voix masculine dynamique |
 
@@ -71,7 +71,7 @@ audio, sr = engine.convert(
 ```
 
 ```python
-# Fonction de commodite (cree un engine ephemere)
+# Fonction de commodité (crée un engine éphémère)
 from lectura_vc_locuteurs import convertir
 
 audio, sr = convertir("input.wav", speaker="siwis")
@@ -89,9 +89,9 @@ Audio source --> HuBERT (features vocales) --> RMVPE (estimation F0)
                                                Audio converti @ 48000 Hz
 ```
 
-Les 8 modeles ONNX :
+Les 8 modèles ONNX :
 - `hubert.onnx` (361 Mo) — extraction de features vocales
-- `rmvpe.onnx` (345 Mo) — estimation de frequence fondamentale (F0)
+- `rmvpe.onnx` (345 Mo) — estimation de fréquence fondamentale (F0)
 - 6x `synthesizer_{speaker}.onnx` (~116 Mo chacun) — synthesizers RVC par voix
 
 ---
@@ -102,15 +102,15 @@ Les 8 modeles ONNX :
 pip install lectura-vc-locuteurs   # module public (~7 Ko)
 ```
 
-Le module public utilise l'API Lectura pour l'inference. Le backend local ONNX necessite les modeles pre-entraines (~1.4 Go), disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX nécessite les modèles pré-entraînés (~1.4 Go), disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
-- **RVC ONNX** : HuBERT + RMVPE + Synthesizer, 6 voix pre-entrainees
-- **Auto-adaptation** : detection automatique du pitch source, ajustement selon le speaker cible
-- **Lazy loading** : chaque synthesizer charge a la demande (premier appel)
-- **ONNX Runtime pur** : pas de dependance PyTorch
+- **RVC ONNX** : HuBERT + RMVPE + Synthesizer, 6 voix pré-entraînées
+- **Auto-adaptation** : détection automatique du pitch source, ajustement selon le speaker cible
+- **Lazy loading** : chaque synthesizer chargé à la demande (premier appel)
+- **ONNX Runtime pur** : pas de dépendance PyTorch
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale](mailto:admin@lectura.world)

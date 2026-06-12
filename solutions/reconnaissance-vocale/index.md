@@ -6,30 +6,30 @@ redirect_from:
   - /solutions/stt/
 ---
 
-Lectura propose un pipeline de transcription audio du francais en deux couches : un decodeur acoustique (audio vers phonemes IPA) et un convertisseur (phonemes vers texte orthographique). Le tout en **~43 Mo de modeles**, sans GPU, avec des performances comparables a Whisper small (10x plus leger).
+Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le tout en **~43 Mo de modèles**, sans GPU, avec des performances comparables à Whisper small (10x plus léger).
 
 ---
 
 ## Ce que Lectura est capable de faire
 
-| Capacite | Description |
+| Capacité | Description |
 |----------|-------------|
-| **Transcription phonetique** | Audio vers phonemes IPA avec separateurs de mots, liaisons et ponctuation |
-| **Transcription orthographique** | Audio vers texte francais avec majuscules, elisions et ponctuation |
-| **Reconnaissance de formules** | Nombres, dates, sigles, heures detectes automatiquement dans la parole |
-| **Transcription de formules** | Modele specialise pour la saisie vocale de donnees structurees (87 tokens semantiques) |
+| **Transcription phonétique** | Audio vers phonèmes IPA avec séparateurs de mots, liaisons et ponctuation |
+| **Transcription orthographique** | Audio vers texte français avec majuscules, élisions et ponctuation |
+| **Reconnaissance de formules** | Nombres, dates, sigles, heures détectés automatiquement dans la parole |
+| **Transcription de formules** | Modèle spécialisé pour la saisie vocale de données structurées (87 tokens sémantiques) |
 
-| Metrique | Score |
+| Métrique | Score |
 |----------|-------|
 | WER (pipeline complet) | **~15%** |
-| PER (decodeur phonetique) | **~4.34%** |
+| PER (décodeur phonétique) | **~4.34%** |
 | Taille totale | **~43 Mo** (vs 461 Mo pour Whisper small) |
 
 ---
 
 ## Essayer en ligne
 
-*La demo utilise l'API Lectura — enregistrez votre voix ou chargez un fichier audio.*
+*La démo utilise l'API Lectura — enregistrez votre voix ou chargez un fichier audio.*
 
 <style>
 #ctc-output-ipa, #ctc-output-texte {
@@ -80,7 +80,7 @@ Lectura propose un pipeline de transcription audio du francais en deux couches :
     <label for="ctc-mode">Mode :</label>
     <select id="ctc-mode" class="vc-btn-secondary" style="padding:4px 8px;">
       <option value="auto">Auto (nombres, dates, sigles...)</option>
-      <option value="formule">Formule (tout detecter)</option>
+      <option value="formule">Formule (tout détecter)</option>
       <option value="texte">Texte (sigles uniquement)</option>
     </select>
   </div>
@@ -89,8 +89,8 @@ Lectura propose un pipeline de transcription audio du francais en deux couches :
   <div class="tts-progress-container"><div class="tts-progress" id="ctc-progress"></div></div>
 
   <div class="ctc-output-block">
-    <div class="ctc-output-label">Phonetique (IPA)</div>
-    <pre class="tts-output" id="ctc-output-ipa">Selectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
+    <div class="ctc-output-label">Phonétique (IPA)</div>
+    <pre class="tts-output" id="ctc-output-ipa">Sélectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
   </div>
   <div class="ctc-output-block">
     <div class="ctc-output-label">Texte (STT)</div>
@@ -104,21 +104,21 @@ Lectura propose un pipeline de transcription audio du francais en deux couches :
 
 ## Applications
 
-- **Sous-titrage** : transcription automatique de videos et podcasts en francais.
-- **Saisie vocale** : dictee pour applications et formulaires, avec reconnaissance des nombres et dates.
+- **Sous-titrage** : transcription automatique de vidéos et podcasts en français.
+- **Saisie vocale** : dictée pour applications et formulaires, avec reconnaissance des nombres et dates.
 - **Analyse de contenu** : indexation et recherche dans des archives audio.
-- **Applications embarquees** : transcription sur appareil (mobile, IoT) grace a la taille reduite (~43 Mo).
-- **Saisie de donnees structurees** : le modele STT-Formules reconnait directement les nombres, mois, devises et lettres pour la saisie vocale de formulaires.
+- **Applications embarquées** : transcription sur appareil (mobile, IoT) grâce à la taille réduite (~43 Mo).
+- **Saisie de données structurées** : le modèle STT-Formules reconnaît directement les nombres, mois, devises et lettres pour la saisie vocale de formulaires.
 
 ---
 
 ## En savoir plus
 
 - [Documentation technique STT]({{ '/developpement/modules/metiers/stt/' | relative_url }}) — architecture, installation, API
-- [Graphemiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — le convertisseur phonemes vers texte utilise dans le pipeline
+- [Graphémiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — le convertisseur phonèmes vers texte utilisé dans le pipeline
 
 ---
 
 ## Contact
 
-Pour integrer la reconnaissance vocale dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour intégrer la reconnaissance vocale dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)

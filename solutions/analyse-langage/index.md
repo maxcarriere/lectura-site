@@ -10,13 +10,13 @@ redirect_from:
   - /solutions/nlp/formules/
 ---
 
-Lectura propose plusieurs outils d'analyse du langage francais. Chaque brique fonctionne de maniere autonome et s'integre dans un pipeline complet : du texte brut jusqu'a l'analyse phonetique, grammaticale et syllabique.
+Lectura propose plusieurs outils d'analyse du langage français. Chaque brique fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique.
 
 ---
 
 ## Tokenisation
 
-Transformer un texte en suite de **tokens** (mots, ponctuation, formules) avec normalisation typographique. Le tokeniseur detecte automatiquement plus de 15 types de formules : nombres, dates, heures, sigles, monnaies, pourcentages, expressions mathematiques.
+Transformer un texte en suite de **tokens** (mots, ponctuation, formules) avec normalisation typographique. Le tokeniseur détecte automatiquement plus de 15 types de formules : nombres, dates, heures, sigles, monnaies, pourcentages, expressions mathématiques.
 
 <div class="pyodide-demo" data-package="lectura-tokeniseur>=2.3.0" data-code="
 from lectura_tokeniseur import tokenise, Formule
@@ -27,18 +27,18 @@ for t in tokens:
     lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
 '\n'.join(lines)
 ">
-  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages pour 12,50 EUR." placeholder="Tapez du texte francais...">
+  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages pour 12,50 EUR." placeholder="Tapez du texte français...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
 
-## Phonemisation (orthographe vers phonetique)
+## Phonémisation (orthographe vers phonétique)
 
-Transformer l'orthographe en transcription phonetique IPA. Le pipeline gere les **liaisons**, les **homographes** et predit simultanement la categorie grammaticale (20 etiquettes : NOM, VER, ADJ, ART, PRE...) ainsi que la morphologie (nombre, genre, temps, personne, mode).
+Transformer l'orthographe en transcription phonétique IPA. Le pipeline gère les **liaisons**, les **homographes** et prédit simultanément la catégorie grammaticale (20 étiquettes : NOM, VER, ADJ, ART, PRE...) ainsi que la morphologie (nombre, genre, temps, personne, mode).
 
-Precision : **98.5%** par mot, avec desambiguisation contextuelle.
+Précision : **98.5%** par mot, avec désambiguïsation contextuelle.
 
 <div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
@@ -69,28 +69,28 @@ for i, tok in enumerate(tokens):
     lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison." placeholder="Entrez une phrase francaise...">
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase française...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
 
-## Graphemisation (phonetique vers orthographe)
+## Graphémisation (phonétique vers orthographe)
 
-Le chemin inverse : a partir d'une transcription phonetique IPA, reconstruire l'orthographe francaise avec accentuation, accords et reconnaissance des noms propres. Precision : **~96%** par mot (pipeline complet).
+Le chemin inverse : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Précision : **~96%** par mot (pipeline complet).
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
-  <span class="ipa-key" data-char="e" title="e ferme">e <small>(e)</small></span>
+  <span class="ipa-key" data-char="e" title="e fermé">e <small>(e)</small></span>
   <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
   <span class="ipa-key" data-char="a" title="a">a <small>(a)</small></span>
-  <span class="ipa-key" data-char="ɑ" title="a posterieur">ɑ <small>(a)</small></span>
+  <span class="ipa-key" data-char="ɑ" title="a postérieur">ɑ <small>(a)</small></span>
   <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(o)</small></span>
-  <span class="ipa-key" data-char="o" title="o ferme">o <small>(o)</small></span>
+  <span class="ipa-key" data-char="o" title="o fermé">o <small>(o)</small></span>
   <span class="ipa-key" data-char="u" title="ou">u <small>(ou)</small></span>
   <span class="ipa-key" data-char="y" title="u">y <small>(u)</small></span>
-  <span class="ipa-key" data-char="ø" title="eu ferme">ø <small>(oeu)</small></span>
+  <span class="ipa-key" data-char="ø" title="eu fermé">ø <small>(oeu)</small></span>
   <span class="ipa-key" data-char="œ" title="eu ouvert">œ <small>(eu)</small></span>
   <span class="ipa-key" data-char="ə" title="e muet">ə <small>(e)</small></span>
   <span class="ipa-key" data-char="ɑ̃" title="an, en">ɑ̃ <small>(an)</small></span>
@@ -158,16 +158,16 @@ for i, tok in enumerate(tokens):
         lines.append(f"{tok:<16}{ortho:<16}{pos:<12}")
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonemes IPA separes par des espaces...">
+  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonèmes IPA séparés par des espaces...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
 
 ## Aligneur syllabique
 
-Aligne une sequence orthographique avec une sequence phonemique : **decoupage en syllabes** (orthographiques et phonetiques), identification des **lettres muettes**, decomposition attaque/noyau/coda, et gestion des groupes de lecture (elision, liaison, enchainement).
+Aligne une séquence orthographique avec une séquence phonémique : **découpage en syllabes** (orthographiques et phonétiques), identification des **lettres muettes**, décomposition attaque/noyau/coda, et gestion des groupes de lecture (élision, liaison, enchaînement).
 
 <div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
@@ -228,24 +228,24 @@ for i, tok in enumerate(tokens):
 
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrives a la maison" placeholder="Entrez une phrase francaise...">
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase française...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
 
 ## Formules
 
-Reconnaissance des types de formules (nombres, dates, heures, sigles, monnaies, expressions mathematiques...), passage d'une formule a son ecriture textuelle ou phonetique et vice versa. Plus de 15 types pris en charge.
+Reconnaissance des types de formules (nombres, dates, heures, sigles, monnaies, expressions mathématiques...), passage d'une formule à son écriture textuelle ou phonétique et vice versa. Plus de 15 types pris en charge.
 
 | Type | Exemple | Lecture |
 |------|---------|--------|
 | Nombre | `42` | quarante-deux |
-| Date | `25/12/2024` | vingt-cinq decembre deux-mille-vingt-quatre |
+| Date | `25/12/2024` | vingt-cinq décembre deux-mille-vingt-quatre |
 | Heure | `14h30` | quatorze heures trente |
 | Sigle | `SNCF` | esse-enne-ce-effe |
-| Maths | `2x+5x-3` | deux x au carre plus cinq x moins trois |
+| Maths | `2x+5x-3` | deux x au carré plus cinq x moins trois |
 
 <div class="pyodide-demo" data-package="lectura-formules>=3.2.0" data-code="
 from lectura_formules import lire_formule
@@ -264,7 +264,7 @@ if r.events:
 ">
   <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
@@ -273,22 +273,22 @@ if r.events:
 
 Ces outils d'analyse du langage constituent la **base de tous les pipelines Lectura** :
 
-- **Synthese vocale (TTS)** : le pipeline G2P + Aligneur + Formules alimente les moteurs de synthese vocale. Chaque mot est phonemise, aligne et syllabe avant d'etre prononce.
-- **Reconnaissance vocale (STT)** : le pipeline inverse (P2G + Formules) reconstruit le texte a partir des phonemes detectes par le decodeur acoustique.
-- **Apprentissage de la lecture** : l'aligneur produit les syllabes colorees, les groupes de lecture et les lettres muettes utilises dans les programmes de lecture assistee.
-- **Correction orthographique** : la chaine G2P → P2G permet de detecter les erreurs phonetiquement coherentes (un mot mal ecrit mais prononce correctement).
-- **Annotation de corpus** : etiquetage POS, morphologie et phonetique automatiques pour la recherche linguistique.
-- **Accessibilite** : transcription phonetique pour les apprenants FLE, affichage syllabique pour les lecteurs en difficulte.
+- **Synthèse vocale (TTS)** : le pipeline G2P + Aligneur + Formules alimente les moteurs de synthèse vocale. Chaque mot est phonémisé, aligné et syllabé avant d'être prononcé.
+- **Reconnaissance vocale (STT)** : le pipeline inverse (P2G + Formules) reconstruit le texte à partir des phonèmes détectés par le décodeur acoustique.
+- **Apprentissage de la lecture** : l'aligneur produit les syllabes colorées, les groupes de lecture et les lettres muettes utilisés dans les programmes de lecture assistée.
+- **Correction orthographique** : la chaîne G2P → P2G permet de détecter les erreurs phonétiquement cohérentes (un mot mal écrit mais prononcé correctement).
+- **Annotation de corpus** : étiquetage POS, morphologie et phonétique automatiques pour la recherche linguistique.
+- **Accessibilité** : transcription phonétique pour les apprenants FLE, affichage syllabique pour les lecteurs en difficulté.
 
 ---
 
 ## En savoir plus
 
-Chaque outil est disponible comme module Python independant avec documentation technique complete :
+Chaque outil est disponible comme module Python indépendant avec documentation technique complète :
 
 - [Tokeniseur]({{ '/developpement/modules/outils/tokeniseur/' | relative_url }}) — normalisation et tokenisation
-- [Phonemiseur (G2P)]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) — orthographe vers phonetique
-- [Graphemiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — phonetique vers orthographe
+- [Phonémiseur (G2P)]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) — orthographe vers phonétique
+- [Graphémiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — phonétique vers orthographe
 - [Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) — alignement et syllabation
 - [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) — lecture des formules
 
@@ -296,4 +296,4 @@ Chaque outil est disponible comme module Python independant avec documentation t
 
 ## Contact
 
-Pour integrer ces outils dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour intégrer ces outils dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)

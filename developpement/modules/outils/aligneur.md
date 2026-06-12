@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura Aligneur-Syllabeur</h1>
-  <p class="module-tagline">Aligneur grapheme-phoneme et syllabeur phonologique du francais</p>
+  <p class="module-tagline">Aligneur graphème-phonème et syllabeur phonologique du français</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-aligneur/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur" class="module-badge">GitHub</a>
@@ -16,11 +16,11 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-**Pivot central du pipeline Lectura.** Module autonome, **zero dependance** Python. Realise l'alignement lettre-par-lettre entre orthographe et phonetique, construit les groupes de lecture en gerant les phenomenes de chaine parlee, et decompose chaque syllabe en ses constituants phonologiques.
+**Pivot central du pipeline Lectura.** Module autonome, **zéro dépendance** Python. Réalise l'alignement lettre-par-lettre entre orthographe et phonétique, construit les groupes de lecture en gérant les phénomènes de chaîne parlée, et décompose chaque syllabe en ses constituants phonologiques.
 
-C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) et [P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) ont ete prepares. Sans lui, rien n'aurait ete possible.
+C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) et [P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) ont été préparés. Sans lui, rien n'aurait été possible.
 
 ---
 
@@ -28,18 +28,18 @@ C'est grace a cet aligneur que les corpus d'entrainement des modeles [G2P]({{ '/
 
 | # | Fonction | Description |
 |---|----------|-------------|
-| 1 | **Groupes de lecture** | Regroupe les mots lies par elision, liaison ou enchainement |
-| 2 | **Alignement grapheme-phoneme** | Correspondance lettre-par-lettre entre orthographe et IPA |
-| 3 | **Lettres muettes et fusionnees** | Detecte les lettres silencieuses et les graphemes multi-phonemes (x→ks) |
-| 4 | **Syllabation ortho + phone** | Decoupe chaque groupe en syllabes au niveau phonetique ET orthographique |
-| 5 | **Attaque / Noyau / Coda** | Decompose chaque syllabe en ses constituants avec phonemes distribues |
-| 6 | **Spans** | Positions caractere de chaque syllabe, groupe et composant dans le texte source |
+| 1 | **Groupes de lecture** | Regroupe les mots liés par élision, liaison ou enchaînement |
+| 2 | **Alignement graphème-phonème** | Correspondance lettre-par-lettre entre orthographe et IPA |
+| 3 | **Lettres muettes et fusionnées** | Détecte les lettres silencieuses et les graphèmes multi-phonèmes (x→ks) |
+| 4 | **Syllabation ortho + phone** | Découpe chaque groupe en syllabes au niveau phonétique ET orthographique |
+| 5 | **Attaque / Noyau / Coda** | Décompose chaque syllabe en ses constituants avec phonèmes distribués |
+| 6 | **Spans** | Positions caractère de chaque syllabe, groupe et composant dans le texte source |
 
 ---
 
 ## Tester en ligne
 
-*Le test en ligne utilise l'API Lectura (G2P + Aligneur) — aucun telechargement necessaire.*
+*Le test en ligne utilise l'API Lectura (G2P + Aligneur) — aucun téléchargement nécessaire.*
 
 <div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
@@ -100,9 +100,9 @@ for i, tok in enumerate(tokens):
 
 '\n'.join(lines)
   </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase francaise...">
+  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase française...">
   <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
 </div>
 
 ---
@@ -114,7 +114,7 @@ for i, tok in enumerate(tokens):
 ```python
 from lectura_aligneur import LecturaSyllabeur
 
-syllabeur = LecturaSyllabeur()    # mode API par defaut
+syllabeur = LecturaSyllabeur()    # mode API par défaut
 result = syllabeur.analyze("chocolat")
 
 print(result.format_detail())
@@ -123,21 +123,21 @@ print(result.format_detail())
 #   σ2: /kɔ/ <<co>>  [3:5] att=k noy=ɔ cod=-
 #   σ3: /la/ <<lat>>  [5:8] att=l noy=a cod=-
 
-# Chaque syllabe expose son alignement grapheme-phoneme :
+# Chaque syllabe expose son alignement graphème-phonème :
 for s in result.syllabes:
     att = " ".join(f"{p.ipa}→{p.grapheme}" for p in s.attaque.phonemes)
     noy = " ".join(f"{p.ipa}→{p.grapheme}" for p in s.noyau.phonemes)
     print(f"  {s.ortho:6s} /{s.phone}/  att=[{att}] noy=[{noy}]  span={s.span}")
 ```
 
-### Analyse complete avec groupes de lecture
+### Analyse complète avec groupes de lecture
 
 ```python
 from lectura_aligneur import LecturaSyllabeur, MotAnalyse
 
 syllabeur = LecturaSyllabeur()
 
-# Mots annotes par le G2P (phone + liaison)
+# Mots annotés par le G2P (phone + liaison)
 mots = [
     MotAnalyse(phone="lez", liaison="Lz"),    # les (liaison en z)
     MotAnalyse(phone="ɑ̃fɑ̃", liaison="none"),   # enfants
@@ -154,13 +154,13 @@ print(f"Syllabes : {result.format_ligne2()}")
 # Syllabes : le.zɑ̃.fɑ̃ | ʒu
 ```
 
-### Avec Lectura Phonemiseur
+### Avec Lectura Phonémiseur
 
 ```python
 from lectura_aligneur import LecturaSyllabeur
 from lectura_phonemiseur import creer_engine
 
-g2p = creer_engine()    # mode API par defaut
+g2p = creer_engine()    # mode API par défaut
 
 class G2PPhonemizer:
     def predict(self, word):
@@ -173,66 +173,66 @@ syllabeur = LecturaSyllabeur(phonemizer=G2PPhonemizer())
 
 ## Architecture E1 / E2
 
-Le module fonctionne en deux etapes, utilisables separement ou ensemble :
+Le module fonctionne en deux étapes, utilisables séparément ou ensemble :
 
 **E1 — Groupes de lecture** (`construire_groupes`)
 
-Parcourt les mots annotes et les regroupe selon les phenomenes de chaine parlee :
-- **Elision** : l'enfant → 1 groupe
+Parcourt les mots annotés et les regroupe selon les phénomènes de chaîne parlée :
+- **Élision** : l'enfant → 1 groupe
 - **Liaison** : les‿enfants → 1 groupe (consonne de liaison z, t, n, r, p)
-- **Enchainement** : avec‿elle → 1 groupe (consonne finale resyllabee)
+- **Enchaînement** : avec‿elle → 1 groupe (consonne finale resyllabée)
 
 **E2 — Syllabation** (`syllabifier_groupes`)
 
 Pour chaque groupe :
-1. Syllabation IPA par modele de sonorite (5 classes : obstruantes, nasales, liquides, semi-voyelles, voyelles)
-2. Alignement DFS grapheme-phoneme avec detection des lettres muettes et fusionnees
-3. Construction des syllabes avec decomposition attaque/noyau/coda et correspondance grapheme
+1. Syllabation IPA par modèle de sonorité (5 classes : obstruantes, nasales, liquides, semi-voyelles, voyelles)
+2. Alignement DFS graphème-phonème avec détection des lettres muettes et fusionnées
+3. Construction des syllabes avec décomposition attaque/noyau/coda et correspondance graphème
 
 ---
 
-## Structures de donnees
+## Structures de données
 
-| Classe | Champs principaux | Role |
+| Classe | Champs principaux | Rôle |
 |--------|-------------------|------|
-| `Syllabe` | `phone`, `ortho`, `span`, `attaque`, `noyau`, `coda` | Syllabe decomposee avec alignement |
+| `Syllabe` | `phone`, `ortho`, `span`, `attaque`, `noyau`, `coda` | Syllabe décomposée avec alignement |
 | `GroupePhonologique` | `phonemes[]` → `.phone`, `.grapheme` | Attaque, noyau ou coda d'une syllabe |
-| `Phoneme` | `ipa`, `grapheme` | Phoneme individuel avec correspondance grapheme |
+| `Phoneme` | `ipa`, `grapheme` | Phonème individuel avec correspondance graphème |
 | `ResultatAnalyse` | `mot`, `phone`, `syllabes[]` | Analyse d'un mot |
-| `MotAnalyse` | `token`, `phone`, `liaison`, `pos` | Mot annote par le G2P |
+| `MotAnalyse` | `token`, `phone`, `liaison`, `pos` | Mot annoté par le G2P |
 | `GroupeLecture` | `mots[]`, `phone_groupe`, `jonctions[]`, `span` | Groupe de lecture |
-| `ResultatGroupe` | `groupe`, `syllabes[]` | Groupe syllabe |
-| `ResultatSyllabation` | `groupes[]`, `nb_syllabes`, `nb_groupes` | Resultat complet |
+| `ResultatGroupe` | `groupe`, `syllabes[]` | Groupe syllabé |
+| `ResultatSyllabation` | `groupes[]`, `nb_syllabes`, `nb_groupes` | Résultat complet |
 
 ---
 
-## Role dans le pipeline Lectura
+## Rôle dans le pipeline Lectura
 
 L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 
-1. **Preparation des corpus** — l'alignement grapheme-phoneme a permis de constituer les donnees d'entrainement des modeles G2P et P2G
-2. **Lecture assistee** — les groupes de lecture avec syllabes colorees sont la base de l'interface de lecture augmentee
-3. **Synthese vocale** — l'alignement et les spans permettent la synchronisation texte-audio
+1. **Préparation des corpus** — l'alignement graphème-phonème a permis de constituer les données d'entraînement des modèles G2P et P2G
+2. **Lecture assistée** — les groupes de lecture avec syllabes colorées sont la base de l'interface de lecture augmentée
+3. **Synthèse vocale** — l'alignement et les spans permettent la synchronisation texte-audio
 
 ---
 
 ## Installation
 
 ```bash
-pip install lectura-aligneur       # mode API par defaut (zero dependance)
+pip install lectura-aligneur       # mode API par défaut (zéro dépendance)
 ```
 
-**Phonemiseur pluggable** : utilisable avec votre propre phonemiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonemiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}). N'importe quel objet avec une methode `phonemize(word)` ou `predict(word)` est accepte.
+**Phonémiseur pluggable** : utilisable avec votre propre phonémiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonémiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}). N'importe quel objet avec une méthode `phonemize(word)` ou `predict(word)` est accepté.
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
-- **Zero dependance** Python
-- **Bi-modal** : mode API (zero config) ou mode local avec donnees embarquees
-- **Alignement DFS** grapheme-phoneme avec gestion des lettres muettes et fusionnees
-- **Modele de sonorite** pour la syllabation (5 classes phonologiques)
-- **Architecture E1/E2** : construction des groupes puis syllabation, utilisables separement
-- **Phonemiseur pluggable** : eSpeak-NG, Lectura Phonemiseur, ou tout objet compatible
+- **Zéro dépendance** Python
+- **Bi-modal** : mode API (zéro config) ou mode local avec données embarquées
+- **Alignement DFS** graphème-phonème avec gestion des lettres muettes et fusionnées
+- **Modèle de sonorité** pour la syllabation (5 classes phonologiques)
+- **Architecture E1/E2** : construction des groupes puis syllabation, utilisables séparément
+- **Phonémiseur pluggable** : eSpeak-NG, Lectura Phonémiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura TTS Diphone</h1>
-  <p class="module-tagline">Synthese vocale par concatenation de diphones WORLD — prosodie reglee, retimbre multi-voix, 44.1 kHz</p>
+  <p class="module-tagline">Synthèse vocale par concaténation de diphones WORLD — prosodie réglée, retimbre multi-voix, 44.1 kHz</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-tts-diphone/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Diphone" class="module-badge">GitHub</a>
@@ -16,38 +16,38 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Moteur de synthese vocale pour le francais base sur la **concatenation de diphones** dans le domaine **WORLD** (F0 + spectral envelope + aperiodicity). Produit un signal audio haute fidelite a 44100 Hz avec une prosodie reglee (intonation, pauses, expressivite).
+Moteur de synthèse vocale pour le français basé sur la **concaténation de diphones** dans le domaine **WORLD** (F0 + spectral envelope + aperiodicity). Produit un signal audio haute fidélité à 44100 Hz avec une prosodie réglée (intonation, pauses, expressivité).
 
-| Caracteristique | Valeur |
+| Caractéristique | Valeur |
 |-----------------|--------|
-| **Qualite** | Voix feminine claire (corpus SIWIS) |
+| **Qualité** | Voix féminine claire (corpus SIWIS) |
 | **Sortie** | Audio 44100 Hz, float32 |
-| **Taille modele** | ~15 Mo (diphones compresses) |
-| **Entree** | Texte francais ou phonemes IPA |
-| **Prosodie** | Declaratif, interrogatif, exclamatif, suspensif |
-| **Controles** | Vitesse, pauses, expressivite macro/micro, contraste spectral |
+| **Taille modèle** | ~15 Mo (diphones compressés) |
+| **Entrée** | Texte français ou phonèmes IPA |
+| **Prosodie** | Déclaratif, interrogatif, exclamatif, suspensif |
+| **Contrôles** | Vitesse, pauses, expressivité macro/micro, contraste spectral |
 | **Retimbre** | OpenVoice zero-shot (optionnel) : presets, blend de voix, variantes homme/enfant |
 
-Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLLABES** — adapte a l'apprentissage de la lecture.
+Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLLABES** — adapté à l'apprentissage de la lecture.
 
 ---
 
 ## Essayer en ligne
 
-*La demo utilise l'API Lectura — aucun telechargement necessaire.*
+*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
 
 <div class="tts-diphone-demo">
-  <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte francais...">
+  <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <select class="tts-mode">
       <option value="FLUIDE">Fluide</option>
-      <option value="MOT_A_MOT">Mot a mot</option>
+      <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
     <select class="tts-style">
-      <option value="regles" selected>Regles</option>
+      <option value="regles" selected>Règles</option>
       <option value="corpus">Corpus</option>
     </select>
     <select class="tts-voix">
@@ -64,10 +64,10 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
       <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
       <span style="opacity:0.7">Enfant</span>
     </label>
-    <button class="tts-btn" type="button">Synthetiser</button>
+    <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthetiser.</pre>
+  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
 </div>
 
 <script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}?v=2"></script>
@@ -79,10 +79,10 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 ```python
 from lectura_tts_diphone import synthetiser
 
-# Synthese simple (necessite lectura-g2p)
+# Synthèse simple (nécessite lectura-g2p)
 audio = synthetiser("Le soleil brille sur la ville.")
 
-# Avec retimbre OpenVoice (necessite pip install 'lectura-tts-diphone[vc]')
+# Avec retimbre OpenVoice (nécessite pip install 'lectura-tts-diphone[vc]')
 audio = synthetiser("Bonjour comment allez-vous.",
                     voix="siwis")
 
@@ -90,10 +90,10 @@ audio = synthetiser("Bonjour comment allez-vous.",
 audio = synthetiser("Bonjour comment allez-vous.",
                     voix={"siwis": 0.5, "nadine": 0.3, "ezwa": 0.2})
 
-# Variante vocale (formants decales)
+# Variante vocale (formants décalés)
 audio = synthetiser("Bonjour comment allez-vous.",
                     voix="siwis",
-                    voix_variante=0.3)    # +0.3 = legerement aigu
+                    voix_variante=0.3)    # +0.3 = légèrement aigu
 ```
 
 ```python
@@ -101,7 +101,7 @@ from lectura_tts_diphone import creer_engine
 
 engine = creer_engine()
 
-# Depuis des phonemes IPA avec controles
+# Depuis des phonèmes IPA avec contrôles
 audio = engine.synthesize_groups(
     [
         {"phones": ["l", "ə", "s", "ɔ", "l", "ɛ", "j"], "boundary": "none"},
@@ -138,9 +138,9 @@ Texte --> [G2P] --> Phonemes IPA --> Diphone chain
                                   Audio final 44100 Hz
 ```
 
-Les diphones sont des parametres WORLD (F0 + spectral envelope + aperiodicity) extraits du corpus SIWIS et moyennes par type de transition phonetique. La prosodie est reglee par des contours F0 adaptes au francais (chute declarative, montee interrogative, pauses aux ponctuations).
+Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) extraits du corpus SIWIS et moyennés par type de transition phonétique. La prosodie est réglée par des contours F0 adaptés au français (chute déclarative, montée interrogative, pauses aux ponctuations).
 
-Le **retimbre** (optionnel) passe l'audio synthetise dans OpenVoice pour remplacer le timbre "moyen" du diphone par un timbre coherent issu d'une voix de reference.
+Le **retimbre** (optionnel) passe l'audio synthétisé dans OpenVoice pour remplacer le timbre "moyen" du diphone par un timbre cohérent issu d'une voix de référence.
 
 ---
 
@@ -148,60 +148,60 @@ Le **retimbre** (optionnel) passe l'audio synthetise dans OpenVoice pour remplac
 
 ```bash
 pip install lectura-tts-diphone               # import seul
-pip install "lectura-tts-diphone[local]"      # inference locale (pyworld + numpy + scipy)
+pip install "lectura-tts-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
 pip install "lectura-tts-diphone[vc]"         # avec retimbre OpenVoice (lectura-vc-zeroshot)
 pip install "lectura-tts-diphone[all]"        # local + G2P + retimbre
 ```
 
 ---
 
-## Controles prosodiques
+## Contrôles prosodiques
 
-| Parametre | Defaut | Description |
+| Paramètre | Défaut | Description |
 |-----------|--------|-------------|
 | duration_scale | 1.0 | Vitesse globale (>1 = plus lent) |
-| pause_scale | 1.0 | Duree des pauses intra-phrase (virgules, etc.) |
-| sentence_pause_ms | 400 | Pause inter-phrase en ms (entre phrases separees par . ! ? ...) |
-| macro_expressivity | 2.0 | Gestes prosodiques aux ponctuations (0=neutre, 4=exagere) |
-| micro_expressivity | 5.0 | Micro-variations (0=robot, 10=tres expressif) |
+| pause_scale | 1.0 | Durée des pauses intra-phrase (virgules, etc.) |
+| sentence_pause_ms | 400 | Pause inter-phrase en ms (entre phrases séparées par . ! ? ...) |
+| macro_expressivity | 2.0 | Gestes prosodiques aux ponctuations (0=neutre, 4=exagéré) |
+| micro_expressivity | 5.0 | Micro-variations (0=robot, 10=très expressif) |
 | spectral_contrast | 1.5 | Contraste spectral GV (1.0=off, 2.0=fort) |
-| prosody_style | "regles" | Style prosodique : "regles" (LHiLH*, stable) ou "corpus" (extrait du corpus SIWIS, plus varie) |
-| seed | None | Graine aleatoire pour micro-prosodie reproductible |
+| prosody_style | "regles" | Style prosodique : "regles" (LHiLH*, stable) ou "corpus" (extrait du corpus SIWIS, plus varié) |
+| seed | None | Graine aléatoire pour micro-prosodie reproductible |
 
 ---
 
 ## Retimbre (OpenVoice)
 
-Le retimbre est un post-traitement optionnel qui remplace le timbre "moyen" du diphone par une voix coherente via [OpenVoice zero-shot]({{ '/developpement/modules/metiers/vc-zeroshot/' | relative_url }}). Active par le parametre `voix`.
+Le retimbre est un post-traitement optionnel qui remplace le timbre "moyen" du diphone par une voix cohérente via [OpenVoice zero-shot]({{ '/developpement/modules/metiers/vc-zeroshot/' | relative_url }}). Activé par le paramètre `voix`.
 
 ```bash
-# Prerequis
+# Prérequis
 pip install "lectura-tts-diphone[vc]"
 ```
 
-### Parametre `voix`
+### Paramètre `voix`
 
-Le parametre `voix` est polymorphe et accepte plusieurs types :
+Le paramètre `voix` est polymorphe et accepte plusieurs types :
 
 | Type | Exemple | Description |
 |------|---------|-------------|
-| `str` (preset) | `voix="siwis"` | Utilise un preset pre-calcule |
+| `str` (preset) | `voix="siwis"` | Utilise un preset pré-calculé |
 | `str` (fichier) | `voix="ref.wav"` | Extrait le timbre d'un fichier audio |
-| `list[str]` | `voix=["siwis", "nadine"]` | Moyenne de plusieurs presets (poids egaux) |
-| `dict[str, float]` | `voix={"siwis": 0.5, "nadine": 0.5}` | Blend pondere |
-| `None` | `voix=None` | Pas de retimbre (defaut) |
+| `list[str]` | `voix=["siwis", "nadine"]` | Moyenne de plusieurs presets (poids égaux) |
+| `dict[str, float]` | `voix={"siwis": 0.5, "nadine": 0.5}` | Blend pondéré |
+| `None` | `voix=None` | Pas de retimbre (défaut) |
 
 **Presets disponibles** : siwis, ezwa, nadine, bernard, gilles, zeckou.
 
-### Parametre `voix_variante`
+### Paramètre `voix_variante`
 
-Curseur de -1 a +1 qui decale les formants sans changer le pitch fondamental :
+Curseur de -1 à +1 qui décale les formants sans changer le pitch fondamental :
 
 | Valeur | Effet |
 |--------|-------|
-| -1.0 | Formants baisses (voix grave/masculine) |
-| 0.0 | Neutre (pas de decalage) |
-| +1.0 | Formants montes (voix aigue/enfant) |
+| -1.0 | Formants baissés (voix grave/masculine) |
+| 0.0 | Neutre (pas de décalage) |
+| +1.0 | Formants montés (voix aiguë/enfant) |
 
 ### Exemples
 
@@ -214,10 +214,10 @@ audio = synthetiser("Bonjour.", voix="siwis")
 # Blend 50/50 siwis + nadine
 audio = synthetiser("Bonjour.", voix={"siwis": 0.5, "nadine": 0.5})
 
-# Variante masculine (meme preset, formants baisses)
+# Variante masculine (même preset, formants baissés)
 audio = synthetiser("Bonjour.", voix="bernard", voix_variante=-0.5)
 
-# Variante enfant (formants montes)
+# Variante enfant (formants montés)
 audio = synthetiser("Bonjour.", voix="siwis", voix_variante=0.8)
 
 # Combinaison : blend + variante + pitch bas
@@ -229,13 +229,13 @@ audio = synthetiser("Bonjour.",
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
-- **Vocoder WORLD** : analyse/synthese haute qualite a 44100 Hz
-- **1290 diphones** moyennes depuis le corpus SIWIS (~9800 phrases)
-- **Prosodie francaise** : declination, chute declarative non-lineaire, montee interrogative, allongement pre-frontiere
+- **Vocoder WORLD** : analyse/synthèse haute qualité à 44100 Hz
+- **1290 diphones** moyennés depuis le corpus SIWIS (~9800 phrases)
+- **Prosodie française** : déclinaison, chute déclarative non-linéaire, montée interrogative, allongement pré-frontière
 - **GV compensation** : restaure le contraste spectral perdu par le moyennage
 - **3 modes** : FLUIDE, MOT_A_MOT, SYLLABES
-- **Retimbre OpenVoice** (optionnel) : presets, blend pondere, variantes formantiques
+- **Retimbre OpenVoice** (optionnel) : presets, blend pondéré, variantes formantiques
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale](mailto:admin@lectura.world)

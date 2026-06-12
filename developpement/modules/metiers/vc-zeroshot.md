@@ -16,31 +16,31 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Sous-module leger de conversion vocale zero-shot base sur **OpenVoice v2** (ONNX). Transforme n'importe quel audio source vers le timbre d'une voix cible — a partir d'un preset, d'un extrait audio de reference, ou d'un melange pondere de plusieurs voix.
+Sous-module léger de conversion vocale zero-shot basé sur **OpenVoice v2** (ONNX). Transforme n'importe quel audio source vers le timbre d'une voix cible — à partir d'un preset, d'un extrait audio de référence, ou d'un mélange pondéré de plusieurs voix.
 
-| Caracteristique | Valeur |
+| Caractéristique | Valeur |
 |-----------------|--------|
 | **Backend** | OpenVoice v2 — ONNX Runtime pur (pas de PyTorch) |
-| **Presets** | 6 voix pre-calculees : siwis, ezwa, nadine, bernard, gilles, zeckou |
-| **Blend** | Melange pondere de presets ou d'extraits audio |
-| **Trick SR** | Decalage des formants (voix grave/aigue) via le sample rate |
-| **Modeles** | 2 fichiers ONNX (~126 Mo total) |
+| **Presets** | 6 voix pré-calculées : siwis, ezwa, nadine, bernard, gilles, zeckou |
+| **Blend** | Mélange pondéré de presets ou d'extraits audio |
+| **Trick SR** | Décalage des formants (voix grave/aiguë) via le sample rate |
+| **Modèles** | 2 fichiers ONNX (~126 Mo total) |
 | **Sortie** | Audio @ 22050 Hz |
 
 ---
 
 ## Presets de voix
 
-Six voix pre-calculees sont integrees au package (speaker embeddings moyennes sur 100 echantillons du corpus). Utilisables directement par nom, sans fichier audio de reference.
+Six voix pré-calculées sont intégrées au package (speaker embeddings moyennées sur 100 échantillons du corpus). Utilisables directement par nom, sans fichier audio de référence.
 
 | Preset | Genre | Description |
 |--------|-------|-------------|
-| siwis | F | Voix feminine claire (corpus SIWIS) |
-| ezwa | F | Voix feminine douce |
-| nadine | F | Voix feminine naturelle |
-| bernard | M | Voix masculine posee |
+| siwis | F | Voix féminine claire (corpus SIWIS) |
+| ezwa | F | Voix féminine douce |
+| nadine | F | Voix féminine naturelle |
+| bernard | M | Voix masculine posée |
 | gilles | M | Voix masculine grave |
 | zeckou | M | Voix masculine dynamique |
 
@@ -61,33 +61,33 @@ audio, sr = engine.convert(
 )
 # sr == 22050
 
-# Blend de plusieurs presets (poids egaux)
+# Blend de plusieurs presets (poids égaux)
 audio, sr = engine.convert(
     audio="input.wav",
     reference=["siwis", "nadine"],
     sr_in=16000,
 )
 
-# Blend pondere
+# Blend pondéré
 audio, sr = engine.convert(
     audio="input.wav",
     reference={"siwis": 0.5, "nadine": 0.3, "ezwa": 0.2},
     sr_in=16000,
 )
 
-# Depuis un fichier audio de reference
+# Depuis un fichier audio de référence
 audio, sr = engine.convert(
     audio="input.wav",
     reference="reference_5s.wav",
     sr_in=16000,
 )
 
-# Variante aigue (formants decales via trick SR)
+# Variante aiguë (formants décalés via trick SR)
 audio, sr = engine.convert(
     audio="input.wav",
     reference="siwis",
     sr_in=16000,
-    sr_override=11025,   # formants x2 (aigu/enfant)
+    sr_override=11025,   # formants x2 (aiguë/enfant)
 )
 ```
 
@@ -120,27 +120,27 @@ Reference     --> OpenVoice SE --> target embedding (1, 256, 1)
                                  Audio converti @ 22050 Hz
 ```
 
-La reference cible est polymorphe :
+La référence cible est polymorphe :
 - **str** : nom de preset ("siwis") ou chemin vers un fichier audio
 - **ndarray** : audio brut (1D) ou speaker embedding (1, 256, 1)
-- **list** : plusieurs references (poids egaux)
-- **dict** : blend pondere (`{"siwis": 0.5, "nadine": 0.5}`)
+- **list** : plusieurs références (poids égaux)
+- **dict** : blend pondéré (`{"siwis": 0.5, "nadine": 0.5}`)
 
-Les 2 modeles ONNX :
+Les 2 modèles ONNX :
 - `openvoice_se.onnx` (3.2 Mo) — extraction de speaker embedding
 - `openvoice_vc.onnx` (123 Mo) — conversion zero-shot
 
 ---
 
-## Trick SR (decalage de formants)
+## Trick SR (décalage de formants)
 
-Le parametre `sr_override` trompe OpenVoice sur le sample rate de la reference, ce qui decale les formants sans changer le pitch. Cela permet de creer des variantes homme/enfant a partir d'un meme preset.
+Le paramètre `sr_override` trompe OpenVoice sur le sample rate de la référence, ce qui décale les formants sans changer le pitch. Cela permet de créer des variantes homme/enfant à partir d'un même preset.
 
 | sr_override | Factor | Effet |
 |-------------|--------|-------|
-| 44100 | 0.5x | Formants baisses (voix grave/masculine) |
-| 22050 | 1.0x | Neutre (pas de decalage) |
-| 11025 | 2.0x | Formants montes (voix aigue/enfant) |
+| 44100 | 0.5x | Formants baissés (voix grave/masculine) |
+| 22050 | 1.0x | Neutre (pas de décalage) |
+| 11025 | 2.0x | Formants montés (voix aiguë/enfant) |
 
 Formule : `factor = 22050 / sr_override`
 
@@ -152,17 +152,17 @@ Formule : `factor = 22050 / sr_override`
 pip install lectura-vc-zeroshot   # module public (~7 Ko)
 ```
 
-Le module public utilise l'API Lectura pour l'inference. Le backend local ONNX necessite les modeles pre-entraines (~126 Mo), disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX nécessite les modèles pré-entraînés (~126 Mo), disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
 - **OpenVoice v2 ONNX** : conversion zero-shot, n'importe quelle voix cible
-- **6 presets** : speaker embeddings pre-calcules (moyennes sur 100 echantillons)
-- **Blend pondere** : melange lineaire des speaker embeddings
-- **Cache SE** : les embeddings sont caches pour eviter les re-extractions
-- **Lazy loading** : sessions ONNX chargees a la premiere utilisation
-- **ONNX Runtime pur** : pas de dependance PyTorch
+- **6 presets** : speaker embeddings pré-calculés (moyennes sur 100 échantillons)
+- **Blend pondéré** : mélange linéaire des speaker embeddings
+- **Cache SE** : les embeddings sont cachés pour éviter les ré-extractions
+- **Lazy loading** : sessions ONNX chargées à la première utilisation
+- **ONNX Runtime pur** : pas de dépendance PyTorch
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modeles sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale](mailto:admin@lectura.world)

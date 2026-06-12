@@ -8,20 +8,20 @@ redirect_from:
 
 <div class="module-header">
   <h1>LeXiK</h1>
-  <p class="module-tagline">Le lexique francais de Lectura — 1,35 million d'entrees, 25 colonnes</p>
+  <p class="module-tagline">Le lexique français de Lectura — 1,35 million d'entrées, 25 colonnes</p>
 </div>
 
-## Presentation
+## Présentation
 
-LeXiK est la base lexicale de Lectura : une compilation structuree de sources linguistiques libres, unifiee dans un format unique avec 25 colonnes couvrant l'orthographe, la morphologie, la phonetique, la frequence et la semantique.
+LeXiK est la base lexicale de Lectura : une compilation structurée de sources linguistiques libres, unifiée dans un format unique avec 25 colonnes couvrant l'orthographe, la morphologie, la phonétique, la fréquence et la sémantique.
 
 | | |
 |---|---|
-| **Entrees** | 1 350 000 formes flechies |
-| **Colonnes** | 25 (ortho, lemme, cgram, phone, synonymes, definition...) |
-| **Formats** | CSV (213 Mo) et SQLite (optimise, avec index) |
+| **Entrées** | 1 350 000 formes fléchies |
+| **Colonnes** | 25 (ortho, lemme, cgram, phone, synonymes, définition...) |
+| **Formats** | CSV (213 Mo) et SQLite (optimisé, avec index) |
 | **Sources** | Compilation de bases libres (GLAFF, Wiktionnaire, OpenSubtitles...) |
-| **Licence** | A definir — [nous contacter](#obtenir-lexik) |
+| **Licence** | À définir — [nous contacter](#obtenir-lexik) |
 
 ---
 
@@ -29,35 +29,35 @@ LeXiK est la base lexicale de Lectura : une compilation structuree de sources li
 
 ### Identification et morphologie
 
-Chaque entree contient la forme orthographique, le lemme, la categorie grammaticale (POS), le code Multext, le genre, le nombre, et pour les verbes : le mode, le temps et la personne.
+Chaque entrée contient la forme orthographique, le lemme, la catégorie grammaticale (POS), le code Multext, le genre, le nombre, et pour les verbes : le mode, le temps et la personne.
 
-### Phonetique
+### Phonétique
 
-Transcription IPA, nombre de syllabes, decoupage syllabique et variantes de prononciation.
+Transcription IPA, nombre de syllabes, découpage syllabique et variantes de prononciation.
 
-### Frequences
+### Fréquences
 
-Quatre corpus de frequences croises : Frantext (litterature), frWaC (web), OpenSubtitles (oral) et LM10 (textes pour enfants).
+Quatre corpus de fréquences croisés : Frantext (littérature), frWaC (web), OpenSubtitles (oral) et LM10 (textes pour enfants).
 
-### Semantique
+### Sémantique
 
-Synonymes, antonymes, domaine semantique, definition, registre, etymologie et exemples — quand disponibles dans les sources.
+Synonymes, antonymes, domaine sémantique, définition, registre, étymologie et exemples — quand disponibles dans les sources.
 
 ---
 
 ## Utilisation avec le module Lexique
 
-LeXiK est directement compatible avec le module [`lectura-lexique`]({{ '/developpement/modules/outils/lexique/' | relative_url }}). Le module reconnait automatiquement les 25 colonnes et expose toutes ses methodes : conjugaison, rimes, synonymes, anagrammes, recherche multi-critere.
+LeXiK est directement compatible avec le module [`lectura-lexique`]({{ '/developpement/modules/outils/lexique/' | relative_url }}). Le module reconnaît automatiquement les 25 colonnes et expose toutes ses méthodes : conjugaison, rimes, synonymes, anagrammes, recherche multi-critère.
 
 ```python
 from lectura_lexique import Lexique
 
 with Lexique("lexique_lectura.db") as lex:
-    lex.conjuguer("manger")       # table de conjugaison complete
+    lex.conjuguer("manger")       # table de conjugaison complète
     lex.rimes("maison")           # mots rimant en -zɔ̃
     lex.synonymes("grand")        # ['abondant', 'adulte', 'ample', ...]
     lex.anagrammes("chien")       # ['chine', 'niche', ...]
-    lex.definition("maison")      # ["Batiment servant d'habitation."]
+    lex.definition("maison")      # ["Bâtiment servant d'habitation."]
     lex.filtrer(cgram="NOM", genre="f", freq_min=100)
 ```
 
@@ -69,6 +69,6 @@ pip install lectura-lexique
 
 ## Obtenir LeXiK {#obtenir-lexik}
 
-LeXiK n'est pas encore distribue publiquement. Si vous etes interesse par cette base lexicale pour un projet de recherche, un outil educatif ou un produit commercial, contactez-nous :
+LeXiK n'est pas encore distribué publiquement. Si vous êtes intéressé par cette base lexicale pour un projet de recherche, un outil éducatif ou un produit commercial, contactez-nous :
 
 <a href="mailto:admin@lectura.world" class="module-badge">admin@lectura.world</a>

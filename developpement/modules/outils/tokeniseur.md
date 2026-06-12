@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura Tokeniseur</h1>
-  <p class="module-tagline">Normalisateur et tokeniseur complet pour le francais</p>
+  <p class="module-tagline">Normalisateur et tokeniseur complet pour le français</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-tokeniseur/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Tokeniseur" class="module-badge">GitHub</a>
@@ -16,18 +16,18 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Module autonome, **zero dependance** externe. Normalise le texte francais (typographie, espaces, Unicode) et le decoupe en tokens structures : mots, ponctuation et **formules** detectees automatiquement.
+Module autonome, **zéro dépendance** externe. Normalise le texte français (typographie, espaces, Unicode) et le découpe en tokens structurés : mots, ponctuation et **formules** détectées automatiquement.
 
 Le Tokeniseur identifie et classifie plus de 15 types de formules :
 
-- Nombres (entiers, decimaux, negatifs)
-- Dates, heures, telephones
+- Nombres (entiers, décimaux, négatifs)
+- Dates, heures, téléphones
 - Sigles et acronymes
 - Ordinaux, fractions, pourcentages
-- Monnaies, unites de mesure
-- Expressions mathematiques
+- Monnaies, unités de mesure
+- Expressions mathématiques
 - Chiffres romains
 
 ---
@@ -69,28 +69,28 @@ for t in tokens:
     lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
 '\n'.join(lines)
 ">
-  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages." placeholder="Tapez du texte francais...">
+  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages." placeholder="Tapez du texte français...">
   <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la demo.</pre>
+  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la démo.</pre>
 </div>
 
 ---
 
-## Fonctionnalites
+## Fonctionnalités
 
 | Fonction | Description |
 |----------|-------------|
-| **Normalisation** | Typographie francaise, espaces, nettoyage Unicode |
-| **Tokenisation** | Decoupage en mots, ponctuation, separateurs |
-| **Detection de formules** | 15+ types : nombres, dates, heures, sigles, monnaies... |
+| **Normalisation** | Typographie française, espaces, nettoyage Unicode |
+| **Tokenisation** | Découpage en mots, ponctuation, séparateurs |
+| **Détection de formules** | 15+ types : nombres, dates, heures, sigles, monnaies... |
 | **API simple** | `tokenise(texte)` renvoie une liste de tokens |
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
-- **Zero dependance** Python (aucune dependance tierce)
-- **Independant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installe)
+- **Zéro dépendance** Python (aucune dépendance tierce)
+- **Indépendant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installé)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 2.3.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura STT</h1>
-  <p class="module-tagline">Transcription audio du francais — phones IPA et texte orthographique</p>
+  <p class="module-tagline">Transcription audio du français — phones IPA et texte orthographique</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-stt/" class="module-badge">STT PyPI</a>
     <a href="https://pypi.org/project/lectura-ctc/" class="module-badge">CTC PyPI</a>
@@ -17,49 +17,49 @@ redirect_from:
   </div>
 </div>
 
-## Presentation
+## Présentation
 
-Trois modules pour la transcription audio du francais :
+Trois modules pour la transcription audio du français :
 
 | Module | Couche | Entree | Sortie | pip install |
 |--------|--------|--------|--------|-------------|
 | **Lectura CTC** | couche 1 | audio 16 kHz | phones IPA | `pip install lectura-ctc` |
 | **Lectura STT** | couche 2 | audio 16 kHz | texte orthographique | `pip install lectura-stt[p2g]` |
-| **Lectura STT-Formules** | specialise | audio 16 kHz | tokens semantiques | `pip install lectura-stt-formules[inference]` |
+| **Lectura STT-Formules** | spécialisé | audio 16 kHz | tokens sémantiques | `pip install lectura-stt-formules[inference]` |
 
-**CTC** est le decodeur phonetique neural (CNN-BiGRU-CTC medium, 10.6M parametres, PER ~4.34%). Il convertit un signal audio en une sequence de phones IPA avec separateurs de mots, liaisons et ponctuation. Le modele medium supporte les sigles et formules grace a un fine-tuning specialise.
+**CTC** est le décodeur phonétique neural (CNN-BiGRU-CTC medium, 10.6M paramètres, PER ~4.34%). Il convertit un signal audio en une séquence de phones IPA avec séparateurs de mots, liaisons et ponctuation. Le modèle medium supporte les sigles et formules grâce à un fine-tuning spécialisé.
 
-**STT** est le pipeline complet qui chaine CTC avec le graphemiseur P2G pour reconstituer le texte francais, avec gestion des elisions, de la ponctuation et des majuscules. Si `lectura-p2g` est installe, les formules (nombres, sigles) et les noms propres sont aussi traites.
+**STT** est le pipeline complet qui chaîne CTC avec le graphémiseur P2G pour reconstituer le texte français, avec gestion des élisions, de la ponctuation et des majuscules. Si `lectura-p2g` est installé, les formules (nombres, sigles) et les noms propres sont aussi traités.
 
-**STT-Formules** est un modele CTC autonome et leger (~600K parametres) entraine specifiquement pour la reconnaissance de formules. Au lieu de phonemes IPA, il produit directement des tokens semantiques (87 classes : nombres, mois, devises, lettres, etc.), avec un TER de ~1.17%. Ideal pour les applications de saisie vocale de donnees structurees.
+**STT-Formules** est un modèle CTC autonome et léger (~600K paramètres) entraîné spécifiquement pour la reconnaissance de formules. Au lieu de phonèmes IPA, il produit directement des tokens sémantiques (87 classes : nombres, mois, devises, lettres, etc.), avec un TER de ~1.17%. Idéal pour les applications de saisie vocale de données structurées.
 
-### Specifications CTC
+### Spécifications CTC
 
-| Caracteristique | Valeur |
+| Caractéristique | Valeur |
 |-----------------|--------|
 | **Architecture** | CNN [48, 96] (2 couches) + BiGRU 384x4 + CTC head |
-| **Parametres** | 10.6M |
+| **Paramètres** | 10.6M |
 | **Performance** | PER ~4.34% (formules v2) |
-| **Vocabulaire** | 59 tokens (46 phones IPA + liaisons + ponctuation + speciaux) |
+| **Vocabulaire** | 59 tokens (46 phones IPA + liaisons + ponctuation + spéciaux) |
 | **Audio** | PCM float32 mono, 16 kHz |
 | **Mel** | 80 bins, n_fft=512, hop=160, win=400 |
-| **Modele** | ONNX INT8, ~38 Mo |
+| **Modèle** | ONNX INT8, ~38 Mo |
 | **Backends** | ONNX Runtime (local) ou API serveur |
 
 ### Benchmark STT (pipeline complet)
 
-| Metrique | Corpus | Score |
+| Métrique | Corpus | Score |
 |----------|--------|-------|
 | **WER moyen** | parole courante | **~15%** |
 | **PER** | CTC seul (phone error rate) | **~4.34%** |
 
-Pipeline CTC + P2G v7 + post-traitement grammatical. Performances comparables a Whisper small (241M params, 461 Mo) avec un pipeline 10x plus leger (~43 Mo de modeles).
+Pipeline CTC + P2G v7 + post-traitement grammatical. Performances comparables à Whisper small (241M params, 461 Mo) avec un pipeline 10x plus léger (~43 Mo de modèles).
 
 ---
 
 ## Essayer en ligne
 
-*La demo utilise l'API Lectura — aucun telechargement necessaire.*
+*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
 
 <style>
 #ctc-output-ipa, #ctc-output-texte {
@@ -119,8 +119,8 @@ Pipeline CTC + P2G v7 + post-traitement grammatical. Performances comparables a 
   <div class="tts-progress-container"><div class="tts-progress" id="ctc-progress"></div></div>
 
   <div class="ctc-output-block">
-    <div class="ctc-output-label">Phonetique (IPA)</div>
-    <pre class="tts-output" id="ctc-output-ipa">Selectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
+    <div class="ctc-output-label">Phonétique (IPA)</div>
+    <pre class="tts-output" id="ctc-output-ipa">Sélectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
   </div>
   <div class="ctc-output-block">
     <div class="ctc-output-label">Texte (STT)</div>
@@ -180,7 +180,7 @@ python -m lectura_ctc --micro --duree 5
 python -m lectura_ctc --micro --continu
 ```
 
-### STT-Formules (audio → tokens semantiques)
+### STT-Formules (audio → tokens sémantiques)
 
 ```python
 from lectura_stt_formules import creer_engine
@@ -193,7 +193,7 @@ print(result["tokens"])  # [4, 25, 20, 29, 3]
 print(" ".join(result["names"]))  # "DEUX CENT VINGT ET UN"
 ```
 
-Le vocabulaire de sortie comprend 87 tokens semantiques : nombres atomiques (0-16), dizaines, echelles, connecteurs, mois, heures, devises, pourcentages, ordinaux, fractions et lettres A-Z pour les sigles.
+Le vocabulaire de sortie comprend 87 tokens sémantiques : nombres atomiques (0-16), dizaines, échelles, connecteurs, mois, heures, devises, pourcentages, ordinaux, fractions et lettres A-Z pour les sigles.
 
 ---
 
@@ -281,7 +281,7 @@ Audio 16kHz mono
 # Pipeline STT complet (audio → texte, avec P2G + formules)
 pip install lectura-stt[p2g]
 
-# STT avec backend ONNX (inference locale rapide)
+# STT avec backend ONNX (inférence locale rapide)
 pip install lectura-stt[onnx,p2g]
 
 # CTC seul (audio → phones IPA)
@@ -293,35 +293,35 @@ pip install lectura-ctc
 # Avec support micro (CLI)
 pip install lectura-ctc[onnx,micro]
 
-# STT-Formules (tokens semantiques, inference locale)
+# STT-Formules (tokens sémantiques, inférence locale)
 pip install lectura-stt-formules[inference]
 ```
 
-Par defaut, les modules utilisent l'**API Lectura** si aucun modele local n'est trouve. Pour l'inference locale, installez les modeles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modeles embarques (disponibles sous [licence commerciale](mailto:admin@lectura.world)).
+Par défaut, les modules utilisent l'**API Lectura** si aucun modèle local n'est trouvé. Pour l'inférence locale, installez les modèles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modèles embarqués (disponibles sous [licence commerciale](mailto:admin@lectura.world)).
 
 ---
 
-## Caracteristiques techniques
+## Caractéristiques techniques
 
 ### CTC (couche 1)
 
-- **CNN-BiGRU-CTC medium** : 10.6M parametres, PER ~4.34%
-- **Mel spectrogram numpy pur** : pas de dependance torchaudio
-- **Decodage CTC greedy** : zero dependance
-- **59 tokens** : 46 phones IPA francais + 6 liaisons + 5 ponctuations + 2 speciaux
-- **ONNX INT8** : modele quantifie ~38 Mo
-- **CLI integree** : `python -m lectura_ctc` (fichier WAV ou micro)
+- **CNN-BiGRU-CTC medium** : 10.6M paramètres, PER ~4.34%
+- **Mel spectrogram numpy pur** : pas de dépendance torchaudio
+- **Décodage CTC greedy** : zéro dépendance
+- **59 tokens** : 46 phones IPA français + 6 liaisons + 5 ponctuations + 2 spéciaux
+- **ONNX INT8** : modèle quantifié ~38 Mo
+- **CLI intégrée** : `python -m lectura_ctc` (fichier WAV ou micro)
 - **Factory `creer_engine()`** : cascade auto ONNX → API
 
 ### STT (couche 2)
 
-- **WER ~15%** (parole courante), comparable a Whisper small avec 10x moins de parametres
-- **Pipeline optimal** : CTC → segmentation phonetique → P2G v7 (lex-select) → merge_and_rescore → post-traitement grammatical → texte
-- **Pipeline CTC + P2G** : audio → texte francais en une ligne de code
-- **P2G optionnel** : fonctionne en mode phones seuls si P2G non installe
+- **WER ~15%** (parole courante), comparable à Whisper small avec 10x moins de paramètres
+- **Pipeline optimal** : CTC → segmentation phonétique → P2G v7 (lex-select) → merge_and_rescore → post-traitement grammatical → texte
+- **Pipeline CTC + P2G** : audio → texte français en une ligne de code
+- **P2G optionnel** : fonctionne en mode phones seuls si P2G non installé
 - **Cascade P2G** : `lectura-p2g` (complet) → `lectura-graphemiseur` (core) → aucun
-- **Elisions automatiques** : l', d', j', n', s', qu', m', t', c'
-- **Ponctuation et majuscules** : reconstruction fidele du texte
+- **Élisions automatiques** : l', d', j', n', s', qu', m', t', c'
+- **Ponctuation et majuscules** : reconstruction fidèle du texte
 - **Formules** : nombres, sigles (via `lectura-p2g`)
 - **Python 3.10+** avec type hints complets
-- **Licence** : AGPL-3.0 (code) — modeles sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — modèles sous [licence commerciale](mailto:admin@lectura.world)
