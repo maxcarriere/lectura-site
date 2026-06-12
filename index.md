@@ -10,7 +10,7 @@ Lecteurs syllabiques, applications de lecture, ressources educatives, outils de 
 <div class="home-grid">
   <div class="home-card">
     <h2>Solutions</h2>
-    <p>NLP, synthese vocale, transcription audio, lexique et services professionnels pour le traitement du francais.</p>
+    <p>Analyse du langage, synthese vocale, reconnaissance vocale, lexique et services professionnels pour le francais.</p>
     <a class="more-link" href="{{ '/solutions/' | relative_url }}">Decouvrir les solutions</a>
   </div>
   <div class="home-card">

@@ -4,45 +4,43 @@ layout: default
 permalink: /solutions/lexique/
 ---
 
-## Accédez à un lexique français complet
-
-Vous avez besoin de conjugaison automatique, de recherche de rimes, de synonymes ou d'informations morphologiques sur les mots français ? Le module Lexique de Lectura donne accès à des bases lexicales complètes via une API unifiée.
+Lectura donne acces a **LeXiK**, une base lexicale du francais de 1,35 million d'entrees couvrant l'orthographe, la phonetique IPA, la morphologie, les frequences, les synonymes et les definitions. Le tout accessible via un module Python avec 18 methodes de requetage.
 
 ---
 
-## Ce que Lectura propose
+## Ce que Lectura est capable de faire
 
-Un module d'accès générique à un lexique français, compatible avec les principales bases disponibles (Lexique383, GLAFF, LeXiK). 18 méthodes de requêtage organisées en 4 familles : morphologie, phonétique, sémantique, recherche.
+| Capacite | Description |
+|----------|-------------|
+| **Conjugaison** | Toutes les formes conjuguees de n'importe quel verbe francais |
+| **Rimes** | Recherche de mots rimant avec un mot donne (rime riche, suffisante, pauvre) |
+| **Anagrammes** | Recherche d'anagrammes |
+| **Synonymes et definitions** | Acces aux synonymes et definitions de chaque entree |
+| **Morphologie** | Genre, nombre, categorie grammaticale, forme flechie |
+| **Phonetique** | Transcription IPA de chaque entree, nombre de syllabes |
+| **Filtrage multi-critere** | Recherche combinant categorie, frequence, nombre de lettres, motifs |
 
-Associé à **LeXiK**, la base lexicale de Lectura (1,35 million d'entrées, 25 colonnes), il couvre l'orthographe, la morphologie, la phonétique, les fréquences, les synonymes et les définitions.
-
----
-
-## Bénéfices clés
-
-- **1,35 million d'entrées** avec LeXiK (orthographe, phonétique IPA, morphologie, synonymes, définitions)
-- **Compatible avec les bases existantes** : Lexique383, GLAFF, Morphalou
-- **18 méthodes de requêtage** : conjugaison, rimes, anagrammes, filtrage multi-critère
-- **Zero dépendance** : fonctionne avec CSV, TSV ou SQLite
-
----
-
-## Cas d'usage
-
-- **Applications éducatives** : conjugaison interactive, jeux de mots, recherche de rimes
-- **Éditeurs** : vérification lexicale, enrichissement de contenu
-- **Recherche linguistique** : requêtes complexes sur la morphologie et la fréquence
-- **Outils d'écriture** : synonymes, antonymes, suggestions contextuelles
+Compatible avec les bases existantes (Lexique383, GLAFF, Morphalou) grace a une interface d'acces generique.
 
 ---
 
-## Essayer
+## Applications
 
-<a class="more-link" href="{{ '/developpement/modules/outils/lexique/' | relative_url }}">Documentation technique →</a>
-<a class="more-link" href="{{ '/developpement/ressources/lexik/' | relative_url }}">En savoir plus sur LeXiK →</a>
+- **Applications educatives** : conjugaison interactive, jeux de mots, recherche de rimes pour l'apprentissage du francais.
+- **Editeurs** : verification lexicale, enrichissement de contenu, generation de listes de vocabulaire.
+- **Recherche linguistique** : requetes complexes sur la morphologie, la frequence et la phonetique.
+- **Outils d'ecriture** : synonymes, antonymes, suggestions contextuelles.
+- **Pipeline Lectura** : le lexique enrichit les predictions du phonemiseur (G2P) et du graphemiseur (P2G) avec des features lexicales.
+
+---
+
+## En savoir plus
+
+- [Module Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) — documentation technique et API
+- [LeXiK]({{ '/developpement/ressources/lexik/' | relative_url }}) — la base lexicale de Lectura
 
 ---
 
 ## Contact
 
-Pour obtenir LeXiK ou intégrer le module Lexique : [admin@lectura.world](mailto:admin@lectura.world)
+Pour obtenir LeXiK ou integrer le module Lexique : [admin@lectura.world](mailto:admin@lectura.world)

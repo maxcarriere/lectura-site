@@ -4,28 +4,12 @@
 - title: Solutions
   url: /solutions/
   children:
-    - title: NLP
-      url: /solutions/nlp/
-      children:
-        - title: G2P
-          url: /solutions/nlp/g2p/
-        - title: P2G
-          url: /solutions/nlp/p2g/
-        - title: Aligneur
-          url: /solutions/nlp/aligneur/
-        - title: Formules
-          url: /solutions/nlp/formules/
-    - title: TTS
-      url: /solutions/tts/
-      children:
-        - title: TTS Multi-Speaker
-          url: /solutions/tts/multispeaker/
-        - title: TTS Monospeaker
-          url: /solutions/tts/monospeaker/
-        - title: TTS Diphone
-          url: /solutions/tts/diphone/
-    - title: STT
-      url: /solutions/stt/
+    - title: Analyse du langage
+      url: /solutions/analyse-langage/
+    - title: "Synthese vocale"
+      url: /solutions/synthese-vocale/
+    - title: Reconnaissance vocale
+      url: /solutions/reconnaissance-vocale/
     - title: Lexique
       url: /solutions/lexique/
     - title: Services
