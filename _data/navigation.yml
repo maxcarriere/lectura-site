@@ -4,73 +4,96 @@
 - title: Solutions
   url: /solutions/
   children:
-    - title: Modules
-      url: /solutions/modules/
+    - title: NLP
+      url: /solutions/nlp/
       children:
-        - title: Tokeniseur
-          url: /solutions/modules/tokeniseur/
         - title: G2P
-          url: /solutions/modules/g2p/
+          url: /solutions/nlp/g2p/
         - title: P2G
-          url: /solutions/modules/p2g/
-        - title: Aligneur-Syllabeur
-          url: /solutions/modules/syllabeur/
-        - title: Lexique
-          url: /solutions/modules/lexique/
+          url: /solutions/nlp/p2g/
+        - title: Aligneur
+          url: /solutions/nlp/aligneur/
         - title: Formules
-          url: /solutions/modules/formules/
-        - title: Correcteur
-          url: /solutions/modules/correcteur/
-        - title: STT
-          url: /solutions/modules/ctc/
-        - title: TTS Monospeaker
-          url: /solutions/modules/tts/
-        - title: TTS Diphone
-          url: /solutions/modules/tts-diphone/
-        - title: TTS Multi-Speaker
-          url: /solutions/modules/tts-multispeaker/
-        - title: VoiceConversion
-          url: /solutions/modules/vc/
-    - title: Ressources
-      url: /solutions/ressources/
+          url: /solutions/nlp/formules/
+    - title: TTS
+      url: /solutions/tts/
       children:
-        - title: LeXiK
-          url: /solutions/ressources/lexik/
-        - title: Kit G2P / P2G
-          url: /solutions/ressources/kit-g2p-p2g/
-    - title: Programmes
-      url: /solutions/programmes/
+        - title: TTS Multi-Speaker
+          url: /solutions/tts/multispeaker/
+        - title: TTS Monospeaker
+          url: /solutions/tts/monospeaker/
+        - title: TTS Diphone
+          url: /solutions/tts/diphone/
+    - title: STT
+      url: /solutions/stt/
+    - title: Lexique
+      url: /solutions/lexique/
     - title: Services
       url: /solutions/services/
       children:
+        - title: Licences commerciales
+          url: /solutions/services/licences/
         - title: "Integration logicielle"
           url: /solutions/services/integration/
+        - title: "Preparation corpus"
+          url: /solutions/services/corpus-modeles/
         - title: "Services editoriaux"
           url: /solutions/services/services-editoriaux/
 
 - title: Produits
   url: /produits/
   children:
+    - title: Programmes
+      url: /produits/programmes/
     - title: Applications
       url: /produits/applications/
-    - title: "Livres & Medias"
-      url: /produits/livres-medias/
-      children:
-        - title: "Methode de lecture"
-          url: /produits/livres-medias/methode-lecture/
-        - title: "Histoires syllabiques"
-          url: /produits/livres-medias/histoires-syllabiques/
+    - title: "Medias"
+      url: /produits/medias/
 
-- title: Projets
-  url: /projets/
+- title: "Developpement"
+  url: /developpement/
   children:
-    - title: "Lecture augmentee"
-      url: /projets/lecture-augmentee/
-    - title: "Synthese vocale (TTS)"
-      url: /projets/tts/
-
-- title: Vision
-  url: /vision/
+    - title: Modules
+      url: /developpement/modules/
+      children:
+        - title: Modules outils
+          url: /developpement/modules/outils/
+        - title: "Modules metiers"
+          url: /developpement/modules/metiers/
+    - title: Ressources
+      url: /developpement/ressources/
+      children:
+        - title: LeXiK
+          url: /developpement/ressources/lexik/
+        - title: Kit G2P / P2G
+          url: /developpement/ressources/kit-g2p-p2g/
+        - title: Corpus
+          url: /developpement/ressources/corpus/
+    - title: Recherche
+      url: /developpement/recherche/
+      children:
+        - title: "Phonetique"
+          url: /developpement/recherche/phonetique/
+        - title: "Synthese vocale"
+          url: /developpement/recherche/synthese-vocale/
+        - title: "Reconnaissance vocale"
+          url: /developpement/recherche/reconnaissance/
+    - title: Projets
+      url: /developpement/projets/
+      children:
+        - title: "Pistes d'amelioration"
+          url: /developpement/projets/pistes/
+        - title: Correcteur
+          url: /developpement/projets/correcteur/
 
 - title: "A propos"
   url: /a-propos/
+  children:
+    - title: "Methode"
+      url: /a-propos/methode/
+    - title: Vision
+      url: /a-propos/vision/
+    - title: "Qui suis-je ?"
+      url: /a-propos/qui-suis-je/
+    - title: Humanuscrit
+      url: /a-propos/humanuscrit/

@@ -1,25 +1,34 @@
 ---
-title: Integration logicielle
+title: Intégration logicielle
 layout: default
 permalink: /solutions/services/integration/
 ---
 
-Integration des modules de traitement linguistique Lectura dans vos applications et workflows existants.
+## Intégrez le traitement linguistique dans vos applications
 
-## API et modules Python
-
-<span class="status-badge status-conception">En conception</span>
-
-Les modules Lectura (syllabeur, G2P, P2G, POS-tagger, detection des liaisons) sont distribues comme packages Python independants sur PyPI. Ils peuvent etre integres dans n'importe quelle application Python via un simple `pip install`.
-
-Chaque module expose une API claire et documentee, avec des entrees/sorties typees.
+Vous souhaitez ajouter la phonémisation, la syllabation, la synthèse vocale ou la transcription audio à votre application existante ? Lectura propose un accompagnement à l'intégration de ses modules dans votre environnement technique.
 
 ---
 
-## Pipeline d'enrichissement
+## Ce que Lectura propose
 
-<span class="status-badge status-cours">En cours</span>
+- **API cloud** : accès immédiat aux modules via l'API Lectura (api.lectura.world), sans installation
+- **Packages Python** : modules autonomes installables via pip, intégrables dans n'importe quel projet Python
+- **Pipeline d'enrichissement** : chaînage des modules pour produire un texte enrichi multi-couches (syllabes, phonétique, liaisons, lettres muettes)
+- **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation
 
-Le pipeline `lectura-main` enchaine les modules de traitement pour produire un texte enrichi multi-couches : decoupage syllabique, transcription phonetique, identification des liaisons, marquage des lettres muettes, coloration phonetique.
+---
 
-La sortie peut prendre plusieurs formats : HTML annote, JSON structure, ou texte balise. Ce pipeline est disponible comme service d'integration pour les editeurs et developpeurs souhaitant enrichir automatiquement leurs contenus de lecture.
+## Modes d'intégration
+
+| Mode | Installation | Latence | Dépendances |
+|------|-------------|---------|-------------|
+| **API** | Aucune | ~100 ms | Connexion internet |
+| **ONNX local** | pip install + modèles | ~2 ms | ONNX Runtime |
+| **Python pur** | pip install | ~200 ms | Aucune |
+
+---
+
+## Contact
+
+Pour discuter de votre projet d'intégration : [admin@lectura.world](mailto:admin@lectura.world)
