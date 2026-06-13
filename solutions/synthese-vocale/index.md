@@ -19,7 +19,7 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 
 Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique sans recharger le modèle. ~50x temps réel sur CPU.
 
-<div class="tts-demo tts-multi-demo">
+<div class="tts-multi-demo">
   <div class="tts-controls">
     <label for="tts-speaker">Voix :</label>
     <select id="tts-speaker" class="tts-speaker">

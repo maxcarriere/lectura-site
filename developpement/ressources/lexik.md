@@ -9,6 +9,9 @@ redirect_from:
 <div class="module-header">
   <h1>LeXiK</h1>
   <p class="module-tagline">Le lexique français de Lectura — 1,35 million d'entrées, 25 colonnes</p>
+  <div class="module-links">
+    <a href="https://lexique.lectura.world" class="module-badge">lexique.lectura.world</a>
+  </div>
 </div>
 
 ## Présentation
