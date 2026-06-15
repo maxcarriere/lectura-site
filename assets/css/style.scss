@@ -67,7 +67,7 @@ body *::after {
 .header-inner {
   width: 100%;
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr var(--right-width);
+  grid-template-columns: var(--sidebar-width) 1fr;
   align-items: center;
   gap: 0;
   padding: 0;
@@ -141,22 +141,29 @@ body *::after {
 
 /* Bannière illustrée dans le header */
 .header-banner {
-  width: 100%;
+  grid-column: 2;
+  grid-row: 1;
+  width: calc(100% - var(--right-width));
   max-width: 1100px;
   max-height: 140px;
   min-width: 0;
   object-fit: contain;
   justify-self: center;
+  margin-right: var(--right-width);
   border-radius: 6px;
 }
 
 /* Liens vers les autres sites */
 .header-sites {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  justify-self: center;
+  padding-right: 1rem;
 }
 
 .header-sites-label {
@@ -209,7 +216,7 @@ body *::after {
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr var(--right-width);
+  grid-template-columns: var(--sidebar-width) 1fr;
   z-index: 1;
 }
 
@@ -342,6 +349,7 @@ body *::after {
   min-width: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-right: var(--right-width);
   scrollbar-width: thin;
   scrollbar-color: #666 #1a1a1a;
 }
@@ -769,7 +777,6 @@ html[data-darkreader-mode] .parchment-content a:hover {
 @media (min-width: 1200px) and (max-width: 1499px) {
   :root {
     --sidebar-width: 200px;
-    --right-width: 120px;
   }
 }
 
@@ -951,6 +958,10 @@ html[data-darkreader-mode] .parchment-content a:hover {
 
   .site-sidebar {
     display: none;
+  }
+
+  .page-wrapper {
+    padding-right: 0;
   }
 
   /* Fond parchemin mobile : couvre tout, pas de classeur */
