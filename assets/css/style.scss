@@ -78,7 +78,6 @@ body *::after {
   text-decoration: none;
   color: inherit;
   flex-shrink: 0;
-  margin-right: auto;
 }
 
 .header-brand:hover .site-title {
@@ -144,8 +143,36 @@ body *::after {
   min-width: 0;
   max-height: 140px;
   object-fit: contain;
-  object-position: right;
   border-radius: 6px;
+}
+
+/* Liens vers les autres sites */
+.header-sites {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.header-site-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.header-site-link:hover {
+  color: #fff;
+}
+
+.header-site-link img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: contain;
 }
 
 /* Menu hamburger (masque en desktop) */
@@ -771,8 +798,9 @@ html[data-darkreader-mode] .parchment-content a:hover {
     font-size: 0.7rem;
   }
 
-  /* Bannière masquée sur mobile */
-  .header-banner {
+  /* Bannière et liens sites masqués sur mobile */
+  .header-banner,
+  .header-sites {
     display: none;
   }
 
