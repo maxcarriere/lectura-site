@@ -79,6 +79,8 @@ body *::after {
   gap: 1.8rem;
   text-decoration: none;
   color: inherit;
+  flex-shrink: 0;
+  margin-right: auto;
 }
 
 .header-brand:hover .site-title {
