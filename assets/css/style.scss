@@ -76,11 +76,12 @@ body *::after {
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   text-decoration: none;
   color: inherit;
-  padding-left: 1rem;
-  justify-self: center;
+  padding: 0 0.5rem;
+  justify-self: start;
+  overflow: hidden;
 }
 
 .header-brand:hover .site-title {
@@ -88,14 +89,14 @@ body *::after {
 }
 
 .logo img {
-  width: 100px;
+  width: 50px;
   display: block;
 }
 
 .site-title {
   color: #F5F5F5;
   font-family: 'Cinzel', serif;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin: 0;
   font-variant: small-caps;
