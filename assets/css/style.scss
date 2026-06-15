@@ -456,8 +456,8 @@ body *::after {
   left: 50%;
   transform: translateX(-50%);
   width: min(1100px, calc(100vw - 2 * var(--sidebar-width) - 80px));
-  background: #ddd0b8 url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") no-repeat center top;
-  background-size: contain;
+  background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=8") repeat-y center top;
+  background-size: 100% auto;
   z-index: 0;
   pointer-events: none;
 }
