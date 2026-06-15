@@ -66,10 +66,11 @@ body *::after {
 .header-inner {
   width: 100%;
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr auto;
+  grid-template-columns: var(--sidebar-width) 1fr;
   align-items: center;
   gap: 0;
   padding: 0;
+  position: relative;
 }
 
 .header-brand {
@@ -141,8 +142,9 @@ body *::after {
 
 /* Bannière illustrée dans le header */
 .header-banner {
+  width: 100%;
+  max-width: 1100px;
   max-height: 140px;
-  max-width: 100%;
   object-fit: contain;
   justify-self: center;
   border-radius: 6px;
@@ -150,11 +152,14 @@ body *::after {
 
 /* Liens vers les autres sites */
 .header-sites {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  padding-right: 1.5rem;
 }
 
 .header-site-link {
