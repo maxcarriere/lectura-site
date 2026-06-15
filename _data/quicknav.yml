@@ -1,0 +1,15 @@
+- title: "Synthèse vocale"
+  url: /solutions/synthese-vocale/
+  icon: headphones
+
+- title: "Reconnaissance vocale"
+  url: /solutions/reconnaissance-vocale/
+  icon: microphone
+
+- title: "Analyse du langage"
+  url: /solutions/analyse-langage/
+  icon: phonetics
+
+- title: "Lexique"
+  url: /solutions/lexique/
+  icon: dictionary

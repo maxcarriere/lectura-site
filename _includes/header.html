@@ -74,6 +74,11 @@
         {% endif %}
       {% endfor %}
       <span class="mobile-nav-sep"></span>
+      <div class="mobile-nav-quick-title">Accès rapide</div>
+      {% for item in site.data.quicknav %}
+        <a href="{{ item.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l2">{{ item.title }}</a>
+      {% endfor %}
+      <span class="mobile-nav-sep"></span>
       <a href="{{ '/mentions-legales/' | relative_url }}" class="mobile-nav-link">Mentions legales</a>
       <a href="{{ '/confidentialite/' | relative_url }}" class="mobile-nav-link">Confidentialite</a>
       <a href="{{ '/contact/' | relative_url }}" class="mobile-nav-link">Contact</a>
