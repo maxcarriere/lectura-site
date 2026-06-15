@@ -69,8 +69,7 @@ body *::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
   padding: 0 1rem;
 }
 
@@ -87,7 +86,7 @@ body *::after {
 }
 
 .logo img {
-  width: 72px;
+  width: 100px;
   display: block;
 }
 
@@ -141,10 +140,11 @@ body *::after {
 
 /* Bannière illustrée dans le header */
 .header-banner {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
   max-height: 140px;
   object-fit: contain;
+  object-position: right;
   border-radius: 6px;
 }
 
