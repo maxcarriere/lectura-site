@@ -456,7 +456,7 @@ body *::after {
   right: var(--sidebar-width);
   bottom: var(--footer-height);
   background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") no-repeat center top;
-  background-size: auto max(100%, 700px);
+  background-size: 100% max(100%, 700px);
   z-index: 0;
   pointer-events: none;
 }
