@@ -65,7 +65,8 @@ body *::after {
 
 .header-inner {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1.5rem;
   padding: 0 1rem;
@@ -139,11 +140,10 @@ body *::after {
 
 /* Bannière illustrée dans le header */
 .header-banner {
-  flex: 1 1 0;
-  min-width: 0;
   max-height: 140px;
+  max-width: 100%;
   object-fit: contain;
-  object-position: center;
+  justify-self: center;
   border-radius: 6px;
 }
 
@@ -770,6 +770,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
   }
 
   .header-inner {
+    display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     position: relative;
