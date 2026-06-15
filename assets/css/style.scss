@@ -1052,7 +1052,10 @@ html[data-darkreader-mode] .parchment-content a:hover {
   .page-wrapper::before {
     left: 0;
     right: 0;
-    background-image: url("{{ '/assets/images/fond_mobile.png' | relative_url }}");
+    width: auto;
+    transform: none;
+    background: url("{{ '/assets/images/fond_mobile.png' | relative_url }}") repeat-y center top;
+    background-size: 100% auto;
   }
 
 
