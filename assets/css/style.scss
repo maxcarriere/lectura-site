@@ -161,6 +161,12 @@ body *::after {
   gap: 0.6rem;
 }
 
+.header-sites-label {
+  color: #888;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
 .header-site-link {
   display: flex;
   align-items: center;
