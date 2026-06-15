@@ -6,14 +6,14 @@
   --header-height: 90px;
   --footer-height: 50px;
   --sidebar-width: 240px;
+  --right-width: 150px;
 }
 
 /* ===== 1. Fond general ===== */
 html {
   margin: 0;
   padding: 0;
-  min-width: 1200px;
-  overflow-x: auto;
+  overflow-x: hidden;
   color-scheme: light !important;
   print-color-adjust: exact !important;
   -webkit-print-color-adjust: exact !important;
@@ -67,11 +67,10 @@ body *::after {
 .header-inner {
   width: 100%;
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: var(--sidebar-width) 1fr var(--right-width);
   align-items: center;
   gap: 0;
   padding: 0;
-  position: relative;
 }
 
 .header-brand {
@@ -145,6 +144,7 @@ body *::after {
   width: 100%;
   max-width: 1100px;
   max-height: 140px;
+  min-width: 0;
   object-fit: contain;
   justify-self: center;
   border-radius: 6px;
@@ -152,14 +152,11 @@ body *::after {
 
 /* Liens vers les autres sites */
 .header-sites {
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
+  justify-self: center;
 }
 
 .header-sites-label {
@@ -212,7 +209,7 @@ body *::after {
   left: 0;
   right: 0;
   display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-columns: var(--sidebar-width) 1fr var(--right-width);
   z-index: 1;
 }
 
@@ -372,7 +369,7 @@ body *::after {
   position: fixed;
   top: var(--header-height);
   left: var(--sidebar-width);
-  right: 0;
+  right: var(--right-width);
   bottom: var(--footer-height);
   background: url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") no-repeat center top;
   background-size: auto max(100%, 700px);
@@ -772,16 +769,12 @@ html[data-darkreader-mode] .parchment-content a:hover {
 @media (min-width: 1200px) and (max-width: 1499px) {
   :root {
     --sidebar-width: 200px;
+    --right-width: 120px;
   }
 }
 
 /* ===== 9. Mobile / tablette (< 1200px) ===== */
 @media (max-width: 1199px) {
-  html {
-    min-width: 0;
-    overflow-x: hidden;
-  }
-
   /* Header compact */
   .site-header {
     padding: 0.5rem 1rem;
@@ -963,6 +956,7 @@ html[data-darkreader-mode] .parchment-content a:hover {
   /* Fond parchemin mobile : couvre tout, pas de classeur */
   .page-wrapper::before {
     left: 0;
+    right: 0;
     background-image: url("{{ '/assets/images/fond_mobile.png' | relative_url }}");
   }
 
