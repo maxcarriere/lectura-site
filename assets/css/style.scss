@@ -12,7 +12,8 @@
 html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  min-width: 1200px;
+  overflow-x: auto;
   color-scheme: light !important;
   print-color-adjust: exact !important;
   -webkit-print-color-adjust: exact !important;
@@ -776,6 +777,11 @@ html[data-darkreader-mode] .parchment-content a:hover {
 
 /* ===== 9. Mobile / tablette (< 1200px) ===== */
 @media (max-width: 1199px) {
+  html {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
   /* Header compact */
   .site-header {
     padding: 0.5rem 1rem;
