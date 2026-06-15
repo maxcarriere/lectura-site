@@ -100,7 +100,7 @@ body *::after {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   gap: 0.15em;
   justify-content: center;
 }
