@@ -456,8 +456,8 @@ body *::after {
   left: 50%;
   transform: translateX(-50%);
   width: min(1100px, calc(100vw - 2 * var(--sidebar-width) - 80px));
-  background: #ddd0b8 url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") repeat-y center top;
-  background-size: 100% auto;
+  background: #ddd0b8 url("{{ '/assets/images/fond_pc.png' | relative_url }}?v=7") no-repeat center top;
+  background-size: contain;
   z-index: 0;
   pointer-events: none;
 }
@@ -515,7 +515,7 @@ html[data-darkreader-scheme] .parchment-middle * {
   max-width: min(96ch, calc(100% - 60px));
   width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 2rem 4rem 5.5rem;
+  padding: 1.25rem 2rem 4rem calc(5.5rem + 10px);
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
