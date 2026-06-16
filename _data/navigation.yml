@@ -1,6 +1,9 @@
 # Navigation principale du site lectura.world
 # 3 niveaux : racine > section > feuille
 
+- title: Accueil
+  url: /
+
 - title: Solutions
   url: /solutions/
   children:

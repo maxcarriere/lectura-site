@@ -178,7 +178,7 @@ body *::after {
   gap: 0.5rem;
   text-decoration: none;
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: color 0.2s;
   white-space: nowrap;
 }
@@ -188,8 +188,8 @@ body *::after {
 }
 
 .header-site-link img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
   object-fit: contain;
   flex-shrink: 0;
@@ -243,6 +243,18 @@ body *::after {
 .site-sidebar::-webkit-scrollbar-thumb {
   background: #444;
   border-radius: 3px;
+}
+
+.sidebar-title {
+  color: #F5F5F5;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  padding: 0.5rem 1rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.25rem;
 }
 
 .sidebar-nav {
