@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/
 ---
 
-Lectura propose des solutions professionnelles pour le traitement linguistique du français. Chaque solution est utilisable via API ou comme module Python autonome.
+Lectura propose des solutions professionnelles pour le traitement linguistique du français, la synthèse et la reconnaissance vocale. Chaque solution est utilisable via API comme module Python autonome et testable directement en ligne.
 
 <div class="home-grid">
   <div class="home-card">
