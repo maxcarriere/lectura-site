@@ -1,11 +1,11 @@
 ---
-title: Lectura
+title: "Bienvenue sur mon site Lectura.world !"
 layout: default
 ---
 
-Bienvenue sur mon site Lectura.world !
+Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour. De nombreux travaux et démonstrations sont accessibles directement sur ce site.
 
-Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en cours de développement, d'autres sont régulièrement améliorés et mis à jour, et de nombreux travaux et démonstrations sont accessibles directement sur ce site.
+---
 
 Les projets développés s'expriment dans plusieurs composantes :
 
@@ -15,8 +15,8 @@ Les projets développés s'expriment dans plusieurs composantes :
 
 - Sur le plan **pédagogique**, c'est une des applications naturelles du projet et son idée d'origine : utiliser les outils développés pour proposer des [ressources d'apprentissage]({{ '/produits/' | relative_url }}) de la lecture, du français langue étrangère ou d'aide aux différents troubles d'apprentissage.
 
-L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leurs propres projets. Je suis également ouvert à toute proposition de mission en lien avec mon domaine d'expertise ou avec l'utilisation de l'IA.
+---
 
-Pour en savoir plus sur le porteur de projet, sa démarche et sa vision, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}).
+L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leurs propres projets. Je suis également ouvert à toute proposition de mission en lien avec mon domaine d'expertise ou avec l'utilisation de l'IA. Pour en savoir plus sur le porteur de projet, sa démarche et sa vision, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}). Des liens redirigent vers d'autres sites qui portent d'autres projets.
 
 Bonne visite !
