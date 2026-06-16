@@ -11,25 +11,10 @@ Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intel
 
 ---
 
-<div class="home-grid">
-  <div class="home-card">
-    <h2>Technologie</h2>
-    <p>Des outils d'analyse du langage (NLP), de synthèse vocale (TTS) et de reconnaissance vocale (STT) pour le français. 14 modules Python autonomes, utilisables en API ou en ligne de commande.</p>
-    <a class="more-link" href="{{ '/solutions/' | relative_url }}">Découvrir les solutions</a>
-  </div>
-  <div class="home-card">
-    <h2>Données</h2>
-    <p>Un lexique de 1,35 million d'entrées et différents corpus d'entraînement élaborés pour la recherche et le développement en traitement du langage.</p>
-    <a class="more-link" href="{{ '/developpement/ressources/' | relative_url }}">Voir les ressources</a>
-  </div>
-  <div class="home-card">
-    <h2>Pédagogie</h2>
-    <p>L'application naturelle du projet et son idée d'origine : utiliser les outils développés pour proposer des ressources d'apprentissage de la lecture, du français langue étrangère ou d'aide aux troubles d'apprentissage.</p>
-    <a class="more-link" href="{{ '/produits/' | relative_url }}">Découvrir les produits</a>
-  </div>
-  <div class="home-card">
-    <h2>Open Source & Prestations</h2>
-    <p>L'ensemble du code est ouvert et les modèles sont accessibles via l'API. Seule l'utilisation commerciale est soumise à licence. Des prestations sont proposées aux entreprises et aux particuliers.</p>
-    <a class="more-link" href="{{ '/solutions/services/' | relative_url }}">Voir les prestations</a>
-  </div>
-</div>
+Sur le plan **technologique**, Lectura propose des outils d'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}), de [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) et de [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) pour le français — 14 [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes, utilisables en API ou en ligne de commande.
+
+Ces outils s'appuient sur un travail important sur les **données** : un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées et différents [corpus d'entraînement]({{ '/developpement/ressources/' | relative_url }}) élaborés pour la recherche en traitement du langage.
+
+La **pédagogie** est l'application naturelle du projet et son idée d'origine : utiliser les outils développés pour proposer des [ressources d'apprentissage]({{ '/produits/' | relative_url }}) de la lecture, du français langue étrangère ou d'aide aux troubles d'apprentissage.
+
+L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale est soumise à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leur domaine.
