@@ -19,10 +19,11 @@
             <line x1="12" y1="19" x2="12" y2="22"/>
             <line x1="8" y1="22" x2="16" y2="22"/>
           </svg>
-          {% when 'phonetics' %}
+          {% when 'letters' %}
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/>
-            <line x1="2" y1="20" x2="2.01" y2="20"/>
+            <text x="3" y="18" font-family="serif" font-size="14" fill="currentColor" stroke="none" font-weight="bold">A</text>
+            <text x="11" y="18" font-family="serif" font-size="11" fill="currentColor" stroke="none">b</text>
+            <text x="17" y="18" font-family="serif" font-size="9" fill="currentColor" stroke="none">c</text>
           </svg>
           {% when 'dictionary' %}
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -30,6 +31,13 @@
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
             <line x1="9" y1="7" x2="15" y2="7"/>
             <line x1="9" y1="11" x2="13" y2="11"/>
+          </svg>
+          {% when 'briefcase' %}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
           </svg>
           {% endcase %}
         </span>

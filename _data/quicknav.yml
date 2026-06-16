@@ -6,10 +6,14 @@
   url: /solutions/reconnaissance-vocale/
   icon: microphone
 
-- title: "Analyse du langage"
+- title: "Analyse de texte"
   url: /solutions/analyse-langage/
-  icon: phonetics
+  icon: letters
 
 - title: "Lexique"
   url: /solutions/lexique/
   icon: dictionary
+
+- title: "Prestation"
+  url: /solutions/services/
+  icon: briefcase
