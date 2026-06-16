@@ -5,16 +5,18 @@ layout: default
 
 Bienvenue sur mon site Lectura.world !
 
-Lectura est un écosystème de projets dédié à la **lecture du français**, construit autour d'une idée fondatrice : la **phonétique** est le pont naturel entre la langue écrite et la langue parlée. De la syllabe au texte, de la voix à la transcription, chaque outil développé ici repose sur cette passerelle entre le son et le signe.
+Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en cours de développement, d'autres sont régulièrement améliorés et mis à jour, et de nombreux travaux et démonstrations sont accessibles directement sur ce site.
 
-Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en cours de développement, d'autres sont régulièrement améliorés et mis à jour. De nombreuses démos et versions d'essai sont accessibles directement sur ce site.
+Les projets développés s'expriment dans plusieurs composantes :
 
----
+- Sur le plan **technologique**, Lectura propose des outils d'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}), de [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) et de [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) pour le français. Le point de vue phonétique permet, en factorisant le problème au bon niveau, de développer des outils précis, légers, portables et utilisables localement sur des appareils du quotidien. Une quinzaine de [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes sont publiés sur PyPI et testables directement sur le site, ou dans le code via l'API.
 
-Sur le plan **technologique**, Lectura propose des outils d'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}), de [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) et de [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) pour le français — 14 [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes, utilisables en API ou en ligne de commande.
+- Sur le plan des **données**, un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées est consultable en ligne et différents [corpus d'entraînement]({{ '/developpement/ressources/' | relative_url }}) ont été élaborés pour la recherche en traitement du langage.
 
-Ces outils s'appuient sur un travail important sur les **données** : un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées et différents [corpus d'entraînement]({{ '/developpement/ressources/' | relative_url }}) élaborés pour la recherche en traitement du langage.
+- Sur le plan **pédagogique**, c'est une des applications naturelles du projet et son idée d'origine : utiliser les outils développés pour proposer des [ressources d'apprentissage]({{ '/produits/' | relative_url }}) de la lecture, du français langue étrangère ou d'aide aux différents troubles d'apprentissage.
 
-La **pédagogie** est l'application naturelle du projet et son idée d'origine : utiliser les outils développés pour proposer des [ressources d'apprentissage]({{ '/produits/' | relative_url }}) de la lecture, du français langue étrangère ou d'aide aux troubles d'apprentissage.
+L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leurs propres projets. Je suis également ouvert à toute proposition de mission en lien avec mon domaine d'expertise ou avec l'utilisation de l'IA.
 
-L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale est soumise à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leur domaine.
+Pour en savoir plus sur le porteur de projet, sa démarche et sa vision, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}).
+
+Bonne visite !
