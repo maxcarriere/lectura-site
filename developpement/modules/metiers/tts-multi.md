@@ -156,3 +156,13 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 - **`set_speaker()`** : changement de voix dynamique sans recharger les modèles
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale](mailto:admin@lectura.world)
+
+---
+
+## Notes de version
+
+### v1.4.0
+
+- **Encodeur variance amélioré** : remplacement de l'encodeur par un modèle hybride (variance Matcha + décodeur FFT FastPitch) qui améliore la synthèse des mots courts et isolés
+- Meilleure prédiction des durées et du pitch pour les séquences courtes (1-3 mots)
+- Pas de changement d'API — compatible avec le code existant
