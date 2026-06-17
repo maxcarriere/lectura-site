@@ -13,6 +13,8 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 
 ---
 
+<script src="{{ '/assets/js/tts-modes.js' | relative_url }}?v=1"></script>
+
 ## Trois moteurs complémentaires
 
 ### Multi-Speaker — 6 voix, 7 styles
