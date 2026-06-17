@@ -139,6 +139,15 @@
     return [{ text: text, label: text }];
   }
 
+  /**
+   * Split an IPA string into individual phones.
+   * Handles combining diacritics (e.g. nasalization U+0303).
+   * "bɔ̃ʒuʁ" -> ["b", "ɔ̃", "ʒ", "u", "ʁ"]
+   */
+  function splitIpaToPhones(ipa) {
+    return ipa.match(/[^\u0300-\u036f][\u0300-\u036f]*/g) || [];
+  }
+
   function base64ToFloat32(b64) {
     var binary = atob(b64);
     var bytes = new Uint8Array(binary.length);
@@ -164,7 +173,7 @@
   }
 
   /**
-   * Synthesize all segments via IPA, then play sequentially with silence.
+   * Synthesize all segments, then play sequentially with silence.
    * @param {Array} segments - [{ipa, label}] from getSegments()
    * @param {Object} opts
    *   apiUrl:          TTS API endpoint
@@ -173,6 +182,8 @@
    *   getAudioContext: function returning AudioContext
    *   setStatus:       function(msg, isError)
    *   isAborted:       function returning true if playback should stop
+   *   useGroups:       if true, send as {groups: [{phones: [...]}]} (Diphone API)
+   *                    if false, send as {ipa: "..."} (Mono/Multi API)
    */
   async function synthesizeSegmented(segments, opts) {
     var apiUrl = opts.apiUrl;
@@ -183,6 +194,7 @@
     var isAborted = opts.isAborted || function () {
       return false;
     };
+    var useGroups = !!opts.useGroups;
 
     // Phase 1: synthesize all segments
     var audioData = [];
@@ -196,7 +208,13 @@
       for (var key in extra) {
         if (extra.hasOwnProperty(key)) payload[key] = extra[key];
       }
-      payload.ipa = segments[i].ipa;
+      if (useGroups) {
+        // Diphone API: groups of individual phones
+        payload.groups = [{ phones: splitIpaToPhones(segments[i].ipa), boundary: "none" }];
+      } else {
+        // Mono/Multi API: IPA string
+        payload.ipa = segments[i].ipa;
+      }
 
       var resp = await fetch(apiUrl, {
         method: "POST",

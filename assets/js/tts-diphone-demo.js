@@ -120,6 +120,7 @@
           getAudioContext: getAudioContext,
           setStatus: setStatus,
           isAborted: function () { return playbackAborted; },
+          useGroups: true,
         });
       } else {
         // --- Fluide mode (existing behavior) ---
