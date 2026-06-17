@@ -10,7 +10,7 @@ redirect_from:
   - /solutions/nlp/formules/
 ---
 
-Lectura propose plusieurs outils d'analyse du langage français. Chaque brique fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique.
+Lectura propose plusieurs outils d'analyse du langage français. Chaque module fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique. Tous les outils sont utilisables via l'API Lectura ou comme modules Python autonomes, et testables directement ci-dessous.
 
 ---
 
@@ -36,9 +36,9 @@ for t in tokens:
 
 ## Phonémisation (orthographe vers phonétique)
 
-Transformer l'orthographe en transcription phonétique IPA. Le pipeline gère les **liaisons**, les **homographes** et prédit simultanément la catégorie grammaticale (20 étiquettes : NOM, VER, ADJ, ART, PRE...) ainsi que la morphologie (nombre, genre, temps, personne, mode).
+Un seul modèle BiLSTM multi-tête transforme l'orthographe en transcription phonétique IPA et prédit simultanément 4 tâches : **phonémisation** (98.5%), **catégorie grammaticale** (19 étiquettes POS, 98.2%), **morphologie** (genre, nombre, temps, mode, personne) et **liaisons** (F1 90.6%). Le modèle prend en compte le **contexte phrastique** pour désambiguïser les homographes et prédire les liaisons.
 
-Précision : **98.5%** par mot, avec désambiguïsation contextuelle.
+Le Phonémiseur construit également les **groupes de lecture** : regroupement des mots connectés par élision (l'enfant), liaison (les‿enfants) ou enchaînement (avec‿elle), qui sont ensuite transmis à l'Aligneur-Syllabeur pour la syllabation.
 
 <div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
@@ -78,7 +78,7 @@ for i, tok in enumerate(tokens):
 
 ## Graphémisation (phonétique vers orthographe)
 
-Le chemin inverse : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Précision : **~96%** par mot (pipeline complet).
+Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie. Précision : **~96%** par mot (pipeline complet).
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
@@ -167,7 +167,7 @@ for i, tok in enumerate(tokens):
 
 ## Aligneur syllabique
 
-Aligne une séquence orthographique avec une séquence phonémique : **découpage en syllabes** (orthographiques et phonétiques), identification des **lettres muettes**, décomposition attaque/noyau/coda, et gestion des groupes de lecture (élision, liaison, enchaînement).
+Pivot central du pipeline Lectura. Aligne une séquence orthographique avec une séquence phonémique : **découpage en syllabes** (orthographiques et phonétiques), identification des **lettres muettes** et des graphèmes fusionnés, décomposition attaque/noyau/coda. L'Aligneur reçoit en entrée les groupes de lecture construits par le Phonémiseur et effectue la **syllabation** de chaque groupe.
 
 <div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
   <script type="text/x-python" class="demo-setup">
@@ -275,7 +275,7 @@ Ces outils d'analyse du langage constituent la **base de tous les pipelines Lect
 
 - **Synthèse vocale (TTS)** : le pipeline G2P + Aligneur + Formules alimente les moteurs de synthèse vocale. Chaque mot est phonémisé, aligné et syllabé avant d'être prononcé.
 - **Reconnaissance vocale (STT)** : le pipeline inverse (P2G + Formules) reconstruit le texte à partir des phonèmes détectés par le décodeur acoustique.
-- **Apprentissage de la lecture** : l'aligneur produit les syllabes colorées, les groupes de lecture et les lettres muettes utilisés dans les programmes de lecture assistée.
+- **Apprentissage de la lecture** : le Phonémiseur construit les groupes de lecture, l'Aligneur produit les syllabes colorées et les lettres muettes utilisés dans les programmes de lecture assistée.
 - **Correction orthographique** : la chaîne G2P → P2G permet de détecter les erreurs phonétiquement cohérentes (un mot mal écrit mais prononcé correctement).
 - **Annotation de corpus** : étiquetage POS, morphologie et phonétique automatiques pour la recherche linguistique.
 - **Accessibilité** : transcription phonétique pour les apprenants FLE, affichage syllabique pour les lecteurs en difficulté.
