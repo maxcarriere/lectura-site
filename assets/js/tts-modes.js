@@ -204,7 +204,7 @@
         "Synthese " + (i + 1) + "/" + segments.length + " : " + segments[i].label
       );
 
-      var payload = {};
+      var payload = { duration_scale: 1.2 };
       for (var key in extra) {
         if (extra.hasOwnProperty(key)) payload[key] = extra[key];
       }
