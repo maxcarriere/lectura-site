@@ -18,7 +18,7 @@ redirect_from:
 
 ## Présentation
 
-**Pivot central du pipeline Lectura.** Module autonome, **zéro dépendance** Python. Réalise l'alignement lettre-par-lettre entre orthographe et phonétique, construit les groupes de lecture en gérant les phénomènes de chaîne parlée, et décompose chaque syllabe en ses constituants phonologiques.
+**Pivot central du pipeline Lectura.** Module autonome, **zéro dépendance** Python. Réalise l'alignement lettre-par-lettre entre orthographe et phonétique et décompose chaque syllabe en ses constituants phonologiques. Les groupes de lecture (élision, liaison, enchaînement) sont construits en amont par le [Phonémiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) ; l'Aligneur les reçoit en entrée pour la syllabation.
 
 C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) et [P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) ont été préparés. Sans lui, rien n'aurait été possible.
 
@@ -28,12 +28,11 @@ C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({
 
 | # | Fonction | Description |
 |---|----------|-------------|
-| 1 | **Groupes de lecture** | Regroupe les mots liés par élision, liaison ou enchaînement |
-| 2 | **Alignement graphème-phonème** | Correspondance lettre-par-lettre entre orthographe et IPA |
-| 3 | **Lettres muettes et fusionnées** | Détecte les lettres silencieuses et les graphèmes multi-phonèmes (x→ks) |
-| 4 | **Syllabation ortho + phone** | Découpe chaque groupe en syllabes au niveau phonétique ET orthographique |
-| 5 | **Attaque / Noyau / Coda** | Décompose chaque syllabe en ses constituants avec phonèmes distribués |
-| 6 | **Spans** | Positions caractère de chaque syllabe, groupe et composant dans le texte source |
+| 1 | **Alignement graphème-phonème** | Correspondance lettre-par-lettre entre orthographe et IPA |
+| 2 | **Lettres muettes et fusionnées** | Détecte les lettres silencieuses et les graphèmes multi-phonèmes (x→ks) |
+| 3 | **Syllabation ortho + phone** | Découpe chaque groupe en syllabes au niveau phonétique ET orthographique |
+| 4 | **Attaque / Noyau / Coda** | Décompose chaque syllabe en ses constituants avec phonèmes distribués |
+| 5 | **Spans** | Positions caractère de chaque syllabe, groupe et composant dans le texte source |
 
 ---
 
@@ -171,18 +170,9 @@ syllabeur = LecturaSyllabeur(phonemizer=G2PPhonemizer())
 
 ---
 
-## Architecture E1 / E2
+## Architecture
 
-Le module fonctionne en deux étapes, utilisables séparément ou ensemble :
-
-**E1 — Groupes de lecture** (`construire_groupes`)
-
-Parcourt les mots annotés et les regroupe selon les phénomènes de chaîne parlée :
-- **Élision** : l'enfant → 1 groupe
-- **Liaison** : les‿enfants → 1 groupe (consonne de liaison z, t, n, r, p)
-- **Enchaînement** : avec‿elle → 1 groupe (consonne finale resyllabée)
-
-**E2 — Syllabation** (`syllabifier_groupes`)
+L'Aligneur reçoit en entrée les [groupes de lecture]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) construits par le Phonémiseur (élision, liaison, enchaînement) et effectue la **syllabation** (`syllabifier_groupes`) :
 
 Pour chaque groupe :
 1. Syllabation IPA par modèle de sonorité (5 classes : obstruantes, nasales, liquides, semi-voyelles, voyelles)
@@ -232,7 +222,7 @@ pip install lectura-aligneur       # mode API par défaut (zéro dépendance)
 - **Bi-modal** : mode API (zéro config) ou mode local avec données embarquées
 - **Alignement DFS** graphème-phonème avec gestion des lettres muettes et fusionnées
 - **Modèle de sonorité** pour la syllabation (5 classes phonologiques)
-- **Architecture E1/E2** : construction des groupes puis syllabation, utilisables séparément
+- **Syllabation** des groupes de lecture construits par le Phonémiseur
 - **Phonémiseur pluggable** : eSpeak-NG, Lectura Phonémiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)

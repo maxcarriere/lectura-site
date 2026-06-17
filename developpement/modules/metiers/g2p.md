@@ -26,8 +26,11 @@ Un seul modèle **BiLSTM char-level multi-tête** (1.75M paramètres, ONNX INT8 
 | **POS** | Étiquetage morpho-syntaxique (19 tags) | 98.2% accuracy |
 | **Morphologie** | Genre, nombre, temps, mode, personne | 95-99% accuracy |
 | **Liaison** | Liaisons obligatoires/facultatives | F1 90.6% |
+| **Groupes de lecture** | Regroupement des mots liés par élision, liaison ou enchaînement | — |
 
 *Performances mesurées sur un corpus de test de phrases françaises complètes (mots en contexte).*
+
+Le module inclut également la **construction des groupes de lecture** (`construire_groupes_lecture`) : à partir des informations de liaison, il regroupe les mots connectés par élision (l'enfant), liaison (les‿enfants) ou enchaînement (avec‿elle). Ces groupes sont ensuite transmis à l'[Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) pour la syllabation.
 
 Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zéro dépendance).
 
