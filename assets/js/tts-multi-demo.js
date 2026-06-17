@@ -17,6 +17,7 @@
   const progressBar = container.querySelector(".tts-progress");
   const speakerSelect = container.querySelector(".tts-speaker");
   const styleSelect = container.querySelector(".tts-style");
+  const modeSelect = container.querySelector(".tts-mode");
 
   let audioCtx = null;
   let currentSource = null;
@@ -70,6 +71,11 @@
       // Ajouter le style selectionne
       if (styleSelect && styleSelect.value) {
         payload.style = styleSelect.value;
+      }
+
+      // Ajouter le mode de lecture
+      if (modeSelect && modeSelect.value) {
+        payload.mode = modeSelect.value;
       }
 
       const resp = await fetch(API_URL, {

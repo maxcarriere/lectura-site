@@ -15,7 +15,6 @@
   const outputArea = container.querySelector(".tts-output");
   const progressBar = container.querySelector(".tts-progress");
   const modeSelect = container.querySelector(".tts-mode");
-  const styleSelect = container.querySelector(".tts-style");
   const voixSelect = container.querySelector(".tts-voix");
   const varianteSlider = container.querySelector(".tts-variante");
 
@@ -76,7 +75,7 @@
       const payload = {
         text: text,
         mode: modeSelect ? modeSelect.value : "FLUIDE",
-        prosody_style: styleSelect ? styleSelect.value : "regles",
+        prosody_style: "regles",
       };
 
       // Retimbre OpenVoice

@@ -9,7 +9,7 @@ redirect_from:
   - /solutions/tts/diphone/
 ---
 
-Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et sont combinables avec un système de **conversion vocale** (6 voix, blend de timbres, variantes homme/enfant).
+Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique — une capacité qui n'existe nulle part ailleurs. Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (6 voix, blend de timbres, variantes homme/enfant) est combinable avec chaque moteur.
 
 ---
 
@@ -40,6 +40,12 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
       <option value="rapide">rapide</option>
       <option value="lent">lent</option>
     </select>
+    <label for="tts-mode">Mode :</label>
+    <select id="tts-mode" class="tts-mode">
+      <option value="FLUIDE" selected>Fluide</option>
+      <option value="MOT_A_MOT">Mot à mot</option>
+      <option value="SYLLABES">Syllabes</option>
+    </select>
   </div>
   <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
   <button class="tts-btn" type="button">Synthétiser</button>
@@ -48,22 +54,23 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=2"></script>
 
 ---
 
 ### Monospeaker — voix haute qualité
 
-Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix unique avec des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbré optionnel via conversion vocale pour changer le timbre sans ré-entraîner de modèle.
+Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix unique (Siwis) avec des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbré optionnel via conversion vocale pour changer le timbre sans ré-entraîner de modèle.
 
 <div class="tts-demo">
   <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Voix : Siwis</span>
     <select class="tts-voix">
-      <option value="">SIWIS (original)</option>
-      <option value="siwis">Siwis (retimbré)</option>
-      <option value="nadine">Nadine</option>
+      <option value="">Aucun retimbré</option>
+      <option value="siwis">Siwis</option>
       <option value="ezwa">Ezwa</option>
+      <option value="nadine">Nadine</option>
       <option value="bernard">Bernard</option>
       <option value="gilles">Gilles</option>
       <option value="zeckou">Zeckou</option>
@@ -73,6 +80,11 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
       <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
       <span style="opacity:0.7">Enfant</span>
     </label>
+    <select class="tts-mode">
+      <option value="FLUIDE" selected>Fluide</option>
+      <option value="MOT_A_MOT">Mot à mot</option>
+      <option value="SYLLABES">Syllabes</option>
+    </select>
     <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
@@ -80,53 +92,50 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=3"></script>
+<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=4"></script>
 
 ---
 
 ### Diphone — lecture adaptée
 
-Un moteur par concaténation de diphones (WORLD, 44.1 kHz) avec **trois modes de lecture** adaptés à l'apprentissage : fluide, mot à mot et syllabes. Prosodie réglée (intonation déclarative, interrogative, exclamative), retimbré multi-voix.
+Un moteur par concaténation de diphones (WORLD, 44.1 kHz) particulièrement adapté à l'**apprentissage de la lecture**. En mode syllabes, la syllabation est effectuée en amont puis chaque syllabe est générée séparément avec un silence entre elles. En mode mot à mot, chaque groupe de lecture est prononcé individuellement. Sa précision syllabique en fait l'outil idéal pour la lecture assistée — c'est son principal atout par rapport aux moteurs neuronaux. Prosodie par règles (intonation déclarative, interrogative, exclamative).
 
 <div class="tts-diphone-demo">
   <input type="text" class="tts-input" value="Le chat dort sur le canapé." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <select class="tts-mode">
-      <option value="FLUIDE">Fluide</option>
-      <option value="MOT_A_MOT">Mot à mot</option>
-      <option value="SYLLABES">Syllabes</option>
-    </select>
-    <select class="tts-style">
-      <option value="regles" selected>Règles</option>
-      <option value="corpus">Corpus</option>
-    </select>
+    <span style="font-size:0.85em; opacity:0.7;">Voix : Siwis</span>
     <select class="tts-voix">
-      <option value="">Sans retimbré</option>
-      <option value="siwis" selected>Siwis (F)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
+      <option value="">Aucun retimbré</option>
+      <option value="siwis" selected>Siwis</option>
+      <option value="ezwa">Ezwa</option>
+      <option value="nadine">Nadine</option>
+      <option value="bernard">Bernard</option>
+      <option value="gilles">Gilles</option>
+      <option value="zeckou">Zeckou</option>
     </select>
     <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
       <span style="opacity:0.7">Homme</span>
       <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
       <span style="opacity:0.7">Enfant</span>
     </label>
+    <select class="tts-mode">
+      <option value="FLUIDE">Fluide</option>
+      <option value="MOT_A_MOT">Mot à mot</option>
+      <option value="SYLLABES">Syllabes</option>
+    </select>
     <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
 </div>
 
-<script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}?v=2"></script>
+<script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}?v=3"></script>
 
 ---
 
 ## Applications
 
-- **Apprentissage de la lecture** : le mode syllabes du TTS Diphone lit chaque syllabe séparément, synchronisé avec l'affichage coloré des groupes de lecture.
+- **Apprentissage de la lecture** : les modes mot à mot et syllabes sont disponibles sur tous les moteurs. Le Diphone est particulièrement précis pour prononcer chaque syllabe séparément. Les timestamps par phonème permettent un surlignage syllabique synchronisé avec l'audio.
 - **Livres audio et narration** : le Multi-Speaker permet de donner une voix différente à chaque personnage, avec des styles adaptés (narratif, dialogue, expressif).
 - **Applications éducatives** : voix adaptée au public (enfant, adulte) grâce au curseur de variante vocale.
 - **Assistants vocaux** : synthèse rapide (~50x temps réel) et légère (pas de GPU) pour les applications embarquées.

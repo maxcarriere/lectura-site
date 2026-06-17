@@ -14,6 +14,7 @@
   const btn = container.querySelector(".tts-btn");
   const voixSelect = container.querySelector(".tts-voix");
   const varianteSlider = container.querySelector(".tts-variante");
+  const modeSelect = container.querySelector(".tts-mode");
   const outputArea = container.querySelector(".tts-output");
   const timingsTable = container.querySelector(".tts-timings");
   const progressBar = container.querySelector(".tts-progress");
@@ -73,6 +74,9 @@
 
     try {
       const payload = { text: text };
+      if (modeSelect && modeSelect.value) {
+        payload.mode = modeSelect.value;
+      }
       if (voixSelect && voixSelect.value) {
         payload.voix = voixSelect.value;
         if (varianteSlider) {
