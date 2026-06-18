@@ -65,9 +65,9 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
 
 ---
 
-### Monospeaker — voix haute qualité
+### Monospeaker — voix haute qualité, 7 styles
 
-Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix unique (Siwis) avec des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbré optionnel via conversion vocale pour changer le timbre sans ré-entraîner de modèle.
+Un moteur neuronal (Matcha-Conformer + HiFi-GAN, ~29 Mo) basé sur le flow-matching OT-CFM, optimisé pour une voix unique (Siwis) avec **7 styles expressifs** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses, vecteur style 5D). Qualité configurable via `n_ode_steps` (4 = rapide, 8 = haute qualité). Retimbre optionnel via conversion vocale. ~30x temps réel sur CPU.
 
 <div class="tts-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -92,6 +92,17 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
     </label>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Style :</span>
+    <select class="tts-style">
+      <option value="neutre" selected>Neutre</option>
+      <option value="narratif">Narratif</option>
+      <option value="dialogue">Dialogue</option>
+      <option value="expressif">Expressif</option>
+      <option value="meditatif">Méditatif</option>
+      <option value="rapide">Rapide</option>
+      <option value="lent">Lent</option>
+    </select>
+    <span style="opacity:0.5;">|</span>
     <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
     <select class="tts-mode">
       <option value="FLUIDE" selected>Fluide</option>
@@ -155,7 +166,7 @@ Un moteur expérimental qui explore la piste non neurale et qui fonctionne par c
 - **Apprentissage de la lecture** : les modes mot à mot et syllabes sont disponibles sur tous les moteurs. Le Diphone est particulièrement précis pour prononcer chaque syllabe séparément. Les timestamps par phonème permettent un surlignage syllabique synchronisé avec l'audio.
 - **Livres audio et narration** : le Multi-Speaker permet de donner une voix différente à chaque personnage, avec des styles adaptés (narratif, dialogue, expressif).
 - **Applications éducatives** : voix adaptée au public (enfant, adulte) grâce au curseur de variante vocale.
-- **Assistants vocaux** : synthèse rapide (~50x temps réel) et légère (pas de GPU) pour les applications embarquées.
+- **Assistants vocaux** : synthèse rapide (~30-50x temps réel) et légère (pas de GPU) pour les applications embarquées.
 - **Accessibilité** : lecture à voix haute de tout contenu textuel avec contrôle du débit et des pauses.
 
 ---
