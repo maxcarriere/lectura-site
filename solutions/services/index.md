@@ -18,9 +18,14 @@ Lectura accompagne les professionnels dans l'intégration des technologies lingu
     <a class="more-link" href="{{ '/solutions/services/integration/' | relative_url }}">En savoir plus</a>
   </div>
   <div class="home-card">
-    <h2>Élaboration de modèles et corpus</h2>
-    <p>Modèles sur mesure (voix personnalisée, reconnaissance spécialisée) et préparation de corpus d'entraînement.</p>
+    <h2>Élaboration de modèles</h2>
+    <p>Modèles sur mesure : voix personnalisée, reconnaissance vocale spécialisée, phonémiseur pour une autre langue.</p>
     <a class="more-link" href="{{ '/solutions/services/corpus-modeles/' | relative_url }}">En savoir plus</a>
+  </div>
+  <div class="home-card">
+    <h2>Préparation des données</h2>
+    <p>Corpus d'entraînement : données annotées, corpus vocaux, transcription, listes de mots.</p>
+    <a class="more-link" href="{{ '/solutions/services/preparation-donnees/' | relative_url }}">En savoir plus</a>
   </div>
   <div class="home-card">
     <h2>Services éditoriaux</h2>

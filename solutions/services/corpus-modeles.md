@@ -1,32 +1,35 @@
 ---
-title: "Élaboration de modèles et corpus"
+title: "Élaboration de modèles"
 layout: default
 permalink: /solutions/services/corpus-modeles/
 ---
 
-## Élaboration de modèles
+## Création de modèles sur mesure
 
-Création d'un modèle sur mesure répondant à votre problématique, entraîné sur vos données et optimisé pour votre environnement de déploiement.
-
-### Exemples de réalisations possibles
-
-- **Voix personnalisée** : créer un TTS avec votre propre voix, déployable en local sur tous vos appareils (PC, smartphone). À partir d'un enregistrement de quelques heures, Lectura entraîne un modèle vocal personnalisé, l'optimise en ONNX et le rend utilisable hors ligne.
-- **Reconnaissance vocale spécialisée** : modèle de transcription adapté à un vocabulaire métier (médical, juridique, technique)
-- **Phonémiseur pour une autre langue ou variété régionale** : adaptation des modèles G2P/P2G à vos besoins linguistiques
-- **Classification ou analyse de texte** : modèle entraîné sur vos catégories et vos données
+Création d'un modèle répondant à votre problématique, entraîné sur vos données et optimisé pour votre environnement de déploiement.
 
 ---
 
-## Préparation de corpus
+## Voix personnalisée
 
-Vous souhaitez développer vos propres modèles ? Lectura propose de préparer vos corpus d'entraînement.
+Créer un TTS avec votre propre voix, déployable en local sur tous vos appareils (PC, smartphone).
 
-### Exemples de corpus
+**Le processus :**
 
-- **Corpus de phrases annotées** : annotation phonétique (IPA) et/ou grammaticale (POS, morphologie)
-- **Transcription de corpus audio** : transcription textuelle et phonétique d'un corpus de voix
-- **Corpus vocal** : enregistrement et segmentation de données vocales
-- **Corpus Mots et Syllabes** : images et sons associés, pour des applications éducatives ou de recherche
+1. **Enregistrement** : sessions d'enregistrement encadrées (10 à 20 heures de lecture de textes variés). Lectura peut également réaliser l'enregistrement pour vous.
+2. **Préparation des données** : segmentation, alignement phonétique et contrôle qualité du corpus vocal
+3. **Entraînement** : entraînement d'un modèle FastPitch-Lite personnalisé sur votre voix
+4. **Optimisation** : export en ONNX (INT8/FP32) pour une inférence rapide sans GPU
+5. **Livraison** : un modèle vocal qui vous appartient, utilisable hors ligne, sur vos propres serveurs et appareils
+
+**Le résultat** : une voix unique, privée et autonome, sans dépendance à un service cloud.
+
+---
+
+## Autres modèles
+
+- **Reconnaissance vocale spécialisée** : modèle de transcription adapté à un vocabulaire métier (médical, juridique, technique)
+- **Phonémiseur pour une autre langue ou variété régionale** : adaptation des modèles G2P/P2G à vos besoins linguistiques
 
 ---
 

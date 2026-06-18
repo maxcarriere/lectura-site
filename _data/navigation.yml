@@ -22,8 +22,10 @@
           url: /solutions/services/licences/
         - title: "Intégration logicielle"
           url: /solutions/services/integration/
-        - title: "Modèles et corpus"
+        - title: "Élaboration de modèles"
           url: /solutions/services/corpus-modeles/
+        - title: "Préparation des données"
+          url: /solutions/services/preparation-donnees/
         - title: "Services éditoriaux"
           url: /solutions/services/services-editoriaux/
         - title: "Autres prestations"
@@ -39,9 +41,9 @@
           url: /produits/programmes/voice-edition/
         - title: Lexique Viewer
           url: /produits/programmes/lexique-viewer/
-    - title: Applications
+    - title: Applications mobiles
       url: /produits/applications/
-    - title: "Médias"
+    - title: "Livres & Médias"
       url: /produits/medias/
 
 - title: "Développement"
