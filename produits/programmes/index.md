@@ -6,22 +6,22 @@ redirect_from:
   - /solutions/programmes/
 ---
 
-Des applications desktop et web pour l'apprentissage interactif de la lecture.
+Des applications desktop et web construites sur le pipeline Lectura.
 
-## Lecteur syllabique
+## [Lectura Voice Edition](/produits/programmes/voice-edition/)
 
-<span class="status-badge status-proto">Prototype</span>
+<span class="status-badge status-cours">En cours de développement</span>
 
-Un lecteur qui affiche un texte découpé en syllabes, avec lecture audio progressive et surlignage synchronisé. L'utilisateur voit chaque syllabe s'illuminer au moment où elle est prononcée.
+Synthèse et reconnaissance vocale avec sous-titrage synchronisé et mode syllabique. Un environnement complet pour la lecture assistée : le texte est prononcé par les moteurs TTS de Lectura pendant que chaque mot — ou chaque syllabe — est surligné en temps réel. La reconnaissance vocale permet d'écouter l'utilisateur et de comparer sa prononciation au texte attendu.
 
-Le moteur repose sur le pipeline Lectura : phonémisation, alignement graphème-phonème, syllabation, gestion des liaisons et des lettres muettes. L'audio peut être généré par synthèse vocale (7 moteurs TTS disponibles) ou par concaténation syllabique.
+[En savoir plus →](/produits/programmes/voice-edition/)
 
 ---
 
-## NumReader — Lecture des nombres
+## [Lectura Lexique Viewer](/produits/programmes/lexique-viewer/)
 
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
+<span class="status-badge status-cours">En cours de développement</span>
 
-Application de lecture des nombres jusqu'à 4 chiffres. Affichage simultané en chiffres, en lettres et en chiffres romains, avec lecture audio synchronisée.
+Interface d'accès à la base lexicale LeXiK et outil d'enrichissement de texte. Explorez les 1,35 million d'entrées du lexique français (phonétique, morphologie, fréquences, synonymes, définitions) et annotez automatiquement n'importe quel texte avec ses propriétés linguistiques.
 
-Le moteur convertit un nombre entre ses trois écritures via un pipeline en 8 étapes (décomposition, conversion, génération de la timeline, audio concaténatif). Interface web interactive.
+[En savoir plus →](/produits/programmes/lexique-viewer/)
