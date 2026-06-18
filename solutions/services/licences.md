@@ -10,13 +10,17 @@ permalink: /solutions/services/licences/
 
 Les modules Lectura sont distribués sous licence **AGPL-3.0**. Le code source est ouvert et disponible pour chaque module sur [GitHub](https://github.com/maxcarriere/lectura-modules). Cette licence autorise l'utilisation, la modification et la redistribution dans un cadre non commercial, à condition de conserver la même licence.
 
+### API de test
+
+L'API Lectura (api.lectura.world) est **accessible gratuitement** pour tester les différents modules. Les démos présentes sur ce site l'utilisent.
+
 ### Modèles pré-entraînés
 
 Les modèles sont accessibles de deux manières :
 
 | Mode | Description |
 |------|-------------|
-| **API Lectura** | Accès immédiat via api.lectura.world, sans installation ni téléchargement de modèles |
+| **API dédiée** | Serveur ou accès dédié configuré pour le client, adapté à un usage en production |
 | **Local** | Modèles ONNX optimisés (INT8 et FP32) proposés à l'achat pour un déploiement sur vos propres serveurs et appareils |
 
 ### Licence commerciale
@@ -25,8 +29,8 @@ Pour un usage commercial (intégration dans un produit propriétaire, déploieme
 
 - **Droit d'utilisation** des modules et modèles dans un contexte commercial
 - **Modèles ONNX** optimisés pour l'inférence locale
-- **Support technique** par email pour l'intégration
-- **Mises à jour** des modèles pendant la durée de la licence
+- **Support technique** pour l'intégration
+- **Correctifs** des modèles pendant la durée de la licence
 
 ---
 

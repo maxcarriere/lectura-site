@@ -4,28 +4,31 @@ layout: default
 permalink: /solutions/services/integration/
 ---
 
-## Intégrez le traitement linguistique dans vos applications
+## Intégrez les modules de Lectura dans vos projets et applications
 
-Vous souhaitez ajouter la phonémisation, la syllabation, la synthèse vocale ou la transcription audio à votre application existante ? Lectura propose un accompagnement à l'intégration de ses modules dans votre environnement technique.
+Vous souhaitez ajouter la synthèse vocale, la transcription audio ou du traitement linguistique à votre application existante ? Lectura peut vous proposer un accompagnement à l'intégration de ses modules dans votre environnement technique.
 
 ---
 
 ## Ce que Lectura propose
 
-- **API cloud** : accès immédiat aux modules via l'API Lectura (api.lectura.world), sans installation
+- **API de test** : accès immédiat aux modules via l'API Lectura (api.lectura.world), sans installation, pour tester les différents outils
+- **API dédiée** : serveur ou accès dédié configuré pour votre usage en production
 - **Packages Python** : modules autonomes installables via pip, intégrables dans n'importe quel projet Python
-- **Pipeline d'enrichissement** : chaînage des modules pour produire un texte enrichi multi-couches (syllabes, phonétique, liaisons, lettres muettes)
-- **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation
+- **Pipeline d'enrichissement** : les modules "outils" peuvent être utilisés de façon autonome ou s'imbriquer naturellement pour la gestion complète d'un problème métier
+- **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation, configuration de votre propre serveur API
 
 ---
 
-## Modes d'intégration
+## Environnement technique
 
-| Mode | Installation | Latence | Dépendances |
-|------|-------------|---------|-------------|
-| **API** | Aucune | ~100 ms | Connexion internet |
-| **ONNX local** | pip install + modèles | ~2 ms | ONNX Runtime |
-| **Python pur** | pip install | ~200 ms | Aucune |
+| | |
+|---|---|
+| **Langage** | Python |
+| **Modèles** | ONNX (INT8 et FP32) |
+| **Dépendances** | ONNX Runtime pour l'inférence locale, aucune dépendance pour le mode API |
+| **Installation** | `pip install` pour chaque module |
+| **Compatibilité** | Python 3.10+ |
 
 ---
 
