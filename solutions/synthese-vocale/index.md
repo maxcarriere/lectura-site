@@ -9,7 +9,7 @@ redirect_from:
   - /solutions/tts/diphone/
 ---
 
-Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique — une capacité qui n'existe nulle part ailleurs. Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (6 voix, blend de timbres, variantes homme/enfant) est combinable avec chaque moteur.
+Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique (une capacité propre au pipeline Lectura). Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (6 voix, blend de timbres, variantes homme/enfant) est combinable avec chaque moteur.
 
 ---
 
@@ -22,35 +22,38 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique sans recharger le modèle. ~50x temps réel sur CPU.
 
 <div class="tts-multi-demo">
-  <div class="tts-controls">
-    <label for="tts-speaker">Voix :</label>
-    <select id="tts-speaker" class="tts-speaker">
-      <option value="siwis" selected>Siwis (F)</option>
+  <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
+    <select class="tts-speaker">
+      <option value="siwis" selected>Aucun (par défaut)</option>
       <option value="ezwa">Ezwa (F)</option>
       <option value="nadine">Nadine (F)</option>
       <option value="bernard">Bernard (M)</option>
       <option value="gilles">Gilles (M)</option>
       <option value="zeckou">Zeckou (M)</option>
     </select>
-    <label for="tts-style">Style :</label>
-    <select id="tts-style" class="tts-style">
-      <option value="neutre" selected>neutre</option>
-      <option value="narratif">narratif</option>
-      <option value="dialogue">dialogue</option>
-      <option value="expressif">expressif</option>
-      <option value="meditatif">méditatif</option>
-      <option value="rapide">rapide</option>
-      <option value="lent">lent</option>
+  </div>
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Style :</span>
+    <select class="tts-style">
+      <option value="neutre" selected>Neutre</option>
+      <option value="narratif">Narratif</option>
+      <option value="dialogue">Dialogue</option>
+      <option value="expressif">Expressif</option>
+      <option value="meditatif">Méditatif</option>
+      <option value="rapide">Rapide</option>
+      <option value="lent">Lent</option>
     </select>
-    <label for="tts-mode">Mode :</label>
-    <select id="tts-mode" class="tts-mode">
+    <span style="opacity:0.5;">|</span>
+    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
+    <select class="tts-mode">
       <option value="FLUIDE" selected>Fluide</option>
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
+    <button class="tts-btn" type="button">Synthétiser</button>
   </div>
-  <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
-  <button class="tts-btn" type="button">Synthétiser</button>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
   <table class="tts-timings"></table>
@@ -67,21 +70,24 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
 <div class="tts-demo">
   <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Voix : Siwis</span>
+    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
     <select class="tts-voix">
-      <option value="">Aucun retimbré</option>
-      <option value="siwis">Siwis</option>
-      <option value="ezwa">Ezwa</option>
-      <option value="nadine">Nadine</option>
-      <option value="bernard">Bernard</option>
-      <option value="gilles">Gilles</option>
-      <option value="zeckou">Zeckou</option>
+      <option value="">Aucun (par défaut)</option>
+      <option value="siwis">Siwis (F)</option>
+      <option value="ezwa">Ezwa (F)</option>
+      <option value="nadine">Nadine (F)</option>
+      <option value="bernard">Bernard (M)</option>
+      <option value="gilles">Gilles (M)</option>
+      <option value="zeckou">Zeckou (M)</option>
     </select>
     <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
       <span style="opacity:0.7">Homme</span>
       <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
       <span style="opacity:0.7">Enfant</span>
     </label>
+  </div>
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
     <select class="tts-mode">
       <option value="FLUIDE" selected>Fluide</option>
       <option value="MOT_A_MOT">Mot à mot</option>
@@ -100,26 +106,29 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
 
 ### Diphone — lecture adaptée
 
-Un moteur par concaténation de diphones (WORLD, 44.1 kHz) particulièrement adapté à l'**apprentissage de la lecture**. En mode syllabes, la syllabation est effectuée en amont puis chaque syllabe est générée séparément avec un silence entre elles. En mode mot à mot, chaque groupe de lecture est prononcé individuellement. Sa précision syllabique en fait l'outil idéal pour la lecture assistée — c'est son principal atout par rapport aux moteurs neuronaux. Prosodie par règles (intonation déclarative, interrogative, exclamative).
+Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation précise, uniforme et fiable , ce qui en fait un outil approprié pour la **lecture syllabique**. En mode syllabes, la syllabation est effectuée en amont puis chaque syllabe est générée séparément avec un silence entre elles. En mode mot à mot, chaque groupe de lecture est prononcé individuellement. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
 
 <div class="tts-diphone-demo">
   <input type="text" class="tts-input" value="Le chat dort sur le canapé." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Voix : Siwis</span>
+    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
     <select class="tts-voix">
-      <option value="">Aucun retimbré</option>
-      <option value="siwis" selected>Siwis</option>
-      <option value="ezwa">Ezwa</option>
-      <option value="nadine">Nadine</option>
-      <option value="bernard">Bernard</option>
-      <option value="gilles">Gilles</option>
-      <option value="zeckou">Zeckou</option>
+      <option value="">Aucun (par défaut)</option>
+      <option value="siwis">Siwis (F)</option>
+      <option value="ezwa">Ezwa (F)</option>
+      <option value="nadine">Nadine (F)</option>
+      <option value="bernard">Bernard (M)</option>
+      <option value="gilles">Gilles (M)</option>
+      <option value="zeckou">Zeckou (M)</option>
     </select>
     <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
       <span style="opacity:0.7">Homme</span>
       <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
       <span style="opacity:0.7">Enfant</span>
     </label>
+  </div>
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
     <select class="tts-mode">
       <option value="FLUIDE">Fluide</option>
       <option value="MOT_A_MOT">Mot à mot</option>
