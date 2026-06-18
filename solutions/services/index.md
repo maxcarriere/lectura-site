@@ -18,13 +18,18 @@ Lectura accompagne les professionnels dans l'intégration des technologies lingu
     <a class="more-link" href="{{ '/solutions/services/integration/' | relative_url }}">En savoir plus</a>
   </div>
   <div class="home-card">
-    <h2>Préparation corpus et modèles</h2>
-    <p>Corpus annotés sur mesure et modèles entraînés sur vos données pour votre cas d'usage.</p>
+    <h2>Élaboration de modèles et corpus</h2>
+    <p>Modèles sur mesure (voix personnalisée, reconnaissance spécialisée) et préparation de corpus d'entraînement.</p>
     <a class="more-link" href="{{ '/solutions/services/corpus-modeles/' | relative_url }}">En savoir plus</a>
   </div>
   <div class="home-card">
     <h2>Services éditoriaux</h2>
-    <p>Histoires syllabiques sur commande, enrichissement de texte et vidéos de lecture guidée.</p>
+    <p>Ressources pédagogiques enrichies, mise en page ebook, création d'audiobooks.</p>
     <a class="more-link" href="{{ '/solutions/services/services-editoriaux/' | relative_url }}">En savoir plus</a>
+  </div>
+  <div class="home-card">
+    <h2>Autres prestations</h2>
+    <p>Sites internet, applications, automatisation, conseil en IA et autres missions techniques.</p>
+    <a class="more-link" href="{{ '/solutions/services/divers/' | relative_url }}">En savoir plus</a>
   </div>
 </div>

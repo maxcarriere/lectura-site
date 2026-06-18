@@ -4,34 +4,28 @@ layout: default
 permalink: /solutions/services/services-editoriaux/
 ---
 
-## Des contenus éducatifs enrichis pour vos projets
+## Édition de ressources pédagogiques
 
-Vous êtes éditeur, enseignant ou créateur de contenus pédagogiques ? Lectura transforme vos textes en supports de lecture enrichis : syllabation, coloration phonétique, transcription IPA, vidéos de lecture guidée.
-
----
-
-## Histoires syllabiques sur commande
-
-Création de textes narratifs dont le vocabulaire est strictement contrôlé par une progression syllabique donnée. Chaque histoire n'utilise que les graphèmes déjà enseignés, garantissant une lisibilité totale pour l'apprenant.
+- **Enrichissement pour la lecture** : syllabation, coloration des sons, identification des liaisons et lettres muettes, transcription IPA. Transformation d'un texte brut en support de lecture enrichi (HTML, JSON ou texte balisé).
+- **Enrichissement grammatical** : annotation d'un texte avec les informations grammaticales (catégorie, genre, nombre, conjugaison)
+- **Vidéo de lecture assistée** : création d'une vidéo de lecture guidée pour un livre enfant, avec surlignage synchronisé des syllabes et voix synthétique
+- **Histoires syllabiques** : création de textes narratifs dont le vocabulaire est contrôlé par une progression syllabique donnée, garantissant une lisibilité totale pour l'apprenant
 
 ---
 
-## Enrichissement de texte
+## Mise en page
 
-Transformation d'un texte brut en version enrichie multi-couches :
-- Découpage syllabique
-- Identification des liaisons
-- Marquage des lettres muettes
-- Coloration phonétique
-- Transcription IPA
-
-Le moteur d'enrichissement produit des formats HTML, JSON ou texte balisé, prêts à intégrer dans vos supports.
+- **Ebook** : mise en page et conversion de vos contenus au format ebook (EPUB, PDF)
+- **Mise en page professionnelle** : mise en forme de documents, rapports, supports de communication
 
 ---
 
-## Vidéos de lecture guidée
+## Création audiobook
 
-Génération de vidéos montrant un texte lu à voix haute avec surlignage synchronisé des syllabes. Un support clé en main pour les enseignants souhaitant produire des modèles de lecture orale.
+Production d'audiobooks à partir de vos textes :
+
+- **Voix synthétique** : génération rapide avec les voix Lectura (6 voix, styles expressifs), idéal pour les grands volumes
+- **Voix naturelle** : enregistrement avec une voix humaine, pour un rendu premium
 
 ---
 

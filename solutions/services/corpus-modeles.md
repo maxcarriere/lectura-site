@@ -1,30 +1,32 @@
 ---
-title: Préparation corpus et modèles
+title: "Élaboration de modèles et corpus"
 layout: default
 permalink: /solutions/services/corpus-modeles/
 ---
 
-## Des données et modèles adaptés à votre projet
+## Élaboration de modèles
 
-Vous avez besoin d'un modèle entraîné sur vos propres données ou d'un corpus annoté spécifique ? Lectura propose des services de préparation de corpus et d'entraînement de modèles sur mesure.
+Création d'un modèle sur mesure répondant à votre problématique, entraîné sur vos données et optimisé pour votre environnement de déploiement.
 
----
+### Exemples de réalisations possibles
 
-## Ce que Lectura propose
-
-- **Préparation de corpus** : annotation phonétique, alignement graphème-phonème, segmentation syllabique
-- **Entraînement sur mesure** : modèles G2P, P2G ou TTS entraînés sur vos données
-- **Export et optimisation** : modèles ONNX optimisés (INT8/FP32) pour votre environnement de déploiement
-- **Validation et benchmark** : évaluation des performances sur votre cas d'usage
+- **Voix personnalisée** : créer un TTS avec votre propre voix, déployable en local sur tous vos appareils (PC, smartphone). À partir d'un enregistrement de quelques heures, Lectura entraîne un modèle vocal personnalisé, l'optimise en ONNX et le rend utilisable hors ligne.
+- **Reconnaissance vocale spécialisée** : modèle de transcription adapté à un vocabulaire métier (médical, juridique, technique)
+- **Phonémiseur pour une autre langue ou variété régionale** : adaptation des modèles G2P/P2G à vos besoins linguistiques
+- **Classification ou analyse de texte** : modèle entraîné sur vos catégories et vos données
 
 ---
 
-## Cas d'usage
+## Préparation de corpus
 
-- **Nouvelle langue** : adapter les modèles G2P/P2G à une variété régionale ou à une autre langue
-- **Voix personnalisée** : entraîner un modèle TTS sur la voix de votre marque
-- **Corpus spécialisé** : annoter un corpus technique, médical ou juridique
-- **Recherche** : reproduire les modèles Lectura avec vos propres données
+Vous souhaitez développer vos propres modèles ? Lectura propose de préparer vos corpus d'entraînement.
+
+### Exemples de corpus
+
+- **Corpus de phrases annotées** : annotation phonétique (IPA) et/ou grammaticale (POS, morphologie)
+- **Transcription de corpus audio** : transcription textuelle et phonétique d'un corpus de voix
+- **Corpus vocal** : enregistrement et segmentation de données vocales
+- **Corpus Mots et Syllabes** : images et sons associés, pour des applications éducatives ou de recherche
 
 ---
 

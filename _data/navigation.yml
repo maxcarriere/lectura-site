@@ -22,16 +22,23 @@
           url: /solutions/services/licences/
         - title: "Intégration logicielle"
           url: /solutions/services/integration/
-        - title: "Préparation corpus"
+        - title: "Modèles et corpus"
           url: /solutions/services/corpus-modeles/
         - title: "Services éditoriaux"
           url: /solutions/services/services-editoriaux/
+        - title: "Autres prestations"
+          url: /solutions/services/divers/
 
 - title: Produits
   url: /produits/
   children:
     - title: Programmes
       url: /produits/programmes/
+      children:
+        - title: Voice Edition
+          url: /produits/programmes/voice-edition/
+        - title: Lexique Viewer
+          url: /produits/programmes/lexique-viewer/
     - title: Applications
       url: /produits/applications/
     - title: "Médias"
