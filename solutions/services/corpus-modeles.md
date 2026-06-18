@@ -16,13 +16,14 @@ Créer un TTS avec votre propre voix, déployable en local sur tous vos appareil
 
 **Le processus :**
 
-1. **Enregistrement** : sessions d'enregistrement encadrées (10 à 20 heures de lecture de textes variés). Lectura peut également réaliser l'enregistrement pour vous.
+1. **Enregistrement** : sessions d'enregistrement encadrées (quelques heures de lecture de textes variés ou enregistrements préexistants).
 2. **Préparation des données** : segmentation, alignement phonétique et contrôle qualité du corpus vocal.
 3. **Entraînement** : entraînement d'un modèle FastPitch-Lite personnalisé sur votre voix.
 4. **Optimisation** : export en ONNX (INT8/FP32) pour une inférence rapide sans GPU.
-5. **Livraison** : un modèle vocal qui vous appartient, utilisable hors ligne, sur vos propres serveurs et appareils.
+5. **Intégration** : création d'une interface desktop, web ou mobile et/ou intégration dans votre environnement de travail.
+6. **Livraison** : un modèle vocal qui vous appartient, utilisable hors ligne, sur vos propres serveurs et appareils, avec une interface.
 
-**Le résultat** : une voix unique, privée et autonome, sans dépendance à un service cloud.
+**Le résultat** : votre voix unique, privée et autonome, sans dépendance à un service cloud.
 
 ---
 
