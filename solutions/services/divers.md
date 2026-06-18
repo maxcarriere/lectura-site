@@ -12,12 +12,12 @@ Au-delà de son domaine d'expertise en traitement du langage et ingénierie voca
 
 ## Exemples de prestations
 
-- **Création de sites internet** : sites vitrines, applications web, intégration de contenus
-- **Applications desktop ou mobile** : développement d'applications sur mesure (Python, web)
-- **Automatisation et scripting** : automatisation de tâches répétitives, pipelines de traitement de données
-- **Conseil en intelligence artificielle** : étude de faisabilité, choix d'architecture, prototypage pour intégrer l'IA dans vos projets
-- **Création et maintenance de bases de données** : conception, alimentation et administration de bases de données
-- **Analyse de données** : traitement, visualisation et exploitation de vos données
+- **Création de sites internet** : sites vitrines, applications web, intégration de contenus.
+- **Applications desktop ou mobile** : développement d'applications sur mesure (Python, web).
+- **Automatisation et scripting** : automatisation de tâches répétitives, pipelines de traitement de données.
+- **Conseil en intelligence artificielle** : étude de faisabilité, choix d'architecture, prototypage pour intégrer l'IA dans vos projets.
+- **Création et maintenance de bases de données** : conception, alimentation et administration de bases de données.
+- **Analyse de données** : traitement, visualisation et exploitation de vos données.
 
 ---
 
