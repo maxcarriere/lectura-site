@@ -8,7 +8,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura TTS Monospeaker</h1>
-  <p class="module-tagline">Synthèse vocale neuronale français — FastPitch-Lite + HiFi-GAN (ONNX)</p>
+  <p class="module-tagline">Synthèse vocale neuronale français — Matcha-Conformer + HiFi-GAN (ONNX)</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-tts-monospeaker/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Monospeaker" class="module-badge">GitHub</a>
@@ -18,16 +18,18 @@ redirect_from:
 
 ## Présentation
 
-Moteur de synthèse vocale neuronale pour le français, basé sur **FastPitch-Lite** (modèle acoustique) et **HiFi-GAN** (vocoder). Produit un signal audio naturel à 22050 Hz à partir de texte ou de phonèmes IPA.
+Moteur de synthèse vocale neuronale pour le français, basé sur **Matcha-Conformer** (modèle acoustique flow-matching, 17.9M params) et **HiFi-GAN** (vocoder). Produit un signal audio naturel à 22050 Hz à partir de texte ou de phonèmes IPA.
 
 | Caractéristique | Valeur |
 |-----------------|--------|
 | **Qualité** | Voix féminine naturelle (corpus SIWIS) |
-| **Débit** | ~50x temps-réel sur CPU (ONNX) |
-| **Taille modèle** | ~17 Mo (ONNX INT8, 3 fichiers) |
+| **Débit** | ~30x temps-réel sur CPU (ONNX, 4 pas ODE) |
+| **Taille modèle** | ~29 Mo (ONNX INT8, 3 fichiers) |
 | **Entrée** | Texte français ou phonèmes IPA |
 | **Sortie** | Audio 22050 Hz, float32 |
-| **Contrôles prosodiques** | Pitch, énergie, débit, pauses |
+| **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
+| **Contrôles prosodiques** | Pitch, énergie, débit, pauses + vecteur style 5D |
+| **Qualité ODE** | `n_ode_steps` configurable (4 = rapide, 8 = haute qualité) |
 | **Retimbre** | Changement de voix optionnel via OpenVoice `[vc]` |
 
 Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local** (ONNX Runtime, inférence offline).
@@ -41,6 +43,15 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 <div class="tts-demo">
   <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <select class="tts-style">
+      <option value="neutre" selected>neutre</option>
+      <option value="narratif">narratif</option>
+      <option value="dialogue">dialogue</option>
+      <option value="expressif">expressif</option>
+      <option value="meditatif">méditatif</option>
+      <option value="rapide">rapide</option>
+      <option value="lent">lent</option>
+    </select>
     <select class="tts-voix">
       <option value="">SIWIS (original)</option>
       <option value="siwis">Siwis (retimbre)</option>
@@ -62,7 +73,7 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=3"></script>
+<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=4"></script>
 
 ---
 
@@ -74,20 +85,23 @@ from lectura_tts_monospeaker import creer_engine
 engine = creer_engine()  # mode API par défaut (zero config)
 
 # À partir de texte
-audio = engine.synthesize(text="Bonjour, comment allez-vous ?")
-print(f"Durée : {len(audio) / 22050:.2f}s")
+result = engine.synthesize(text="Bonjour, comment allez-vous ?")
+print(f"Durée : {len(result.samples) / result.sample_rate:.2f}s")
 
-# À partir d'IPA avec contrôles prosodiques
-audio = engine.synthesize(
-    ipa="bɔ̃ʒuʁ kɔmɑ̃ ale vu",
-    pitch_shift=0.0,
-    pitch_range=1.3,
-    energy_scale=1.0,
-    duration_scale=1.0,
+# Avec un style preset
+result = engine.synthesize(
+    text="Il était une fois, dans un pays lointain...",
+    style="narratif",
 )
 
-# Sauvegarder en WAV
-engine.save_wav(audio, "output.wav")
+# À partir d'IPA avec contrôles prosodiques + style personnalisé
+result = engine.synthesize_phonemes(
+    "bɔ̃ʒuʁ kɔmɑ̃ ale vu",
+    style_vector=[0.5, 0.0, 0.0, 0.0, 0.0],
+    pitch_range=1.3,
+    energy_scale=1.0,
+    n_ode_steps=8,  # plus de pas ODE = meilleure qualité
+)
 ```
 
 ---
@@ -97,19 +111,20 @@ engine.save_wav(audio, "output.wav")
 ```
 Texte → [G2P: grapheme→phoneme] → Phonemes IPA
                                         ↓
-                              FastPitch-Lite Encoder
-                              (phone_ids → enc_out + dur/pitch/energy)
+                              Matcha-Conformer Encoder
+                              (phone_ids + style_vector [5D]
+                               → enc_out + dur/pitch/energy)
                                         ↓
                               Length Regulation + Prosody Embedding
                                         ↓
-                              FastPitch-Lite Decoder
-                              (decoder_in → mel spectrogram 80 bandes)
+                              CFM UNet (boucle ODE, N pas)
+                              (bruit → mel spectrogram 80 bandes)
                                         ↓
                               HiFi-GAN Vocoder
                               (mel → waveform 22050 Hz)
 ```
 
-Le pipeline complet est split en **3 modèles ONNX** indépendants pour une flexibilité maximale (quantification, streaming, remplacement individuel).
+Le pipeline utilise **3 modèles ONNX** : un encodeur Conformer (6 couches, d_model=256, style conditioning 5D), un UNet pour le flow-matching (appelé N fois par la boucle ODE Euler), et un vocoder HiFi-GAN.
 
 ---
 
@@ -148,10 +163,13 @@ Presets disponibles : siwis, ezwa, nadine, bernard, gilles, zeckou.
 
 ## Caractéristiques techniques
 
-- **FastPitch-Lite V6** : ~5M paramètres, encodeur + décodeur, GAN fine-tuning
+- **Matcha-Conformer** : 17.9M paramètres, encodeur Conformer 6 couches (d_model=256), flow-matching OT-CFM
 - **HiFi-GAN** : vocoder universel, signal 22050 Hz
+- **3 modèles ONNX** : encodeur (~16 Mo INT8), UNet (~7 Mo INT8), vocoder (~6 Mo INT8) — ~29 Mo total
+- **7 styles** : neutre, narratif, dialogue, expressif, méditatif, rapide, lent (vecteur style 5D)
+- **Qualité ODE** : `n_ode_steps` configurable (4 = rapide ~30x temps-réel, 8 = haute qualité)
 - **2 backends** : API (zero config) ou ONNX Runtime local (modèles sous licence commerciale)
-- **Controles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
+- **Contrôles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
 - **Retimbre optionnel** `[vc]` : changement de voix via OpenVoice zero-shot (6 presets, blend pondéré, variante formants)
 - **Factory `creer_engine()`** : détection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)

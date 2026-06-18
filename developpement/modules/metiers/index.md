@@ -27,7 +27,7 @@ Pipelines spécialisés construits sur les [modules outils]({{ '/developpement/m
   </div>
   <div class="home-card">
     <h2>TTS Monospeaker</h2>
-    <p>Synthèse vocale neuronale : FastPitch-Lite V6 + HiFi-GAN, contrôles prosodiques, ~50x temps-réel.</p>
+    <p>Synthèse vocale neuronale : Matcha-Conformer + HiFi-GAN, 7 styles, contrôles prosodiques, ~30x temps-réel.</p>
     <code class="card-install">pip install lectura-tts-monospeaker</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/metiers/tts-mono/' | relative_url }}">Détails & Démo</a>

@@ -13,6 +13,7 @@
 
   const input = container.querySelector(".tts-input");
   const btn = container.querySelector(".tts-btn");
+  const styleSelect = container.querySelector(".tts-style");
   const voixSelect = container.querySelector(".tts-voix");
   const varianteSlider = container.querySelector(".tts-variante");
   const modeSelect = container.querySelector(".tts-mode");
@@ -94,6 +95,7 @@
 
   function buildExtraPayload() {
     var extra = {};
+    if (styleSelect && styleSelect.value) extra.style = styleSelect.value;
     if (voixSelect && voixSelect.value) {
       extra.voix = voixSelect.value;
       if (varianteSlider) {
@@ -139,6 +141,7 @@
         setStatus("Envoi de la requete...");
 
         const payload = { text: text };
+        if (styleSelect && styleSelect.value) payload.style = styleSelect.value;
         if (voixSelect && voixSelect.value) {
           payload.voix = voixSelect.value;
           if (varianteSlider) {
