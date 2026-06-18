@@ -6,10 +6,11 @@ permalink: /solutions/services/services-editoriaux/
 
 ## Édition de ressources pédagogiques
 
-- **Enrichissement pour la lecture** : syllabation, coloration des sons, identification des liaisons et lettres muettes, transcription IPA. Transformation d'un texte brut en support de lecture enrichi (HTML, JSON ou texte balisé).
-- **Enrichissement grammatical** : annotation d'un texte avec les informations grammaticales (catégorie, genre, nombre, conjugaison).
-- **Vidéo de lecture assistée** : création d'une vidéo de lecture guidée pour un livre enfant, avec surlignage synchronisé des syllabes et voix synthétique.
-- **Histoires syllabiques** : création de textes narratifs dont le vocabulaire est contrôlé par une progression syllabique donnée, garantissant une lisibilité totale pour l'apprenant.
+- **Enrichissement pour la lecture** : syllabation, coloration des sons, liaisons et lettres muettes, éventuellement transcription IPA et informations grammaticales. Transformation d'un texte brut en un véritable support enrichi pour l'apprentissage de la lecture et/ou du français (formats : Word, Scribus, PDF, HTML...). Idéal pour les livres pour enfants qui apprennent à lire, les enfants dyslexiques ou les étudiants en français langue étrangère.
+
+- **Vidéo de lecture assistée** : création d'une vidéo de lecture guidée pour un livre enfant, avec surlignage synchronisé des syllabes et voix synthétique. Transformer n'importe quel livre pour enfant en un support d'apprentissage de la lecture, un atout commercial évident pour les parents.
+
+- **Création d'histoires syllabiques** : élaboration de textes narratifs dont le vocabulaire est contrôlé par une progression syllabique donnée, garantissant une lisibilité totale pour l'apprenant. Peut être combiné avec une vidéo de lecture assistée.
 
 ---
 
@@ -24,8 +25,8 @@ permalink: /solutions/services/services-editoriaux/
 
 Production d'audiobooks à partir de vos textes :
 
-- **Voix synthétique** : génération rapide avec les voix Lectura (6 voix, styles expressifs), idéal pour les grands volumes.
-- **Voix naturelle** : enregistrement avec une voix humaine, pour un rendu premium.
+- **Voix synthétique** : génération complète de votre audiobook avec différentes voix possibles.
+- **Voix naturelle** : enregistrement possible avec une voix humaine pour un rendu premium.
 
 ---
 
