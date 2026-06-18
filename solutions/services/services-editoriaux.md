@@ -25,7 +25,7 @@ permalink: /solutions/services/services-editoriaux/
 
 Production d'audiobooks à partir de vos textes :
 
-- **Voix synthétique** : génération complète de votre audiobook avec différentes voix possibles.
+- **Voix synthétique** : génération complète de votre audiobook avec différentes voix proposées.
 - **Voix naturelle** : enregistrement possible avec une voix humaine pour un rendu premium.
 
 ---
