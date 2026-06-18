@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/stt/
 ---
 
-Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le tout en **~43 Mo de modèles**, sans GPU, avec des performances comparables à Whisper small (10x plus léger).
+Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le tout en **~43 Mo de modèles**, sans GPU, avec des performances comparables à Whisper small (10x plus léger et plus rapide).
 
 ---
 

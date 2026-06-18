@@ -4,7 +4,11 @@ layout: default
 permalink: /solutions/lexique/
 ---
 
-Lectura donne accès à **LeXiK**, une base lexicale du français de 1,35 million d'entrées couvrant l'orthographe, la phonétique IPA, la morphologie, les fréquences, les synonymes et les définitions. Le tout accessible via un module Python avec 18 méthodes de requêtage.
+Lectura donne accès à **LeXiK**, une base lexicale du français de 1,35 million d'entrées, compilée à partir de plusieurs sources linguistiques libres (GLAFF, Wiktionnaire, OpenSubtitles). Première version stabilisée.
+
+Chaque lemme est relié à son entité Wikidata correspondante, permettant une catégorisation sémantique : l'idée est de relier les lemmes (linguistique) aux concepts (sémantique). Le tout accessible via un module Python avec 18 méthodes de requêtage.
+
+<p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world" class="module-badge" style="font-size:1.1em;">» Accès au LeXiK «</a></p>
 
 ---
 
