@@ -78,7 +78,7 @@ for i, tok in enumerate(tokens):
 
 ## Graphémisation (phonétique vers orthographe)
 
-Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie. Précision : **~96%** par mot (pipeline complet).
+Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie. Précision : **~95%** par mot (pipeline complet sur texte courant).
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>

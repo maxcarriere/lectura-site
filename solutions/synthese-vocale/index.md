@@ -22,7 +22,10 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique sans recharger le modèle. ~50x temps réel sur CPU.
 
 <div class="tts-multi-demo">
-  <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
+    <button class="tts-btn" type="button">Synthétiser</button>
+  </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
     <select class="tts-speaker">
@@ -52,7 +55,6 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
-    <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
@@ -68,7 +70,10 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
 Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix unique (Siwis) avec des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbré optionnel via conversion vocale pour changer le timbre sans ré-entraîner de modèle.
 
 <div class="tts-demo">
-  <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français...">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
+    <button class="tts-btn" type="button">Synthétiser</button>
+  </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
     <select class="tts-voix">
@@ -93,7 +98,6 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
-    <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
@@ -106,10 +110,13 @@ Un moteur neuronal (FastPitch-Lite + HiFi-GAN, ~17 Mo) optimisé pour une voix u
 
 ### Diphone — lecture adaptée
 
-Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation précise, uniforme et fiable , ce qui en fait un outil approprié pour la **lecture syllabique**. En mode syllabes, la syllabation est effectuée en amont puis chaque syllabe est générée séparément avec un silence entre elles. En mode mot à mot, chaque groupe de lecture est prononcé individuellement. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
+Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation précise, uniforme et fiable , ce qui en fait un outil approprié pour la **lecture syllabique**. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
 
 <div class="tts-diphone-demo">
-  <input type="text" class="tts-input" value="Le chat dort sur le canapé." placeholder="Entrez du texte français...">
+  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <input type="text" class="tts-input" value="Le chat dort sur le canapé." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
+    <button class="tts-btn" type="button">Synthétiser</button>
+  </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
     <select class="tts-voix">
@@ -134,7 +141,6 @@ Un moteur expérimental qui explore la piste non neurale et qui fonctionne par c
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
-    <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
