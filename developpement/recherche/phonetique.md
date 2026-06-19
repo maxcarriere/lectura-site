@@ -18,18 +18,23 @@ Plutôt que de traiter ces problèmes séparément, Lectura les aborde à traver
 
 La synthèse vocale (TTS) et la reconnaissance vocale (STT) sont traditionnellement traitées comme deux problèmes distincts, avec des architectures et des données d'entraînement séparées. Pourtant, ils partagent un même espace intermédiaire : la **transcription phonétique**.
 
-- Le TTS transforme du texte en phonèmes, puis des phonèmes en audio.
-- Le STT transforme de l'audio en phonèmes, puis des phonèmes en texte.
+Le pipeline d'ingénierie vocale de Lectura peut ainsi se résumer de la façon suivante :
 
-En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. Le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio. Le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore.
+- Le **TTS** (Text-To-Speech) transforme du texte en phonèmes, puis des phonèmes en audio.
+- Le **STT** (Speech-To-Text) transforme de l'audio en phonèmes, puis des phonèmes en texte.
 
 Cette approche va à contre-courant de la tendance actuelle, qui privilégie les architectures **end-to-end** : un seul modèle massif qui apprend directement la correspondance texte ↔ audio. Ces systèmes donnent d'excellents résultats, mais au prix de modèles volumineux, de corpus d'entraînement considérables et de matériel coûteux (clusters de GPU).
 
-L'architecture modulaire de Lectura fait le pari inverse : développer, tester et améliorer chaque couche séparément, et combiner librement les briques selon le besoin (TTS, STT, ou tout pipeline hybride). Les bénéfices sont concrets :
+L'architecture modulaire de Lectura fait le pari inverse : développer, tester et améliorer chaque couche séparément, et combiner librement les briques selon le besoin (TTS, STT, ou tout pipeline hybride).
 
-- **Des modèles plus légers.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) restent compatibles avec un déploiement embarqué ou une inférence sur CPU.
+En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. En épurant le langage textuel de sa couche orthographique, le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore. De plus, le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio (voir [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }})).
+
+Les bénéfices sont concrets :
+
+- **Des modèles beaucoup plus légers.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) restent compatibles avec un déploiement embarqué ou une inférence sur CPU.
 - **Moins de données nécessaires.** Des modèles spécialisés plus petits s'entraînent sur des corpus plus modestes que leurs équivalents end-to-end.
-- **Moins de matériel.** L'entraînement de chaque brique ne nécessite qu'un GPU léger, là où les systèmes end-to-end demandent souvent des grappes de GPU et des semaines de calcul.
+- **Moins de matériel.** L'entraînement de chaque brique ne nécessite qu'un GPU léger (une simple carte NVIDIA RTX 3060), là où les systèmes end-to-end demandent souvent des grappes de GPU et des semaines de calcul.
+- **Des modèles rapides et portables** qui peuvent tourner en local sur des appareils modestes (smartphone, Raspberry Pi) pour une qualité sensiblement comparable aux moteurs de référence.
 
 ---
 
