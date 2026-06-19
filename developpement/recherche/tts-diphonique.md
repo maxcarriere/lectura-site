@@ -9,11 +9,11 @@ redirect_from:
 
 ## Le projet
 
-La synthèse vocale concaténative est l'approche TTS historique de Lectura, développée en parallèle des modèles neuraux. L'enjeu est de produire une voix **claire et articulée** adaptée à l'apprentissage de la lecture, avec un contrôle fin sur la prosodie et la possibilité de prononcer des syllabes isolées.
+La synthèse vocale concaténative est l'approche TTS historique de Lectura. L'enjeu est de produire une voix **claire et articulée** adaptée à l'apprentissage de la lecture, avec la possibilité de prononcer des syllabes isolées.
 
 Le principe de la synthèse concaténative est simple : découper la parole en petites unités pré-enregistrées, puis les assembler pour former n'importe quel énoncé. La question centrale est le choix de l'unité.
 
-Cette approche est implémentée dans le moteur [TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}).
+Cette approche est implémentée dans le moteur [TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}), qui a été développé en parallèle des modèles neuraux.
 
 ---
 
@@ -24,12 +24,6 @@ Cette approche est implémentée dans le moteur [TTS Diphone]({{ '/developpement
 La première idée était d'utiliser la **syllabe** comme unité de concaténation. En théorie, la syllabe est une unité naturelle : elle est perceptivement cohérente et correspond à la granularité de la lecture syllabique.
 
 En pratique, le corpus disponible (SIWIS, ~9800 phrases) ne contenait pas suffisamment de représentants pour couvrir toutes les syllabes du français. Le nombre de syllabes distinctes est trop élevé (plusieurs milliers), et beaucoup n'apparaissaient que quelques fois dans le corpus, voire pas du tout. Sans couverture suffisante, la synthèse produisait des trous ou des syllabes de mauvaise qualité.
-
-### La sélection d'unités (abandonnée)
-
-La deuxième piste était la **sélection d'unités** (unit selection) : au lieu de moyenner les occurrences d'une même unité, on sélectionne à chaque synthèse l'occurrence la plus adaptée au contexte (en minimisant un coût de concaténation et un coût cible).
-
-Le problème : les transitions entre unités sélectionnées produisaient des **cassures audibles**. Comme chaque unité provient d'un contexte d'enregistrement différent, il n'y a aucune garantie de continuité spectrale aux frontières. Le résultat sonnait haché et incohérent.
 
 ### Le diphone : la bonne unité
 
@@ -67,6 +61,16 @@ Pour synthétiser le mot « bonjour » (/bɔ̃ʒuʁ/), le moteur enchaîne les d
 ```
 
 Chaque diphone chevauche son voisin : la seconde moitié du diphone `b→ɔ̃` correspond à la première moitié du diphone `ɔ̃→ʒ`. Les zones de recouvrement sont fusionnées par overlap, ce qui assure la continuité du signal. Le `_` représente le silence (début et fin d'énoncé).
+
+### La sélection d'unités (abandonnée)
+
+Une première piste était la **sélection d'unités** (unit selection) : à chaque synthèse, on sélectionne l'occurrence la plus adaptée au contexte (en minimisant un coût de concaténation et un coût cible).
+
+Le problème : les transitions entre unités sélectionnées produisaient des **cassures audibles**. Comme chaque unité provient d'un contexte d'enregistrement différent, il n'y a aucune garantie de continuité spectrale aux frontières. Le résultat sonnait haché et incohérent.
+
+### Le moyennage : la bonne solution
+
+Pour chaque type de diphone (ex : /a→b/), le corpus contient de nombreuses occurrences enregistrées dans des contextes différents. Plutôt que de sélectionner l'occurrence la plus adaptée, le choix retenu est de **moyenner** toutes les occurrences d'un même diphone pour obtenir un diphone « type ». Cela produit un résultat lissé mais cohérent, sans cassures entre les unités.
 
 ---
 
