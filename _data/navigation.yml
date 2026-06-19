@@ -65,8 +65,8 @@
       children:
         - title: "Le point de vue Phonétique"
           url: /developpement/recherche/phonetique/
-        - title: "Algorithmes d'alignement"
-          url: /developpement/recherche/alignement/
+        - title: "Algorithmes développés"
+          url: /developpement/recherche/algorithmes/
         - title: "TTS diphonique"
           url: /developpement/recherche/tts-diphonique/
     - title: Projets

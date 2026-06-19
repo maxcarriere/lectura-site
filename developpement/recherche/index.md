@@ -13,9 +13,9 @@ Axes de recherche et essais techniques de Lectura. Ces travaux alimentent l'ense
     <a class="more-link" href="{{ '/developpement/recherche/phonetique/' | relative_url }}">Lire l'essai</a>
   </div>
   <div class="home-card">
-    <h2>Algorithmes d'alignement</h2>
-    <p>DFS avec backtracking, modèle de sonorité, défis du mapping graphème-phonème français.</p>
-    <a class="more-link" href="{{ '/developpement/recherche/alignement/' | relative_url }}">Voir la recherche</a>
+    <h2>Algorithmes développés</h2>
+    <p>Alignement graphème-phonème, syllabation, groupes de lecture et liaisons, lecture des nombres.</p>
+    <a class="more-link" href="{{ '/developpement/recherche/algorithmes/' | relative_url }}">Voir la recherche</a>
   </div>
   <div class="home-card">
     <h2>TTS diphonique</h2>
