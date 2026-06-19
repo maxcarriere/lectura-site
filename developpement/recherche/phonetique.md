@@ -27,7 +27,7 @@ Cette approche va à contre-courant de la tendance actuelle, qui privilégie les
 
 L'architecture modulaire de Lectura fait le pari inverse : développer, tester et améliorer chaque couche séparément, et combiner librement les briques selon le besoin (TTS, STT, ou tout pipeline hybride).
 
-En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. En épurant le langage textuel de sa couche orthographique, le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore. De plus, le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio (voir [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }})).
+En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. En épurant le langage textuel de sa couche orthographique, le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore, qui a pour avantage d'être bijective. De plus, le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio (voir [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }})).
 
 Les bénéfices sont concrets :
 
@@ -50,6 +50,7 @@ Une fois ce phonémiseur fiable, il devient possible de **phonémiser les grands
 | **Wikipedia FR** | Texte | Corpus texte ↔ phonétique pour le G2P et le P2G |
 | **Common Voice** | Voix + texte | Corpus audio ↔ phonétique pour le TTS et le STT |
 | **SIWIS** | Voix studio | Corpus audio haute qualité pour le TTS |
+| **LibriVox** | Voix + texte | Corpus audio multilocuteur pour le STT |
 
 Le point clé : ces corpus annotés en phonétique sont **réutilisables dans les deux sens**. Un corpus texte-phonétique sert à entraîner le phonémiseur (texte → IPA) *et* le graphémiseur (IPA → texte). Un corpus voix-phonétique sert à entraîner le TTS (phonèmes → audio) *et* le STT (audio → phonèmes). La factorisation au niveau phonétique se retrouve jusque dans les données d'entraînement.
 

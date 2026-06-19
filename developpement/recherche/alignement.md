@@ -15,8 +15,11 @@ Lectura repose sur plusieurs algorithmes spécialisés, développés pour traite
 L'alignement consiste à établir la correspondance entre les lettres écrites d'un mot et les sons qu'elles produisent. En français, ce problème est complexe :
 
 - Un phonème peut correspondre à 1, 2, 3 ou 4 graphèmes (ex : /ʃ/ → « ch », /o/ → « eau »)
+- Un même graphème couvre parfois plusieurs phonèmes (ex : « x » → /ks/ dans « taxi » ou /ɡz/ dans « exiger »)
 - Un graphème peut ne produire aucun son (lettres muettes : le « t » de « chat »)
-- Certaines frontières sont ambiguës (« oignon » → /ɔɲɔ̃/)
+- Un même graphème peut correspondre à des phonèmes différents selon le contexte (ex : « e » → /ə/ dans « menu », /ɛ/ dans « sel », /e/ dans « les »)
+- Un même phonème peut s'écrire de nombreuses façons (ex : /o/ → « o », « au », « eau », « ô », « ot », « os »...)
+- Les frontières entre graphèmes sont parfois ambiguës (ex : le « an » de « pantalon » → /ɑ̃/, mais le « an » de « panier » → /a.n/)
 
 Sans alignement fiable, impossible de colorier les syllabes, marquer les lettres muettes ou synchroniser l'audio avec le texte. C'est une brique fondamentale de l'[approche phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) de Lectura.
 
@@ -43,9 +46,10 @@ L'algorithme principal de l'[Aligneur-Syllabeur]({{ '/developpement/modules/outi
 Le principe est le suivant :
 
 1. À chaque position, l'algorithme essaie toutes les correspondances connues (1→1, 2→1, 3→1, 4→1, ou graphème muet)
-2. Il avance simultanément dans les deux séquences (lettres et phonèmes)
-3. Si une impasse est atteinte, il fait un backtracking
-4. Parmi toutes les solutions valides, il sélectionne la meilleure selon un **score**
+2. Il avance simultanément dans les deux séquences (lettres et phonèmes), en favorisant la conservation des diphones inséparables (/wa/, /ɡz/, /ks/, /jɛ̃/...)
+3. Les lettres qui n'ont pas pu être associées à un phonème sont marquées comme muettes
+4. Si une impasse est atteinte (tous les phonèmes n'ont pas été distribués), l'algorithme fait un backtracking
+5. Parmi toutes les solutions valides, il sélectionne la meilleure selon un **score**
 
 Le score favorise les correspondances les plus fréquentes dans le lexique et pénalise les associations rares ou ambiguës. Cela permet de lever les ambiguïtés lorsque plusieurs alignements sont possibles pour un même mot.
 
@@ -61,7 +65,7 @@ Au-delà de la lecture augmentée, l'alignement graphème-phonème sert aussi à
 
 ### La syllabe
 
-Une syllabe est une unité phonologique composée de trois parties :
+Une syllabe est une unité phonologique prononcée en un seul souffle, organisée autour d'une voyelle. Elle se compose de trois parties :
 
 - l'**attaque** : consonne(s) initiale(s) (facultative)
 - le **noyau** : voyelle centrale (obligatoire)
@@ -69,13 +73,9 @@ Une syllabe est une unité phonologique composée de trois parties :
 
 Par exemple, dans « par.tir » : « par » a une attaque /p/, un noyau /a/ et une coda /ʁ/ ; « tir » a une attaque /t/, un noyau /i/ et une coda /ʁ/.
 
-### Origine : la synthèse concaténative
+### De la synthèse vocale à la lecture augmentée
 
-L'idée initiale de Lectura était de construire une synthèse vocale concaténative à partir de **syllabes** enregistrées. En théorie, il suffit de découper les mots en syllabes, puis de concaténer les échantillons audio correspondants.
-
-En pratique, cette approche s'est heurtée à un problème majeur : les transitions entre syllabes produisaient des artefacts audibles. L'approche par **diphones** (paires de demi-phonèmes chevauchants) s'est révélée bien plus efficace, car elle capture naturellement les transitions entre sons. C'est cette approche qui a donné le [TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }}).
-
-La syllabation reste cependant essentielle pour un autre usage : la **lecture augmentée**.
+La syllabation a d'abord été envisagée comme base pour la synthèse vocale concaténative, mais cette piste a été abandonnée au profit de l'approche par diphones (voir [TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }})). Elle reste en revanche essentielle pour la **lecture augmentée**.
 
 ### Syllabation pour la lecture
 
@@ -98,15 +98,17 @@ La syllabation phonétique repose sur un **modèle de sonorité** qui encode les
 
 Le **Principe de Sonorité Séquentielle** (SSP) stipule que la sonorité croît vers le noyau de la syllabe et décroît vers les marges. Ce principe, combiné avec le **principe d'attaque maximale** (on rattache le maximum de consonnes à l'attaque de la syllabe suivante), guide le placement des frontières syllabiques.
 
-Les exceptions propres au français (clusters /st/, /sp/, /sk/ en attaque) sont gérées par des règles spécifiques.
-
 ### Choix de syllabation orthographique
 
 La projection de la syllabation phonétique sur l'orthographe impose quelques choix :
 
-- Les **consonnes doubles** ne sont pas séparées lorsqu'elles correspondent à un seul phonème (« al.lu.mer » et non « al.l.u.mer »).
-- Les **lettres valant deux phonèmes** (comme le « x » de « exiger ») sont préservées comme un bloc dans la syllabe orthographique, même si elles chevauchent la frontière phonétique. C'est cette situation que l'[orthocode](https://lexique.lectura.world/documentation) note avec le marqueur `²` (ex : `e.x²i.ger`).
+- Les **consonnes doubles** ne sont pas séparées lorsqu'elles correspondent à un seul phonème : « a.llu.mer » et non « al.lu.mer » (contrairement aux conventions habituelles).
+- Les **lettres valant deux phonèmes** (comme le « x ») sont préservées comme un bloc dans la syllabe orthographique lorsque c'est possible : « e.x²pi.rer » plutôt que « ek.spi.rer », pour conserver le « x » intact. Parfois ce n'est pas possible (le « y » de « balayer » chevauche nécessairement deux syllabes).
 - Les **diphones inséparables** (« oi », « ien ») restent groupés.
+
+### Orthocode
+
+L'alignement graphème-phonème, avec la détection des lettres correspondant à deux phonèmes (marquées `²`) et des lettres muettes (marquées entre parenthèses), combiné au principe de syllabation orthographique décrit ci-dessus, a donné naissance à l'[orthocode](https://lexique.lectura.world/documentation) : une notation compacte qui encode dans une seule chaîne de caractères la structure phonétique complète d'un mot. Par exemple, `e.x²i.ge(r)` indique en un coup d'œil les frontières syllabiques, le « x » valant deux phonèmes et le « r » muet.
 
 ---
 
@@ -114,7 +116,9 @@ La projection de la syllabation phonétique sur l'orthographe impose quelques ch
 
 La syllabation décrite ci-dessus opère au niveau du mot isolé. Mais à l'oral, les mots ne sont pas séparés : ils se connectent par des phénomènes de **liaison** et d'**enchaînement**. Pour produire une lecture augmentée fidèle à l'oral, il faut regrouper les mots en **groupes de lecture** et gérer la resyllabification inter-mots.
 
-### Liaison et enchaînement
+### Liaison, enchaînement et élision
+
+Trois phénomènes connectent les mots à l'oral :
 
 La **liaison** consiste à prononcer une consonne finale habituellement muette lorsque le mot suivant commence par une voyelle :
 
@@ -124,29 +128,35 @@ L'**enchaînement** est un phénomène différent : une consonne finale toujours
 
 > « une amie » → /y.na.mi/ (le « n » de « une » est toujours prononcé)
 
-La distinction est importante car la liaison est soumise à des règles grammaticales, alors que l'enchaînement est automatique.
+L'**élision** est la suppression d'une voyelle finale devant un mot commençant par une voyelle, marquée par une apostrophe :
 
-### Algorithme de liaison
+> « l'enfant » → /lɑ̃.fɑ̃/ (le « e » de « le » disparaît)
 
-L'algorithme de liaison de Lectura est **déterministe** et repose sur la **catégorie grammaticale** des mots. Il implémente les règles de liaison du français standard :
+La liaison est soumise à des règles grammaticales, alors que l'enchaînement et l'élision sont automatiques.
+
+### Algorithme déterministe
+
+La première étape a été de construire un algorithme **déterministe** fondé sur la **catégorie grammaticale** des mots. Il implémente les règles de liaison du français standard :
 
 - **Liaisons obligatoires** : déterminant + nom (« les‿enfants »), pronom + verbe (« ils‿ont »), adjectif + nom (« petit‿ami »), après certaines prépositions (« en‿été »)
 - **Liaisons interdites** : après un nom singulier (« le chat // est »), après « et » (« lui et // elle »), devant un « h aspiré » (« les // haricots »)
-- **Liaisons facultatives** : dans les autres cas, une analyse contextuelle décide
+- **Liaisons facultatives** : dans les autres cas, l'algorithme applique des heuristiques contextuelles
 
 La gestion du **h aspiré** et du **h muet** repose sur une table lexicale : les mots commençant par un « h aspiré » (comme « haricot », « héros ») bloquent la liaison, alors que les mots commençant par un « h muet » (comme « homme », « heure ») la permettent.
 
+### Apprentissage statistique
+
+Cet algorithme déterministe a ensuite servi à **annoter automatiquement un corpus** de phrases en y marquant les liaisons. Ce corpus annoté est utilisé pour entraîner un modèle statistique capable de prédire les liaisons, y compris dans les cas facultatifs où les règles grammaticales ne suffisent pas. L'objectif est de remplacer progressivement les heuristiques par des prédictions apprises sur des données réelles.
+
 ### Groupes de lecture
 
-Un **groupe de lecture** est un ensemble de mots consécutifs liés par des liaisons ou des enchaînements. À l'intérieur d'un groupe, la syllabation traverse les frontières de mots :
+Un **groupe de lecture** est un ensemble de mots consécutifs liés par des liaisons, des enchaînements ou des élisions. À l'intérieur d'un groupe, les mots sont traités comme une seule unité phonétique :
 
 > « les enfants » forme un seul groupe de lecture : /le.zɑ̃.fɑ̃/ (3 syllabes, pas 2 + 2)
+>
+> « l'enfant » forme un seul groupe de lecture : /lɑ̃.fɑ̃/ (2 syllabes)
 
-Ces groupes sont nécessaires pour produire un coloriage syllabique fidèle à la prononciation réelle. Sans eux, la lecture augmentée traiterait chaque mot isolément, ce qui donnerait un résultat éloigné de l'oral.
-
-### Corpus annoté
-
-Un corpus de phrases annotées en liaisons est en cours de constitution pour permettre un apprentissage statistique des cas facultatifs. L'objectif est de compléter les règles déterministes par un modèle probabiliste entraîné sur des données réelles.
+L'algorithme de syllabation décrit plus haut s'applique **directement sur les groupes de lecture**, et non mot par mot. Il gère les espaces, les apostrophes et les frontières de mots de façon transparente, ce qui permet de produire un coloriage syllabique fidèle à la prononciation réelle. Sans ce regroupement, la lecture augmentée traiterait chaque mot isolément, ce qui donnerait un résultat éloigné de l'oral.
 
 ---
 
@@ -182,10 +192,10 @@ Par exemple, pour convertir une Line numérique en Line texte français, le mote
 
 ### Lecture audio et surlignage
 
-La lecture audio est **concaténative** : chaque unité est associée à un fichier son pré-enregistré, et la lecture consiste à enchaîner ces sons dans l'ordre de la Line. Aucune synthèse vocale n'intervient.
+Chaque unité est associée à une **transcription phonétique** via une table de correspondances. La Line phonétisée est ensuite envoyée au moteur TTS de Lectura, qui produit l'audio.
 
 Pour le surlignage pédagogique, les unités sont enrichies par des **rangs** (unités, dizaines, centaines, milliers) et regroupées en **segments**. Deux pistes indépendantes sont construites : une **SoundTrack** (piste audio) et une **DisplayTrack** (piste d'affichage). Leur synchronisation repose sur les intervalles de rangs, ce qui permet de croiser librement le son d'un système avec l'affichage d'un autre (par exemple, entendre « deux-mille-quatorze » tout en voyant « 2014 » avec surlignage synchronisé).
 
 ### Extensions
 
-Le moteur, initialement conçu pour les nombres de 1 à 4 chiffres, est prévu pour s'étendre aux grands nombres et aux formules mathématiques simples (additions, fractions). Le concept de Line et d'unités de lecture se prête à ces extensions sans modification de l'architecture de base.
+Le moteur a été initialement conçu pour les nombres de 1 à 4 chiffres, puis a été étendu aux grands nombres et aux formules mathématiques simples (additions, fractions). Le concept de Line et d'unités de lecture se prête à ces extensions sans modification de l'architecture de base.
