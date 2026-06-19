@@ -39,47 +39,6 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 
 ---
 
-## Essayer en ligne
-
-*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
-
-<div class="tts-demo">
-  <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <select class="tts-style">
-      <option value="neutre" selected>neutre</option>
-      <option value="narratif">narratif</option>
-      <option value="dialogue">dialogue</option>
-      <option value="expressif">expressif</option>
-      <option value="meditatif">méditatif</option>
-      <option value="rapide">rapide</option>
-      <option value="lent">lent</option>
-    </select>
-    <select class="tts-voix">
-      <option value="">SIWIS (original)</option>
-      <option value="siwis">Siwis (retimbre)</option>
-      <option value="nadine">Nadine</option>
-      <option value="ezwa">Ezwa</option>
-      <option value="bernard">Bernard</option>
-      <option value="gilles">Gilles</option>
-      <option value="zeckou">Zeckou</option>
-    </select>
-    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
-      <span style="opacity:0.7">Homme</span>
-      <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
-      <span style="opacity:0.7">Enfant</span>
-    </label>
-    <button class="tts-btn" type="button">Synthétiser</button>
-  </div>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-  <table class="tts-timings"></table>
-</div>
-
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=4"></script>
-
----
-
 ## Exemple de code
 
 ```python

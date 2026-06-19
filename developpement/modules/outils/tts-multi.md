@@ -37,43 +37,6 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 
 ---
 
-## Essayer en ligne
-
-*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
-
-<div class="tts-demo tts-multi-demo">
-  <div class="tts-controls">
-    <label for="tts-speaker">Voix :</label>
-    <select id="tts-speaker" class="tts-speaker">
-      <option value="siwis" selected>Siwis (F)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-    <label for="tts-style">Style :</label>
-    <select id="tts-style" class="tts-style">
-      <option value="neutre" selected>neutre</option>
-      <option value="narratif">narratif</option>
-      <option value="dialogue">dialogue</option>
-      <option value="expressif">expressif</option>
-      <option value="meditatif">méditatif</option>
-      <option value="rapide">rapide</option>
-      <option value="lent">lent</option>
-    </select>
-  </div>
-  <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français...">
-  <button class="tts-btn" type="button">Synthétiser</button>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-  <table class="tts-timings"></table>
-</div>
-
-<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}"></script>
-
----
-
 ## Exemple de code
 
 ```python

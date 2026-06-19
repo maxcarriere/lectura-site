@@ -32,46 +32,6 @@ Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/ph
 
 ---
 
-## Tester en ligne
-
-*Le test en ligne utilise l'API Lectura — aucun téléchargement de modèle nécessaire.*
-
-<div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
-
-async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'tokens': tokens}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-import re
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-tokens = '{INPUT}'.split()
-result = await _g2p_api_call(tokens)
-lines = []
-lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
-lines.append('-' * 56)
-for i, tok in enumerate(tokens):
-    if _punct_re.match(tok):
-        continue
-    ipa = result['g2p'][i] if i < len(result['g2p']) else ''
-    pos = result['pos'][i] if i < len(result['pos']) else ''
-    lia = result['liaison'][i] if i < len(result['liaison']) else ''
-    lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase française...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
-
----
-
 ## Exemple de code
 
 ```python

@@ -14,7 +14,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <p>Normalisation et tokenisation du français, détection de 15+ types de formules.</p>
     <code class="card-install">pip install lectura-tokeniseur</code>
     <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/tokeniseur/' | relative_url }}">Détails & Démo</a>
+      <a class="more-link" href="{{ '/developpement/modules/outils/tokeniseur/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Tokeniseur">GitHub</a>
     </div>
   </div>
@@ -23,8 +23,26 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <p>Lecture des nombres, dates, heures, sigles, monnaies, fractions — avec phonétique IPA.</p>
     <code class="card-install">pip install lectura-formules</code>
     <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/formules/' | relative_url }}">Détails & Démo</a>
+      <a class="more-link" href="{{ '/developpement/modules/outils/formules/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-formules/">PyPI</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Phonémiseur</h2>
+    <p>Modèle BiLSTM multi-tête (1.75M params) : G2P 98.5%, POS, morphologie, liaison.</p>
+    <code class="card-install">pip install lectura-phonemiseur</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/developpement/modules/outils/phonemiseur/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur">GitHub</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Graphémiseur</h2>
+    <p>Modèle BiLSTM V7 (3.2M params) : P2G ~95%, attention cross, lex_select.</p>
+    <code class="card-install">pip install lectura-graphemiseur</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/developpement/modules/outils/graphemiseur/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-graphemiseur/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
@@ -32,7 +50,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <p>Pivot central : alignement graphème-phonème, groupes de lecture, syllabation avec attaque/noyau/coda.</p>
     <code class="card-install">pip install lectura-aligneur</code>
     <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/aligneur/' | relative_url }}">Détails & Démo</a>
+      <a class="more-link" href="{{ '/developpement/modules/outils/aligneur/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur">GitHub</a>
     </div>
   </div>
@@ -47,25 +65,34 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
 </div>
 
-## Modèles neuraux
+## Synthèse, reconnaissance et conversion vocale
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Phonémiseur</h2>
-    <p>Modèle BiLSTM multi-tête (1.75M params) : G2P 98.5%, POS, morphologie, liaison.</p>
-    <code class="card-install">pip install lectura-phonemiseur</code>
+    <h2>TTS Monospeaker</h2>
+    <p>Matcha-Conformer + HiFi-GAN (17.9M params) : 7 styles, flow-matching, ~30x temps-réel.</p>
+    <code class="card-install">pip install lectura-tts-monospeaker</code>
     <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/phonemiseur/' | relative_url }}">Détails & Démo</a>
-      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur">GitHub</a>
+      <a class="more-link" href="{{ '/developpement/modules/outils/tts-mono/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-monospeaker/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
-    <h2>Graphémiseur</h2>
-    <p>Modèle BiLSTM V7 (3.2M params) : P2G ~95%, attention cross, lex_select.</p>
-    <code class="card-install">pip install lectura-graphemiseur</code>
+    <h2>TTS Multi-Speaker</h2>
+    <p>FastPitch-Lite v6 (24.3M params) : 6 voix, 7 styles, encodeur unifié, ~50x temps-réel.</p>
+    <code class="card-install">pip install lectura-tts-multispeaker</code>
     <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/graphemiseur/' | relative_url }}">Détails & Démo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-graphemiseur/">PyPI</a>
+      <a class="more-link" href="{{ '/developpement/modules/outils/tts-multi/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-multispeaker/">PyPI</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>TTS Diphone</h2>
+    <p>Concaténation WORLD (1290 diphones) : prosodie réglée, 3 modes de lecture, 44.1 kHz.</p>
+    <code class="card-install">pip install lectura-tts-diphone</code>
+    <div class="card-links">
+      <a class="more-link" href="{{ '/developpement/modules/outils/tts-diphone/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tts-diphone/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
@@ -77,43 +104,6 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
       <a class="more-link" href="https://pypi.org/project/lectura-ctc/">PyPI</a>
     </div>
   </div>
-</div>
-
-## Synthèse vocale
-
-<div class="home-grid">
-  <div class="home-card">
-    <h2>TTS Monospeaker</h2>
-    <p>Matcha-Conformer + HiFi-GAN (17.9M params) : 7 styles, flow-matching, ~30x temps-réel.</p>
-    <code class="card-install">pip install lectura-tts-monospeaker</code>
-    <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/tts-mono/' | relative_url }}">Détails & Démo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-monospeaker/">PyPI</a>
-    </div>
-  </div>
-  <div class="home-card">
-    <h2>TTS Multi-Speaker</h2>
-    <p>FastPitch-Lite v6 (24.3M params) : 6 voix, 7 styles, encodeur unifié, ~50x temps-réel.</p>
-    <code class="card-install">pip install lectura-tts-multispeaker</code>
-    <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/tts-multi/' | relative_url }}">Détails & Démo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-multispeaker/">PyPI</a>
-    </div>
-  </div>
-  <div class="home-card">
-    <h2>TTS Diphone</h2>
-    <p>Concaténation WORLD (1290 diphones) : prosodie réglée, 3 modes de lecture, 44.1 kHz.</p>
-    <code class="card-install">pip install lectura-tts-diphone</code>
-    <div class="card-links">
-      <a class="more-link" href="{{ '/developpement/modules/outils/tts-diphone/' | relative_url }}">Détails & Démo</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-diphone/">PyPI</a>
-    </div>
-  </div>
-</div>
-
-## Conversion vocale
-
-<div class="home-grid">
   <div class="home-card">
     <h2>VC ZeroShot</h2>
     <p>OpenVoice v2 ONNX : conversion zero-shot, presets, blend pondéré, trick SR formants (~126 Mo).</p>

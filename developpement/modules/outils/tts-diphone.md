@@ -37,44 +37,6 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 
 ---
 
-## Essayer en ligne
-
-*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
-
-<div class="tts-diphone-demo">
-  <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français...">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Voix : Siwis</span>
-    <select class="tts-voix">
-      <option value="">Aucun retimbré</option>
-      <option value="siwis" selected>Siwis</option>
-      <option value="ezwa">Ezwa</option>
-      <option value="nadine">Nadine</option>
-      <option value="bernard">Bernard</option>
-      <option value="gilles">Gilles</option>
-      <option value="zeckou">Zeckou</option>
-    </select>
-    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
-      <span style="opacity:0.7">Homme</span>
-      <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
-      <span style="opacity:0.7">Enfant</span>
-    </label>
-    <select class="tts-mode">
-      <option value="FLUIDE">Fluide</option>
-      <option value="MOT_A_MOT">Mot à mot</option>
-      <option value="SYLLABES">Syllabes</option>
-    </select>
-    <button class="tts-btn" type="button">Synthétiser</button>
-  </div>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-</div>
-
-<script src="{{ '/assets/js/tts-modes.js' | relative_url }}?v=1"></script>
-<script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}?v=3"></script>
-
----
-
 ## Exemple de code
 
 ```python
