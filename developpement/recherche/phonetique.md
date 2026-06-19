@@ -25,6 +25,8 @@ En isolant la couche phonétique, Lectura factorise le problème au bon niveau. 
 
 Cette architecture permet de développer, tester et améliorer chaque couche séparément, et de combiner librement les briques selon le besoin : TTS, STT, ou tout pipeline hybride.
 
+Un autre bénéfice direct de cette factorisation : des **modèles plus légers**. Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes là où un système end-to-end exigerait un modèle massif. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC pour la reconnaissance vocale (38 Mo) restent eux aussi dans des tailles compatibles avec un déploiement embarqué ou une inférence sur CPU.
+
 ---
 
 ## Un langage sous-jacent à l'apprentissage de la lecture
@@ -51,6 +53,24 @@ C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G](
 Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision de ~96%.
 
 Ce résultat ouvre des perspectives concrètes, notamment pour la **correction orthographique**. Si un modèle peut retrouver l'orthographe correcte à partir de la phonétique, alors un correcteur peut s'appuyer sur la même logique : convertir la phrase en phonétique, puis vérifier si la graphie choisie par l'utilisateur est cohérente avec ce que le modèle attendrait. C'est l'une des approches explorées dans le [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }}).
+
+---
+
+## Entraînement des modèles : le phonémiseur comme socle
+
+La stratégie d'entraînement de Lectura découle directement de cette architecture centrée sur la phonétique.
+
+La première étape a été de développer un **phonémiseur de qualité** — un modèle capable de transcrire fidèlement du texte français en phonétique IPA, avec la morphologie, les liaisons et la prosodie. C'est le socle sur lequel tout le reste repose.
+
+Une fois ce phonémiseur fiable, il devient possible de **phonémiser les grands corpus** textuels et vocaux existants :
+
+| Corpus | Nature | Utilisation |
+|--------|--------|-------------|
+| **Wikipedia FR** | Texte | Corpus texte ↔ phonétique pour le G2P et le P2G |
+| **Common Voice** | Voix + texte | Corpus audio ↔ phonétique pour le TTS et le STT |
+| **SIWIS** | Voix studio | Corpus audio haute qualité pour le TTS |
+
+Le point clé : ces corpus annotés en phonétique sont **réutilisables dans les deux sens**. Un corpus texte-phonétique sert à entraîner le phonémiseur (texte → IPA) *et* le graphémiseur (IPA → texte). Un corpus voix-phonétique sert à entraîner le TTS (phonèmes → audio) *et* le STT (audio → phonèmes). La factorisation au niveau phonétique se retrouve jusque dans les données d'entraînement.
 
 ---
 
