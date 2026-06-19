@@ -107,17 +107,25 @@ result = analyser_texte("Les enfants sont arrivés à la maison.")
 ## Installation
 
 ```bash
-# Pipeline complet
+# Pipeline G2P (phonèmes + groupes de lecture, sans aligneur)
 pip install lectura-g2p
 
-# Phonémiseur seul (modèle brut)
+# Pipeline complet avec aligneur-syllabeur (syllabes, lettres muettes, alignement)
+pip install lectura-g2p[aligneur]
+
+# Phonémiseur seul (modèle brut, sans pipeline)
 pip install lectura-phonemiseur
 
-# Avec backend ONNX local
+# Avec backend ONNX local (inférence offline)
 pip install lectura-phonemiseur[onnx]
 ```
 
-Par défaut, les modules utilisent l'API Lectura (aucune configuration nécessaire). Pour l'inférence locale, installez les backends optionnels (`lectura-phonemiseur[onnx]`).
+| Extra | Contenu |
+|-------|---------|
+| *(aucun)* | Pipeline G2P complet (tokeniseur + formules + phonémiseur + groupes de lecture) |
+| `[aligneur]` | + alignement graphème-phonème et syllabation (`lectura-aligneur`) |
+
+Par défaut, les modules utilisent l'API Lectura (aucune configuration nécessaire). Pour l'inférence locale, installez les backends optionnels sur les briques individuelles (`lectura-phonemiseur[onnx]`).
 
 ---
 

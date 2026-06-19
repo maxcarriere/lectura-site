@@ -104,7 +104,15 @@ Le pipeline complet utilise **3 modèles ONNX unifiés** : un encodeur partagé 
 pip install lectura-tts-multispeaker           # mode API (zero config, zéro dépendance)
 pip install lectura-tts-multispeaker[onnx]     # backend ONNX Runtime local
 pip install lectura-tts-multispeaker[onnx,g2p] # avec G2P intégré (texte → audio)
+pip install lectura-tts-multispeaker[all]      # tout (onnx + G2P)
 ```
+
+| Extra | Contenu |
+|-------|---------|
+| *(aucun)* | Mode API (zero config) |
+| `[onnx]` | Backend ONNX Runtime local + numpy (inférence offline) |
+| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
+| `[all]` | Tout : onnx + G2P |
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 

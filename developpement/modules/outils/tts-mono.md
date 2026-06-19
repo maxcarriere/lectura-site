@@ -100,6 +100,14 @@ pip install lectura-tts-monospeaker[onnx,g2p,vc] # + retimbre multi-voix (OpenVo
 pip install lectura-tts-monospeaker[all]         # tout
 ```
 
+| Extra | Contenu |
+|-------|---------|
+| *(aucun)* | Mode API (zero config) |
+| `[onnx]` | Backend ONNX Runtime local + numpy (inférence offline) |
+| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
+| `[vc]` | Retimbre multi-voix via OpenVoice (`lectura-vc-zeroshot`) |
+| `[all]` | Tout : onnx + G2P + retimbre |
+
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ### Retimbre (optionnel)

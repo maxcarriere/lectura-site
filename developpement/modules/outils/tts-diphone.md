@@ -119,11 +119,20 @@ Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) 
 ## Installation
 
 ```bash
-pip install lectura-tts-diphone               # import seul
+pip install lectura-tts-diphone               # mode API (zero config, zéro dépendance)
 pip install "lectura-tts-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
+pip install "lectura-tts-diphone[g2p]"        # avec pipeline G2P (texte → audio)
 pip install "lectura-tts-diphone[vc]"         # avec retimbre OpenVoice (lectura-vc-zeroshot)
 pip install "lectura-tts-diphone[all]"        # local + G2P + retimbre
 ```
+
+| Extra | Contenu |
+|-------|---------|
+| *(aucun)* | Mode API (zero config) |
+| `[local]` | Backend local pyworld + numpy + scipy (inférence offline) |
+| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
+| `[vc]` | Retimbre multi-voix via OpenVoice (`lectura-vc-zeroshot`) |
+| `[all]` | Tout : local + G2P + retimbre |
 
 ---
 

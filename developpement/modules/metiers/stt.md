@@ -167,12 +167,21 @@ print(result.texte)  # "Bonjour le monde."
 # Pipeline STT complet (audio → texte, avec P2G + formules)
 pip install lectura-stt[p2g]
 
-# STT avec backend ONNX (inférence locale rapide)
+# STT avec backend ONNX local (inférence rapide CTC + graphémiseur)
 pip install lectura-stt[onnx,p2g]
 
-# CTC seul (audio → phones IPA) — voir page CTC
+# STT léger (modèle CTC micro, moins précis mais plus rapide)
+pip install lectura-stt[micro,p2g]
+
+# CTC seul (audio → phones IPA, sans P2G) — voir page CTC
 pip install lectura-ctc[onnx]
 ```
+
+| Extra | Contenu |
+|-------|---------|
+| `[p2g]` | Pipeline P2G complet (phonèmes → texte orthographique avec formules et noms propres) |
+| `[onnx]` | Backends ONNX locaux pour CTC et graphémiseur (inférence offline) |
+| `[micro]` | Modèle CTC micro (plus léger, moins précis) |
 
 Par défaut, les modules utilisent l'**API Lectura** si aucun modèle local n'est trouvé.
 

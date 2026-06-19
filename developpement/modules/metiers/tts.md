@@ -76,13 +76,38 @@ pip install lectura-tts-monospeaker[onnx,g2p]
 pip install lectura-tts-multispeaker[onnx,g2p]
 
 # Diphone (pédagogique, modes de lecture)
-pip install "lectura-tts-diphone[all]"
+pip install "lectura-tts-diphone[local,g2p]"
 
 # Avec retimbre (Monospeaker + OpenVoice)
 pip install lectura-tts-monospeaker[onnx,g2p,vc]
+
+# Avec retimbre (Diphone + OpenVoice)
+pip install "lectura-tts-diphone[all]"
 ```
 
-Tous les moteurs fonctionnent aussi en mode **API** (zero config, zéro dépendance) sans installer les backends ONNX.
+### Extras disponibles par moteur
+
+| Extra | Monospeaker | Multi-Speaker | Diphone |
+|-------|:-----------:|:-------------:|:-------:|
+| `[onnx]` / `[local]` | `[onnx]` | `[onnx]` | `[local]` |
+| `[g2p]` | oui | oui | oui |
+| `[vc]` | oui | — | oui |
+| `[all]` | onnx+g2p+vc | onnx+g2p | local+g2p+vc |
+
+Tous les moteurs fonctionnent aussi en mode **API** (zero config, zéro dépendance) sans installer les backends locaux.
+
+### Moteurs TTS externes (optionnel)
+
+Le package `lectura-tts` fournit une abstraction vers des moteurs TTS tiers :
+
+```bash
+pip install lectura-tts[piper]          # Piper TTS (local, rapide)
+pip install lectura-tts[kokoro]         # Kokoro ONNX (local)
+pip install lectura-tts[gtts]           # Google TTS (cloud gratuit)
+pip install lectura-tts[edge]           # Microsoft Edge TTS (cloud gratuit)
+pip install lectura-tts[cloud-google]   # Google Cloud TTS (payant)
+pip install lectura-tts[cloud-aws]      # AWS Polly (payant)
+```
 
 ---
 
