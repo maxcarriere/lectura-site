@@ -1,5 +1,5 @@
 ---
-title: Phonemiseur (G2P)
+title: Pipeline G2P
 layout: default
 permalink: /developpement/modules/metiers/g2p/
 redirect_from:
@@ -7,76 +7,75 @@ redirect_from:
 ---
 
 <div class="module-header">
-  <h1>Lectura Phonemiseur</h1>
-  <p class="module-tagline">Modèle unifié G2P + POS + Morphologie + Liaison pour le français</p>
+  <h1>Pipeline G2P</h1>
+  <p class="module-tagline">Texte français → phonèmes IPA — pipeline complet avec tokenisation, formules, liaison et syllabation</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-phonemiseur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-phonemiseur</code>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-g2p</code>
   </div>
 </div>
 
 ## Présentation
 
-Un seul modèle **BiLSTM char-level multi-tête** (1.75M paramètres, ONNX INT8 = 1.8 Mo) qui prédit simultanément 4 tâches à partir du texte français :
+Le pipeline G2P orchestre 5 briques outils pour transformer un texte brut en une transcription phonétique IPA enrichie. Contrairement au [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (modèle brut), le pipeline gère la tokenisation, les formules, les groupes de lecture et la syllabation.
 
-| Tâche | Description | Performance (par mot) |
-|-------|-------------|-------------|
-| **G2P** | Transcription phonémique IPA | 98.5% accuracy |
-| **POS** | Étiquetage morpho-syntaxique (19 tags) | 98.2% accuracy |
-| **Morphologie** | Genre, nombre, temps, mode, personne | 95-99% accuracy |
-| **Liaison** | Liaisons obligatoires/facultatives | F1 90.6% |
-| **Groupes de lecture** | Regroupement des mots liés par élision, liaison ou enchaînement | — |
+### Pipeline
 
-*Performances mesurées sur un corpus de test de phrases françaises complètes (mots en contexte).*
+```
+Texte brut
+    │
+    ▼
+┌──────────────────┐
+│ Tokeniseur        │  normalisation + détection formules
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ Formules          │  lecture des nombres, dates, sigles → mots + IPA
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ Phonémiseur       │  BiLSTM multi-tête (G2P + POS + morpho + liaison)
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ Groupes de lecture│  regroupement par élision/liaison/enchaînement
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│ Aligneur-Syllabeur│  alignement graphème-phonème + syllabation
+└────────┬─────────┘
+         │
+         ▼
+  Texte enrichi (phonèmes, syllabes, liaisons, lettres muettes)
+```
 
-Le module inclut également la **construction des groupes de lecture** (`construire_groupes_lecture`) : à partir des informations de liaison, il regroupe les mots connectés par élision (l'enfant), liaison (les‿enfants) ou enchaînement (avec‿elle). Ces groupes sont ensuite transmis à l'[Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) pour la syllabation.
+### Briques utilisées
 
-Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zéro dépendance).
-
-### G2P vs eSpeak-NG
-
-Le Phonémiseur Lectura se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : il prédit la prononciation, la catégorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonémise chaque mot isolément, sans désambiguïsation contextuelle (homographes, liaisons).
+| Brique | Package | Rôle dans le pipeline |
+|--------|---------|----------------------|
+| [Tokeniseur]({{ '/developpement/modules/outils/tokeniseur/' | relative_url }}) | `lectura-tokeniseur` | Normalisation + détection de formules |
+| [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) | `lectura-formules` | Lecture des formules détectées |
+| [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) | `lectura-phonemiseur` | Modèle G2P + POS + liaison |
+| [Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | `lectura-aligneur` | Alignement + syllabation |
+| [Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) | `lectura-lexique` | Features lexicales (optionnel) |
 
 ---
 
-## Tester en ligne
+## G2P vs eSpeak-NG
 
-*Le test en ligne utilise l'API Lectura — aucun téléchargement de modèle nécessaire.*
+Le pipeline G2P Lectura se distingue d'eSpeak-NG par sa prise en compte du **contexte phrastique** : le Phonémiseur prédit la prononciation, la catégorie grammaticale, la morphologie et les liaisons en une seule passe. eSpeak-NG phonémise chaque mot isolément, sans désambiguïsation contextuelle (homographes, liaisons).
 
-<div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
-
-async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'tokens': tokens}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-import re
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-tokens = '{INPUT}'.split()
-result = await _g2p_api_call(tokens)
-lines = []
-lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
-lines.append('-' * 56)
-for i, tok in enumerate(tokens):
-    if _punct_re.match(tok):
-        continue
-    ipa = result['g2p'][i] if i < len(result['g2p']) else ''
-    pos = result['pos'][i] if i < len(result['pos']) else ''
-    lia = result['liaison'][i] if i < len(result['liaison']) else ''
-    lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase française...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
+| | Lectura G2P | eSpeak-NG |
+|---|---|---|
+| **Contexte** | Phrase complète (BiLSTM) | Mot isolé |
+| **Homographes** | Désambiguïsés par POS | Non traités |
+| **Liaisons** | Détectées et marquées | Non gérées |
+| **Formules** | 15+ types (nombres, dates...) | Limité |
+| **Syllabes** | Alignement graphème-phonème | Non disponible |
 
 ---
 
@@ -94,46 +93,41 @@ print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER:pper', 'PRE', 'ART:de
 print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 ```
 
----
+### Pipeline complet (texte → structure enrichie)
 
-## Architecture du modèle
+```python
+from lectura_g2p import analyser_texte
 
+result = analyser_texte("Les enfants sont arrivés à la maison.")
+# result contient : tokens, phonèmes, POS, liaisons, groupes de lecture, syllabes
 ```
-Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
-                                        |
-                    +-------------------+-------------------+
-                    v                                       v
-              G2P Head (per-char)         Word repr (320d) + Lex Features (24d)
-              Linear(320→40)                        |
-                                          Word BiLSTM (128h → 256d)
-                                                |
-                                    +---+---+---+---+---+---+---+
-                                   POS Num Gen VF  Mood Tns Per Liaison
-```
-
-**Features lexicales (optionnel)** : si `lectura-lexique` est installé, le modèle reçoit un vecteur de 24 dimensions par mot (candidats POS du lexique). Cela améliore la prédiction POS, la morphologie et les liaisons. Sans lexique, le modèle fonctionne normalement.
 
 ---
 
 ## Installation
 
 ```bash
-pip install lectura-phonemiseur             # mode API (zero config, zéro dépendance)
-pip install lectura-phonemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
-pip install lectura-phonemiseur[numpy]      # backend NumPy local
+# Pipeline complet
+pip install lectura-g2p
+
+# Phonémiseur seul (modèle brut)
+pip install lectura-phonemiseur
+
+# Avec backend ONNX local
+pip install lectura-phonemiseur[onnx]
 ```
 
-Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Par défaut, les modules utilisent l'API Lectura (aucune configuration nécessaire). Pour l'inférence locale, installez les backends optionnels (`lectura-phonemiseur[onnx]`).
 
 ---
 
-## Caractéristiques techniques
+## Performances
 
-- **1.75M paramètres**, modèle ONNX INT8 = 1.8 Mo
-- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
-- **Factory `creer_engine()`** : détection automatique du meilleur backend
-- **Séparateurs mots composés** : `sep_hyphen=True`, `sep_apos=True` pour conserver les tirets et apostrophes dans l'IPA (`aba-ʒuʁ`, `d'abɔʁ`)
-- **30 000 corrections lexicales** intégrées (table plate + homographes POS-aware)
-- **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour améliorer POS/morpho/liaison
-- **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+| Tâche | Métrique | Score |
+|-------|----------|-------|
+| **G2P** | Accuracy (par mot) | 98.5% |
+| **POS** | Accuracy | 98.2% |
+| **Liaison** | F1 macro | 90.6% |
+| **Morphologie** | Accuracy | 95-99% |
+
+*Mesurées sur un corpus de test de phrases françaises complètes (mots en contexte).*

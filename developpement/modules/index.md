@@ -6,18 +6,18 @@ redirect_from:
   - /solutions/modules/
 ---
 
-Quatorze packages Python autonomes pour le traitement linguistique et la synthèse vocale du français, distribués sur PyPI. Installez tout d'un coup avec `pip install lectura` ou chaque module indépendamment. Zero dépendance sur les modules de base, type hints complets (Python 3.10+).
+Dix-sept packages Python autonomes pour le traitement linguistique et la synthèse vocale du français, organisés en **briques outils** (modules atomiques réutilisables) et **pipelines métiers** (chaînes applicatives). Zero dépendance sur les modules de base, type hints complets (Python 3.10+).
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Modules outils</h2>
-    <p>Briques atomiques réutilisables : tokenisation, formules, alignement graphème-phonème, accès lexical.</p>
-    <a class="more-link" href="{{ '/developpement/modules/outils/' | relative_url }}">Voir les modules outils</a>
+    <h2>12 Briques outils</h2>
+    <p>Modules atomiques : tokenisation, formules, alignement, lexique, phonémiseur, graphémiseur, CTC, 3 moteurs TTS, 2 moteurs VC.</p>
+    <a class="more-link" href="{{ '/developpement/modules/outils/' | relative_url }}">Voir les briques outils</a>
   </div>
   <div class="home-card">
-    <h2>Modules métiers</h2>
-    <p>Pipelines spécialisés : G2P, P2G, TTS (3 moteurs), STT, correcteur, conversion vocale (3 variantes).</p>
-    <a class="more-link" href="{{ '/developpement/modules/metiers/' | relative_url }}">Voir les modules métiers</a>
+    <h2>5 Pipelines métiers</h2>
+    <p>Chaînes applicatives : G2P, P2G, TTS (3 moteurs), STT, VoiceConversion.</p>
+    <a class="more-link" href="{{ '/developpement/modules/metiers/' | relative_url }}">Voir les pipelines</a>
   </div>
 </div>
 
@@ -29,12 +29,6 @@ Quatorze packages Python autonomes pour le traitement linguistique et la synthè
 # Tous les modules d'un coup
 pip install lectura
 
-# Un seul module
-pip install lectura-tokeniseur
-
-# Phonémiseur (G2P) — fonctionne immédiatement via l'API (zero config)
-pip install lectura-phonemiseur
-
 # Pipeline G2P complet (tokeniseur + formules + phonémiseur + groupes de lecture)
 pip install lectura-g2p
 
@@ -43,6 +37,12 @@ pip install lectura-p2g
 
 # Pipeline STT complet (audio → texte, CTC + P2G)
 pip install lectura-stt[p2g]
+
+# TTS Monospeaker avec G2P (texte → audio)
+pip install lectura-tts-monospeaker[onnx,g2p]
+
+# Un seul module outil
+pip install lectura-tokeniseur
 ```
 
-Par défaut, les modules Phonémiseur, Graphémiseur et Aligneur-Syllabeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les modèles et les backends optionnels (`lectura-phonemiseur[onnx]`).
+Par défaut, les modules Phonémiseur, Graphémiseur et CTC utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`).

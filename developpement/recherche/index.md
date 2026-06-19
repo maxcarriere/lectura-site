@@ -4,22 +4,22 @@ layout: default
 permalink: /developpement/recherche/
 ---
 
-Les axes de recherche et développement de Lectura. Ces chantiers techniques alimentent l'ensemble des modules et des produits.
+Axes de recherche et essais techniques de Lectura. Ces travaux alimentent l'ensemble des modules et des produits.
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Phonétique</h2>
-    <p>Pipeline de lecture augmentée : enrichissement de texte multi-couches, alignement graphème-phonème, syllabation.</p>
-    <a class="more-link" href="{{ '/developpement/recherche/phonetique/' | relative_url }}">Voir le projet</a>
+    <h2>Le point de vue Phonétique</h2>
+    <p>L'approche fondamentale de Lectura : pipeline de lecture augmentée en 8 étapes, couches d'enrichissement multi-niveaux.</p>
+    <a class="more-link" href="{{ '/developpement/recherche/phonetique/' | relative_url }}">Lire l'essai</a>
   </div>
   <div class="home-card">
-    <h2>Synthèse vocale</h2>
-    <p>Système TTS multi-moteurs adapté à l'apprentissage de la lecture, avec concaténation syllabique et prosodie.</p>
-    <a class="more-link" href="{{ '/developpement/recherche/synthese-vocale/' | relative_url }}">Voir le projet</a>
+    <h2>Algorithmes d'alignement</h2>
+    <p>DFS avec backtracking, modèle de sonorité, défis du mapping graphème-phonème français.</p>
+    <a class="more-link" href="{{ '/developpement/recherche/alignement/' | relative_url }}">Voir la recherche</a>
   </div>
   <div class="home-card">
-    <h2>Reconnaissance vocale</h2>
-    <p>Transcription audio du français : décodeur CTC phonétique et pipeline STT complet.</p>
-    <a class="more-link" href="{{ '/developpement/recherche/reconnaissance/' | relative_url }}">Voir le projet</a>
+    <h2>TTS diphonique</h2>
+    <p>Vocoder WORLD, synthèse par concaténation de 1290 diphones, modèle prosodique, GV compensation.</p>
+    <a class="more-link" href="{{ '/developpement/recherche/tts-diphonique/' | relative_url }}">Voir la recherche</a>
   </div>
 </div>

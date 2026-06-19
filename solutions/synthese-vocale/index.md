@@ -175,9 +175,10 @@ Un moteur expérimental qui explore la piste non neurale et qui fonctionne par c
 
 Documentation technique de chaque moteur :
 
-- [TTS Multi-Speaker]({{ '/developpement/modules/metiers/tts-multi/' | relative_url }}) — modèle neuronal multi-voix
-- [TTS Monospeaker]({{ '/developpement/modules/metiers/tts-mono/' | relative_url }}) — modèle neuronal mono-voix
-- [TTS Diphone]({{ '/developpement/modules/metiers/tts-diphone/' | relative_url }}) — synthèse par concaténation
+- [Pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) — page commune (G2P + choix moteur + VC)
+- [TTS Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) — modèle neuronal multi-voix
+- [TTS Monospeaker]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) — modèle neuronal mono-voix
+- [TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}) — synthèse par concaténation
 - [Conversion vocale]({{ '/developpement/modules/metiers/vc/' | relative_url }}) — changement de timbre
 
 ---

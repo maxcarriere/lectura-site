@@ -52,35 +52,30 @@
     - title: Modules
       url: /developpement/modules/
       children:
-        - title: Modules outils
+        - title: Briques outils
           url: /developpement/modules/outils/
-        - title: "Modules métiers"
+        - title: Pipelines métiers
           url: /developpement/modules/metiers/
-    - title: Ressources
-      url: /developpement/ressources/
-      children:
-        - title: LeXiK
-          url: /developpement/ressources/lexik/
-        - title: Kit G2P / P2G
-          url: /developpement/ressources/kit-g2p-p2g/
-        - title: Corpus
-          url: /developpement/ressources/corpus/
+    - title: "Lexique & Données"
+      url: /developpement/lexique/
     - title: Recherche
       url: /developpement/recherche/
       children:
-        - title: "Phonétique"
+        - title: "Le point de vue Phonétique"
           url: /developpement/recherche/phonetique/
-        - title: "Synthèse vocale"
-          url: /developpement/recherche/synthese-vocale/
-        - title: "Reconnaissance vocale"
-          url: /developpement/recherche/reconnaissance/
+        - title: "Algorithmes d'alignement"
+          url: /developpement/recherche/alignement/
+        - title: "TTS diphonique"
+          url: /developpement/recherche/tts-diphonique/
     - title: Projets
       url: /developpement/projets/
       children:
-        - title: "Pistes d'amélioration"
-          url: /developpement/projets/pistes/
         - title: Correcteur
           url: /developpement/projets/correcteur/
+        - title: "Applications pédagogiques"
+          url: /developpement/projets/applications-pedagogiques/
+        - title: "Pistes d'amélioration"
+          url: /developpement/projets/pistes/
 
 - title: "À propos"
   url: /a-propos/

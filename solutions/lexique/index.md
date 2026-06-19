@@ -47,7 +47,7 @@ Le tout est accessible via un module Python avec 18 méthodes de requêtage, com
 ## En savoir plus
 
 - [Module Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) — documentation technique et API
-- [LeXiK]({{ '/developpement/ressources/lexik/' | relative_url }}) — la base lexicale de Lectura
+- [LeXiK]({{ '/developpement/lexique/' | relative_url }}) — la base lexicale de Lectura
 
 ---
 

@@ -9,7 +9,7 @@ Les projets développés s'expriment dans plusieurs composantes :
 
 - Sur le plan **technologique**, Lectura propose des outils d'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}), de [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) et de [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) pour le français. Le point de vue phonétique permet, en factorisant le problème au bon niveau, de développer des outils précis, légers, portables et utilisables localement sur des appareils du quotidien. Une quinzaine de [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes sont publiés sur PyPI et testables directement sur le site, ou dans le code via l'API.
 
-- Sur le plan des **données**, un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées est consultable en ligne et différents [corpus]({{ '/developpement/ressources/' | relative_url }}) ont été élaborés pour l'entraînement des différents modèles.
+- Sur le plan des **données**, un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées est consultable en ligne et différents [corpus]({{ '/developpement/lexique/' | relative_url }}) ont été élaborés pour l'entraînement des différents modèles.
 
 - Sur le plan **pédagogique**, c'est une des applications naturelles du projet et son idée d'origine : utiliser les outils développés pour proposer des [ressources d'apprentissage]({{ '/produits/' | relative_url }}) de la lecture, du français langue étrangère ou d'aide aux différents troubles d'apprentissage.
 

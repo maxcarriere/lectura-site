@@ -1,14 +1,15 @@
 ---
 title: TTS Monospeaker
 layout: default
-permalink: /developpement/modules/metiers/tts-mono/
+permalink: /developpement/modules/outils/tts-mono/
 redirect_from:
+  - /developpement/modules/metiers/tts-mono/
   - /solutions/modules/tts/
 ---
 
 <div class="module-header">
   <h1>Lectura TTS Monospeaker</h1>
-  <p class="module-tagline">Synthèse vocale neuronale français — Matcha-Conformer + HiFi-GAN (ONNX)</p>
+  <p class="module-tagline">Moteur acoustique Matcha-Conformer + HiFi-GAN — phonèmes IPA vers audio (ONNX)</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-tts-monospeaker/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Monospeaker" class="module-badge">GitHub</a>
@@ -18,14 +19,14 @@ redirect_from:
 
 ## Présentation
 
-Moteur de synthèse vocale neuronale pour le français, basé sur **Matcha-Conformer** (modèle acoustique flow-matching, 17.9M params) et **HiFi-GAN** (vocoder). Produit un signal audio naturel à 22050 Hz à partir de texte ou de phonèmes IPA.
+Moteur de synthèse vocale neuronale pour le français, basé sur **Matcha-Conformer** (modèle acoustique flow-matching, 17.9M params) et **HiFi-GAN** (vocoder). Produit un signal audio naturel à 22050 Hz à partir de phonèmes IPA ou de texte.
 
 | Caractéristique | Valeur |
 |-----------------|--------|
 | **Qualité** | Voix féminine naturelle (corpus SIWIS) |
 | **Débit** | ~30x temps-réel sur CPU (ONNX, 4 pas ODE) |
 | **Taille modèle** | ~29 Mo (ONNX INT8, 3 fichiers) |
-| **Entrée** | Texte français ou phonèmes IPA |
+| **Entrée** | Phonèmes IPA ou texte français (avec `[g2p]`) |
 | **Sortie** | Audio 22050 Hz, float32 |
 | **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
 | **Contrôles prosodiques** | Pitch, énergie, débit, pauses + vecteur style 5D |
@@ -33,6 +34,8 @@ Moteur de synthèse vocale neuronale pour le français, basé sur **Matcha-Confo
 | **Retimbre** | Changement de voix optionnel via OpenVoice `[vc]` |
 
 Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local** (ONNX Runtime, inférence offline).
+
+> **Brique vs Pipeline** : Ce moteur est la brique acoustique (phonèmes → audio). Pour le pipeline complet TTS (texte → audio avec G2P intégré et choix de moteur), voir la [page TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}).
 
 ---
 
@@ -84,7 +87,7 @@ from lectura_tts_monospeaker import creer_engine
 
 engine = creer_engine()  # mode API par défaut (zero config)
 
-# À partir de texte
+# À partir de texte (nécessite [g2p])
 result = engine.synthesize(text="Bonjour, comment allez-vous ?")
 print(f"Durée : {len(result.samples) / result.sample_rate:.2f}s")
 
@@ -109,19 +112,19 @@ result = engine.synthesize_phonemes(
 ## Architecture
 
 ```
-Texte → [G2P: grapheme→phoneme] → Phonemes IPA
-                                        ↓
-                              Matcha-Conformer Encoder
-                              (phone_ids + style_vector [5D]
-                               → enc_out + dur/pitch/energy)
-                                        ↓
-                              Length Regulation + Prosody Embedding
-                                        ↓
-                              CFM UNet (boucle ODE, N pas)
-                              (bruit → mel spectrogram 80 bandes)
-                                        ↓
-                              HiFi-GAN Vocoder
-                              (mel → waveform 22050 Hz)
+Phonemes IPA
+      ↓
+Matcha-Conformer Encoder
+(phone_ids + style_vector [5D]
+ → enc_out + dur/pitch/energy)
+      ↓
+Length Regulation + Prosody Embedding
+      ↓
+CFM UNet (boucle ODE, N pas)
+(bruit → mel spectrogram 80 bandes)
+      ↓
+HiFi-GAN Vocoder
+(mel → waveform 22050 Hz)
 ```
 
 Le pipeline utilise **3 modèles ONNX** : un encodeur Conformer (6 couches, d_model=256, style conditioning 5D), un UNet pour le flow-matching (appelé N fois par la boucle ODE Euler), et un vocoder HiFi-GAN.
@@ -142,7 +145,7 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 
 ### Retimbre (optionnel)
 
-Avec `[vc]`, le paramètre `voix=` permet de changer le timbre de la voix synthétisée via OpenVoice (zero-shot) :
+Avec `[vc]`, le paramètre `voix=` permet de changer le timbre de la voix synthétisée via [OpenVoice zero-shot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) :
 
 ```python
 from lectura_tts_monospeaker import synthetiser
