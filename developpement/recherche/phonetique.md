@@ -31,10 +31,27 @@ En isolant la couche phonétique, Lectura tente de factoriser le problème au bo
 
 Les bénéfices sont concrets :
 
-- **Des modèles beaucoup plus légers.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) restent compatibles avec un déploiement embarqué ou une inférence sur CPU.
+- **Des modèles légers, rapides et portables.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) peuvent tourner en local sur des appareils modestes (smartphone, Raspberry Pi) pour une qualité sensiblement comparable aux moteurs de référence.
 - **Moins de données nécessaires.** Des modèles spécialisés plus petits s'entraînent sur des corpus plus modestes que leurs équivalents end-to-end.
 - **Moins de matériel.** L'entraînement de chaque brique ne nécessite qu'un GPU léger (une simple carte NVIDIA RTX 3060), là où les systèmes end-to-end demandent souvent des grappes de GPU et des semaines de calcul.
-- **Des modèles rapides et portables** qui peuvent tourner en local sur des appareils modestes (smartphone, Raspberry Pi) pour une qualité sensiblement comparable aux moteurs de référence.
+
+---
+
+## Entraînement des modèles : le phonémiseur comme socle
+
+La stratégie d'entraînement de Lectura découle directement de cette architecture centrée sur la phonétique.
+
+La première étape a été de développer un **phonémiseur de qualité**, capable de transcrire fidèlement du texte français en phonétique IPA, avec la morphologie, les liaisons et la prosodie. C'est le socle sur lequel tout le reste repose.
+
+Une fois ce phonémiseur fiable, il devient possible de **phonémiser les grands corpus** textuels et vocaux existants :
+
+| Corpus | Nature | Utilisation |
+|--------|--------|-------------|
+| **Wikipedia FR** | Texte | Corpus texte ↔ phonétique pour le G2P et le P2G |
+| **Common Voice** | Voix + texte | Corpus audio ↔ phonétique pour le TTS et le STT |
+| **SIWIS** | Voix studio | Corpus audio haute qualité pour le TTS |
+
+Le point clé : ces corpus annotés en phonétique sont **réutilisables dans les deux sens**. Un corpus texte-phonétique sert à entraîner le phonémiseur (texte → IPA) *et* le graphémiseur (IPA → texte). Un corpus voix-phonétique sert à entraîner le TTS (phonèmes → audio) *et* le STT (audio → phonèmes). La factorisation au niveau phonétique se retrouve jusque dans les données d'entraînement.
 
 ---
 
@@ -59,27 +76,9 @@ Ces informations, triviales pour un lecteur expert, sont précisément ce que l'
 
 C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) (phonèmes → texte) est capable d'étiqueter correctement la **morphologie** des mots (catégorie grammaticale, genre, nombre, conjugaison) à partir de la seule transcription phonétique de la phrase.
 
-Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision de ~96%.
+Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision d'environ 95%.
 
 Ce résultat ouvre des perspectives concrètes, notamment pour la **correction orthographique**. Si un modèle peut retrouver l'orthographe correcte à partir de la phonétique, alors un correcteur peut s'appuyer sur la même logique : convertir la phrase en phonétique, puis vérifier si la graphie choisie par l'utilisateur est cohérente avec ce que le modèle attendrait. C'est l'une des approches explorées dans le [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }}).
-
----
-
-## Entraînement des modèles : le phonémiseur comme socle
-
-La stratégie d'entraînement de Lectura découle directement de cette architecture centrée sur la phonétique.
-
-La première étape a été de développer un **phonémiseur de qualité**, capable de transcrire fidèlement du texte français en phonétique IPA, avec la morphologie, les liaisons et la prosodie. C'est le socle sur lequel tout le reste repose.
-
-Une fois ce phonémiseur fiable, il devient possible de **phonémiser les grands corpus** textuels et vocaux existants :
-
-| Corpus | Nature | Utilisation |
-|--------|--------|-------------|
-| **Wikipedia FR** | Texte | Corpus texte ↔ phonétique pour le G2P et le P2G |
-| **Common Voice** | Voix + texte | Corpus audio ↔ phonétique pour le TTS et le STT |
-| **SIWIS** | Voix studio | Corpus audio haute qualité pour le TTS |
-
-Le point clé : ces corpus annotés en phonétique sont **réutilisables dans les deux sens**. Un corpus texte-phonétique sert à entraîner le phonémiseur (texte → IPA) *et* le graphémiseur (IPA → texte). Un corpus voix-phonétique sert à entraîner le TTS (phonèmes → audio) *et* le STT (audio → phonèmes). La factorisation au niveau phonétique se retrouve jusque dans les données d'entraînement.
 
 ---
 
@@ -93,4 +92,4 @@ La représentation phonétique est un point de factorisation efficace à trois n
 | **Pédagogique** | Opacité de l'orthographe française | La phonétique rend explicite la logique sous-jacente aux syllabes et à la lecture |
 | **Linguistique** | Grammaire et orthographe | Le signal phonétique suffit à retrouver la morphologie et l'orthographe en contexte |
 
-C'est cette idée, placer la phonétique au centre, qui structure l'ensemble du projet Lectura : ses [modules]({{ '/developpement/modules/' | relative_url }}), ses [produits]({{ '/produits/' | relative_url }}) et ses axes de [recherche]({{ '/developpement/recherche/' | relative_url }}).
+C'est cette idée, placer la phonétique au centre, qui structure l'ensemble du projet Lectura et en constitue un axe de recherche à part entière.
