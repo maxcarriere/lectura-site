@@ -8,9 +8,9 @@ redirect_from:
 
 ## L'idée fondatrice
 
-Le projet Lectura repose sur une conviction : la **représentation phonétique** du français est un point de factorisation naturel pour des problèmes qui, en apparence, relèvent de domaines très différents — la technologie vocale, l'apprentissage de la lecture et la compréhension de la grammaire.
+Le projet Lectura repose sur une conviction : la **représentation phonétique** du français est un point de factorisation naturel pour des problèmes qui, en apparence, relèvent de domaines très différents. La technologie vocale, l'apprentissage de la lecture et la compréhension de la grammaire partagent un même socle : le langage parlé, formalisé en phonétique IPA.
 
-Plutôt que de traiter ces problèmes séparément, Lectura les aborde à travers un même prisme : le langage parlé, formalisé en phonétique IPA.
+Plutôt que de traiter ces problèmes séparément, Lectura les aborde à travers ce même prisme.
 
 ---
 
@@ -21,11 +21,15 @@ La synthèse vocale (TTS) et la reconnaissance vocale (STT) sont traditionnellem
 - Le TTS transforme du texte en phonèmes, puis des phonèmes en audio.
 - Le STT transforme de l'audio en phonèmes, puis des phonèmes en texte.
 
-En isolant la couche phonétique, Lectura factorise le problème au bon niveau. Le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio. Le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore.
+En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. Le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio. Le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore.
 
-Cette architecture permet de développer, tester et améliorer chaque couche séparément, et de combiner librement les briques selon le besoin : TTS, STT, ou tout pipeline hybride.
+Cette approche va à contre-courant de la tendance actuelle, qui privilégie les architectures **end-to-end** : un seul modèle massif qui apprend directement la correspondance texte ↔ audio. Ces systèmes donnent d'excellents résultats, mais au prix de modèles volumineux, de corpus d'entraînement considérables et de matériel coûteux (clusters de GPU).
 
-Un autre bénéfice direct de cette factorisation : des **modèles plus légers**. Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes là où un système end-to-end exigerait un modèle massif. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC pour la reconnaissance vocale (38 Mo) restent eux aussi dans des tailles compatibles avec un déploiement embarqué ou une inférence sur CPU.
+L'architecture modulaire de Lectura fait le pari inverse : développer, tester et améliorer chaque couche séparément, et combiner librement les briques selon le besoin (TTS, STT, ou tout pipeline hybride). Les bénéfices sont concrets :
+
+- **Des modèles plus légers.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) restent compatibles avec un déploiement embarqué ou une inférence sur CPU.
+- **Moins de données nécessaires.** Des modèles spécialisés plus petits s'entraînent sur des corpus plus modestes que leurs équivalents end-to-end.
+- **Moins de matériel.** L'entraînement de chaque brique ne nécessite qu'un GPU léger, là où les systèmes end-to-end demandent souvent des grappes de GPU et des semaines de calcul.
 
 ---
 
@@ -48,7 +52,7 @@ Ces informations, triviales pour un lecteur expert, sont précisément ce que l'
 
 ## La phonétique comme clé de la grammaire
 
-C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) (phonèmes → texte) est capable d'étiqueter correctement la **morphologie** des mots — catégorie grammaticale, genre, nombre, conjugaison — à partir de la seule transcription phonétique de la phrase.
+C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) (phonèmes → texte) est capable d'étiqueter correctement la **morphologie** des mots (catégorie grammaticale, genre, nombre, conjugaison) à partir de la seule transcription phonétique de la phrase.
 
 Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision de ~96%.
 
@@ -60,7 +64,7 @@ Ce résultat ouvre des perspectives concrètes, notamment pour la **correction o
 
 La stratégie d'entraînement de Lectura découle directement de cette architecture centrée sur la phonétique.
 
-La première étape a été de développer un **phonémiseur de qualité** — un modèle capable de transcrire fidèlement du texte français en phonétique IPA, avec la morphologie, les liaisons et la prosodie. C'est le socle sur lequel tout le reste repose.
+La première étape a été de développer un **phonémiseur de qualité**, capable de transcrire fidèlement du texte français en phonétique IPA, avec la morphologie, les liaisons et la prosodie. C'est le socle sur lequel tout le reste repose.
 
 Une fois ce phonémiseur fiable, il devient possible de **phonémiser les grands corpus** textuels et vocaux existants :
 
@@ -84,4 +88,4 @@ La représentation phonétique est un point de factorisation efficace à trois n
 | **Pédagogique** | Opacité de l'orthographe française | La phonétique rend explicite la logique sous-jacente aux syllabes et à la lecture |
 | **Linguistique** | Grammaire et orthographe | Le signal phonétique suffit à retrouver la morphologie et l'orthographe en contexte |
 
-C'est cette idée — placer la phonétique au centre — qui structure l'ensemble du projet Lectura : ses [modules]({{ '/developpement/modules/' | relative_url }}), ses [produits]({{ '/produits/' | relative_url }}) et ses axes de [recherche]({{ '/developpement/recherche/' | relative_url }}).
+C'est cette idée, placer la phonétique au centre, qui structure l'ensemble du projet Lectura : ses [modules]({{ '/developpement/modules/' | relative_url }}), ses [produits]({{ '/produits/' | relative_url }}) et ses axes de [recherche]({{ '/developpement/recherche/' | relative_url }}).
