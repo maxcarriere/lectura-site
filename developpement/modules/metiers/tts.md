@@ -70,31 +70,33 @@ Le moteur Diphone supporte 3 modes de lecture adaptés à l'apprentissage :
 
 ```bash
 # Monospeaker (Matcha-Conformer, haute qualité)
-pip install lectura-tts-monospeaker[onnx,g2p]
+pip install lectura-tts-mono[onnx]
 
 # Multi-Speaker (6 voix, rapide)
-pip install lectura-tts-multispeaker[onnx,g2p]
+pip install lectura-tts-multi[onnx]
 
 # Diphone (pédagogique, modes de lecture)
-pip install "lectura-tts-diphone[local,g2p]"
+pip install "lectura-tts-dipho[local]"
 
 # Avec retimbre (Monospeaker + OpenVoice)
-pip install lectura-tts-monospeaker[onnx,g2p,vc]
+pip install lectura-tts-mono[onnx,retimbre]
 
 # Avec retimbre (Diphone + OpenVoice)
-pip install "lectura-tts-diphone[all]"
+pip install "lectura-tts-dipho[local,retimbre]"
+
+# Via le meta-package
+pip install "lectura[tts-mono]"
 ```
 
-### Extras disponibles par moteur
+### Extras disponibles par pipeline
 
-| Extra | Monospeaker | Multi-Speaker | Diphone |
+| Extra | `lectura-tts-mono` | `lectura-tts-multi` | `lectura-tts-dipho` |
 |-------|:-----------:|:-------------:|:-------:|
-| `[onnx]` / `[local]` | `[onnx]` | `[onnx]` | `[local]` |
-| `[g2p]` | oui | oui | oui |
-| `[vc]` | oui | — | oui |
-| `[all]` | onnx+g2p+vc | onnx+g2p | local+g2p+vc |
+| Backend local | `[onnx]` | `[onnx]` | `[local]` |
+| `[retimbre]` | oui | oui | oui |
+| `[aligneur]` | oui | — | — |
 
-Tous les moteurs fonctionnent aussi en mode **API** (zero config, zéro dépendance) sans installer les backends locaux.
+Chaque pipeline inclut le G2P par défaut. Les moteurs bruts (`lectura-monospeaker`, `lectura-multispeaker`, `lectura-diphone`) fonctionnent aussi en mode **API** sans backend local.
 
 
 ---
@@ -103,17 +105,17 @@ Tous les moteurs fonctionnent aussi en mode **API** (zero config, zéro dépenda
 
 ```python
 # Monospeaker — haute qualité, 7 styles
-from lectura_tts_monospeaker import creer_engine
+from lectura_monospeaker import creer_engine
 engine = creer_engine()
 result = engine.synthesize(text="Bonjour le monde.", style="narratif")
 
 # Multi-Speaker — 6 voix
-from lectura_tts_multispeaker import creer_engine
+from lectura_multispeaker import creer_engine
 engine = creer_engine()
 audio = engine.synthesize(text="Bonjour.", speaker="bernard", style="expressif")
 
 # Diphone — modes pédagogiques
-from lectura_tts_diphone import synthetiser
+from lectura_diphone import synthetiser
 audio = synthetiser("Le chat dort.", voix="siwis")
 ```
 

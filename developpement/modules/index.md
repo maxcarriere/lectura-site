@@ -35,14 +35,14 @@ pip install lectura-g2p
 # Pipeline P2G complet (graphémiseur + formules + noms propres)
 pip install lectura-p2g
 
-# Pipeline STT complet (audio → texte, CTC + P2G)
-pip install lectura-stt[p2g]
+# Pipeline STT complet (audio → texte, Décodeur + P2G)
+pip install lectura-stt
 
 # TTS Monospeaker avec G2P (texte → audio)
-pip install lectura-tts-monospeaker[onnx,g2p]
+pip install lectura-tts-mono[onnx]
 
 # Un seul module outil
 pip install lectura-tokeniseur
 ```
 
-Par défaut, les modules Phonémiseur, Graphémiseur et CTC utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`).
+Par défaut, les modules Phonémiseur, Graphémiseur et Décodeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`).

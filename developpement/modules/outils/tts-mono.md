@@ -11,9 +11,9 @@ redirect_from:
   <h1>Lectura TTS Monospeaker</h1>
   <p class="module-tagline">Moteur acoustique Matcha-Conformer + HiFi-GAN — phonèmes IPA vers audio (ONNX)</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-tts-monospeaker/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Monospeaker" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-tts-monospeaker</code>
+    <a href="https://pypi.org/project/lectura-monospeaker/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Monospeaker" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-monospeaker</code>
   </div>
 </div>
 
@@ -26,12 +26,12 @@ Moteur de synthèse vocale neuronale pour le français, basé sur **Matcha-Confo
 | **Qualité** | Voix féminine naturelle (corpus SIWIS) |
 | **Débit** | ~30x temps-réel sur CPU (ONNX, 4 pas ODE) |
 | **Taille modèle** | ~29 Mo (ONNX INT8, 3 fichiers) |
-| **Entrée** | Phonèmes IPA ou texte français (avec `[g2p]`) |
+| **Entrée** | Phonèmes IPA ou texte français (via pipeline `lectura-tts-mono`) |
 | **Sortie** | Audio 22050 Hz, float32 |
 | **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
 | **Contrôles prosodiques** | Pitch, énergie, débit, pauses + vecteur style 5D |
 | **Qualité ODE** | `n_ode_steps` configurable (4 = rapide, 8 = haute qualité) |
-| **Retimbre** | Changement de voix optionnel via OpenVoice `[vc]` |
+| **Retimbre** | Changement de voix optionnel via OpenVoice (pipeline `[retimbre]`) |
 
 Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local** (ONNX Runtime, inférence offline).
 
@@ -42,11 +42,11 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 ## Exemple de code
 
 ```python
-from lectura_tts_monospeaker import creer_engine
+from lectura_monospeaker import creer_engine
 
 engine = creer_engine()  # mode API par défaut (zero config)
 
-# À partir de texte (nécessite [g2p])
+# À partir de texte (nécessite lectura-g2p)
 result = engine.synthesize(text="Bonjour, comment allez-vous ?")
 print(f"Durée : {len(result.samples) / result.sample_rate:.2f}s")
 
@@ -93,29 +93,30 @@ Le pipeline utilise **3 modèles ONNX** : un encodeur Conformer (6 couches, d_mo
 ## Installation
 
 ```bash
-pip install lectura-tts-monospeaker              # mode API (zero config, zéro dépendance)
-pip install lectura-tts-monospeaker[onnx]        # backend ONNX Runtime local
-pip install lectura-tts-monospeaker[onnx,g2p]    # avec G2P intégré (texte → audio)
-pip install lectura-tts-monospeaker[onnx,g2p,vc] # + retimbre multi-voix (OpenVoice)
-pip install lectura-tts-monospeaker[all]         # tout
+# Moteur brut (phonèmes → audio)
+pip install lectura-monospeaker              # mode API (zero config, zéro dépendance)
+pip install lectura-monospeaker[onnx]        # backend ONNX Runtime local
+
+# Pipeline complet (texte → audio)
+pip install lectura-tts-mono[onnx]           # G2P + moteur ONNX
+pip install lectura-tts-mono[onnx,retimbre]  # + retimbre multi-voix (OpenVoice)
 ```
 
-| Extra | Contenu |
-|-------|---------|
-| *(aucun)* | Mode API (zero config) |
-| `[onnx]` | Backend ONNX Runtime local + numpy (inférence offline) |
-| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
-| `[vc]` | Retimbre multi-voix via OpenVoice (`lectura-vc-zeroshot`) |
-| `[all]` | Tout : onnx + G2P + retimbre |
+| Extra | Package | Contenu |
+|-------|---------|---------|
+| `[onnx]` | `lectura-monospeaker` | Backend ONNX Runtime local + numpy |
+| `[onnx]` | `lectura-tts-mono` | Pipeline G2P + moteur ONNX |
+| `[retimbre]` | `lectura-tts-mono` | Retimbre multi-voix via OpenVoice |
+| `[aligneur]` | `lectura-tts-mono` | Aligneur graphème-phonème |
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
 ### Retimbre (optionnel)
 
-Avec `[vc]`, le paramètre `voix=` permet de changer le timbre de la voix synthétisée via [OpenVoice zero-shot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) :
+Avec `lectura-vc-zeroshot` installé (ou via `pip install lectura-tts-mono[retimbre]`), le paramètre `voix=` permet de changer le timbre de la voix synthétisée via [OpenVoice zero-shot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) :
 
 ```python
-from lectura_tts_monospeaker import synthetiser
+from lectura_monospeaker import synthetiser
 
 # Voix preset
 audio = synthetiser("Bonjour le monde.", voix="bernard")
@@ -140,7 +141,7 @@ Presets disponibles : siwis, ezwa, nadine, bernard, gilles, zeckou.
 - **Qualité ODE** : `n_ode_steps` configurable (4 = rapide ~30x temps-réel, 8 = haute qualité)
 - **2 backends** : API (zero config) ou ONNX Runtime local (modèles sous licence commerciale)
 - **Contrôles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
-- **Retimbre optionnel** `[vc]` : changement de voix via OpenVoice zero-shot (6 presets, blend pondéré, variante formants)
+- **Retimbre optionnel** : changement de voix via OpenVoice zero-shot (6 presets, blend pondéré, variante formants)
 - **Factory `creer_engine()`** : détection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale](mailto:admin@lectura.world)

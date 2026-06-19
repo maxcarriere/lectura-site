@@ -11,9 +11,9 @@ redirect_from:
   <h1>Lectura TTS Diphone</h1>
   <p class="module-tagline">Moteur de concaténation de diphones WORLD — prosodie réglée, retimbre multi-voix, 44.1 kHz</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-tts-diphone/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-Diphone" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-tts-diphone</code>
+    <a href="https://pypi.org/project/lectura-diphone/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Diphone" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-diphone</code>
   </div>
 </div>
 
@@ -40,7 +40,7 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 ## Exemple de code
 
 ```python
-from lectura_tts_diphone import creer_engine
+from lectura_diphone import creer_engine
 
 engine = creer_engine()
 
@@ -60,7 +60,7 @@ audio = engine.synthesize_groups(
 ```
 
 ```python
-from lectura_tts_diphone import synthetiser
+from lectura_diphone import synthetiser
 
 # Synthèse simple (nécessite lectura-g2p)
 audio = synthetiser("Le soleil brille sur la ville.")
@@ -119,20 +119,20 @@ Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) 
 ## Installation
 
 ```bash
-pip install lectura-tts-diphone               # mode API (zero config, zéro dépendance)
-pip install "lectura-tts-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
-pip install "lectura-tts-diphone[g2p]"        # avec pipeline G2P (texte → audio)
-pip install "lectura-tts-diphone[vc]"         # avec retimbre OpenVoice (lectura-vc-zeroshot)
-pip install "lectura-tts-diphone[all]"        # local + G2P + retimbre
+# Moteur brut (phonèmes → audio)
+pip install lectura-diphone               # mode API (zero config, zéro dépendance)
+pip install "lectura-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
+
+# Pipeline complet (texte → audio)
+pip install "lectura-tts-dipho[local]"           # G2P + moteur local
+pip install "lectura-tts-dipho[local,retimbre]"  # + retimbre multi-voix (OpenVoice)
 ```
 
-| Extra | Contenu |
-|-------|---------|
-| *(aucun)* | Mode API (zero config) |
-| `[local]` | Backend local pyworld + numpy + scipy (inférence offline) |
-| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
-| `[vc]` | Retimbre multi-voix via OpenVoice (`lectura-vc-zeroshot`) |
-| `[all]` | Tout : local + G2P + retimbre |
+| Extra | Package | Contenu |
+|-------|---------|---------|
+| `[local]` | `lectura-diphone` | Backend local pyworld + numpy + scipy |
+| `[local]` | `lectura-tts-dipho` | Pipeline G2P + moteur local |
+| `[retimbre]` | `lectura-tts-dipho` | Retimbre multi-voix via OpenVoice |
 
 ---
 

@@ -33,8 +33,8 @@ Pipelines applicatifs qui orchestrent les [briques outils]({{ '/developpement/mo
   </div>
   <div class="home-card">
     <h2>Pipeline STT</h2>
-    <p>Audio → texte : CTC (PER ~4.34%) + P2G + formules. WER ~15%, 10x plus léger que Whisper.</p>
-    <code class="card-install">pip install lectura-stt[p2g]</code>
+    <p>Audio → texte : Décodeur (PER ~4.34%) + P2G + formules. WER ~15%, 10x plus léger que Whisper.</p>
+    <code class="card-install">pip install lectura-stt</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/metiers/stt/' | relative_url }}">Détails & Démo</a>
       <a class="more-link" href="https://pypi.org/project/lectura-stt/">PyPI</a>

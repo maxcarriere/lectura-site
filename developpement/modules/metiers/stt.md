@@ -8,17 +8,17 @@ redirect_from:
 
 <div class="module-header">
   <h1>Pipeline STT</h1>
-  <p class="module-tagline">Audio français → texte orthographique — pipeline CTC + P2G + Formules</p>
+  <p class="module-tagline">Audio français → texte orthographique — pipeline Décodeur + P2G + Formules</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-stt/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/STT" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-stt[p2g]</code>
+    <code class="module-install">pip install lectura-stt</code>
   </div>
 </div>
 
 ## Présentation
 
-Le pipeline STT orchestre le décodeur [CTC]({{ '/developpement/modules/outils/ctc/' | relative_url }}) avec le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) pour transcrire de l'audio en texte français orthographique.
+Le pipeline STT orchestre le [Décodeur]({{ '/developpement/modules/outils/ctc/' | relative_url }}) avec le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) pour transcrire de l'audio en texte français orthographique.
 
 ### Pipeline
 
@@ -154,7 +154,7 @@ print(result.texte)  # "Bonjour le monde."
 
 | Brique | Package | Rôle dans le pipeline |
 |--------|---------|----------------------|
-| [CTC]({{ '/developpement/modules/outils/ctc/' | relative_url }}) | `lectura-ctc` | Décodeur phonétique (audio → phones IPA) |
+| [Décodeur]({{ '/developpement/modules/outils/ctc/' | relative_url }}) | `lectura-decodeur` | Décodeur phonétique (audio → phones IPA) |
 | [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) | `lectura-graphemiseur` | Modèle P2G core |
 | [Pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) | `lectura-p2g` | Formules + noms propres |
 | [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) | `lectura-formules` | Nombres, sigles (mode tolerance="stt") |
@@ -165,23 +165,20 @@ print(result.texte)  # "Bonjour le monde."
 
 ```bash
 # Pipeline STT complet (audio → texte, avec P2G + formules)
-pip install lectura-stt[p2g]
+pip install lectura-stt
 
-# STT avec backend ONNX local (inférence rapide CTC + graphémiseur)
-pip install lectura-stt[onnx,p2g]
+# STT avec backend ONNX local (inférence rapide décodeur + graphémiseur)
+pip install lectura-stt[onnx]
 
-# STT léger (modèle CTC micro, moins précis mais plus rapide)
-pip install lectura-stt[micro,p2g]
-
-# CTC seul (audio → phones IPA, sans P2G) — voir page CTC
-pip install lectura-ctc[onnx]
+# Décodeur seul (audio → phones IPA, sans P2G) — voir page Décodeur
+pip install lectura-decodeur[onnx]
 ```
 
 | Extra | Contenu |
 |-------|---------|
-| `[p2g]` | Pipeline P2G complet (phonèmes → texte orthographique avec formules et noms propres) |
-| `[onnx]` | Backends ONNX locaux pour CTC et graphémiseur (inférence offline) |
-| `[micro]` | Modèle CTC micro (plus léger, moins précis) |
+| `[onnx]` | Backends ONNX locaux pour le décodeur et le graphémiseur (inférence offline) |
+
+Le pipeline P2G est inclus par défaut (dépendance dure).
 
 Par défaut, les modules utilisent l'**API Lectura** si aucun modèle local n'est trouvé.
 

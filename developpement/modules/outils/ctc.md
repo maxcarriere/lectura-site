@@ -1,16 +1,18 @@
 ---
-title: CTC
+title: Décodeur
 layout: default
 permalink: /developpement/modules/outils/ctc/
+redirect_from:
+  - /developpement/modules/outils/decodeur/
 ---
 
 <div class="module-header">
-  <h1>Lectura CTC</h1>
+  <h1>Lectura Décodeur</h1>
   <p class="module-tagline">Décodeur phonétique neural CNN-BiGRU-CTC — audio vers phones IPA</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-ctc/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/STT" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-ctc</code>
+    <a href="https://pypi.org/project/lectura-decodeur/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Decodeur" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-decodeur</code>
   </div>
 </div>
 
@@ -49,7 +51,7 @@ pip install lectura-stt-formules[inference]
 
 ```python
 import numpy as np
-from lectura_ctc import creer_engine
+from lectura_decodeur import creer_engine
 
 engine = creer_engine()
 
@@ -67,16 +69,16 @@ print(ipa)  # "b ɔ̃ ʒ u ʁ"
 
 ```bash
 # CLI CTC : transcrire un fichier
-python -m lectura_ctc bonjour.wav
+python -m lectura_decodeur bonjour.wav
 
 # CLI CTC : enregistrer au micro
-python -m lectura_ctc --micro
+python -m lectura_decodeur --micro
 
 # CLI CTC : enregistrer 5 secondes
-python -m lectura_ctc --micro --duree 5
+python -m lectura_decodeur --micro --duree 5
 
 # CLI CTC : mode continu (Ctrl+C pour quitter)
-python -m lectura_ctc --micro --continu
+python -m lectura_decodeur --micro --continu
 ```
 
 ### STT-Formules (audio → tokens sémantiques)
@@ -136,14 +138,11 @@ Audio 16kHz mono
 ## Installation
 
 ```bash
-# CTC seul (audio → phones IPA)
-pip install lectura-ctc[onnx]
+# Décodeur avec backend ONNX local
+pip install lectura-decodeur[onnx]
 
 # Mode API uniquement (sans ONNX)
-pip install lectura-ctc
-
-# Avec support micro (CLI)
-pip install lectura-ctc[onnx,micro]
+pip install lectura-decodeur
 
 # STT-Formules (tokens sémantiques, inférence locale)
 pip install lectura-stt-formules[inference]
@@ -160,7 +159,7 @@ Par défaut, le module utilise l'**API Lectura** si aucun modèle local n'est tr
 - **Décodage CTC greedy** : zéro dépendance
 - **59 tokens** : 46 phones IPA français + 6 liaisons + 5 ponctuations + 2 spéciaux
 - **ONNX INT8** : modèle quantifié ~38 Mo
-- **CLI intégrée** : `python -m lectura_ctc` (fichier WAV ou micro)
+- **CLI intégrée** : `python -m lectura_decodeur` (fichier WAV ou micro)
 - **Factory `creer_engine()`** : cascade auto ONNX → API
 - **STT-Formules** : ~600K params, 87 tokens sémantiques, TER ~1.17%
 - **Python 3.10+** avec type hints complets

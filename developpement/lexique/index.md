@@ -1,5 +1,5 @@
 ---
-title: Lexique & Données
+title: Lexique
 layout: default
 permalink: /developpement/lexique/
 redirect_from:
@@ -22,6 +22,39 @@ La documentation complète de la base (structure, colonnes, sources, statistique
 
 ---
 
+## LeXiK Lite
+
+Une version allégée de LeXiK est en cours de développement pour être embarquée dans les applications et modules Lectura.
+
+[Voir les ressources distribuées →]({{ '/produits/ressources/' | relative_url }})
+
+---
+
+## API REST
+
+LeXiK est interrogeable via l'API REST Lectura, sans authentification :
+
+```
+https://api.lectura.world/lexique/
+```
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /lexique/rechercher?q=…` | Recherche de formes (modes : exact, prefix, contains, suffix, phonetique) |
+| `GET /lexique/lemme/{lemme}` | Détail d'un lemme et ses relations |
+| `GET /lexique/formes/{lemme}` | Formes fléchies d'un lemme |
+| `GET /lexique/conjugaison/{verbe}` | Table de conjugaison complète |
+| `GET /lexique/definitions/{lemme}` | Définitions et exemples |
+| `GET /lexique/relations/{lemme}` | Relations sémantiques (synonymes, antonymes…) |
+| `GET /lexique/entite/{id}` | Détail d'une entité (ID interne ou QID Wikidata) |
+| `GET /lexique/entites?q=…` | Recherche d'entités par mot-clé |
+| `GET /lexique/categories` | Liste des catégories sémantiques |
+| `GET /lexique/categories/{id}/entites` | Entités d'une catégorie |
+
+La documentation interactive (Swagger) est disponible sur [api.lectura.world/docs](https://api.lectura.world/docs).
+
+---
+
 ## Module lectura-lexique
 
 Le module Python [`lectura-lexique`]({{ '/developpement/modules/outils/lexique/' | relative_url }}) fournit 18 méthodes de requêtage pour exploiter LeXiK ou toute autre base lexicale compatible (Lexique383, GLAFF, Morphalou). Zéro dépendance, backends CSV/TSV/SQLite, chargement lazy.
@@ -39,19 +72,3 @@ with Lexique("lexique_lectura.db") as lex:
 ```
 
 [Voir la documentation du module →]({{ '/developpement/modules/outils/lexique/' | relative_url }})
-
----
-
-## LeXiK Lite
-
-Une version allégée de LeXiK est en cours de développement pour être embarquée dans les applications et modules Lectura.
-
-[Voir les ressources distribuées →]({{ '/produits/ressources/' | relative_url }})
-
----
-
-## Kit G2P / P2G et corpus
-
-Les corpus d'entraînement (22 649 phrases annotées, 1,16M mots alignés) et les modèles pré-entraînés sont documentés dans la section Ressources des Produits :
-
-[Voir le kit G2P/P2G et les corpus →]({{ '/produits/ressources/' | relative_url }})

@@ -11,9 +11,9 @@ redirect_from:
   <h1>Lectura TTS Multi-Speaker</h1>
   <p class="module-tagline">Moteur acoustique FastPitch-Lite v6 — 6 voix + style conditioning (ONNX)</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-tts-multispeaker/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS-MultiSpeaker" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-tts-multispeaker</code>
+    <a href="https://pypi.org/project/lectura-multispeaker/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/MultiSpeaker" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-multispeaker</code>
   </div>
 </div>
 
@@ -27,7 +27,7 @@ Moteur de synthèse vocale neuronale multi-speaker pour le français, basé sur 
 | **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
 | **Taille modèle** | ~40 Mo (ONNX INT8) / ~118 Mo (ONNX FP32) |
 | **Débit** | ~50x temps-réel sur CPU (ONNX) |
-| **Entrée** | Phonèmes IPA ou texte français (avec `[g2p]`) |
+| **Entrée** | Phonèmes IPA ou texte français (via pipeline `lectura-tts-multi`) |
 | **Sortie** | Audio 22050 Hz, float32 |
 | **Contrôles prosodiques** | Pitch, énergie, débit, pauses + vecteur style 5D |
 
@@ -40,7 +40,7 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 ## Exemple de code
 
 ```python
-from lectura_tts_multispeaker import creer_engine, liste_speakers
+from lectura_multispeaker import creer_engine, liste_speakers
 
 # Lister les voix disponibles
 for s in liste_speakers():
@@ -101,18 +101,20 @@ Le pipeline complet utilise **3 modèles ONNX unifiés** : un encodeur partagé 
 ## Installation
 
 ```bash
-pip install lectura-tts-multispeaker           # mode API (zero config, zéro dépendance)
-pip install lectura-tts-multispeaker[onnx]     # backend ONNX Runtime local
-pip install lectura-tts-multispeaker[onnx,g2p] # avec G2P intégré (texte → audio)
-pip install lectura-tts-multispeaker[all]      # tout (onnx + G2P)
+# Moteur brut (phonèmes → audio)
+pip install lectura-multispeaker              # mode API (zero config, zéro dépendance)
+pip install lectura-multispeaker[onnx]        # backend ONNX Runtime local
+
+# Pipeline complet (texte → audio)
+pip install lectura-tts-multi[onnx]           # G2P + moteur ONNX
+pip install lectura-tts-multi[onnx,retimbre]  # + retimbre multi-voix (OpenVoice)
 ```
 
-| Extra | Contenu |
-|-------|---------|
-| *(aucun)* | Mode API (zero config) |
-| `[onnx]` | Backend ONNX Runtime local + numpy (inférence offline) |
-| `[g2p]` | Pipeline G2P intégré (`lectura-g2p`, texte → phonèmes → audio) |
-| `[all]` | Tout : onnx + G2P |
+| Extra | Package | Contenu |
+|-------|---------|---------|
+| `[onnx]` | `lectura-multispeaker` | Backend ONNX Runtime local + numpy |
+| `[onnx]` | `lectura-tts-multi` | Pipeline G2P + moteur ONNX |
+| `[retimbre]` | `lectura-tts-multi` | Retimbre multi-voix via OpenVoice |
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 

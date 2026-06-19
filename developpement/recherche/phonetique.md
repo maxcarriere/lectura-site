@@ -6,67 +6,62 @@ redirect_from:
   - /projets/lecture-augmentee/
 ---
 
-<span class="status-badge status-cours">En cours</span>
+## L'idée fondatrice
 
-## L'approche Lectura
+Le projet Lectura repose sur une conviction : la **représentation phonétique** du français est un point de factorisation naturel pour des problèmes qui, en apparence, relèvent de domaines très différents — la technologie vocale, l'apprentissage de la lecture et la compréhension de la grammaire.
 
-Lectura adopte un **point de vue phonétique** sur le texte français : chaque mot est un objet multi-couches dont la prononciation, la structure syllabique, les liaisons et les lettres muettes sont calculables algorithmiquement. Cette approche distingue Lectura des outils orientés NLP statistique (qui ignorent la phonétique) et des outils de TTS (qui ne produisent que de l'audio).
-
-L'objectif est de produire un texte que l'on peut **voir**, **entendre** et **explorer** à différents niveaux de granularité — un texte qui enseigne sa propre lecture.
+Plutôt que de traiter ces problèmes séparément, Lectura les aborde à travers un même prisme : le langage parlé, formalisé en phonétique IPA.
 
 ---
 
-## Pipeline de traitement en 8 étapes
+## Factoriser la technologie vocale
 
-Le cœur du projet est un pipeline modulaire (`lectura-main`) qui transforme un texte brut en un objet de lecture enrichi :
+La synthèse vocale (TTS) et la reconnaissance vocale (STT) sont traditionnellement traitées comme deux problèmes distincts, avec des architectures et des données d'entraînement séparées. Pourtant, ils partagent un même espace intermédiaire : la **transcription phonétique**.
 
-| Étape | Module | Sortie |
-|-------|--------|--------|
-| 1. **Tokenisation** | [Tokeniseur]({{ '/developpement/modules/outils/tokeniseur/' | relative_url }}) | Mots + ponctuations + formules détectées |
-| 2. **Lecture des formules** | [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) | Formules → texte lu + IPA |
-| 3. **Phonémisation** | [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) | IPA + POS + morphologie + liaisons |
-| 4. **Groupes de lecture** | [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) | Regroupement élision/liaison/enchaînement |
-| 5. **Alignement G-P** | [Aligneur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | Correspondance lettres ↔ sons |
-| 6. **Syllabation** | [Aligneur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | Syllabes avec attaque/noyau/coda |
-| 7. **Lettres muettes** | [Aligneur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | Marquage des graphèmes non prononcés |
-| 8. **Timeline** | lectura-main | Synchronisation temporelle de chaque événement |
+- Le TTS transforme du texte en phonèmes, puis des phonèmes en audio.
+- Le STT transforme de l'audio en phonèmes, puis des phonèmes en texte.
 
-Chaque étape est un module indépendant, testable isolément. L'ensemble produit une structure de données riche qui alimente les différents formats de sortie (HTML interactif, JSON, vidéo, audio synchronisé).
+En isolant la couche phonétique, Lectura factorise le problème au bon niveau. Le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio. Le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore.
+
+Cette architecture permet de développer, tester et améliorer chaque couche séparément, et de combiner librement les briques selon le besoin : TTS, STT, ou tout pipeline hybride.
 
 ---
 
-## Couches d'enrichissement
+## Un langage sous-jacent à l'apprentissage de la lecture
 
-Le texte enrichi contient plusieurs couches superposables :
+Le français est une langue **opaque** du point de vue orthographique : un même son peut s'écrire de dizaines de façons différentes (le son /o/ s'écrit _o, au, eau, ô, ot, os, op, aud, aux, ault…_). Cette opacité est le premier obstacle de l'apprentissage de la lecture.
 
-- **Syllabique** : chaque mot découpé en syllabes, avec séparateurs visuels
-- **Phonétique** : transcription IPA de chaque syllabe
-- **Liaisons** : consonnes de liaison entre mots, avec indication du type (obligatoire, facultative)
-- **Lettres muettes** : lettres présentes à l'écrit mais non prononcées
-- **Coloration** : code couleur par type de son (voyelle, consonne, digramme…)
-- **Audio** : lecture synchronisée syllabe par syllabe via TTS
-
----
-
-## Pourquoi la phonétique ?
-
-Le français est une langue **opaque** du point de vue orthographique : un même son peut s'écrire de dizaines de façons différentes (le son /o/ s'écrit o, au, eau, ô, ot, os, op, aud, aux, ault…). Cette opacité est le premier obstacle de l'apprentissage de la lecture.
+L'approche syllabique, largement utilisée en pédagogie, consiste à décomposer les mots en syllabes pour faciliter le déchiffrage. Mais la syllabe elle-même repose sur la phonétique : c'est la **structure sonore** du mot qui détermine ses frontières syllabiques, pas son orthographe. La phonétique est le langage sous-jacent au point de vue syllabique.
 
 L'approche phonétique de Lectura rend explicite ce qui est implicite dans l'orthographe :
+
 - Quel son produit chaque lettre ou groupe de lettres ?
 - Quelles lettres ne se prononcent pas ?
 - Comment les mots se connectent-ils à l'oral (liaisons, élisions) ?
 - Où se situent les frontières syllabiques ?
 
-Ces informations, triviales pour un lecteur expert, sont précisément ce que l'apprenant doit construire.
+Ces informations, triviales pour un lecteur expert, sont précisément ce que l'apprenant doit construire. C'est l'objectif du [pipeline de lecture augmentée]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) de Lectura : produire un texte que l'on peut **voir**, **entendre** et **explorer** à différents niveaux de granularité.
 
 ---
 
-## État d'avancement
+## La phonétique comme clé de la grammaire
 
-Le pipeline est fonctionnel pour le français. Les modules de phonémisation, syllabation, alignement et liaison sont opérationnels et testés. L'intégration TTS permet une lecture audio synchronisée complète.
+C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) (phonèmes → texte) est capable d'étiqueter correctement la **morphologie** des mots — catégorie grammaticale, genre, nombre, conjugaison — à partir de la seule transcription phonétique de la phrase.
 
-Les travaux en cours portent sur :
-- l'optimisation de la qualité de l'alignement graphème-phonème (voir [Algorithmes d'alignement]({{ '/developpement/recherche/alignement/' | relative_url }})),
-- l'ajout de couches prosodiques (accentuation, intonation),
-- la génération de formats de sortie multiples (HTML, JSON, vidéo).
+Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision de ~96%.
+
+Ce résultat ouvre des perspectives concrètes, notamment pour la **correction orthographique**. Si un modèle peut retrouver l'orthographe correcte à partir de la phonétique, alors un correcteur peut s'appuyer sur la même logique : convertir la phrase en phonétique, puis vérifier si la graphie choisie par l'utilisateur est cohérente avec ce que le modèle attendrait. C'est l'une des approches explorées dans le [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }}).
+
+---
+
+## En résumé
+
+La représentation phonétique est un point de factorisation efficace à trois niveaux :
+
+| Niveau | Problème | Apport de la phonétique |
+|--------|----------|------------------------|
+| **Technologique** | TTS et STT traités séparément | Couche commune phonémiseur/graphémiseur, modèles acoustiques indépendants |
+| **Pédagogique** | Opacité de l'orthographe française | La phonétique rend explicite la logique sous-jacente aux syllabes et à la lecture |
+| **Linguistique** | Grammaire et orthographe | Le signal phonétique suffit à retrouver la morphologie et l'orthographe en contexte |
+
+C'est cette idée — placer la phonétique au centre — qui structure l'ensemble du projet Lectura : ses [modules]({{ '/developpement/modules/' | relative_url }}), ses [produits]({{ '/produits/' | relative_url }}) et ses axes de [recherche]({{ '/developpement/recherche/' | relative_url }}).

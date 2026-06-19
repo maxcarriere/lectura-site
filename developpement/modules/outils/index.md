@@ -71,37 +71,37 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   <div class="home-card">
     <h2>TTS Monospeaker</h2>
     <p>Matcha-Conformer + HiFi-GAN (17.9M params) : 7 styles, flow-matching, ~30x temps-réel.</p>
-    <code class="card-install">pip install lectura-tts-monospeaker</code>
+    <code class="card-install">pip install lectura-monospeaker</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-mono/' | relative_url }}">Détails</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-monospeaker/">PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-monospeaker/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
     <h2>TTS Multi-Speaker</h2>
     <p>FastPitch-Lite v6 (24.3M params) : 6 voix, 7 styles, encodeur unifié, ~50x temps-réel.</p>
-    <code class="card-install">pip install lectura-tts-multispeaker</code>
+    <code class="card-install">pip install lectura-multispeaker</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-multi/' | relative_url }}">Détails</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-multispeaker/">PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-multispeaker/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
     <h2>TTS Diphone</h2>
     <p>Concaténation WORLD (1290 diphones) : prosodie réglée, 3 modes de lecture, 44.1 kHz.</p>
-    <code class="card-install">pip install lectura-tts-diphone</code>
+    <code class="card-install">pip install lectura-diphone</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-diphone/' | relative_url }}">Détails</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-tts-diphone/">PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-diphone/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
-    <h2>CTC</h2>
+    <h2>Décodeur</h2>
     <p>Décodeur phonétique neural CNN-BiGRU-CTC (10.6M params, PER ~4.34%) + STT-Formules (600K params).</p>
-    <code class="card-install">pip install lectura-ctc</code>
+    <code class="card-install">pip install lectura-decodeur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/ctc/' | relative_url }}">Détails</a>
-      <a class="more-link" href="https://pypi.org/project/lectura-ctc/">PyPI</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-decodeur/">PyPI</a>
     </div>
   </div>
   <div class="home-card">
