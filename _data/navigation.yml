@@ -45,6 +45,8 @@
       url: /produits/applications/
     - title: "Livres & Médias"
       url: /produits/medias/
+    - title: Ressources
+      url: /produits/ressources/
 
 - title: "Développement"
   url: /developpement/

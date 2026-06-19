@@ -26,7 +26,7 @@ Vous souhaitez développer vos propres modèles ou vous avez besoin de données 
 
 ## Données structurées
 
-- **Corpus de Mots et Syllabes (Images et Sons)** : pour des applications éducatives ou de recherche.
+- **Corpus de Mots ou de Syllabes** : Pour des applications éducatives ou de recherche. Ils peuvent être enrichis avec images et sons.
 - **Extraction de listes spécifiques** : à partir du lexique LeXiK (par fréquence, catégorie, nombre de syllabes, motifs phonétiques...).
 
 ---

@@ -12,7 +12,7 @@ Des applications desktop et web construites sur le pipeline Lectura.
 
 <span class="status-badge status-cours">En cours de développement</span>
 
-Synthèse et reconnaissance vocale avec sous-titrage synchronisé et mode syllabique. Un environnement complet pour la lecture assistée : le texte est prononcé par les moteurs TTS de Lectura pendant que chaque mot — ou chaque syllabe — est surligné en temps réel. La reconnaissance vocale permet d'écouter l'utilisateur et de comparer sa prononciation au texte attendu.
+Logiciel de synthèse et de reconnaissance vocale avec surlignage synchronisé. Un environnement complet pour intégrer la voix avec sous titrage dans vos vidéos avec de nombreuses options pédagogiques.
 
 [En savoir plus →](/produits/programmes/voice-edition/)
 
@@ -22,6 +22,6 @@ Synthèse et reconnaissance vocale avec sous-titrage synchronisé et mode syllab
 
 <span class="status-badge status-cours">En cours de développement</span>
 
-Interface d'accès à la base lexicale LeXiK et outil d'enrichissement de texte. Explorez les 1,35 million d'entrées du lexique français (phonétique, morphologie, fréquences, synonymes, définitions) et annotez automatiquement n'importe quel texte avec ses propriétés linguistiques.
+Interface d'accès à la base lexicale LeXiK et outil d'enrichissement de texte. Explorez les 1,35 million de mots et les 2,5 millions d'entités du lexique de lectura (phonétique, morphologie, fréquences, synonymes, définitions) et annotez automatiquement n'importe quel texte avec ses propriétés linguistiques et conceptuelles.
 
 [En savoir plus →](/produits/programmes/lexique-viewer/)

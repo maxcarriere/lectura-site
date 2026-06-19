@@ -21,10 +21,10 @@ Le contenu s'appuie sur le corpus syllabique Lectura et sur la base lexicale LeX
 
 ---
 
-## Histoires Vidéos
+## Vidéos pédagogiques
 
 <span class="status-badge status-cours">En cours de développement</span>
 
-Des histoires en vidéo pour apprendre à lire : le texte est lu et **synchronisé avec la voix au niveau syllabique**. L'enfant voit chaque syllabe s'illuminer au moment où elle est prononcée, ce qui lui permet de suivre la lecture et de faire le lien entre l'écrit et l'oral.
+Des capsules vidéos pour apprendre à lire : le texte est lu et **synchronisé avec la voix au niveau syllabique**. L'enfant voit chaque syllabe s'illuminer au moment où elle est prononcée, ce qui lui permet de suivre la lecture et de faire le lien entre l'écrit et l'oral.
 
 Les vidéos utilisent le pipeline de synthèse vocale Lectura et son système de timestamps par phonème pour un surlignage précis syllabe par syllabe.

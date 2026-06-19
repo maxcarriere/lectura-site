@@ -8,7 +8,7 @@ permalink: /solutions/services/services-editoriaux/
 
 - **Enrichissement pour la lecture** : syllabation, coloration des sons, liaisons et lettres muettes, éventuellement transcription IPA et informations grammaticales. Transformation d'un texte brut en un véritable support enrichi pour l'apprentissage de la lecture et/ou du français (formats : Word, Scribus, PDF, HTML...). Idéal pour les livres pour enfants qui apprennent à lire, les enfants dyslexiques ou les étudiants en français langue étrangère.
 
-- **Vidéo de lecture assistée** : création d'une vidéo de lecture guidée pour un livre enfant, avec surlignage synchronisé des syllabes et voix synthétique. Transformer n'importe quel livre pour enfant en un support d'apprentissage de la lecture, un atout commercial évident pour les parents.
+- **Vidéo de lecture assistée** : création d'une vidéo de lecture guidée pour un livre enfant, avec surlignage synchronisé des syllabes et voix synthétique. Transformer n'importe quel livre pour enfant en un support d'apprentissage de la lecture, un atout commercial évident pour convaincre les parents.
 
 - **Création d'histoires syllabiques** : élaboration de textes narratifs dont le vocabulaire est contrôlé par une progression syllabique donnée, garantissant une lisibilité totale pour l'apprenant. Peut être combiné avec une vidéo de lecture assistée.
 

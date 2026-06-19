@@ -22,4 +22,9 @@ Lectura conçoit des produits pour les familles, les enfants et les apprenants :
     <p>Manuel de lecture syllabique progressif avec application interactive, et histoires vidéos synchronisées.</p>
     <a class="more-link" href="{{ '/produits/medias/' | relative_url }}">Découvrir</a>
   </div>
+  <div class="home-card">
+    <h2>Ressources</h2>
+    <p>Corpus, données linguistiques et modèles pré-entraînés : LeXiK Lite, kit G2P/P2G, corpus d'entraînement.</p>
+    <a class="more-link" href="{{ '/produits/ressources/' | relative_url }}">Découvrir</a>
+  </div>
 </div>
