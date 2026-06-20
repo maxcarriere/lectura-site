@@ -102,6 +102,10 @@ result = analyser_texte("Les enfants sont arrivés à la maison.")
 # result contient : tokens, phonèmes, POS, liaisons, groupes de lecture, syllabes
 ```
 
+<div class="try-online-btn">
+  <a href="{{ '/solutions/analyse-langage/#phonémisation-orthographe-vers-phonétique' | relative_url }}">Essayer le G2P en ligne →</a>
+</div>
+
 ---
 
 ## Installation

@@ -37,7 +37,9 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 
 > **Brique vs Pipeline** : Ce moteur est la brique acoustique (phonèmes → audio). Pour le pipeline complet TTS (texte → audio avec G2P intégré et choix de moteur), voir la [page TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}).
 
-[Essayer la synthèse vocale en ligne →]({{ '/solutions/synthese-vocale/' | relative_url }})
+<div class="try-online-btn">
+  <a href="{{ '/solutions/synthese-vocale/#monospeaker--voix-haute-qualité-7-styles' | relative_url }}">Essayer la synthèse vocale en ligne →</a>
+</div>
 
 ---
 

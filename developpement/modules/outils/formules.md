@@ -69,7 +69,9 @@ print(result.display_fr)    # "vingt-cinq décembre deux-mille-vingt-quatre"
 
 ## Essayer en ligne
 
-[Essayer les Formules en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+<div class="try-online-btn">
+  <a href="{{ '/solutions/analyse-langage/#formules' | relative_url }}">Essayer les Formules en ligne →</a>
+</div>
 
 ---
 

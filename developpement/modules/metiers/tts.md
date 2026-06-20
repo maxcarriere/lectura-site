@@ -37,6 +37,10 @@ Texte français
   Audio final
 ```
 
+<div class="try-online-btn">
+  <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">Essayer la synthèse vocale en ligne →</a>
+</div>
+
 ---
 
 ## Comparatif des 3 moteurs

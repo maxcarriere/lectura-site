@@ -43,7 +43,9 @@ print(result["ortho"])   # ['les', 'enfants', 'sont', 'arrives', 'a', 'la', 'mai
 print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'NOM']
 ```
 
-[Essayer la graphémisation en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+<div class="try-online-btn">
+  <a href="{{ '/solutions/analyse-langage/#graphémisation-phonétique-vers-orthographe' | relative_url }}">Essayer la graphémisation en ligne →</a>
+</div>
 
 ---
 

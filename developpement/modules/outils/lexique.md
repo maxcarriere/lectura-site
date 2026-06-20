@@ -79,6 +79,10 @@ with Lexique("mon_lexique.csv") as lex:
     print(lex.filtrer(cgram="NOM", genre="f", freq_min=100))
 ```
 
+<div class="try-online-btn">
+  <a href="{{ '/solutions/lexique/' | relative_url }}">Essayer le Lexique en ligne →</a>
+</div>
+
 ---
 
 ## Méthodes disponibles

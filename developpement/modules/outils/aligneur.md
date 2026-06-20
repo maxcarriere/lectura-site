@@ -38,7 +38,9 @@ C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({
 
 ## Essayer en ligne
 
-[Essayer l'Aligneur en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+<div class="try-online-btn">
+  <a href="{{ '/solutions/analyse-langage/#aligneur-syllabique' | relative_url }}">Essayer l'Aligneur en ligne →</a>
+</div>
 
 ---
 

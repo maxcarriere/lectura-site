@@ -60,7 +60,9 @@ pages                      MOT
 
 ## Essayer en ligne
 
-[Essayer le Tokeniseur en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+<div class="try-online-btn">
+  <a href="{{ '/solutions/analyse-langage/#tokenisation' | relative_url }}">Essayer le Tokeniseur en ligne →</a>
+</div>
 
 ---
 

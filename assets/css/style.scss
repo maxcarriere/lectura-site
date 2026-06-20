@@ -788,6 +788,31 @@ html[data-darkreader-mode] .parchment-content a:hover {
   justify-content: center;
 }
 
+.try-online-btn {
+  display: block;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.try-online-btn a {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: 1px solid rgba(13, 13, 13, 0.3);
+  border-radius: 4px;
+  color: #0d0d0d !important;
+  -webkit-text-fill-color: #0d0d0d !important;
+  text-decoration: none !important;
+  font-family: 'EB Garamond', Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  background: #F5F5F5;
+}
+
+.try-online-btn a:hover {
+  background: #e8e0d0;
+  border-color: rgba(13, 13, 13, 0.5);
+}
+
 /* ===== 7. Liste de projets/produits ===== */
 .project-list,
 .product-list {
