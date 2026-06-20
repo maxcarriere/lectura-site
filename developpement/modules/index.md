@@ -65,4 +65,4 @@ pip install lectura-g2p                      # un pipeline
 | `[onnx]` | Backends ONNX pour tous les modèles |
 | `[all]` | Tout |
 
-Par défaut, les modules Phonémiseur, Graphémiseur et Décodeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`).
+Par défaut, les modules Phonémiseur, Graphémiseur et Décodeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`). Les modèles pré-entraînés ne sont pas inclus dans les packages et sont disponibles sous [licence commerciale](mailto:admin@lectura.world).
