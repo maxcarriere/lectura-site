@@ -19,7 +19,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
   </div>
   <div class="home-card">
     <h2>Recherche</h2>
-    <p>Approche phonétique, algorithmes d'alignement graphème-phonème, TTS diphonique.</p>
+    <p>Section expliquant l'approche phonétique, les différents algorithmes utilisés, ainsi que les projets expérimentaux (TTS diphonique, Correcteur).</p>
     <a class="more-link" href="{{ '/developpement/recherche/' | relative_url }}">Voir la recherche</a>
   </div>
   <div class="home-card">
