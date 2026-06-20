@@ -8,10 +8,10 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
 <div class="cta-box" markdown="0">
   <h3>Découvrir Lectura :</h3>
   <div class="cta-links cta-links-grid">
-    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">🔊<br>Démo<br>Synthèse vocale</a>
-    <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}">🎙️<br>Démo<br>Reconnaissance vocale</a>
-    <a href="{{ '/solutions/analyse-langage/' | relative_url }}">🔍<br>Démo<br>Analyse du langage</a>
-    <a href="https://lexique.lectura.world">📖<br>Accès<br>au Lexique</a>
+    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}"><span class="cta-icon">🔊</span>Démo<br>Synthèse<br>vocale</a>
+    <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}"><span class="cta-icon">🎙️</span>Démo<br>Reconnaissance<br>vocale</a>
+    <a href="{{ '/solutions/analyse-langage/' | relative_url }}"><span class="cta-icon">🔍</span>Démo<br>Analyse<br>du langage</a>
+    <a href="https://lexique.lectura.world"><span class="cta-icon">📖</span>Accès<br>au Lexique</a>
   </div>
 </div>
 
@@ -28,8 +28,8 @@ L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Se
 <div class="cta-box" markdown="0">
   <h3>Travailler ensemble :</h3>
   <div class="cta-links cta-links-center">
-    <a href="{{ '/solutions/services/' | relative_url }}">💼<br>Découvrir<br>nos prestations</a>
-    <a href="mailto:admin@lectura.world">✉️<br>Contactez-nous</a>
+    <a href="{{ '/solutions/services/' | relative_url }}"><span class="cta-icon">💼</span>Découvrir<br>nos prestations</a>
+    <a href="mailto:admin@lectura.world"><span class="cta-icon">✉️</span>Contactez-nous</a>
   </div>
 </div>
 
