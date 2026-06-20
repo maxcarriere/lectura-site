@@ -14,7 +14,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
   </div>
   <div class="home-card">
     <h2>Lexique</h2>
-    <p>Base lexicale LeXiK (1,35M entrées, 25 colonnes) : Documentation technique</p>
+    <p>Documentation technique de la base LeXiK : le lexique de Lectura</p>
     <a class="more-link" href="{{ '/developpement/lexique/' | relative_url }}">Voir les données</a>
   </div>
   <div class="home-card">
