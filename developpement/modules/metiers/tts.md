@@ -84,8 +84,11 @@ pip install lectura-tts-mono[onnx,retimbre]
 # Avec retimbre (Diphone + OpenVoice)
 pip install "lectura-tts-dipho[local,retimbre]"
 
-# Via le meta-package
-pip install "lectura[tts-mono]"
+# Via le meta-package lectura
+pip install "lectura[tts-mono]"              # Monospeaker + G2P
+pip install "lectura[tts-multi]"             # Multi-Speaker + G2P
+pip install "lectura[tts-dipho]"             # Diphone + G2P
+pip install "lectura[tts]"                   # Les 3 moteurs
 ```
 
 ### Extras disponibles par pipeline

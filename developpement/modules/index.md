@@ -26,23 +26,43 @@ Dix-sept packages Python autonomes pour le traitement linguistique et la synthè
 ## Installation rapide
 
 ```bash
-# Tous les modules d'un coup
-pip install lectura
+# Meta-package : installez uniquement ce dont vous avez besoin
+pip install "lectura[tokeniseur,formules]"   # 2 briques NLP
+pip install "lectura[g2p]"                   # pipeline G2P complet
+pip install "lectura[tts-mono]"              # pipeline TTS Monospeaker
 
-# Pipeline G2P complet (tokeniseur + formules + phonémiseur + groupes de lecture)
-pip install lectura-g2p
+# Groupes de commodité
+pip install "lectura[nlp]"                   # 6 briques NLP
+pip install "lectura[tts]"                   # 3 pipelines TTS
+pip install "lectura[onnx]"                  # backends ONNX pour tous les modèles
+pip install "lectura[all]"                   # tout
 
-# Pipeline P2G complet (graphémiseur + formules + noms propres)
-pip install lectura-p2g
-
-# Pipeline STT complet (audio → texte, Décodeur + P2G)
-pip install lectura-stt
-
-# TTS Monospeaker avec G2P (texte → audio)
-pip install lectura-tts-mono[onnx]
-
-# Un seul module outil
-pip install lectura-tokeniseur
+# Ou directement le package
+pip install lectura-tokeniseur               # un seul module
+pip install lectura-g2p                      # un pipeline
 ```
+
+### Extras disponibles dans le meta-package `lectura`
+
+| Extra | Contenu |
+|-------|---------|
+| `[tokeniseur]` | lectura-tokeniseur |
+| `[formules]` | lectura-formules |
+| `[phonemiseur]` | lectura-phonemiseur |
+| `[graphemiseur]` | lectura-graphemiseur |
+| `[aligneur]` | lectura-aligneur |
+| `[lexique]` | lectura-lexique |
+| `[decodeur]` | lectura-decodeur |
+| `[g2p]` | Pipeline G2P (tokeniseur + formules + phonémiseur + lexique) |
+| `[p2g]` | Pipeline P2G (graphémiseur + formules + lexique) |
+| `[stt]` | Pipeline STT (décodeur + P2G) |
+| `[tts-mono]` | Pipeline TTS Monospeaker + G2P |
+| `[tts-multi]` | Pipeline TTS Multi-Speaker + G2P |
+| `[tts-dipho]` | Pipeline TTS Diphone + G2P |
+| `[tts]` | Les 3 pipelines TTS |
+| `[vc]` | Conversion vocale (ZeroShot + Locuteurs) |
+| `[nlp]` | 6 briques NLP (tokeniseur, formules, phonémiseur, graphémiseur, aligneur, lexique) |
+| `[onnx]` | Backends ONNX pour tous les modèles |
+| `[all]` | Tout |
 
 Par défaut, les modules Phonémiseur, Graphémiseur et Décodeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`).

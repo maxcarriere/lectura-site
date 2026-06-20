@@ -60,19 +60,16 @@ pages                      MOT
 
 ## Essayer en ligne
 
-<div class="pyodide-demo" data-package="lectura-tokeniseur>=2.3.0" data-code="
-from lectura_tokeniseur import tokenise, Formule
-tokens = tokenise('{INPUT}')
-lines = []
-for t in tokens:
-    detail = t.formule_type.name if isinstance(t, Formule) else ''
-    lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
-'\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages." placeholder="Tapez du texte français...">
-  <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la démo.</pre>
-</div>
+[Essayer le Tokeniseur en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+
+---
+
+## Installation
+
+```bash
+pip install lectura-tokeniseur                # zéro dépendance
+pip install lectura-tokeniseur[formules]      # + lectura-formules (enrichissement automatique)
+```
 
 ---
 

@@ -43,6 +43,8 @@ print(result["ortho"])   # ['les', 'enfants', 'sont', 'arrives', 'a', 'la', 'mai
 print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'NOM']
 ```
 
+[Essayer la graphémisation en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+
 ---
 
 ## Architecture du modèle (V7)
@@ -75,6 +77,8 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x192h → 384d)
 pip install lectura-graphemiseur             # mode API (zero config)
 pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-graphemiseur[numpy]      # backend NumPy local
+pip install lectura-graphemiseur[lexique]    # + lectura-lexique (phone_lex_features)
+pip install lectura-graphemiseur[all]        # onnx + numpy + lexique
 ```
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).

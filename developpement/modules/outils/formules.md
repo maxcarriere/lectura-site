@@ -69,25 +69,7 @@ print(result.display_fr)    # "vingt-cinq décembre deux-mille-vingt-quatre"
 
 ## Essayer en ligne
 
-<div class="pyodide-demo" data-package="lectura-formules>=3.2.0" data-code="
-from lectura_formules import lire_formule
-r = lire_formule('NOMBRE', '{INPUT}')
-lines = []
-lines.append(f'Formule :    {INPUT}')
-lines.append(f'Lecture :    {r.display_fr}')
-lines.append(f'Phonétique : {r.phone}')
-if r.events:
-    lines.append('')
-    lines.append('Events alignés :')
-    for e in r.events:
-        s, end = e.span_num if e.span_num else (0, 0)
-        lines.append(f'  {e.ortho:20s} {e.phone:15s} span_num=[{s}:{end}]')
-'\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
-  <button class="demo-btn" type="button">Essayer</button>
-  <pre class="demo-output">Cliquez sur « Essayer » pour lancer la démo.</pre>
-</div>
+[Essayer les Formules en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
 
 ---
 

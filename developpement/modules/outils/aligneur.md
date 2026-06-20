@@ -36,73 +36,9 @@ C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({
 
 ---
 
-## Tester en ligne
+## Essayer en ligne
 
-*Le test en ligne utilise l'API Lectura (G2P + Aligneur) — aucun téléchargement nécessaire.*
-
-<div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
-
-async def _aligneur_api_call(word, phone=None):
-    resp = await pyfetch('https://api.lectura.world/aligneur/analyze',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'word': word, 'phone': phone}))
-    return await resp.json()
-
-async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'tokens': tokens}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-import re
-text = '{INPUT}'
-tokens = text.split()
-tokens = [t for t in tokens if t]
-
-# G2P
-g2p = await _g2p_api_call(tokens)
-
-lines = []
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-
-for i, tok in enumerate(tokens):
-    if _punct_re.match(tok):
-        continue
-    phone = g2p['g2p'][i] if i < len(g2p['g2p']) else ''
-    if not phone:
-        continue
-    # Aligneur
-    res = await _aligneur_api_call(tok, phone)
-    lines.append(f"{tok} -> /{phone}/")
-    for si, s in enumerate(res.get('syllabes', []), 1):
-        att_parts = []
-        for p in s.get('attaque', {}).get('phonemes', []):
-            att_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        noy_parts = []
-        for p in s.get('noyau', {}).get('phonemes', []):
-            noy_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        cod_parts = []
-        for p in s.get('coda', {}).get('phonemes', []):
-            cod_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        att = ','.join(att_parts) if att_parts else '-'
-        noy = ','.join(noy_parts) if noy_parts else '-'
-        cod = ','.join(cod_parts) if cod_parts else '-'
-        span = s.get('span', [0,0])
-        lines.append(f"  \u03c3{si} /{s['phone']}/ <<{s['ortho']}>> [{span[0]}:{span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]")
-    lines.append('')
-
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase française...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
+[Essayer l'Aligneur en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
 
 ---
 
@@ -209,7 +145,8 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 ## Installation
 
 ```bash
-pip install lectura-aligneur       # mode API par défaut (zéro dépendance)
+pip install lectura-aligneur                  # mode API (zéro dépendance)
+pip install lectura-aligneur[phonemiseur]     # + lectura-phonemiseur
 ```
 
 **Phonémiseur pluggable** : utilisable avec votre propre phonémiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonémiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}). N'importe quel objet avec une méthode `phonemize(word)` ou `predict(word)` est accepté.

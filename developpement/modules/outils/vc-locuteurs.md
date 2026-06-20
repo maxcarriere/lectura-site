@@ -32,6 +32,8 @@ Brique atomique de conversion vocale basée sur **RVC** (Retrieval-based Voice C
 
 > **Brique vs Meta-package** : Le VC Locuteurs est la brique RVC seule. Pour le méta-package unifié (ZeroShot + RVC Locuteurs), voir [lectura-vc]({{ '/developpement/modules/metiers/vc/' | relative_url }}).
 
+[Essayer la conversion vocale en ligne →]({{ '/developpement/modules/metiers/vc/' | relative_url }})
+
 ---
 
 ## Voix disponibles

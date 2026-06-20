@@ -11,7 +11,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
 <div class="home-grid">
   <div class="home-card">
     <h2>Tokeniseur</h2>
-    <p>Normalisation et tokenisation du français, détection de 15+ types de formules.</p>
+    <p>Normalisation et tokenisation du français, détection de 15+ types de formules. Extra <code>[formules]</code> pour l'enrichissement automatique.</p>
     <code class="card-install">pip install lectura-tokeniseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tokeniseur/' | relative_url }}">Détails</a>
@@ -29,7 +29,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
   <div class="home-card">
     <h2>Phonémiseur</h2>
-    <p>Modèle BiLSTM multi-tête (1.75M params) : G2P 98.5%, POS, morphologie, liaison.</p>
+    <p>Modèle BiLSTM multi-tête (1.75M params) : G2P 98.5%, POS, morphologie, liaison. Extras <code>[onnx]</code>, <code>[lexique]</code>, <code>[all]</code>.</p>
     <code class="card-install">pip install lectura-phonemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/phonemiseur/' | relative_url }}">Détails</a>
@@ -38,7 +38,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
   <div class="home-card">
     <h2>Graphémiseur</h2>
-    <p>Modèle BiLSTM V7 (3.2M params) : P2G ~95%, attention cross, lex_select.</p>
+    <p>Modèle BiLSTM V7 (3.2M params) : P2G ~95%, attention cross, lex_select. Extras <code>[onnx]</code>, <code>[lexique]</code>, <code>[all]</code>.</p>
     <code class="card-install">pip install lectura-graphemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/graphemiseur/' | relative_url }}">Détails</a>
@@ -47,7 +47,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
   <div class="home-card">
     <h2>Aligneur-Syllabeur</h2>
-    <p>Pivot central : alignement graphème-phonème, groupes de lecture, syllabation avec attaque/noyau/coda.</p>
+    <p>Pivot central : alignement graphème-phonème, groupes de lecture, syllabation avec attaque/noyau/coda. Extra <code>[phonemiseur]</code>.</p>
     <code class="card-install">pip install lectura-aligneur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/aligneur/' | relative_url }}">Détails</a>
@@ -97,7 +97,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
   <div class="home-card">
     <h2>Décodeur</h2>
-    <p>Décodeur phonétique neural CNN-BiGRU-CTC (10.6M params, PER ~4.34%) + STT-Formules (600K params).</p>
+    <p>Décodeur phonétique neural CNN-BiGRU-CTC (10.6M params, PER ~4.34%) + STT-Formules (600K params). Extra <code>[onnx]</code>.</p>
     <code class="card-install">pip install lectura-decodeur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/ctc/' | relative_url }}">Détails</a>

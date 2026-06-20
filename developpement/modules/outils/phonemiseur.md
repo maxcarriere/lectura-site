@@ -46,6 +46,8 @@ print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER:pper', 'PRE', 'ART:de
 print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 ```
 
+[Essayer la phonémisation en ligne →]({{ '/solutions/analyse-langage/' | relative_url }})
+
 ---
 
 ## Architecture du modèle
@@ -73,6 +75,8 @@ Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 pip install lectura-phonemiseur             # mode API (zero config, zéro dépendance)
 pip install lectura-phonemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-phonemiseur[numpy]      # backend NumPy local
+pip install lectura-phonemiseur[lexique]    # + lectura-lexique (features POS)
+pip install lectura-phonemiseur[all]        # onnx + numpy + lexique
 ```
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
