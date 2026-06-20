@@ -7,12 +7,11 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
 
 <div class="cta-box" markdown="0">
   <h3>Découvrir Lectura</h3>
-  <p>Explorez les outils et les données du projet directement en ligne.</p>
   <div class="cta-links">
-    <a href="{{ '/solutions/analyse-langage/' | relative_url }}">Démos en ligne</a>
-    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">Synthèse vocale</a>
-    <a href="https://lexique.lectura.world">LeXiK (Lexique)</a>
-    <a href="{{ '/developpement/modules/' | relative_url }}">Modules Python</a>
+    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">🔊 Démo Synthèse vocale</a>
+    <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}">🎙️ Démo Reconnaissance vocale</a>
+    <a href="{{ '/solutions/analyse-langage/' | relative_url }}">🔍 Démo Analyse du langage</a>
+    <a href="https://lexique.lectura.world">📖 Accès au Lexique</a>
   </div>
 </div>
 
@@ -28,10 +27,9 @@ L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Se
 
 <div class="cta-box" markdown="0">
   <h3>Travailler ensemble</h3>
-  <p>Vous souhaitez intégrer ces outils dans vos projets ou bénéficier d'une expertise en traitement du langage et IA ?</p>
-  <div class="cta-links">
-    <a href="{{ '/solutions/services/' | relative_url }}">Prestations</a>
-    <a href="mailto:admin@lectura.world">Contactez-moi</a>
+  <div class="cta-links cta-links-center">
+    <a href="{{ '/solutions/services/' | relative_url }}">💼 Découvrir nos prestations</a>
+    <a href="mailto:admin@lectura.world">✉️ Contactez-moi</a>
   </div>
 </div>
 
