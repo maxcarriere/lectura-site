@@ -10,7 +10,7 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
   <div class="cta-links cta-links-grid">
     <a href="{{ '/solutions/synthese-vocale/' | relative_url }}"><span class="cta-icon">🔊</span>Démo<br>Synthèse<br>vocale</a>
     <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}"><span class="cta-icon">🎙️</span>Démo<br>Reconnaissance<br>vocale</a>
-    <a href="{{ '/solutions/analyse-langage/' | relative_url }}"><span class="cta-icon">🔍</span>Démo<br>Analyse<br>du langage</a>
+    <a href="{{ '/solutions/analyse-langage/' | relative_url }}"><span class="cta-icon">🔤</span>Démo<br>Analyse<br>du langage</a>
     <a href="https://lexique.lectura.world"><span class="cta-icon">📖</span>Accès<br>au Lexique<br>de Lectura</a>
   </div>
 </div>
