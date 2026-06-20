@@ -743,6 +743,47 @@ html[data-darkreader-mode] .parchment-content a:hover {
   border-bottom-color: rgba(13, 13, 13, 0.6) !important;
 }
 
+.cta-box {
+  margin: 2em 0;
+  padding: 1.5rem 2rem;
+  border: 1px solid rgba(13, 13, 13, 0.2);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cta-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #0d0d0d !important;
+  font-size: 1.1rem;
+}
+
+.cta-box p {
+  margin-bottom: 1rem;
+  color: #0d0d0d !important;
+}
+
+.cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-links a {
+  display: inline-block;
+  padding: 0.4em 1em;
+  border: 1px solid rgba(13, 13, 13, 0.3);
+  border-radius: 4px;
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+}
+
+.cta-links a:hover {
+  background: rgba(13, 13, 13, 0.06);
+  border-color: rgba(13, 13, 13, 0.5);
+}
+
 /* ===== 7. Liste de projets/produits ===== */
 .project-list,
 .product-list {
