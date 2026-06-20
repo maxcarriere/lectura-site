@@ -32,6 +32,10 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 
 > **Brique vs Meta-package** : Le VC ZeroShot est la brique OpenVoice seule. Pour le méta-package unifié (ZeroShot + RVC Locuteurs), voir [lectura-vc]({{ '/developpement/modules/metiers/vc/' | relative_url }}).
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/developpement/modules/metiers/vc/#essayer-en-ligne' | relative_url }}">Essayer la conversion vocale en ligne →</a>
 </div>

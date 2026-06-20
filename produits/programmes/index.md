@@ -25,3 +25,13 @@ Logiciel de synthèse et de reconnaissance vocale avec surlignage synchronisé. 
 Interface d'accès à la base lexicale LeXiK et outil d'enrichissement de texte. Explorez les 1,35 million de mots et les 2,5 millions d'entités du lexique de lectura (phonétique, morphologie, fréquences, synonymes, définitions) et annotez automatiquement n'importe quel texte avec ses propriétés linguistiques et conceptuelles.
 
 [En savoir plus →](/produits/programmes/lexique-viewer/)
+
+---
+
+## [Lectura Formule](/produits/programmes/formule/)
+
+<span class="status-badge status-cours">En cours de développement</span>
+
+Application interactive de lecture de formules françaises avec alignement visuel et lecture audio synchronisée. Chaque formule (nombre, date, heure, sigle, expression mathématique…) est décomposée en composants avec surlignage, transcription IPA et sons WAV.
+
+[En savoir plus →](/produits/programmes/formule/)

@@ -93,6 +93,10 @@ result = engine.analyser(["sɛ̃k", "sɑ̃", "vɛ̃", "e", "œ̃"])
 print(result["ortho"])   # ['521']  — formules reconnues et fusionnées
 ```
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/solutions/analyse-langage/#graphémisation-phonétique-vers-orthographe' | relative_url }}">Essayer le P2G en ligne →</a>
 </div>

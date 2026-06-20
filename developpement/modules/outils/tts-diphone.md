@@ -35,6 +35,10 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 
 > **Brique vs Pipeline** : Ce moteur est la brique acoustique diphonique (phonèmes → audio). Pour le pipeline complet TTS (texte → audio avec G2P intégré et choix de moteur), voir la [page TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}).
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/solutions/synthese-vocale/#diphone--lecture-adaptée' | relative_url }}">Essayer la synthèse vocale Diphone en ligne →</a>
 </div>

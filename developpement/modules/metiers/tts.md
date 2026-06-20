@@ -37,6 +37,10 @@ Texte français
   Audio final
 ```
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">Essayer la synthèse vocale en ligne →</a>
 </div>

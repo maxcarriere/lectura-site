@@ -35,6 +35,10 @@ Le modèle medium supporte les sigles et formules grâce à un fine-tuning spéc
 
 > **Brique vs Pipeline** : Le CTC est le décodeur brut (audio → phones IPA). Pour le pipeline complet STT (audio → texte orthographique, avec P2G et formules), voir [lectura-stt]({{ '/developpement/modules/metiers/stt/' | relative_url }}).
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/solutions/reconnaissance-vocale/#essayer-en-ligne' | relative_url }}">Essayer la reconnaissance vocale en ligne →</a>
 </div>

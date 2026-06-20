@@ -46,6 +46,10 @@ print(result["pos"])      # ['ART:def', 'NOM', 'AUX', 'VER:pper', 'PRE', 'ART:de
 print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 ```
 
+---
+
+## Essayer en ligne
+
 <div class="try-online-btn">
   <a href="{{ '/solutions/analyse-langage/#phonémisation-orthographe-vers-phonétique' | relative_url }}">Essayer la phonémisation en ligne →</a>
 </div>

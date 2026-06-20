@@ -22,9 +22,9 @@ Module autonome, **zéro dépendance** externe (aucune dépendance Python tierce
 
 Nombres, sigles, dates, téléphones, heures, monnaies, ordinaux, fractions, notations scientifiques, expressions mathématiques, coordonnées GPS — tout est couvert.
 
-Chaque formule est décomposée en **events alignés** : chaque composant de la formule est associé à son texte lu, sa transcription IPA, et sa position dans la formule source. Cet alignement permet la lecture synchronisée et la **lecture audio** à partir d'une banque de sons WAV (~12 Mo, 289 fichiers disponibles sur GitHub).
+Chaque formule est décomposée en **events alignés** : chaque composant de la formule est associé à son texte lu, sa transcription IPA, et sa position dans la formule source. Cet alignement permet la lecture synchronisée et la **lecture audio** à partir d'une banque de sons WAV (~12 Mo, 299 fichiers disponibles sur GitHub).
 
-*Pour une démo complète avec lecture audio et alignement visuel, voir le programme [Lectura Formule]({{ '/produits/programmes/' | relative_url }}).*
+*Pour une démo complète avec lecture audio et alignement visuel, voir le programme [Lectura Formule]({{ '/produits/programmes/formule/' | relative_url }}).*
 
 ---
 
@@ -92,7 +92,7 @@ Cet alignement permet de :
 - **Jouer les sons** WAV composant par composant
 - **Synchroniser** l'affichage visuel avec l'audio
 
-Les fichiers WAV (~12 Mo, 289 sons) sont disponibles sur GitHub. Le programme **Lectura Formule** offre une démo interactive complète avec lecture audio synchronisée.
+Les fichiers WAV (~12 Mo, 299 sons) sont disponibles sur GitHub. Le programme **Lectura Formule** offre une démo interactive complète avec lecture audio synchronisée.
 
 ---
 
@@ -254,7 +254,7 @@ pip install lectura-formules
 - **15+ types de formules** reconnus
 - **Transcription phonétique IPA** automatique
 - **Events alignés** : décomposition composant par composant avec positions
-- **Sons WAV optionnels** (~12 Mo, 289 fichiers) disponibles sur GitHub
+- **Sons WAV optionnels** (~12 Mo, 299 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 3.6.0
 - **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
