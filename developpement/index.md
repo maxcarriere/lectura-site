@@ -13,7 +13,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
     <a class="more-link" href="{{ '/developpement/modules/' | relative_url }}">Voir les modules</a>
   </div>
   <div class="home-card">
-    <h2>Lexique & Données</h2>
+    <h2>Lexique</h2>
     <p>Base lexicale LeXiK (1,35M entrées, 25 colonnes), corpus annoté (22K phrases), modèles pré-entraînés.</p>
     <a class="more-link" href="{{ '/developpement/lexique/' | relative_url }}">Voir les données</a>
   </div>
