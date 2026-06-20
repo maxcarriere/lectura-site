@@ -105,7 +105,7 @@ pip install "lectura[tts]"                   # Les 3 moteurs
 |-------|:-----------:|:-------------:|:-------:|
 | Backend local | `[onnx]` | `[onnx]` | `[local]` |
 | `[retimbre]` | oui | oui | oui |
-| `[aligneur]` | oui | — | — |
+| `[aligneur]` (lecture syllabique) | oui | oui | oui |
 
 Chaque pipeline inclut le G2P par défaut. Les moteurs bruts (`lectura-monospeaker`, `lectura-multispeaker`, `lectura-diphone`) fonctionnent aussi en mode **API** sans backend local.
 

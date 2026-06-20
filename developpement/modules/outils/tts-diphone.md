@@ -141,6 +141,7 @@ pip install "lectura-tts-dipho[local,retimbre]"  # + retimbre multi-voix (OpenVo
 | `[local]` | `lectura-diphone` | Backend local pyworld + numpy + scipy |
 | `[local]` | `lectura-tts-dipho` | Pipeline G2P + moteur local |
 | `[retimbre]` | `lectura-tts-dipho` | Retimbre multi-voix via OpenVoice |
+| `[aligneur]` | `lectura-tts-dipho` | Syllabation pour le mode lecture syllabique (lectura-aligneur) |
 
 ---
 

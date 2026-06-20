@@ -123,6 +123,7 @@ pip install lectura-tts-multi[onnx,retimbre]  # + retimbre multi-voix (OpenVoice
 | `[onnx]` | `lectura-multispeaker` | Backend ONNX Runtime local + numpy |
 | `[onnx]` | `lectura-tts-multi` | Pipeline G2P + moteur ONNX |
 | `[retimbre]` | `lectura-tts-multi` | Retimbre multi-voix via OpenVoice |
+| `[aligneur]` | `lectura-tts-multi` | Syllabation pour le mode lecture syllabique (lectura-aligneur) |
 
 Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
 
