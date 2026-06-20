@@ -24,7 +24,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
   </div>
   <div class="home-card">
     <h2>Projets</h2>
-    <p>Correcteur grammatical, applications pédagogiques, pistes d'amélioration.</p>
+    <p>Les projets en cours de réalisation : Correcteur grammatical, applications pédagogiques, pistes d'amélioration.</p>
     <a class="more-link" href="{{ '/developpement/projets/' | relative_url }}">Voir les projets</a>
   </div>
 </div>
