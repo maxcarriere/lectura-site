@@ -6,12 +6,12 @@ layout: default
 Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour. De nombreux travaux et démonstrations sont accessibles directement sur ce site.
 
 <div class="cta-box" markdown="0">
-  <h3>Découvrir Lectura</h3>
-  <div class="cta-links">
-    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">🔊 Démo Synthèse vocale</a>
-    <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}">🎙️ Démo Reconnaissance vocale</a>
-    <a href="{{ '/solutions/analyse-langage/' | relative_url }}">🔍 Démo Analyse du langage</a>
-    <a href="https://lexique.lectura.world">📖 Accès au Lexique</a>
+  <h3>Découvrir Lectura :</h3>
+  <div class="cta-links cta-links-grid">
+    <a href="{{ '/solutions/synthese-vocale/' | relative_url }}">🔊<br>Démo<br>Synthèse vocale</a>
+    <a href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}">🎙️<br>Démo<br>Reconnaissance vocale</a>
+    <a href="{{ '/solutions/analyse-langage/' | relative_url }}">🔍<br>Démo<br>Analyse du langage</a>
+    <a href="https://lexique.lectura.world">📖<br>Accès<br>au Lexique</a>
   </div>
 </div>
 
@@ -26,10 +26,10 @@ Les projets développés s'expriment dans plusieurs composantes :
 L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Des [prestations]({{ '/solutions/services/' | relative_url }}) sont proposées aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leurs propres projets. Je suis également ouvert à toute proposition de mission en lien plus ou moins étroit avec mon domaine d'expertise ou avec l'utilisation de l'IA ou le développement informatique. Pour en savoir plus sur le porteur de projet, sa démarche et sa vision, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}). Des liens redirigent vers d'autres sites qui portent d'autres projets, notamment [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](http://www.zmaths.net/) (cours de mathématiques en ligne).
 
 <div class="cta-box" markdown="0">
-  <h3>Travailler ensemble</h3>
+  <h3>Travailler ensemble :</h3>
   <div class="cta-links cta-links-center">
-    <a href="{{ '/solutions/services/' | relative_url }}">💼 Découvrir nos prestations</a>
-    <a href="mailto:admin@lectura.world">✉️ Contactez-moi</a>
+    <a href="{{ '/solutions/services/' | relative_url }}">💼<br>Découvrir<br>nos prestations</a>
+    <a href="mailto:admin@lectura.world">✉️<br>Contactez-nous</a>
   </div>
 </div>
 
