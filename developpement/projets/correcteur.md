@@ -9,9 +9,18 @@ redirect_from:
 
 <span class="status-badge status-cours">En cours</span>
 
-## Présentation
+## L'idée
 
-Pipeline de correction orthographique et grammaticale du français, à base de **règles linguistiques** avec support optionnel de modèles statistiques (BiLSTM edit tagger, modèle de langue n-gram).
+La correction orthographique peut se ramener à un problème phonétique. L'intuition est la suivante : la plupart des erreurs d'orthographe ne changent pas la prononciation de la phrase. Que l'on écrive « les enfant mange » ou « les enfants mangent », la phrase se prononce de la même façon.
+
+Le pipeline du correcteur exploite cette observation en deux temps :
+
+1. **Étape typographique** : correction des erreurs de frappe, resegmentation (« jai » → « j'ai »), accents manquants. Ces erreurs sont détectables sans analyse linguistique.
+2. **Pipeline G2P / P2G** : le texte est converti en phonétique par le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (G2P), puis reconverti en texte par le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (P2G). Le graphémiseur, entraîné sur des phrases correctes, retrouve les accords, distingue les homophones et reconstruit l'orthographe attendue.
+
+Le résultat est frappant : corriger un texte mal orthographié revient au même problème que transcrire une voix en texte propre. Dans les deux cas, on part d'une représentation phonétique (explicite pour la voix, reconstituée pour le texte) et on produit un texte orthographiquement correct. Le correcteur et le STT partagent ainsi le même cœur : le pipeline P2G.
+
+Le correcteur combine cette approche phonétique avec des **règles linguistiques** et un support optionnel de modèles statistiques (BiLSTM edit tagger, modèle de langue n-gram).
 
 <div class="module-links">
   <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Correcteur" class="module-badge">GitHub</a>
