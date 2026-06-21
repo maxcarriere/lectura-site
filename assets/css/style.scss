@@ -795,6 +795,24 @@ html[data-darkreader-mode] .parchment-content a:hover {
   gap: 0.75rem;
 }
 
+@media (max-width: 600px) {
+  .cta-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-links-grid a {
+    aspect-ratio: auto;
+    flex-direction: row;
+    gap: 0.75em;
+    padding: 0.75em 1em;
+  }
+
+  .cta-icon {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+}
+
 .cta-icon {
   display: block;
   font-size: 2rem;
