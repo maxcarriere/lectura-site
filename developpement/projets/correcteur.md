@@ -42,20 +42,49 @@ Le correcteur combine cette approche phonétique avec des **règles linguistique
 
 ---
 
-## Benchmark comparatif
+## État actuel
 
-Évaluation GEC débiaisée sur 180 phrases (158 erronées, 22 correctes) couvrant orthographe, accords, conjugaison, homophones et phrases correctes.
+Le correcteur est en cours de développement. Le point bloquant actuel est l'**amélioration du pipeline P2G** (phonèmes → texte). Avec une précision de ~95%, le Graphémiseur est satisfaisant pour la reconnaissance vocale (STT), où l'on accepte une transcription plus approximative. Ce n'est pas le cas pour un correcteur orthographique, qui exige une précision nettement supérieure pour ne pas introduire de nouvelles erreurs.
 
-| Correcteur | Précision | Rappel | F0.5 | F1 |
-|------------|-----------|--------|------|-----|
-| **Lectura** (règles) | **0.790** | 0.599 | **0.742** | 0.681 |
-| **Lectura** (règles + scoring) | 0.782 | **0.633** | 0.747 | **0.700** |
-| Grammalecte | 0.465 | 0.388 | 0.447 | 0.423 |
-| Baseline (ne rien faire) | 1.000 | 0.000 | 0.000 | 0.000 |
+L'effort se concentre donc sur l'amélioration du [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) avant de poursuivre le développement du correcteur.
 
-*Précision = corrections correctes / total corrections proposées. Rappel = erreurs détectées / total erreurs dans le corpus. F0.5 privilégie la précision (éviter les faux positifs).*
+---
 
-Le correcteur Lectura privilégie la **précision** : il propose peu de corrections erronées, ce qui est essentiel pour un usage non supervisé.
+## Évaluation
+
+### Correcteurs comparés
+
+L'évaluation porte sur les correcteurs accessibles pour le français :
+
+| Correcteur | Type | Description |
+|------------|------|-------------|
+| **Lectura** | Phonétique + règles | Pipeline G2P/P2G + règles linguistiques |
+| **Grammalecte** | Règles | Correcteur open source à base de règles |
+| **LanguageTool** | Règles + ML | Correcteur open source multilingue |
+| **Antidote** | Commercial | Référence commerciale pour le français |
+| **BonPatron** | En ligne | Correcteur en ligne spécialisé français |
+
+### Métriques
+
+Les métriques standard en correction grammaticale (GEC) sont :
+
+- **Précision** : corrections correctes / total corrections proposées (éviter les faux positifs)
+- **Rappel** : erreurs détectées / total erreurs dans le corpus
+- **F0.5** : moyenne harmonique privilégiant la précision (métrique de référence en GEC, car un correcteur qui introduit de nouvelles erreurs est pire qu'un correcteur prudent)
+- **F1** : moyenne harmonique équilibrée entre précision et rappel
+
+### Corpus d'évaluation
+
+Un point essentiel de l'évaluation est l'utilisation de **plusieurs corpus** aux profils différents. Un correcteur peut exceller sur un type d'erreurs et échouer sur un autre. Les corpus envisagés :
+
+| Corpus | Profil | Intérêt |
+|--------|--------|---------|
+| **WiCoPaCo** | Erreurs de contributeurs Wikipédia (natifs) | Fautes courantes du français courant |
+| **CEFLE** | Productions d'apprenants FLE (niveaux CECRL) | Erreurs d'accords, conjugaison, interférences L1 |
+| **Lang-8** (sous-ensemble français) | Textes corrigés par la communauté | Variété de niveaux et de types d'erreurs |
+| **Corpus manuel Lectura** | Phrases construites couvrant chaque type d'erreur | Couverture systématique (homophones, accords, etc.) |
+
+Évaluer sur un seul corpus risque de biaiser les résultats : un corpus d'apprenants FLE surreprésente les erreurs d'interférence, un corpus de natifs surreprésente les fautes d'inattention et les homophones. La combinaison de plusieurs sources donne une image plus fiable des forces et faiblesses de chaque correcteur.
 
 ---
 
@@ -105,15 +134,6 @@ Le correcteur se rabat automatiquement sur les règles si les modèles optionnel
 | **Lexique complet** | `lectura-lexique` | ~900 Mo | `pip install lectura-correcteur[sqlite]` |
 | **Lexique léger** | aucune | ~50 Mo | Inclus dans le wheel privé |
 | **API** | aucune | 0 Mo | `pip install lectura-correcteur` |
-
----
-
-## Feuille de route
-
-- Amélioration du rappel (détection des erreurs de style, répétitions)
-- Intégration d'un modèle de langue plus large (5-gram)
-- Support des règles typographiques françaises
-- Mode « explication pédagogique » pour chaque correction
 
 ---
 
