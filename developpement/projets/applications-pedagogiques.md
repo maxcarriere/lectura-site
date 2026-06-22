@@ -4,57 +4,43 @@ layout: default
 permalink: /developpement/projets/applications-pedagogiques/
 ---
 
-<span class="status-badge status-avenir">À venir</span>
+## L'objectif
 
-## Vision
-
-Les modules Lectura sont conçus pour alimenter des applications pédagogiques dans trois domaines :
+L'ambition de Lectura est de développer des outils permettant à un enfant d'**apprendre à lire de façon autonome**, sans intervention constante d'un adulte. L'idée directrice est que l'exposition répétée à un texte synchronisé avec le son, au niveau du phonème ou de la syllabe, permet à l'apprenant d'intégrer progressivement et naturellement la correspondance entre le texte écrit et les sons du langage parlé, qui est le fondement même de la lecture.
 
 ---
 
-## Lecture assistée
+## Le surlignage synchronisé
 
-Aide à l'apprentissage de la lecture pour les enfants et les adultes en alphabétisation :
+Le principe est simple : pendant que l'enfant écoute une histoire, chaque syllabe ou phonème est surligné au moment exact où il est prononcé. Par cette exposition répétée, l'enfant finit par associer de lui-même les groupes de lettres aux sons qu'ils produisent.
 
-- **Texte enrichi** : syllabes colorées, phonèmes affichés, lettres muettes grisées
-- **Lecture synchronisée** : audio syllabe par syllabe via le [moteur TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}) (modes FLUIDE, MOT_A_MOT, SYLLABES)
-- **Progression adaptée** : difficulté croissante (syllabes simples → complexes → liaisons → lettres muettes)
-- **Feedback vocal** : l'élève lit à voix haute, le [pipeline STT]({{ '/developpement/modules/metiers/stt/' | relative_url }}) transcrit et compare
+Cette approche repose sur les briques techniques développées par Lectura :
 
----
-
-## Français Langue Étrangère (FLE)
-
-Outils pour les apprenants du français comme langue seconde :
-
-- **Prononciation** : comparaison entre la prononciation de l'apprenant et la transcription IPA attendue (via CTC)
-- **Liaisons et enchaînements** : visualisation interactive des connexions entre mots
-- **Minimal pairs** : exercices de discrimination phonétique générés depuis le [lexique]({{ '/developpement/lexique/' | relative_url }})
-- **Dictée** : le TTS dicte, l'apprenant écrit, le correcteur valide
+- L'[alignement graphème-phonème]({{ '/developpement/recherche/algorithmes/' | relative_url }}) pour savoir quelle lettre correspond à quel son
+- La [syllabation]({{ '/developpement/recherche/algorithmes/' | relative_url }}) pour découper les mots en unités lisibles
+- Les [groupes de lecture]({{ '/developpement/recherche/algorithmes/' | relative_url }}) pour gérer les liaisons entre mots
+- Le [pipeline G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) pour produire un texte enrichi (syllabes colorées, lettres muettes grisées, phonèmes affichés)
+- La [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) pour la lecture audio synchronisée
 
 ---
 
-## Orthophonie
+## Le temps d'écran comme opportunité
 
-Support pour les professionnels de la rééducation du langage :
+Les enfants passent un nombre d'heures significatif devant les écrans. Plutôt que de considérer ce temps comme perdu, l'idée est de proposer des supports numériques qui transforment une partie de ce temps d'écran en temps d'apprentissage, sans que l'enfant ait l'impression de « travailler ».
 
-- **Évaluation phonologique** : transcription automatique de la parole de l'enfant (CTC) et comparaison avec la cible
-- **Exercices ciblés** : génération de listes de mots par phonème, position syllabique ou complexité
-- **Suivi de progression** : mesures objectives (PER, accuracy par phonème) sur les séances successives
-- **Matériel adapté** : génération automatique de supports visuels avec le [pipeline phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }})
+Si un enfant utilise une partie de son temps d'écran pour **regarder des histoires avec lecture guidée**, le volume d'exposition cumulé devient considérable. Quelques minutes par jour, sur plusieurs mois, représentent des dizaines d'heures d'exposition à la correspondance son/texte. C'est cette répétition, naturelle et sans effort, qui permet l'apprentissage.
 
 ---
 
-## Modules concernés
+## Autres applications envisagées
 
-| Application | Modules principaux |
-|-------------|-------------------|
-| Lecture assistée | TTS Diphone, Pipeline G2P, Aligneur |
-| FLE | CTC, Pipeline G2P, Lexique, TTS |
-| Orthophonie | CTC, Pipeline G2P, Lexique, Formules |
+Au-delà de l'apprentissage de la lecture, les mêmes briques techniques ouvrent des pistes pour :
+
+- Le **Français Langue Étrangère (FLE)** : visualisation des liaisons, exercices de prononciation, dictées avec correction automatique
+- L'**orthophonie** : transcription automatique de la parole, génération d'exercices ciblés par phonème, suivi de progression
 
 ---
 
 ## État
 
-Ces applications sont en phase de conception. Les briques techniques sous-jacentes (TTS, STT, G2P, Aligneur) sont opérationnelles. Le développement des interfaces utilisateur et des parcours pédagogiques est planifié.
+Le développement des applications pédagogiques constitue la **seconde phase** du projet Lectura. La priorité actuelle est de consolider les briques techniques sous-jacentes (TTS, STT, G2P, Aligneur, Syllabeur), qui sont opérationnelles. La conception des interfaces utilisateur et des parcours pédagogiques viendra dans un second temps.

@@ -69,6 +69,8 @@
           url: /developpement/recherche/algorithmes/
         - title: "TTS diphonique"
           url: /developpement/recherche/tts-diphonique/
+        - title: "Ingénierie des modèles"
+          url: /developpement/recherche/ingenierie-modeles/
     - title: Projets
       url: /developpement/projets/
       children:
@@ -76,8 +78,6 @@
           url: /developpement/projets/correcteur/
         - title: "Applications pédagogiques"
           url: /developpement/projets/applications-pedagogiques/
-        - title: "Pistes d'amélioration"
-          url: /developpement/projets/pistes/
 
 - title: "À propos"
   url: /a-propos/

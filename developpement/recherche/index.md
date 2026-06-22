@@ -22,4 +22,9 @@ Axes de recherche et essais techniques de Lectura. Ces travaux alimentent l'ense
     <p>Projet experimental de TTS concaténatif : Vocoder WORLD, 1290 diphones, modèle prosodique, GV compensation.</p>
     <a class="more-link" href="{{ '/developpement/recherche/tts-diphonique/' | relative_url }}">Consulter la page</a>
   </div>
+  <div class="home-card">
+    <h2>Ingénierie des modèles</h2>
+    <p>Choix d'architectures neurales, bilan (succès et échecs), pistes d'amélioration : Conformer, GAN, attention, scaling.</p>
+    <a class="more-link" href="{{ '/developpement/recherche/ingenierie-modeles/' | relative_url }}">Consulter la page</a>
+  </div>
 </div>
