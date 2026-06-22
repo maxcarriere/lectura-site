@@ -9,7 +9,7 @@ Lectura est un écosystème de projets modulaires situé à la croisée de l'éd
 <div class="home-grid">
   <div class="home-card">
     <h2>Méthode</h2>
-    <p>Le développement augmenté : une méthode où la vision d'ensemble prime sur la maîtrise technique spécialisée.</p>
+    <p>La méthode de travail IA-first qui structure chaque réalisation Lectura.</p>
     <a class="more-link" href="{{ '/a-propos/methode/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
@@ -21,5 +21,10 @@ Lectura est un écosystème de projets modulaires situé à la croisée de l'éd
     <h2>Qui suis-je ?</h2>
     <p>Le parcours atypique qui a mené à ce projet, et ce qu'il démontre.</p>
     <a class="more-link" href="{{ '/a-propos/qui-suis-je/' | relative_url }}">Découvrir</a>
+  </div>
+  <div class="home-card">
+    <h2>Humanuscrit</h2>
+    <p>Le projet frère de Lectura : une exploration réflexive de la création à l'ère de l'IA.</p>
+    <a class="more-link" href="{{ '/a-propos/humanuscrit/' | relative_url }}">Découvrir</a>
   </div>
 </div>
