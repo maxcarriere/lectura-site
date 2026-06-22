@@ -15,6 +15,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <code class="card-install">pip install lectura-tokeniseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tokeniseur/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-tokeniseur/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Tokeniseur">GitHub</a>
     </div>
   </div>
@@ -25,6 +26,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/formules/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-formules/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Formules">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -33,6 +35,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <code class="card-install">pip install lectura-phonemiseur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/phonemiseur/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-phonemiseur/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur">GitHub</a>
     </div>
   </div>
@@ -43,6 +46,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/graphemiseur/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-graphemiseur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Graphemiseur">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -51,6 +55,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <code class="card-install">pip install lectura-aligneur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/aligneur/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-aligneur/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur">GitHub</a>
     </div>
   </div>
@@ -60,6 +65,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <code class="card-install">pip install lectura-lexique</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/lexique/' | relative_url }}">Détails</a>
+      <a class="more-link" href="https://pypi.org/project/lectura-lexique/">PyPI</a>
       <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Lexique">GitHub</a>
     </div>
   </div>
@@ -75,6 +81,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-mono/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-monospeaker/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Monospeaker">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -84,6 +91,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-multi/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-multispeaker/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/MultiSpeaker">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -93,6 +101,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/tts-diphone/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-diphone/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Diphone">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -102,6 +111,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/ctc/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-decodeur/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/Decodeur">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -111,6 +121,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-vc-zeroshot/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot">GitHub</a>
     </div>
   </div>
   <div class="home-card">
@@ -120,6 +131,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/vc-locuteurs/' | relative_url }}">Détails</a>
       <a class="more-link" href="https://pypi.org/project/lectura-vc-locuteurs/">PyPI</a>
+      <a class="more-link" href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-Locuteurs">GitHub</a>
     </div>
   </div>
 </div>
