@@ -6,43 +6,27 @@ permalink: /a-propos/qui-suis-je/
 
 ## Qui porte ce projet ?
 
-Lectura est porté par **Max**, professeur de mathématiques engagé dans une reconversion professionnelle.
-
-Le projet est né d'un constat simple : les outils d'intelligence artificielle transforment en profondeur la manière de travailler, de créer et de produire. Plutôt que de subir cette transformation, Lectura est une tentative de **l'explorer activement** — en construisant des projets réels, utiles et documentés.
+Agrégé de mathématiques, j'ai enseigné pendant dix ans dans le secondaire, principalement au lycée. Cette expérience a façonné une manière de penser les problèmes : décomposer, structurer, transmettre. Puis est venu le moment de changer de voie.
 
 ---
 
-## Un parcours atypique
+## Vers l'intelligence artificielle
 
-Ce site, les outils qu'il présente et le code qui les fait fonctionner ont été réalisés **sans formation technique en informatique ou en développement web**. Tout a été construit par la pratique, en collaborant étroitement avec des outils d'intelligence artificielle.
-
-Ce n'est pas un handicap. C'est précisément le sujet : montrer ce qui est réellement faisable aujourd'hui quand on combine une vision claire, une méthode rigoureuse et les bons outils.
+L'informatique, la logique et le langage m'ont toujours intéressé. Le tournant vers l'IA s'est fait naturellement, au moment où les premiers chatbots ont commencé à devenir réellement performants. Ce qui relevait de la curiosité est devenu un champ de travail à part entière.
 
 ---
 
-## Ce que Lectura démontre
+## La genèse de Lectura
 
-Au-delà des outils éducatifs qu'il produit, Lectura est une **démonstration de méthode** :
+Le projet est né de manière progressive. D'abord des projets personnels pour se former. Un travail de data sur la base [Lexique383](http://www.lexique.org/), qui a fait émerger un constat : il y avait quelque chose à faire avec la phonétique et la lecture syllabique.
 
-> Ce que je fais ici n'est pas de la programmation. C'est de l'orchestration de pensée.
-
-La valeur n'est pas dans le code lui-même, mais dans la capacité à :
-- concevoir un projet de bout en bout,
-- le structurer de façon claire et modulaire,
-- le faire produire par des outils IA,
-- le valider, le documenter et le diffuser.
+Les premiers algorithmes ont suivi — alignement graphème-phonème, syllabation, formule de lisibilité. Puis un tournant décisif : les agents IA fonctionnant directement sur le PC. La vision globale du projet a permis de paralléliser les composantes et d'avancer progressivement et simultanément sur l'écosystème entier.
 
 ---
 
-## Convictions
+## Humanuscrit
 
-Quelques principes qui guident ce travail :
-
-- **L'IA est un amplificateur de pensée**, pas un remplaçant.
-- **La collaboration humain/IA doit être structurée** : rôles clairs, validation systématique.
-- **Rien n'est figé** : tout peut évoluer, être amélioré ou abandonné.
-- **La transparence** : montrer comment c'est fait, pas seulement le résultat.
-- **L'accessibilité** : prouver qu'on peut créer sans diplôme technique, à condition d'avoir une vision et une méthode.
+En parallèle de Lectura, je développe [Humanuscrit](https://humanuscrit.com) — un projet qui utilise les mêmes outils avec un objectif complètement différent. La méthode est similaire, mais l'objet est autre. Les deux projets sont indépendants et se nourrissent mutuellement.
 
 ---
 
