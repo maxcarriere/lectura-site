@@ -29,7 +29,7 @@ Brique atomique de phonémisation : un seul modèle **BiLSTM char-level multi-t�
 
 Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zéro dépendance).
 
-> **Brique vs Pipeline** : Le Phonémiseur est le modèle brut (tokens → prédictions). Pour le pipeline complet G2P (texte → phonèmes avec tokenisation, formules, groupes de lecture et syllabation), voir [lectura-g2p]({{ '/developpement/modules/metiers/g2p/' | relative_url }}).
+> **Brique vs Pipeline** : Le Phonémiseur est le modèle brut (tokens → prédictions). Pour le pipeline complet G2P (texte → phonèmes avec tokenisation, formules et groupes de lecture — syllabation optionnelle via l'extra `[aligneur]`), voir [lectura-g2p]({{ '/developpement/modules/metiers/g2p/' | relative_url }}).
 
 ---
 

@@ -18,7 +18,7 @@ redirect_from:
 
 ## Présentation
 
-**Pivot central du pipeline Lectura.** Module autonome, **zéro dépendance** Python. Réalise l'alignement lettre-par-lettre entre orthographe et phonétique et décompose chaque syllabe en ses constituants phonologiques. Les groupes de lecture (élision, liaison, enchaînement) sont construits en amont par le [Phonémiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) ; l'Aligneur les reçoit en entrée pour la syllabation.
+**Pivot central du pipeline Lectura.** Module autonome, **zéro dépendance** Python. Réalise l'alignement lettre-par-lettre entre orthographe et phonétique et décompose chaque syllabe en ses constituants phonologiques. Les groupes de lecture (élision, liaison, enchaînement) sont construits en amont par le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) ; l'Aligneur les reçoit en entrée pour la syllabation.
 
 C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) et [P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) ont été préparés. Sans lui, rien n'aurait été possible.
 
