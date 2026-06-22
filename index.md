@@ -3,7 +3,7 @@ title: "Bienvenue sur mon site Lectura.world !"
 layout: default
 ---
 
-Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de **développement augmenté par l'IA**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour. De nombreux travaux et démonstrations sont accessibles directement sur ce site.
+Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'idée fondatrice que la phonétique est la passerelle naturelle entre la langue écrite et la langue parlée. Grâce à une méthode de travail novatrice dite **« IA-first »**, où l'intelligence artificielle est un partenaire de production à part entière, tout un ensemble de projets a pu voir le jour. Certains sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour. De nombreux travaux et démonstrations sont accessibles directement sur ce site.
 
 <div class="cta-box" markdown="0">
   <h3>Découvrir Lectura :</h3>
