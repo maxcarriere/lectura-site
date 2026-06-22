@@ -10,7 +10,7 @@ redirect_from:
   <h1>Pipeline P2G</h1>
   <p class="module-tagline">Phonèmes IPA → texte français — pipeline complet avec formules, noms propres et entités</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-graphemiseur/" class="module-badge">PyPI (core)</a>
+    <a href="https://pypi.org/project/lectura-p2g/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-p2g</code>
   </div>

@@ -10,6 +10,7 @@ redirect_from:
   <h1>Pipeline G2P</h1>
   <p class="module-tagline">Texte français → phonèmes IPA — pipeline complet avec tokenisation, formules, liaison et syllabation</p>
   <div class="module-links">
+    <a href="https://pypi.org/project/lectura-g2p/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-g2p</code>
   </div>

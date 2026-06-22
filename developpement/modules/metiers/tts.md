@@ -7,6 +7,12 @@ permalink: /developpement/modules/metiers/tts/
 <div class="module-header">
   <h1>Pipeline TTS</h1>
   <p class="module-tagline">Texte français → audio — pipeline G2P + choix de moteur + conversion vocale optionnelle</p>
+  <div class="module-links">
+    <a href="https://pypi.org/project/lectura-tts-mono/" class="module-badge">PyPI Mono</a>
+    <a href="https://pypi.org/project/lectura-tts-multi/" class="module-badge">PyPI Multi</a>
+    <a href="https://pypi.org/project/lectura-tts-dipho/" class="module-badge">PyPI Dipho</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/TTS" class="module-badge">GitHub</a>
+  </div>
 </div>
 
 ## Présentation
