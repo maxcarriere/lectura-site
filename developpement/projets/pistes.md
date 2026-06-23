@@ -68,9 +68,9 @@ Le modèle TTS monospeaker utilise une architecture **Matcha-Conformer** (Confor
 
 - **La sélection d'unités pour le TTS diphonique.** Les cassures spectrales entre unités sélectionnées dans des contextes différents produisaient un résultat haché. Le moyennage a résolu le problème mais au prix d'un timbre moins naturel.
 
-- **Le WER du pipeline STT.** À environ 15 % en parole conversationnelle, le taux d'erreur mot reste élevé. L'essentiel de l'erreur vient du passage P2G (homophones, accords) et non du décodeur acoustique.
-
 - **La prosodie du TTS diphonique.** Le modèle prosodique par règles donne une voix parfois monotone ou incohérente sur les phrases longues (voir [limites du TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }})).
+
+- **Le WER du pipeline STT.** À environ 15 % en parole conversationnelle, le taux d'erreur mot reste élevé. C'est un résultat honorable, mais il reste une marge d'amélioration non négligeable, notamment en faisant évoluer les deux briques concernées. Le passage à une architecture Conformer, qui s'est révélée efficace pour le TTS, est une piste prometteuse.
 
 ---
 
