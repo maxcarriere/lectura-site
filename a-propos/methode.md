@@ -12,15 +12,19 @@ La méthode de travail elle-même fait partie du projet. Comment piloter un éco
 
 ### Avec l'IA, pas par l'IA
 
-L'utilisation de l'IA dans Lectura ne vise pas la production en masse à moindre coût. L'objectif est de répartir les tâches de façon optimale entre l'humain et la machine, en confiant à chacun ce qu'il fait le mieux.
+L'utilisation de l'IA dans le projet Lectura ne vise pas la production en masse à moindre coût. L'objectif est de produire mieux, en répartissant les tâches de façon optimale entre l'humain et la machine.
 
-**L'IA** est mobilisée pour ce qu'elle réalise mieux et plus rapidement que l'humain : le paramétrage technique, l'écriture du code, la rédaction des textes, le graphisme, la recherche d'information et de données. Le gain de temps est considérable. Mais l'IA ne se limite pas à l'exécution : sa capacité de recherche et de synthèse permet aussi d'explorer des pistes nouvelles, de toucher des horizons qui seraient restés hors de portée autrement.
+**L'IA** est mobilisée là où elle est meilleure et plus rapide que l'humain : le paramétrage technique, l'écriture du code, la rédaction des textes, le graphisme, la recherche d'information et de données. Le gain de temps est considérable. Mais l'IA ne se limite pas à une meilleure exécution des tâches : sa capacité de recherche et de synthèse lui permet aussi d'explorer des pistes nouvelles, de toucher des horizons qui seraient restés hors de portée autrement.
 
-**L'humain** reste indispensable, car l'IA ne peut pas travailler de façon totalement autonome. Paradoxalement, les décisions humaines sont peut-être plus importantes qu'avant : l'intuition, les idées, l'évaluation de la qualité, le bon sens, l'orientation des projets — tout cela est essentiel pour arriver à un résultat de qualité. Sans cette vision d'ensemble, l'IA produit, elle le fait vite, ça fonctionne, mais le résultat reste générique : quelques bouts de code isolés ou un livrable standard, impossible à améliorer ou à relier au reste.
+**L'humain** reste indispensable, car l'IA ne peut pas travailler de façon totalement autonome. Paradoxalement, les décisions humaines sont peut-être plus importantes qu'avant : l'intuition, les idées, l'évaluation de la qualité, le bon sens, l'orientation des projets : tout cela est essentiel pour arriver à un résultat de qualité. Sans cette vision d'ensemble, le résultat reste générique : quelques bouts de code isolés ou un livrable standard, sans plus-value par rapport à ce qui existe déjà sur Internet et surtout impossible à améliorer ou à imbriquer avec le reste. L'humain est aussi celui qui identifie quand l'IA part dans une mauvaise direction — et cela arrive souvent, notamment lors des réinitialisations de contexte. Sans cette vigilance, ce sont des heures de travail perdues, voire des manipulations aux conséquences plus ou moins désastreuses.
 
-### Un nouveau partage des compétences
+### Vers une redéfinition du travail humain ?
 
 C'est sans doute le déplacement qui est en train de s'opérer dans le monde du travail. Hier, les profils les plus recherchés étaient des spécialistes qui excellaient dans un domaine technique particulier. Aujourd'hui, ce qui compte davantage, c'est la vision globale : être capable de construire l'architecture d'un projet, de savoir ce qui est possible et ce qui ne l'est pas, de connaître les capacités réelles de l'IA et ce qu'elle ne pourra pas remplacer dans le développement d'un projet.
+
+Une partie des critiques adressées à l'IA trouve sans doute son origine ici. Toute une élite intellectuelle et académique se retrouve soudainement à perdre l'avantage que lui conférait son expertise sur le reste de la population. C'est compréhensible, et ces inquiétudes sont recevables. Mais on peut aussi envisager cette technologie comme un formidable outil de démocratisation, qui donne à chacun, quelle que soit sa formation ou sa position académique, l'accès à des compétences autrefois réservées à quelques-uns. Et si l'expertise technique devient accessible à tous, cela poussera les hommes à développer leurs vraies compétences humaines, celles qui restent hors de portée d'une machine : l'intuition, la créativité, la sensibilité émotionnelle.
+
+Si le monde du travail tel qu'on le connaît est en train de se transformer, à quoi ressemblera celui de demain ? Une partie de la réponse passe par la façon même de structurer les projets.
 
 ### Un écosystème modulaire
 
