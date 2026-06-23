@@ -21,9 +21,9 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
   </div>
 </div>
 
-Lectura est un projet que je porte en auto-entrepreneur, grâce à une [méthode]({{ '/a-propos/methode/' | relative_url }}) de **développement augmenté par l'IA** où l'intelligence artificielle est un partenaire de production à part entière. Certains projets sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour.
+Auto-entrepreneur, je développe Lectura grâce à une [méthode]({{ '/a-propos/methode/' | relative_url }}) de **développement augmenté par l'IA** où l'intelligence artificielle est un partenaire de production à part entière. Certains projets sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour.
 
-L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises et aux particuliers qui souhaitent intégrer ces outils dans leurs propres projets. Pour en savoir plus sur la démarche et la vision du projet, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}).
+L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises et aux particuliers, que ce soit pour intégrer ces outils dans leur environnement ou pour être accompagnés dans l'utilisation de l'IA au service de leurs propres projets. Pour en savoir plus sur la démarche et la vision du projet, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
   <h3>Travailler ensemble :</h3>
@@ -33,6 +33,6 @@ L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Se
   </div>
 </div>
 
-Je porte aussi d'autres projets sur des sites dédiés, notamment [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](http://www.zmaths.net/) (cours de mathématiques en ligne).
+Des liens redirigent vers mes autres sites qui portent d'autres projets, notamment [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](http://www.zmaths.net/) (cours de mathématiques en ligne).
 
 Bonne visite !
