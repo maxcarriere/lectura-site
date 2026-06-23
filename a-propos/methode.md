@@ -1,5 +1,5 @@
 ---
-title: "Le rôle de l'IA"
+title: "Méthode : Le rôle de l'IA"
 layout: default
 permalink: /a-propos/methode/
 ---

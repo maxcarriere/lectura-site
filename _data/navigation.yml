@@ -82,7 +82,7 @@
 - title: "À propos"
   url: /a-propos/
   children:
-    - title: "Le rôle de l'IA"
+    - title: "Méthode : Le rôle de l'IA"
       url: /a-propos/methode/
     - title: "Qu'est-ce que Lectura ?"
       url: /a-propos/vision/
