@@ -18,7 +18,7 @@ LeXiK est la base lexicale de Lectura : **1,35 million d'entrées** couvrant l'o
 
 La documentation complète de la base (structure, colonnes, sources, statistiques) est disponible sur le sous-domaine dédié :
 
-<p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world" class="module-badge" style="font-size:1.1em;">» Documentation LeXiK — lexique.lectura.world «</a></p>
+<p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world/documentation" class="module-badge" style="font-size:1.1em;">» Documentation LeXiK — lexique.lectura.world «</a></p>
 
 ---
 
