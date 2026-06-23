@@ -34,6 +34,10 @@ Pour que le développement avec l'IA soit rentable, il faut paralléliser. Ne pl
 
 L'autre avantage d'un écosystème, c'est que les progrès réalisés sur une composante profitent à l'ensemble. Les erreurs, elles, sont plus facilement identifiables : certaines ne se révèlent qu'à travers une des composantes du projet. Et les impasses trouvent parfois une issue imprévue en développant des composantes annexes.
 
+#### Une méthode itérative
+
+Avec l'IA, on ne développe pas de façon linéaire. On itère : on produit, on corrige, on réoriente, et le résultat s'améliore progressivement. Cet aspect itératif se retrouve à toutes les échelles. Sur une tâche simple et ciblée, on affine jusqu'à obtenir le bon résultat. À l'échelle d'un projet, on restructure au fil des retours et des découvertes. À l'échelle de l'écosystème lui-même, l'ensemble se renforce de façon progressive et continue, comme un organisme qui apprend de ses propres cycles.
+
 #### Flexibilité et ouverture d'esprit
 
 Avant d'avoir un quelconque avis sur une méthode ou un outil : le tester sans préjugé, observer ses possibilités réelles. Dans un monde technologique qui évolue de semaine en semaine, il faut être réactif et prêt à intégrer de nouveaux outils, même quand les anciens semblent déjà efficaces. Parfois, on peut aussi miser directement sur le progrès : certains projets qui semblaient ambitieux en janvier deviennent tout à fait réalisables en juillet.
