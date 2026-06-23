@@ -26,14 +26,18 @@ Une partie des critiques adressées à l'IA trouve sans doute son origine ici. T
 
 Si le monde du travail tel qu'on le connaît est en train de se transformer, à quoi ressemblera celui de demain ? Une partie de la réponse passe par la façon même de structurer les projets.
 
-### Un écosystème modulaire
+## Les principes de la méthode
 
-Pour que le développement avec l'IA soit rentable, il faut paralléliser. Ne plus nécessairement développer un projet isolé, mais anticiper ce qui pourrait être développé en parallèle, afin d'aboutir non pas à un programme, mais à plusieurs — chacun utilisant les mêmes briques de façon différente. Le même pipeline phonétique sert la synthèse vocale, la reconnaissance vocale et le correcteur. Un corpus construit pour un modèle est réutilisable ailleurs. Une architecture pensée une fois irrigue l'ensemble. La modularité est essentielle.
+#### Un écosystème modulaire
 
-### Flexibilité et ouverture d'esprit
+Pour que le développement avec l'IA soit rentable, il faut paralléliser. Ne plus nécessairement développer un projet isolé, mais anticiper ce qui pourrait être développé en parallèle, afin d'aboutir non pas à un programme, mais à plusieurs — chacun utilisant les mêmes briques de façon différente. Le même pipeline phonétique sert par exemple la synthèse vocale, la reconnaissance vocale et le correcteur. Un corpus construit pour un modèle est réutilisable ailleurs. Une architecture de modèle réalisée une fois est transférable à d'autres projets. La modularité est essentielle pour pouvoir réinvestir.
+
+L'autre avantage d'un écosystème, c'est que les progrès réalisés sur une composante profitent à l'ensemble. Les erreurs, elles, sont plus facilement identifiables : certaines ne se révèlent qu'à travers une des composantes du projet. Et les impasses trouvent parfois une issue imprévue en développant des composantes annexes.
+
+#### Flexibilité et ouverture d'esprit
 
 Avant d'avoir un quelconque avis sur une méthode ou un outil : le tester sans préjugé, observer ses possibilités réelles. Dans un monde technologique qui évolue de semaine en semaine, il faut être réactif et prêt à intégrer de nouveaux outils, même quand les anciens semblent déjà efficaces. Parfois, on peut aussi miser directement sur le progrès : certains projets qui semblaient ambitieux en janvier deviennent tout à fait réalisables en juillet.
 
-### Éthique
+#### Éthique
 
-Lectura utilise l'IA pour développer des projets qui me tiennent à cœur. Mais le respect des licences et des droits d'auteur est une priorité. Ce principe est inscrit dans la charte de travail transmise aux différents agents.
+Le recours massif à l'IA dans un processus de production soulève des questions qu'il serait irresponsable d'ignorer. Le respect des licences et des droits d'auteur est une priorité dans tous les projets Lectura. Ce principe est inscrit dans la charte de travail transmise aux différents agents : aucune donnée protégée ne doit être utilisée sans autorisation, aucun contenu ne doit être présenté comme original s'il ne l'est pas. La transparence sur l'utilisation de l'IA — dont cette page est l'illustration — fait également partie de cette exigence.

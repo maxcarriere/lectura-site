@@ -8,7 +8,7 @@ redirect_from:
 
 ## Qu'est-ce que Lectura ?
 
-Lectura est un **écosystème de projets modulaires** situé à la croisée de l'éducation, de l'intelligence artificielle et de la réflexion sur les transformations du monde du travail.
+Lectura est un **écosystème de projets modulaires** situé à la croisée du développement informatique, de l'éducation, de l'intelligence artificielle et de la réflexion sur les transformations du monde du travail.
 
 Il ne s'agit ni d'un produit unique, ni d'une plateforme monolithique. C'est un ensemble de projets développés progressivement, de manière indépendante mais cohérente, avec un double objectif :
 
@@ -29,12 +29,14 @@ Le projet ne cherche pas à prédire l'avenir de manière abstraite. Il vise à 
 
 La lecture occupe une place centrale dans les projets Lectura, sans constituer une finalité exclusive.
 
-Ce choix est né d'un point de départ personnel — l'apprentissage de la lecture avec des enfants — mais s'est révélé plus structurant qu'il n'y paraissait.
+Ce choix est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce choix a priori personnel s'est révélé plus structurant qu'il n'y paraissait.
 
 La lecture, entendue au sens large comme **capacité à décoder, structurer et interpréter des systèmes symboliques**, se trouve au carrefour de deux mondes :
 
 - côté humain : la lecture engage le langage, la symbolisation, la structuration de la pensée ;
 - côté technologique : l'intelligence artificielle repose aujourd'hui sur des modèles de langage, les mêmes fondations qui permettent de produire du texte, du code, de la musique ou des raisonnements structurés.
+
+L'intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Comprendre les processus à l'œuvre dans le premier cas permet d'éclairer ceux du second. C'est de cette convergence qu'est née l'idée de travailler sur la synthèse vocale : dans les deux cas, tout passe par la phonétique — la façon dont les sons du langage sont représentés, segmentés et assemblés. La phonétique est devenue le socle commun à partir duquel se sont construits les autres projets.
 
 La lecture n'est pas une limite du projet. C'est un **point d'ancrage pertinent à un instant donné**, qui pourra évoluer.
 
@@ -44,7 +46,7 @@ La lecture n'est pas une limite du projet. C'est un **point d'ancrage pertinent 
 
 Chaque projet Lectura est traité dans toutes ses dimensions :
 
-- **créative et conceptuelle** : idées, scénarios, intentions ;
+- **créative et conceptuelle** : idées, orientation, intentions ;
 - **technique et informatique** : algorithmes, architecture, développement ;
 - **pédagogique et fonctionnelle** : usages réels, compréhension par l'utilisateur ;
 - **éditoriale et de contenu** : textes, sons, narration ;
