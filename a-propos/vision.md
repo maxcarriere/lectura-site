@@ -36,7 +36,7 @@ La lecture, entendue au sens large comme **capacité à décoder, structurer et 
 - côté humain : la lecture engage le langage, la symbolisation, la structuration de la pensée ;
 - côté technologique : l'intelligence artificielle repose aujourd'hui sur des modèles de langage, les mêmes fondations qui permettent de produire du texte, du code, de la musique ou des raisonnements structurés.
 
-L'intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Comprendre les processus à l'œuvre dans le premier cas permet d'éclairer ceux du second. C'est de cette convergence qu'est née l'idée de travailler sur la synthèse vocale : dans les deux cas, tout passe par la phonétique — la façon dont les sons du langage sont représentés, segmentés et assemblés. La phonétique est devenue le socle commun à partir duquel se sont construits les autres projets.
+L'intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Comprendre les processus à l'œuvre dans le premier cas permet d'éclairer ceux du second. C'est de cette convergence qu'est née l'idée de travailler sur la synthèse vocale : dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. La phonétique est devenue le socle commun à partir duquel se sont construits les autres projets.
 
 La lecture n'est pas une limite du projet. C'est un **point d'ancrage pertinent à un instant donné**, qui pourra évoluer.
 
