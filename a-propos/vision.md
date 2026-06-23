@@ -12,7 +12,7 @@ Lectura est un **écosystème de projets modulaires** situé à la croisée du d
 
 Il ne s'agit ni d'un produit unique, ni d'une plateforme monolithique. C'est un ensemble de projets développés progressivement, de manière indépendante mais cohérente, avec un double objectif :
 
-- **produire réellement** : développer des outils concrets, fonctionnels et potentiellement viables ;
+- **produire réellement** : développer des outils concrets, fonctionnels et potentiellement viables.
 - **apprendre en faisant** : explorer de manière intensive l'usage des outils d'intelligence artificielle, leurs apports, leurs limites et leurs effets.
 
 ---
