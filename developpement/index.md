@@ -15,7 +15,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
   <div class="home-card">
     <h2>Lexique</h2>
     <p>Documentation technique de la base LeXiK : le lexique de Lectura</p>
-    <a class="more-link" href="{{ '/developpement/lexique/' | relative_url }}">Voir les données</a>
+    <a class="more-link" href="{{ '/developpement/lexique/' | relative_url }}">Voir le lexique</a>
   </div>
   <div class="home-card">
     <h2>Recherche</h2>
