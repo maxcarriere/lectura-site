@@ -1,5 +1,5 @@
 ---
-title: Vision
+title: "Qu'est-ce que Lectura ?"
 layout: default
 permalink: /a-propos/vision/
 redirect_from:

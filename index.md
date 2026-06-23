@@ -3,13 +3,13 @@ title: "Bienvenue sur mon site Lectura.world !"
 layout: default
 ---
 
-Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'exploitation de la phonétique comme passerelle naturelle entre la langue écrite et la langue parlée. Les projets développés s'expriment dans plusieurs composantes :
+Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Les projets développés s'expriment dans plusieurs composantes :
 
-- **Technologique** : [Analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) (NLP), [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) (TTS) et [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) (STT), avec une quinzaine de [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes publiés sur PyPI et testables directement sur le site.
+- **Technologique** : [Analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) (NLP), [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) (TTS) et [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) (STT), avec une quinzaine de [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes publiés sur PyPI et testables directement sur le site ainsi que le développement de plusieurs [logiciels]({{ '/produits/programmes/' | relative_url }}).
 
-- **Données** : Un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées consultable en ligne et différents [corpus]({{ '/developpement/lexique/' | relative_url }}) élaborés pour l'entraînement des modèles.
+- **Données** : Un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées consultable en ligne et différents [corpus]({{ '/produits/ressources/' | relative_url }}) élaborés pour l'entraînement des modèles et la création d'outils éducatifs.
 
-- **Pédagogique** : [Ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage en autonomie de la lecture ou du français langue étrangère, basées sur la lecture syllabique et l'utilisation du numérique.
+- **Pédagogique** : [Ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage en autonomie de la lecture ou du français langue étrangère, basées sur la [lecture syllabique]({{ '/produits/medias/' | relative_url }}) et l'utilisation du [numérique]({{ '/produits/applications/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
   <h3>Découvrir Lectura :</h3>
@@ -21,9 +21,9 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
   </div>
 </div>
 
-Auto-entrepreneur, je développe Lectura grâce à une [méthode]({{ '/a-propos/methode/' | relative_url }}) de **développement augmenté par l'IA** où l'intelligence artificielle est un partenaire de production à part entière. Certains projets sont encore en phase de recherche ou en cours de développement, d'autres sont régulièrement améliorés et mis à jour.
+[Auto-entrepreneur]({{ '/a-propos/qui-suis-je/' | relative_url }}), je développe [Lectura]({{ '/a-propos/vision/' | relative_url }}) grâce à une [méthode]({{ '/a-propos/methode/' | relative_url }}) de **développement augmenté par l'IA** où l'intelligence artificielle est un partenaire de production à part entière. Certains projets sont encore en phase de [recherche]({{ '/developpement/recherche/' | relative_url }}) ou [en cours]({{ '/developpement/projets/' | relative_url }}) de développement, d'autres sont régulièrement améliorés et mis à jour.
 
-L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à licence. Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises et aux particuliers, que ce soit pour intégrer ces outils dans leur environnement ou pour être accompagnés dans l'utilisation de l'IA au service de leurs propres projets. Pour en savoir plus sur la démarche et la vision du projet, rendez-vous sur la page [À propos]({{ '/a-propos/' | relative_url }}).
+L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à [licence]({{ '/solutions/services/licences/' | relative_url }}). Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises, aux [éditeurs]({{ '/solutions/services/services-editoriaux/' | relative_url }}) et aux particuliers, que ce soit pour [intégrer]({{ '/solutions/services/integration/' | relative_url }}) ces outils dans leur environnement, élaborer des [modèles]({{ '/solutions/services/corpus-modeles/' | relative_url }}) ou préparer des [données]({{ '/solutions/services/preparation-donnees/' | relative_url }}), ou pour être accompagnés dans l'utilisation de l'IA au service de leurs [propres projets]({{ '/solutions/services/divers/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
   <h3>Travailler ensemble :</h3>

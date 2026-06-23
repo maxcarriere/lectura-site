@@ -84,9 +84,7 @@
   children:
     - title: "Méthode"
       url: /a-propos/methode/
-    - title: Vision
+    - title: "Qu'est-ce que Lectura ?"
       url: /a-propos/vision/
     - title: "Qui suis-je ?"
       url: /a-propos/qui-suis-je/
-    - title: Humanuscrit
-      url: /a-propos/humanuscrit/
