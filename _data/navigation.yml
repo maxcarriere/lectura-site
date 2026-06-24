@@ -88,3 +88,6 @@
       url: /a-propos/vision/
     - title: "Qui suis-je ?"
       url: /a-propos/qui-suis-je/
+
+- title: "Contact & Liens"
+  url: /contact/
