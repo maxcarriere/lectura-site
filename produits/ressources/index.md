@@ -4,21 +4,62 @@ layout: default
 permalink: /produits/ressources/
 ---
 
-Corpus, données linguistiques et modèles pré-entraînés distribués par Lectura.
+Corpus, données linguistiques et kits d'entraînement distribués par Lectura. Ces ressources sont le fruit du travail de développement des modules et peuvent servir de base à des projets de recherche, d'éducation ou de développement.
 
-## LeXiK Lite
-
-<span class="status-badge status-cours">En cours de développement</span>
-
-Une version allégée de la base lexicale LeXiK, destinée à être embarquée dans les applications et modules Lectura. Détails à venir.
+<div class="home-grid">
+  <div class="home-card">
+    <h2>LeXiK Lite</h2>
+    <p>Versions allégées du lexique LeXiK (1,35M entrées), adaptées à l'embarqué et à l'intégration dans des applications. Plusieurs niveaux de couverture disponibles, du plus complet (syllabes, orthocode) au plus léger (uniquement les mots fréquents).</p>
+    <span class="status-badge status-cours">En préparation</span>
+    <div class="card-links">
+      <a class="more-link" href="#lexik-lite">Détails</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Kit d'entraînement G2P / P2G</h2>
+    <p>Corpus annoté (22 649 phrases), lexique aligné (1,16M mots), scripts d'entraînement PyTorch et modèles pré-entraînés pour reproduire les pipelines G2P et P2G de Lectura.</p>
+    <span class="status-badge status-cours">En préparation</span>
+    <div class="card-links">
+      <a class="more-link" href="#kit-g2p-p2g">Détails</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Corpus de voix</h2>
+    <p>Corpus de parole française avec transcription phonétique IPA alignée. Les textes et alignements sont fournis directement, les fichiers audio sont récupérables via les sources ouvertes (Common Voice, LibriVox).</p>
+    <span class="status-badge status-cours">En préparation</span>
+    <div class="card-links">
+      <a class="more-link" href="#corpus-voix">Détails</a>
+    </div>
+  </div>
+  <div class="home-card">
+    <h2>Corpus de syllabes</h2>
+    <p>Les syllabes les plus fréquentes du français (couverture 95% et 99%), avec leurs attaques, codas, phonèmes et éléments de formules. Inclut les fichiers audio (voix homme et femme).</p>
+    <span class="status-badge status-cours">En préparation</span>
+    <div class="card-links">
+      <a class="more-link" href="#corpus-syllabes">Détails</a>
+    </div>
+  </div>
+</div>
 
 ---
 
-## Kit d'entraînement G2P / P2G
+## LeXiK Lite {#lexik-lite}
 
-<div class="module-header">
-  <p class="module-tagline">Corpus annoté, scripts d'entraînement et modèles pré-entraînés pour le français</p>
-</div>
+Versions allégées de la base lexicale [LeXiK]({{ '/developpement/lexique/' | relative_url }}) (1,35 million d'entrées), destinées à être embarquées dans des applications ou utilisées comme référence linguistique.
+
+Plusieurs versions sont envisagées selon le niveau de détail :
+
+| Version | Contenu | Usage type |
+|---------|---------|------------|
+| **Complète** | Phonétique IPA, syllabes, orthocode, fréquences, morphologie | Recherche, analyse linguistique |
+| **Standard** | Phonétique IPA, syllabes, fréquences | Intégration dans des applications |
+| **Minimale** | Phonétique IPA, fréquences (mots freq > 0 uniquement) | Embarqué, mobile, lookup rapide |
+
+Le format de distribution est en cours de définition.
+
+---
+
+## Kit d'entraînement G2P / P2G {#kit-g2p-p2g}
 
 Kit complet pour entraîner et reproduire les modèles [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) et [P2G]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) de Lectura.
 
@@ -27,8 +68,6 @@ Kit complet pour entraîner et reproduire les modèles [G2P]({{ '/developpement/
 | **Corpus phrases** | 22 649 phrases annotées (train / dev / test) |
 | **Lexique aligné** | 1 163 639 mots avec alignement phone-graphème |
 | **Scripts** | Préparation, entraînement, évaluation, export ONNX |
-| **Modèles** | G2P unifié (98.5%) + P2G unifié (93.1%) |
-| **Taille totale** | ~215 Mo |
 | **Sources** | UD French-GSD (CC BY-SA 4.0), GLAFF 1.2.1 (CC BY-SA 3.0), Lexique383 (CC BY-SA 4.0) |
 
 ### Corpus de phrases annotées
@@ -76,25 +115,44 @@ Pipeline complet en Python (PyTorch) :
 1. **Pré-entraînement** sur le lexique aligné (1M mots isolés, 30 epochs)
 2. **Fine-tuning multi-tâche** sur les phrases (G2P/P2G + POS + morphologie + liaison, 80 epochs avec early stopping)
 
-### Modèles pré-entraînés
-
-| Modèle | Tâches | ONNX INT8 | Poids JSON |
-|--------|--------|-----------|------------|
-| **G2P unifié** | G2P + POS + morphologie + liaison | 1.8 Mo | 18 Mo |
-| **P2G unifié** | P2G + POS + morphologie | 2.6 Mo | 26 Mo |
+Le kit fournit les données et les scripts d'entraînement. Les modèles pré-entraînés sont disponibles séparément via les paquets PyPI ([lectura-phonemiseur](https://pypi.org/project/lectura-phonemiseur/), [lectura-graphemiseur](https://pypi.org/project/lectura-graphemiseur/)).
 
 ---
 
-## Corpus d'entraînement
+## Corpus de voix {#corpus-voix}
 
-<span class="status-badge status-avenir">À venir</span>
+Corpus de parole française avec transcription phonétique IPA. Le corpus fournit les textes et les alignements phonétiques. Les fichiers audio ne sont pas redistribués directement : ils sont récupérables via les sources ouvertes d'origine (Common Voice, LibriVox) à l'aide d'un script fourni ou des liens directs.
 
-Documentation des corpus d'entraînement utilisés par les modèles Lectura : données audio, corpus textuels annotés, et jeux de données de validation.
+Ce que le corpus contient :
+
+| | |
+|---|---|
+| **Textes** | Phrases transcrites et normalisées |
+| **Phonétique** | Transcription IPA alignée pour chaque phrase |
+| **Métadonnées** | Locuteur, durée, source |
+| **Script de récupération** | Téléchargement automatique des fichiers audio depuis les sources |
+
+---
+
+## Corpus de syllabes {#corpus-syllabes}
+
+Les syllabes les plus fréquentes du français, avec leur décomposition phonétique et des fichiers audio associés.
+
+| | |
+|---|---|
+| **Couverture 95%** | Syllabes couvrant 95% des occurrences en français courant |
+| **Couverture 99%** | Syllabes couvrant 99% des occurrences |
+| **Décomposition** | Attaque, noyau, coda pour chaque syllabe |
+| **Phonèmes** | Inventaire complet des phonèmes du français |
+| **Formules** | Éléments de formules (nombres, dates, etc.) |
+| **Audio** | Fichiers audio voix homme et voix femme |
+
+Les fichiers audio peuvent être générés avec les voix Lectura via l'API.
 
 ---
 
 ## Obtenir les ressources {#obtenir}
 
-LeXiK Lite et le kit G2P/P2G ne sont pas encore distribués publiquement. Si vous êtes intéressé pour un projet de recherche, un outil éducatif ou un produit commercial, contactez-nous :
+Ces ressources sont en cours de préparation. Si vous êtes intéressé pour un projet de recherche, un outil éducatif ou un usage commercial, n'hésitez pas à nous contacter pour discuter de vos besoins et des modalités d'accès.
 
-<a href="mailto:admin@lectura.world" class="module-badge">admin@lectura.world</a>
+<a href="{{ '/contact/' | relative_url }}" class="module-badge">Nous contacter</a>
