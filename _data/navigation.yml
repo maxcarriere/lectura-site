@@ -91,3 +91,8 @@
 
 - title: "Contact & Liens"
   url: /contact/
+  children:
+    - title: Contact
+      url: /contact/
+    - title: Liens
+      url: /liens/
