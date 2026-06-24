@@ -27,7 +27,7 @@ Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voi
     <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
+    <span style="font-size:0.85em; opacity:0.7;">Voix :</span>
     <select class="tts-speaker">
       <option value="siwis" selected>Aucun (par défaut)</option>
       <option value="ezwa">Ezwa (F)</option>
@@ -185,4 +185,4 @@ Documentation technique de chaque moteur :
 
 ## Contact
 
-Pour intégrer la synthèse vocale dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour intégrer la synthèse vocale dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})
