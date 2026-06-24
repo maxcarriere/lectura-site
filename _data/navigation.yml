@@ -47,6 +47,15 @@
       url: /produits/medias/
     - title: Ressources
       url: /produits/ressources/
+      children:
+        - title: LeXiK Lite
+          url: /produits/ressources/lexik-lite/
+        - title: Kit G2P / P2G
+          url: /produits/ressources/kit-g2p-p2g/
+        - title: Corpus de Voix
+          url: /produits/ressources/corpus-voix/
+        - title: Corpus de Syllabes
+          url: /produits/ressources/corpus-syllabes/
 
 - title: "Développement"
   url: /developpement/
