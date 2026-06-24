@@ -9,8 +9,8 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
 <div class="home-grid">
   <div class="home-card">
     <h2>LeXiK Lite</h2>
-    <p>Versions allégées du lexique LeXiK (1,35M entrées), adaptées à l'embarqué et à l'intégration dans des applications. Plusieurs niveaux de couverture disponibles, du plus complet (syllabes, orthocode) au plus léger (uniquement les mots fréquents).</p>
-    <span class="status-badge status-cours">En préparation</span>
+    <p>Versions allégées du lexique LeXiK : complète (1,52M entrées) et fréquente (314K entrées). Phonétique IPA, syllabes, orthocode, fréquences, morphologie.</p>
+    <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="#lexik-lite">Détails</a>
     </div>
@@ -18,23 +18,23 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
   <div class="home-card">
     <h2>Kit d'entraînement G2P / P2G</h2>
     <p>Corpus annoté (22 649 phrases), lexique aligné (1,16M mots), scripts d'entraînement PyTorch et modèles pré-entraînés pour reproduire les pipelines G2P et P2G de Lectura.</p>
-    <span class="status-badge status-cours">En préparation</span>
+    <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="#kit-g2p-p2g">Détails</a>
     </div>
   </div>
   <div class="home-card">
     <h2>Corpus de voix</h2>
-    <p>Corpus de parole française avec transcription phonétique IPA alignée. Les textes et alignements sont fournis directement, les fichiers audio sont récupérables via les sources ouvertes (Common Voice, LibriVox).</p>
-    <span class="status-badge status-cours">En préparation</span>
+    <p>880K phrases françaises avec transcription phonétique IPA alignée, issues de Common Voice et LibriVox. Textes et alignements fournis, audio récupérable via les sources ouvertes.</p>
+    <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="#corpus-voix">Détails</a>
     </div>
   </div>
   <div class="home-card">
     <h2>Corpus de syllabes</h2>
-    <p>Les syllabes les plus fréquentes du français (couverture 95% et 99%), avec leurs attaques, codas, phonèmes et éléments de formules. Inclut les fichiers audio (voix homme et femme).</p>
-    <span class="status-badge status-cours">En préparation</span>
+    <p>4 307 syllabes + 1 474 de liaison, avec décomposition phonétique et fichiers audio (voix homme et femme, Amazon Polly).</p>
+    <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="#corpus-syllabes">Détails</a>
     </div>
@@ -45,17 +45,16 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
 
 ## LeXiK Lite {#lexik-lite}
 
-Versions allégées de la base lexicale [LeXiK]({{ '/developpement/lexique/' | relative_url }}) (1,35 million d'entrées), destinées à être embarquées dans des applications ou utilisées comme référence linguistique.
+Versions allégées de la base lexicale [LeXiK]({{ '/developpement/lexique/' | relative_url }}) (1,52 million d'entrées), destinées à être embarquées dans des applications ou utilisées comme référence linguistique.
 
-Plusieurs versions sont envisagées selon le niveau de détail :
+Deux versions sont disponibles selon le niveau de détail :
 
-| Version | Contenu | Usage type |
-|---------|---------|------------|
-| **Complète** | Phonétique IPA, syllabes, orthocode, fréquences, morphologie | Recherche, analyse linguistique |
-| **Standard** | Phonétique IPA, syllabes, fréquences | Intégration dans des applications |
-| **Minimale** | Phonétique IPA, fréquences (mots freq > 0 uniquement) | Embarqué, mobile, lookup rapide |
+| Version | Entrées | Contenu | Usage type |
+|---------|---------|---------|------------|
+| **Complète** | 1 518 155 | Phonétique IPA, syllabes, orthocode, fréquences, morphologie | Recherche, analyse linguistique |
+| **Fréquente** | 314 212 | Phonétique IPA, fréquences (mots de fréquence > 0 uniquement) | Embarqué, mobile, lookup rapide |
 
-Le format de distribution est en cours de définition.
+Format CSV, encodage UTF-8. Un décodeur Multext (`multext_decoder.py`) est inclus pour interpréter les codes morphologiques.
 
 ---
 
@@ -121,16 +120,15 @@ Le kit fournit les données et les scripts d'entraînement. Les modèles pré-en
 
 ## Corpus de voix {#corpus-voix}
 
-Corpus de parole française avec transcription phonétique IPA. Le corpus fournit les textes et les alignements phonétiques. Les fichiers audio ne sont pas redistribués directement : ils sont récupérables via les sources ouvertes d'origine (Common Voice, LibriVox) à l'aide d'un script fourni ou des liens directs.
-
-Ce que le corpus contient :
+Corpus de parole française avec transcription phonétique IPA. Le corpus fournit les textes et les alignements phonétiques. Les fichiers audio ne sont pas redistribués directement : ils sont récupérables via les sources ouvertes d'origine (Common Voice, LibriVox) à l'aide d'un script fourni.
 
 | | |
 |---|---|
-| **Textes** | Phrases transcrites et normalisées |
-| **Phonétique** | Transcription IPA alignée pour chaque phrase |
+| **Corpus 1** | 97 012 phrases (Common Voice) — train / val / test |
+| **Corpus 2** | 783 339 phrases (LibriVox) — train / val / test |
+| **Total** | 880 351 phrases avec transcription IPA alignée |
 | **Métadonnées** | Locuteur, durée, source |
-| **Script de récupération** | Téléchargement automatique des fichiers audio depuis les sources |
+| **Script** | Téléchargement automatique des fichiers audio depuis les sources |
 
 ---
 
@@ -140,19 +138,29 @@ Les syllabes les plus fréquentes du français, avec leur décomposition phonét
 
 | | |
 |---|---|
-| **Couverture 95%** | Syllabes couvrant 95% des occurrences en français courant |
-| **Couverture 99%** | Syllabes couvrant 99% des occurrences |
+| **Syllabes** | 4 307 syllabes (couverture 95% et 99% des occurrences) |
+| **Liaison** | 1 474 syllabes de liaison |
 | **Décomposition** | Attaque, noyau, coda pour chaque syllabe |
-| **Phonèmes** | Inventaire complet des phonèmes du français |
-| **Formules** | Éléments de formules (nombres, dates, etc.) |
-| **Audio** | Fichiers audio voix homme et voix femme |
-
-Les fichiers audio peuvent être générés avec les voix Lectura via l'API.
+| **Composants** | Phonèmes, éléments de formules (nombres, dates, etc.) |
+| **Audio** | Fichiers MP3, voix Polly Lea (femme) et Polly Mathieu (homme) |
 
 ---
 
 ## Obtenir les ressources {#obtenir}
 
-Ces ressources sont en cours de préparation. Si vous êtes intéressé pour un projet de recherche, un outil éducatif ou un usage commercial, n'hésitez pas à nous contacter pour discuter de vos besoins et des modalités d'accès.
+Les ressources sont distribuées sous forme d'archives zip, téléchargeables via l'API Lectura avec une clé d'accès.
 
-<a href="{{ '/contact/' | relative_url }}" class="module-badge">Nous contacter</a>
+**Fonctionnement :**
+
+1. Contactez-nous pour obtenir une clé API avec accès aux ressources
+2. Utilisez l'endpoint `GET /download/{resource_id}` de l'API pour télécharger les archives
+3. L'endpoint `GET /download/` liste les ressources disponibles et leurs identifiants
+
+**Authentification :** header `Authorization: Bearer <votre_clé>` — les clés de type « paid » ou « unlimited » donnent accès au téléchargement.
+
+**Tarification :** nous contacter pour connaître les modalités d'accès selon votre usage (recherche, éducation, commercial).
+
+<div class="cta-links" style="margin-top: 1.5rem;">
+  <a href="{{ '/contact/' | relative_url }}">Nous contacter</a>
+  <a href="https://api.lectura.world/docs#/Downloads" target="_blank">Documentation API</a>
+</div>
