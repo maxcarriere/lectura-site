@@ -1,0 +1,82 @@
+# Lectura
+
+> Lectura est un ecosysteme de projets modulaires pour le traitement du francais, developpe par Maxime Carriere. Il couvre la synthese vocale, la reconnaissance vocale, l'analyse du langage et un lexique de plus de 1,35 million d'entrees. Tous les modules sont developpes en Python et publies sur PyPI.
+
+## Auteur
+
+Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'utilisation de l'IA pour le NLP, la voix et l'edTech.
+
+## Site
+
+- URL : https://www.lectura.world
+- Code source : https://github.com/maxcarriere
+
+## Technologies
+
+- Langage : Python
+- Distribution : 14+ paquets PyPI
+- Modeles : ONNX INT8 (deploiement leger, CPU/mobile)
+- Architecture : modeles specialises et legers (1,75M a 24,3M parametres)
+- Pivot central : le phoneme comme representation intermediaire universelle entre texte et parole
+
+## Modules principaux
+
+### Traitement du texte
+- Phonemiseur (G2P) : conversion grapheme-phoneme, BiLSTM multi-tete, 98,5% de precision
+- Graphemiseur (P2G) : conversion phoneme-grapheme, BiLSTM V7 + attention cross, ~95% de precision
+- Tokeniseur : segmentation en mots, syllabes, phonemes
+- Aligneur : alignement syllabique texte-phonetique
+- Module Formules : lecture des expressions mathematiques
+
+### Synthese vocale (TTS)
+- TTS Monospeaker : architecture Matcha-Conformer + HiFi-GAN
+- TTS Multi-speaker : FastPitch-Lite v6 + HiFi-GAN, plusieurs voix et styles
+- TTS Diphonique : synthese concatenative par diphones avec prosodie par regles
+
+### Reconnaissance vocale (STT)
+- Decodeur CTC : CNN-BiGRU-CTC, 10,6M parametres, PER 4,34%
+- Pipeline STT complet : decodage acoustique + P2G
+
+### Conversion de voix
+- Voice Conversion par locuteurs
+- Voice Conversion zero-shot
+
+### Donnees
+- Lexique LeXiK : 1,35 million d'entrees, phonetique IPA, frequences, morphologie
+- Corpus d'entrainement pour le francais
+
+## Pipelines metiers
+
+- G2P : texte -> phonemes (tokenisation + phonemisation + liaison)
+- P2G : phonemes -> texte (graphemisation + selection lexicale)
+- TTS : texte -> audio (G2P + modele acoustique + vocodeur)
+- STT : audio -> texte (decodeur CTC + P2G)
+- VC : audio -> audio (extraction + conversion + synthese)
+
+## Methode de travail
+
+Lectura est developpe selon une methode de developpement augmente par l'IA. L'IA est utilisee pour l'execution technique (code, redaction, recherche), l'humain assure la conception, le jugement et l'arbitrage. La modularite et la reutilisation des composants entre projets sont des principes centraux.
+
+## Projet associe
+
+Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique mathematique, systemique, eveil spirituel). Un premier roman est en recherche d'editeur.
+
+## Pages principales
+
+- Accueil : https://www.lectura.world/
+- Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
+- Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/
+- Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
+- Lexique : https://www.lectura.world/solutions/lexique/
+- Modules et outils : https://www.lectura.world/developpement/modules/outils/
+- Pipelines : https://www.lectura.world/developpement/modules/metiers/
+- Ingenierie des modeles : https://www.lectura.world/developpement/recherche/ingenierie-modeles/
+- Methode (role de l'IA) : https://www.lectura.world/a-propos/methode/
+- Qu'est-ce que Lectura : https://www.lectura.world/a-propos/vision/
+- Qui suis-je : https://www.lectura.world/a-propos/qui-suis-je/
+- Services : https://www.lectura.world/solutions/services/
+- Contact : https://www.lectura.world/contact/
+
+## Licence
+
+AGPL-3.0 pour usage non commercial. Licences commerciales disponibles sur demande.
