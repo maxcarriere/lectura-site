@@ -121,4 +121,4 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
 
 ## Contact
 
-Pour intégrer la reconnaissance vocale dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour intégrer la reconnaissance vocale dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})

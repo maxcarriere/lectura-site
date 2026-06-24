@@ -34,4 +34,4 @@ Vous souhaitez ajouter la synthèse vocale, la transcription audio ou du traitem
 
 ## Contact
 
-Pour discuter de votre projet d'intégration : [admin@lectura.world](mailto:admin@lectura.world)
+Pour discuter de votre projet d'intégration : [nous contacter]({{ '/contact/' | relative_url }})

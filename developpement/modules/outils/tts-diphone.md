@@ -154,4 +154,4 @@ pip install "lectura-tts-dipho[local,retimbre]"  # + retimbre multi-voix (OpenVo
 - **3 modes** : FLUIDE, MOT_A_MOT, SYLLABES
 - **Retimbre OpenVoice** (optionnel) : presets, blend pondéré, variantes formantiques
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale]({{ '/contact/' | relative_url }})

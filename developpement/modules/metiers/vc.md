@@ -184,4 +184,4 @@ pip install lectura-vc-zeroshot
 pip install lectura-vc-locuteurs
 ```
 
-Les modules publics utilisent l'API Lectura pour l'inférence. Les backends locaux ONNX nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Les modules publics utilisent l'API Lectura pour l'inférence. Les backends locaux ONNX nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).

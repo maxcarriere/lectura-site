@@ -117,7 +117,7 @@ pip install lectura-tts-mono[onnx,retimbre]  # + retimbre multi-voix (OpenVoice)
 | `[retimbre]` | `lectura-tts-mono` | Retimbre multi-voix via OpenVoice |
 | `[aligneur]` | `lectura-tts-mono` | Syllabation pour le mode lecture syllabique (lectura-aligneur) |
 
-Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Le backend local ONNX nécessite les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
 
 ### Retimbre (optionnel)
 
@@ -152,4 +152,4 @@ Presets disponibles : siwis, ezwa, nadine, bernard, gilles, zeckou.
 - **Retimbre optionnel** : changement de voix via OpenVoice zero-shot (6 presets, blend pondéré, variante formants)
 - **Factory `creer_engine()`** : détection automatique du meilleur mode
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale]({{ '/contact/' | relative_url }})

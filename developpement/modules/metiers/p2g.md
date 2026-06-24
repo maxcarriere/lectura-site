@@ -126,4 +126,4 @@ Le graphémiseur (couche 1) est **zéro dépendance** — pas d'import de `lectu
 - **Pipeline `lectura-p2g`** : formules (mode chiffres, tolerance="stt"), fusion composés, noms propres, ~9000 entités notables
 - **Zéro dépendance** (couche 1) : le graphémiseur n'importe pas `lectura_formules`
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

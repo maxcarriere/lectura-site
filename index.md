@@ -29,7 +29,7 @@ L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Se
   <h3>Travailler ensemble :</h3>
   <div class="cta-links cta-links-center">
     <a href="{{ '/solutions/services/' | relative_url }}"><span class="cta-icon">💼</span>Découvrir<br>nos prestations</a>
-    <a href="mailto:admin@lectura.world"><span class="cta-icon">✉️</span>Contactez-nous</a>
+    <a href="{{ '/contact/' | relative_url }}"><span class="cta-icon">✉️</span>Contactez-nous</a>
   </div>
 </div>
 

@@ -87,7 +87,7 @@ pip install lectura-graphemiseur[lexique]    # + lectura-lexique (phone_lex_feat
 pip install lectura-graphemiseur[all]        # onnx + numpy + lexique
 ```
 
-Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
 
 ---
 
@@ -101,4 +101,4 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 - **Zéro dépendance** : le graphémiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : détection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

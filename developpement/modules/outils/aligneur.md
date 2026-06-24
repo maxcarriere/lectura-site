@@ -164,4 +164,4 @@ pip install lectura-aligneur[phonemiseur]     # + lectura-phonemiseur
 - **Syllabation** des groupes de lecture construits par le Phonémiseur
 - **Phonémiseur pluggable** : eSpeak-NG, Lectura Phonémiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

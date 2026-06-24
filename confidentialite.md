@@ -52,4 +52,4 @@ Le site contient des liens vers des sites tiers (GitHub, lexique.org, etc.). Lec
 
 ## Contact
 
-Pour toute question relative à la confidentialité : [admin@lectura.world](mailto:admin@lectura.world)
+Pour toute question relative à la confidentialité : [nous contacter]({{ '/contact/' | relative_url }})

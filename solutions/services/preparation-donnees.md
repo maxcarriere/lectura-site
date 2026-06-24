@@ -33,4 +33,4 @@ Vous souhaitez développer vos propres modèles ou vous avez besoin de données 
 
 ## Contact
 
-Pour discuter de votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour discuter de votre projet : [nous contacter]({{ '/contact/' | relative_url }})

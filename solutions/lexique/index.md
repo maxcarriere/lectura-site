@@ -53,4 +53,4 @@ Le tout est accessible via un module Python avec 18 méthodes de requêtage, com
 
 ## Contact
 
-Pour obtenir LeXiK ou intégrer le module Lexique : [admin@lectura.world](mailto:admin@lectura.world)
+Pour obtenir LeXiK ou intégrer le module Lexique : [nous contacter]({{ '/contact/' | relative_url }})

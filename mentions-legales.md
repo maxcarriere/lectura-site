@@ -30,7 +30,7 @@ Le sous-domaine **lexique.lectura.world** est hébergé sur un serveur dédié (
 
 L'ensemble du contenu du site (textes, images, code, données, modèles) est la propriété de Maxime Carrière, sauf mention contraire.
 
-Le code source des modules Lectura est publié sous licence **AGPL-3.0** (usage non commercial). Toute utilisation commerciale ou obtention des modèles en local est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/solutions/services/licences/' | relative_url }}) ou contactez [admin@lectura.world](mailto:admin@lectura.world).
+Le code source des modules Lectura est publié sous licence **AGPL-3.0** (usage non commercial). Toute utilisation commerciale ou obtention des modèles en local est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/solutions/services/licences/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
 
 ---
 
@@ -53,4 +53,4 @@ Les informations présentes sur ce site sont fournies à titre indicatif. Maxime
 
 ## Contact
 
-Pour toute question relative aux mentions légales : [admin@lectura.world](mailto:admin@lectura.world)
+Pour toute question relative aux mentions légales : [nous contacter]({{ '/contact/' | relative_url }})

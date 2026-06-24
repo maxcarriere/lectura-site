@@ -156,7 +156,7 @@ pip install lectura-decodeur
 pip install lectura-stt-formules[inference]
 ```
 
-Par défaut, le module utilise l'**API Lectura** si aucun modèle local n'est trouvé. Pour l'inférence locale, installez les modèles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modèles embarqués (disponibles sous [licence commerciale](mailto:admin@lectura.world)).
+Par défaut, le module utilise l'**API Lectura** si aucun modèle local n'est trouvé. Pour l'inférence locale, installez les modèles ONNX dans `~/.lectura/models/` ou utilisez le backend ONNX avec les modèles embarqués (disponibles sous [licence commerciale]({{ '/contact/' | relative_url }})).
 
 ---
 
@@ -171,4 +171,4 @@ Par défaut, le module utilise l'**API Lectura** si aucun modèle local n'est tr
 - **Factory `creer_engine()`** : cascade auto ONNX → API
 - **STT-Formules** : ~600K params, 87 tokens sémantiques, TER ~1.17%
 - **Python 3.10+** avec type hints complets
-- **Licence** : AGPL-3.0 (code) — modèles sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — modèles sous [licence commerciale]({{ '/contact/' | relative_url }})

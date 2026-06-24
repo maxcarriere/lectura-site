@@ -36,4 +36,4 @@ Créer un TTS avec votre propre voix, déployable en local sur tous vos appareil
 
 ## Contact
 
-Pour discuter de votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour discuter de votre projet : [nous contacter]({{ '/contact/' | relative_url }})

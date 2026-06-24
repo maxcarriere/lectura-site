@@ -296,4 +296,4 @@ Chaque outil est disponible comme module Python indépendant avec documentation 
 
 ## Contact
 
-Pour intégrer ces outils dans votre projet : [admin@lectura.world](mailto:admin@lectura.world)
+Pour intégrer ces outils dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})

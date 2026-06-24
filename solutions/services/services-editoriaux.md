@@ -32,4 +32,4 @@ Production d'audiobooks à partir de vos textes :
 
 ## Contact
 
-Pour discuter de votre projet éditorial : [admin@lectura.world](mailto:admin@lectura.world)
+Pour discuter de votre projet éditorial : [nous contacter]({{ '/contact/' | relative_url }})

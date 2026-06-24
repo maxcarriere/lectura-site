@@ -113,7 +113,7 @@ Les 8 modèles ONNX :
 pip install lectura-vc-locuteurs   # module public (~7 Ko)
 ```
 
-Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX nécessite les modèles pré-entraînés (~1.4 Go), disponibles sous [licence commerciale](mailto:admin@lectura.world).
+Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX nécessite les modèles pré-entraînés (~1.4 Go), disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
 
 ---
 
@@ -124,4 +124,4 @@ Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX 
 - **Lazy loading** : chaque synthesizer chargé à la demande (premier appel)
 - **ONNX Runtime pur** : pas de dépendance PyTorch
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale]({{ '/contact/' | relative_url }})

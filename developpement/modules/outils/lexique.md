@@ -166,4 +166,4 @@ pip install lectura-lexique
 - **Résolution automatique des alias** de colonnes
 - Colonnes manquantes tolérées (retour vide, pas d'exception)
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

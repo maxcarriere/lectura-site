@@ -139,4 +139,4 @@ Le correcteur se rabat automatiquement sur les règles si les modèles optionnel
 
 ## Licence
 
-AGPL-3.0 (non commerciale) — licence commerciale sur demande : [admin@lectura.world](mailto:admin@lectura.world)
+AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

@@ -194,4 +194,4 @@ Par défaut, les modules utilisent l'**API Lectura** si aucun modèle local n'es
 - **Ponctuation et majuscules** : reconstruction fidèle du texte
 - **Formules** : nombres, sigles (via `lectura-p2g`)
 - **Python 3.10+** avec type hints complets
-- **Licence** : AGPL-3.0 (code) — modèles sous [licence commerciale](mailto:admin@lectura.world)
+- **Licence** : AGPL-3.0 (code) — modèles sous [licence commerciale]({{ '/contact/' | relative_url }})

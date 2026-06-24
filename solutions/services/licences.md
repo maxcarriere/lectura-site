@@ -59,4 +59,4 @@ N'hésitez pas à formuler une offre correspondant à votre budget et vos besoin
 
 ## Contact
 
-Pour discuter de vos besoins et obtenir un devis : [admin@lectura.world](mailto:admin@lectura.world)
+Pour discuter de vos besoins et obtenir un devis : [nous contacter]({{ '/contact/' | relative_url }})
