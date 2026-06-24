@@ -21,8 +21,8 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 
 - [Lexique en ligne](https://lexique.lectura.world) — 1,35 million d'entrées, consultable en ligne
 - [API Lectura](https://api.lectura.world/docs) — Documentation interactive (Swagger)
-- [Modules Python]({{ '/developpement/modules/' | relative_url }}) — 18+ modules publiés sur PyPI (TTS, STT, NLP, VC)
-- [Prestations]({{ '/solutions/services/' | relative_url }}) — Intégration, licences, modèles sur mesure
+- [GitHub](https://github.com/lectura-world) — Code source des modules Lectura
+- [PyPI](https://pypi.org/user/lectura/) — 18+ modules publiés (TTS, STT, NLP, VC)
 
 ---
 
