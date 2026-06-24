@@ -45,9 +45,15 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
 
 ## Obtenir les ressources {#obtenir}
 
-Les ressources sont distribuées sous forme d'archives zip, téléchargeables via l'API Lectura avec une clé d'accès.
+Les ressources sont distribuées sous forme d'archives zip. Deux modes d'accès sont disponibles :
 
-**Fonctionnement :**
+### Lien direct (par email)
+
+La façon la plus simple. [Contactez-nous]({{ '/contact/' | relative_url }}) en précisant les ressources souhaitées : nous vous envoyons par email un lien de téléchargement personnalisé, valable pour une durée limitée.
+
+### Via l'API
+
+Pour les développeurs ou les usages automatisés :
 
 1. Contactez-nous pour obtenir une clé API avec accès aux ressources
 2. Utilisez l'endpoint `GET /download/{resource_id}` de l'API pour télécharger les archives

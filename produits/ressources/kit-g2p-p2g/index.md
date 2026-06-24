@@ -109,15 +109,12 @@ Le kit fournit les données et les scripts d'entraînement. Les modèles pré-en
 
 ## Obtenir cette ressource
 
-Les ressources sont distribuées sous forme d'archives zip, téléchargeables via l'API Lectura avec une clé d'accès.
+Deux modes d'accès sont disponibles :
 
-1. [Contactez-nous]({{ '/contact/' | relative_url }}) pour obtenir une clé API avec accès aux ressources
-2. Utilisez l'endpoint `GET /download/{resource_id}` de l'API pour télécharger l'archive
-3. L'endpoint `GET /download/` liste les ressources disponibles et leurs identifiants
-
-**Authentification :** header `Authorization: Bearer <votre_clé>` — les clés de type « paid » ou « unlimited » donnent accès au téléchargement.
+- **Lien direct** : [contactez-nous]({{ '/contact/' | relative_url }}) en précisant la ressource souhaitée, nous vous envoyons un lien de téléchargement personnalisé par email.
+- **Via l'API** : utilisez l'endpoint `GET /download/{resource_id}` avec votre clé API. Voir la [documentation API](https://api.lectura.world/docs#/Downloads).
 
 <div class="cta-links" style="margin-top: 1.5rem;">
   <a href="{{ '/contact/' | relative_url }}">Nous contacter</a>
-  <a href="https://api.lectura.world/docs#/Downloads" target="_blank">Documentation API</a>
+  <a href="{{ '/produits/ressources/#obtenir' | relative_url }}">Détails d'accès</a>
 </div>
