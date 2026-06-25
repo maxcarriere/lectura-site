@@ -1,5 +1,5 @@
 ---
-title: "Bienvenue sur mon site Lectura.world !"
+title: "Bienvenue sur Lectura.world !"
 layout: default
 ---
 
@@ -9,7 +9,7 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
 
 - **Données** : Un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées consultable en ligne et différents [corpus]({{ '/produits/ressources/' | relative_url }}) élaborés pour l'entraînement des modèles et la création d'outils éducatifs.
 
-- **Pédagogique** : [Ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage en autonomie de la lecture ou du français langue étrangère, basées sur la [lecture syllabique]({{ '/produits/medias/' | relative_url }}) et l'utilisation du [numérique]({{ '/produits/applications/' | relative_url }}).
+- **Pédagogique** : Des [outils et des ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage de la lecture en autonomie ou du français langue étrangère, basées sur la [lecture syllabique]({{ '/produits/medias/' | relative_url }}) et l'utilisation du [numérique]({{ '/produits/applications/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
   <h3>Découvrir Lectura :</h3>
