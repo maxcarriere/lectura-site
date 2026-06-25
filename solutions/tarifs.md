@@ -1,7 +1,7 @@
 ---
 title: Tarification
 layout: default
-permalink: /solutions/services/tarifs/
+permalink: /solutions/tarifs/
 ---
 
 Lectura propose un accès gratuit pour la recherche et l'éducation, et des formules adaptées pour les usages commerciaux. Cette page présente la logique tarifaire et les ordres de grandeur.

@@ -46,7 +46,7 @@ Tous les modules Lectura sont disponibles sous licence commerciale :
 
 ## Tarification
 
-Consultez la page dédiée pour connaître la logique tarifaire, les ordres de grandeur et les facteurs qui influencent le coût d'une licence : [Tarification]({{ '/solutions/services/tarifs/' | relative_url }})
+Consultez la page dédiée pour connaître la logique tarifaire, les ordres de grandeur et les facteurs qui influencent le coût d'une licence : [Tarification]({{ '/solutions/tarifs/' | relative_url }})
 
 ---
 
