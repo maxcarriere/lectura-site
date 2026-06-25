@@ -46,14 +46,7 @@ Tous les modules Lectura sont disponibles sous licence commerciale :
 
 ## Tarification
 
-Les tarifs sont adaptés à chaque projet et dépendent de :
-
-- L'usage prévu (modules concernés, volume, contexte)
-- Les services d'intégration associés (accompagnement technique, pipeline sur mesure)
-
-Les propositions sont étudiées au cas par cas.
-
-N'hésitez pas à formuler une offre correspondant à votre budget et vos besoins.
+Consultez la page dédiée pour connaître la logique tarifaire, les ordres de grandeur et les facteurs qui influencent le coût d'une licence : [Tarification]({{ '/solutions/services/tarifs/' | relative_url }})
 
 ---
 

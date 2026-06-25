@@ -30,6 +30,8 @@
           url: /solutions/services/services-editoriaux/
         - title: "Autres prestations"
           url: /solutions/services/divers/
+        - title: Tarification
+          url: /solutions/services/tarifs/
 
 - title: Produits
   url: /produits/

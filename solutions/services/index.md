@@ -37,4 +37,9 @@ Lectura accompagne les professionnels dans l'intégration des technologies lingu
     <p>Sites internet, applications, automatisation, conseil en IA et autres missions techniques.</p>
     <a class="more-link" href="{{ '/solutions/services/divers/' | relative_url }}">En savoir plus</a>
   </div>
+  <div class="home-card">
+    <h2>Tarification</h2>
+    <p>Accès gratuit pour la recherche et l'éducation, formules adaptées pour les usages commerciaux.</p>
+    <a class="more-link" href="{{ '/solutions/services/tarifs/' | relative_url }}">En savoir plus</a>
+  </div>
 </div>
