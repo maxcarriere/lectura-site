@@ -57,9 +57,9 @@ Texte français
 
 | | [Monospeaker]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) | [Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) | [Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}) |
 |---|---|---|---|
-| **Architecture** | Matcha-Conformer + HiFi-GAN | FastPitch-Lite v6 + HiFi-GAN | Concaténation WORLD |
-| **Paramètres** | 17.9M | 24.3M | — (diphones pré-calculés) |
-| **Taille ONNX** | ~29 Mo (INT8) | ~40 Mo (INT8) | ~15 Mo |
+| **Architecture** | Matcha-Conformer + HiFi-GAN | Dual Conformer/FastPitch + HiFi-GAN | Concaténation WORLD |
+| **Paramètres** | 17.9M | Conformer 384 + FastPitch 256 | — (diphones pré-calculés) |
+| **Taille ONNX** | ~29 Mo (INT8) | ~80 Mo (INT8 dual) | ~15 Mo |
 | **Voix natives** | 1 (SIWIS) | 6 (3F + 3M) | 1 (SIWIS) |
 | **Styles** | 7 presets (vecteur 5D) | 7 presets (vecteur 5D) | — |
 | **Débit CPU** | ~30x temps-réel | ~50x temps-réel | Temps-réel |
@@ -149,7 +149,7 @@ audio = synthetiser("Le chat dort.", voix="siwis")
 |--------|------|
 | [Pipeline G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) | Texte → phonèmes IPA |
 | [TTS Monospeaker]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) | Moteur Matcha-Conformer |
-| [TTS Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) | Moteur FastPitch-Lite v6 |
+| [TTS Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) | Moteur dual Conformer/FastPitch |
 | [TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}) | Moteur concaténation WORLD |
 | [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) | Retimbre OpenVoice (optionnel) |
 | [VC Locuteurs]({{ '/developpement/modules/outils/vc-locuteurs/' | relative_url }}) | Retimbre RVC (optionnel) |

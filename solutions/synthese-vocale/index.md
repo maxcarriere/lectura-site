@@ -19,7 +19,7 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 
 ### Multi-Speaker — 6 voix, 7 styles
 
-Un modèle neuronal unique (FastPitch-Lite + HiFi-GAN, ~40 Mo) qui gère **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique sans recharger le modèle. ~50x temps réel sur CPU.
+Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage automatique** : le Conformer gère les phrases et la voix Siwis, le FastPitch prend en charge les séquences courtes. **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique. ~30-50x temps réel sur CPU.
 
 <div class="tts-multi-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">

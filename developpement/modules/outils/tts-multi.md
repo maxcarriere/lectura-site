@@ -9,7 +9,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura TTS Multi-Speaker</h1>
-  <p class="module-tagline">Moteur acoustique FastPitch-Lite v6 — 6 voix + style conditioning (ONNX)</p>
+  <p class="module-tagline">Moteur acoustique dual Conformer + FastPitch — 6 voix + routage automatique (ONNX)</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-multispeaker/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/MultiSpeaker" class="module-badge">GitHub</a>
@@ -19,19 +19,20 @@ redirect_from:
 
 ## Présentation
 
-Moteur de synthèse vocale neuronale multi-speaker pour le français, basé sur **FastPitch-Lite v6** (modèle acoustique unifié, d_model=256) et **HiFi-GAN** (vocoder). Supporte **6 voix** et **7 presets de style** avec un modèle unique.
+Moteur de synthèse vocale neuronale multi-speaker pour le français, avec **routage dual automatique** entre deux architectures : **Matcha-Conformer** (d_model=384, flow-matching OT-CFM) pour les phrases moyennes/longues et **FastPitch-Lite v6** (d_model=256) pour les séquences courtes. Le vocoder **HiFi-GAN** est partagé. Supporte **6 voix** et **7 presets de style**.
 
 | Caractéristique | Valeur |
 |-----------------|--------|
 | **Voix** | 6 speakers (3F + 3M) : Siwis, Ezwa, Nadine, Bernard, Gilles, Zeckou |
 | **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
-| **Taille modèle** | ~40 Mo (ONNX INT8) / ~118 Mo (ONNX FP32) |
-| **Débit** | ~50x temps-réel sur CPU (ONNX) |
+| **Architecture** | Dual : Matcha-Conformer (phrases) + FastPitch-Lite (séquences courtes) |
+| **Taille modèle** | ~80 Mo (ONNX INT8 dual) / ~290 Mo (ONNX FP32 dual) |
+| **Débit** | ~30-50x temps-réel sur CPU (ONNX) |
 | **Entrée** | Phonèmes IPA ou texte français (via pipeline `lectura-tts-multi`) |
 | **Sortie** | Audio 22050 Hz, float32 |
 | **Contrôles prosodiques** | Pitch, énergie, débit, pauses + vecteur style 5D |
 
-Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local** (ONNX Runtime, inférence offline).
+Le **routage est transparent** : la factory `creer_engine()` détecte automatiquement le layout dual et route chaque phrase vers le modèle optimal. Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local** (ONNX Runtime, inférence offline).
 
 > **Brique vs Pipeline** : Ce moteur est la brique acoustique multi-speaker (phonèmes → audio). Pour le pipeline complet TTS (texte → audio avec G2P intégré et choix de moteur), voir la [page TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}).
 
@@ -87,22 +88,38 @@ audio = engine.synthesize_phonemes(
 ## Architecture
 
 ```
-Phonemes IPA + speaker_id + style_vector
-                    ↓
-FastPitch-Lite Encoder (unifié)
-(phone_ids + speaker_id + style_vector
- → enc_out + dur/pitch/energy)
-                    ↓
-Length Regulation + Prosody Embedding
-                    ↓
-FastPitch-Lite Decoder
-(decoder_in → mel spectrogram 80 bandes)
-                    ↓
-HiFi-GAN Vocoder
-(mel → waveform 22050 Hz)
+Phonemes IPA + speaker + style
+              ↓
+   ┌─── DualTTSEngine ───┐
+   │  Routage automatique │
+   │  n_phones > 15 ?     │
+   │  speaker == siwis ?  │
+   └──────┬───────┬───────┘
+          │       │
+   ┌──────▼──┐ ┌─▼────────┐
+   │FastPitch│ │Conformer │
+   │ d=256   │ │ d=384    │
+   │(courtes)│ │(phrases) │
+   └────┬────┘ └────┬─────┘
+        │           │
+        ▼           ▼
+     mel spectrogram 80 bandes
+              ↓
+      HiFi-GAN Vocoder
+   (mel → waveform 22050 Hz)
 ```
 
-Le pipeline complet utilise **3 modèles ONNX unifiés** : un encodeur partagé pour les 6 voix (avec `speaker_id` et `style_vector` en entrée), un décodeur et un vocoder.
+### Règles de routage
+
+| Condition | Modèle |
+|-----------|--------|
+| speaker == siwis (toutes longueurs) | Conformer 384 |
+| n_phones > 15 (tous speakers) | Conformer 384 |
+| n_phones ≤ 15 ET speaker ≠ siwis | FastPitch 256 |
+
+`n_phones` = nombre de phone IDs incluant les 2 markers de silence (#...#).
+
+Le Conformer 384 (flow-matching OT-CFM) produit un audio de meilleure qualité sur les phrases, mais dégrade les séquences courtes (syllabes, mots isolés) pour les speakers non-siwis. Le FastPitch gère correctement les courtes grâce à ses heuristiques de durée. Le routage est transparent — l'API est identique à la version précédente.
 
 ---
 
@@ -131,13 +148,15 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 
 ## Caractéristiques techniques
 
-- **FastPitch-Lite v6 unifié** : 24.3M paramètres (d_model=256, 4 layers, 4 heads, d_ff=1024), 6 speakers + style conditioning (5 dims)
-- **HiFi-GAN** : vocoder universel, signal 22050 Hz
+- **Architecture duale** avec routage automatique par longueur de séquence et speaker
+- **Matcha-Conformer** (phrases) : d_model=384, flow-matching OT-CFM, qualité supérieure
+- **FastPitch-Lite v6** (séquences courtes) : d_model=256, 24.3M params, durées robustes
+- **HiFi-GAN** : vocoder universel partagé, signal 22050 Hz
 - **2 backends** : API (zero config) ou ONNX Runtime local (modèles sous licence commerciale)
 - **6 voix** : Siwis, Ezwa, Nadine (F) — Bernard, Gilles, Zeckou (M)
 - **7 presets de style** : neutre, narratif, dialogue, expressif, méditatif, rapide, lent
 - **Contrôles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
-- **Factory `creer_engine()`** : détection automatique du meilleur mode
+- **Factory `creer_engine()`** : détection automatique du layout (dual, conformer, fastpitch)
 - **`set_speaker()`** : changement de voix dynamique sans recharger les modèles
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale]({{ '/contact/' | relative_url }})
