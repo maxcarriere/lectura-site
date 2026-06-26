@@ -8,15 +8,13 @@ Lectura propose un accès gratuit pour la recherche et l'éducation, et des form
 
 ---
 
-## Accès gratuit
+## Usage non commercial
 
-L'accès gratuit couvre les usages suivants :
+Pour un usage non commercial, un accès libre et gratuit couvre les usages suivants :
 
 - **API publique** ([api.lectura.world](https://api.lectura.world)) : découverte, tests, recherche et éducation
 - **Ressources téléchargeables** sur demande pour les projets non commerciaux
 - **Code source** des modules sous licence AGPL-3.0, disponible sur [GitHub](https://github.com/maxcarriere/lectura-modules)
-
-Aucune licence commerciale n'est nécessaire pour ces usages.
 
 ---
 
