@@ -55,13 +55,20 @@ Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage aut
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
+    <span style="opacity:0.5;">|</span>
+    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
+    <select class="tts-model">
+      <option value="" selected>Auto</option>
+      <option value="conformer">Conformer</option>
+      <option value="fastpitch">FFT</option>
+    </select>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=2"></script>
+<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=3"></script>
 
 ---
 

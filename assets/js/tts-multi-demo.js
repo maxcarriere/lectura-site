@@ -19,6 +19,7 @@
   const speakerSelect = container.querySelector(".tts-speaker");
   const styleSelect = container.querySelector(".tts-style");
   const modeSelect = container.querySelector(".tts-mode");
+  const modelSelect = container.querySelector(".tts-model");
 
   let audioCtx = null;
   let currentSource = null;
@@ -84,6 +85,7 @@
     var extra = {};
     if (speakerSelect) extra.speaker = speakerSelect.value;
     if (styleSelect && styleSelect.value) extra.style = styleSelect.value;
+    if (modelSelect && modelSelect.value) extra.model = modelSelect.value;
     return extra;
   }
 
@@ -124,6 +126,7 @@
         const payload = { text: text };
         if (speakerSelect) payload.speaker = speakerSelect.value;
         if (styleSelect && styleSelect.value) payload.style = styleSelect.value;
+        if (modelSelect && modelSelect.value) payload.model = modelSelect.value;
 
         const resp = await fetch(API_URL, {
           method: "POST",
