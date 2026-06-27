@@ -29,7 +29,7 @@ Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage aut
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Voix :</span>
     <select class="tts-speaker">
-      <option value="siwis" selected>Aucun (par défaut)</option>
+      <option value="siwis" selected>Siwis (par défaut)</option>
       <option value="ezwa">Ezwa (F)</option>
       <option value="nadine">Nadine (F)</option>
       <option value="bernard">Bernard (M)</option>
