@@ -19,7 +19,7 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 
 ### Multi-Speaker — 6 voix, 7 styles
 
-Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage automatique** : le Conformer gère les phrases et la voix Siwis, le FastPitch prend en charge les séquences courtes. **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique. ~30-50x temps réel sur CPU.
+Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique. ~30-50x temps réel sur CPU.
 
 <div class="tts-multi-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -58,9 +58,8 @@ Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage aut
     <span style="opacity:0.5;">|</span>
     <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
     <select class="tts-model">
-      <option value="" selected>Auto</option>
-      <option value="conformer">Conformer</option>
-      <option value="fastpitch">FFT</option>
+      <option value="high" selected>High (Conformer)</option>
+      <option value="light">Light (FastPitch)</option>
     </select>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
@@ -74,7 +73,7 @@ Un moteur dual (Matcha-Conformer + FastPitch-Lite + HiFi-GAN) avec **routage aut
 
 ### Monospeaker — voix haute qualité, 7 styles
 
-Un moteur neuronal (Matcha-Conformer + HiFi-GAN, ~29 Mo) basé sur le flow-matching OT-CFM, optimisé pour une voix unique (Siwis) avec **7 styles expressifs** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses, vecteur style 5D). Qualité configurable via `n_ode_steps` (4 = rapide, 8 = haute qualité). Retimbre optionnel via conversion vocale. ~30x temps réel sur CPU.
+Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité) et **Light** (FastPitch, ~28 Mo, plus rapide). Optimisé pour une voix unique (Siwis) avec **7 styles expressifs** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses, vecteur style 5D). Retimbre optionnel via conversion vocale. ~30-50x temps réel sur CPU.
 
 <div class="tts-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -116,13 +115,19 @@ Un moteur neuronal (Matcha-Conformer + HiFi-GAN, ~29 Mo) basé sur le flow-match
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
+    <span style="opacity:0.5;">|</span>
+    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
+    <select class="tts-model">
+      <option value="high" selected>High (Conformer)</option>
+      <option value="light">Light (FastPitch)</option>
+    </select>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=4"></script>
+<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=5"></script>
 
 ---
 
