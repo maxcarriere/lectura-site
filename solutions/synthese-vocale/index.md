@@ -27,25 +27,24 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
     <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Timbre :</span>
-    <select class="tts-speaker">
-      <option value="siwis" selected>Siwis (par défaut)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
     <span style="font-size:0.85em; opacity:0.7;">Prosodie :</span>
     <select class="tts-prosody">
-      <option value="" selected>Suit le timbre</option>
-      <option value="siwis">Siwis</option>
+      <option value="siwis" selected>Siwis</option>
       <option value="ezwa">Ezwa</option>
       <option value="nadine">Nadine</option>
       <option value="bernard">Bernard</option>
       <option value="gilles">Gilles</option>
       <option value="zeckou">Zeckou</option>
+    </select>
+    <span style="opacity:0.5;">|</span>
+    <span style="font-size:0.85em; opacity:0.7;">Timbre :</span>
+    <select class="tts-speaker">
+      <option value="siwis" selected>Siwis</option>
+      <option value="ezwa">Ezwa (F)</option>
+      <option value="nadine">Nadine (F)</option>
+      <option value="bernard">Bernard (M)</option>
+      <option value="gilles">Gilles (M)</option>
+      <option value="zeckou">Zeckou (M)</option>
     </select>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
