@@ -58,23 +58,15 @@ for s in liste_speakers():
 # Créer un engine High (Conformer, par défaut)
 engine = creer_engine()
 
-# Créer un engine Light (FastPitch, plus rapide)
-engine_light = creer_engine(model="light")
+# Synthèse avec choix de timbre et style
+engine.set_speaker("bernard")
+audio = engine.synthesize("Bonjour, comment allez-vous ?", style="expressif")
 
-# Synthèse avec choix de voix et style
-audio = engine.synthesize(
-    text="Bonjour, comment allez-vous ?",
-    speaker="bernard",
-    style="expressif",
-)
-print(f"Durée : {len(audio.samples) / audio.sample_rate:.2f}s")
-
-# Synthèse rapide avec le modèle light
-audio = engine_light.synthesize(
-    text="Je suis Nadine, enchantée.",
-    speaker="nadine",
-    style="narratif",
-)
+# Découpler prosodie et timbre :
+# voix de Siwis avec la prosodie (pitch, énergie, rythme) de Gilles
+engine.set_speaker("siwis")      # timbre = Siwis
+engine.set_prosody("gilles")     # prosodie = Gilles
+audio = engine.synthesize("La prosodie et le timbre sont indépendants.")
 
 # Raccourci avec choix du modèle
 from lectura_multispeaker import synthetiser
@@ -86,23 +78,33 @@ audio = synthetiser("Bonjour.", speaker="siwis", model="light")
 ## Architecture
 
 ```
-Phonemes IPA + speaker + style
-              ↓
-    creer_engine(model=...)
-              ↓
-   ┌──────────┐  ┌──────────┐
-   │ model=   │  │ model=   │
-   │ "high"   │  │ "light"  │
-   │Conformer │  │FastPitch │
-   │ d=384    │  │ d=256    │
-   └────┬─────┘  └────┬─────┘
-        │              │
-        ▼              ▼
-     mel spectrogram 80 bandes
-              ↓
-      HiFi-GAN Vocoder
-   (mel → waveform 22050 Hz)
+Phonemes IPA + style
+        ↓
+  ┌─────────────────────────────────────┐
+  │  set_prosody(speaker)               │
+  │  → Encodeur per-speaker             │
+  │  → pitch, energy, enc_out           │
+  ├─────────────────────────────────────┤
+  │  Duration Predictor standalone      │
+  │  → durees (base siwis, 2.6 Mo)     │
+  ├─────────────────────────────────────┤
+  │  set_speaker(speaker)               │
+  │  → spk_emb (timbre, 11 Ko)         │
+  └──────────────┬──────────────────────┘
+                 ↓
+         UNet ODE (Matcha)
+       + spk_emb FiLM conditioning
+                 ↓
+       mel spectrogram 80 bandes
+                 ↓
+         HiFi-GAN Vocoder
+      (mel → waveform 22050 Hz)
 ```
+
+Le modele High (Matcha-Conformer) decouple trois dimensions independantes :
+- **Durees** : duration predictor standalone (fixe, base siwis)
+- **Prosodie** : encodeur au choix parmi les 6 speakers (pitch, energy, enc_out)
+- **Timbre** : spk_emb au choix parmi les 6 speakers (identite vocale pour le UNet)
 
 ### Deux modèles au choix
 
@@ -148,7 +150,10 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 - **6 voix** : Siwis, Ezwa, Nadine (F) — Bernard, Gilles, Zeckou (M)
 - **7 presets de style** : neutre, narratif, dialogue, expressif, méditatif, rapide, lent
 - **Contrôles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
+- **Duration predictor standalone** : 601K params, 2.6 Mo, remplace l'encodeur siwis (~150 Mo) pour les durees
+- **Decouplage prosodie/timbre** : `set_prosody()` et `set_speaker()` independants
 - **Factory `creer_engine(model=...)`** : choix explicite du modèle (high par défaut)
-- **`set_speaker()`** : changement de voix dynamique sans recharger les modèles
+- **`set_speaker()`** : change le timbre (spk_emb) sans recharger l'encodeur
+- **`set_prosody()`** : change l'encodeur pour la prosodie (pitch, energy, rythme)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale]({{ '/contact/' | relative_url }})

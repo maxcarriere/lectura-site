@@ -17,6 +17,7 @@
   const timingsTable = container.querySelector(".tts-timings");
   const progressBar = container.querySelector(".tts-progress");
   const speakerSelect = container.querySelector(".tts-speaker");
+  const prosodySelect = container.querySelector(".tts-prosody");
   const styleSelect = container.querySelector(".tts-style");
   const modeSelect = container.querySelector(".tts-mode");
   const modelSelect = container.querySelector(".tts-model");
@@ -84,6 +85,7 @@
   function buildExtraPayload() {
     var extra = {};
     if (speakerSelect) extra.speaker = speakerSelect.value;
+    if (prosodySelect && prosodySelect.value) extra.prosody = prosodySelect.value;
     if (styleSelect && styleSelect.value) extra.style = styleSelect.value;
     if (modelSelect && modelSelect.value) extra.model = modelSelect.value;
     return extra;
@@ -125,6 +127,7 @@
 
         const payload = { text: text };
         if (speakerSelect) payload.speaker = speakerSelect.value;
+        if (prosodySelect && prosodySelect.value) payload.prosody = prosodySelect.value;
         if (styleSelect && styleSelect.value) payload.style = styleSelect.value;
         if (modelSelect && modelSelect.value) payload.model = modelSelect.value;
 
