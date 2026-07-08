@@ -18,7 +18,7 @@ Lectura propose plusieurs outils d'analyse du langage français. Chaque module f
 
 Transformer un texte en suite de **tokens** (mots, ponctuation, formules) avec normalisation typographique. Le tokeniseur détecte automatiquement plus de 15 types de formules : nombres, dates, heures, sigles, monnaies, pourcentages, expressions mathématiques.
 
-<div class="pyodide-demo" data-package="lectura-tokeniseur>=2.3.0" data-code="
+<div class="pyodide-demo" data-package="lectura-tokeniseur>=2.3.6,lectura-formules>=3.7.8" data-code="
 from lectura_tokeniseur import tokenise, Formule
 tokens = tokenise('{INPUT}')
 lines = []
