@@ -58,6 +58,24 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
   color: var(--muted-fg, #888);
   font-style: italic;
 }
+#ctc-timestamps {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+#ctc-timestamps th, #ctc-timestamps td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  text-align: left;
+}
+#ctc-timestamps th {
+  font-weight: 600;
+  color: var(--muted-fg, #888);
+  font-size: 0.85em;
+}
+#ctc-timestamps td:first-child {
+  font-family: monospace;
+}
 </style>
 
 <div class="ctc-demo">
@@ -95,6 +113,10 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
   <div class="ctc-output-block">
     <div class="ctc-output-label">Texte (STT)</div>
     <pre class="tts-output" id="ctc-output-texte"></pre>
+  </div>
+  <div class="ctc-output-block">
+    <div class="ctc-output-label">Timestamps</div>
+    <table class="tts-timings" id="ctc-timestamps"></table>
   </div>
 </div>
 

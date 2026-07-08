@@ -23,6 +23,7 @@
   var modeSelect = document.getElementById("ctc-mode");
   var ipaOutput = document.getElementById("ctc-output-ipa");
   var texteOutput = document.getElementById("ctc-output-texte");
+  var timestampsTable = document.getElementById("ctc-timestamps");
 
   var mediaRecorder = null;
   var recordedChunks = [];
@@ -109,6 +110,7 @@
     ipaOutput.classList.toggle("error", !!isError);
     texteOutput.textContent = "";
     texteOutput.classList.remove("error");
+    if (timestampsTable) timestampsTable.innerHTML = "";
   }
 
   function displayIpa(ipa) {
@@ -150,6 +152,19 @@
       texteOutput.textContent = "(P2G non disponible sur le serveur)";
       texteOutput.classList.add("ctc-muted");
     }
+  }
+
+  function displayTimestamps(timestamps) {
+    if (!timestampsTable) return;
+    if (!timestamps || timestamps.length === 0) {
+      timestampsTable.innerHTML = "";
+      return;
+    }
+    var html = "<tr><th>Phone</th><th>Début</th><th>Fin</th><th>Confiance</th></tr>";
+    timestamps.forEach(function (t) {
+      html += "<tr><td>" + t.phone + "</td><td>" + t.time_s.toFixed(3) + "s</td><td>" + t.time_end_s.toFixed(3) + "s</td><td>" + (t.confidence * 100).toFixed(1) + "%</td></tr>";
+    });
+    timestampsTable.innerHTML = html;
   }
 
   // Transcription
@@ -215,8 +230,10 @@
       if (data.ipa) {
         displayIpa(data.ipa);
         displayTexte(data.texte);
+        displayTimestamps(data.timestamps);
       } else {
         setStatus("(silence — aucun phone detecte)");
+        displayTimestamps(null);
       }
     } catch (err) {
       setStatus("Erreur : " + err.message, true);
