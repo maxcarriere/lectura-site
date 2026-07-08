@@ -154,6 +154,6 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 - **Decouplage prosodie/timbre** : `set_prosody()` et `set_speaker()` independants
 - **Factory `creer_engine(model=...)`** : choix explicite du modèle (high par défaut)
 - **`set_speaker()`** : change le timbre (spk_emb) sans recharger l'encodeur
-- **`set_prosody()`** : change l'encodeur pour la prosodie (pitch, energy, rythme)
+- **`set_prosody()`** : change l'encodeur pour la prosodie (pitch, energy, rythme) — modèle High uniquement (sans effet sur Light)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Licence** : AGPL-3.0 (code) — les modèles pré-entraînés sont sous [licence commerciale]({{ '/contact/' | relative_url }})

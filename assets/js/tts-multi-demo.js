@@ -16,11 +16,41 @@
   const outputArea = container.querySelector(".tts-output");
   const timingsTable = container.querySelector(".tts-timings");
   const progressBar = container.querySelector(".tts-progress");
-  const speakerSelect = container.querySelector(".tts-speaker");
-  const prosodySelect = container.querySelector(".tts-prosody");
+  const modelSelect = container.querySelector(".tts-model");
   const styleSelect = container.querySelector(".tts-style");
   const modeSelect = container.querySelector(".tts-mode");
-  const modelSelect = container.querySelector(".tts-model");
+
+  // High (Conformer) : Prosodie + Timbre
+  const speakerSelect = container.querySelector(".tts-speaker");
+  const prosodySelect = container.querySelector(".tts-prosody");
+
+  // Light (FastPitch) : Voix unique
+  const speakerLightSelect = container.querySelector(".tts-speaker-light");
+
+  // Elements d'affichage conditionnels
+  var highEls = container.querySelectorAll(".tts-voice-high, .tts-voice-label-high, .tts-voice-sep-high");
+  var lightEls = container.querySelectorAll(".tts-voice-light, .tts-voice-label-light");
+
+  function updateVoiceUI() {
+    var isHigh = !modelSelect || modelSelect.value === "high";
+    for (var i = 0; i < highEls.length; i++) highEls[i].style.display = isHigh ? "" : "none";
+    for (var i = 0; i < lightEls.length; i++) lightEls[i].style.display = isHigh ? "none" : "";
+  }
+
+  if (modelSelect) modelSelect.addEventListener("change", updateVoiceUI);
+  updateVoiceUI();
+
+  function getActiveSpeaker() {
+    if (modelSelect && modelSelect.value === "light" && speakerLightSelect) {
+      return speakerLightSelect.value;
+    }
+    return speakerSelect ? speakerSelect.value : "siwis";
+  }
+
+  function getActiveProsody() {
+    if (modelSelect && modelSelect.value === "light") return null;
+    return prosodySelect ? prosodySelect.value : null;
+  }
 
   let audioCtx = null;
   let currentSource = null;
@@ -84,8 +114,9 @@
 
   function buildExtraPayload() {
     var extra = {};
-    if (speakerSelect) extra.speaker = speakerSelect.value;
-    if (prosodySelect && prosodySelect.value) extra.prosody = prosodySelect.value;
+    extra.speaker = getActiveSpeaker();
+    var prosody = getActiveProsody();
+    if (prosody) extra.prosody = prosody;
     if (styleSelect && styleSelect.value) extra.style = styleSelect.value;
     if (modelSelect && modelSelect.value) extra.model = modelSelect.value;
     return extra;
@@ -122,14 +153,11 @@
 
         if (timingsTable) timingsTable.innerHTML = "";
       } else {
-        // --- Fluide mode (existing behavior) ---
+        // --- Fluide mode ---
         setStatus("Envoi de la requete...");
 
-        const payload = { text: text };
-        if (speakerSelect) payload.speaker = speakerSelect.value;
-        if (prosodySelect && prosodySelect.value) payload.prosody = prosodySelect.value;
-        if (styleSelect && styleSelect.value) payload.style = styleSelect.value;
-        if (modelSelect && modelSelect.value) payload.model = modelSelect.value;
+        const payload = buildExtraPayload();
+        payload.text = text;
 
         const resp = await fetch(API_URL, {
           method: "POST",

@@ -27,8 +27,14 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
     <button class="tts-btn" type="button">Synthétiser</button>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Prosodie :</span>
-    <select class="tts-prosody">
+    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
+    <select class="tts-model">
+      <option value="high" selected>High (Conformer)</option>
+      <option value="light">Light (FastPitch)</option>
+    </select>
+    <span style="opacity:0.5;">|</span>
+    <span class="tts-voice-label-high" style="font-size:0.85em; opacity:0.7;">Prosodie :</span>
+    <select class="tts-prosody tts-voice-high">
       <option value="siwis" selected>Siwis</option>
       <option value="ezwa">Ezwa</option>
       <option value="nadine">Nadine</option>
@@ -36,10 +42,19 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
       <option value="gilles">Gilles</option>
       <option value="zeckou">Zeckou</option>
     </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Timbre :</span>
-    <select class="tts-speaker">
+    <span class="tts-voice-sep-high" style="opacity:0.5;">|</span>
+    <span class="tts-voice-label-high" style="font-size:0.85em; opacity:0.7;">Timbre :</span>
+    <select class="tts-speaker tts-voice-high">
       <option value="siwis" selected>Siwis</option>
+      <option value="ezwa">Ezwa (F)</option>
+      <option value="nadine">Nadine (F)</option>
+      <option value="bernard">Bernard (M)</option>
+      <option value="gilles">Gilles (M)</option>
+      <option value="zeckou">Zeckou (M)</option>
+    </select>
+    <span class="tts-voice-label-light" style="font-size:0.85em; opacity:0.7; display:none;">Voix :</span>
+    <select class="tts-speaker-light tts-voice-light" style="display:none;">
+      <option value="siwis" selected>Siwis (par défaut)</option>
       <option value="ezwa">Ezwa (F)</option>
       <option value="nadine">Nadine (F)</option>
       <option value="bernard">Bernard (M)</option>
@@ -65,19 +80,13 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
     </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
-    <select class="tts-model">
-      <option value="high" selected>High (Conformer)</option>
-      <option value="light">Light (FastPitch)</option>
-    </select>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=4"></script>
+<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=5"></script>
 
 ---
 
@@ -108,6 +117,12 @@ Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité)
     </label>
   </div>
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
+    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
+    <select class="tts-model">
+      <option value="high" selected>High (Conformer)</option>
+      <option value="light">Light (FastPitch)</option>
+    </select>
+    <span style="opacity:0.5;">|</span>
     <span style="font-size:0.85em; opacity:0.7;">Style :</span>
     <select class="tts-style">
       <option value="neutre" selected>Neutre</option>
@@ -124,12 +139,6 @@ Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité)
       <option value="FLUIDE" selected>Fluide</option>
       <option value="MOT_A_MOT">Mot à mot</option>
       <option value="SYLLABES">Syllabes</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
-    <select class="tts-model">
-      <option value="high" selected>High (Conformer)</option>
-      <option value="light">Light (FastPitch)</option>
     </select>
   </div>
   <div class="tts-progress-container"><div class="tts-progress"></div></div>
