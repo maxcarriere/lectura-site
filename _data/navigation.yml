@@ -50,8 +50,8 @@
     - title: Ressources
       url: /produits/ressources/
       children:
-        - title: LeXiK Lite
-          url: /produits/ressources/lexik-lite/
+        - title: LeXiK
+          url: /produits/ressources/lexik/
         - title: Kit G2P / P2G
           url: /produits/ressources/kit-g2p-p2g/
         - title: Corpus de Voix

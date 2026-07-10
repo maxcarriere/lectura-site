@@ -12,19 +12,19 @@ redirect_from:
   - /solutions/ressources/kit-g2p-p2g/
 ---
 
-## LeXiK — Base lexicale
+## WikiLeXiK — Base lexicale encyclopédique
 
-LeXiK est la base lexicale de Lectura : **1,35 million d'entrées** couvrant l'orthographe, la morphologie, la phonétique IPA, les fréquences, les synonymes et les définitions. Compilée à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles) et reliée à 2,5 millions d'entités Wikidata.
+WikiLeXiK est l'interface encyclopédique de Lectura, reliée à Wiktionary, Wikidata et Wikipedia : **1,35 million d'entrées** couvrant l'orthographe, la morphologie, la phonétique IPA, les fréquences, les synonymes et les définitions. Compilée à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles) et reliée à 2,5 millions d'entités Wikidata.
 
 La documentation complète de la base (structure, colonnes, sources, statistiques) est disponible sur le sous-domaine dédié :
 
-<p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world/documentation" class="module-badge" style="font-size:1.1em;">» Documentation LeXiK — lexique.lectura.world «</a></p>
+<p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world/documentation" class="module-badge" style="font-size:1.1em;">» Documentation WikiLeXiK — lexique.lectura.world «</a></p>
 
 ---
 
-## LeXiK Lite
+## LeXiK
 
-Une version allégée de LeXiK est en cours de développement pour être embarquée dans les applications et modules Lectura.
+LeXiK est la base lexicale pure de Lectura (formes, phonétique, morphologie), en version allégée pour être embarquée dans les applications et modules Lectura.
 
 [Voir les ressources distribuées →]({{ '/produits/ressources/' | relative_url }})
 
@@ -32,7 +32,7 @@ Une version allégée de LeXiK est en cours de développement pour être embarqu
 
 ## API REST
 
-LeXiK est interrogeable via l'API REST Lectura, sans authentification :
+WikiLeXiK est interrogeable via l'API REST Lectura, sans authentification :
 
 ```
 https://api.lectura.world/lexique/
@@ -57,7 +57,7 @@ La documentation interactive (Swagger) est disponible sur [api.lectura.world/doc
 
 ## Module lectura-lexique
 
-Le module Python [`lectura-lexique`]({{ '/developpement/modules/outils/lexique/' | relative_url }}) fournit 18 méthodes de requêtage pour exploiter LeXiK ou toute autre base lexicale compatible (Lexique383, GLAFF, Morphalou). Zéro dépendance, backends CSV/TSV/SQLite, chargement lazy.
+Le module Python [`lectura-lexique`]({{ '/developpement/modules/outils/lexique/' | relative_url }}) fournit 18 méthodes de requêtage pour exploiter WikiLeXiK ou toute autre base lexicale compatible (Lexique383, GLAFF, Morphalou). Zéro dépendance, backends CSV/TSV/SQLite, chargement lazy.
 
 ```python
 from lectura_lexique import Lexique

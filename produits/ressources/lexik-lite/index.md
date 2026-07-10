@@ -1,12 +1,14 @@
 ---
-title: LeXiK Lite
+title: LeXiK
 layout: default
-permalink: /produits/ressources/lexik-lite/
+permalink: /produits/ressources/lexik/
+redirect_from:
+  - /produits/ressources/lexik-lite/
 ---
 
 <span class="status-badge status-dispo">Disponible</span>
 
-Versions allégées du lexique [LeXiK]({{ '/developpement/lexique/' | relative_url }}) (1,52 million d'entrées), destinées à l'intégration dans des applications, la recherche linguistique ou le développement d'outils de traitement du français.
+**LeXiK** est la base lexicale de Lectura (1,52 million d'entrées de formes, phonétique et morphologie), destinée à l'intégration dans des applications, la recherche linguistique ou le développement d'outils de traitement du français.
 
 ---
 

@@ -8,11 +8,11 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>LeXiK Lite</h2>
-    <p>Versions allégées du lexique LeXiK : complète (1,52M entrées) et fréquente (314K entrées). Phonétique IPA, syllabes, orthocode, fréquences, morphologie.</p>
+    <h2>LeXiK</h2>
+    <p>Base lexicale de Lectura : complète (1,52M entrées) et fréquente (314K entrées). Phonétique IPA, syllabes, orthocode, fréquences, morphologie.</p>
     <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
-      <a class="more-link" href="{{ '/produits/ressources/lexik-lite/' | relative_url }}">Détails</a>
+      <a class="more-link" href="{{ '/produits/ressources/lexik/' | relative_url }}">Détails</a>
     </div>
   </div>
   <div class="home-card">
