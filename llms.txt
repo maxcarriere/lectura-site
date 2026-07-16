@@ -34,7 +34,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 - TTS Diphonique : synthese concatenative par diphones avec prosodie par regles
 
 ### Reconnaissance vocale (STT)
-- Decodeur CTC : CNN-BiGRU-CTC, 10,6M parametres, PER 4,34%
+- Decodeur CTC : CNN-BiGRU-CTC, 13,2M parametres, PER 3,59%
 - Pipeline STT complet : decodage acoustique + P2G
 
 ### Conversion de voix

@@ -18,17 +18,17 @@ redirect_from:
 
 ## Présentation
 
-Brique atomique de décodage phonétique : un modèle **CNN-BiGRU-CTC medium** (10.6M paramètres, ONNX INT8 ~38 Mo) qui convertit un signal audio 16 kHz en une séquence de phones IPA avec séparateurs de mots, liaisons et ponctuation.
+Brique atomique de décodage phonétique : un modèle **CNN-BiGRU-CTC medium** (13.2M paramètres, ONNX INT8 ~49 Mo) qui convertit un signal audio 16 kHz en une séquence de phones IPA avec séparateurs de mots, liaisons et ponctuation.
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Architecture** | CNN [48, 96] (2 couches) + BiGRU 384x4 + CTC head |
-| **Paramètres** | 10.6M |
-| **Performance** | PER ~4.34% (formules v2) |
+| **Architecture** | CNN [48, 96] (2 couches) + BiGRU 384x5 + CTC head |
+| **Paramètres** | 13.2M |
+| **Performance** | PER ~3.59% |
 | **Vocabulaire** | 59 tokens (46 phones IPA + liaisons + ponctuation + spéciaux) |
 | **Audio** | PCM float32 mono, 16 kHz |
 | **Mel** | 80 bins, n_fft=512, hop=160, win=400 |
-| **Modèle** | ONNX INT8, ~38 Mo |
+| **Modèle** | ONNX INT8, ~49 Mo |
 | **Backends** | ONNX Runtime (local) ou API serveur |
 
 Le modèle medium supporte les sigles et formules grâce à un fine-tuning spécialisé.
@@ -123,9 +123,9 @@ Audio 16kHz mono
       │  (1, T/4, 1280)
       ▼
 ┌─────────────┐
-│ BiGRU ×4     │  4 couches bidirectionnelles (384h)
+│ BiGRU ×5     │  5 couches bidirectionnelles (384h)
 └─────┬───────┘
-      │  (1, T/4, 512)
+      │  (1, T/4, 768)
       ▼
 ┌─────────────┐
 │ CTC head     │  Linear → 59 classes
@@ -162,11 +162,11 @@ Par défaut, le module utilise l'**API Lectura** si aucun modèle local n'est tr
 
 ## Caractéristiques techniques
 
-- **CNN-BiGRU-CTC medium** : 10.6M paramètres, PER ~4.34%
+- **CNN-BiGRU-CTC medium** : 13.2M paramètres, PER ~3.59%
 - **Mel spectrogram numpy pur** : pas de dépendance torchaudio
 - **Décodage CTC greedy** : zéro dépendance
 - **59 tokens** : 46 phones IPA français + 6 liaisons + 5 ponctuations + 2 spéciaux
-- **ONNX INT8** : modèle quantifié ~38 Mo
+- **ONNX INT8** : modèle quantifié ~49 Mo
 - **CLI intégrée** : `python -m lectura_decodeur` (fichier WAV ou micro)
 - **Factory `creer_engine()`** : cascade auto ONNX → API
 - **STT-Formules** : ~600K params, 87 tokens sémantiques, TER ~1.17%

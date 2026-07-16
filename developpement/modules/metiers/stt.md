@@ -27,7 +27,7 @@ Audio 16kHz mono
      │
      ▼
 ┌─────────────┐
-│ CTC          │  CNN-BiGRU-CTC medium (10.6M params)
+│ CTC          │  CNN-BiGRU-CTC medium (13.2M params)
 │              │  → phones IPA avec séparateurs et ponctuation
 └─────┬───────┘
       │
@@ -55,7 +55,7 @@ Audio 16kHz mono
 | Métrique | Score |
 |----------|-------|
 | **WER** (parole courante) | **~15%** |
-| **PER** (CTC seul) | **~4.34%** |
+| **PER** (CTC seul) | **~3.59%** |
 
 Pipeline CTC + P2G v7 + post-traitement grammatical. Performances comparables à Whisper small (241M params, 461 Mo) avec un pipeline **10x plus léger** (~43 Mo de modèles).
 

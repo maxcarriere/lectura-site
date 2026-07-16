@@ -22,8 +22,8 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
 | Métrique | Score |
 |----------|-------|
 | WER (pipeline complet) | **~15%** |
-| PER (décodeur phonétique) | **~4.34%** |
-| Taille totale | **~43 Mo** (vs 461 Mo pour Whisper small) |
+| PER (décodeur phonétique) | **~3.59%** |
+| Taille totale | **~54 Mo** (vs 461 Mo pour Whisper small) |
 
 ---
 

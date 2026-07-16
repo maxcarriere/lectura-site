@@ -31,7 +31,7 @@ En isolant la couche phonétique, Lectura tente de factoriser le problème au bo
 
 Les bénéfices sont concrets :
 
-- **Des modèles légers, rapides et portables.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (38 Mo) peuvent tourner en local sur des appareils modestes (smartphone, Raspberry Pi) pour une qualité sensiblement comparable aux moteurs de référence.
+- **Des modèles légers, rapides et portables.** Chaque brique ne résout qu'une partie du problème, ce qui permet d'utiliser des architectures modestes. Le phonémiseur (1,75M paramètres, 1,8 Mo en ONNX INT8) et le graphémiseur (3,2M paramètres, 4,4 Mo) tiennent sur n'importe quel appareil. Le modèle TTS (29 Mo) et le décodeur CTC (49 Mo) peuvent tourner en local sur des appareils modestes (smartphone, Raspberry Pi) pour une qualité sensiblement comparable aux moteurs de référence.
 - **Moins de données nécessaires.** Des modèles spécialisés plus petits s'entraînent sur des corpus plus modestes que leurs équivalents end-to-end.
 - **Moins de matériel.** L'entraînement de chaque brique ne nécessite qu'un GPU léger (une simple carte NVIDIA RTX 3060), là où les systèmes end-to-end demandent souvent des grappes de GPU et des semaines de calcul.
 

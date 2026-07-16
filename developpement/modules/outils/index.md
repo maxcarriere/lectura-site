@@ -106,7 +106,7 @@ Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome
   </div>
   <div class="home-card">
     <h2>Décodeur</h2>
-    <p>Décodeur phonétique neural CNN-BiGRU-CTC (10.6M params, PER ~4.34%) + STT-Formules (600K params). Extra <code>[onnx]</code>.</p>
+    <p>Décodeur phonétique neural CNN-BiGRU-CTC (13.2M params, PER ~3.59%) + STT-Formules (600K params). Extra <code>[onnx]</code>.</p>
     <code class="card-install">pip install lectura-decodeur</code>
     <div class="card-links">
       <a class="more-link" href="{{ '/developpement/modules/outils/ctc/' | relative_url }}">Détails</a>

@@ -20,7 +20,7 @@ Plutôt que d'utiliser de gros modèles end-to-end, Lectura fait le choix de **m
 |--------|-------------|------------|-------------|
 | [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (G2P) | BiLSTM multi-tête | 1,75M | 1,8 Mo |
 | [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (P2G) | BiLSTM V7 + attention cross + lex_select | 3,2M | 4,4 Mo |
-| [Décodeur CTC]({{ '/developpement/modules/outils/ctc/' | relative_url }}) (STT) | CNN-BiGRU-CTC | 10,6M | 38 Mo |
+| [Décodeur CTC]({{ '/developpement/modules/outils/ctc/' | relative_url }}) (STT) | CNN-BiGRU-CTC | 13,2M | 49 Mo |
 | [TTS Mono]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) | Matcha-Conformer + HiFi-GAN | 17,9M | ~29 Mo |
 | [TTS Multi]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) | FastPitch-Lite v6 + HiFi-GAN | 24,3M | ~40 Mo |
 
@@ -38,7 +38,7 @@ L'architecture **multi-tête** permet de partager un même encodeur BiLSTM entre
 
 ### CNN-BiGRU-CTC pour l'audio
 
-Le décodeur acoustique utilise un **frontend CNN** (2 couches convolutives avec stride 2 pour un sous-échantillonnage x4) suivi de **BiGRU** (4 couches, 384 unités bidirectionnelles) et d'une **tête CTC**.
+Le décodeur acoustique utilise un **frontend CNN** (2 couches convolutives avec stride 2 pour un sous-échantillonnage x4) suivi de **BiGRU** (5 couches, 384 unités bidirectionnelles) et d'une **tête CTC**.
 
 Le choix du CTC (Connectionist Temporal Classification) est fondamental : il permet d'aligner automatiquement l'audio et la transcription phonétique sans alignement explicite. Le modèle produit directement des phonèmes IPA, pas du texte. C'est le pipeline P2G qui se charge ensuite de la conversion en texte.
 
