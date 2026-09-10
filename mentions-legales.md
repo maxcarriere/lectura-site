@@ -10,7 +10,7 @@ Le site **www.lectura.world** est édité par :
 
 - **Nom** : Maxime Carrière
 - **Statut** : Auto-entrepreneur
-- **Email** : [admin@lectura.world](mailto:admin@lectura.world)
+- **Email** : [lectura.world@gmail.com](mailto:lectura.world@gmail.com)
 
 ---
 

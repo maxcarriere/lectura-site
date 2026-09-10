@@ -15,7 +15,7 @@ Pour toute question, retour ou proposition de collaboration autour du projet Lec
 <div class="contact-email" markdown="0">
   <a id="email-link" href="#" aria-label="Envoyer un email">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 32" width="340" height="32" role="img" aria-label="Adresse email">
-      <text x="0" y="24" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="22" fill="#0d0d0d">admin@lectura.world</text>
+      <text x="0" y="24" font-family="'EB Garamond', Georgia, 'Times New Roman', serif" font-size="22" fill="#0d0d0d">lectura.world@gmail.com</text>
     </svg>
   </a>
   <button class="contact-copy-btn" onclick="copyEmail()" title="Copier l'adresse email">
@@ -59,7 +59,7 @@ Pour toute question, retour ou proposition de collaboration autour du projet Lec
 
 <script>
 (function() {
-  var p = ['admin', 'lectura.world'];
+  var p = ['lectura.world', 'gmail.com'];
   var addr = p[0] + '@' + p[1];
 
   // Set mailto link on the SVG
