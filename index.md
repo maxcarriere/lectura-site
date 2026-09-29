@@ -1,6 +1,9 @@
 ---
 title: "Bienvenue sur Lectura.world !"
 layout: default
+og_title: "Lectura World — L'écosystème open source pour la lecture du français"
+description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 1,35 million d'entrées et outils pédagogiques pour l'apprentissage de la lecture."
+image: /assets/images/og-lectura.png
 ---
 
 Lectura est un écosystème de projets dédié à la **lecture du français**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Les projets développés s'expriment dans plusieurs composantes :
