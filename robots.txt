@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.lectura.world/sitemap.xml
+Sitemap: https://lexique.lectura.world/sitemap.xml
