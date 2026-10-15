@@ -15,11 +15,11 @@ Lectura est un écosystème de projets dédié à la **lecture du français**, c
 - **Pédagogique** : Des [outils et des ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage de la lecture en autonomie ou du français langue étrangère, basées sur la [lecture syllabique]({{ '/produits/medias/' | relative_url }}) et l'utilisation du [numérique]({{ '/produits/applications/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
-  <h3>Découvrir Lectura :</h3>
-  <div class="cta-links cta-links-grid cta-links-trois">
-    <a href="https://lingua.lectura.world"><span class="cta-icon">🔤</span><span class="cta-texte"><strong>LecturaLingua</strong>Analyse<br>du langage</span></a>
-    <a href="https://voice.lectura.world"><span class="cta-icon">🔊</span><span class="cta-texte"><strong>LecturaVoice</strong>Synthèse et<br>reconnaissance vocales</span></a>
-    <a href="https://lexique.lectura.world"><span class="cta-icon">📖</span><span class="cta-texte"><strong>WikiLeXiK</strong>Le lexique<br>de Lectura</span></a>
+  <h3>Découvrir les projets de Lectura :</h3>
+  <div class="cta-projets">
+    <a href="https://lingua.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua" loading="lazy"></span><span class="cta-projet-texte">Analyse du langage : grammaire, phonétique, lecture syllabique</span></a>
+    <a href="https://voice.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice" loading="lazy"></span><span class="cta-projet-texte">Synthèse et reconnaissance vocales</span></a>
+    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/wikilexik.webp' | relative_url }}" width="787" height="128" alt="WikiLeXiK" loading="lazy"></span><span class="cta-projet-texte">Le lexique de Lectura : 1,35 million d'entrées</span></a>
   </div>
 </div>
 

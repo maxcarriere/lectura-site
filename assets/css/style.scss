@@ -795,18 +795,64 @@ html[data-darkreader-mode] .parchment-content a:hover {
   gap: 0.75rem;
 }
 
-.cta-links-trois {
-  grid-template-columns: repeat(3, 1fr);
+.cta-projets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.cta-texte {
-  display: block;
+.cta-projets a {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.9em 1.25em;
+  border: 1px solid rgba(13, 13, 13, 0.3);
+  border-radius: 4px;
+  color: #0d0d0d !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-.cta-links-grid a strong {
+.cta-projets a:hover {
+  background-color: rgba(13, 13, 13, 0.05);
+  border-color: rgba(13, 13, 13, 0.5);
+}
+
+.cta-projet-logo {
+  flex: 0 0 230px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-projet-logo img {
   display: block;
-  margin-bottom: 0.2em;
-  font-size: 1.05rem;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 64px;
+}
+
+.cta-projet-texte {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .cta-projets a {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .cta-projets .cta-projet-texte {
+    text-align: center;
+  }
+
+  .cta-projet-logo {
+    flex-basis: auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
