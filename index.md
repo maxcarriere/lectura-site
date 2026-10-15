@@ -6,7 +6,7 @@ description: "Lectura est un écosystème open source dédié à la lecture du f
 image: /assets/images/og-lectura.png
 ---
 
-Lectura est un écosystème de projets autour de la **lecture**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui reste son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
+Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
 
 <div class="cta-box" markdown="0">
   <h3>Découvrir les projets de Lectura :</h3>
