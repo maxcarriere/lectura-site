@@ -1,6 +1,6 @@
 # Lectura
 
-> Lectura est un ecosysteme de projets modulaires pour le traitement du francais, developpe par Maxime Carriere. Il couvre la synthese vocale, la reconnaissance vocale, l'analyse du langage et un lexique de plus de 1,35 million d'entrees. Tous les modules sont developpes en Python et publies sur PyPI.
+> Lectura est un ecosysteme de projets modulaires pour le traitement du francais, developpe par Maxime Carriere. Il couvre la synthese vocale, la reconnaissance vocale, l'analyse du langage et un lexique de 2,58 millions de formes. Tous les modules sont developpes en Python et publies sur PyPI.
 
 ## Auteur
 
@@ -42,7 +42,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 - Voice Conversion zero-shot
 
 ### Donnees
-- Lexique LeXiK : 1,35 million d'entrees, phonetique IPA, frequences, morphologie
+- Lexique LeXiK : 2,58 millions de formes, phonetique IPA, frequences, morphologie
 - Corpus d'entrainement pour le francais
 
 ## Pipelines metiers

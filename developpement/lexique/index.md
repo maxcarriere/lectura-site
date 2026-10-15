@@ -14,7 +14,7 @@ redirect_from:
 
 ## WikiLeXiK — Base lexicale encyclopédique
 
-WikiLeXiK est l'interface encyclopédique de Lectura, reliée à Wiktionary, Wikidata et Wikipedia : **1,35 million d'entrées** couvrant l'orthographe, la morphologie, la phonétique IPA, les fréquences, les synonymes et les définitions. Compilée à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles) et reliée à 2,5 millions d'entités Wikidata.
+WikiLeXiK est l'interface encyclopédique de Lectura, reliée à Wiktionary, Wikidata et Wikipedia : **2,58 millions de formes** couvrant l'orthographe, la morphologie, la phonétique IPA, les fréquences, les synonymes et les définitions. Compilée à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles) et reliée à 2,5 millions d'entités Wikidata.
 
 La documentation complète de la base (structure, colonnes, sources, statistiques) est disponible sur le sous-domaine dédié :
 

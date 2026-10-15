@@ -2,7 +2,7 @@ baseurl: ""
 url: "https://www.lectura.world"
 
 title: Lectura
-description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 1,35 million d'entrées et outils pédagogiques pour l'apprentissage de la lecture."
+description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."
 lang: fr
 theme: minima
 

@@ -2,7 +2,7 @@
 title: "Bienvenue sur Lectura.world !"
 layout: default
 og_title: "Lectura World — L'écosystème open source pour la lecture du français"
-description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 1,35 million d'entrées et outils pédagogiques pour l'apprentissage de la lecture."
+description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."
 image: /assets/images/og-lectura.png
 ---
 
@@ -13,7 +13,7 @@ Lectura est un écosystème de projets autour du **langage** et de sa **lecture*
   <div class="cta-projets">
     <a href="https://lingua.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua"></span><span class="cta-projet-texte">Analyse du langage : grammaire, phonétique, lecture syllabique</span></a>
     <a href="https://voice.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice"></span><span class="cta-projet-texte">Synthèse et reconnaissance vocales</span></a>
-    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/wikilexik.webp' | relative_url }}" width="787" height="128" alt="WikiLeXiK"></span><span class="cta-projet-texte">Le lexique de Lectura : 1,35 million d'entrées</span></a>
+    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/wikilexik.webp' | relative_url }}" width="787" height="128" alt="WikiLeXiK"></span><span class="cta-projet-texte">Le lexique de Lectura : 2,58 millions de formes</span></a>
   </div>
 </div>
 
@@ -21,7 +21,7 @@ Les projets développés s'expriment dans plusieurs composantes :
 
 - **Technologique** : [Analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) (NLP), [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) (TTS) et [reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) (STT), avec une quinzaine de [modules Python]({{ '/developpement/modules/' | relative_url }}) autonomes publiés sur PyPI et testables directement sur le site ainsi que le développement de plusieurs [logiciels]({{ '/produits/programmes/' | relative_url }}).
 
-- **Données** : Un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 1,35 million d'entrées consultable en ligne et différents [corpus]({{ '/produits/ressources/' | relative_url }}) élaborés pour l'entraînement des modèles et la création d'outils éducatifs.
+- **Données** : Un [lexique]({{ '/solutions/lexique/' | relative_url }}) de 2,58 millions de formes consultable en ligne et différents [corpus]({{ '/produits/ressources/' | relative_url }}) élaborés pour l'entraînement des modèles et la création d'outils éducatifs.
 
 - **Pédagogique** : Des [outils et des ressources]({{ '/produits/' | relative_url }}) pour l'apprentissage de la lecture en autonomie ou du français langue étrangère, basées sur la [lecture syllabique]({{ '/produits/medias/' | relative_url }}) et l'utilisation du [numérique]({{ '/produits/applications/' | relative_url }}).
 

@@ -24,7 +24,7 @@ Lectura propose des solutions professionnelles pour le traitement linguistique d
   </div>
   <div class="home-card">
     <h2>Lexique</h2>
-    <p>Base lexicale de 1,35 million de mots reliés à 2,48 M d'entités (Wikidata) : conjugaison, rimes, synonymes, morphologie, définitions, recherche multi-critère...</p>
+    <p>Base lexicale de 2,58 millions de formes reliées à 2,48 M d'entités (Wikidata) : conjugaison, rimes, synonymes, morphologie, définitions, recherche multi-critère...</p>
     <a class="more-link" href="{{ '/solutions/lexique/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">

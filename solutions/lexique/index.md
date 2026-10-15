@@ -4,7 +4,7 @@ layout: default
 permalink: /solutions/lexique/
 ---
 
-Lectura donne accès à **WikiLeXiK**, une interface encyclopédique du français reliée à Wiktionary, Wikidata et Wikipedia. Elle couvre 1,35 million d'entrées (orthographe, phonétique IPA, morphologie, fréquences, synonymes, définitions), compilées à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles).
+Lectura donne accès à **WikiLeXiK**, une interface encyclopédique du français reliée à Wiktionary, Wikidata et Wikipedia. Elle couvre 2,58 millions de formes (orthographe, phonétique IPA, morphologie, fréquences, synonymes, définitions), compilées à partir de sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles).
 
 La philosophie de WikiLeXiK est de relier les lemmes (linguistique) aux concepts (sémantique). Près de 2,5 millions d'entités Wikidata ont été intégrées à la base et reliées aux plus de 350 000 lemmes présents. Un travail de catégorisation a été initié en exploitant les propriétés Wikidata.
 
