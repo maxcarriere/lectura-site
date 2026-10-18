@@ -1,13 +1,14 @@
 /**
  * CTC/STT Demo — transcription phonetique et orthographique interactive.
- * Envoie l'audio a l'API Lectura /stt/transcribe-file et affiche :
- *   - la transcription phonetique IPA (CTC)
- *   - la transcription orthographique (STT = CTC + P2G)
+ * Envoie l'audio a l'API publique Lectura (POST /stt/transcrire-fichier) et affiche :
+ *   - la transcription phonetique IPA (decodeur)
+ *   - la transcription orthographique (ecriture par le module NLP)
+ *   - les dates et la confiance de chaque phoneme
  */
 (function () {
   "use strict";
 
-  var API_URL = "https://api.lectura.world/stt/transcribe-file";
+  var API_URL = "https://api.lectura.world/stt/transcrire-fichier";
 
   var container = document.querySelector(".ctc-demo");
   if (!container) return;
@@ -117,7 +118,7 @@
     ipaOutput.classList.remove("error");
     ipaOutput.textContent = "";
 
-    var words = ipa.split(" | ");
+    var words = ipa.split(/ \| | /);
     words.forEach(function (word, i) {
       if (i > 0) {
         ipaOutput.appendChild(document.createTextNode(" "));
@@ -162,7 +163,7 @@
     }
     var html = "<tr><th>Phone</th><th>Début</th><th>Fin</th><th>Confiance</th></tr>";
     timestamps.forEach(function (t) {
-      html += "<tr><td>" + t.phone + "</td><td>" + t.time_s.toFixed(3) + "s</td><td>" + t.time_end_s.toFixed(3) + "s</td><td>" + (t.confidence * 100).toFixed(1) + "%</td></tr>";
+      html += "<tr><td>" + t.phoneme + "</td><td>" + (t.debut / 1000).toFixed(3) + "s</td><td>" + (t.fin / 1000).toFixed(3) + "s</td><td>" + (t.confiance * 100).toFixed(1) + "%</td></tr>";
     });
     timestampsTable.innerHTML = html;
   }
@@ -204,10 +205,11 @@
     }
 
     try {
-      var mode = modeSelect ? modeSelect.value : "standard";
-      var url = API_URL + "?mode=" + encodeURIComponent(mode);
+      // « Texte » : les nombres et les dates restent en lettres ; « Auto » et « Formule » : ils sont réécrits en chiffres
+      var mode = modeSelect ? modeSelect.value : "auto";
+      formData.append("formules", mode === "texte" ? "false" : "true");
 
-      var resp = await fetch(url, {
+      var resp = await fetch(API_URL, {
         method: "POST",
         body: formData,
       });
@@ -221,16 +223,17 @@
         throw new Error("HTTP " + resp.status + ": " + errText);
       }
 
-      var data = await resp.json();
+      var json = await resp.json();
+      var data = json.resultat || json;
 
       if (progressBar) {
         progressBar.style.width = "100%";
       }
 
-      if (data.ipa) {
-        displayIpa(data.ipa);
+      if (data.phone) {
+        displayIpa(data.phone);
         displayTexte(data.texte);
-        displayTimestamps(data.timestamps);
+        displayTimestamps(data.decodage && data.decodage.phonemes);
       } else {
         setStatus("(silence — aucun phone detecte)");
         displayTimestamps(null);

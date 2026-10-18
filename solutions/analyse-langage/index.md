@@ -46,7 +46,7 @@ from pyodide.http import pyfetch
 import json
 
 async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
+    resp = await pyfetch('https://api.lectura.world/old/g2p/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'tokens': tokens}))
@@ -126,7 +126,7 @@ from pyodide.http import pyfetch
 import json
 
 async def _p2g_api_call(ipa_words):
-    resp = await pyfetch('https://api.lectura.world/p2g/analyser',
+    resp = await pyfetch('https://api.lectura.world/old/p2g/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'ipa_words': ipa_words}))
@@ -175,14 +175,14 @@ from pyodide.http import pyfetch
 import json
 
 async def _aligneur_api_call(word, phone=None):
-    resp = await pyfetch('https://api.lectura.world/aligneur/analyze',
+    resp = await pyfetch('https://api.lectura.world/old/aligneur/analyze',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'word': word, 'phone': phone}))
     return await resp.json()
 
 async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/g2p/analyser',
+    resp = await pyfetch('https://api.lectura.world/old/g2p/analyser',
         method='POST',
         headers={'Content-Type': 'application/json'},
         body=json.dumps({'tokens': tokens}))

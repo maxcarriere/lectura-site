@@ -113,9 +113,8 @@ Pipeline CTC + P2G v7 + post-traitement grammatical. Performances comparables à
   <div class="ctc-input-section" style="margin-top:8px;">
     <label for="ctc-mode">Mode :</label>
     <select id="ctc-mode" class="vc-btn-secondary" style="padding:4px 8px;">
-      <option value="auto">Auto (nombres, dates, sigles…)</option>
-      <option value="formule">Formule (tout detecter)</option>
-      <option value="texte">Texte (sigles uniquement)</option>
+      <option value="auto">Nombres et dates en chiffres</option>
+      <option value="texte">Tout en lettres</option>
     </select>
   </div>
 

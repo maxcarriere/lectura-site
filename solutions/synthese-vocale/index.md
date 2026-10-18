@@ -13,8 +13,6 @@ Lectura propose trois moteurs de synthèse vocale pour le français, chacun adap
 
 ---
 
-<script src="{{ '/assets/js/tts-modes.js' | relative_url }}?v=1"></script>
-
 ## Trois moteurs complémentaires
 
 ### Multi-Speaker — 6 voix, 7 styles
@@ -29,32 +27,13 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
     <select class="tts-model">
-      <option value="high" selected>High (Conformer)</option>
+      <option value="high" selected>High (Matcha)</option>
       <option value="light">Light (FastPitch)</option>
     </select>
     <span style="opacity:0.5;">|</span>
-    <span class="tts-voice-label-high" style="font-size:0.85em; opacity:0.7;">Prosodie :</span>
-    <select class="tts-prosody tts-voice-high">
-      <option value="siwis" selected>Siwis</option>
-      <option value="ezwa">Ezwa</option>
-      <option value="nadine">Nadine</option>
-      <option value="bernard">Bernard</option>
-      <option value="gilles">Gilles</option>
-      <option value="zeckou">Zeckou</option>
-    </select>
-    <span class="tts-voice-sep-high" style="opacity:0.5;">|</span>
-    <span class="tts-voice-label-high" style="font-size:0.85em; opacity:0.7;">Timbre :</span>
-    <select class="tts-speaker tts-voice-high">
-      <option value="siwis" selected>Siwis</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-    <span class="tts-voice-label-light" style="font-size:0.85em; opacity:0.7; display:none;">Voix :</span>
-    <select class="tts-speaker-light tts-voice-light" style="display:none;">
-      <option value="siwis" selected>Siwis (par défaut)</option>
+    <span style="font-size:0.85em; opacity:0.7;">Voix :</span>
+    <select class="tts-voix">
+      <option value="siwis" selected>Siwis (F)</option>
       <option value="ezwa">Ezwa (F)</option>
       <option value="nadine">Nadine (F)</option>
       <option value="bernard">Bernard (M)</option>
@@ -86,7 +65,6 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-multi-demo.js' | relative_url }}?v=5"></script>
 
 ---
 
@@ -119,7 +97,7 @@ Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité)
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
     <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
     <select class="tts-model">
-      <option value="high" selected>High (Conformer)</option>
+      <option value="high" selected>High (Matcha)</option>
       <option value="light">Light (FastPitch)</option>
     </select>
     <span style="opacity:0.5;">|</span>
@@ -146,7 +124,6 @@ Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité)
   <table class="tts-timings"></table>
 </div>
 
-<script src="{{ '/assets/js/tts-demo.js' | relative_url }}?v=5"></script>
 
 ---
 
@@ -188,9 +165,10 @@ Un moteur expérimental qui explore la piste non neurale et qui fonctionne par c
   <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
 </div>
 
-<script src="{{ '/assets/js/tts-diphone-demo.js' | relative_url }}?v=3"></script>
 
 ---
+
+<script src="{{ '/assets/js/tts-synthetiser.js' | relative_url }}?v=1"></script>
 
 ## Applications
 
