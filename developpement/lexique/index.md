@@ -32,26 +32,25 @@ LeXiK est la base lexicale pure de Lectura (formes, phonétique, morphologie), e
 
 ## API REST
 
-WikiLeXiK est interrogeable via l'API REST Lectura, sans authentification :
+WikiLeXiK est interrogeable via son API REST, sans authentification :
 
 ```
-https://api.lectura.world/lexique/
+https://lexique.lectura.world/lexique/v2/
 ```
 
 | Endpoint | Description |
 |----------|-------------|
-| `GET /lexique/rechercher?q=…` | Recherche de formes (modes : exact, prefix, contains, suffix, phonetique) |
-| `GET /lexique/lemme/{lemme}` | Détail d'un lemme et ses relations |
-| `GET /lexique/formes/{lemme}` | Formes fléchies d'un lemme |
-| `GET /lexique/conjugaison/{verbe}` | Table de conjugaison complète |
-| `GET /lexique/definitions/{lemme}` | Définitions et exemples |
-| `GET /lexique/relations/{lemme}` | Relations sémantiques (synonymes, antonymes…) |
-| `GET /lexique/entite/{id}` | Détail d'une entité (ID interne ou QID Wikidata) |
-| `GET /lexique/entites?q=…` | Recherche d'entités par mot-clé |
-| `GET /lexique/categories` | Liste des catégories sémantiques |
-| `GET /lexique/categories/{id}/entites` | Entités d'une catégorie |
+| `GET /lexique/v2/rechercher?q=…&mode=…` | Recherche de formes (modes : exact, prefixe, contient, suffixe) |
+| `GET /lexique/v2/mot/{graphie}` | Tout sur un mot : lemmes, sens et définitions, relations (synonymes, antonymes…), entités |
+| `GET /lexique/v2/formes/{lemme}` | Formes fléchies d'un lemme |
+| `GET /lexique/v2/entite/{qid}` | Détail d'une entité (QID Wikidata) |
+| `GET /lexique/v2/entites?q=…` | Recherche d'entités par mot-clé |
+| `GET /lexique/v2/categories` | Liste des catégories sémantiques |
+| `GET /lexique/v2/categories/{id}/entites` | Entités d'une catégorie |
 
-La documentation interactive (Swagger) est disponible sur [api.lectura.world/docs](https://api.lectura.world/docs).
+La documentation interactive est disponible sur [lexique.lectura.world/lexique/v2/docs](https://lexique.lectura.world/lexique/v2/docs).
+
+La conjugaison et la recherche par le son passent par l'API Lectura : `POST https://api.lectura.world/metiers/nlp/lexique/conjuguer` (`{"verbe": "…"}`) et `POST https://api.lectura.world/metiers/nlp/lexique/homophones` (`{"phone": "…"}`), documentées sur [api.lectura.world/docs](https://api.lectura.world/docs).
 
 ---
 
