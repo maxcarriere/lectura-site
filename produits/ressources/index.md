@@ -2,6 +2,8 @@
 title: Ressources
 layout: default
 permalink: /produits/ressources/
+redirect_from:
+  - /produits/ressources/corpus-syllabes/
 ---
 
 Corpus, données linguistiques et kits d'entraînement distribués par Lectura. Ces ressources sont le fruit du travail de développement des modules et peuvent servir de base à des projets de recherche, d'éducation ou de développement.
@@ -31,39 +33,14 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
       <a class="more-link" href="{{ '/produits/ressources/corpus-voix/' | relative_url }}">Détails</a>
     </div>
   </div>
-  <div class="home-card">
-    <h2>Corpus de Syllabes</h2>
-    <p>4 307 syllabes + 1 474 de liaison, avec décomposition phonétique et fichiers audio (voix homme et femme, Amazon Polly).</p>
-    <span class="status-badge status-dispo">Disponible</span>
-    <div class="card-links">
-      <a class="more-link" href="{{ '/produits/ressources/corpus-syllabes/' | relative_url }}">Détails</a>
-    </div>
-  </div>
 </div>
 
 ---
 
 ## Obtenir les ressources {#obtenir}
 
-Les ressources sont distribuées sous forme d'archives zip. Deux modes d'accès sont disponibles :
-
-### Lien direct (par email)
-
-La façon la plus simple. [Contactez-nous]({{ '/contact/' | relative_url }}) en précisant les ressources souhaitées : nous vous envoyons par email un lien de téléchargement personnalisé, valable pour une durée limitée.
-
-### Via l'API
-
-Pour les développeurs ou les usages automatisés :
-
-1. Contactez-nous pour obtenir une clé API avec accès aux ressources
-2. Utilisez l'endpoint `GET /download/{resource_id}` de l'API pour télécharger les archives
-3. L'endpoint `GET /download/` liste les ressources disponibles et leurs identifiants
-
-**Authentification :** header `Authorization: Bearer <votre_clé>` — les clés de type « paid » ou « unlimited » donnent accès au téléchargement.
-
-**Tarification :** nous contacter pour connaître les modalités d'accès selon votre usage (recherche, éducation, commercial).
+Les ressources sont distribuées sous forme d'archives zip, sur demande. [Contactez-nous]({{ '/contact/' | relative_url }}) en précisant les ressources souhaitées : nous vous envoyons par email un lien de téléchargement personnalisé, valable pour une durée limitée.
 
 <div class="cta-links" style="margin-top: 1.5rem;">
   <a href="{{ '/contact/' | relative_url }}">Nous contacter</a>
-  <a href="https://api.lectura.world/docs#/Downloads" target="_blank">Documentation API</a>
 </div>

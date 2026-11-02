@@ -56,8 +56,6 @@
           url: /produits/ressources/kit-g2p-p2g/
         - title: Corpus de Voix
           url: /produits/ressources/corpus-voix/
-        - title: Corpus de Syllabes
-          url: /produits/ressources/corpus-syllabes/
 
 - title: "Développement"
   url: /developpement/

@@ -115,10 +115,7 @@ Les transcriptions IPA ont été générées par le pipeline G2P de Lectura (pr�
 
 ## Obtenir cette ressource
 
-Deux modes d'accès sont disponibles :
-
-- **Lien direct** : [contactez-nous]({{ '/contact/' | relative_url }}) en précisant la ressource souhaitée, nous vous envoyons un lien de téléchargement personnalisé par email.
-- **Via l'API** : utilisez l'endpoint `GET /download/{resource_id}` avec votre clé API. Voir la [documentation API](https://api.lectura.world/docs#/Downloads).
+[Contactez-nous]({{ '/contact/' | relative_url }}) en précisant la ressource souhaitée : nous vous envoyons un lien de téléchargement personnalisé par email.
 
 <div class="cta-links" style="margin-top: 1.5rem;">
   <a href="{{ '/contact/' | relative_url }}">Nous contacter</a>
