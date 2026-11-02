@@ -9,7 +9,7 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
 <div class="home-grid">
   <div class="home-card">
     <h2>LeXiK</h2>
-    <p>Base lexicale de Lectura : complète (1,52M entrées) et fréquente (314K entrées). Phonétique IPA, syllabes, orthocode, fréquences, morphologie.</p>
+    <p>Lexique phonétique et grammatical du français, publié sur ORTOLANG sous licence libre CC BY-SA 4.0 : prononciation syllabée, analyse grammaticale, orthocode, fréquences. Téléchargement gratuit sur LecturaLexique.</p>
     <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="{{ '/produits/ressources/lexik/' | relative_url }}">Détails</a>

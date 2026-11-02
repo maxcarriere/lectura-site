@@ -42,7 +42,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 - Voice Conversion zero-shot
 
 ### Donnees
-- Lexique LeXiK : 2,58 millions de formes, phonetique IPA, frequences, morphologie
+- Lexique LeXiK : publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0), telechargeable sur https://lexique.lectura.world/lexik ; phonetique IPA, frequences, morphologie
 - Corpus d'entrainement pour le francais
 
 ## Pipelines metiers
