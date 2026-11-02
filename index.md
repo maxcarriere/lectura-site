@@ -13,7 +13,7 @@ Lectura est un écosystème de projets autour du **langage** et de sa **lecture*
   <div class="cta-projets">
     <a href="https://lingua.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua"></span><span class="cta-projet-texte">Analyse du langage : grammaire, phonétique, lecture syllabique</span></a>
     <a href="https://voice.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice"></span><span class="cta-projet-texte">Synthèse et reconnaissance vocales</span></a>
-    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/wikilexik.webp' | relative_url }}" width="787" height="128" alt="WikiLeXiK"></span><span class="cta-projet-texte">Le lexique de Lectura : 2,58 millions de formes</span></a>
+    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalexique.svg' | relative_url }}" width="768" height="276" alt="LecturaLexique"></span><span class="cta-projet-texte">Le lexique de Lectura : 2,58 millions de formes</span></a>
   </div>
 </div>
 
