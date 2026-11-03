@@ -25,9 +25,9 @@ Le site est hébergé par **GitHub Pages**, un service de GitHub, Inc. (filiale 
 - **GitHub, Inc.**
 - 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis
 - [https://github.com](https://github.com)
-- Téléphone : À-COMPLÉTER
+- Contact : [https://support.github.com](https://support.github.com)
 
-Le sous-domaine **lexique.lectura.world** et l'API (api.lectura.world) sont hébergés sur un serveur privé virtuel (VPS) loué à **OVH SAS**, 2 rue Kellermann, 59100 Roubaix, France ([https://www.ovhcloud.com](https://www.ovhcloud.com)). Téléphone : À-COMPLÉTER
+Le sous-domaine **lexique.lectura.world** et l'API (api.lectura.world) sont hébergés sur un serveur privé virtuel (VPS) loué à **OVH SAS**, 2 rue Kellermann, 59100 Roubaix, France ([https://www.ovhcloud.com](https://www.ovhcloud.com)). Téléphone : 1007 (depuis la France)
 
 ---
 
