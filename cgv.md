@@ -25,7 +25,7 @@ Ci-après « le Vendeur ».
 
 2.1. Les CGV s'appliquent à la vente de **produits numériques** : le **corpus Syllabes**, avec ses fichiers sons en voix de synthèse, et, sur devis, des licences de modules logiciels ou des corpus produits sur demande.
 
-2.2. **Les ventes faites sur les sites de Lectura et sur devis sont réservées aux professionnels.** Un professionnel est une personne physique ou morale, publique ou privée, qui achète pour les besoins de son activité commerciale, industrielle, artisanale, libérale ou agricole, ou pour le compte d'un autre professionnel (entreprise, indépendant, association ou établissement pour son activité). Avant de payer en ligne, l'acheteur **déclare** acheter pour les besoins de son activité professionnelle (article 4.2).
+2.2. **Les ventes faites sur les sites de Lectura et sur devis sont réservées aux professionnels.** Un professionnel est une personne physique ou morale, publique ou privée, qui achète pour les besoins de son activité commerciale, industrielle, artisanale, libérale ou agricole, ou pour le compte d'un autre professionnel (entreprise, indépendant, association ou établissement pour son activité). En acceptant les présentes CGV avant de payer en ligne (article 4.2), l'acheteur **déclare** acheter pour les besoins de son activité professionnelle.
 
 2.3. **Particuliers.** Les produits destinés aussi aux particuliers sont vendus sur la plateforme **Gumroad** (lien sur la page du produit). Gumroad les vend alors en son nom, comme revendeur, selon ses propres conditions. Les présentes CGV ne s'appliquent pas à ces achats. Le contrat de licence de Lectura s'applique au produit.
 
@@ -48,13 +48,11 @@ Ci-après « le Vendeur ».
 4.2. **En ligne (paiement par Stripe).** Le parcours est le suivant :
 
 1. Sur la page du produit, le client prend connaissance des CGV, du contrat de licence et du prix. La page indique que l'offre est réservée aux professionnels, et renvoie les particuliers vers Gumroad.
-2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Il fait ensuite deux déclarations, obligatoires pour payer. Leur texte complet est affiché sur la page de paiement, et le client les confirme en choisissant « Oui » dans deux champs obligatoires :
-   - « J'achète pour les besoins de mon activité professionnelle. »
-   - « Je demande que le fichier me soit fourni avant la fin du délai de rétractation de 14 jours, et je reconnais perdre mon droit de rétractation dès que le téléchargement est mis à ma disposition (art. L221-28, 13°, du Code de la consommation). »
-
-   Il accepte enfin les présentes CGV.
+2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Avant de payer, il coche une case obligatoire, décochée par défaut : « J'accepte les CGV, et je renonce au droit de rétractation. » En la cochant, le client :
+   - déclare acheter pour les besoins de son activité professionnelle (article 2.2) ;
+   - demande que le fichier lui soit fourni avant la fin du délai de rétractation de 14 jours, et reconnaît perdre son droit de rétractation dès que le téléchargement est mis à sa disposition (art. L221-28, 13°, du Code de la consommation).
 3. Le client paie par carte sur la page de paiement sécurisée de Stripe. Le Vendeur n'a jamais accès aux données de la carte. La commande est formée au paiement.
-4. Dès le paiement, le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel des deux déclarations ci-dessus, le contrat de licence et le lien de téléchargement. La facture est émise par le Vendeur et envoyée séparément par e-mail après l'achat. Le téléchargement n'est proposé, dans cet e-mail puis sur la page qui suit le paiement, qu'une fois cet e-mail envoyé.
+4. Dès le paiement, le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel de ces déclarations, le contrat de licence et le lien de téléchargement. La facture est émise par le Vendeur et envoyée séparément par e-mail après l'achat. Le téléchargement n'est proposé, dans cet e-mail puis sur la page qui suit le paiement, qu'une fois cet e-mail envoyé.
 
 4.3. Le Vendeur peut refuser un devis, ou annuler une commande en ligne et en rembourser le prix, pour un motif légitime : demande anormale, litige antérieur, usage manifestement contraire à la licence, ou achat manifestement fait par un particulier, qui est alors renvoyé vers Gumroad.
 
@@ -91,7 +89,7 @@ Ces montants sont prévus par les articles L441-10 et D441-5 du Code de commerce
 
 8.1. L'offre étant réservée aux professionnels, le droit de rétractation prévu par le Code de la consommation ne s'applique pas.
 
-8.2. Si l'acheteur est néanmoins un consommateur, il est informé que ce droit **ne peut pas être exercé** pour la fourniture d'un contenu numérique sans support matériel dès lors que l'exécution a commencé avant la fin du délai de rétractation, à trois conditions : qu'il ait donné son **accord préalable exprès** à cette exécution, qu'il ait **reconnu perdre** son droit de rétractation, et que le Vendeur lui ait **confirmé cet accord sur un support durable** (articles L221-28, 13°, et L221-13 du Code de la consommation). Cet accord et cette reconnaissance sont donnés par la seconde déclaration de l'article 4.2 et confirmés dans l'e-mail de confirmation. Le droit de rétractation est perdu dès que le téléchargement est mis à disposition.
+8.2. Si l'acheteur est néanmoins un consommateur, il est informé que ce droit **ne peut pas être exercé** pour la fourniture d'un contenu numérique sans support matériel dès lors que l'exécution a commencé avant la fin du délai de rétractation, à trois conditions : qu'il ait donné son **accord préalable exprès** à cette exécution, qu'il ait **reconnu perdre** son droit de rétractation, et que le Vendeur lui ait **confirmé cet accord sur un support durable** (articles L221-28, 13°, et L221-13 du Code de la consommation). Cet accord et cette reconnaissance sont donnés par la case de l'article 4.2 et confirmés dans l'e-mail de confirmation. Le droit de rétractation est perdu dès que le téléchargement est mis à disposition.
 
 8.3. Tant que le lien de téléchargement n'a pas été envoyé, le consommateur peut se rétracter, gratuitement et sans motif, en écrivant à lectura.world@gmail.com, ou au moyen du formulaire type de rétractation reproduit en annexe des présentes CGV. Le prix lui est alors remboursé dans les 14 jours, par le moyen de paiement utilisé.
 
