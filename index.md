@@ -1,8 +1,8 @@
 ---
 title: "Bienvenue sur Lectura.world !"
 layout: default
-og_title: "Lectura World — L'écosystème open source pour la lecture du français"
-description: "Lectura est un écosystème open source dédié à la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."
+og_title: "Lectura World — des outils pour la lecture du français"
+description: "Lectura développe des outils pour la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."
 image: /assets/images/og-lectura.png
 ---
 
@@ -27,7 +27,7 @@ Les projets développés s'expriment dans plusieurs composantes :
 
 [Auto-entrepreneur]({{ '/a-propos/qui-suis-je/' | relative_url }}), je développe [Lectura]({{ '/a-propos/vision/' | relative_url }}) grâce à une [méthode]({{ '/a-propos/methode/' | relative_url }}) de **développement augmenté par l'IA** où l'intelligence artificielle est un partenaire de production à part entière. Certains projets sont encore en phase de [recherche]({{ '/developpement/recherche/' | relative_url }}) ou [en cours]({{ '/developpement/projets/' | relative_url }}) de développement, d'autres sont régulièrement améliorés et mis à jour.
 
-L'ensemble du code est **ouvert** et les modèles sont accessibles via l'API. Seule l'utilisation commerciale et l'obtention des modèles en local sont soumises à [licence]({{ '/solutions/services/licences/' | relative_url }}). Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises, aux [éditeurs]({{ '/solutions/services/services-editoriaux/' | relative_url }}) et aux particuliers, que ce soit pour [intégrer]({{ '/solutions/services/integration/' | relative_url }}) ces outils dans leur environnement, élaborer des [modèles]({{ '/solutions/services/corpus-modeles/' | relative_url }}) ou préparer des [données]({{ '/solutions/services/preparation-donnees/' | relative_url }}), ou pour être accompagnés dans l'utilisation de l'IA au service de leurs [propres projets]({{ '/solutions/services/divers/' | relative_url }}).
+La première génération des modules (2026) est publiée en open source sur GitHub et PyPI ; la génération actuelle est accessible par l'API pour les démos. Son utilisation commerciale et l'obtention des modèles en local sont soumises à [licence]({{ '/solutions/services/licences/' | relative_url }}). Je propose également des [prestations]({{ '/solutions/services/' | relative_url }}) aux entreprises, aux [éditeurs]({{ '/solutions/services/services-editoriaux/' | relative_url }}) et aux particuliers, que ce soit pour [intégrer]({{ '/solutions/services/integration/' | relative_url }}) ces outils dans leur environnement, élaborer des [modèles]({{ '/solutions/services/corpus-modeles/' | relative_url }}) ou préparer des [données]({{ '/solutions/services/preparation-donnees/' | relative_url }}), ou pour être accompagnés dans l'utilisation de l'IA au service de leurs [propres projets]({{ '/solutions/services/divers/' | relative_url }}).
 
 <div class="cta-box" markdown="0">
   <h3>Travailler ensemble :</h3>
