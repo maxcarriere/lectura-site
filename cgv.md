@@ -85,7 +85,7 @@ Ces montants sont prévus par les articles L441-10 et D441-5 du Code de commerce
 
 7.2. Délai : pour un produit de catalogue, l'e-mail de confirmation et le lien sont envoyés automatiquement dès le paiement ; en cas d'incident technique, au plus tard dans les deux jours ouvrés qui suivent. Pour un produit sur demande, le délai est celui indiqué dans le devis.
 
-7.3. Le fichier livré comprend une licence au nom de son titulaire : la personne pour la licence créateur, l'entreprise ou l'organisation pour la licence pro, avec l'adresse e-mail, la date et la référence de la commande. Le lien est personnel et à durée limitée : il reste valable 7 jours, pour 5 téléchargements. Le client vérifie les fichiers à la réception (sommes de contrôle indiquées dans l'e-mail de confirmation) et conserve sa copie. En cas de perte ou d'expiration du lien, une nouvelle livraison peut être demandée à lectura.world@gmail.com pendant 12 mois.
+7.3. Le fichier livré comprend une licence au nom de son titulaire : la personne pour la licence créateur, l'entreprise ou l'organisation pour la licence pro, avec l'adresse e-mail, la date et la référence de la commande. Le lien est personnel et à durée limitée : il reste valable 7 jours, pour 5 téléchargements. Le client vérifie les fichiers à la réception et conserve sa copie. En cas de perte ou d'expiration du lien, une nouvelle livraison peut être demandée à lectura.world@gmail.com pendant 12 mois.
 
 ### Article 8 — Droit de rétractation
 
