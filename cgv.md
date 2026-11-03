@@ -49,7 +49,7 @@ Ci-après « le Vendeur ».
 
 1. Sur la page du produit, le client prend connaissance des CGV, du contrat de licence et du prix. La page indique que l'offre est réservée aux professionnels, et renvoie les particuliers vers Gumroad.
 2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Il fait ensuite deux déclarations, obligatoires pour payer. Leur texte complet est affiché sur la page de paiement, et le client les confirme en choisissant « Oui » dans deux champs obligatoires :
-   - « J'achète pour les besoins de mon activité professionnelle, au nom de l'entreprise ou de l'organisation indiquée sur la facture. »
+   - « J'achète pour les besoins de mon activité professionnelle. »
    - « Je demande que le fichier me soit fourni avant la fin du délai de rétractation de 14 jours, et je reconnais perdre mon droit de rétractation dès que le téléchargement est mis à ma disposition (art. L221-28, 13°, du Code de la consommation). »
 
    Il accepte enfin les présentes CGV.
