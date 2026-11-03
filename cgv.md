@@ -54,7 +54,7 @@ Ci-après « le Vendeur ».
 
    Il accepte enfin les présentes CGV.
 3. Le client paie par carte sur la page de paiement sécurisée de Stripe. Le Vendeur n'a jamais accès aux données de la carte. La commande est formée au paiement.
-4. Dès le paiement, le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel des deux déclarations ci-dessus, le contrat de licence et le lien de téléchargement. La facture est envoyée par Stripe dans un message séparé. Le téléchargement n'est proposé, dans cet e-mail puis sur la page qui suit le paiement, qu'une fois cet e-mail envoyé.
+4. Dès le paiement, le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel des deux déclarations ci-dessus, le contrat de licence et le lien de téléchargement. La facture est émise par le Vendeur et envoyée séparément par e-mail après l'achat. Le téléchargement n'est proposé, dans cet e-mail puis sur la page qui suit le paiement, qu'une fois cet e-mail envoyé.
 
 4.3. Le Vendeur peut refuser un devis, ou annuler une commande en ligne et en rembourser le prix, pour un motif légitime : demande anormale, litige antérieur, usage manifestement contraire à la licence, ou achat manifestement fait par un particulier, qui est alors renvoyé vers Gumroad.
 
@@ -68,7 +68,7 @@ Ci-après « le Vendeur ».
 
 6.1. En ligne, le paiement se fait par carte, par Stripe, et il est exigible à la commande. Sur devis, il se fait par virement ou par carte, à réception de la facture, à 30 jours au plus.
 
-6.2. Une **facture** est émise pour chaque vente et envoyée par e-mail au client (par Stripe pour un achat en ligne, avec la livraison pour un devis). Elle porte la mention « TVA non applicable, art. 293 B du CGI ».
+6.2. Une **facture** est émise pour chaque vente et envoyée par e-mail au client après l'achat (avec la livraison pour un devis). Elle porte la mention « TVA non applicable, art. 293 B du CGI ».
 
 6.3. Tout retard de paiement entraîne de plein droit, dès le lendemain de la date de règlement figurant sur la facture et sans qu'un rappel soit nécessaire :
 
