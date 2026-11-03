@@ -37,7 +37,7 @@ Ci-après « le Vendeur ».
 
 3.1. Les caractéristiques essentielles de chaque produit (contenu, format, volume, langues) figurent sur sa page et, le cas échéant, dans le devis. Le client est invité à consulter la démonstration ou l'échantillon gratuit avant d'acheter.
 
-3.2. **Aucun produit n'est vendu en pleine propriété.** L'achat donne au client une **licence d'utilisation** non exclusive. Ses droits (usages permis, durée, territoire, redistribution) sont définis par le **contrat de licence** du produit : pour le corpus Syllabes, la licence créateur ou la licence pro, résumées sur la page [Licences](https://lexique.lectura.world/licences/corpus) de LecturaLexique. Le contrat est présenté avant le paiement, ou joint au devis, puis joint à l'e-mail de confirmation. En cas de contradiction, le contrat de licence prime sur les CGV pour les droits d'utilisation.
+3.2. **Aucun produit n'est vendu en pleine propriété.** L'achat donne au client une **licence d'utilisation** non exclusive. Ses droits (usages permis, durée, territoire, redistribution) sont définis par le **contrat de licence** du produit : pour le corpus Syllabes, la licence créateur, qui vaut pour une seule personne physique et des contenus fixes, ou la licence pro, qui vaut pour une entité et les personnes qui travaillent pour elle, applications comprises ; elles sont résumées sur la page [Licences](https://lexique.lectura.world/licences/corpus) de LecturaLexique. Le contrat est présenté avant le paiement, ou joint au devis, puis joint à l'e-mail de confirmation. En cas de contradiction, le contrat de licence prime sur les CGV pour les droits d'utilisation.
 
 3.3. **Voix de synthèse.** Les fichiers sons du corpus Syllabes sont produits par une voix de synthèse de Lectura, entraînée sur le corpus SIWIS, diffusé sous licence CC BY 4.0. Le crédit dû à SIWIS est fourni avec le produit, et le client le reproduit dans les conditions prévues par le contrat de licence.
 
@@ -48,7 +48,7 @@ Ci-après « le Vendeur ».
 4.2. **En ligne (paiement par Stripe).** Le parcours est le suivant :
 
 1. Sur la page du produit, le client prend connaissance des CGV, du contrat de licence et du prix. La page indique que l'offre est réservée aux professionnels, et renvoie les particuliers vers Gumroad.
-2. Sur la page de paiement, le client renseigne le nom de son entreprise ou de son organisation et son adresse de facturation. Il fait ensuite deux déclarations, obligatoires pour payer. Leur texte complet est affiché sur la page de paiement, et le client les confirme en choisissant « Oui » dans deux champs obligatoires :
+2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Il fait ensuite deux déclarations, obligatoires pour payer. Leur texte complet est affiché sur la page de paiement, et le client les confirme en choisissant « Oui » dans deux champs obligatoires :
    - « J'achète pour les besoins de mon activité professionnelle, au nom de l'entreprise ou de l'organisation indiquée sur la facture. »
    - « Je demande que le fichier me soit fourni avant la fin du délai de rétractation de 14 jours, et je reconnais perdre mon droit de rétractation dès que le téléchargement est mis à ma disposition (art. L221-28, 13°, du Code de la consommation). »
 
@@ -85,7 +85,7 @@ Ces montants sont prévus par les articles L441-10 et D441-5 du Code de commerce
 
 7.2. Délai : pour un produit de catalogue, l'e-mail de confirmation et le lien sont envoyés automatiquement dès le paiement ; en cas d'incident technique, au plus tard dans les deux jours ouvrés qui suivent. Pour un produit sur demande, le délai est celui indiqué dans le devis.
 
-7.3. Le fichier livré comprend une licence au nom de l'acheteur (nom ou raison sociale, adresse e-mail, date et référence de la commande). Le lien est personnel et à durée limitée : il reste valable 7 jours, pour 5 téléchargements. Le client vérifie les fichiers à la réception (sommes de contrôle indiquées dans l'e-mail de confirmation) et conserve sa copie. En cas de perte ou d'expiration du lien, une nouvelle livraison peut être demandée à lectura.world@gmail.com pendant 12 mois.
+7.3. Le fichier livré comprend une licence au nom de son titulaire : la personne pour la licence créateur, l'entreprise ou l'organisation pour la licence pro, avec l'adresse e-mail, la date et la référence de la commande. Le lien est personnel et à durée limitée : il reste valable 7 jours, pour 5 téléchargements. Le client vérifie les fichiers à la réception (sommes de contrôle indiquées dans l'e-mail de confirmation) et conserve sa copie. En cas de perte ou d'expiration du lien, une nouvelle livraison peut être demandée à lectura.world@gmail.com pendant 12 mois.
 
 ### Article 8 — Droit de rétractation
 
