@@ -48,7 +48,7 @@ Ci-après « le Vendeur ».
 4.2. **En ligne (paiement par Stripe).** Le parcours est le suivant :
 
 1. Sur la page du produit, le client prend connaissance des CGV, du contrat de licence et du prix. La page indique que l'offre est réservée aux professionnels, et renvoie les particuliers vers Gumroad.
-2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Avant de payer, il coche une case obligatoire, décochée par défaut : « J'accepte les CGV, et je renonce au droit de rétractation. » En la cochant, le client :
+2. Sur la page de paiement, le client renseigne son nom, son adresse électronique et son adresse de facturation, ainsi que le nom de son entreprise ou de son organisation (obligatoire pour la licence pro). Avant de payer, il coche une case obligatoire, décochée par défaut, par laquelle il accepte les présentes CGV. La page du produit, juste avant le paiement, rappelle ce que vaut cette acceptation. En acceptant les CGV, le client :
    - déclare acheter pour les besoins de son activité professionnelle (article 2.2) ;
    - demande que le fichier lui soit fourni avant la fin du délai de rétractation de 14 jours, et reconnaît perdre son droit de rétractation dès que le téléchargement est mis à sa disposition (art. L221-28, 13°, du Code de la consommation).
 3. Le client paie par carte sur la page de paiement sécurisée de Stripe. Le Vendeur n'a jamais accès aux données de la carte. La commande est formée au paiement.
