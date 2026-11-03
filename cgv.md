@@ -54,7 +54,7 @@ Ci-après « le Vendeur ».
 
    Il accepte enfin les présentes CGV.
 3. Le client paie par carte sur la page de paiement sécurisée de Stripe. Le Vendeur n'a jamais accès aux données de la carte. La commande est formée au paiement.
-4. Le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel des deux déclarations ci-dessus, la facture et le contrat de licence, et le lien de téléchargement. Le fichier n'est mis à disposition que par cet e-mail.
+4. Dès le paiement, le Vendeur envoie un **e-mail de confirmation** à l'adresse donnée par le client. Il contient le récapitulatif de la commande (Vendeur, acheteur, produit, licence, prix, date), le rappel des deux déclarations ci-dessus, le contrat de licence et le lien de téléchargement. La facture est envoyée par Stripe dans un message séparé. Le téléchargement n'est proposé, dans cet e-mail puis sur la page qui suit le paiement, qu'une fois cet e-mail envoyé.
 
 4.3. Le Vendeur peut refuser un devis, ou annuler une commande en ligne et en rembourser le prix, pour un motif légitime : demande anormale, litige antérieur, usage manifestement contraire à la licence, ou achat manifestement fait par un particulier, qui est alors renvoyé vers Gumroad.
 
@@ -68,7 +68,7 @@ Ci-après « le Vendeur ».
 
 6.1. En ligne, le paiement se fait par carte, par Stripe, et il est exigible à la commande. Sur devis, il se fait par virement ou par carte, à réception de la facture, à 30 jours au plus.
 
-6.2. Une **facture** est émise pour chaque vente et jointe à l'e-mail de confirmation (ou envoyée avec la livraison, sur devis). Elle porte la mention « TVA non applicable, art. 293 B du CGI ».
+6.2. Une **facture** est émise pour chaque vente et envoyée par e-mail au client (par Stripe pour un achat en ligne, avec la livraison pour un devis). Elle porte la mention « TVA non applicable, art. 293 B du CGI ».
 
 6.3. Tout retard de paiement entraîne de plein droit, dès le lendemain de la date de règlement figurant sur la facture et sans qu'un rappel soit nécessaire :
 
@@ -83,7 +83,7 @@ Ces montants sont prévus par les articles L441-10 et D441-5 du Code de commerce
 
 7.1. Les produits sont livrés **par voie électronique**, par un lien de téléchargement personnel envoyé dans l'e-mail de confirmation. Aucun support physique n'est envoyé.
 
-7.2. Délai : pour un produit de catalogue, l'e-mail de confirmation est envoyé dans les deux jours ouvrés qui suivent le paiement. Pour un produit sur demande, le délai est celui indiqué dans le devis.
+7.2. Délai : pour un produit de catalogue, l'e-mail de confirmation et le lien sont envoyés automatiquement dès le paiement ; en cas d'incident technique, au plus tard dans les deux jours ouvrés qui suivent. Pour un produit sur demande, le délai est celui indiqué dans le devis.
 
 7.3. Le lien est personnel et à durée limitée : il reste valable 7 jours, pour 5 téléchargements. Le client vérifie les fichiers à la réception (sommes de contrôle indiquées dans l'e-mail de confirmation) et conserve sa copie. En cas de perte ou d'expiration du lien, une nouvelle livraison peut être demandée à lectura.world@gmail.com pendant 12 mois.
 
