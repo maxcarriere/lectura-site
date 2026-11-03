@@ -8,9 +8,12 @@ permalink: /mentions-legales/
 
 Le site **www.lectura.world** est édité par :
 
-- **Nom** : Maxime Carrière
-- **Statut** : Auto-entrepreneur
+- **Maxime Carrière EI**, entrepreneur individuel (micro-entreprise) ; Lectura est une marque de Maxime Carrière EI
+- **SIRET** : 803 969 898 00029 (immatriculé au Registre national des entreprises)
+- **Adresse** : 13 rue Émile Zola, 17100 Saintes, France
 - **Email** : [lectura.world@gmail.com](mailto:lectura.world@gmail.com)
+- **TVA** : TVA non applicable, art. 293 B du CGI
+- **Directeur de la publication** : Maxime Carrière
 
 ---
 
@@ -30,7 +33,7 @@ Le sous-domaine **lexique.lectura.world** est hébergé sur un serveur dédié (
 
 L'ensemble du contenu du site (textes, images, code, données, modèles) est la propriété de Maxime Carrière, sauf mention contraire.
 
-Le code source des modules Lectura est publié sous licence **AGPL-3.0** (usage non commercial). Toute utilisation commerciale ou obtention des modèles en local est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/solutions/services/licences/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
+La première génération des modules Lectura (2026) est publiée sous licence **AGPL-3.0**, qui permet l'usage commercial à condition de partager le code. La génération actuelle n'est pas distribuée ; son utilisation commerciale est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/solutions/services/licences/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
 
 ---
 
@@ -40,7 +43,7 @@ Le projet Lectura utilise des corpus et bases de données publiques pour l'entra
 
 - **Lexique383** ([lexique.org](http://www.lexique.org/)) : base lexicale du français, distribuée sous licence CC BY-SA
 - **Common Voice** (Mozilla) : corpus vocal participatif, licence CC-0
-- **SIWIS** : corpus vocal studio, licence académique
+- **SIWIS French Speech Synthesis Database** : corpus vocal studio, licence CC BY 4.0
 - **LibriVox** : enregistrements audio du domaine public
 
 ---
