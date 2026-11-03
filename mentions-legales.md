@@ -9,8 +9,9 @@ permalink: /mentions-legales/
 Le site **www.lectura.world** est édité par :
 
 - **Maxime Carrière EI**, entrepreneur individuel (micro-entreprise) ; Lectura est une marque de Maxime Carrière EI
-- **SIRET** : 803 969 898 00029 (immatriculé au Registre national des entreprises)
+- **SIRET** : 803 969 898 00029, inscrit au Registre national des entreprises (SIREN 803 969 898)
 - **Adresse** : 13 rue Émile Zola, 17100 Saintes, France
+- **Téléphone** : À-COMPLÉTER
 - **Email** : [lectura.world@gmail.com](mailto:lectura.world@gmail.com)
 - **TVA** : TVA non applicable, art. 293 B du CGI
 - **Directeur de la publication** : Maxime Carrière
@@ -24,8 +25,9 @@ Le site est hébergé par **GitHub Pages**, un service de GitHub, Inc. (filiale 
 - **GitHub, Inc.**
 - 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis
 - [https://github.com](https://github.com)
+- Téléphone : À-COMPLÉTER
 
-Le sous-domaine **lexique.lectura.world** est hébergé sur un serveur dédié (VPS).
+Le sous-domaine **lexique.lectura.world** et l'API (api.lectura.world) sont hébergés sur un serveur privé virtuel (VPS) loué à **OVH SAS**, 2 rue Kellermann, 59100 Roubaix, France ([https://www.ovhcloud.com](https://www.ovhcloud.com)). Téléphone : À-COMPLÉTER
 
 ---
 
