@@ -11,7 +11,7 @@ Le site **www.lectura.world** est édité par :
 - **Maxime Carrière EI**, entrepreneur individuel (micro-entreprise) ; Lectura est une marque de Maxime Carrière EI
 - **SIRET** : 803 969 898 00029, inscrit au Registre national des entreprises (SIREN 803 969 898)
 - **Adresse** : 13 rue Émile Zola, 17100 Saintes, France
-- **Téléphone** : À-COMPLÉTER
+- **Téléphone** : 06 65 53 03 30
 - **Email** : [lectura.world@gmail.com](mailto:lectura.world@gmail.com)
 - **TVA** : TVA non applicable, art. 293 B du CGI
 - **Directeur de la publication** : Maxime Carrière
