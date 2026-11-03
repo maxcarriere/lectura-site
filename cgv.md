@@ -133,6 +133,24 @@ Le Vendeur peut modifier les CGV à tout moment. Les CGV applicables sont celles
 
 ### Annexe — Formulaire type de rétractation
 
-(Annexe à l'article R221-1 du Code de la consommation. Ne complétez et ne renvoyez ce formulaire que si vous souhaitez vous rétracter du contrat, tant que le lien de téléchargement ne vous a pas été envoyé.)
+Modèle de formulaire de rétractation (annexe à l'article R221-1 du Code de la consommation, en vigueur depuis le 28 mai 2022). Ici, il ne peut servir que tant que le lien de téléchargement ne vous a pas été envoyé (article 8.3).
 
-À-COMPLÉTER : texte officiel à recopier depuis Légifrance (LEGIARTI000032887061), destinataire : Maxime Carrière EI, 13 rue Émile Zola, 17100 Saintes, lectura.world@gmail.com.
+> **MODÈLE DE FORMULAIRE DE RÉTRACTATION**
+>
+> (Veuillez compléter et renvoyer le présent formulaire uniquement si vous souhaitez vous rétracter du contrat.)
+>
+> A l'attention de Maxime Carrière EI, 13 rue Émile Zola, 17100 Saintes, lectura.world@gmail.com :
+>
+> Je/nous (\*) vous notifie/notifions (\*) par la présente ma/notre (\*) rétractation du contrat portant sur la vente du bien (\*)/pour la prestation de services (\*) ci-dessous :
+>
+> Commandé le (\*)/reçu le (\*) :
+>
+> Nom du (des) consommateur(s) :
+>
+> Adresse du (des) consommateur(s) :
+>
+> Signature du (des) consommateur(s) (uniquement en cas de notification du présent formulaire sur papier) :
+>
+> Date :
+>
+> (\*) Rayez la mention inutile.
