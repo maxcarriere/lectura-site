@@ -6,35 +6,23 @@ permalink: /solutions/services/licences/
 
 ## Modèle de distribution
 
-### Code open source
+### Première génération (2026)
 
-Les modules Lectura sont distribués sous licence **AGPL-3.0**. Le code source est ouvert et disponible pour chaque module sur [GitHub](https://github.com/maxcarriere/lectura-modules). Cette licence autorise l'utilisation, la modification et la redistribution dans un cadre non commercial, à condition de conserver la même licence.
+La première génération des modules Lectura (2026) est publiée en open source, sous licence **AGPL-3.0**, sur [GitHub](https://github.com/maxcarriere/lectura-modules) et PyPI. La génération actuelle n'est pas distribuée : elle est accessible par l'API pour les démos.
 
 ### Modèles
 
-Les modèles sont accessibles de deux manières :
-
-| Mode | Description |
-|------|-------------|
-| **API dédiée** | Serveur ou accès dédié configuré pour le client, adapté à un usage en production |
-| **Local** | Modèles ONNX optimisés (INT8 et FP32) proposés à l'achat pour un déploiement sur vos propres serveurs et appareils |
-
-L'API Lectura (api.lectura.world) est **accessible gratuitement** pour tester les différents modules. Les démos présentes sur ce site l'utilisent.
+L'API Lectura (api.lectura.world) est accessible gratuitement pour essayer les modules ; les démos de ce site l'utilisent. Pour un projet, [écrivez-nous]({{ '/contact/' | relative_url }}).
 
 ### Licence commerciale
 
-Pour un usage commercial (intégration dans un produit propriétaire, déploiement en production ou redistribution), une licence commerciale est nécessaire. Elle couvre :
-
-- **Droit d'utilisation** des modules et modèles dans un contexte commercial
-- **Modèles ONNX** optimisés pour l'inférence locale
-- **Support technique** pour l'intégration
-- **Correctifs** des modèles pendant la durée de la licence
+Pour intégrer les modules de la génération actuelle dans un produit, une licence commerciale est nécessaire. Son périmètre, sa durée et son prix se fixent au cas par cas, après une démo.
 
 ---
 
 ## Modules disponibles
 
-Tous les modules Lectura sont disponibles sous licence commerciale :
+La licence commerciale peut porter sur les modules suivants :
 
 - NLP : Tokeniseur, Formules, Phonémiseur (G2P), Graphémiseur (P2G), Aligneur
 - TTS : Monospeaker, Diphone, Multi-Speaker
