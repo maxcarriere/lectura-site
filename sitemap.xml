@@ -238,4 +238,8 @@
     <loc>https://www.lectura.world/confidentialite/</loc>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://www.lectura.world/cgv/</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>

@@ -22,6 +22,10 @@ Le site www.lectura.world est un **site statique** hébergé sur GitHub Pages. I
 
 Le site **n'utilise aucun cookie**, ni cookie de suivi, ni cookie publicitaire, ni cookie d'analyse d'audience.
 
+## Mesure d'audience
+
+Pour connaître la fréquentation de ses pages, Lectura utilise **GoatCounter**, un outil de statistiques sans cookie, sur lectura.world et lexique.lectura.world. Il compte les pages vues, le site d'où vient le visiteur, le navigateur et le système, la langue, la taille d'écran et le pays (déduit de l'adresse IP, qui n'est pas conservée). Il ne dépose aucun cookie, ne suit pas le visiteur d'un site à l'autre et ne sert à aucune publicité. Lectura ne consulte que des chiffres d'ensemble. Ces statistiques sont traitées par GoatCounter, conformément à sa [politique de confidentialité](https://www.goatcounter.com/help/privacy).
+
 ---
 
 ## Données techniques d'hébergement
