@@ -19,7 +19,7 @@ import tempfile
 import urllib.request
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-LIGNE1 = "Bienvenue sur Lectura."
+LIGNE1 = "Bienvenue sur Lectura World."
 LIGNE2 = "L’IA au service du langage et de sa lecture."
 
 

@@ -2,7 +2,7 @@
 title: "Bienvenue sur Lectura.world !"
 accueil: true
 hide_title: true
-accueil_image: /assets/images/accueil/bande-provisoire.webp
+accueil_image: /assets/images/accueil/planisphere.webp
 accueil_image_alt: "Illustration : une tête en coupe qui parle, l'onde de sa voix, des engrenages, et un enfant qui lit un livre et une tablette"
 layout: default
 og_title: "Lectura — l'IA au service du langage et de sa lecture"

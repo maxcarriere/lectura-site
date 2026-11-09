@@ -1,13 +1,18 @@
 {%- comment -%}
-  Haut de l'accueil (Maxime, 09/11/2026 ; modèle zmaths.net) : une image sur la moitié de l'écran, puis la phrase
-  « Bienvenue sur Lectura / L'IA au service du langage et de sa lecture », lue par la voix de Lectura au clic,
-  avec surlignage syllabe par syllabe (ligne 1) puis mot par mot (ligne 2). Phrase et audio : _outils/phrase_accueil.py.
-  Image : page.accueil_image (provisoire : l'ancien bandeau, en attendant l'image régénérée).
+  Premier écran de l'accueil (Maxime, 09/11/2026) : la carte « Lectura World » remplit l'écran ; la phrase
+  « Bienvenue sur Lectura World / L'IA au service du langage et de sa lecture » est posée sur l'Antarctique,
+  lue par la voix de Lectura dès que la carte est chargée, avec surlignage syllabe par syllabe (ligne 1) puis
+  mot par mot (ligne 2). Une flèche de chaque côté rejoue la lecture. Phrase et audio : _outils/phrase_accueil.py.
+  Fond : planisphère fourni par Maxime (Planisphère3.png), converti en webp.
 {%- endcomment -%}
-<section class="accueil-haut" aria-label="Lectura">
-  <div class="accueil-visuel">
-    <img src="{{ page.accueil_image | default: '/assets/images/banniere.png' | relative_url }}" alt="{{ page.accueil_image_alt | default: '' }}" fetchpriority="high">
+<section class="accueil-haut" aria-label="Lectura World">
+  <div class="carte-monde">
+    <img class="carte-fond" src="{{ '/assets/images/accueil/planisphere.webp' | relative_url }}" alt="Planisphère Lectura World" fetchpriority="high" width="1774" height="887">
+    <div class="carte-phrase">
+      <button type="button" class="ap-fleche ap-fleche--g" aria-label="Écouter la phrase lue par la voix de Lectura"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5 L7 12 L16 19 Z"/></svg></button>
+      {% include accueil-phrase.html %}
+      <button type="button" class="ap-fleche ap-fleche--d" aria-label="Écouter la phrase lue par la voix de Lectura"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L17 12 L8 19 Z"/></svg></button>
+    </div>
   </div>
-  {% include accueil-phrase.html %}
 </section>
 <script src="{{ '/assets/js/accueil-phrase.js' | relative_url }}" defer></script>
