@@ -2,34 +2,22 @@
 title: Solutions
 layout: default
 permalink: /solutions/
+description: "Les solutions de Lectura : une technologie du langage centrée sur la phonétique, et des solutions éducatives pour apprendre à lire."
 ---
 
-Lectura propose des solutions professionnelles pour le traitement linguistique du français, la synthèse et la reconnaissance vocale. Chaque solution est utilisable via API comme module Python autonome et testable directement en ligne.
+« L'IA au service du langage et de sa lecture » : nos solutions suivent les deux sens du mot lecture. **Lire à haute voix**, c'est le terrain de la technologie : analyse du texte, prononciation, voix. **Apprendre à lire**, c'est le terrain de l'éducation : des contenus et des outils pour l'apprentissage de la lecture.
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Analyse du langage</h2>
-    <p>Tokenisation, analyse grammaticale, phonémisation, graphémisation, alignement syllabique et lecture des formules.</p>
-    <a class="more-link" href="{{ '/solutions/analyse-langage/' | relative_url }}">Découvrir</a>
+    <h2>Technologiques</h2>
+    <p>Sur quoi repose la technologie de Lectura et ce qu'elle apporte : la phonétique comme passerelle entre l'écrit et l'oral, les données, les modèles neuronaux.</p>
+    <a class="more-link" href="{{ '/solutions/technologiques/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
-    <h2>Synthèse vocale</h2>
-    <p>3 moteurs de synthèse vocale française (neuronal multi-voix, neuronal mono-voix, concaténation diphonique). 6 voix, 7 styles, transformation du timbre vocal, gestion des nombres et formules.</p>
-    <a class="more-link" href="{{ '/solutions/synthese-vocale/' | relative_url }}">Découvrir</a>
-  </div>
-  <div class="home-card">
-    <h2>Reconnaissance vocale</h2>
-    <p>Transcription audio du français : identification des phonèmes puis traduction en orthographe. Pipeline léger et rapide, reconnaissance des nombres, dates, numéros...</p>
-    <a class="more-link" href="{{ '/solutions/reconnaissance-vocale/' | relative_url }}">Découvrir</a>
-  </div>
-  <div class="home-card">
-    <h2>Lexique</h2>
-    <p>Base lexicale de 2,58 millions de formes reliées à 2,48 M d'entités (Wikidata) : conjugaison, rimes, synonymes, morphologie, définitions, recherche multi-critère...</p>
-    <a class="more-link" href="{{ '/solutions/lexique/' | relative_url }}">Découvrir</a>
-  </div>
-  <div class="home-card">
-    <h2>Services</h2>
-    <p>Licences commerciales, intégration logicielle, préparation de corpus, services éditoriaux...</p>
-    <a class="more-link" href="{{ '/solutions/services/' | relative_url }}">Découvrir</a>
+    <h2>Éducatives</h2>
+    <p>Apprentissage de la lecture, lecture syllabique, apprentissage des langues : les contenus, la méthode, et ce qui existe déjà.</p>
+    <a class="more-link" href="{{ '/solutions/educatives/' | relative_url }}">Découvrir</a>
   </div>
 </div>
+
+Pour les licences, les services et les produits, voir les [offres]({{ '/offres/' | relative_url }}).

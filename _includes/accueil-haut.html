@@ -1,0 +1,13 @@
+{%- comment -%}
+  Haut de l'accueil (Maxime, 09/11/2026 ; modèle zmaths.net) : une image sur la moitié de l'écran, puis la phrase
+  « Bienvenue sur Lectura / L'IA au service du langage et de sa lecture », lue par la voix de Lectura au clic,
+  avec surlignage syllabe par syllabe (ligne 1) puis mot par mot (ligne 2). Phrase et audio : _outils/phrase_accueil.py.
+  Image : page.accueil_image (provisoire : l'ancien bandeau, en attendant l'image régénérée).
+{%- endcomment -%}
+<section class="accueil-haut" aria-label="Lectura">
+  <div class="accueil-visuel">
+    <img src="{{ page.accueil_image | default: '/assets/images/banniere.png' | relative_url }}" alt="{{ page.accueil_image_alt | default: '' }}" fetchpriority="high">
+  </div>
+  {% include accueil-phrase.html %}
+</section>
+<script src="{{ '/assets/js/accueil-phrase.js' | relative_url }}" defer></script>

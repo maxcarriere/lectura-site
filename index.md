@@ -1,5 +1,7 @@
 ---
 title: "Bienvenue sur Lectura.world !"
+accueil: true
+hide_title: true
 layout: default
 og_title: "Lectura World — des outils pour la lecture du français"
 description: "Lectura développe des outils pour la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."

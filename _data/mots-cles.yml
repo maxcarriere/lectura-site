@@ -1,0 +1,36 @@
+# Mots clés de l'en-tête (Maxime, 09/11/2026) : ils s'allument et s'éteignent un à un, chacun mène à sa page.
+# Adresses vérifiées (200) le 09/11/2026. À relire à chaque évolution des sites projets.
+- sigle: "TTS"
+  libelle: "synthèse vocale"
+  url: https://voice.lectura.world/tts
+- sigle: "G2P"
+  libelle: "phonémiseur"
+  url: https://lingua.lectura.world/g2p
+- libelle: "Correcteur orthographique et grammatical"
+  url: https://lingua.lectura.world/correcteur
+- sigle: "STT"
+  libelle: "reconnaissance vocale"
+  url: https://voice.lectura.world/stt
+- libelle: "Lecture syllabique"
+  url: https://lingua.lectura.world/syllabes
+- sigle: "WiKiLeXiK"
+  libelle: "dictionnaire"
+  url: https://lexique.lectura.world/
+- libelle: "Sous-titrage synchronisé"
+  url: https://voice.lectura.world/sous-titrage
+- sigle: "P2G"
+  libelle: "graphémiseur"
+  url: https://lingua.lectura.world/p2g
+- libelle: "Analyse grammaticale"
+  url: https://lingua.lectura.world/analyse
+- sigle: "LeXiK"
+  libelle: "lexique phonétique du français"
+  url: https://lexique.lectura.world/lexik
+- libelle: "Traduction"
+  url: https://lingua.lectura.world/traduction
+- sigle: "Corpus"
+  libelle: "syllabes enregistrées"
+  url: https://lexique.lectura.world/corpus/syllabes
+- sigle: "Lexicon"
+  libelle: "le lexique dans votre application"
+  url: https://lexique.lectura.world/lexicon/fr

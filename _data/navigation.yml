@@ -1,61 +1,58 @@
-# Navigation principale du site lectura.world
-# 3 niveaux : racine > section > feuille
+# Navigation principale de lectura.world (vitrine v1, plan de Maxime du 09/11/2026 : brain/lectura/site/CADRAGE.md §V3.4)
+# 3 niveaux : racine > section > feuille. Les adresses existantes sont gardées (référencement) ; seules les pages
+# nouvelles ont une adresse dans /decouvrir/ ou /offres/.
 
 - title: Accueil
   url: /
 
+- title: "Découvrir"
+  url: /decouvrir/
+  children:
+    - title: Les projets
+      url: /decouvrir/projets/
+    - title: "Lectura"
+      url: /a-propos/vision/
+      children:
+        - title: "Qu'est-ce que Lectura ?"
+          url: /a-propos/vision/
+        - title: "Méthode : le rôle de l'IA"
+          url: /a-propos/methode/
+    - title: Fondateur
+      url: /a-propos/qui-suis-je/
+
 - title: Solutions
   url: /solutions/
   children:
-    - title: Analyse du langage
-      url: /solutions/analyse-langage/
-    - title: "Synthèse vocale"
-      url: /solutions/synthese-vocale/
-    - title: Reconnaissance vocale
-      url: /solutions/reconnaissance-vocale/
-    - title: Lexique
-      url: /solutions/lexique/
-    - title: Services
-      url: /solutions/services/
+    - title: Technologiques
+      url: /solutions/technologiques/
       children:
-        - title: Licences commerciales
-          url: /solutions/services/licences/
-        - title: "Intégration logicielle"
-          url: /solutions/services/integration/
-        - title: "Élaboration de modèles"
-          url: /solutions/services/corpus-modeles/
-        - title: "Préparation des données"
-          url: /solutions/services/preparation-donnees/
-        - title: "Services éditoriaux"
-          url: /solutions/services/services-editoriaux/
-        - title: "Autres prestations"
-          url: /solutions/services/divers/
-    - title: Tarification
-      url: /solutions/tarifs/
+        - title: Analyse du langage
+          url: /solutions/analyse-langage/
+        - title: "Synthèse vocale"
+          url: /solutions/synthese-vocale/
+        - title: Reconnaissance vocale
+          url: /solutions/reconnaissance-vocale/
+        - title: Lexique
+          url: /solutions/lexique/
+        - title: "Le point de vue phonétique"
+          url: /developpement/recherche/phonetique/
+    - title: "Éducatives"
+      url: /solutions/educatives/
 
-- title: Produits
-  url: /produits/
+- title: Offres
+  url: /offres/
   children:
-    - title: Programmes
-      url: /produits/programmes/
+    - title: Entreprises
+      url: /offres/entreprises/
       children:
-        - title: Voice Edition
-          url: /produits/programmes/voice-edition/
-        - title: Lexique Viewer
-          url: /produits/programmes/lexique-viewer/
-    - title: Applications mobiles
-      url: /produits/applications/
-    - title: "Livres & Médias"
-      url: /produits/medias/
-    - title: Ressources
-      url: /produits/ressources/
-      children:
-        - title: LeXiK
-          url: /produits/ressources/lexik/
-        - title: Kit G2P / P2G
-          url: /produits/ressources/kit-g2p-p2g/
-        - title: Corpus de Voix
-          url: /produits/ressources/corpus-voix/
+        - title: Licences
+          url: /solutions/services/licences/
+        - title: Services
+          url: /solutions/services/
+        - title: Tarification
+          url: /solutions/tarifs/
+    - title: Particuliers
+      url: /offres/particuliers/
 
 - title: "Développement"
   url: /developpement/
@@ -67,38 +64,16 @@
           url: /developpement/modules/outils/
         - title: Pipelines métiers
           url: /developpement/modules/metiers/
-    - title: "Lexique"
-      url: /developpement/lexique/
+    - title: "Programmes & applications"
+      url: /produits/programmes/
+    - title: Ressources
+      url: /produits/ressources/
+    - title: "Données"
+      url: /developpement/donnees/
     - title: Recherche
       url: /developpement/recherche/
-      children:
-        - title: "Le point de vue Phonétique"
-          url: /developpement/recherche/phonetique/
-        - title: "Algorithmes développés"
-          url: /developpement/recherche/algorithmes/
-        - title: "TTS diphonique"
-          url: /developpement/recherche/tts-diphonique/
-        - title: "Ingénierie des modèles"
-          url: /developpement/recherche/ingenierie-modeles/
-    - title: Projets
-      url: /developpement/projets/
-      children:
-        - title: Correcteur
-          url: /developpement/projets/correcteur/
-        - title: "Applications pédagogiques"
-          url: /developpement/projets/applications-pedagogiques/
 
-- title: "À propos"
-  url: /a-propos/
-  children:
-    - title: "Méthode : Le rôle de l'IA"
-      url: /a-propos/methode/
-    - title: "Qu'est-ce que Lectura ?"
-      url: /a-propos/vision/
-    - title: "Qui suis-je ?"
-      url: /a-propos/qui-suis-je/
-
-- title: "Contact & Liens"
+- title: "Contact & liens"
   url: /contact/
   children:
     - title: Contact
