@@ -147,54 +147,28 @@ body *::after {
   margin-top: 0.2rem;
 }
 
-/* Mots clés qui s'allument et s'éteignent (Maxime, 09/11/2026) */
-.header-mots {
+/* Bouton de la carte (Maxime, 09/11/2026) : une flèche de chaque côté ; masqué tant que la carte est à l'écran */
+.header-carte {
   grid-column: 2;
   grid-row: 1;
-  position: relative;
-  height: 2rem;
-  min-width: 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-.mot-cle {
-  position: absolute;
-  inset: 0;
-  display: flex;
+  justify-self: center;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  white-space: nowrap;
+  gap: 0.6rem;
   color: #d8ccb0;
-  font-size: 1.15rem;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0.3em);
-  transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s linear 0.7s;
-}
-
-.mot-cle b {
-  color: #F5F5F5;
   font-family: 'Cinzel', serif;
-  font-weight: 600;
-  margin-right: 0.15em;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  transition: opacity 0.4s ease, color 0.2s ease, background 0.2s ease;
 }
-
-.mot-cle--actif {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 0.7s ease, transform 0.7s ease, visibility 0s;
-}
-
-.mot-cle:hover,
-.mot-cle:focus-visible {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
+.header-carte svg { width: 0.9rem; height: 0.9rem; fill: currentColor; }
+.header-carte:hover, .header-carte:focus-visible { color: #fff; background: rgba(255, 255, 255, 0.08); }
+.header-carte-court { display: none; }
+body.sur-carte .header-carte { opacity: 0; pointer-events: none; }
 
 /* Liens vers les autres sites */
 .header-sites {
@@ -1140,14 +1114,13 @@ html[data-darkreader-mode] .parchment-content a:hover {
     display: none;
   }
 
-  .header-mots {
+  .header-carte {
     flex: 1 1 auto;
+    justify-content: center;
     margin: 0 0.5rem;
   }
-
-  .mot-cle {
-    font-size: 0.95rem;
-  }
+  .header-carte-long { display: none; }
+  .header-carte-court { display: inline; }
 
   /* Hamburger visible */
   .menu-toggle {
@@ -1776,7 +1749,8 @@ html[data-darkreader-scheme] .parchment-content * {
 }
 .ap-fleche svg { width: 55%; height: 55%; fill: currentColor; }
 .ap-fleche:hover, .ap-fleche:focus-visible { background: #3a2a1f; }
-.ap-fleche.ap-invite { animation: ap-invite 1.6s ease-in-out infinite; }
+.ap-fleche { animation: ap-invite 2.4s ease-in-out infinite; }
+.accueil-phrase.ap-invite .ap-ligne1 { cursor: pointer; }
 @keyframes ap-invite {
   0%, 100% { box-shadow: 0 0 0 0 rgba(243, 227, 192, 0.0); }
   50% { box-shadow: 0 0 0 0.6cqw rgba(243, 227, 192, 0.55); }
