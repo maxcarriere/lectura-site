@@ -1715,22 +1715,21 @@ html[data-darkreader-scheme] .parchment-content * {
 .accueil-haut {
   position: relative;
   z-index: 1;
-  width: min(1100px, calc(100vw - 2 * var(--sidebar-width) - 80px));
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem 0 calc(5.5rem + 10px);
+  /* comme Zmaths (Maxime, 09/11) : bande pleine largeur de la colonne centrale, puis la phrase lue dessous */
+  width: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Bande au format de Zmaths (2170 x 505) : carte Lectura World en 2176 x 512, montrée entière */
 .accueil-visuel {
-  height: 50vh;
-  min-height: 260px;
-  border-radius: 6px;
+  aspect-ratio: 2176 / 512;
+  max-height: 42vh;
+  width: 100%;
   overflow: hidden;
   background: #120B08;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .accueil-visuel img {
@@ -1742,7 +1741,7 @@ html[data-darkreader-scheme] .parchment-content * {
 
 .accueil-phrase {
   text-align: center;
-  padding: 1.6rem 1rem 0.4rem;
+  padding: 1.4rem 1rem 0.4rem;
   color: #1d140f;
 }
 
@@ -1802,6 +1801,6 @@ html[data-darkreader-scheme] .parchment-content * {
 .ap-en-cours .ap-ecouter span::after { content: " (arrêter)"; }
 
 @media (max-width: 1199px) {
-  .accueil-haut { width: auto; padding: 1rem 1rem 0; }
-  .accueil-visuel { height: 38vh; }
+  .accueil-haut { width: auto; padding: 0; }
+  .accueil-visuel { max-height: none; }
 }

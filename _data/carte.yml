@@ -1,0 +1,21 @@
+# Carte « Lectura World » : continents (projets) et régions (domaines). Une région sans point reste grise.
+# Les points eux-mêmes sont les mots de l'en-tête (_data/mots-cles.yml, champs projet / region).
+- projet: lexique
+  nom: LecturaLexique
+  regions:
+    - {id: dictionnaires, nom: "Dictionnaires"}
+    - {id: donnees, nom: "Données et intégration"}
+- projet: lingua
+  nom: LecturaLingua
+  regions:
+    - {id: phonetique, nom: "De l'écrit au son"}
+    - {id: grammaire, nom: "Orthographe et grammaire"}
+    - {id: traduction, nom: "Traduction"}
+- projet: voice
+  nom: LecturaVoice
+  regions:
+    - {id: synthese, nom: "Synthèse vocale"}
+    - {id: reconnaissance, nom: "Reconnaissance vocale"}
+- {projet: education, nom: LecturaEducation, statut: "en préparation"}
+- {projet: games, nom: LecturaGames, statut: "en préparation"}
+- {projet: books, nom: LecturaBooks, statut: "en préparation"}
