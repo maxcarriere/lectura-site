@@ -21,6 +21,9 @@ import urllib.request
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 LIGNE1 = "Bienvenue sur Lectura World."
 LIGNE2 = "L’IA au service du langage et de sa lecture."
+# Graphie lue par la voix -> graphie affichée. Maxime, 09/11 : « World » se dit /wɔʁld/ (o ouvert, r français) ;
+# la voix française le lit ainsi sous la graphie « Worlde » (e muet), vérifié sur les phonèmes rendus par l'API.
+PRONONCIATION = {"Worlde": "World"}
 
 
 def synthese(texte: str, voix: str) -> dict:
@@ -36,6 +39,12 @@ def syllabes(phrase: dict, texte: str) -> str:
     lettres = {l["position"]: l for l in phrase["lettres"]}
     morceaux, n = [], 0
     for mot in phrase["mots"]:
+        forme = texte[mot["position"]:mot["fin_texte"]]
+        if forme in PRONONCIATION:  # mot lu sous une autre graphie : une seule unité, affichée normalement
+            morceaux.append(f'<span class="ap-u s{n % 3 + 1}" data-d="{mot["debut"]}" data-f="{mot["fin"]}">'
+                            f'{html.escape(PRONONCIATION[forme])}</span>')
+            n += 1
+            continue
         syl: list[list[dict]] = []
         for pos in range(mot["position"], mot["fin_texte"]):
             l = lettres.get(pos)
@@ -72,7 +81,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--voix", default="siwis")
     args = ap.parse_args()
-    r = synthese(f"{LIGNE1} {LIGNE2}", args.voix)
+    lu = f"{LIGNE1} {LIGNE2}"
+    for graphie_lue, affichee in PRONONCIATION.items():
+        lu = lu.replace(affichee, graphie_lue)
+    r = synthese(lu, args.voix)
     al = r["alignement"]
     texte = al["texte"]
     p1, p2 = al["phrases"]
