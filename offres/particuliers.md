@@ -12,7 +12,7 @@ Lectura prépare des produits pour apprendre à lire : livres, médias, applicat
 - **Lecture syllabique** : collez un texte, il est découpé en syllabes et coloré son par son, en page à imprimer ou à enregistrer en PDF. Gratuit, sur [LecturaLingua](https://lingua.lectura.world/syllabes).
 - **Lecture à voix haute** : un texte lu par une voix de synthèse, avec le surlignage des mots ou des syllabes. Gratuit, sur [LecturaVoice](https://voice.lectura.world/tts).
 - **Dictionnaire** : WiKiLeXiK, pour chercher un mot, sa prononciation, ses rimes, ses synonymes. Gratuit, sur [LecturaLexique](https://lexique.lectura.world/wikilexik).
-- **Corpus de syllabes** : les syllabes du français avec leur son, pour créer vos propres supports (séances, cours, fiches). Il s'achète sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes), sur le site ou sur Gumroad.
+- **Corpus de syllabes** : les syllabes du français avec leur son, pour créer vos propres supports (séances, cours, fiches). Présentation et licences sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes) ; pour un achat personnel, il s'achète sur Gumroad.
 
 ## En préparation
 

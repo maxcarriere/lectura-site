@@ -13,7 +13,7 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 ### Autres projets
 
 - [Humanuscrit](https://humanuscrit.com/) — Projet d'écriture explorant l'IA et la créativité humaine
-- [Zmaths](http://www.zmaths.net/) — Cours de mathématiques en ligne
+- [Zmaths](https://www.zmaths.net/) — Cours de mathématiques en ligne
 
 ---
 

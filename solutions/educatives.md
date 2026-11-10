@@ -19,7 +19,7 @@ Apprendre à lire, c'est relier ce que l'on voit écrit à ce que l'on entend. C
 
 **L'autoapprentissage.** Des ressources pour apprendre en autonomie : l'apprenant lit, entend le texte lu et voit où en est la voix, sans dépendre d'un adulte à chaque mot.
 
-**Le jeu.** Apprendre en s'amusant : des jeux courts où l'on manipule des syllabes et des sons, et où chaque syllabe touchée est lue.
+**Le jeu** (à l'étude). Apprendre en s'amusant : des jeux courts où l'on manipule des syllabes et des sons, et où chaque syllabe touchée est lue.
 
 ## Ce qui existe déjà
 

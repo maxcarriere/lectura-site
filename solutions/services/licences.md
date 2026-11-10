@@ -15,7 +15,7 @@ permalink: /solutions/services/licences/
 ## Le parcours
 
 1. **La démo** : vous essayez les modules en ligne, gratuitement et sans inscription.
-2. **La clé d'essai** : sur demande, une clé d'accès à notre API pour l'essayer dans votre code, pour une trentaine de jours, en évaluation seulement (pas de production). Rien n'est installé chez vous.
+2. **La clé d'essai** : sur demande, une clé d'accès à notre API pour l'essayer dans votre code, pour une durée limitée, en évaluation seulement (pas de production). Rien n'est installé chez vous.
 3. **La licence d'évaluation** : si vous voulez intégrer les modules chez vous, ils vous sont confiés pour évaluation, sans diffusion ni usage commercial.
 4. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
 

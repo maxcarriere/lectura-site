@@ -18,9 +18,9 @@
       {%- if p.langues %}<span class="cp-langues">{% for l in p.langues %}{% include drapeau.html langue=l %}{% endfor %}</span>{% endif %}
     </a>
     {%- else %}
-    <span class="carte-projet carte-projet--prepa" style="left: {{ p.x }}%; top: {{ p.y }}%;" tabindex="0" title="{{ p.nom }} : en préparation">
+    <span class="carte-projet carte-projet--prepa" style="left: {{ p.x }}%; top: {{ p.y }}%;" tabindex="0" title="{{ p.nom }} : {{ p.statut }}">
       <span class="cp-icone">{% include icone-projet.html nom=p.icone %}</span>
-      <span class="cp-nom">{{ p.nom }}<small>en préparation</small></span>
+      <span class="cp-nom">{{ p.nom }}<small>{{ p.statut }}</small></span>
     </span>
     {%- endif %}
     {%- endfor %}

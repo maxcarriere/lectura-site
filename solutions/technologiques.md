@@ -9,7 +9,7 @@ La technologie de Lectura traite le français (et de plus en plus l'anglais) de 
 
 ## La phonétique, passerelle entre l'écrit et l'oral
 
-Toutes nos briques passent par la même étape : la **transcription phonétique**. Le texte est d'abord converti en sons (G2P), puis les sons en voix ; dans l'autre sens, la voix est transcrite en sons, puis les sons en texte (P2G). Ce passage commun relie des tâches que l'on traite d'habitude séparément : l'analyse du texte, la synthèse vocale, la reconnaissance vocale.
+Nos briques de lecture et de voix passent par la même étape : la **transcription phonétique**. Le texte est d'abord converti en sons (G2P), puis les sons en voix ; dans l'autre sens, la voix est transcrite en sons, puis les sons en texte (P2G). Ce passage commun relie des tâches que l'on traite d'habitude séparément : l'analyse du texte, la synthèse vocale, la reconnaissance vocale.
 
 Il apporte aussi une précision utile à la lecture : chaque son produit ou reconnu est daté. On peut donc surligner le texte en même temps que la voix, mot par mot ou syllabe par syllabe. L'approche est expliquée dans [le point de vue phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}).
 
@@ -33,7 +33,7 @@ La génération actuelle (v1) est en service sur nos serveurs et se teste par le
   </div>
   <div class="home-card">
     <h2>Synthèse vocale</h2>
-    <p>Une voix de synthèse française, avec le surlignage synchronisé du texte lu.</p>
+    <p>Six voix de synthèse françaises, avec le surlignage synchronisé du texte lu.</p>
     <a class="more-link" href="{{ '/solutions/synthese-vocale/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">

@@ -2,7 +2,7 @@ baseurl: ""
 url: "https://www.lectura.world"
 
 title: Lectura
-description: "Lectura développe des outils pour la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de 2,58 millions de formes et outils pédagogiques pour l'apprentissage de la lecture."
+description: "Lectura développe des outils pour la lecture du français : analyse du langage (NLP), synthèse et reconnaissance vocales, lexique de plus de deux millions d'entrées et outils pédagogiques pour l'apprentissage de la lecture."
 lang: fr
 theme: minima
 

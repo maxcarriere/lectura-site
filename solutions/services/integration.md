@@ -12,7 +12,7 @@ Vous souhaitez ajouter la synthèse vocale, la transcription audio ou du traitem
 
 ## Ce que Lectura propose
 
-- **Démos et clé d'essai** : les démos en ligne, gratuites et sans inscription, puis, sur demande, une clé d'essai pour tester les modules dans votre code pendant une trentaine de jours (évaluation seulement, pas de production).
+- **Démos et clé d'essai** : les démos en ligne, gratuites et sans inscription, puis, sur demande, une clé d'essai pour tester les modules dans votre code pendant une durée limitée (évaluation seulement, pas de production).
 - **Modules Python sous licence** : les modules de la génération actuelle vous sont confiés, d'abord sous licence d'évaluation, puis sous licence commerciale, pour être installés sur vos serveurs ou embarqués dans votre application. Voir [licences]({{ '/solutions/services/licences/' | relative_url }}).
 - **Pipeline d'enrichissement** : les modules "outils" peuvent être utilisés de façon autonome ou s'imbriquer naturellement pour la gestion complète d'un problème métier.
 - **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation, mise en service sur vos propres serveurs.

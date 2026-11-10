@@ -18,9 +18,9 @@ Aujourd'hui, je me définis moins comme un développeur au sens classique que co
 
 ## Les projets
 
-**Lectura** est ma suite technologique pour le traitement du français : conversion graphème-phonème, synthèse vocale, reconnaissance de la parole, correction phonétique, et un lexique de plus de deux millions d'entrées, LeXiK, publié sur ORTOLANG. Dix-sept paquets de la première génération sont publiés sur PyPI ; la génération actuelle fait tourner les démos de LecturaLingua et LecturaVoice. L'architecture repose sur le phonème comme pivot central, un choix technique qui est une passerelle centrale entre la parole et le texte.
+**Lectura** est ma suite technologique pour le traitement du français : conversion graphème-phonème, synthèse vocale, reconnaissance de la parole, correction orthographique, et un lexique de plus de deux millions d'entrées, LeXiK, publié sur ORTOLANG. Dix-sept paquets de la première génération sont publiés sur PyPI ; la génération actuelle fait tourner les démos de LecturaLingua et LecturaVoice. L'architecture repose sur le phonème comme pivot central, un choix technique qui est une passerelle centrale entre la parole et le texte.
 
-**Humanuscrit** est un projet parallèle, plus personnel : un ensemble de textes écrits avec l'IA dans des registres variés : science-fiction, éveil spirituel, logique mathématique, systémique, poésie. Un premier roman a été produit et se trouve en phase de recherche d'éditeur.
+**Humanuscrit** est un projet parallèle, plus personnel : un ensemble de textes écrits avec l'IA dans des registres variés : science-fiction, éveil spirituel, logique mathématique, systémique, poésie. Un premier roman, *System Down*, est paru en octobre 2026.
 
 Les deux projets partagent la même conviction : l'IA ne remplace pas la vision humaine, elle lui donne les moyens de se réaliser.
 
@@ -30,6 +30,6 @@ Le monde du travail est en pleine mutation, et je pense que dans ce nouveau pays
 
 ## Ce que je cherche
 
-Je suis actuellement autoentrepreneur et je souhaite développer une activité professionnelle autour de l'utilisation de l'IA, en particulier dans les domaines du traitement du langage naturel, de la voix et de l'edTech. Je suis ouvert à toute forme de collaboration, freelance ou salariat.
+Je suis actuellement autoentrepreneur et je souhaite développer une activité professionnelle autour de l'utilisation de l'IA, en particulier dans les domaines du traitement du langage naturel, de la voix et de l'edtech. Je suis ouvert à toute forme de collaboration, freelance ou salariat.
 
 Pour toute question ou proposition, rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}).

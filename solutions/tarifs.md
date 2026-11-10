@@ -42,7 +42,7 @@ Les propositions sont étudiées au cas par cas pour s'adapter à chaque situati
 Plusieurs paramètres sont pris en compte pour établir un devis :
 
 - **Nombre de modules** concernés par la licence
-- **Volume d'utilisation** (nombre de requêtes, taille des corpus)
+- **Volume d'utilisation** (nombre d'utilisateurs ou d'appareils, taille des corpus)
 - **Mode d'intégration** : sur vos serveurs ou embarqué dans votre application (modèles ONNX)
 - **Services d'accompagnement** : intégration technique, formation, support
 - **Durée de la licence** et conditions de renouvellement

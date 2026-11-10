@@ -54,7 +54,7 @@ _data/carte.yml (projets) et _data/mots-cles.yml (outils). Ajouter un outil = aj
     {%- endfor %}
     <p class="qn-prepa">
       {%- assign prepa = site.data.carte | where_exp: "p", "p.statut" -%}
-      {%- for p in prepa %}<span>{{ p.nom }}</span>{% unless forloop.last %} · {% endunless %}{% endfor %}<br><em>en préparation</em>
+      {%- for p in prepa %}<span>{{ p.nom }}</span> <em>({{ p.statut }})</em>{% unless forloop.last %}<br>{% endunless %}{% endfor %}
     </p>
   </nav>
 </aside>
