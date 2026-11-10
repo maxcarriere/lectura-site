@@ -1,21 +1,39 @@
-# Carte « Lectura World » : continents (projets) et régions (domaines). Une région sans point reste grise.
+# Carte « Lectura World » : un projet par continent (Maxime, 09/11) ; x / y = position du médaillon sur
+# le planisphère, en % (répartition proposée par l'instance, à confirmer). Continents (projets) et régions (domaines). Une région sans point reste grise.
+# Accès rapide : un groupe par projet, dans cet ordre (_includes/sidebar-right.html).
 # Les points eux-mêmes sont les mots de l'en-tête (_data/mots-cles.yml, champs projet / region).
 - projet: lexique
+  continent: Europe
+  x: 52
+  y: 28
   nom: LecturaLexique
+  url: https://lexique.lectura.world/
+  icone: dictionary
   regions:
     - {id: dictionnaires, nom: "Dictionnaires"}
     - {id: donnees, nom: "Données et intégration"}
 - projet: lingua
+  continent: Amérique du Nord
+  x: 26
+  y: 35
+  langues: [fr, en]
   nom: LecturaLingua
+  url: https://lingua.lectura.world/
+  icone: letters
   regions:
     - {id: phonetique, nom: "De l'écrit au son"}
     - {id: grammaire, nom: "Orthographe et grammaire"}
     - {id: traduction, nom: "Traduction"}
 - projet: voice
+  continent: Asie
+  x: 71
+  y: 32
   nom: LecturaVoice
+  url: https://voice.lectura.world/
+  icone: headphones
   regions:
     - {id: synthese, nom: "Synthèse vocale"}
     - {id: reconnaissance, nom: "Reconnaissance vocale"}
-- {projet: education, nom: LecturaEducation, statut: "en préparation"}
-- {projet: games, nom: LecturaGames, statut: "en préparation"}
-- {projet: books, nom: LecturaBooks, statut: "en préparation"}
+- {projet: education, nom: LecturaEducation, statut: "en préparation", continent: Océanie, x: 75, y: 66, icone: ardoise}
+- {projet: games, nom: LecturaGames, statut: "en préparation", continent: Amérique du Sud, x: 37, y: 61, icone: de}
+- {projet: books, nom: LecturaBooks, statut: "en préparation", continent: Afrique, x: 54, y: 52, icone: livres}

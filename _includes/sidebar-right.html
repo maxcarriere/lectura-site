@@ -1,12 +1,14 @@
+{%- comment -%} Accès rapide (Maxime, 09/11/2026) : les outils de chaque projet, groupés par projet, tirés de
+_data/carte.yml (projets) et _data/mots-cles.yml (outils). Ajouter un outil = ajouter une ligne à mots-cles.yml. {%- endcomment -%}
 <aside class="site-sidebar-right" aria-label="Accès rapide">
   <div class="sidebar-title">Accès rapide</div>
   <nav class="quick-nav">
-    {% for item in site.data.quicknav %}
-      {% assign is_active = false %}
-      {% if page.url contains item.url %}{% assign is_active = true %}{% endif %}
-      <a href="{{ item.url | relative_url }}" class="quick-nav-link{% if is_active %} quick-nav-link--active{% endif %}">
+    {%- for p in site.data.carte -%}
+    {%- if p.url %}
+    <section class="qn-projet">
+      <a href="{{ p.url }}" class="qn-projet-titre">
         <span class="quick-nav-icon">
-          {% case item.icon %}
+          {% case p.icone %}
           {% when 'headphones' %}
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
@@ -40,8 +42,19 @@
           </svg>
           {% endcase %}
         </span>
-        <span class="quick-nav-label">{{ item.title }}</span>
+        <span>{{ p.nom }}</span>
       </a>
-    {% endfor %}
+      <ul class="qn-outils">
+        {%- for m in site.data.mots-cles -%}{%- if m.projet == p.projet %}
+        <li><a href="{{ m.url }}">{% if m.sigle %}<b>{{ m.sigle }}</b> · {% endif %}{{ m.libelle }}</a></li>
+        {%- endif -%}{%- endfor %}
+      </ul>
+    </section>
+    {%- endif -%}
+    {%- endfor %}
+    <p class="qn-prepa">
+      {%- assign prepa = site.data.carte | where_exp: "p", "p.statut" -%}
+      {%- for p in prepa %}<span>{{ p.nom }}</span>{% unless forloop.last %} · {% endunless %}{% endfor %}<br><em>en préparation</em>
+    </p>
   </nav>
 </aside>

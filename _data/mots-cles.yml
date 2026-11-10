@@ -1,6 +1,6 @@
 # projet / region : continent et région de la carte « Lectura World » (Maxime, 09/11 : distinguer synthèse et
 # reconnaissance, etc.). Les noms des régions sont dans _data/carte.yml ; x / y (en %) viendront avec le fond.
-# Mots clés de l'en-tête (Maxime, 09/11/2026) : ils s'allument et s'éteignent un à un, chacun mène à sa page.
+# Outils de Lectura (Maxime, 09/11/2026) : listés dans Accès rapide, groupés par projet ; chacun mène à sa page.
 # Adresses vérifiées (200) le 09/11/2026. À relire à chaque évolution des sites projets.
 - sigle: "TTS"
   libelle: "synthèse vocale"

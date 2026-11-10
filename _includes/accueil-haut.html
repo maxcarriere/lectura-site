@@ -9,6 +9,21 @@
 <section class="accueil-haut" aria-label="Lectura World">
   <div class="carte-monde">
     <img class="carte-fond" src="{{ '/assets/images/accueil/planisphere.webp' | relative_url }}" alt="Planisphère Lectura World" fetchpriority="high" width="1774" height="887">
+    {%- comment -%} Un médaillon par projet, posé sur son continent (_data/carte.yml : x / y en %). {%- endcomment -%}
+    {%- for p in site.data.carte %}
+    {%- if p.url %}
+    <a class="carte-projet" href="{{ p.url }}" style="left: {{ p.x }}%; top: {{ p.y }}%;" title="{{ p.nom }} : {{ p.continent }}">
+      <span class="cp-icone">{% include icone-projet.html nom=p.icone %}</span>
+      <span class="cp-nom">{{ p.nom }}</span>
+      {%- if p.langues %}<span class="cp-langues">{% for l in p.langues %}{% include drapeau.html langue=l %}{% endfor %}</span>{% endif %}
+    </a>
+    {%- else %}
+    <span class="carte-projet carte-projet--prepa" style="left: {{ p.x }}%; top: {{ p.y }}%;" tabindex="0" title="{{ p.nom }} : en préparation">
+      <span class="cp-icone">{% include icone-projet.html nom=p.icone %}</span>
+      <span class="cp-nom">{{ p.nom }}<small>en préparation</small></span>
+    </span>
+    {%- endif %}
+    {%- endfor %}
     <div class="carte-phrase">
       <button type="button" class="ap-fleche ap-fleche--g" aria-label="Descendre vers la présentation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8 L12 16 L19 8 Z"/></svg></button>
       {% include accueil-phrase.html %}

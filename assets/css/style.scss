@@ -392,57 +392,47 @@ body.sur-carte .header-carte { opacity: 0; pointer-events: none; }
   border-radius: 3px;
 }
 
+/* Accès rapide : outils groupés par projet (Maxime, 09/11/2026) */
 .quick-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  gap: 0.4rem;
+  padding: 0.25rem 0 1rem;
 }
 
-.quick-nav-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  color: #d8ccb0;
-  text-decoration: none;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  border-right: 3px solid transparent;
-  transition: color 0.15s, background 0.15s;
-}
+.qn-projet { padding: 0.4rem 0.9rem 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
 
-.quick-nav-link:hover {
-  color: #F5F5F5;
-  background: rgba(255, 255, 255, 0.05);
-  text-decoration: none;
-}
-
-.quick-nav-link--active {
-  color: #F5F5F5;
-  border-right-color: #d8ccb0;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.quick-nav-icon {
+.qn-projet-titre {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.quick-nav-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.quick-nav-label {
-  font-size: 0.75rem;
+  gap: 0.55rem;
+  color: #F5F5F5;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
-  text-align: center;
-  line-height: 1.3;
+  text-decoration: none;
+  padding: 0.3rem 0;
 }
+.qn-projet-titre:hover { color: #fff; text-decoration: underline; text-underline-offset: 0.2em; }
+
+.quick-nav-icon { display: flex; align-items: center; justify-content: center; flex: none; }
+.quick-nav-icon svg { width: 22px; height: 22px; }
+
+.qn-outils { list-style: none; margin: 0.15rem 0 0; padding: 0 0 0 0.2rem; }
+.qn-outils li { margin: 0; }
+.qn-outils a {
+  display: block;
+  color: #c9bda2;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.qn-outils a b { color: #ece3cf; font-weight: 600; }
+.qn-outils a:hover, .qn-outils a:focus-visible { background: rgba(255, 255, 255, 0.07); color: #fff; }
+
+.qn-prepa { margin: 0.6rem 0.9rem 0; font-size: 0.75rem; color: #8d8473; line-height: 1.5; }
 
 /* ===== 5. Page-wrapper : zone de contenu scrollable ===== */
 .page-wrapper {
@@ -1722,6 +1712,60 @@ html[data-darkreader-scheme] .parchment-content * {
   gap: 1.6cqw;
 }
 
+/* Médaillons des projets sur la carte (Maxime, 09/11 : un projet par continent) */
+.carte-projet {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35cqw;
+  text-decoration: none;
+  z-index: 2;
+}
+.cp-icone {
+  width: 4.6cqw;
+  height: 4.6cqw;
+  min-width: 34px;
+  min-height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fffaf0, #f0e2c4 70%, #d9c39a);
+  border: 2px solid #5a3e28;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  color: #3a2716;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cp-icone svg { width: 62%; height: 62%; }
+.cp-nom {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: max(11px, 1.05cqw);
+  color: #2a1a0e;
+  background: rgba(250, 242, 224, 0.92);
+  border: 1px solid rgba(90, 62, 40, 0.5);
+  border-radius: 999px;
+  padding: 0.1em 0.7em;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.25;
+}
+.cp-nom small { font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic; font-size: 0.85em; }
+.cp-langues { display: flex; gap: 0.4cqw; }
+.cp-langues .drapeau { width: max(18px, 1.7cqw); height: auto; border: 1px solid rgba(0, 0, 0, 0.35); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+a.carte-projet:hover .cp-icone, a.carte-projet:focus-visible .cp-icone {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 0.4cqw rgba(255, 236, 170, 0.75), 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+a.carte-projet:hover .cp-nom { background: #fff8e6; }
+.carte-projet--prepa { cursor: default; }
+.carte-projet--prepa .cp-icone { filter: grayscale(1); opacity: 0.6; border-style: dashed; }
+.carte-projet--prepa .cp-nom { opacity: 0.75; font-weight: 600; }
+
 .carte-phrase .accueil-phrase { padding: 0; }
 .carte-phrase .ap-ecouter { display: none; }
 .carte-phrase .ap-ligne1 { font-size: 2.75cqw; line-height: 1.15; }
@@ -1821,6 +1865,9 @@ html[data-darkreader-scheme] .parchment-content * {
   .accueil-haut { min-height: 0; display: block; }
   .carte-monde { width: 100%; aspect-ratio: auto; }
   .carte-fond { height: auto; }
+  .cp-icone { width: 30px; height: 30px; min-width: 0; min-height: 0; border-width: 1.5px; }
+  .cp-nom, .cp-langues { display: none; }
+  .carte-projet--prepa { display: none; }
   .carte-phrase { position: static; transform: none; width: auto; padding: 1rem 0.5rem; gap: 0.6rem; background: #f6f1e7; }
   .carte-phrase .ap-ligne1 { font-size: clamp(1.25rem, 6vw, 1.9rem); }
   .carte-phrase .ap-ligne2 { font-size: clamp(0.95rem, 4vw, 1.25rem); }
