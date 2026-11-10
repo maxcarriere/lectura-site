@@ -1699,7 +1699,7 @@ html[data-darkreader-scheme] .parchment-content * {
 
 .carte-monde {
   position: relative;
-  width: min(100%, calc((100vh - var(--header-height) - var(--footer-height) - 3.6rem) * 2));  /* place pour la flèche dessous */
+  width: min(100%, calc((100vh - var(--header-height) - var(--footer-height) - 4.6rem) * 2));  /* place pour la flèche dessous */
   aspect-ratio: 2 / 1;
   container-type: inline-size;
 }
@@ -1715,7 +1715,7 @@ html[data-darkreader-scheme] .parchment-content * {
 .carte-phrase {
   position: absolute;
   left: 57%;
-  top: 86.4%;
+  top: 88.3%;
   transform: translateX(-50%);
   width: 60%;
   display: flex;

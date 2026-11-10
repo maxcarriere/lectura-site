@@ -160,7 +160,7 @@ def main() -> None:
     inc = (
         "{%- comment -%} Fichier produit par _outils/phrase_accueil.py (voix « " + args.voix + " » de Lectura) : "
         "ne pas modifier à la main. {%- endcomment -%}\n"
-        '<div class="accueil-phrase" data-audio="{{ \'/assets/sons/accueil-phrase.mp3\' | relative_url }}">\n'
+        '<div class="accueil-phrase" data-audio="{{ \'/assets/sons/accueil-phrase.mp3\' | relative_url }}?v={{ site.time | date: \'%s\' }}">\n'
         f'  <p class="ap-ligne ap-ligne1">{ligne1}</p>\n'
         f'  <p class="ap-ligne ap-ligne2">{ligne2}</p>\n'
         '  <button type="button" class="ap-ecouter" aria-label="Écouter la phrase lue par la voix de Lectura">'
