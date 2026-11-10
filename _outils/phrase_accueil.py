@@ -17,6 +17,7 @@ import pathlib
 import subprocess
 import tempfile
 import urllib.request
+import wave
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 LIGNE1 = "Bienvenue sur Lectura World :"
@@ -98,34 +99,53 @@ def mots(phrase: dict, texte: str, decalage: int) -> str:
     return "".join(out)
 
 
+def lue(texte: str) -> str:
+    for graphie_lue, affichee in PRONONCIATION.items():
+        texte = texte.replace(affichee, graphie_lue)
+    return texte
+
+
+def decaler(phrases: list[dict], dt: int) -> dict:
+    """Réunit les phrases rendues par l'API et décale leurs temps de dt ms."""
+    mots_ = [dict(m, debut=m["debut"] + dt, fin=m["fin"] + dt) for ph in phrases for m in ph["mots"]]
+    lettres_ = [dict(l, debut=l["debut"] + dt, fin=l["fin"] + dt) for ph in phrases for l in ph["lettres"]]
+    return {"mots": mots_, "lettres": lettres_}
+
+
 def main() -> None:
+    # Maxime, 10/11 : ligne 1 rapide et expressive, ligne 2 narrative ; deux synthèses enchaînées.
     ap = argparse.ArgumentParser()
     ap.add_argument("--voix", default="siwis")
-    ap.add_argument("--style", default="neutre")
-    ap.add_argument("--lenteur", type=float, default=0.9, help="< 1 : plus rapide (Maxime, 10/11 : siwis, « pas aussi lent »)")
+    ap.add_argument("--style1", default="expressif")
+    ap.add_argument("--lenteur1", type=float, default=0.85, help="< 1 : plus rapide")
+    ap.add_argument("--style2", default="narratif")
+    ap.add_argument("--lenteur2", type=float, default=1.0)
+    ap.add_argument("--pause", type=int, default=350, help="silence entre les deux lignes, en ms")
+    ap.add_argument("--sortie", default=str(RACINE / "assets" / "sons" / "accueil-phrase.mp3"))
+    ap.add_argument("--essai", action="store_true", help="n'écrit que l'audio (pour comparer des voix)")
     args = ap.parse_args()
-    lu = f"{LIGNE1} {LIGNE2}"
-    for graphie_lue, affichee in PRONONCIATION.items():
-        lu = lu.replace(affichee, graphie_lue)
-    r = synthese(lu, args.voix, args.style, args.lenteur)
-    al = r["alignement"]
-    texte = al["texte"]
-    # Avec « : », l'API rend une seule phrase : on coupe les deux lignes à la position du début de la ligne 2.
-    coupe = texte.index(LIGNE2[:6])
-    mots_, lettres_ = [m for ph in al["phrases"] for m in ph["mots"]], [l for ph in al["phrases"] for l in ph["lettres"]]
-    p1 = {"mots": [m for m in mots_ if m["position"] < coupe], "lettres": [l for l in lettres_ if l["position"] < coupe]}
-    p2 = {"mots": [m for m in mots_ if m["position"] >= coupe], "lettres": [l for l in lettres_ if l["position"] >= coupe]}
-    ligne1 = syllabes(p1, texte)
+    # La ligne 1 est lue avec « ! » (élan expressif) ; l'affichage garde « : ».
+    r1 = synthese(lue(LIGNE1.rstrip(" :.") + " !"), args.voix, args.style1, args.lenteur1)
+    r2 = synthese(lue(LIGNE2), args.voix, args.style2, args.lenteur2)
+    with tempfile.TemporaryDirectory() as tmp:
+        w1, w2 = pathlib.Path(tmp, "1.wav"), pathlib.Path(tmp, "2.wav")
+        w1.write_bytes(base64.b64decode(r1["audio_base64"]))
+        w2.write_bytes(base64.b64decode(r2["audio_base64"]))
+        with wave.open(str(w1)) as w:
+            d1 = round(w.getnframes() * 1000 / w.getframerate())
+            sr = w.getframerate()
+        pathlib.Path(args.sortie).parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(w1), "-f", "lavfi", "-t", str(args.pause / 1000),
+                        "-i", f"anullsrc=r={sr}:cl=mono", "-i", str(w2), "-filter_complex",
+                        "[0:a][1:a][2:a]concat=n=3:v=0:a=1", "-ac", "1", "-b:a", "64k", args.sortie], check=True)
+    print(f"ligne 1 {args.style1} x{args.lenteur1} : {d1} ms ; ligne 2 {args.style2} : {r2['duree']} ms ; voix {args.voix}")
+    if args.essai:
+        return
+    t1, t2 = r1["alignement"]["texte"], r2["alignement"]["texte"]
+    ligne1 = syllabes(decaler(r1["alignement"]["phrases"], 0), t1)
     if LIGNE1.endswith(":"):
         ligne1 += '<span class="ap-pt"> :</span>'
-    ligne2 = mots(p2, texte, 0)
-    sons = RACINE / "assets" / "sons"
-    sons.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(suffix=".wav") as wav:
-        wav.write(base64.b64decode(r["audio_base64"]))
-        wav.flush()
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", wav.name, "-ac", "1", "-b:a", "64k",
-                        str(sons / "accueil-phrase.mp3")], check=True)
+    ligne2 = mots(decaler(r2["alignement"]["phrases"], d1 + args.pause), t2, 0)
     inc = (
         "{%- comment -%} Fichier produit par _outils/phrase_accueil.py (voix « " + args.voix + " » de Lectura) : "
         "ne pas modifier à la main. {%- endcomment -%}\n"
@@ -138,7 +158,6 @@ def main() -> None:
         "</div>\n"
     )
     (RACINE / "_includes" / "accueil-phrase.html").write_text(inc, encoding="utf-8")
-    print(f"durée {r['duree']} ms ; ligne 1 : {LIGNE1} ; ligne 2 : {LIGNE2}")
 
 
 if __name__ == "__main__":
