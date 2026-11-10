@@ -4,8 +4,8 @@
 # Les points eux-mêmes sont les mots de l'en-tête (_data/mots-cles.yml, champs projet / region).
 - projet: lexique
   continent: Océanie
-  x: 82
-  y: 66
+  x: 75
+  y: 65
   nom: LecturaLexique
   url: https://lexique.lectura.world/
   icone: dictionary

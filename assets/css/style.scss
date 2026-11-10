@@ -1726,7 +1726,9 @@ html[data-darkreader-scheme] .parchment-content * {
 /* Son bloqué par le navigateur : un bouton « Écouter » apparaît au-dessus de la phrase (Maxime, 10/11 : phrase centrée sur la flèche). */
 .carte-phrase .accueil-phrase { position: relative; }
 .carte-phrase .accueil-phrase.ap-invite .ap-ecouter { display: inline-flex; position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); margin: 0 0 0.6cqw;
-  font-size: max(12px, 1.1cqw); padding: 0.3em 0.8em; white-space: nowrap; animation: ap-invite 2.4s ease-in-out infinite; }
+  width: max(30px, 2.4cqw); height: max(30px, 2.4cqw); padding: 0; justify-content: center; border-radius: 50%; animation: ap-invite 2.4s ease-in-out infinite; }
+.carte-phrase .ap-ecouter span { display: none; }  /* icône Play seule (Maxime, 10/11) ; le libellé reste dans aria-label */
+.carte-phrase .ap-ecouter svg { width: 55%; height: 55%; margin-left: 8%; }
 
 /* Médaillons des projets sur la carte (Maxime, 09/11 : un projet par continent) */
 .carte-projet {
