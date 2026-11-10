@@ -115,7 +115,9 @@ def decaler(phrases: list[dict], dt: int) -> dict:
 def main() -> None:
     # Maxime, 10/11 : ligne 1 rapide et expressive, ligne 2 narrative ; deux synthèses enchaînées.
     ap = argparse.ArgumentParser()
-    ap.add_argument("--voix", default="nadine")
+    ap.add_argument("--voix", default="siwis")
+    ap.add_argument("--ligne2-dans-phrase", action="store_true",
+                    help="ligne 2 tirée de la phrase entière (essai nadine) ; par défaut, lue seule (choix du 10/11, siwis)")
     ap.add_argument("--style1", default="expressif")
     ap.add_argument("--lenteur1", type=float, default=0.85, help="< 1 : plus rapide")
     ap.add_argument("--style2", default="narratif")
@@ -128,7 +130,7 @@ def main() -> None:
     r1 = synthese(lue(LIGNE1.rstrip(" :.") + " !"), args.voix, args.style1, args.lenteur1)
     # Ligne 2 (Maxime, 10/11 : « Nadine 3 le premier ») : tirée de la phrase entière lue en narratif, où elle sonne
     # mieux que lue seule ; on garde l'audio à partir de son premier mot.
-    r2 = synthese(lue(f"{LIGNE1} {LIGNE2}"), args.voix, args.style2, args.lenteur2)
+    r2 = synthese(lue(f"{LIGNE1} {LIGNE2}" if args.ligne2_dans_phrase else LIGNE2), args.voix, args.style2, args.lenteur2)
     t2 = r2["alignement"]["texte"]
     coupe = t2.index(LIGNE2[:6])
     ph2 = decaler(r2["alignement"]["phrases"], 0)
