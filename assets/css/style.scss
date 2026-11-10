@@ -1858,11 +1858,13 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
   padding: 0 0.02em;
 }
 
-/* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : surligné au feutre jaune. */
+/* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : surligné en rouge, lettres en blanc (Maxime, 10/11 : plus visible). */
 .ap-u.ap-lu {
-  background: rgba(255, 221, 64, 0.75);
-  box-shadow: 0 0 0 0.08em rgba(255, 221, 64, 0.75);
+  background: #c62828;
+  box-shadow: 0 0 0 0.08em #c62828;
+  text-shadow: none !important;
 }
+.ap-u.ap-lu, .ap-u.ap-lu span { color: #fff !important; text-shadow: none !important; }
 
 .ap-ecouter {
   margin-top: 1rem;
