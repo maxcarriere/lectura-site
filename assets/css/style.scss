@@ -1691,15 +1691,15 @@ html[data-darkreader-scheme] .parchment-content * {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
+  gap: 0.9rem;
+  padding-bottom: 0.9rem;
   box-sizing: border-box;
   background: #120B08;
 }
 
 .carte-monde {
   position: relative;
-  width: min(100%, calc((100vh - var(--header-height) - var(--footer-height) - 4.6rem) * 2));  /* place pour la flèche dessous */
+  width: min(100%, calc((100vh - var(--header-height) - var(--footer-height) - 5.8rem) * 2));  /* place pour la flèche dessous */
   aspect-ratio: 2 / 1;
   container-type: inline-size;
 }
@@ -1714,8 +1714,8 @@ html[data-darkreader-scheme] .parchment-content * {
    la phrase dans le blanc, une seule flèche dessous, sur le bord du parchemin). */
 .carte-phrase {
   position: absolute;
-  left: 57%;
-  top: 88.3%;
+  left: 50%;
+  top: 89%;
   transform: translateX(-50%);
   width: 60%;
   display: flex;
@@ -1723,9 +1723,9 @@ html[data-darkreader-scheme] .parchment-content * {
   align-items: center;
 }
 .ap-fleche-bas { width: 2.6rem; height: 2.6rem; }
-/* Son bloqué par le navigateur : un bouton « Écouter » apparaît à gauche de la phrase. */
+/* Son bloqué par le navigateur : un bouton « Écouter » apparaît au-dessus de la phrase (Maxime, 10/11 : phrase centrée sur la flèche). */
 .carte-phrase .accueil-phrase { position: relative; }
-.carte-phrase .accueil-phrase.ap-invite .ap-ecouter { display: inline-flex; position: absolute; right: 100%; top: 0.2cqw; margin: 0 1cqw 0 0;
+.carte-phrase .accueil-phrase.ap-invite .ap-ecouter { display: inline-flex; position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); margin: 0 0 0.6cqw;
   font-size: max(12px, 1.1cqw); padding: 0.3em 0.8em; white-space: nowrap; animation: ap-invite 2.4s ease-in-out infinite; }
 
 /* Médaillons des projets sur la carte (Maxime, 09/11 : un projet par continent) */
