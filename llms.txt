@@ -1,57 +1,45 @@
 # Lectura
 
-> Lectura est un ecosysteme de projets modulaires pour le traitement du francais, developpe par Maxime Carriere. Il couvre la synthese vocale, la reconnaissance vocale, l'analyse du langage et un lexique de 2,58 millions de formes. Tous les modules sont developpes en Python et publies sur PyPI.
+> Lectura developpe des outils d'IA au service du langage et de sa lecture, pour le francais (et l'anglais pour l'ecrit) : analyse du texte et phonetique, synthese et reconnaissance vocales, un lexique du francais (LeXiK), et des produits pour apprendre a lire, en preparation. Projet de Maxime Carriere.
 
 ## Auteur
 
 Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'utilisation de l'IA pour le NLP, la voix et l'edTech.
 
-## Site
+## Sites
 
-- URL : https://www.lectura.world
-- Code source : https://github.com/maxcarriere
+- Vitrine : https://www.lectura.world
+- LecturaLexique (LeXiK, dictionnaire WiKiLeXiK, module Lexicon, corpus) : https://lexique.lectura.world
+- LecturaLingua (demos de l'analyse de l'ecrit, en francais et en anglais) : https://lingua.lectura.world
+- LecturaVoice (demos de la voix : synthese, reconnaissance, sous-titrage) : https://voice.lectura.world
+- LecturaEducation (produits pour apprendre a lire) : en preparation
+- Contact : lectura.world@gmail.com
 
-## Technologies
+## Generations des modules
 
-- Langage : Python
-- Distribution : 14+ paquets PyPI
-- Modeles : ONNX INT8 (deploiement leger, CPU/mobile)
-- Architecture : modeles specialises et legers (1,75M a 24,3M parametres)
-- Pivot central : le phoneme comme representation intermediaire universelle entre texte et parole
+- v0 : premiere generation, publiee en juillet 2026 sur PyPI et GitHub (https://github.com/maxcarriere/lectura-modules), sous licence AGPL-3.0 ; dix-sept paquets, qui ne sont plus developpes.
+- v1 : generation actuelle, en service sur les serveurs de Lectura pour les demos ; non publiee (ni le code ni les modeles ne sont distribues) ; proposee sous licence.
+- v2 : generation suivante, en preparation, centree sur la voix, en francais et en anglais.
 
-## Modules principaux
+## Technologie (v1)
 
-### Traitement du texte
-- Phonemiseur (G2P) : conversion grapheme-phoneme, BiLSTM multi-tete, 98,5% de precision
-- Graphemiseur (P2G) : conversion phoneme-grapheme, BiLSTM V7 + attention cross, ~95% de precision
-- Tokeniseur : segmentation en mots, syllabes, phonemes
-- Aligneur : alignement syllabique texte-phonetique
-- Module Formules : lecture des expressions mathematiques
+- Pivot central : la transcription phonetique, entre le texte et la voix.
+- Texte <-> phonetique (G2P, P2G), analyse grammaticale, syllabation, correcteur orthographique, traduction francais <-> anglais.
+- Synthese vocale du francais : six voix, minutage de chaque son pour le surlignage synchronise (mot ou syllabe).
+- Reconnaissance vocale du francais : decodeur phonetique CTC (13 M parametres), puis ecriture ; WER 15,7 % sur FLEURS test (octobre 2026).
+- Alignement d'un texte sur son enregistrement, sous-titres.
+- Modeles specialises et legers, au format ONNX, qui tournent sans carte graphique.
 
-### Synthese vocale (TTS)
-- TTS Monospeaker : architecture Matcha-Conformer + HiFi-GAN
-- TTS Multi-speaker : FastPitch-Lite v6 + HiFi-GAN, plusieurs voix et styles
-- TTS Diphonique : synthese concatenative par diphones avec prosodie par regles
+## Donnees
 
-### Reconnaissance vocale (STT)
-- Decodeur CTC : CNN-BiGRU-CTC, 13,2M parametres, PER 3,59%
-- Pipeline STT complet : decodage acoustique + P2G
+- LeXiK : lexique du francais publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0) et sur Hugging Face (https://huggingface.co/datasets/lecturaworld/lexik), telechargeable sur https://lexique.lectura.world/lexik ; prononciation syllabee, analyse grammaticale, alignement lettres-sons, frequences.
+- WiKiLeXiK : dictionnaire en ligne, interface web de LeXiK reliee au Wiktionnaire (par Kaikki) et a Wikidata.
+- Sous licence commerciale, sur LecturaLexique : le module Lexicon, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
 
-### Conversion de voix
-- Voice Conversion par locuteurs
-- Voice Conversion zero-shot
+## Offre
 
-### Donnees
-- Lexique LeXiK : publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0), telechargeable sur https://lexique.lectura.world/lexik ; phonetique IPA, frequences, morphologie
-- Corpus d'entrainement pour le francais
-
-## Pipelines metiers
-
-- G2P : texte -> phonemes (tokenisation + phonemisation + liaison)
-- P2G : phonemes -> texte (graphemisation + selection lexicale)
-- TTS : texte -> audio (G2P + modele acoustique + vocodeur)
-- STT : audio -> texte (decodeur CTC + P2G)
-- VC : audio -> audio (extraction + conversion + synthese)
+- Entreprises : demo, puis cle d'essai sur demande, licence d'evaluation, licence commerciale ; services (integration, modeles sur mesure, preparation de donnees, services editoriaux). L'API publique sert aux demos ; elle n'est pas proposee comme service.
+- Particuliers : outils gratuits en ligne (lecture syllabique, lecture a voix haute, dictionnaire) ; corpus de syllabes ; produits pour apprendre a lire en preparation.
 
 ## Methode de travail
 
@@ -64,19 +52,36 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 ## Pages principales
 
 - Accueil : https://www.lectura.world/
+- Decouvrir : https://www.lectura.world/decouvrir/
+- Les projets : https://www.lectura.world/decouvrir/projets/
+- Qu'est-ce que Lectura : https://www.lectura.world/a-propos/vision/
+- Methode (role de l'IA) : https://www.lectura.world/a-propos/methode/
+- Fondateur : https://www.lectura.world/a-propos/qui-suis-je/
+- Solutions : https://www.lectura.world/solutions/
+- Solutions technologiques : https://www.lectura.world/solutions/technologiques/
+- Solutions educatives : https://www.lectura.world/solutions/educatives/
+- Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
 - Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
 - Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/
-- Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
 - Lexique : https://www.lectura.world/solutions/lexique/
-- Modules et outils : https://www.lectura.world/developpement/modules/outils/
-- Pipelines : https://www.lectura.world/developpement/modules/metiers/
-- Ingenierie des modeles : https://www.lectura.world/developpement/recherche/ingenierie-modeles/
-- Methode (role de l'IA) : https://www.lectura.world/a-propos/methode/
-- Qu'est-ce que Lectura : https://www.lectura.world/a-propos/vision/
-- Qui suis-je : https://www.lectura.world/a-propos/qui-suis-je/
+- Le point de vue phonetique : https://www.lectura.world/developpement/recherche/phonetique/
+- Offres : https://www.lectura.world/offres/
+- Entreprises : https://www.lectura.world/offres/entreprises/
+- Particuliers : https://www.lectura.world/offres/particuliers/
+- Licences : https://www.lectura.world/solutions/services/licences/
 - Services : https://www.lectura.world/solutions/services/
+- Tarification : https://www.lectura.world/solutions/tarifs/
+- Developpement : https://www.lectura.world/developpement/
+- Modules (v1 et archives v0) : https://www.lectura.world/developpement/modules/
+- Programmes et applications : https://www.lectura.world/produits/programmes/
+- Ressources : https://www.lectura.world/produits/ressources/
+- Donnees : https://www.lectura.world/developpement/donnees/
+- Recherche : https://www.lectura.world/developpement/recherche/
+- Conditions generales de vente : https://www.lectura.world/cgv/
 - Contact : https://www.lectura.world/contact/
 
-## Licence
+## Licences
 
-AGPL-3.0 pour usage non commercial. Licences commerciales disponibles sur demande.
+- Code de la premiere generation (v0) : AGPL-3.0.
+- Generation actuelle (v1) : non publiee ; licence d'evaluation puis licence commerciale, sur demande.
+- LeXiK : CC BY-SA 4.0.

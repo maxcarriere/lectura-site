@@ -6,7 +6,7 @@ redirect_from:
   - /produits/ressources/corpus-syllabes/
 ---
 
-Corpus, données linguistiques et kits d'entraînement distribués par Lectura. Ces ressources sont le fruit du travail de développement des modules et peuvent servir de base à des projets de recherche, d'éducation ou de développement.
+Corpus, données linguistiques et kits d'entraînement distribués par Lectura. Ces ressources sont le fruit du travail de développement des modules et peuvent servir de base à des projets de recherche, d'éducation ou de développement. Les corpus vendus sous licence (corpus de syllabes, corpus de mots illustrés) et le module Lexicon sont présentés sur [LecturaLexique](https://lexique.lectura.world).
 
 <div class="home-grid">
   <div class="home-card">
@@ -27,7 +27,7 @@ Corpus, données linguistiques et kits d'entraînement distribués par Lectura. 
   </div>
   <div class="home-card">
     <h2>Corpus de Voix</h2>
-    <p>880K phrases françaises avec transcription phonétique IPA alignée, issues de SIWIS, M-AILABS et Common Voice. Textes et alignements fournis, audio récupérable via les sources ouvertes.</p>
+    <p>Des phrases françaises de SIWIS, M-AILABS et Common Voice, avec leur transcription phonétique IPA. Nous fournissons les textes et la phonétique, pas l'audio, qui se récupère auprès des sources ouvertes.</p>
     <span class="status-badge status-dispo">Disponible</span>
     <div class="card-links">
       <a class="more-link" href="{{ '/produits/ressources/corpus-voix/' | relative_url }}">Détails</a>

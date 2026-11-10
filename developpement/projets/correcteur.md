@@ -7,7 +7,7 @@ redirect_from:
   - /solutions/modules/correcteur/
 ---
 
-<span class="status-badge status-cours">En cours</span>
+<span class="status-badge status-proto">En démo sur LecturaLingua</span>
 
 ## L'idée
 
@@ -44,9 +44,9 @@ Le correcteur combine cette approche phonétique avec des **règles linguistique
 
 ## État actuel
 
-Le correcteur est en cours de développement. Le point bloquant actuel est l'**amélioration du pipeline P2G** (phonèmes → texte). Avec une précision de ~95%, le Graphémiseur est satisfaisant pour la reconnaissance vocale (STT), où l'on accepte une transcription plus approximative. Ce n'est pas le cas pour un correcteur orthographique, qui exige une précision nettement supérieure pour ne pas introduire de nouvelles erreurs.
+La génération actuelle du correcteur (v1) est en service : elle se teste dans l'onglet Correcteur de [LecturaLingua](https://lingua.lectura.world). Elle n'est pas publiée ; elle peut faire l'objet d'une licence (voir [licences]({{ '/solutions/services/licences/' | relative_url }})).
 
-L'effort se concentre donc sur l'amélioration du [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) avant de poursuivre le développement du correcteur.
+La suite de cette page décrit la démarche et la première génération (v0) : son point faible était le passage des phonèmes au texte (P2G), assez précis pour la reconnaissance vocale, où l'on accepte une transcription approximative, mais pas encore pour un correcteur, qui ne doit pas introduire de nouvelles erreurs.
 
 ---
 
@@ -139,4 +139,4 @@ Le correcteur se rabat automatiquement sur les règles si les modèles optionnel
 
 ## Licence
 
-AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

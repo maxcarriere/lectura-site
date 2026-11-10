@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/stt/
 ---
 
-Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le tout en **~43 Mo de modèles**, sans GPU, avec des performances comparables à Whisper small (10x plus léger et plus rapide).
+Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le décodeur est un petit modèle (13 millions de paramètres, 50 Mo), qui tourne sans carte graphique. Sa sortie phonétique entend ce qui est réellement prononcé, y compris les erreurs de lecture : un atout pour accompagner un lecteur.
 
 ---
 
@@ -19,11 +19,13 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
 | **Reconnaissance de formules** | Nombres, dates, sigles, heures détectés automatiquement dans la parole |
 | **Transcription de formules** | Modèle spécialisé pour la saisie vocale de données structurées (87 tokens sémantiques) |
 
-| Métrique | Score |
+| Métrique (génération actuelle, FLEURS test, octobre 2026) | Score |
 |----------|-------|
-| WER (pipeline complet) | **~15%** |
-| PER (décodeur phonétique) | **~3.59%** |
-| Taille totale | **~54 Mo** (vs 461 Mo pour Whisper small) |
+| WER (pipeline complet) | **15,7 %** |
+| PER (décodeur phonétique) | **5,7 %** |
+| Référence : Whisper small (244 M paramètres), mesuré avec la même normalisation | 13,3 % de WER |
+
+La démo ci-dessous et [LecturaVoice](https://voice.lectura.world) utilisent la génération actuelle.
 
 ---
 
@@ -128,14 +130,14 @@ Lectura propose un pipeline de transcription audio du français en deux couches 
 - **Sous-titrage** : transcription automatique de vidéos et podcasts en français.
 - **Saisie vocale** : dictée pour applications et formulaires, avec reconnaissance des nombres et dates.
 - **Analyse de contenu** : indexation et recherche dans des archives audio.
-- **Applications embarquées** : transcription sur appareil (mobile, IoT) grâce à la taille réduite (~43 Mo).
+- **Applications embarquées** : transcription sur appareil, grâce à la taille réduite du décodeur.
 - **Saisie de données structurées** : le modèle STT-Formules reconnaît directement les nombres, mois, devises et lettres pour la saisie vocale de formulaires.
 
 ---
 
 ## En savoir plus
 
-- [Documentation technique STT]({{ '/developpement/modules/metiers/stt/' | relative_url }}) — architecture, installation, API
+- [Documentation technique STT]({{ '/developpement/modules/metiers/stt/' | relative_url }}) — architecture de la première génération (v0)
 - [Graphémiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — le convertisseur phonèmes vers texte utilisé dans le pipeline
 
 ---

@@ -21,7 +21,7 @@ Le socle est **LeXiK**, notre lexique du français : orthographe, prononciation,
 
 Plutôt qu'un seul grand modèle, Lectura assemble des modèles neuronaux spécialisés, chacun pour une tâche : phonémisation, analyse grammaticale, synthèse, reconnaissance. Ils sont conçus pour tourner sans carte graphique, ce qui permet de les embarquer dans une application.
 
-La génération actuelle (v1) est en service sur nos serveurs et se teste par les démos. La génération suivante (v2), en préparation, porte sur la voix, en français et en anglais. La première génération (v0) reste publiée en open source : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+La génération actuelle (v1) est en service sur nos serveurs et se teste par les démos. La génération suivante (v2), en préparation, porte sur la voix, en français et en anglais. La première génération (v0) reste publiée sous licence AGPL-3.0 : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
 
 ## Ce que la technologie apporte
 

@@ -10,7 +10,7 @@ Corpus de parole française avec transcription phonétique IPA, destiné à l'en
 
 | | |
 |---|---|
-| **Corpus 1** | 97 012 phrases (SIWIS + M-AILABS) — 7 locuteurs professionnels |
+| **Corpus 1** | 97 012 phrases (SIWIS + M-AILABS) — 7 locuteurs |
 | **Corpus 2** | 783 339 phrases (Common Voice) — ~20 000 locuteurs bénévoles |
 | **Total** | 880 351 phrases avec transcription IPA alignée |
 | **Métadonnées** | Locuteur, durée, source |
@@ -46,7 +46,7 @@ Chaque ligne est un objet JSON :
 
 ## Corpus 1 : SIWIS + M-AILABS
 
-97 012 phrases issues de livres audio lus par 7 locuteurs professionnels.
+97 012 phrases issues d'enregistrements de studio (SIWIS) et de livres audio (M-AILABS).
 
 | Locuteur | Source | Genre |
 |----------|--------|-------|
@@ -108,7 +108,7 @@ Les transcriptions IPA ont été générées par le pipeline G2P de Lectura (pr�
 
 - **Common Voice** (Mozilla) : CC-0 (domaine public)
 - **M-AILABS Speech Dataset** : voir licence M-AILABS
-- **SIWIS French Speech Synthesis Database** : licence académique
+- **SIWIS French Speech Synthesis Database** : CC BY 4.0
 - **Transcriptions phonétiques** : Lectura (Maxime Carrière)
 
 ---

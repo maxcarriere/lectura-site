@@ -185,9 +185,4 @@ Ces limites sont inhérentes à l'approche concaténative par moyennage. Les mod
 
 ## État d'avancement
 
-Le moteur est fonctionnel et intégré au [pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}). Les 1290 diphones couvrent la totalité des transitions phonétiques du français courant.
-
-Les travaux en cours portent sur :
-- l'amélioration des transitions entre diphones (lissage spectral adaptatif),
-- l'enrichissement du modèle prosodique (expressivité émotionnelle),
-- la construction d'un second corpus de diphones (voix masculine).
+Le moteur est fonctionnel et intégré au [pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) ; il reste expérimental et se teste dans la démo de la [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}). Il n'est pas développé en ce moment.

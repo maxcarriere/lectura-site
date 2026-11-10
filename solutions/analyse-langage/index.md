@@ -10,7 +10,9 @@ redirect_from:
   - /solutions/nlp/formules/
 ---
 
-Lectura propose plusieurs outils d'analyse du langage français. Chaque module fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique. Tous les outils sont utilisables via l'API Lectura ou comme modules Python autonomes, et testables directement ci-dessous.
+Lectura propose plusieurs outils d'analyse du langage français. Chaque module fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique.
+
+Les démos de cette page reposent sur la première génération des modules (v0). La génération actuelle (v1), en français et en anglais, se teste sur [LecturaLingua](https://lingua.lectura.world) ; pour l'intégrer dans un produit, voir [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
 
 ---
 
@@ -36,7 +38,7 @@ for t in tokens:
 
 ## Phonémisation (orthographe vers phonétique)
 
-Un seul modèle BiLSTM multi-tête transforme l'orthographe en transcription phonétique IPA et prédit simultanément 4 tâches : **phonémisation** (98.5%), **catégorie grammaticale** (19 étiquettes POS, 98.2%), **morphologie** (genre, nombre, temps, mode, personne) et **liaisons** (F1 90.6%). Le modèle prend en compte le **contexte phrastique** pour désambiguïser les homographes et prédire les liaisons.
+Un seul modèle BiLSTM multi-tête transforme l'orthographe en transcription phonétique IPA et prédit simultanément 4 tâches : **phonémisation**, **catégorie grammaticale**, **morphologie** (genre, nombre, temps, mode, personne) et **liaisons**. Le modèle prend en compte le **contexte phrastique** pour désambiguïser les homographes et prédire les liaisons.
 
 Le Phonémiseur construit également les **groupes de lecture** : regroupement des mots connectés par élision (l'enfant), liaison (les‿enfants) ou enchaînement (avec‿elle), qui sont ensuite transmis à l'Aligneur-Syllabeur pour la syllabation.
 
@@ -78,7 +80,7 @@ for i, tok in enumerate(tokens):
 
 ## Graphémisation (phonétique vers orthographe)
 
-Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie. Précision : **~95%** par mot (pipeline complet sur texte courant).
+Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie.
 
 <div class="ipa-keyboard">
   <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
@@ -284,7 +286,7 @@ Ces outils d'analyse du langage constituent la **base de tous les pipelines Lect
 
 ## En savoir plus
 
-Chaque outil est disponible comme module Python indépendant avec documentation technique complète :
+La documentation technique de chaque outil, dans sa première génération (v0, publiée sur PyPI et GitHub) :
 
 - [Tokeniseur]({{ '/developpement/modules/outils/tokeniseur/' | relative_url }}) — normalisation et tokenisation
 - [Phonémiseur (G2P)]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) — orthographe vers phonétique

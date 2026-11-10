@@ -12,11 +12,10 @@ Vous souhaitez ajouter la synthèse vocale, la transcription audio ou du traitem
 
 ## Ce que Lectura propose
 
-- **API de test** : accès immédiat aux modules via l'API Lectura (api.lectura.world), sans installation, pour tester les différents outils.
-- **API dédiée** : serveur ou accès dédié configuré pour votre usage en production.
-- **Packages Python** : modules autonomes installables via pip, intégrables dans n'importe quel projet Python.
+- **Démos et clé d'essai** : les démos en ligne, gratuites et sans inscription, puis, sur demande, une clé d'essai pour tester les modules dans votre code pendant une trentaine de jours (évaluation seulement, pas de production).
+- **Modules Python sous licence** : les modules de la génération actuelle vous sont confiés, d'abord sous licence d'évaluation, puis sous licence commerciale, pour être installés sur vos serveurs ou embarqués dans votre application. Voir [licences]({{ '/solutions/services/licences/' | relative_url }}).
 - **Pipeline d'enrichissement** : les modules "outils" peuvent être utilisés de façon autonome ou s'imbriquer naturellement pour la gestion complète d'un problème métier.
-- **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation, configuration de votre propre serveur API.
+- **Accompagnement technique** : aide à l'intégration, choix d'architecture, optimisation, mise en service sur vos propres serveurs.
 
 ---
 
@@ -25,9 +24,9 @@ Vous souhaitez ajouter la synthèse vocale, la transcription audio ou du traitem
 | | |
 |---|---|
 | **Langage** | Python |
-| **Modèles** | ONNX (INT8 et FP32) |
-| **Dépendances** | ONNX Runtime pour l'inférence locale, aucune dépendance pour le mode API |
-| **Installation** | `pip install` pour chaque module |
+| **Modèles** | ONNX (INT8 ou FP32 selon le modèle), sans carte graphique |
+| **Dépendances** | ONNX Runtime pour l'inférence locale |
+| **Installation** | paquets Python livrés avec la licence |
 | **Compatibilité** | Python 3.10+ |
 
 ---

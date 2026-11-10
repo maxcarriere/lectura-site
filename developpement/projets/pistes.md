@@ -6,7 +6,7 @@ redirect_from:
   - /developpement/projets/pistes/
 ---
 
-Cette page présente les choix d'architecture retenus pour les modèles neuraux de Lectura, ce qui a fonctionné, ce qui a échoué, et les pistes d'amélioration à explorer.
+Cette page présente les choix d'architecture retenus pour les modèles neuraux de la première génération de Lectura (v0, juillet 2026), ce qui a fonctionné et ce qui a échoué. La génération actuelle (v1) en a tiré les leçons ; la suivante (v2), en préparation, porte sur la voix, en français et en anglais.
 
 ---
 
@@ -70,27 +70,4 @@ Le modèle TTS monospeaker utilise une architecture **Matcha-Conformer** (Confor
 
 - **La prosodie du TTS diphonique.** Le modèle prosodique par règles donne une voix parfois monotone ou incohérente sur les phrases longues (voir [limites du TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }})).
 
-- **Le WER du pipeline STT.** À environ 15 % en parole conversationnelle, le taux d'erreur mot reste élevé. C'est un résultat honorable, mais il reste une marge d'amélioration non négligeable, notamment en faisant évoluer les deux briques concernées. Le passage à une architecture Conformer, qui s'est révélée efficace pour le TTS, est une piste prometteuse.
-
----
-
-## Pistes à explorer
-
-### Conformer pour le STT, le G2P et le P2G
-
-Les modèles textuels (G2P, P2G) utilisent des BiLSTM et le décodeur acoustique des BiGRU. L'architecture **Conformer**, qui combine attention (Transformer) et convolution (CNN), est déjà utilisée pour le TTS avec de bons résultats. L'étendre aux autres modèles permettrait :
-
-- Pour le **STT** : mieux capturer les patterns locaux et les dépendances longues dans le signal audio, ce qui réduirait le PER.
-- Pour le **G2P/P2G** : étendre l'attention à la **phrase complète** plutôt qu'au mot avec un contexte limité. Cela résoudrait mieux les ambiguïtés qui dépendent du contexte lointain (« le fils du directeur est fils unique »).
-
-### GAN adversarial pour le TTS
-
-L'ajout d'un **discriminateur adversarial** (GAN) à l'entraînement du modèle acoustique pourrait améliorer le naturel de la voix synthétisée. Le discriminateur force le modèle à produire des spectrogrammes indistinguables de spectrogrammes réels, ce qui réduit les artefacts de moyennage.
-
-### Augmentation progressive de la taille des modèles
-
-Les modèles actuels sont volontairement petits (1,75M à 24,3M paramètres). Une piste est d'**augmenter progressivement leur taille** pour mesurer le gain en qualité par rapport au coût en ressources. L'objectif n'est pas d'atteindre des tailles massives, mais de trouver le point d'équilibre entre qualité et portabilité.
-
-### Modèle prédictif de prosodie
-
-Remplacer le modèle prosodique par règles du TTS diphonique par un **modèle appris** (réseau de neurones entraîné sur des données prosodiques annotées) permettrait d'obtenir une intonation plus naturelle et plus variée.
+- **Le WER du pipeline STT.** De l'ordre de 15 %, le taux d'erreur mot reste élevé. C'est un résultat honorable pour un si petit modèle, mais il reste une marge d'amélioration non négligeable.

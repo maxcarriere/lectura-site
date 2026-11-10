@@ -7,6 +7,8 @@ redirect_from:
   - /solutions/modules/tts-multispeaker/
 ---
 
+> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+
 <div class="module-header">
   <h1>Lectura TTS Multi-Speaker</h1>
   <p class="module-tagline">Moteur acoustique 6 voix — modèles High (Conformer) et Light (FastPitch) au choix (ONNX)</p>

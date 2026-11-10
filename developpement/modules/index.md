@@ -6,7 +6,27 @@ redirect_from:
   - /solutions/modules/
 ---
 
-Dix-sept packages Python autonomes pour le traitement linguistique et la synthèse vocale du français, organisés en **briques outils** (modules atomiques réutilisables) et **pipelines métiers** (chaînes applicatives). Zero dépendance sur les modules de base, type hints complets (Python 3.10+).
+Les modules de Lectura sont des briques Python qui relient le texte, la phonétique et la voix. Il en existe deux générations.
+
+## La génération actuelle (v1)
+
+En service sur nos serveurs depuis octobre 2026, elle fait tourner les démos de [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world). Elle n'est pas publiée : ni son code ni ses modèles ne sont distribués. Elle s'obtient sous licence, selon le parcours décrit dans [licences]({{ '/solutions/services/licences/' | relative_url }}) : démo, clé d'essai, licence d'évaluation, licence commerciale.
+
+Elle est organisée autour de la phonétique, pivot commun entre le texte et la voix :
+
+| Fonction | Modules |
+|----------|---------|
+| Texte ⇄ phonétique (G2P, P2G), analyse grammaticale, syllabation, en français et en anglais | Transducer ; métiers NLP-FR et NLP-EN |
+| Lexique embarqué | Lexicon |
+| Correction orthographique | Corrector |
+| Traduction français ⇄ anglais | Translator |
+| Synthèse vocale du français, six voix | Synthesizer ; métier TTS |
+| Reconnaissance vocale du français | Decoder ; métier STT |
+| Alignement d'un texte sur sa lecture, sous-titres | Aligner, Subtitler |
+
+## La première génération (v0, archives)
+
+Publiée en juillet 2026 sur PyPI et [GitHub](https://github.com/maxcarriere/lectura-modules), sous licence AGPL-3.0, elle compte dix-sept paquets Python, organisés en **briques outils** (modules atomiques réutilisables) et **pipelines métiers** (chaînes applicatives). Elle n'est plus développée ; sa documentation reste en ligne ci-dessous.
 
 <div class="home-grid">
   <div class="home-card">
@@ -23,7 +43,7 @@ Dix-sept packages Python autonomes pour le traitement linguistique et la synthè
 
 ---
 
-## Installation rapide
+### Installation (v0)
 
 ```bash
 # Meta-package : installez uniquement ce dont vous avez besoin
@@ -65,4 +85,4 @@ pip install lectura-g2p                      # un pipeline
 | `[onnx]` | Backends ONNX pour tous les modèles |
 | `[all]` | Tout |
 
-Par défaut, les modules Phonémiseur, Graphémiseur et Décodeur utilisent l'**API Lectura** (`api.lectura.world`) — aucune configuration nécessaire. Pour l'inférence locale, installez les backends optionnels (ex : `lectura-phonemiseur[onnx]`). Les modèles ne sont pas inclus dans les packages et sont disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
+Les modèles ne sont pas inclus dans ces paquets. Le mode API qu'ils prévoient date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service.

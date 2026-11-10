@@ -19,10 +19,12 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 
 ### Services Lectura
 
-- [Lexique en ligne](https://lexique.lectura.world) — 2,58 millions de formes, consultable en ligne
-- [API Lectura](https://api.lectura.world/docs) — Documentation interactive (Swagger)
-- [GitHub](https://github.com/lectura-world) — Code source des modules Lectura
-- [PyPI](https://pypi.org/user/lectura/) — 18+ modules publiés (TTS, STT, NLP, VC)
+- [LecturaLexique](https://lexique.lectura.world) — LeXiK, le dictionnaire WiKiLeXiK, Lexicon et les corpus
+- [LecturaLingua](https://lingua.lectura.world) — démos de l'analyse de l'écrit
+- [LecturaVoice](https://voice.lectura.world) — démos de la voix : synthèse, reconnaissance, sous-titrage
+- [LeXiK sur ORTOLANG](https://hdl.handle.net/11403/lexik) et sur [Hugging Face](https://huggingface.co/datasets/lecturaworld/lexik) — le lexique, sous licence CC BY-SA 4.0
+- [GitHub](https://github.com/maxcarriere/lectura-modules) — code source de la première génération des modules (v0, juillet 2026)
+- [PyPI](https://pypi.org/user/lectura/) — dix-sept paquets de la première génération (v0)
 
 ---
 
@@ -34,13 +36,13 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 - [GLAFF](http://redac.univ-tlse2.fr/lexiques/glaff.html) — Lexique morphologique, 1,4 million d'entrées (CC BY-SA 3.0)
 - [Morphalou](https://www.ortolang.fr/market/lexicons/morphalou) — Lexique morphologique français (Ortolang)
 - [Wiktionnaire](https://fr.wiktionary.org/) — Définitions et données sémantiques
-- [Wikidata](https://www.wikidata.org/) — Base de connaissances structurée (2,5M entités liées dans LeXiK)
+- [Wikidata](https://www.wikidata.org/) — Base de connaissances structurée (entités reliées au dictionnaire WiKiLeXiK)
 
 **Corpus vocaux :**
 
 - [Common Voice](https://commonvoice.mozilla.org/fr) — Corpus vocal participatif Mozilla (CC-0)
 - [LibriVox](https://librivox.org/) — Enregistrements audio du domaine public
-- [SIWIS](https://datashare.ed.ac.uk/handle/10283/2353) — Corpus vocal studio haute qualité
+- [SIWIS](https://datashare.ed.ac.uk/handle/10283/2353) — Corpus vocal studio haute qualité (CC BY 4.0)
 - [OpenSubtitles](https://www.opensubtitles.org/) — Corpus de sous-titres pour les statistiques de fréquence
 
 **Corpus & annotations linguistiques :**

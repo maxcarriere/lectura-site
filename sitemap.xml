@@ -5,10 +5,42 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Découvrir (vitrine v1) -->
+  <url>
+    <loc>https://www.lectura.world/decouvrir/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/decouvrir/projets/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Offres (vitrine v1) -->
+  <url>
+    <loc>https://www.lectura.world/offres/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/offres/entreprises/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/offres/particuliers/</loc>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Solutions -->
   <url>
     <loc>https://www.lectura.world/solutions/</loc>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/solutions/technologiques/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/solutions/educatives/</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.lectura.world/solutions/synthese-vocale/</loc>
@@ -93,6 +125,10 @@
   <url>
     <loc>https://www.lectura.world/developpement/modules/</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/developpement/donnees/</loc>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.lectura.world/developpement/modules/outils/</loc>

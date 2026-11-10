@@ -4,7 +4,7 @@ layout: default
 permalink: /produits/programmes/formule/
 ---
 
-<span class="status-badge status-cours">En cours de développement</span>
+<span class="status-badge status-avenir">En pause</span>
 
 Lectura Formule est une application interactive de lecture de formules françaises avec **alignement visuel** et **lecture audio synchronisée**. Chaque formule (nombre, date, heure, sigle, expression mathématique…) est décomposée en composants, et chaque composant est associé à son texte lu, sa transcription IPA et son fichier audio.
 
@@ -15,7 +15,7 @@ Lectura Formule est une application interactive de lecture de formules français
 L'application utilise les **events alignés** du module [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) pour synchroniser :
 
 - Le **surlignage** de chaque partie de la formule source pendant la lecture
-- La **lecture audio** composant par composant à partir de la banque de sons WAV (299 fichiers)
+- La **lecture audio** composant par composant, à partir d'une banque de sons
 - L'affichage de la **transcription IPA** en temps réel
 
 ---

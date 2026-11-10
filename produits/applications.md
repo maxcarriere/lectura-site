@@ -4,28 +4,28 @@ layout: default
 permalink: /produits/applications/
 ---
 
-Des applications mobiles pour l'apprentissage interactif de la lecture.
+Des applications pour apprendre à lire. Elles seront présentées sur LecturaEducation, le site de nos produits éducatifs, qui ouvrira avec le premier d'entre eux. Nous construisons d'abord les ressources qu'elles partageront : une liste de mots illustrés et la progression des leçons de notre méthode de lecture.
+
+Les fonctions de base sont déjà en ligne : la [lecture syllabique](https://lingua.lectura.world/syllabes) sur LecturaLingua et la [lecture à voix haute avec surlignage](https://voice.lectura.world/tts) sur LecturaVoice.
 
 ## Lecteur syllabique
 
-<span class="status-badge status-proto">Prototype</span>
+<span class="status-badge status-conception">Idée</span>
 
-Un lecteur qui permet à l'enfant de prendre en photo un support (page d'un livre, emballage d'un produit, etc) d'en extraire le texte et d'en proposer une lecture audio progressive avec un surlignage synchronisé. L'enfant voit chaque syllabe s'illuminer au moment où elle est prononcée.
+Objectif : lire à l'enfant n'importe quel texte, syllabe par syllabe, avec un surlignage synchronisé ; à terme, à partir d'une photo de la page. Les briques existent en démo : la lecture syllabique de LecturaLingua et la lecture surlignée de LecturaVoice.
 
 ---
 
 ## NumReader
 
-<span class="status-badge status-fonctionnel">Fonctionnel</span>
+<span class="status-badge status-proto">Prototype</span>
 
-Application de lecture des nombres jusqu'à 4 chiffres. Affichage simultané en chiffres, en lettres et en chiffres romains, avec lecture audio synchronisée.
-
-Le moteur convertit un nombre entre ses trois écritures via un pipeline en 8 étapes (décomposition, conversion, génération de la timeline, audio concaténatif). Interface mobile en cours de publication.
+Lecture des nombres jusqu'à 4 chiffres : affichage simultané en chiffres, en lettres et en chiffres romains, avec lecture audio synchronisée. Le moteur et une version de bureau fonctionnent ; une version mobile a été commencée, elle n'est pas publiée.
 
 ---
 
 ## MiniJeux éducatifs
 
-<span class="status-badge status-cours">En cours de développement</span>
+<span class="status-badge status-conception">Idée</span>
 
-Apprendre à lire en s'amusant. Des jeux courts centrés sur la manipulation des sons et des syllabes : associer un son à une lettre, reconstituer un mot à partir de syllabes mélangées, identifier un intrus phonétique. Chaque jeu cible une compétence précise de la progression syllabique.
+Des jeux courts pour manipuler les sons et les syllabes (associer un son à une lettre, reconstituer un mot à partir de syllabes mélangées, trouver l'intrus) sont à l'étude.

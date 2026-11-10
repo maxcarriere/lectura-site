@@ -6,6 +6,8 @@ redirect_from:
   - /solutions/modules/tokeniseur/
 ---
 
+> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+
 <div class="module-header">
   <h1>Lectura Tokeniseur</h1>
   <p class="module-tagline">Normalisateur et tokeniseur complet pour le français</p>
@@ -92,4 +94,4 @@ pip install lectura-tokeniseur[formules]      # + lectura-formules (enrichisseme
 - **Indépendant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installé)
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 2.3.0
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

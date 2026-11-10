@@ -11,20 +11,18 @@ Des supports de lecture progressifs pour accompagner l'apprentissage syllabique.
 
 ## Manuel de lecture
 
-<span class="status-badge status-cours">En cours de développement</span>
+<span class="status-badge status-proto">Prototype</span>
 
-Un manuel basé sur la méthode syllabique avec une approche progressive : des sons isolés jusqu'aux graphies complexes, en 55 leçons. Chaque leçon introduit un phonème ou une difficulté graphique, avec des mots, des phrases et des exercices adaptés.
+Un manuel fondé sur la méthode syllabique, avec une approche progressive : des sons isolés jusqu'aux graphies complexes. Chaque leçon introduit un son ou une difficulté graphique, avec des mots, des phrases et des exercices adaptés.
 
-Le manuel est accompagné d'une **application interactive** pour que l'enfant puisse aussi apprendre tout seul : lecture audio synchronisée, surlignage syllabique et exercices autocorrectifs.
-
-Le contenu s'appuie sur le corpus syllabique Lectura et sur la base lexicale LeXiK pour garantir la cohérence phonétique de chaque mot proposé.
+Une première version complète, d'une soixantaine de leçons, a été rédigée et mise en page à titre de prototype. Le manuel est en préparation avec son application : nous construisons d'abord la liste de mots illustrés et la progression des leçons qu'ils partageront. Le contenu s'appuie sur la base lexicale LeXiK pour garantir la cohérence phonétique de chaque mot proposé.
 
 ---
 
 ## Vidéos pédagogiques
 
-<span class="status-badge status-cours">En cours de développement</span>
+<span class="status-badge status-avenir">En pause</span>
 
-Des capsules vidéos pour apprendre à lire : le texte est lu et **synchronisé avec la voix au niveau syllabique**. L'enfant voit chaque syllabe s'illuminer au moment où elle est prononcée, ce qui lui permet de suivre la lecture et de faire le lien entre l'écrit et l'oral.
+Des vidéos pour apprendre à lire : le texte est lu et **synchronisé avec la voix au niveau syllabique**, chaque syllabe s'illuminant au moment où elle est prononcée. Un premier générateur a produit des vidéos de test ; le projet est en pause.
 
-Les vidéos utilisent le pipeline de synthèse vocale Lectura et son système de timestamps par phonème pour un surlignage précis syllabe par syllabe.
+La lecture à voix haute avec surlignage est accessible en ligne sur [LecturaVoice](https://voice.lectura.world/tts).

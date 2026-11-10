@@ -4,6 +4,8 @@ layout: default
 permalink: /developpement/modules/outils/
 ---
 
+> **Archives : première génération (v0).** Les modules de cette page ont été publiés en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, et ne sont plus développés. Le mode API qu'ils prévoient date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+
 Briques atomiques réutilisables du pipeline Lectura. Chaque module est autonome et peut être utilisé indépendamment. Les briques sont combinées par les [pipelines métiers]({{ '/developpement/modules/metiers/' | relative_url }}) pour former des applications complètes.
 
 ## Traitement du texte

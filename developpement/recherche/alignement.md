@@ -55,7 +55,7 @@ Le score favorise les correspondances les plus fréquentes dans le lexique et p�
 
 ### Résultats et applications
 
-L'algorithme couvre la quasi-totalité du vocabulaire français courant avec une précision supérieure à 95 % sur le corpus aligné (1,16 million d'entrées). Les travaux en cours portent sur les cas limites : mots d'emprunt, noms propres étrangers et optimisation de la table pour les mots rares.
+L'algorithme couvre la quasi-totalité du vocabulaire français courant avec une précision supérieure à 95 % sur le corpus aligné (1,16 million d'entrées). Les cas limites restent les mots d'emprunt, les noms propres étrangers et les mots rares.
 
 Au-delà de la lecture augmentée, l'alignement graphème-phonème sert aussi à préparer les données d'entraînement des modèles. Le corpus texte/phonétique aligné est utilisé en amont pour entraîner le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) : sans alignement fiable au niveau des mots, ces modèles ne disposeraient pas de données d'apprentissage correctement annotées.
 

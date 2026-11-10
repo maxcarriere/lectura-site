@@ -4,6 +4,8 @@ layout: default
 permalink: /developpement/modules/metiers/
 ---
 
+> **Archives : première génération (v0).** Les modules de cette page ont été publiés en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, et ne sont plus développés. Le mode API qu'ils prévoient date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+
 Pipelines applicatifs qui orchestrent les [briques outils]({{ '/developpement/modules/outils/' | relative_url }}) pour répondre à un besoin métier complet. Chaque pipeline combine plusieurs modules atomiques dans une chaîne cohérente.
 
 <div class="home-grid">

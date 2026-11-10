@@ -6,6 +6,8 @@ redirect_from:
   - /solutions/modules/syllabeur/
 ---
 
+> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+
 <div class="module-header">
   <h1>Lectura Aligneur-Syllabeur</h1>
   <p class="module-tagline">Aligneur graphème-phonème et syllabeur phonologique du français</p>
@@ -164,4 +166,4 @@ pip install lectura-aligneur[phonemiseur]     # + lectura-phonemiseur
 - **Syllabation** des groupes de lecture construits par le Phonémiseur
 - **Phonémiseur pluggable** : eSpeak-NG, Lectura Phonémiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (non commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})

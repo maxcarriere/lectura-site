@@ -4,15 +4,15 @@ layout: default
 permalink: /produits/programmes/lexique-viewer/
 ---
 
-<span class="status-badge status-cours">En cours de développement</span>
+<span class="status-badge status-avenir">En pause</span>
 
-Lectura Lexique Viewer est une interface d'accès à la base lexicale **LeXiK** et un outil d'**enrichissement de texte**. Il permet d'explorer les 1,35 million d'entrées du lexique français et d'annoter automatiquement n'importe quel texte avec ses propriétés linguistiques.
+Lectura Lexique Viewer est une interface d'accès à la base lexicale **LeXiK** et un outil d'**enrichissement de texte**. Il permet d'explorer le lexique du français et d'annoter automatiquement un texte avec ses propriétés linguistiques.
 
 ---
 
 ## Accès à la base lexicale
 
-LeXiK rassemble 1,35 million d'entrées compilées à partir de plusieurs sources linguistiques libres (Lexique383, GLAFF, Wiktionnaire, OpenSubtitles) et reliées à 2,5 millions d'entités Wikidata.
+LeXiK est compilé à partir de sources linguistiques libres et publié sur ORTOLANG ; le dictionnaire WiKiLeXiK le relie au Wiktionnaire et à Wikidata. Les chiffres, les sources et les licences sont sur [LecturaLexique](https://lexique.lectura.world).
 
 | Capacité | Description |
 |----------|-------------|
@@ -61,4 +61,4 @@ L'enrichissement s'appuie sur le pipeline d'analyse du langage de Lectura (phon�
 
 ---
 
-*Version démo et licence à venir.*
+*Logiciel en pause. Le lexique se consulte en ligne avec le dictionnaire [WiKiLeXiK](https://lexique.lectura.world/wikilexik), sur LecturaLexique.*

@@ -9,15 +9,17 @@ redirect_from:
   - /solutions/tts/diphone/
 ---
 
-Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique (une capacité propre au pipeline Lectura). Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (6 voix, blend de timbres, variantes homme/enfant) est combinable avec chaque moteur.
+Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique (une capacité propre au pipeline Lectura). Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (changement de timbre, variantes homme/enfant) est combinable avec chaque moteur.
+
+La synthèse vocale de la génération actuelle se teste aussi sur [LecturaVoice](https://voice.lectura.world/tts), avec le surlignage du texte lu.
 
 ---
 
 ## Trois moteurs complémentaires
 
-### Multi-Speaker — 6 voix, 7 styles
+### Multi-Speaker — six voix
 
-Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). **6 voix françaises** (3 féminines, 3 masculines) et **7 styles expressifs** (neutre, narratif, dialogue, expressif, méditatif, rapide, lent). Changement de voix dynamique. ~30-50x temps réel sur CPU.
+Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). **Six voix françaises** (trois féminines, trois masculines) et des **préréglages de lecture** (neutre, narratif, lent…). Changement de voix dynamique. Sans carte graphique.
 
 <div class="tts-multi-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -68,9 +70,9 @@ Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Li
 
 ---
 
-### Monospeaker — voix haute qualité, 7 styles
+### Monospeaker — voix haute qualité
 
-Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité) et **Light** (FastPitch, ~28 Mo, plus rapide). Optimisé pour une voix unique (Siwis) avec **7 styles expressifs** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses, vecteur style 5D). Retimbre optionnel via conversion vocale. ~30-50x temps réel sur CPU.
+Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). Optimisé pour une voix unique (Siwis) avec des **préréglages de lecture** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbre optionnel via conversion vocale. Sans carte graphique.
 
 <div class="tts-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -129,7 +131,7 @@ Deux modèles au choix : **High** (Matcha-Conformer, ~29 Mo, meilleure qualité)
 
 ### Diphone — lecture adaptée
 
-Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation précise, uniforme et fiable , ce qui en fait un outil approprié pour la **lecture syllabique**. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
+Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation uniforme de chaque syllabe, ce qui en fait une piste pour la **lecture syllabique**. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
 
 <div class="tts-diphone-demo">
   <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
@@ -173,16 +175,16 @@ Un moteur expérimental qui explore la piste non neurale et qui fonctionne par c
 ## Applications
 
 - **Apprentissage de la lecture** : les modes mot à mot et syllabes sont disponibles sur tous les moteurs. Le Diphone est particulièrement précis pour prononcer chaque syllabe séparément. Les timestamps par phonème permettent un surlignage syllabique synchronisé avec l'audio.
-- **Livres audio et narration** : le Multi-Speaker permet de donner une voix différente à chaque personnage, avec des styles adaptés (narratif, dialogue, expressif).
+- **Livres audio et narration** : le Multi-Speaker permet de donner une voix différente à chaque personnage, avec des préréglages adaptés (narratif, dialogue, expressif).
 - **Applications éducatives** : voix adaptée au public (enfant, adulte) grâce au curseur de variante vocale.
-- **Assistants vocaux** : synthèse rapide (~30-50x temps réel) et légère (pas de GPU) pour les applications embarquées.
+- **Applications embarquées** : synthèse légère, sans carte graphique.
 - **Accessibilité** : lecture à voix haute de tout contenu textuel avec contrôle du débit et des pauses.
 
 ---
 
 ## En savoir plus
 
-Documentation technique de chaque moteur :
+Documentation technique de chaque moteur, dans sa première génération (v0, publiée sur PyPI et GitHub) :
 
 - [Pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) — page commune (G2P + choix moteur + VC)
 - [TTS Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) — modèle neuronal multi-voix

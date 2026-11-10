@@ -14,7 +14,7 @@ Lectura accompagne les professionnels dans l'intégration des technologies lingu
   </div>
   <div class="home-card">
     <h2>Intégration logicielle</h2>
-    <p>Intégrez les briques Lectura dans vos applications : API, packages Python, pipelines sur mesure.</p>
+    <p>Intégrez les briques Lectura dans vos applications : modules sous licence, sur vos serveurs ou embarqués, et pipelines sur mesure.</p>
     <a class="more-link" href="{{ '/solutions/services/integration/' | relative_url }}">En savoir plus</a>
   </div>
   <div class="home-card">
