@@ -19,49 +19,70 @@ import tempfile
 import urllib.request
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-LIGNE1 = "Bienvenue sur Lectura World."
+LIGNE1 = "Bienvenue sur Lectura World :"
 LIGNE2 = "L’IA au service du langage et de sa lecture."
 # Graphie lue par la voix -> graphie affichée. Maxime, 09/11 : « World » se dit /wɔʁld/ (o ouvert, r français) ;
 # la voix française le lit ainsi sous la graphie « Worlde » (e muet), vérifié sur les phonèmes rendus par l'API.
 PRONONCIATION = {"Worlde": "World"}
 
 
-def synthese(texte: str, voix: str) -> dict:
-    corps = json.dumps({"texte": texte, "voix": voix}).encode()
+def synthese(texte: str, voix: str, style: str, vitesse: float) -> dict:
+    # Moteur « multi » (voix entraînées, modèle High) : le moteur par défaut (« mono » + changement de timbre)
+    # sonnait mal (Maxime, 10/11).
+    corps = json.dumps({"texte": texte, "moteur": "multi", "voix": voix, "model": "high", "style": style, "duration_scale": vitesse}).encode()
     req = urllib.request.Request("https://api.lectura.world/tts/synthetiser", data=corps,
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=120) as r:
         return json.loads(r.read())["resultat"]
 
 
+VOYELLES = set("aeiouyɑɛɔøœəɛ̃ɑ̃ɔ̃œ̃") | {"ɛ̃", "ɑ̃", "ɔ̃", "œ̃"}
+SEMI = {"j", "w", "ɥ"}
+
+
+def classes_sons(lettres: list[dict]) -> list[str]:
+    """Classe de couleur de chaque lettre, comme la lecture syllabique de LecturaLingua :
+    k-c consonne, k-v voyelle, k-x son composé (semi-voyelle + voyelle, ex. « ien », « oi »), m muette.
+    Une lettre « _C » prolonge le son de la précédente."""
+    out: list[str] = []
+    for i, l in enumerate(lettres):
+        ph = l["phone"]
+        if ph == "_M":
+            out.append("m")
+        elif ph == "_C":
+            out.append(out[-1] if out else "k-c")
+        elif ph in SEMI and i + 1 < len(lettres) and lettres[i + 1]["phone"] == "_C":
+            out.append("k-x")
+        elif ph in VOYELLES or ph.rstrip("̃") in VOYELLES:
+            out.append("k-v")
+        else:
+            out.append("k-c")
+    return out
+
+
 def syllabes(phrase: dict, texte: str) -> str:
-    """Ligne 1 : chaque mot découpé en syllabes colorées (s1, s2, s3 en alternance), lettres muettes en .m."""
+    """Ligne 1 : chaque syllabe est une unité surlignée ; lettres colorées par son ; « · » entre les syllabes."""
     lettres = {l["position"]: l for l in phrase["lettres"]}
-    morceaux, n = [], 0
+    morceaux = []
     for mot in phrase["mots"]:
         forme = texte[mot["position"]:mot["fin_texte"]]
-        if forme in PRONONCIATION:  # mot lu sous une autre graphie : une seule unité, affichée normalement
-            morceaux.append(f'<span class="ap-u s{n % 3 + 1}" data-d="{mot["debut"]}" data-f="{mot["fin"]}">'
-                            f'{html.escape(PRONONCIATION[forme])}</span>')
-            n += 1
-            continue
-        syl: list[list[dict]] = []
-        for pos in range(mot["position"], mot["fin_texte"]):
-            l = lettres.get(pos)
-            if l is None:
-                continue
+        affiche = PRONONCIATION.get(forme, forme)  # « Worlde » lu, « World » affiché : on garde les lettres communes
+        ls = [lettres[pos] for pos in range(mot["position"], mot["position"] + len(affiche)) if pos in lettres]
+        cl = classes_sons(ls)
+        syl: list[list[tuple[dict, str]]] = []
+        for l, c in zip(ls, cl):
             if l["coupure"] == "SYL" or not syl:
                 syl.append([])
-            syl[-1].append(l)
+            syl[-1].append((l, c))
         spans = []
         for s in syl:
-            debut = min(l["debut"] for l in s)
-            fin = max(l["fin"] for l in s)
-            txt = "".join(f'<span class="m">{html.escape(texte[l["position"]])}</span>' if l["phone"] == "_M"
-                          else html.escape(texte[l["position"]]) for l in s)
-            spans.append(f'<span class="ap-u s{n % 3 + 1}" data-d="{debut}" data-f="{fin}">{txt}</span>')
-            n += 1
-        morceaux.append("".join(spans))
+            debut = min(l["debut"] for l, _ in s)
+            fin = max(l["fin"] for l, _ in s)
+            if s is syl[-1] and forme != affiche:
+                fin = mot["fin"]
+            txt = "".join(f'<span class="{c}">{html.escape(texte[l["position"]])}</span>' for l, c in s)
+            spans.append(f'<span class="ap-u" data-d="{debut}" data-f="{fin}">{txt}</span>')
+        morceaux.append('<span class="ap-pt">·</span>'.join(spans))
     return " ".join(morceaux)
 
 
@@ -80,15 +101,23 @@ def mots(phrase: dict, texte: str, decalage: int) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--voix", default="siwis")
+    ap.add_argument("--style", default="neutre")
+    ap.add_argument("--lenteur", type=float, default=0.9, help="< 1 : plus rapide (Maxime, 10/11 : siwis, « pas aussi lent »)")
     args = ap.parse_args()
     lu = f"{LIGNE1} {LIGNE2}"
     for graphie_lue, affichee in PRONONCIATION.items():
         lu = lu.replace(affichee, graphie_lue)
-    r = synthese(lu, args.voix)
+    r = synthese(lu, args.voix, args.style, args.lenteur)
     al = r["alignement"]
     texte = al["texte"]
-    p1, p2 = al["phrases"]
+    # Avec « : », l'API rend une seule phrase : on coupe les deux lignes à la position du début de la ligne 2.
+    coupe = texte.index(LIGNE2[:6])
+    mots_, lettres_ = [m for ph in al["phrases"] for m in ph["mots"]], [l for ph in al["phrases"] for l in ph["lettres"]]
+    p1 = {"mots": [m for m in mots_ if m["position"] < coupe], "lettres": [l for l in lettres_ if l["position"] < coupe]}
+    p2 = {"mots": [m for m in mots_ if m["position"] >= coupe], "lettres": [l for l in lettres_ if l["position"] >= coupe]}
     ligne1 = syllabes(p1, texte)
+    if LIGNE1.endswith(":"):
+        ligne1 += '<span class="ap-pt"> :</span>'
     ligne2 = mots(p2, texte, 0)
     sons = RACINE / "assets" / "sons"
     sons.mkdir(parents=True, exist_ok=True)

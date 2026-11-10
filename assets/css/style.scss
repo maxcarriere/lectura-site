@@ -169,6 +169,13 @@ body *::after {
 .header-carte:hover, .header-carte:focus-visible { color: #fff; background: rgba(255, 255, 255, 0.08); }
 .header-carte-court { display: none; }
 body.sur-carte .header-carte { opacity: 0; pointer-events: none; }
+/* Tant que la carte est affichée, les menus latéraux s'effacent (Maxime, 10/11). */
+@media (min-width: 1200px) {
+  .site-body { transition: grid-template-columns 0.45s ease; }
+  .site-sidebar, .site-sidebar-right { transition: opacity 0.3s ease; overflow-x: hidden; }
+  body.sur-carte .site-body { grid-template-columns: 0 1fr 0; }
+  body.sur-carte .site-sidebar, body.sur-carte .site-sidebar-right { opacity: 0; pointer-events: none; border: 0; padding-left: 0; padding-right: 0; }
+}
 
 /* Liens vers les autres sites */
 .header-sites {
@@ -1826,10 +1833,13 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
   margin-top: 0.4rem;
 }
 
-.ap-ligne1 .s1 { color: var(--syl1); }
-.ap-ligne1 .s2 { color: var(--syl2); }
-.ap-ligne1 .s3 { color: var(--syl3); }
+/* Couleurs des sons, comme la lecture syllabique de LecturaLingua (Maxime, 10/11) :
+   consonnes en bleu, voyelles en rouge, sons composés en vert, lettres muettes en gris ; un point entre les syllabes. */
+.ap-ligne1 .k-c { color: #3366cc; }
+.ap-ligne1 .k-v { color: #cc3333; }
+.ap-ligne1 .k-x { color: #2e8b2e; }
 .ap-ligne1 .m { color: var(--muette); }
+.ap-ligne1 .ap-pt { color: #2a1d15; font-weight: 700; margin: 0 0.04em; }
 
 .ap-u {
   border-radius: 0.2em;
@@ -1837,9 +1847,10 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
   padding: 0 0.02em;
 }
 
+/* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : surligné au feutre jaune. */
 .ap-u.ap-lu {
-  background: rgba(240, 196, 60, 0.35);
-  box-shadow: 0 0.12em 0 rgba(139, 99, 77, 0.8);
+  background: rgba(255, 221, 64, 0.75);
+  box-shadow: 0 0 0 0.08em rgba(255, 221, 64, 0.75);
 }
 
 .ap-ecouter {
