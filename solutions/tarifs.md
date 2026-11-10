@@ -23,7 +23,7 @@ Pour un usage non commercial, l'accès est libre et gratuit :
 
 Pour un usage commercial (intégration dans un produit, déploiement en production, redistribution), une licence commerciale est requise. Les tarifs varient selon la portée du projet, l'ampleur de l'usage et les services associés.
 
-Avant l'achat, vous essayez : la démo, puis, sur demande, une clé d'essai et une licence d'évaluation. Le parcours complet est décrit dans [licences]({{ '/solutions/services/licences/' | relative_url }}).
+Avant l'achat, vous essayez : la démo, puis une licence d'évaluation. Le parcours complet est décrit dans [licences]({{ '/solutions/services/licences/' | relative_url }}).
 
 ### Ordres de grandeur
 

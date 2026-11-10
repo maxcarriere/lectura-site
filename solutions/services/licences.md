@@ -15,11 +15,10 @@ permalink: /solutions/services/licences/
 ## Le parcours
 
 1. **La démo** : vous essayez les modules en ligne, gratuitement et sans inscription.
-2. **La clé d'essai** : sur demande, une clé d'accès à notre API pour l'essayer dans votre code, pour une durée limitée, en évaluation seulement (pas de production). Rien n'est installé chez vous.
-3. **La licence d'évaluation** : si vous voulez intégrer les modules chez vous, ils vous sont confiés pour évaluation, sans diffusion ni usage commercial.
-4. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
+2. **La licence d'évaluation** : les modules vous sont confiés pour les essayer chez vous, sans diffusion ni usage commercial.
+3. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
 
-Notre API publique sert aux démos ; elle n'est pas proposée comme service. Les modules sous licence s'installent sur vos serveurs ou s'embarquent dans votre application.
+Notre API sert seulement aux démos ; elle n'est pas proposée comme service. Nous vendons les modèles, qui tournent chez vous : ils s'installent sur vos serveurs ou s'embarquent dans votre application.
 
 ---
 
@@ -46,4 +45,4 @@ Consultez la page dédiée pour connaître la logique tarifaire, les ordres de g
 
 ## Contact
 
-Pour demander une démo ciblée, une clé d'essai ou un devis : [nous contacter]({{ '/contact/' | relative_url }})
+Pour demander une démo ciblée, une licence d'évaluation ou un devis : [nous contacter]({{ '/contact/' | relative_url }})

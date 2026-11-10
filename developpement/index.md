@@ -19,7 +19,7 @@ Documentation technique et recherche autour de l'écosystème Lectura. Cette sec
   </div>
   <div class="home-card">
     <h2>Ressources</h2>
-    <p>Le lexique LeXiK, le kit d'entraînement G2P / P2G, le corpus de voix phonétisé ; les corpus sous licence sont sur LecturaLexique.</p>
+    <p>Le lexique LeXiK et nos corpus d'entraînement, sur devis ; les corpus sous licence sont sur LecturaLexique.</p>
     <a class="more-link" href="{{ '/produits/ressources/' | relative_url }}">Voir les ressources</a>
   </div>
   <div class="home-card">

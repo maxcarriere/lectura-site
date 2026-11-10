@@ -10,7 +10,7 @@ Les modules de Lectura sont des briques Python qui relient le texte, la phonéti
 
 ## La génération actuelle (v1)
 
-En service sur nos serveurs depuis octobre 2026, elle fait tourner les démos de [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world). Elle n'est pas publiée : ni son code ni ses modèles ne sont distribués. Elle s'obtient sous licence, selon le parcours décrit dans [licences]({{ '/solutions/services/licences/' | relative_url }}) : démo, clé d'essai, licence d'évaluation, licence commerciale.
+En service sur nos serveurs depuis octobre 2026, elle fait tourner les démos de [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world). Elle n'est pas publiée : ni son code ni ses modèles ne sont distribués. Elle s'obtient sous licence, selon le parcours décrit dans [licences]({{ '/solutions/services/licences/' | relative_url }}) : démo, licence d'évaluation, licence commerciale. Notre API sert seulement aux démos : nous vendons les modèles, qui tournent chez vous.
 
 Elle est organisée autour de la phonétique, pivot commun entre le texte et la voix :
 

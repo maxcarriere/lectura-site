@@ -24,7 +24,7 @@ Les produits de Lectura s'appuient sur sa technologie du langage. Les produits p
   </div>
   <div class="home-card">
     <h2>Ressources</h2>
-    <p>Le lexique LeXiK, le kit d'entraînement G2P / P2G et le corpus de voix phonétisé.</p>
+    <p>Le lexique LeXiK et nos corpus d'entraînement (texte, phonétique, grammaire ; voix), sur devis.</p>
     <a class="more-link" href="{{ '/produits/ressources/' | relative_url }}">Découvrir</a>
   </div>
 </div>

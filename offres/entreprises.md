@@ -12,11 +12,10 @@ description: "L'offre de Lectura aux entreprises : licences des modules, corpus 
 Les modules de la génération actuelle (analyse du langage, synthèse et reconnaissance vocales) ne sont pas distribués publiquement. Ils s'obtiennent sous licence, pour être intégrés dans votre produit ou installés sur vos serveurs. Le parcours, étape par étape :
 
 1. **La démo** : vous essayez les modules en ligne.
-2. **La clé d'essai** : sur demande, une clé d'accès à notre API pour l'essayer dans votre code, pour une durée limitée, en évaluation seulement.
-3. **La licence d'évaluation** : si vous voulez intégrer les modules chez vous, ils vous sont confiés pour évaluation, sans diffusion ni usage commercial.
-4. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
+2. **La licence d'évaluation** : les modules vous sont confiés pour les essayer chez vous, sans diffusion ni usage commercial.
+3. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
 
-Notre API publique sert aux démos ; elle n'est pas proposée comme service. Détail : [licences]({{ '/solutions/services/licences/' | relative_url }}).
+Notre API sert seulement aux démos : nous vendons les modèles, qui tournent chez vous, sur vos serveurs ou dans votre application. Détail : [licences]({{ '/solutions/services/licences/' | relative_url }}).
 
 ## Corpus et ressources
 

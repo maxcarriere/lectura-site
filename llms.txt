@@ -38,7 +38,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 ## Offre
 
-- Entreprises : demo, puis cle d'essai sur demande, licence d'evaluation, licence commerciale ; services (integration, modeles sur mesure, preparation de donnees, services editoriaux). L'API publique sert aux demos ; elle n'est pas proposee comme service.
+- Entreprises : demo, puis licence d'evaluation, licence commerciale ; services (integration, modeles sur mesure, preparation de donnees, services editoriaux). L'API sert seulement aux demos ; Lectura vend les modeles, qui tournent chez le client (serveurs ou application).
 - Particuliers : outils gratuits en ligne (lecture syllabique, lecture a voix haute, dictionnaire) ; corpus de syllabes ; produits pour apprendre a lire en preparation.
 
 ## Methode de travail

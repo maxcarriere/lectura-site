@@ -116,6 +116,10 @@
     <loc>https://www.lectura.world/produits/ressources/</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.lectura.world/produits/ressources/corpus-entrainement/</loc>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Développement -->
   <url>
