@@ -30,7 +30,21 @@
     unites.forEach(function (u) { u.classList.remove('ap-lu', 'ap-deja'); });
     bloc.classList.remove('ap-en-cours');
   }
+  // Le son n'a pas pu partir seul (navigateur) : il part au premier geste du visiteur (clic, toucher, touche),
+  // tant que la carte est à l'écran. La molette ne compte pas comme un geste pour les navigateurs.
+  var gesteAttendu = false;
+  function auPremierGeste() {
+    if (gesteAttendu) return;
+    gesteAttendu = true;
+    function go(e) {
+      ['pointerdown', 'keydown', 'touchend'].forEach(function (t) { document.removeEventListener(t, go, true); });
+      if (e.target.closest && e.target.closest('.ap-ligne, a')) return;  // la phrase gère son clic ; un lien quitte la page
+      if (document.body.classList.contains('sur-carte') && horloge !== 'audio') lire(false);
+    }
+    ['pointerdown', 'keydown', 'touchend'].forEach(function (t) { document.addEventListener(t, go, true); });
+  }
   function muet() {
+    auPremierGeste();
     horloge = 'muet';
     debutMuet = performance.now();
     bloc.classList.add('ap-en-cours');

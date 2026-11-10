@@ -9,7 +9,7 @@ description: "Lectura met l'IA au service du langage et de sa lecture : lire à 
 image: /assets/images/og-lectura.png
 ---
 
-Lectura relie l'écrit et l'oral par la **phonétique**. « Lecture » s'y entend dans ses deux sens : **lire à haute voix**, avec des voix de synthèse qui suivent le texte syllabe par syllabe, et **apprendre à lire**, avec des outils et des ressources fondés sur la lecture syllabique. Le français est notre socle ; l'anglais suit.
+Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
 
 <div class="cta-box" markdown="0">
   <h3>Les projets, à essayer en ligne</h3>
