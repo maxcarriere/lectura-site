@@ -115,7 +115,7 @@ def decaler(phrases: list[dict], dt: int) -> dict:
 def main() -> None:
     # Maxime, 10/11 : ligne 1 rapide et expressive, ligne 2 narrative ; deux synthèses enchaînées.
     ap = argparse.ArgumentParser()
-    ap.add_argument("--voix", default="siwis")
+    ap.add_argument("--voix", default="nadine")
     ap.add_argument("--style1", default="expressif")
     ap.add_argument("--lenteur1", type=float, default=0.85, help="< 1 : plus rapide")
     ap.add_argument("--style2", default="narratif")
@@ -126,11 +126,20 @@ def main() -> None:
     args = ap.parse_args()
     # La ligne 1 est lue avec « ! » (élan expressif) ; l'affichage garde « : ».
     r1 = synthese(lue(LIGNE1.rstrip(" :.") + " !"), args.voix, args.style1, args.lenteur1)
-    r2 = synthese(lue(LIGNE2), args.voix, args.style2, args.lenteur2)
+    # Ligne 2 (Maxime, 10/11 : « Nadine 3 le premier ») : tirée de la phrase entière lue en narratif, où elle sonne
+    # mieux que lue seule ; on garde l'audio à partir de son premier mot.
+    r2 = synthese(lue(f"{LIGNE1} {LIGNE2}"), args.voix, args.style2, args.lenteur2)
+    t2 = r2["alignement"]["texte"]
+    coupe = t2.index(LIGNE2[:6])
+    ph2 = decaler(r2["alignement"]["phrases"], 0)
+    ph2 = {"mots": [m for m in ph2["mots"] if m["position"] >= coupe],
+           "lettres": [l for l in ph2["lettres"] if l["position"] >= coupe]}
+    debut2 = max(0, ph2["mots"][0]["debut"] - 40)
     with tempfile.TemporaryDirectory() as tmp:
-        w1, w2 = pathlib.Path(tmp, "1.wav"), pathlib.Path(tmp, "2.wav")
+        w1, w2, w2c = pathlib.Path(tmp, "1.wav"), pathlib.Path(tmp, "2.wav"), pathlib.Path(tmp, "2c.wav")
         w1.write_bytes(base64.b64decode(r1["audio_base64"]))
-        w2.write_bytes(base64.b64decode(r2["audio_base64"]))
+        w2c.write_bytes(base64.b64decode(r2["audio_base64"]))
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(debut2 / 1000), "-i", str(w2c), str(w2)], check=True)
         with wave.open(str(w1)) as w:
             d1 = round(w.getnframes() * 1000 / w.getframerate())
             sr = w.getframerate()
@@ -138,14 +147,14 @@ def main() -> None:
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(w1), "-f", "lavfi", "-t", str(args.pause / 1000),
                         "-i", f"anullsrc=r={sr}:cl=mono", "-i", str(w2), "-filter_complex",
                         "[0:a][1:a][2:a]concat=n=3:v=0:a=1", "-ac", "1", "-b:a", "64k", args.sortie], check=True)
-    print(f"ligne 1 {args.style1} x{args.lenteur1} : {d1} ms ; ligne 2 {args.style2} : {r2['duree']} ms ; voix {args.voix}")
+    print(f"ligne 1 {args.style1} x{args.lenteur1} : {d1} ms ; ligne 2 {args.style2} : {r2['duree'] - debut2} ms ; voix {args.voix}")
     if args.essai:
         return
-    t1, t2 = r1["alignement"]["texte"], r2["alignement"]["texte"]
+    t1 = r1["alignement"]["texte"]
     ligne1 = syllabes(decaler(r1["alignement"]["phrases"], 0), t1)
     if LIGNE1.endswith(":"):
         ligne1 += '<span class="ap-pt"> :</span>'
-    ligne2 = mots(decaler(r2["alignement"]["phrases"], d1 + args.pause), t2, 0)
+    ligne2 = mots(decaler([ph2], d1 + args.pause - debut2), t2, 0)
     inc = (
         "{%- comment -%} Fichier produit par _outils/phrase_accueil.py (voix « " + args.voix + " » de Lectura) : "
         "ne pas modifier à la main. {%- endcomment -%}\n"
