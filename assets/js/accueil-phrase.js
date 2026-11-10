@@ -38,7 +38,7 @@
     gesteAttendu = true;
     function go(e) {
       ['pointerdown', 'keydown', 'touchend'].forEach(function (t) { document.removeEventListener(t, go, true); });
-      if (e.target.closest && e.target.closest('.ap-ligne, a')) return;  // la phrase gère son clic ; un lien quitte la page
+      if (e.target.closest && e.target.closest('.ap-ligne, .ap-ecouter, .ap-fleche, a')) return;  // la phrase gère son clic ; un lien quitte la page
       if (document.body.classList.contains('sur-carte') && horloge !== 'audio') lire(false);
     }
     ['pointerdown', 'keydown', 'touchend'].forEach(function (t) { document.addEventListener(t, go, true); });

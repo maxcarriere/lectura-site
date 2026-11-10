@@ -2,7 +2,7 @@
   Premier écran de l'accueil (Maxime, 09/11/2026) : la carte « Lectura World » remplit l'écran ; la phrase
   « Bienvenue sur Lectura World / L'IA au service du langage et de sa lecture » est posée sur l'Antarctique,
   lue par la voix de Lectura dès que la carte est chargée, avec surlignage syllabe par syllabe (ligne 1) puis
-  mot par mot (ligne 2). Une flèche sous la phrase descend vers la suite (comme celle de Zmaths ; Maxime, 10/11 : une seule flèche, phrase dans le blanc) ;
+  mot par mot (ligne 2). Une flèche sous la carte descend vers la suite (comme celle de Zmaths ; Maxime, 10/11 : une seule flèche, sous la carte ; phrase dans le blanc) ;
   un coup de molette fait de même, et un clic sur la phrase la rejoue. Phrase et audio : _outils/phrase_accueil.py.
   Fond : planisphère fourni par Maxime (Planisphère3.png), converti en webp.
 {%- endcomment -%}
@@ -27,8 +27,8 @@
     {%- endfor %}
     <div class="carte-phrase">
       {% include accueil-phrase.html %}
-      <button type="button" class="ap-fleche" aria-label="Descendre vers la présentation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8 L12 16 L19 8 Z"/></svg></button>
     </div>
   </div>
+  <button type="button" class="ap-fleche ap-fleche-bas" aria-label="Descendre vers la présentation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8 L12 16 L19 8 Z"/></svg></button>
 </section>
 <script src="{{ '/assets/js/accueil-phrase.js' | relative_url }}" defer></script>
