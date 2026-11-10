@@ -1,11 +1,11 @@
 # Carte « Lectura World » : un projet par continent (Maxime, 09/11) ; x / y = position du médaillon sur
-# le planisphère, en % (répartition de Maxime, 10/11 : Lingua Europe, Voice Asie, Lexique Océanie, Education Afrique, Games Amérique du Nord, Books Amérique du Sud). Continents (projets) et régions (domaines). Une région sans point reste grise.
+# le planisphère, en % : c'est le centre de l'icône (le nom est dessous), posé au centre du continent (répartition de Maxime, 10/11 : Lingua Europe, Voice Asie, Lexique Océanie, Education Afrique, Games Amérique du Nord, Books Amérique du Sud). Continents (projets) et régions (domaines). Une région sans point reste grise.
 # Accès rapide : un groupe par projet, dans cet ordre (_includes/sidebar-right.html).
 # Les points eux-mêmes sont les mots de l'en-tête (_data/mots-cles.yml, champs projet / region).
 - projet: lexique
   continent: Océanie
-  x: 75
-  y: 65
+  x: 74.7
+  y: 62
   nom: LecturaLexique
   url: https://lexique.lectura.world/
   icone: dictionary
@@ -15,7 +15,7 @@
 - projet: lingua
   continent: Europe
   x: 51
-  y: 26
+  y: 21
   langues: [fr, en]
   nom: LecturaLingua
   url: https://lingua.lectura.world/
@@ -26,14 +26,14 @@
     - {id: traduction, nom: "Traduction"}
 - projet: voice
   continent: Asie
-  x: 71
-  y: 32
+  x: 70
+  y: 25
   nom: LecturaVoice
   url: https://voice.lectura.world/
   icone: headphones
   regions:
     - {id: synthese, nom: "Synthèse vocale"}
     - {id: reconnaissance, nom: "Reconnaissance vocale"}
-- {projet: education, nom: LecturaEducation, statut: "en préparation", continent: Afrique, x: 54, y: 52, icone: ardoise}
-- {projet: games, nom: LecturaGames, statut: "à l'étude", continent: Amérique du Nord, x: 26, y: 35, icone: de}
-- {projet: books, nom: LecturaBooks, statut: "à l'étude", continent: Amérique du Sud, x: 37, y: 61, icone: livres}
+- {projet: education, nom: LecturaEducation, statut: "en préparation", continent: Afrique, x: 52, y: 46, icone: ardoise}
+- {projet: games, nom: LecturaGames, statut: "à l'étude", continent: Amérique du Nord, x: 27, y: 25, icone: de}
+- {projet: books, nom: LecturaBooks, statut: "à l'étude", continent: Amérique du Sud, x: 36.5, y: 55, icone: livres}
