@@ -5,8 +5,6 @@ permalink: /decouvrir/
 description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méthode de travail, et son fondateur."
 ---
 
-**L'IA au service du langage et de sa lecture.** Lectura développe des outils qui relient l'écrit, la prononciation et la voix. Le mot « lecture » y a deux sens : **lire à haute voix**, ce que font nos voix de synthèse, et **apprendre à lire**, ce que visent nos ressources éducatives.
-
 {% comment %} Maxime, 11/11/2026 : trois cartes sur une ligne, un titre et une petite icône. {% endcomment %}
 
 <div class="decouvrir-cartes" markdown="0">
