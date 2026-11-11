@@ -9,7 +9,7 @@ Chaque projet de Lectura a son propre site. On y trouve la présentation détail
 
 ## En ligne
 
-<h3 class="projet-titre" id="lecturalexique"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span>LecturaLexique</h3>
+<h3 class="projet-titre" id="lecturalexique"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><a class="projet-logo" href="https://lexique.lectura.world"><img src="{{ '/assets/images/projets/lecturalexique.svg' | relative_url }}" width="768" height="276" alt="LecturaLexique"></a></h3>
 
 Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gratuitement en ligne ; le lexique **LeXiK** se télécharge gratuitement, sous licence libre, et a fait l'objet d'une publication sur ORTOLANG. Le site propose aussi, sous licence commerciale, le module **Lexicon** et des **corpus de syllabes et de mots** tirés de LeXiK.
 
@@ -18,7 +18,7 @@ Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gr
   <a href="https://lexique.lectura.world/wikilexik">Chercher un mot</a>
 </div>
 
-<h3 class="projet-titre" id="lecturalingua"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span>LecturaLingua</h3>
+<h3 class="projet-titre" id="lecturalingua"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><a class="projet-logo" href="https://lingua.lectura.world"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua"></a></h3>
 
 L'analyse de la langue écrite, en français et en anglais : analyse grammaticale, passage de l'écrit à la prononciation (G2P) et de la prononciation à l'écrit (P2G), correcteur, traduction et lecture syllabique. Les outils sont gratuits et sans inscription.
 
@@ -27,7 +27,7 @@ L'analyse de la langue écrite, en français et en anglais : analyse grammatical
   <a href="https://lingua.lectura.world/syllabes">Lecture syllabique</a>
 </div>
 
-<h3 class="projet-titre" id="lecturavoice"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span>LecturaVoice</h3>
+<h3 class="projet-titre" id="lecturavoice"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span><a class="projet-logo" href="https://voice.lectura.world"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice"></a></h3>
 
 La voix : synthèse vocale avec surlignage synchronisé du texte, reconnaissance vocale, et alignement d'un texte sur sa lecture (karaoké, sous-titres).
 

@@ -1948,3 +1948,6 @@ html[data-darkreader-mode] .parchment-content .dc-carte, html .parchment-content
 /* Globe devant « Afficher la carte des projets » (Maxime, 11/11) */
 .header-carte svg.header-globe { width: 1.5rem; height: 1.5rem; fill: none; }
 @media (min-width: 1200px) { .header-carte { padding-left: 2.8rem; } }  /* libellé centré sur le texte de la page (mesuré : 16 px d'écart sans) */
+/* Logos des sites projets à côté de l'icône (Maxime, 11/11) */
+html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .parchment-content a.projet-logo.projet-logo {  /* l'emporte sur a:link */ border-bottom: 0 !important; display: inline-flex; }
+.projet-logo img { height: 3.2rem; width: auto; display: block; }
