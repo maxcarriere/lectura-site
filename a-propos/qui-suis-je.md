@@ -24,7 +24,9 @@ Aujourd'hui, je me définis moins comme un développeur au sens classique que co
 
 **Humanuscrit** est un projet parallèle, plus personnel : un ensemble de textes écrits avec l'IA dans des registres variés : science-fiction, éveil spirituel, logique mathématique, systémique, poésie. Un premier roman, *System Down*, est paru en octobre 2026.
 
-Les deux projets partagent la même conviction : l'IA ne remplace pas la vision humaine, elle lui donne les moyens de se réaliser.
+**Zmaths** ([zmaths.net](https://www.zmaths.net/)) prolonge mes années d'enseignement : des cours de mathématiques, en visio ou à domicile, et une bibliothèque de ressources gratuites pour le collège et le lycée.
+
+Ces projets partagent la même conviction : l'IA ne remplace pas la vision humaine, elle lui donne les moyens de se réaliser.
 
 ## Une conviction
 
@@ -34,4 +36,4 @@ Le monde du travail est en pleine mutation, et je pense que dans ce nouveau pays
 
 Je suis actuellement autoentrepreneur et je souhaite développer une activité professionnelle autour de l'utilisation de l'IA, en particulier dans les domaines du traitement du langage naturel, de la voix et de l'edtech. Je suis ouvert à toute forme de collaboration, freelance ou salariat.
 
-Pour toute question ou proposition, rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}).
+Pour toute question ou proposition, rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}), ou retrouvez-moi sur [LinkedIn](https://www.linkedin.com/in/maximecarriere/).
