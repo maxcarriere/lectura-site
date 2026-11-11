@@ -23,7 +23,7 @@ Lectura développe ses outils sur deux plans.
 
 ---
 
-## 2. La phonétique, pont naturel entre l'écrit et l'oral
+## 2. La phonétique, pont naturel entre l'écrit et l'oral {#phonetique}
 
 Entre la langue écrite et la langue parlée, la phonétique fait le lien : elle dit quels sons portent les lettres.
 

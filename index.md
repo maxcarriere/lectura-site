@@ -10,7 +10,7 @@ image: /assets/images/og-lectura.png
 ---
 
 {%- comment -%} Accueil volontairement court (Maxime, 11/11/2026) : une phrase par partie, des séparateurs, les projets en icônes. {%- endcomment -%}
-Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
+Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/a-propos/vision/' | relative_url }}#phonetique) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
 
 ---
 
@@ -26,13 +26,13 @@ Lectura est un écosystème de projets autour du **langage** et de sa **lecture*
 
 ---
 
-Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), selon une [méthode]({{ '/solutions/travail-ia/' | relative_url }}) où l'IA est un partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
+Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), avec l'IA comme partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
 
 ---
 
 Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
 
-Les [solutions]({{ '/solutions/' | relative_url }}) de Lectura sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives.
+Les [solutions]({{ '/solutions/' | relative_url }}) de Lectura sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives ; Lectura propose aussi sa méthode pour [organiser le travail avec l'IA]({{ '/solutions/travail-ia/' | relative_url }}).
 
 Vous pouvez découvrir l'[offre commerciale]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
 
