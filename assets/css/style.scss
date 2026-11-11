@@ -1951,3 +1951,7 @@ html[data-darkreader-mode] .parchment-content .dc-carte, html .parchment-content
 /* Logos des sites projets à côté de l'icône (Maxime, 11/11) */
 html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .parchment-content a.projet-logo.projet-logo {  /* l'emporte sur a:link */ border-bottom: 0 !important; display: inline-flex; }
 .projet-logo img { height: 3.2rem; width: auto; display: block; }
+/* Les projets : chaque projet dans un cadre (Maxime, 11/11) */
+.projet-bloc { border: 1px solid rgba(13, 13, 13, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.35); padding: 1rem 1.4rem 1.2rem; margin: 1.2rem 0; }
+.projet-bloc > :first-child { margin-top: 0; }
+.projet-bloc > :last-child { margin-bottom: 0; }

@@ -7,7 +7,11 @@ description: "Les sites projets de Lectura : LecturaLexique, LecturaLingua et Le
 
 Chaque projet de Lectura a son propre site. On y trouve la présentation détaillée, les démos et, quand il y en a, les offres. Cette page les présente en bref.
 
+---
+
 ## En ligne
+
+<div class="projet-bloc" markdown="1">
 
 <h3 class="projet-titre" id="lecturalexique"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><a class="projet-logo" href="https://lexique.lectura.world"><img src="{{ '/assets/images/projets/lecturalexique.svg' | relative_url }}" width="768" height="276" alt="LecturaLexique"></a></h3>
 
@@ -18,6 +22,10 @@ Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gr
   <a href="https://lexique.lectura.world/wikilexik">Chercher un mot</a>
 </div>
 
+</div>
+
+<div class="projet-bloc" markdown="1">
+
 <h3 class="projet-titre" id="lecturalingua"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><a class="projet-logo" href="https://lingua.lectura.world"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua"></a></h3>
 
 L'analyse de la langue écrite, en français et en anglais : analyse grammaticale, passage de l'écrit à la prononciation (G2P) et de la prononciation à l'écrit (P2G), correcteur, traduction et lecture syllabique. Les outils sont gratuits et sans inscription.
@@ -26,6 +34,10 @@ L'analyse de la langue écrite, en français et en anglais : analyse grammatical
   <a href="https://lingua.lectura.world">lingua.lectura.world</a>
   <a href="https://lingua.lectura.world/syllabes">Lecture syllabique</a>
 </div>
+
+</div>
+
+<div class="projet-bloc" markdown="1">
 
 <h3 class="projet-titre" id="lecturavoice"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span><a class="projet-logo" href="https://voice.lectura.world"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice"></a></h3>
 
@@ -37,13 +49,23 @@ La voix : synthèse vocale avec surlignage synchronisé du texte, reconnaissance
   <a href="https://voice.lectura.world/sous-titrage">Sous-titrage</a>
 </div>
 
+</div>
+
 Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuelle de nos modules (v1), en service sur nos serveurs. Ni son code ni ses modèles ne sont distribués : pour les utiliser dans un produit, voir [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
 
+---
+
 ## En préparation
+
+<div class="projet-bloc" markdown="1">
 
 <h3 class="projet-titre" id="lecturaeducation"><span class="cp-icone">{% include icone-projet.html nom='ardoise' %}</span>LecturaEducation</h3>
 
 Le site de nos produits pour apprendre à lire : une méthode de lecture (manuel et application), des applications et des jeux, des histoires syllabiques. **En préparation** : nous construisons d'abord les ressources communes à ces produits, une liste de mots illustrés et la progression des leçons. Le site ouvrira avec le premier produit.
+
+</div>
+
+<div class="projet-bloc" markdown="1">
 
 D'autres sites sont à l'étude :
 
@@ -52,5 +74,9 @@ D'autres sites sont à l'étude :
   <li><span class="cp-icone">{% include icone-projet.html nom='de' %}</span><span><strong>LecturaGames</strong> : des jeux de lettres et de sons</span></li>
   <li><span class="cp-icone">{% include icone-projet.html nom='livres' %}</span><span><strong>LecturaBooks</strong> : des livres</span></li>
 </ul>
+
+</div>
+
+---
 
 Une question sur un projet : [nous contacter]({{ '/contact/' | relative_url }}).
