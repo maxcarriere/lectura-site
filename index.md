@@ -30,18 +30,12 @@ Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | rel
 
 ---
 
-Nous nous adressons aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
+Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
 
----
+Vous pouvez découvrir l'[offre commerciale]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
 
-Vous pouvez découvrir [notre offre]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
+La partie technique est présentée dans [Développement]({{ '/developpement/' | relative_url }}).
 
----
-
-Nos modules, nos modèles et nos données sont présentés dans [le développement]({{ '/developpement/' | relative_url }}).
-
----
-
-Un projet, une question ? [Contactez-nous]({{ '/contact/' | relative_url }}).
+Un projet, une question ? Rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}).
 
 Autres sites du même auteur : [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](https://www.zmaths.net/) (cours de mathématiques).
