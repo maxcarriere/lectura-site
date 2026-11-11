@@ -1944,3 +1944,7 @@ html[data-darkreader-mode] .parchment-content .dc-carte, html .parchment-content
 
 /* Plus de bouton Play (Maxime, 11/11) : la phrase se lit seule, un clic sur le texte la relance. */
 .accueil-phrase .ap-ecouter, .accueil-phrase.ap-invite .ap-ecouter, .carte-phrase .accueil-phrase.ap-invite .ap-ecouter { display: none !important; }
+
+/* Globe devant « Afficher la carte des projets » (Maxime, 11/11) */
+.header-carte svg.header-globe { width: 1.5rem; height: 1.5rem; fill: none; }
+@media (min-width: 1200px) { .header-carte { padding-left: 2.8rem; } }  /* libellé centré sur le texte de la page (mesuré : 16 px d'écart sans) */
