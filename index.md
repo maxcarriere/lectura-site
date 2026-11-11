@@ -9,35 +9,46 @@ description: "Lectura met l'IA au service du langage et de sa lecture : lire à 
 image: /assets/images/og-lectura.png
 ---
 
-{%- comment -%} Accueil volontairement court (Maxime, 11/11/2026) : une phrase par partie, des séparateurs, les projets en icônes. {%- endcomment -%}
-Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/a-propos/vision/' | relative_url }}#phonetique) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
+{% comment %} Accueil (structure de Maxime, 11/11/2026 au soir) : présentation et porteur, projets, plan du site en un paragraphe, contact. Pas de lien « phonétique » pour l'instant (la page pourrait disparaître). {% endcomment %}
+
+Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la phonétique comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
+
+Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à une méthode de développement augmenté par l'IA où l'intelligence artificielle est un partenaire de production à part entière.
+
+<p class="ap-savoir">En savoir plus <a href="{{ '/a-propos/vision/' | relative_url }}">sur Lectura</a> · <a href="{{ '/a-propos/qui-suis-je/' | relative_url }}">sur le porteur du projet</a></p>
 
 ---
 
 <div class="accueil-projets" markdown="0">
-  <h2>Nos projets</h2>
+  <h2>Les différents projets</h2>
   <div class="ap-projets">
     <a href="https://lexique.lectura.world" title="LecturaLexique : le lexique du français"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><span>Lexique</span></a>
     <a href="https://lingua.lectura.world" title="LecturaLingua : l'écrit"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><span>Lingua</span></a>
     <a href="https://voice.lectura.world" title="LecturaVoice : la voix"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span><span>Voice</span></a>
   </div>
-  <p class="ap-projets-suite"><a href="{{ '/decouvrir/projets/' | relative_url }}">Tous les projets</a>, dont ceux en préparation.</p>
+  <p class="ap-projets-suite">Les projets sont régulièrement améliorés et mis à jour. D'autres projets sont encore en phase de recherche ou en cours de développement.</p>
+  <p class="ap-savoir"><a href="{{ '/decouvrir/projets/' | relative_url }}">En savoir plus sur les projets</a></p>
 </div>
 
 ---
 
-Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), avec l'IA comme partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
+Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}). Ses solutions sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives ; Lectura propose aussi sa méthode pour organiser le travail avec l'IA. Son offre commerciale réunit licences, services et tarifs, et la partie technique présente le développement des outils.
+
+<p class="ap-savoir">En savoir plus sur <a href="{{ '/solutions/' | relative_url }}">les solutions</a> · <a href="{{ '/offres/' | relative_url }}">les offres</a> · <a href="{{ '/developpement/' | relative_url }}">la partie technique</a></p>
 
 ---
 
-Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
-
-Les [solutions]({{ '/solutions/' | relative_url }}) de Lectura sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives ; Lectura propose aussi sa méthode pour [organiser le travail avec l'IA]({{ '/solutions/travail-ia/' | relative_url }}).
-
-Vous pouvez découvrir l'[offre commerciale]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
-
-La partie technique est présentée dans [Développement]({{ '/developpement/' | relative_url }}).
-
-Un projet, une question ? Rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}).
-
-Autres sites du même auteur : [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](https://www.zmaths.net/) (cours de mathématiques).
+<div class="accueil-contact" markdown="0">
+  <h2>Contact</h2>
+  <p>Un projet, une question ? Écrivez à
+    <a id="ac-email" class="ac-email" href="{{ '/contact/' | relative_url }}" aria-label="Adresse e-mail de Lectura"><span class="ac-rev">moc.liamg<span>&#64;</span>dlrow.arutcel</span></a>
+    ou passez par la <a href="{{ '/contact/' | relative_url }}">page Contact</a>.</p>
+  <p>Sites du même auteur : <a href="https://humanuscrit.com/">Humanuscrit</a> (écriture) et <a href="https://www.zmaths.net/">Zmaths</a> (cours de mathématiques).</p>
+</div>
+<script>
+(function () {
+  {% comment %} adresse écrite à l'envers dans le code (remise à l'endroit par le CSS) et lien assemblé par le script : illisible pour les robots {% endcomment %}
+  var a = document.getElementById('ac-email');
+  if (a) a.href = 'mailto:' + ['lectura.world', 'gmail.com'].join('@');
+})();
+</script>

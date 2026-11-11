@@ -1922,6 +1922,12 @@ html[data-darkreader-mode] .parchment-content .ap-projets a, html .parchment-con
 .ap-projets .cp-icone { width: 64px; height: 64px; }
 .ap-projets a:hover .cp-icone { transform: scale(1.08); }
 .ap-projets-suite { margin: 1rem 0 0; font-size: 0.95rem; }
+.ap-savoir { margin: 0.6rem 0 0; font-size: 0.95rem; }
+.accueil-projets .ap-savoir { text-align: center; }
+.accueil-contact h2 { text-align: center !important; }
+.accueil-contact p { text-align: center; }
+a.ac-email.ac-email { border-bottom: none !important; display: inline-block; vertical-align: middle; }
+.ac-rev { unicode-bidi: bidi-override; direction: rtl; }
 
 /* Page Découvrir (Maxime, 11/11) : trois cartes sur une ligne, un titre et une petite icône */
 .decouvrir-cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2rem 0; }
