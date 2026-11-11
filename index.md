@@ -43,3 +43,5 @@ Nos modules, nos modèles et nos données sont présentés dans [le développeme
 ---
 
 Un projet, une question ? [Contactez-nous]({{ '/contact/' | relative_url }}).
+
+Autres sites du même auteur : [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](https://www.zmaths.net/) (cours de mathématiques).
