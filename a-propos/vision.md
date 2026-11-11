@@ -9,7 +9,7 @@ description: "Lectura, un écosystème de projets autour du langage et de sa lec
 
 {% comment %} Vision (plan de Maxime, 11/11/2026) : général et philosophique ; les réalisations sont détaillées dans Solutions. Ordre : outils, phonétique, méthodes, langue universelle (1 et 2 inversés, comme Maxime le proposait). {% endcomment %}
 
-Lectura est un **écosystème de projets** autour d'un thème : le **langage** et sa **lecture**. Le mot « lecture » s'entend ici dans ses deux sens : la **lecture à voix haute**, celle d'une voix de synthèse, et l'**apprentissage de la lecture**, celui d'un enfant. Lectura se place ainsi à la croisée de trois domaines : le traitement automatique du langage (NLP), l'ingénierie vocale et les technologies éducatives (EdTech).
+Lectura est un **écosystème de projets** autour d'un thème : le **langage** et sa **lecture**. Le mot « lecture » s'entend ici dans ses deux sens : la **lecture à voix haute**, celle d'une voix de synthèse, et l'**apprentissage de la lecture**, celui d'un enfant. Lectura se place ainsi à la croisée de trois domaines : le traitement automatique du langage (NLP), l'ingénierie vocale (TTS & STT) et les technologies éducatives (EdTech).
 
 ---
 
