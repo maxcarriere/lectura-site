@@ -55,11 +55,11 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Decouvrir : https://www.lectura.world/decouvrir/
 - Les projets : https://www.lectura.world/decouvrir/projets/
 - Qu'est-ce que Lectura : https://www.lectura.world/a-propos/vision/
-- Methode (role de l'IA) : https://www.lectura.world/a-propos/methode/
 - Fondateur : https://www.lectura.world/a-propos/qui-suis-je/
 - Solutions : https://www.lectura.world/solutions/
 - Solutions technologiques : https://www.lectura.world/solutions/technologiques/
 - Solutions educatives : https://www.lectura.world/solutions/educatives/
+- Organiser le travail avec l'IA (methode de Lectura) : https://www.lectura.world/solutions/travail-ia/
 - Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
 - Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
 - Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/

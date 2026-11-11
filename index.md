@@ -26,7 +26,7 @@ Lectura est un écosystème de projets autour du **langage** et de sa **lecture*
 
 ---
 
-Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), selon une [méthode]({{ '/a-propos/methode/' | relative_url }}) où l'IA est un partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
+Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), selon une [méthode]({{ '/solutions/travail-ia/' | relative_url }}) où l'IA est un partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
 
 ---
 

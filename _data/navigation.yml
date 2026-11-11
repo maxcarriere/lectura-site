@@ -10,13 +10,8 @@
   children:
     - title: Les projets
       url: /decouvrir/projets/
-    - title: "Lectura"
+    - title: "Qu'est-ce que Lectura ?"
       url: /a-propos/vision/
-      children:
-        - title: "Qu'est-ce que Lectura ?"
-          url: /a-propos/vision/
-        - title: "Méthode : le rôle de l'IA"
-          url: /a-propos/methode/
     - title: Fondateur
       url: /a-propos/qui-suis-je/
 
@@ -38,6 +33,8 @@
           url: /developpement/recherche/phonetique/
     - title: "Éducatives"
       url: /solutions/educatives/
+    - title: "Travail avec l'IA"
+      url: /solutions/travail-ia/
 
 - title: Offres
   url: /offres/

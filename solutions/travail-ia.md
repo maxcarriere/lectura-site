@@ -1,7 +1,20 @@
 ---
-title: "Méthode : Le rôle de l'IA"
+title: "Organiser le travail avec l'IA"
 layout: default
-permalink: /a-propos/methode/
+permalink: /solutions/travail-ia/
+redirect_from:
+  - /a-propos/methode/
+description: "La méthode de travail avec l'IA selon laquelle Lectura a été développé, et ce qu'elle peut apporter à d'autres entreprises."
+---
+
+{% comment %} Troisième axe des Solutions (Maxime, 11/11/2026) : l'ancienne page « Méthode : le rôle de l'IA », présentée comme une solution. {% endcomment %}
+
+Lectura a été entièrement développé selon une méthode de travail avec l'IA, décrite sur cette page. Cette méthode n'est pas propre à Lectura : elle pourrait profiter à d'autres entreprises. C'est en cela qu'elle est une **solution**, au même titre que la technologie et les outils éducatifs.
+
+<span class="status-badge">Axe en cours de structuration</span>
+
+Ce que Lectura envisage de proposer : un environnement de travail préparamétré, un document qui explique l'organisation d'un projet mené avec l'IA, et une formation à l'usage d'outils comme Claude Code. Pour en parler : [Contact]({{ '/contact/' | relative_url }}).
+
 ---
 
 ## Le rôle de l'IA

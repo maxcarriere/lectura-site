@@ -18,6 +18,11 @@ description: "Les solutions de Lectura : une technologie du langage centrée sur
     <p>Apprentissage de la lecture, lecture syllabique, apprentissage des langues : les contenus, la méthode, et ce qui existe déjà.</p>
     <a class="more-link" href="{{ '/solutions/educatives/' | relative_url }}">Découvrir</a>
   </div>
+  <div class="home-card">
+    <h2>Travail avec l'IA</h2>
+    <p>La méthode selon laquelle Lectura a été développé, et ce qu'elle peut apporter à d'autres entreprises.</p>
+    <a class="more-link" href="{{ '/solutions/travail-ia/' | relative_url }}">Découvrir</a>
+  </div>
 </div>
 
 Pour les licences, les services et les produits, voir les [offres]({{ '/offres/' | relative_url }}).

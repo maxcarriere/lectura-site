@@ -40,7 +40,7 @@ L'IA permet aujourd'hui de tester en quelques jours des idées qui auraient dema
 
 Le travail est aussi organisé de façon systémique : les projets sont reliés entre eux et l'ensemble progresse d'un même mouvement. Chaque projet donne ses propres résultats, nourrit les autres et sert à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles, et chacun a fait progresser l'autre. C'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site.
 
-La [méthode]({{ '/a-propos/methode/' | relative_url }}) décrit plus en détail le rôle de l'IA dans ce travail.
+La page [Organiser le travail avec l'IA]({{ '/solutions/travail-ia/' | relative_url }}) décrit cette méthode plus en détail.
 
 ---
 
