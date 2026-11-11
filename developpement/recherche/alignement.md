@@ -21,7 +21,7 @@ L'alignement consiste à établir la correspondance entre les lettres écrites d
 - Un même phonème peut s'écrire de nombreuses façons (ex : /o/ → « o », « au », « eau », « ô », « ot », « os »...)
 - Les frontières entre graphèmes sont parfois ambiguës (ex : le « an » de « pantalon » → /ɑ̃/, mais le « an » de « panier » → /a.n/)
 
-Sans alignement fiable, impossible de colorier les syllabes, marquer les lettres muettes ou synchroniser l'audio avec le texte. C'est une brique fondamentale de l'[approche phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) de Lectura.
+Sans alignement fiable, impossible de colorier les syllabes, marquer les lettres muettes ou synchroniser l'audio avec le texte. C'est une brique fondamentale de l'[approche phonétique]({{ '/articles/le-point-de-vue-phonetique/' | relative_url }}) de Lectura.
 
 ### Table de correspondances
 

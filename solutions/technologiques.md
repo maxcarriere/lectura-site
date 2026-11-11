@@ -11,7 +11,7 @@ La technologie de Lectura traite le français (et de plus en plus l'anglais) de 
 
 Nos briques de lecture et de voix passent par la même étape : la **transcription phonétique**. Le texte est d'abord converti en sons (G2P), puis les sons en voix ; dans l'autre sens, la voix est transcrite en sons, puis les sons en texte (P2G). Ce passage commun relie des tâches que l'on traite d'habitude séparément : l'analyse du texte, la synthèse vocale, la reconnaissance vocale.
 
-Il apporte aussi une précision utile à la lecture : chaque son produit ou reconnu est daté. On peut donc surligner le texte en même temps que la voix, mot par mot ou syllabe par syllabe. L'approche est expliquée dans [le point de vue phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}).
+Il apporte aussi une précision utile à la lecture : chaque son produit ou reconnu est daté. On peut donc surligner le texte en même temps que la voix, mot par mot ou syllabe par syllabe. L'approche est expliquée dans [le point de vue phonétique]({{ '/articles/le-point-de-vue-phonetique/' | relative_url }}).
 
 ## Des données lexicales et vocales
 

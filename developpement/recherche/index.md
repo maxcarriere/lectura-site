@@ -8,9 +8,9 @@ Axes de recherche et essais techniques de Lectura. Ces travaux alimentent l'ense
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Le point de vue Phonétique</h2>
+    <h2>Le point de vue phonétique</h2>
     <p>L'approche fondamentale de Lectura : la phonétique comme passerelle entre l'écrit, la voix et l'apprentissage de la lecture.</p>
-    <a class="more-link" href="{{ '/developpement/recherche/phonetique/' | relative_url }}">Consulter la page</a>
+    <a class="more-link" href="{{ '/articles/le-point-de-vue-phonetique/' | relative_url }}">Lire l'article</a>
   </div>
   <div class="home-card">
     <h2>Algorithmes développés</h2>

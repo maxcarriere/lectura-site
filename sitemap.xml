@@ -215,8 +215,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.lectura.world/developpement/recherche/phonetique/</loc>
+    <loc>https://www.lectura.world/articles/le-point-de-vue-phonetique/</loc>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/decouvrir/articles/</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.lectura.world/developpement/recherche/tts-diphonique/</loc>

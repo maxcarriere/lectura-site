@@ -8,9 +8,20 @@ theme: minima
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-feed
+
+# Articles (blog de Découvrir et Nouveautés de l'accueil ; Maxime, 11/11/2026)
+feed:
+  path: /articles/feed.xml
 
 defaults:
   - scope:
       path: ""
     values:
       layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      permalink: /articles/:title/

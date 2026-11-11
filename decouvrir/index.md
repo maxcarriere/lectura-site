@@ -5,7 +5,7 @@ permalink: /decouvrir/
 description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méthode de travail, et son fondateur."
 ---
 
-{% comment %} Maxime, 11/11/2026 : trois cartes sur une ligne, un titre et une petite icône. {% endcomment %}
+{% comment %} Maxime, 11/11/2026 : trois cartes sur une ligne, un titre et une petite icône ; quatrième carte, les articles (blog, 11/11). {% endcomment %}
 
 <div class="decouvrir-cartes" markdown="0">
   <a class="dc-carte" href="{{ '/decouvrir/projets/' | relative_url }}">
@@ -19,5 +19,9 @@ description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méth
   <a class="dc-carte" href="{{ '/a-propos/qui-suis-je/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
     <span class="dc-sur">Découvrir</span><span class="dc-titre">Qui porte le projet ?</span>
+  </a>
+  <a class="dc-carte" href="{{ '/decouvrir/articles/' | relative_url }}">
+    <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4M8 11h8M8 15h8M8 19h5"/></svg></span>
+    <span class="dc-sur">Découvrir</span><span class="dc-titre">Les articles</span>
   </a>
 </div>

@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{%- comment -%} Un article (blog de Découvrir, Nouveautés de l'accueil ; Maxime, 11/11/2026). {%- endcomment -%}
+<p class="article-meta"><a href="{{ '/decouvrir/articles/' | relative_url }}">Articles</a> · <time datetime="{{ page.date | date_to_xmlschema }}">{% include date-fr.html date=page.date %}</time></p>
+{{ content }}
+<hr>
+<p class="article-meta"><a href="{{ '/decouvrir/articles/' | relative_url }}">Tous les articles</a> · <a href="{{ '/articles/feed.xml' | relative_url }}">flux RSS</a></p>

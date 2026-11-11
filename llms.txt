@@ -64,7 +64,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
 - Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/
 - Lexique : https://www.lectura.world/solutions/lexique/
-- Le point de vue phonetique : https://www.lectura.world/developpement/recherche/phonetique/
+- Le point de vue phonetique : https://www.lectura.world/articles/le-point-de-vue-phonetique/
 - Offres : https://www.lectura.world/offres/
 - Entreprises : https://www.lectura.world/offres/entreprises/
 - Particuliers : https://www.lectura.world/offres/particuliers/

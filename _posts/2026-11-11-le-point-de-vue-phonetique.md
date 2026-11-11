@@ -1,10 +1,12 @@
 ---
-title: "Le point de vue Phonétique"
-layout: default
-permalink: /developpement/recherche/phonetique/
+title: "Le point de vue phonétique"
+categories: [article]
+description: "L'approche fondamentale de Lectura : la phonétique comme passerelle entre l'écrit, la voix et l'apprentissage de la lecture."
 redirect_from:
+  - /developpement/recherche/phonetique/
   - /projets/lecture-augmentee/
 ---
+{% comment %} Ancienne page « Le point de vue Phonétique » (Développement > Recherche), devenue le premier article (Maxime, 11/11/2026). Texte inchangé, à relire avec Maxime. {% endcomment %}
 
 ## L'idée fondatrice
 

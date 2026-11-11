@@ -32,7 +32,19 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 ---
 
-Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}). Ses solutions sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives ; Lectura propose aussi sa méthode pour organiser le travail avec l'IA. Son offre commerciale réunit licences, services et tarifs, et la partie technique présente le développement des outils.
+<div class="accueil-nouveautes" markdown="0">
+  <h2>Nouveautés</h2>
+  <ul>
+  {%- for a in site.posts limit: 3 %}
+    <li><small><time datetime="{{ a.date | date_to_xmlschema }}">{% include date-fr.html date=a.date %}</time></small> · <a href="{{ a.url | relative_url }}">{{ a.title }}</a></li>
+  {%- endfor %}
+  </ul>
+  <p class="ap-savoir"><a href="{{ '/decouvrir/articles/' | relative_url }}">Tous les articles</a></p>
+</div>
+
+---
+
+L'objectif de Lectura est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; partager sa méthode de travail, en termes d'organisation, en lien étroit avec l'intelligence artificielle. L'[offre commerciale]({{ '/offres/' | relative_url }}) de Lectura s'adresse à la fois aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) et aux [particuliers]({{ '/offres/particuliers/' | relative_url }}). La composante technique de Lectura World est détaillée dans la section [Développement]({{ '/developpement/' | relative_url }}).
 
 <p class="ap-savoir">En savoir plus sur <a href="{{ '/solutions/' | relative_url }}">les solutions</a> · <a href="{{ '/offres/' | relative_url }}">les offres</a> · <a href="{{ '/developpement/' | relative_url }}">la partie technique</a></p>
 
