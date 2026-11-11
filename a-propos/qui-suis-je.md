@@ -10,7 +10,7 @@ Je m'appelle Maxime Carrière. Je suis agrégé de mathématiques et j'ai enseig
 
 J'ai choisi de me confronter directement à cette transformation, en construisant des projets réels, en apprenant par la pratique, et en documentant le chemin parcouru.
 
-Le thème de ces projets est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce point de départ, a priori modeste, s'est révélé plus structurant qu'il n'y paraissait. Mon intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. C'est de là qu'est née l'idée de travailler sur la synthèse vocale, puis sur les autres projets de [Lectura]({{ '/a-propos/vision/' | relative_url }}).
+Le thème de ces projets est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce point de départ, a priori modeste, s'est révélé plus structurant qu'il n'y paraissait. Mon intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. Le premier projet a donc été la lecture syllabique, fondée sur l'alignement entre les lettres et les sons (graphèmes et phonèmes). De nombreuses applications s'y sont ensuite greffées naturellement, et sont devenues les projets de [Lectura]({{ '/a-propos/vision/' | relative_url }}).
 
 ## Un parcours entre transmission et construction
 
