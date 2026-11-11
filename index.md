@@ -32,6 +32,8 @@ Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | rel
 
 Lectura s'adresse aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
 
+Les [solutions]({{ '/solutions/' | relative_url }}) de Lectura sont technologiques (analyse du langage, synthèse et reconnaissance vocales, lexique) et éducatives.
+
 Vous pouvez découvrir l'[offre commerciale]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
 
 La partie technique est présentée dans [Développement]({{ '/developpement/' | relative_url }}).
