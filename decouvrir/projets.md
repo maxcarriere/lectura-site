@@ -9,7 +9,7 @@ Chaque projet de Lectura a son propre site. On y trouve la présentation détail
 
 ## En ligne
 
-### LecturaLexique
+<h3 class="projet-titre" id="lecturalexique"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span>LecturaLexique</h3>
 
 Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gratuitement en ligne ; le lexique **LeXiK** se télécharge gratuitement, sous licence libre, et a fait l'objet d'une publication sur ORTOLANG. Le site propose aussi, sous licence commerciale, le module **Lexicon** et des **corpus de syllabes et de mots** tirés de LeXiK.
 
@@ -18,7 +18,7 @@ Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gr
   <a href="https://lexique.lectura.world/wikilexik">Chercher un mot</a>
 </div>
 
-### LecturaLingua
+<h3 class="projet-titre" id="lecturalingua"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span>LecturaLingua</h3>
 
 L'analyse de la langue écrite, en français et en anglais : analyse grammaticale, passage de l'écrit à la prononciation (G2P) et de la prononciation à l'écrit (P2G), correcteur, traduction et lecture syllabique. Les outils sont gratuits et sans inscription.
 
@@ -27,7 +27,7 @@ L'analyse de la langue écrite, en français et en anglais : analyse grammatical
   <a href="https://lingua.lectura.world/syllabes">Lecture syllabique</a>
 </div>
 
-### LecturaVoice
+<h3 class="projet-titre" id="lecturavoice"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span>LecturaVoice</h3>
 
 La voix : synthèse vocale avec surlignage synchronisé du texte, reconnaissance vocale, et alignement d'un texte sur sa lecture (karaoké, sous-titres).
 
@@ -41,10 +41,16 @@ Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuell
 
 ## En préparation
 
-### LecturaEducation
+<h3 class="projet-titre" id="lecturaeducation"><span class="cp-icone">{% include icone-projet.html nom='ardoise' %}</span>LecturaEducation</h3>
 
 Le site de nos produits pour apprendre à lire : une méthode de lecture (manuel et application), des applications et des jeux, des histoires syllabiques. **En préparation** : nous construisons d'abord les ressources communes à ces produits, une liste de mots illustrés et la progression des leçons. Le site ouvrira avec le premier produit.
 
-D'autres sites sont à l'étude, pour des outils de lecture (LecturaTools) et des jeux de lettres et de sons (LecturaGames).
+D'autres sites sont à l'étude :
+
+<ul class="projets-etude" markdown="0">
+  <li><span class="cp-icone">{% include icone-projet.html nom='outils' %}</span><span><strong>LecturaTools</strong> : des outils de lecture</span></li>
+  <li><span class="cp-icone">{% include icone-projet.html nom='de' %}</span><span><strong>LecturaGames</strong> : des jeux de lettres et de sons</span></li>
+  <li><span class="cp-icone">{% include icone-projet.html nom='livres' %}</span><span><strong>LecturaBooks</strong> : des livres</span></li>
+</ul>
 
 Une question sur un projet : [nous contacter]({{ '/contact/' | relative_url }}).

@@ -1,5 +1,5 @@
 # Carte « Lectura World » : un projet par continent (Maxime, 09/11) ; x / y = position du médaillon sur
-# le planisphère, en % : c'est le centre de l'icône (le nom est dessous), posé au centre du continent (répartition de Maxime, 10/11 : Lingua Europe, Voice Asie, Lexique Océanie, Education Afrique, Games Amérique du Nord, Books Amérique du Sud). Continents (projets) et régions (domaines). Une région sans point reste grise.
+# le planisphère, en % : c'est le centre de l'icône (le nom est dessous), posé au centre du continent (répartition de Maxime, 10/11 : Lingua Europe, Voice Asie, Lexique Océanie, Education Afrique, Games Amérique du Nord, Books Amérique du Sud ; 11/11 : Tools sur le Groenland). Continents (projets) et régions (domaines). Une région sans point reste grise.
 # Accès rapide : un groupe par projet, dans cet ordre (_includes/sidebar-right.html).
 # Les points eux-mêmes sont les mots de l'en-tête (_data/mots-cles.yml, champs projet / region).
 - projet: lexique
@@ -37,3 +37,4 @@
 - {projet: education, nom: LecturaEducation, statut: "en préparation", continent: Afrique, x: 52, y: 46, icone: ardoise}
 - {projet: games, nom: LecturaGames, statut: "à l'étude", continent: Amérique du Nord, x: 27, y: 25, icone: de}
 - {projet: books, nom: LecturaBooks, statut: "à l'étude", continent: Amérique du Sud, x: 36.5, y: 55, icone: livres}
+- {projet: tools, nom: LecturaTools, statut: "à l'étude", continent: Groenland, x: 41, y: 13, icone: outils}

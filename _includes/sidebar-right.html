@@ -1,5 +1,6 @@
 {%- comment -%} Accès rapide (Maxime, 09/11/2026) : les outils de chaque projet, groupés par projet, tirés de
-_data/carte.yml (projets) et _data/mots-cles.yml (outils). Ajouter un outil = ajouter une ligne à mots-cles.yml. {%- endcomment -%}
+_data/carte.yml (projets) et _data/mots-cles.yml (outils). Ajouter un outil = ajouter une ligne à mots-cles.yml.
+  Seulement ce qui est développé (Maxime, 11/11) : pas de projets en préparation ni à l'étude. {%- endcomment -%}
 <aside class="site-sidebar-right" aria-label="Accès rapide">
   <div class="sidebar-title">Accès rapide</div>
   <nav class="quick-nav">
@@ -52,9 +53,5 @@ _data/carte.yml (projets) et _data/mots-cles.yml (outils). Ajouter un outil = aj
     </section>
     {%- endif -%}
     {%- endfor %}
-    <p class="qn-prepa">
-      {%- assign prepa = site.data.carte | where_exp: "p", "p.statut" -%}
-      {%- for p in prepa %}<span>{{ p.nom }}</span> <em>({{ p.statut }})</em>{% unless forloop.last %}<br>{% endunless %}{% endfor %}
-    </p>
   </nav>
 </aside>
