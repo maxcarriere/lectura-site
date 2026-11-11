@@ -24,6 +24,10 @@ Elle est organisée autour de la phonétique, pivot commun entre le texte et la 
 | Reconnaissance vocale du français | Decoder ; métier STT |
 | Alignement d'un texte sur sa lecture, sous-titres | Aligner, Subtitler |
 
+## Les programmes de bureau
+
+Des logiciels de bureau construits sur ces modules ont été prototypés au printemps et à l'été 2026 (Lectura Voice Edition, Lectura Lexique Viewer, Lectura Formule). Ils sont en pause ; une partie de leurs fonctions est en ligne sur les sites projets. Voir [les programmes]({{ '/produits/programmes/' | relative_url }}).
+
 ## La première génération (v0, archives)
 
 Publiée en juillet 2026 sur PyPI et [GitHub](https://github.com/maxcarriere/lectura-modules), sous licence AGPL-3.0, elle compte dix-sept paquets Python, organisés en **briques outils** (modules atomiques réutilisables) et **pipelines métiers** (chaînes applicatives). Elle n'est plus développée ; sa documentation reste en ligne ci-dessous.

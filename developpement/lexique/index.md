@@ -3,7 +3,6 @@ title: Lexique
 layout: default
 permalink: /developpement/lexique/
 redirect_from:
-  - /developpement/ressources/
   - /developpement/ressources/lexik/
   - /developpement/ressources/kit-g2p-p2g/
   - /developpement/ressources/corpus/

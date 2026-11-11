@@ -54,21 +54,31 @@
 - title: "Développement"
   url: /developpement/
   children:
-    - title: Modules
+    - title: "L'écosystème du projet"
+      url: /developpement/ecosysteme/
+      children:
+        - title: Recherche
+          url: /developpement/recherche/
+        - title: Projets transversaux
+          url: /developpement/projets/
+    - title: Les modules
       url: /developpement/modules/
       children:
         - title: Briques outils
           url: /developpement/modules/outils/
         - title: Pipelines métiers
           url: /developpement/modules/metiers/
-    - title: "Programmes & applications"
-      url: /produits/programmes/
-    - title: Ressources
-      url: /produits/ressources/
-    - title: "Données"
-      url: /developpement/donnees/
-    - title: Recherche
-      url: /developpement/recherche/
+        - title: Programmes
+          url: /produits/programmes/
+    - title: Les ressources
+      url: /developpement/ressources/
+      children:
+        - title: Lexique
+          url: /developpement/lexique/
+        - title: "Données"
+          url: /developpement/donnees/
+        - title: Ressources produites
+          url: /produits/ressources/
 
 - title: "Contact & liens"
   url: /contact/
