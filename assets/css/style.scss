@@ -1861,8 +1861,8 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
 
 /* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : fond rouge transparent, lettres dans leur couleur (Maxime, 11/11). */
 .ap-u.ap-lu {
-  background: rgba(198, 40, 40, 0.36);  /* plus prononcé, toujours transparent (Maxime, 11/11) */
-  box-shadow: 0 0 0 0.08em rgba(198, 40, 40, 0.36);
+  background: rgba(230, 20, 20, 0.55);  /* bien visible, toujours transparent (Maxime, 11/11, deux fois) */
+  box-shadow: 0 0 0 0.12em rgba(230, 20, 20, 0.55);
 }
 
 .ap-ecouter {
