@@ -10,6 +10,8 @@ Je m'appelle Maxime Carrière. Je suis agrégé de mathématiques et j'ai enseig
 
 J'ai choisi de me confronter directement à cette transformation, en construisant des projets réels, en apprenant par la pratique, et en documentant le chemin parcouru.
 
+Le thème de ces projets est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce point de départ, a priori modeste, s'est révélé plus structurant qu'il n'y paraissait. Mon intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. C'est de là qu'est née l'idée de travailler sur la synthèse vocale, puis sur les autres projets de [Lectura]({{ '/a-propos/vision/' | relative_url }}).
+
 ## Un parcours entre transmission et construction
 
 L'enseignement m'a appris à structurer les idées, à chercher la clarté et à m'adapter à ceux qui apprennent. Le développement m'a appris à construire, à tester et à itérer. Les deux se nourrissent plus qu'on ne pourrait le croire : dans les deux cas, il faut comprendre un problème en profondeur avant de pouvoir le résoudre, ou l'expliquer. Le travail avec l'IA renforce encore ce lien : pour qu'elle résolve correctement un problème, il faut savoir le lui formuler clairement. Et ce travail de formulation participe lui-même à la compréhension du problème. Ce qui se conçoit bien s'énonce clairement, et réciproquement.

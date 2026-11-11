@@ -4,66 +4,50 @@ layout: default
 permalink: /a-propos/vision/
 redirect_from:
   - /vision/
+description: "Lectura, un écosystème de projets autour du langage et de sa lecture : des outils technologiques et éducatifs, la phonétique comme pont entre l'écrit et l'oral, de nouvelles façons de travailler avec l'IA, et l'horizon d'une langue universelle."
 ---
 
-## Qu'est-ce que Lectura ?
+{% comment %} Vision (plan de Maxime, 11/11/2026) : général et philosophique ; les réalisations sont détaillées dans Solutions. Ordre : outils, phonétique, méthodes, langue universelle (1 et 2 inversés, comme Maxime le proposait). {% endcomment %}
 
-Lectura est un **écosystème de projets modulaires** situé à la croisée du développement informatique, de l'éducation, de l'intelligence artificielle et de la réflexion sur les transformations du monde du travail.
-
-Il ne s'agit ni d'un produit unique, ni d'une plateforme monolithique. C'est un ensemble de projets développés progressivement, de manière indépendante mais cohérente, avec un double objectif :
-
-- **produire réellement** : développer des outils concrets, fonctionnels et potentiellement viables.
-- **apprendre en faisant** : explorer de manière intensive l'usage des outils d'intelligence artificielle, leurs apports, leurs limites et leurs effets.
+Lectura est un **écosystème de projets** autour d'un thème : le **langage** et sa **lecture**. Le mot « lecture » s'entend ici dans ses deux sens : la **lecture à voix haute**, celle d'une voix de synthèse, et l'**apprentissage de la lecture**, celui d'un enfant. Lectura se place ainsi à la croisée de trois domaines : le traitement automatique du langage (NLP), l'ingénierie vocale et les technologies éducatives (EdTech).
 
 ---
 
-## Origine
+## 1. Des outils technologiques et éducatifs
 
-Lectura est né d'une démarche de reconversion professionnelle, dans un contexte de bouleversement rapide du monde du travail lié à l'émergence des outils d'IA.
+Lectura développe ses outils sur deux plans.
 
-Le projet ne cherche pas à prédire l'avenir de manière abstraite. Il vise à **s'y confronter concrètement**, en développant des compétences, des méthodes et des réalisations adaptées aux mutations en cours.
+**Faire avancer la technologie du langage et de la voix.** En posant chaque problème au bon niveau, on peut obtenir des outils plus efficaces, plus précis et plus légers, capables de fonctionner en local, sans dépendre d'un serveur distant.
 
----
-
-## Pourquoi la lecture ?
-
-La lecture occupe une place centrale dans les projets Lectura, sans constituer une finalité exclusive.
-
-Ce choix est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce choix a priori personnel s'est révélé plus structurant qu'il n'y paraissait.
-
-La lecture, entendue au sens large comme **capacité à décoder, structurer et interpréter des systèmes symboliques**, se trouve au carrefour de deux mondes :
-
-- côté humain : la lecture engage le langage, la symbolisation, la structuration de la pensée ;
-- côté technologique : l'intelligence artificielle repose aujourd'hui sur des modèles de langage, les mêmes fondations qui permettent de produire du texte, du code, de la musique ou des raisonnements structurés.
-
-L'intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Comprendre les processus à l'œuvre dans le premier cas permet d'éclairer ceux du second. C'est de cette convergence qu'est née l'idée de travailler sur la synthèse vocale : dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. La phonétique est devenue le socle commun à partir duquel se sont construits les autres projets.
-
-La lecture n'est pas une limite du projet. C'est un **point d'ancrage pertinent à un instant donné**, qui pourra évoluer.
+**Mettre cette technologie au service de l'apprentissage.** Sur cette base, Lectura conçoit des outils éducatifs et ludiques. Le numérique y sert à apprendre en autonomie. Le jeu y a toute sa place, mais jamais au prix de l'efficacité : un outil ludique qui ne fait pas progresser n'est plus un outil d'apprentissage.
 
 ---
 
-## Un projet interdisciplinaire
+## 2. La phonétique, pont naturel entre l'écrit et l'oral
 
-Chaque projet Lectura est traité dans toutes ses dimensions :
+Entre la langue écrite et la langue parlée, la phonétique fait le lien : elle dit quels sons portent les lettres.
 
-- **créative et conceptuelle** : idées, orientation, intentions ;
-- **technique et informatique** : algorithmes, architecture, développement ;
-- **pédagogique et fonctionnelle** : usages réels, compréhension par l'utilisateur ;
-- **éditoriale et de contenu** : textes, sons, narration ;
-- **diffusion et valorisation** : présentation, distribution, mise en valeur.
-
-Ces dimensions ne sont pas traitées les unes après les autres. Elles avancent en parallèle et s'influencent mutuellement, pour éviter des projets techniquement aboutis mais inutilisables, ou conceptuellement séduisants mais irréalisables.
+- **Son apport technologique** : elle permet de traiter certains problèmes au bon niveau. Les voix de Lectura lisent des sons plutôt que des lettres, sans avoir à apprendre l'orthographe ; et bien des fautes d'orthographe s'expliquent par le son, car on écrit souvent ce que l'on entend : en passant par le son, on retrouve plus facilement le mot voulu.
+- **Son apport pédagogique** : elle rend explicites les sons que l'enfant doit prononcer, syllabe par syllabe.
 
 ---
 
-## Vers quoi tend Lectura ?
+## 3. Explorer de nouvelles façons de travailler
 
-À terme, Lectura pourra :
-- donner naissance à des produits autonomes,
-- déboucher sur une activité professionnelle ou une entreprise,
-- produire des outils, des contenus ou des méthodes diffusables,
-- ou servir de socle à de nouvelles formes de collaboration.
+Au-delà de la lecture, Lectura explore de nouvelles méthodes de travail, de développement et de recherche avec l'IA. Le but n'est pas de produire plus, mais d'aller plus loin, en répartissant bien les rôles : à l'IA la partie technique, le développement et la production, où elle excelle ; à l'humain ce qui n'est pas remplaçable (l'orientation, la créativité, les idées).
 
-L'ambition n'est pas de figer dès aujourd'hui une destination précise, mais de se rendre capable de saisir les opportunités qui émergeront.
+L'IA permet aujourd'hui de tester en quelques jours des idées qui auraient demandé, hier, des mois ou des années de développement. Pouvoir essayer vite, c'est se donner plus de chances de découvrir.
 
-Plus que les résultats ponctuels, Lectura cherche à explorer, documenter et transmettre une **posture de travail viable dans un monde en transformation rapide**.
+Le travail est aussi organisé de façon systémique : les projets sont reliés entre eux et l'ensemble progresse d'un même mouvement. Chaque projet donne ses propres résultats, nourrit les autres et sert à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles, et chacun a fait progresser l'autre. C'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site.
+
+La [méthode]({{ '/a-propos/methode/' | relative_url }}) décrit plus en détail le rôle de l'IA dans ce travail.
+
+---
+
+## 4. Un horizon : une langue universelle
+
+Une langue universelle n'est pas un objectif en soi, mais un horizon dans lequel Lectura souhaite prendre place.
+
+Une langue commune à tous serait un gain évident pour l'humanité ; pourtant, aucune tentative n'a vraiment abouti. L'essor des grands modèles de langage remet la question sur la table. Ces modèles semblent porter, de façon implicite, un socle commun à toutes les langues qu'ils ont apprises, et c'est justement parce qu'il est implicite qu'on le maîtrise mal. Une langue explicite permettrait de reprendre la main, et peut-être de concevoir des modèles plus légers, entraînés sur une langue commune plutôt que sur des centaines.
+
+La phonétique pourrait en être la première brique : sans écart entre l'écrit et l'oral, une telle langue s'apprendrait facilement. Certaines langues s'appuient déjà sur leurs sons : le chinois transcrit sa prononciation avec le pinyin, et l'alphabet coréen a été construit à partir des sons de la langue. La deuxième étape à valider serait la correspondance un à un entre signe et sens : un seul sens pour chaque signe, un seul signe pour chaque sens.
