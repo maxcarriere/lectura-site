@@ -9,38 +9,37 @@ description: "Lectura met l'IA au service du langage et de sa lecture : lire à 
 image: /assets/images/og-lectura.png
 ---
 
+{%- comment -%} Accueil volontairement court (Maxime, 11/11/2026) : une phrase par partie, des séparateurs, les projets en icônes. {%- endcomment -%}
 Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la [phonétique]({{ '/developpement/recherche/phonetique/' | relative_url }}) comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais.
 
-<div class="cta-box" markdown="0">
-  <h3>Les projets, à essayer en ligne</h3>
-  <div class="cta-projets">
-    <a href="https://lexique.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalexique.svg' | relative_url }}" width="768" height="276" alt="LecturaLexique"></span><span class="cta-projet-texte">Le lexique du français : dictionnaire WiKiLeXiK, lexique LeXiK, corpus</span></a>
-    <a href="https://lingua.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturalingua.webp' | relative_url }}" width="458" height="128" alt="LecturaLingua"></span><span class="cta-projet-texte">L'écrit : analyse grammaticale, phonétique, correcteur, lecture syllabique</span></a>
-    <a href="https://voice.lectura.world"><span class="cta-projet-logo"><img src="{{ '/assets/images/projets/lecturavoice.webp' | relative_url }}" width="426" height="128" alt="LecturaVoice"></span><span class="cta-projet-texte">La voix : synthèse et reconnaissance vocales, sous-titrage synchronisé</span></a>
+---
+
+<div class="accueil-projets" markdown="0">
+  <h2>Nos projets</h2>
+  <div class="ap-projets">
+    <a href="https://lexique.lectura.world" title="LecturaLexique : le lexique du français"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><span>Lexique</span></a>
+    <a href="https://lingua.lectura.world" title="LecturaLingua : l'écrit"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><span>Lingua</span></a>
+    <a href="https://voice.lectura.world" title="LecturaVoice : la voix"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span><span>Voice</span></a>
   </div>
-  <p><a href="{{ '/decouvrir/projets/' | relative_url }}">Tous les projets</a>, dont <strong>LecturaEducation</strong>, en préparation, pour apprendre à lire.</p>
+  <p class="ap-projets-suite"><a href="{{ '/decouvrir/projets/' | relative_url }}">Tous les projets</a>, dont ceux en préparation.</p>
 </div>
 
-<div class="home-grid">
-  <div class="home-card">
-    <h2>Entreprises</h2>
-    <p>Éditeurs, edtech, voix, formation, recherche : licences de nos modules et de nos corpus, intégration, modèles et données sur mesure.</p>
-    <a href="{{ '/offres/entreprises/' | relative_url }}">L'offre aux entreprises</a>
-  </div>
-  <div class="home-card">
-    <h2>Particuliers</h2>
-    <p>Familles, enseignants, curieux : nos outils en ligne sont gratuits ; une méthode de lecture (manuel et application) est en préparation.</p>
-    <a href="{{ '/offres/particuliers/' | relative_url }}">Pour les particuliers</a>
-  </div>
-</div>
+---
 
-Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), selon une [méthode]({{ '/a-propos/methode/' | relative_url }}) où l'IA est un partenaire de production à part entière. Pour en savoir plus : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }}), [nos solutions]({{ '/solutions/' | relative_url }}), [le développement]({{ '/developpement/' | relative_url }}).
+Lectura est développé par [Maxime Carrière]({{ '/a-propos/qui-suis-je/' | relative_url }}), selon une [méthode]({{ '/a-propos/methode/' | relative_url }}) où l'IA est un partenaire de production à part entière : [qu'est-ce que Lectura ?]({{ '/a-propos/vision/' | relative_url }})
 
-<div class="cta-box" markdown="0">
-  <h3>Un projet, une question ?</h3>
-  <div class="cta-links cta-links-center">
-    <a href="{{ '/contact/' | relative_url }}"><span class="cta-icon">✉️</span>Nous contacter</a>
-  </div>
-</div>
+---
 
-Autres sites : [Humanuscrit](https://humanuscrit.com/) (écriture) et [Zmaths](https://www.zmaths.net/) (cours de mathématiques).
+Nous nous adressons aux [entreprises]({{ '/offres/entreprises/' | relative_url }}) comme aux [particuliers]({{ '/offres/particuliers/' | relative_url }}).
+
+---
+
+Vous pouvez découvrir [notre offre]({{ '/offres/' | relative_url }}) plus en détail : licences, services et tarifs.
+
+---
+
+Nos modules, nos modèles et nos données sont présentés dans [le développement]({{ '/developpement/' | relative_url }}).
+
+---
+
+Un projet, une question ? [Contactez-nous]({{ '/contact/' | relative_url }}).

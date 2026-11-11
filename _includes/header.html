@@ -11,6 +11,13 @@
       <span class="header-carte-long">Afficher la carte des projets</span><span class="header-carte-court">Carte</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16 L12 8 L19 16 Z"/></svg>
     </a>
+    {%- comment -%} Téléphone (Maxime, 11/11) : pas de carte, les projets en icônes dans l'en-tête. {%- endcomment -%}
+    <nav class="header-projets" aria-label="Projets">
+      {%- for p in site.data.carte %}
+      {%- if p.url %}<a href="{{ p.url }}" title="{{ p.nom }}">{% include icone-projet.html nom=p.icone %}</a>
+      {%- else %}<span class="hp-prepa" title="{{ p.nom }} : {{ p.statut }}">{% include icone-projet.html nom=p.icone %}</span>{% endif %}
+      {%- endfor %}
+    </nav>
     <div class="header-sites">
       <a href="https://humanuscrit.com/" target="_blank" rel="noopener" class="header-site-link" title="Humanuscrit">
         <img src="{{ '/assets/images/logo-humanuscrit.png' | relative_url }}" alt="">
@@ -76,11 +83,13 @@
           <a href="{{ item.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l1">{{ item.title }}</a>
         {% endif %}
       {% endfor %}
+      <div class="mobile-nav-quick">{%- comment -%} masqué sur téléphone (Maxime, 11/11) {%- endcomment -%}
       <span class="mobile-nav-sep"></span>
       <div class="mobile-nav-quick-title">Accès rapide</div>
       {% for item in site.data.quicknav %}
         <a href="{{ item.url | relative_url }}" class="mobile-nav-link mobile-nav-link--l2">{{ item.title }}</a>
       {% endfor %}
+      </div>
       <span class="mobile-nav-sep"></span>
       <a href="{{ '/mentions-legales/' | relative_url }}" class="mobile-nav-link">Mentions legales</a>
       <a href="{{ '/confidentialite/' | relative_url }}" class="mobile-nav-link">Confidentialite</a>

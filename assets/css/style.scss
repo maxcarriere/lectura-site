@@ -1789,7 +1789,7 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
 .carte-phrase .ap-ligne1 { font-size: 2.15cqw; line-height: 1.05; }
 .carte-phrase .ap-ligne2 { font-size: 1.4cqw; line-height: 1.15; margin-top: 0; color: #2a1d15; }
 .carte-phrase .ap-ligne {
-  text-shadow: 0 0 4px #fff, 0 0 10px rgba(255, 255, 255, 0.9), 0 0 18px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px rgba(255, 255, 255, 0.95), 0 0 18px rgba(255, 255, 255, 0.8);
 }
 
 .ap-fleche {
@@ -1832,7 +1832,7 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
 .ap-ligne1 {
   font-family: 'Cinzel', serif;
   font-size: clamp(1.9rem, 3.6vw, 3rem);
-  font-weight: 600;
+  font-weight: 700;  /* plus gras, plus lisible sur la carte (Maxime, 11/11) */
   letter-spacing: 0.04em;
   line-height: 1.2;
 }
@@ -1841,6 +1841,7 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   color: #3b2a20;
   font-style: italic;
+  font-weight: 600;
   margin-top: 0.4rem;
 }
 
@@ -1858,13 +1859,11 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
   padding: 0 0.02em;
 }
 
-/* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : surligné en rouge, lettres en blanc (Maxime, 10/11 : plus visible). */
+/* Syllabe (ligne 1) ou mot (ligne 2) en cours de lecture : fond rouge transparent, lettres dans leur couleur (Maxime, 11/11). */
 .ap-u.ap-lu {
-  background: #c62828;
-  box-shadow: 0 0 0 0.08em #c62828;
-  text-shadow: none !important;
+  background: rgba(198, 40, 40, 0.22);
+  box-shadow: 0 0 0 0.08em rgba(198, 40, 40, 0.22);
 }
-.ap-u.ap-lu, .ap-u.ap-lu span { color: #fff !important; text-shadow: none !important; }
 
 .ap-ecouter {
   margin-top: 1rem;
@@ -1885,15 +1884,41 @@ a.carte-projet:hover .cp-nom { background: #fff8e6; }
 .ap-ecouter:focus-visible { background: #3b2a20; }
 .ap-en-cours .ap-ecouter span::after { content: " (arrêter)"; }
 
-@media (max-width: 1199px) {
-  .accueil-haut { min-height: 0; display: block; }
-  .carte-monde { width: 100%; aspect-ratio: auto; }
-  .carte-fond { height: auto; }
-  .cp-icone { width: 30px; height: 30px; min-width: 0; min-height: 0; border-width: 1.5px; }
-  .carte-projet { transform: translate(-50%, -15px); }
-  .cp-nom, .cp-langues { display: none; }
-  .carte-projet--prepa { display: none; }
-  .carte-phrase { position: static; transform: none; width: auto; padding: 1rem 0.5rem; gap: 0.6rem; background: #f6f1e7; }
-  .carte-phrase .ap-ligne1 { font-size: clamp(1.25rem, 6vw, 1.9rem); }
-  .carte-phrase .ap-ligne2 { font-size: clamp(0.95rem, 4vw, 1.25rem); }
+/* Téléphone (Maxime, 11/11) : pas de carte ; la phrase seule en tête, les projets en icônes dans l'en-tête.
+   La tablette garde la disposition de l'ordinateur (carte, phrase sur l'Antarctique, flèche dessous). */
+@media (max-width: 699px) {
+  .accueil-haut { min-height: 0; display: block; padding: 0; background: #f6f1e7; }
+  .carte-monde { width: 100%; aspect-ratio: auto; container-type: normal; }
+  .carte-fond, .carte-projet, .ap-fleche-bas { display: none; }
+  .carte-phrase { position: static; transform: none; width: auto; padding: 1.1rem 0.75rem 1rem; }
+  .carte-phrase .ap-ligne1 { font-size: clamp(1.15rem, 6vw, 1.7rem); }
+  .carte-phrase .ap-ligne2 { font-size: clamp(0.95rem, 4.2vw, 1.2rem); }
+  .carte-phrase .accueil-phrase { display: flex; flex-direction: column; align-items: center; }
+  .carte-phrase .accueil-phrase.ap-invite .ap-ecouter { position: static; transform: none; order: -1; margin: 0 0 0.5rem; width: 34px; height: 34px; }
 }
+
+/* En-tête du téléphone (Maxime, 11/11) : les projets en icônes à la place du bouton « Carte ». */
+.header-projets { display: none; }
+@media (max-width: 699px) {
+  .header-carte { display: none; }
+  .header-projets { display: flex; flex: 1 1 auto; justify-content: center; gap: 0.3rem; margin: 0 0.3rem; min-width: 0; }
+  .header-projets a, .header-projets span.hp-prepa { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #fffaf0, #f0e2c4 70%, #d9c39a); border: 1.5px solid #5a3e28; color: #3a2716; flex: none; }
+  .header-projets svg { width: 62%; height: 62%; }
+  .header-projets .hp-prepa { filter: grayscale(1); opacity: 0.45; border-style: dashed; }
+  .mobile-nav-quick { display: none; }
+}
+@media (max-width: 479px) {
+  .header-projets span.hp-prepa { display: none; }  /* place comptée : les projets ouverts seulement */
+}
+
+/* Accueil : les projets en icônes (Maxime, 11/11) */
+.accueil-projets { text-align: center; }
+.parchment-content .accueil-projets h2 { margin: 0 0 1rem; text-align: center !important; }  /* la règle anti-Dark Reader alignait à gauche */
+.ap-projets { display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem; }
+.parchment-content .ap-projets a { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; text-decoration: none !important; border: 0 !important;
+  font-family: 'Cinzel', serif; font-weight: 700; color: #2a1a0e !important; }
+html[data-darkreader-mode] .parchment-content .ap-projets a, html .parchment-content .ap-projets a { border-bottom: 0 !important; }
+.ap-projets .cp-icone { width: 64px; height: 64px; }
+.ap-projets a:hover .cp-icone { transform: scale(1.08); }
+.ap-projets-suite { margin: 1rem 0 0; font-size: 0.95rem; }

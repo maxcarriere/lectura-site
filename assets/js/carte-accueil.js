@@ -9,6 +9,10 @@
   var haut = document.querySelector('.accueil-haut');
   var suite = document.querySelector('.page-wrapper .parchment');
   if (!zone || !haut || !suite) return;
+  if (window.matchMedia('(max-width: 699px)').matches) {  // téléphone : pas de carte (Maxime, 11/11), défilement libre
+    document.body.classList.remove('sur-carte');
+    return;
+  }
   var bouton = document.getElementById('header-carte');
   var enCours = false;
 

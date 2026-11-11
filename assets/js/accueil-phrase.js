@@ -1,7 +1,7 @@
 // Phrase d'accueil lue par la voix de Lectura, surlignée au rythme de l'audio (minutage dans data-d / data-f, en ms).
 // Maxime, 09/11/2026 : la lecture part d'elle-même une fois la carte chargée ; un clic sur la phrase la rejoue.
-// Les navigateurs bloquent souvent le son sans geste du visiteur : dans ce cas, le surlignage passe seul, en
-// silence, et la phrase s'anime pour inviter à cliquer (le son part alors).
+// Les navigateurs bloquent le son tant que le visiteur n'a rien touché sur la page : dans ce cas, rien ne s'anime ;
+// le bouton Play apparaît et la lecture (son et surlignage ensemble) part au clic (Maxime, 11/11).
 (function () {
   var bloc = document.querySelector('.accueil-phrase');
   if (!bloc) return;
@@ -45,11 +45,7 @@
   }
   function muet() {
     auPremierGeste();
-    horloge = 'muet';
-    debutMuet = performance.now();
-    bloc.classList.add('ap-en-cours');
     bloc.classList.add('ap-invite');
-    raf = requestAnimationFrame(peindre);
   }
   function lire(auto) {
     if (horloge === 'audio') { audio.pause(); fin(); return; }
