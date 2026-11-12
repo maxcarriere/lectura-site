@@ -15,7 +15,8 @@ Lectura est un écosystème de projets autour du **langage** et de sa **lecture*
 
 Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à une méthode de développement augmenté par l'IA où l'intelligence artificielle est un partenaire de production à part entière.
 
-<p class="ap-savoir">En savoir plus <a href="{{ '/a-propos/vision/' | relative_url }}">sur Lectura</a> · <a href="{{ '/a-propos/qui-suis-je/' | relative_url }}">sur le porteur du projet</a></p>
+<p class="ap-savoir ap-centre"><a href="{{ '/a-propos/vision/' | relative_url }}">En savoir plus sur Lectura</a><br>
+<a href="{{ '/a-propos/qui-suis-je/' | relative_url }}">En savoir plus sur le porteur du projet</a></p>
 
 ---
 
