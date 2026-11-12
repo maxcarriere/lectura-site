@@ -32,25 +32,23 @@ Entre la langue écrite et la langue parlée, la phonétique fait le lien : elle
 
 ---
 
-## 3. Comprendre l'intelligence artificielle et travailler avec elle
+## 3. Comprendre l'intelligence artificielle et apprendre à travailler avec elle
 
-L'intelligence artificielle est au cœur de Lectura, à deux titres.
+Le langage et sa lecture sont le sujet d'étude de Lectura ; ils en sont aussi, d'une certaine façon, le prétexte. Pour faire lire une voix, reconnaître la parole ou analyser une phrase, il faut en effet passer par l'intelligence artificielle, et donc apprendre à la comprendre.
 
-**Comme technologie.** Les outils de Lectura reposent sur des modèles qu'il conçoit et entraîne lui-même : les voix, la reconnaissance vocale, l'analyse du français. Construire les données, choisir une architecture, entraîner un modèle et mesurer ce qu'il vaut, c'est comprendre l'IA de l'intérieur, au-delà de ses usages : savoir comment elle apprend, ce qu'elle sait faire, et ce qu'elle ne sait pas faire.
+Cette compréhension se construit de l'intérieur. Les voix, la reconnaissance vocale et l'analyse du français reposent sur des modèles que Lectura conçoit et entraîne lui-même : il faut réunir et préparer les données, choisir une architecture, lancer l'entraînement, puis mesurer ce que vaut le résultat. À chaque étape, on découvre un peu mieux comment une IA apprend, ce qu'elle sait faire et où elle bute. Le langage s'y prête particulièrement bien : chacun le connaît intimement, et l'on entend tout de suite si une voix sonne faux ou si une analyse se trompe.
 
-**Comme méthode de travail.** Au-delà de la lecture, Lectura explore de nouvelles méthodes de travail, de développement et de recherche avec l'IA. Le but n'est pas de produire plus, mais d'aller plus loin, en répartissant bien les rôles : à l'IA la partie technique, le développement et la production, où elle excelle ; à l'humain ce qui n'est pas remplaçable (l'orientation, la créativité, les idées).
+Mais l'IA n'est pas seulement l'objet du travail : elle en est aussi l'outil. Lectura a été développé avec elle, et c'est l'autre moitié de l'expérience. Le but n'est pas de produire plus, mais d'aller plus loin, en répartissant bien les rôles : à l'IA la partie technique, le développement et la production, où elle excelle ; à l'humain ce qui n'est pas remplaçable, l'orientation, la créativité, les idées. Cette répartition change le rythme de la recherche. Une idée qui aurait demandé hier des mois de développement peut aujourd'hui être testée en quelques jours, et pouvoir essayer vite, c'est se donner plus de chances de découvrir.
 
-L'IA permet aujourd'hui de tester en quelques jours des idées qui auraient demandé, hier, des mois ou des années de développement. Pouvoir essayer vite, c'est se donner plus de chances de découvrir.
+Encore faut-il que ces essais s'additionnent. C'est pourquoi le travail est organisé de façon systémique : les projets sont reliés entre eux et progressent d'un même mouvement, chacun donnant ses propres résultats, nourrissant les autres et servant à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles, et chacun a fait progresser l'autre. C'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site.
 
-Le travail est aussi organisé de façon systémique : les projets sont reliés entre eux et l'ensemble progresse d'un même mouvement. Chaque projet donne ses propres résultats, nourrit les autres et sert à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles, et chacun a fait progresser l'autre. C'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site.
-
-La page [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }}) présente cet axe plus en détail, et notamment cette méthode de travail.
+En travaillant sur le langage, Lectura apprend ainsi à comprendre l'IA et à travailler avec elle. Cette expérience dépasse la lecture : la page [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }}) la présente plus en détail.
 
 ---
 
 ## 4. Un horizon : une langue universelle
 
-Une langue universelle n'est pas un objectif en soi, mais un horizon dans lequel Lectura souhaite prendre place.
+La phonétique d'un côté, l'intelligence artificielle de l'autre : ces deux chemins se rejoignent dans une perspective plus lointaine. Une langue universelle n'est pas un objectif en soi, mais un horizon dans lequel Lectura souhaite prendre place.
 
 Une langue commune à tous serait un gain évident pour l'humanité ; pourtant, aucune tentative n'a vraiment abouti. L'essor des grands modèles de langage remet la question sur la table. Ces modèles semblent porter, de façon implicite, un socle commun à toutes les langues qu'ils ont apprises, et c'est justement parce qu'il est implicite qu'on le maîtrise mal. Une langue explicite permettrait de reprendre la main, et peut-être de concevoir des modèles plus légers, entraînés sur une langue commune plutôt que sur des centaines.
 
