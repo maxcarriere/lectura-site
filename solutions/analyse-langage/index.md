@@ -8,294 +8,50 @@ redirect_from:
   - /solutions/nlp/p2g/
   - /solutions/nlp/aligneur/
   - /solutions/nlp/formules/
+description: "L'analyse du français et de l'anglais écrits par Lectura : analyse grammaticale depuis le texte ou la phonétique, transcription phonétique, réécriture de l'orthographe, correction, lecture syllabique. Capacités et mesures de la génération actuelle."
 ---
 
-Lectura propose plusieurs outils d'analyse du langage français. Chaque module fonctionne de manière autonome et s'intègre dans un pipeline complet : du texte brut jusqu'à l'analyse phonétique, grammaticale et syllabique.
+{% comment %} Réécrite le 12/11/2026 (Maxime) : capacités de la génération actuelle (v1), sans démo (les démos sont sur LecturaLingua). Chiffres : page À propos de lingua.lectura.world, lue le 12/11. Ancienne version (démos v0) : brain/lectura/site/anciennes-pages/solutions_analyse-langage_2026-11-12.md. {% endcomment %}
 
-Les démos de cette page reposent sur la première génération des modules (v0). La génération actuelle (v1), en français et en anglais, se teste sur [LecturaLingua](https://lingua.lectura.world) ; pour l'intégrer dans un produit, voir [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
+L'analyse du langage est la brique sur laquelle reposent tous les outils de Lectura. Elle lit un texte comme le ferait un lecteur attentif : elle reconnaît la nature et la fonction de chaque mot, sait comment il se prononce, et peut le réécrire à partir de sa prononciation. Elle fonctionne en français et en anglais ; en anglais, la phonétique suit l'accent américain et marque l'accent tonique. Toutes ces capacités se testent sur [LecturaLingua](https://lingua.lectura.world).
 
----
+## Ce qu'elle sait faire
 
-## Tokenisation
+**Analyser une phrase, à partir du texte ou de sa prononciation.** Pour chaque mot, l'analyse donne en une seule passe sa catégorie grammaticale (18 classes), ses traits (genre, nombre, personne, temps, mode… 17 traits), son lemme et sa fonction : le mot dont il dépend et la relation qui les unit (65 relations). Elle reconnaît aussi les amalgames (*au* = *à* + *le*) et les liaisons avec le mot suivant. Sa particularité est de pouvoir partir de la seule phonétique : comme un auditeur, elle comprend une phrase sans en voir l'orthographe.
 
-Transformer un texte en suite de **tokens** (mots, ponctuation, formules) avec normalisation typographique. Le tokeniseur détecte automatiquement plus de 15 types de formules : nombres, dates, heures, sigles, monnaies, pourcentages, expressions mathématiques.
+**Passer de l'écrit à l'oral (G2P).** Le texte est transcrit en alphabet phonétique international, découpé en syllabes, avec ses liaisons, son *h* aspiré et l'alignement de chaque lettre avec le son qu'elle produit. Les nombres, les dates, les heures et les sigles sont lus. La prononciation tient compte de l'analyse : *couvent* ne se lit pas de la même façon selon qu'il est nom ou verbe.
 
-<div class="pyodide-demo" data-package="lectura-tokeniseur>=2.3.6,lectura-formules>=3.7.8" data-code="
-from lectura_tokeniseur import tokenise, Formule
-tokens = tokenise('{INPUT}')
-lines = []
-for t in tokens:
-    detail = t.formule_type.name if isinstance(t, Formule) else ''
-    lines.append(f'{t.text:25s} {t.type.name:12s} {detail}')
-'\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="Le 25/12/2024, il a lu 42 pages pour 12,50 EUR." placeholder="Tapez du texte français...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
+**Passer de l'oral à l'écrit (P2G).** À partir d'une prononciation, la phrase est réécrite en orthographe correcte. Le choix entre homophones (*vers*, *verre*, *vert*…), les accords et les lettres muettes se déduisent de la construction de la phrase. Grâce au lemme, une forme jamais vue s'écrit juste : *ils publient* se construit à partir de *publier*. C'est cette étape qui permet à la reconnaissance vocale de Lectura de passer des sons au texte.
 
----
+**Corriger.** Le correcteur lit chaque mot avec son orthographe et sa prononciation, et s'appuie sur la construction de la phrase pour corriger ce qui ne s'entend pas : accords, conjugaisons, homophones (*a* / *à*). Chaque correction est expliquée, et un mode automatique ne garde que les corrections sûres. L'anglais est en version préliminaire.
 
-## Phonémisation (orthographe vers phonétique)
+**Préparer la lecture syllabique.** Grâce à l'alignement des lettres et des sons, le texte peut être découpé en syllabes telles qu'on les prononce, chaque son dans sa couleur, les lettres muettes estompées et les liaisons marquées : une page prête à imprimer pour apprendre à lire.
 
-Un seul modèle BiLSTM multi-tête transforme l'orthographe en transcription phonétique IPA et prédit simultanément 4 tâches : **phonémisation**, **catégorie grammaticale**, **morphologie** (genre, nombre, temps, mode, personne) et **liaisons**. Le modèle prend en compte le **contexte phrastique** pour désambiguïser les homographes et prédire les liaisons.
+## Comment c'est construit
 
-Le Phonémiseur construit également les **groupes de lecture** : regroupement des mots connectés par élision (l'enfant), liaison (les‿enfants) ou enchaînement (avec‿elle), qui sont ensuite transmis à l'Aligneur-Syllabeur pour la syllabation.
+L'analyse repose sur deux modèles neuronaux compacts, complétés par des algorithmes (découpage du texte, lecture des nombres et des sigles, règles de liaison et de *e* muet) et par le lexique [LeXiK]({{ '/solutions/lexique/' | relative_url }}) :
 
-<div class="pyodide-demo" data-package="lectura-phonemiseur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
+- un **analyseur de phrase**, qui lit les lettres, les phonèmes ou les deux (21,3 millions de paramètres, 43 Mo), pré-entraîné sur environ 6 millions de phrases puis affiné sur les corpus Universal Dependencies du français ;
+- un **modèle de mot**, qui donne la prononciation d'un mot écrit et l'orthographe d'un mot prononcé, toujours sous forme de couples lettres / son alignés (4 millions de paramètres, 8 Mo), entraîné sur LeXiK.
 
-async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/old/g2p/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'tokens': tokens}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-import re
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-tokens = '{INPUT}'.split()
-result = await _g2p_api_call(tokens)
-lines = []
-lines.append(f"{'Token':<16}{'IPA':<16}{'POS':<12}{'Liaison'}")
-lines.append('-' * 56)
-for i, tok in enumerate(tokens):
-    if _punct_re.match(tok):
-        continue
-    ipa = result['g2p'][i] if i < len(result['g2p']) else ''
-    pos = result['pos'][i] if i < len(result['pos']) else ''
-    lia = result['liaison'][i] if i < len(result['liaison']) else ''
-    lines.append(f"{tok:<16}{ipa:<16}{pos:<12}{lia}")
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison." placeholder="Entrez une phrase française...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
+Avec le lexique embarqué, l'ensemble tient dans environ **60 Mo**, sans carte graphique.
 
----
+## Les mesures
 
-## Graphémisation (phonétique vers orthographe)
+| Mesure | Français | Anglais |
+|---|---|---|
+| Mots prononcés correctement (texte → phonétique) | 99,8 % | — |
+| Mots jamais vus, prononcés correctement | 97,8 % | — |
+| Mots réécrits à l'identique après un aller-retour écrit → oral → écrit | 94,3 % | 93,7 % |
+| Catégories grammaticales justes, depuis le texte | 97,7 % | 95,0 % |
+| Catégories grammaticales justes, depuis la phonétique | 97,0 % | 94,9 % |
+| Lemmes justes, depuis le texte | 98,5 % | 98,2 % |
+| Fonctions justes (LAS), depuis le texte | 76,7 % | 77,2 % |
 
-Le chemin inverse de la phonémisation : à partir d'une transcription phonétique IPA, reconstruire l'orthographe française avec accentuation, accords et reconnaissance des noms propres. Le modèle prédit également la catégorie grammaticale et la morphologie.
+Mesures de la génération actuelle, sur les corpus de test Universal Dependencies ; le détail est sur [la page À propos de LecturaLingua](https://lingua.lectura.world/a-propos).
 
-<div class="ipa-keyboard">
-  <span class="ipa-key" data-char="i" title="i">i <small>(i)</small></span>
-  <span class="ipa-key" data-char="e" title="e fermé">e <small>(e)</small></span>
-  <span class="ipa-key" data-char="ɛ" title="e ouvert">ɛ <small>(ai)</small></span>
-  <span class="ipa-key" data-char="a" title="a">a <small>(a)</small></span>
-  <span class="ipa-key" data-char="ɑ" title="a postérieur">ɑ <small>(a)</small></span>
-  <span class="ipa-key" data-char="ɔ" title="o ouvert">ɔ <small>(o)</small></span>
-  <span class="ipa-key" data-char="o" title="o fermé">o <small>(o)</small></span>
-  <span class="ipa-key" data-char="u" title="ou">u <small>(ou)</small></span>
-  <span class="ipa-key" data-char="y" title="u">y <small>(u)</small></span>
-  <span class="ipa-key" data-char="ø" title="eu fermé">ø <small>(oeu)</small></span>
-  <span class="ipa-key" data-char="œ" title="eu ouvert">œ <small>(eu)</small></span>
-  <span class="ipa-key" data-char="ə" title="e muet">ə <small>(e)</small></span>
-  <span class="ipa-key" data-char="ɑ̃" title="an, en">ɑ̃ <small>(an)</small></span>
-  <span class="ipa-key" data-char="ɛ̃" title="in, ain">ɛ̃ <small>(in)</small></span>
-  <span class="ipa-key" data-char="ɔ̃" title="on">ɔ̃ <small>(on)</small></span>
-  <span class="ipa-key" data-char="œ̃" title="un">œ̃ <small>(un)</small></span>
-  <span class="ipa-key" data-char="j" title="yod">j <small>(y)</small></span>
-  <span class="ipa-key" data-char="w" title="semi-voyelle ou">w <small>(w)</small></span>
-  <span class="ipa-key" data-char="ɥ" title="semi-voyelle u">ɥ <small>(u)</small></span>
-  <span class="ipa-key" data-char="p" title="p">p</span>
-  <span class="ipa-key" data-char="b" title="b">b</span>
-  <span class="ipa-key" data-char="t" title="t">t</span>
-  <span class="ipa-key" data-char="d" title="d">d</span>
-  <span class="ipa-key" data-char="k" title="k">k</span>
-  <span class="ipa-key" data-char="ɡ" title="g dur">ɡ <small>(gu)</small></span>
-  <span class="ipa-key" data-char="f" title="f">f</span>
-  <span class="ipa-key" data-char="v" title="v">v</span>
-  <span class="ipa-key" data-char="s" title="s">s</span>
-  <span class="ipa-key" data-char="z" title="z">z</span>
-  <span class="ipa-key" data-char="ʃ" title="ch">ʃ <small>(ch)</small></span>
-  <span class="ipa-key" data-char="ʒ" title="j, ge">ʒ <small>(j)</small></span>
-  <span class="ipa-key" data-char="m" title="m">m</span>
-  <span class="ipa-key" data-char="n" title="n">n</span>
-  <span class="ipa-key" data-char="ɲ" title="gn">ɲ <small>(gn)</small></span>
-  <span class="ipa-key" data-char="ŋ" title="ng">ŋ <small>(ng)</small></span>
-  <span class="ipa-key" data-char="l" title="l">l</span>
-  <span class="ipa-key" data-char="ʁ" title="r">ʁ <small>(r)</small></span>
-</div>
+## À quoi elle sert
 
-<div class="pyodide-demo" data-package="lectura-graphemiseur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
+L'analyse du langage alimente la synthèse vocale (chaque mot est analysé et prononcé avant d'être dit), la reconnaissance vocale (le texte est reconstruit à partir des sons), la correction et les outils d'apprentissage de la lecture. Elle peut aussi servir seule : annoter des corpus pour la recherche, transcrire en phonétique pour les apprenants du français, afficher un texte en syllabes pour les lecteurs en difficulté.
 
-async def _p2g_api_call(ipa_words):
-    resp = await pyfetch('https://api.lectura.world/old/p2g/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'ipa_words': ipa_words}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-tokens = '{INPUT}'.split()
-result = await _p2g_api_call(tokens)
-lines = []
-lines.append(f"{'IPA':<16}{'Orthographe':<16}{'POS':<12}{'Morphologie'}")
-lines.append('\u2500' * 60)
-morpho = result.get('morpho', {})
-traits = ['Number', 'Gender', 'VerbForm', 'Mood', 'Tense', 'Person']
-pad = ' ' * 44
-for i, tok in enumerate(tokens):
-    ortho = result['ortho'][i] if i < len(result['ortho']) else ''
-    pos = result['pos'][i] if i < len(result['pos']) else ''
-    m = []
-    for t in traits:
-        v = morpho.get(t, ['_'] * len(tokens))
-        val = v[i] if i < len(v) else '_'
-        if val != '_':
-            m.append(f"{t}={val}")
-    if m:
-        lines.append(f"{tok:<16}{ortho:<16}{pos:<12}{m[0]}")
-        for feat in m[1:]:
-            lines.append(f"{pad}{feat}")
-    else:
-        lines.append(f"{tok:<16}{ortho:<16}{pos:<12}")
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input demo-input--ipa" value="le ɑ̃fɑ̃ sɔ̃ aʁive a la mɛzɔ̃" placeholder="Entrez des phonèmes IPA séparés par des espaces...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
-
----
-
-## Aligneur syllabique
-
-Pivot central du pipeline Lectura. Aligne une séquence orthographique avec une séquence phonémique : **découpage en syllabes** (orthographiques et phonétiques), identification des **lettres muettes** et des graphèmes fusionnés, décomposition attaque/noyau/coda. L'Aligneur reçoit en entrée les groupes de lecture construits par le Phonémiseur et effectue la **syllabation** de chaque groupe.
-
-<div class="pyodide-demo" data-package="lectura-aligneur" data-numpy="0">
-  <script type="text/x-python" class="demo-setup">
-from pyodide.http import pyfetch
-import json
-
-async def _aligneur_api_call(word, phone=None):
-    resp = await pyfetch('https://api.lectura.world/old/aligneur/analyze',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'word': word, 'phone': phone}))
-    return await resp.json()
-
-async def _g2p_api_call(tokens):
-    resp = await pyfetch('https://api.lectura.world/old/g2p/analyser',
-        method='POST',
-        headers={'Content-Type': 'application/json'},
-        body=json.dumps({'tokens': tokens}))
-    return await resp.json()
-  </script>
-  <script type="text/x-python" class="demo-run">
-import re
-text = '{INPUT}'
-tokens = text.split()
-tokens = [t for t in tokens if t]
-
-# G2P
-g2p = await _g2p_api_call(tokens)
-
-lines = []
-_punct_re = re.compile(r'^[,;:!?.\u2026\u00ab\u00bb"()\[\]{}\u2013\u2014/]+$')
-
-for i, tok in enumerate(tokens):
-    if _punct_re.match(tok):
-        continue
-    phone = g2p['g2p'][i] if i < len(g2p['g2p']) else ''
-    if not phone:
-        continue
-    # Aligneur
-    res = await _aligneur_api_call(tok, phone)
-    lines.append(f"{tok} -> /{phone}/")
-    for si, s in enumerate(res.get('syllabes', []), 1):
-        att_parts = []
-        for p in s.get('attaque', {}).get('phonemes', []):
-            att_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        noy_parts = []
-        for p in s.get('noyau', {}).get('phonemes', []):
-            noy_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        cod_parts = []
-        for p in s.get('coda', {}).get('phonemes', []):
-            cod_parts.append(f"{p['ipa']}={p['grapheme']}" if p.get('grapheme') else p['ipa'])
-        att = ','.join(att_parts) if att_parts else '-'
-        noy = ','.join(noy_parts) if noy_parts else '-'
-        cod = ','.join(cod_parts) if cod_parts else '-'
-        span = s.get('span', [0,0])
-        lines.append(f"  \u03c3{si} /{s['phone']}/ <<{s['ortho']}>> [{span[0]}:{span[1]}]  att=[{att}] noy=[{noy}] cod=[{cod}]")
-    lines.append('')
-
-'\n'.join(lines)
-  </script>
-  <input type="text" class="demo-input" value="Les enfants sont arrivés à la maison" placeholder="Entrez une phrase française...">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
-
----
-
-## Formules
-
-Reconnaissance des types de formules (nombres, dates, heures, sigles, monnaies, expressions mathématiques...), passage d'une formule à son écriture textuelle ou phonétique et vice versa. Plus de 15 types pris en charge.
-
-| Type | Exemple | Lecture |
-|------|---------|--------|
-| Nombre | `42` | quarante-deux |
-| Date | `25/12/2024` | vingt-cinq décembre deux-mille-vingt-quatre |
-| Heure | `14h30` | quatorze heures trente |
-| Sigle | `SNCF` | esse-enne-ce-effe |
-| Maths | `2x+5x-3` | deux x au carré plus cinq x moins trois |
-
-<div class="pyodide-demo" data-package="lectura-formules>=3.2.0" data-code="
-from lectura_formules import lire_formule
-r = lire_formule('NOMBRE', '{INPUT}')
-lines = []
-lines.append(f'Formule :    {INPUT}')
-lines.append(f'Lecture :    {r.display_fr}')
-lines.append(f'Phonetique : {r.phone}')
-if r.events:
-    lines.append('')
-    lines.append('Events alignes :')
-    for e in r.events:
-        s, end = e.span_num if e.span_num else (0, 0)
-        lines.append(f'  {e.ortho:20s} {e.phone:15s} span_num=[{s}:{end}]')
-'\n'.join(lines)
-">
-  <input type="text" class="demo-input" value="42" placeholder="Tapez une formule (nombre, date, heure, sigle...)">
-  <button class="demo-btn" type="button">Tester</button>
-  <pre class="demo-output">Cliquez sur le bouton pour lancer la démo.</pre>
-</div>
-
----
-
-## Applications
-
-Ces outils d'analyse du langage constituent la **base de tous les pipelines Lectura** :
-
-- **Synthèse vocale (TTS)** : le pipeline G2P + Aligneur + Formules alimente les moteurs de synthèse vocale. Chaque mot est phonémisé, aligné et syllabé avant d'être prononcé.
-- **Reconnaissance vocale (STT)** : le pipeline inverse (P2G + Formules) reconstruit le texte à partir des phonèmes détectés par le décodeur acoustique.
-- **Apprentissage de la lecture** : le Phonémiseur construit les groupes de lecture, l'Aligneur produit les syllabes colorées et les lettres muettes utilisés dans les programmes de lecture assistée.
-- **Correction orthographique** : la chaîne G2P → P2G permet de détecter les erreurs phonétiquement cohérentes (un mot mal écrit mais prononcé correctement).
-- **Annotation de corpus** : étiquetage POS, morphologie et phonétique automatiques pour la recherche linguistique.
-- **Accessibilité** : transcription phonétique pour les apprenants FLE, affichage syllabique pour les lecteurs en difficulté.
-
----
-
-## En savoir plus
-
-La documentation technique de chaque outil, dans sa première génération (v0, publiée sur PyPI et GitHub) :
-
-- [Tokeniseur]({{ '/developpement/modules/outils/tokeniseur/' | relative_url }}) — normalisation et tokenisation
-- [Phonémiseur (G2P)]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) — orthographe vers phonétique
-- [Graphémiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — phonétique vers orthographe
-- [Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) — alignement et syllabation
-- [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) — lecture des formules
-
----
-
-## Contact
-
-Pour intégrer ces outils dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})
+La documentation de la première génération de ces outils (v0, publiée sur PyPI et GitHub) reste disponible dans [Développement > Modules]({{ '/developpement/modules/' | relative_url }}). Pour intégrer l'analyse du langage dans un produit : [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}) ou [Contact]({{ '/contact/' | relative_url }}).

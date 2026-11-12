@@ -72,7 +72,7 @@ print(result.display_fr)    # "vingt-cinq décembre deux-mille-vingt-quatre"
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#formules' | relative_url }}">Essayer les Formules en ligne →</a>
+  <a href="https://lingua.lectura.world/g2p">Essayer les Formules en ligne (génération actuelle) →</a>
 </div>
 
 ---

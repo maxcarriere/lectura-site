@@ -4,144 +4,41 @@ layout: default
 permalink: /solutions/reconnaissance-vocale/
 redirect_from:
   - /solutions/stt/
+description: "La reconnaissance vocale de Lectura passe par la phonétique : transcription orthographique et phonétique, phonèmes datés, alignement d'un texte sur sa lecture et sous-titres. Un modèle de 13 millions de paramètres, sans carte graphique."
 ---
 
-Lectura propose un pipeline de transcription audio du français en deux couches : un décodeur acoustique (audio vers phonèmes IPA) et un convertisseur (phonèmes vers texte orthographique). Le décodeur est un petit modèle (13 millions de paramètres, 50 Mo), qui tourne sans carte graphique. Sa sortie phonétique entend ce qui est réellement prononcé, y compris les erreurs de lecture : un atout pour accompagner un lecteur.
+{% comment %} Réécrite le 12/11/2026 (Maxime) : capacités de la génération actuelle (v1, CTC v3 en service depuis le 16/10), sans démo (les démos sont sur LecturaVoice). Faits : voice.lectura.world/stt et /sous-titrage (lus le 12/11), brain/lectura/techno/stt/STATE.md. Ancienne version (démo) : brain/lectura/site/anciennes-pages/solutions_reconnaissance-vocale_2026-11-12.md. {% endcomment %}
 
----
+La reconnaissance vocale de Lectura ne cherche pas à deviner directement des mots. Elle décode d'abord les **phonèmes**, les sons de la langue : il n'y en a qu'une trentaine en français, au lieu de centaines de milliers de formes écrites. L'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) réécrit ensuite ces sons en orthographe, en réglant les accords et les homophones grâce à la construction de la phrase. Toutes ces capacités se testent sur [LecturaVoice](https://voice.lectura.world/stt).
 
-## Ce que Lectura est capable de faire
+## Ce qu'elle sait faire
 
-| Capacité | Description |
-|----------|-------------|
-| **Transcription phonétique** | Audio vers phonèmes IPA avec séparateurs de mots, liaisons et ponctuation |
-| **Transcription orthographique** | Audio vers texte français avec majuscules, élisions et ponctuation |
-| **Reconnaissance de formules** | Nombres, dates, sigles, heures détectés automatiquement dans la parole |
-| **Transcription de formules** | Modèle spécialisé pour la saisie vocale de données structurées (87 tokens sémantiques) |
+**Transcrire la parole, en sons et en texte.** À partir d'un enregistrement ou de la voix au micro, elle donne la transcription orthographique et la transcription phonétique. Les nombres peuvent être écrits en chiffres ou en lettres.
 
-| Métrique (génération actuelle, FLEURS test, octobre 2026) | Score |
-|----------|-------|
-| WER (pipeline complet) | **15,7 %** |
-| PER (décodeur phonétique) | **5,7 %** |
-| Référence : Whisper small (244 M paramètres), mesuré avec la même normalisation | 13,3 % de WER |
+**Entendre ce qui est réellement prononcé.** Parce qu'elle passe par les sons, la transcription phonétique rend compte de ce que dit le locuteur, et non de ce qu'il aurait dû dire. Pour un enfant qui apprend à lire, c'est précieux : une erreur de lecture reste visible au lieu d'être corrigée en silence.
 
-La démo ci-dessous et [LecturaVoice](https://voice.lectura.world) utilisent la génération actuelle.
+**Dater chaque son.** Chaque phonème reconnu est daté et accompagné d'un indice de confiance. La relecture de l'audio peut ainsi être surlignée par mot, par syllabe ou par phonème.
 
----
+**Aligner un texte sur sa lecture.** À partir d'un texte et de sa lecture (une voix enregistrée, une voix de synthèse, un livre audio), chaque mot, syllabe et phonème est daté. On peut alors relire en karaoké, ralentir la lecture, colorer les sons, et exporter des sous-titres (SRT, VTT) ou une ligne de temps.
 
-## Essayer en ligne
+## Comment c'est construit
 
-*La démo utilise l'API Lectura — enregistrez votre voix ou chargez un fichier audio.*
+Le modèle acoustique, entraîné par Lectura, ne compte que **13 millions de paramètres** et pèse 50 Mo une fois compressé ; il tourne sans carte graphique, ce qui permet de l'embarquer. Un modèle de langue phonétique l'aide à choisir entre les suites de sons possibles, avant le passage à l'orthographe.
 
-<style>
-#ctc-output-ipa, #ctc-output-texte {
-  white-space: normal;
-  word-wrap: break-word;
-  line-height: 1.8;
-  font-size: 1.05em;
-}
-#ctc-output-ipa .ctc-word {
-  display: inline-block;
-  background: var(--code-bg, #f5f5f5);
-  border-radius: 4px;
-  padding: 2px 6px;
-  margin: 2px 4px 2px 0;
-}
-.ctc-output-label {
-  font-weight: bold;
-  font-size: 0.85em;
-  color: var(--muted-fg, #888);
-  margin-bottom: 4px;
-}
-.ctc-output-block {
-  margin-bottom: 12px;
-}
-.ctc-muted {
-  color: var(--muted-fg, #888);
-  font-style: italic;
-}
-#ctc-timestamps {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9em;
-}
-#ctc-timestamps th, #ctc-timestamps td {
-  padding: 4px 8px;
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
-  text-align: left;
-}
-#ctc-timestamps th {
-  font-weight: 600;
-  color: var(--muted-fg, #888);
-  font-size: 0.85em;
-}
-#ctc-timestamps td:first-child {
-  font-family: monospace;
-}
-</style>
+## Les mesures
 
-<div class="ctc-demo">
-  <div class="ctc-input-section">
-    <label>Audio source :</label>
-    <div class="vc-input-buttons">
-      <span class="vc-file-wrapper">
-        <input type="file" id="ctc-audio-file" accept="audio/*" style="display:none;">
-        <button type="button" id="ctc-file-btn" class="vc-btn-secondary">Parcourir</button>
-        <span id="ctc-file-name">(Aucun fichier)</span>
-      </span>
-      <span class="vc-separator">ou</span>
-      <button type="button" id="ctc-record-btn" class="vc-btn-secondary">&#x1F3A4; Enregistrer</button>
-      <span id="ctc-record-status"></span>
-    </div>
-    <audio id="ctc-audio-preview" controls style="display:none; width:100%; margin-top:8px;"></audio>
-  </div>
+| Mesure (jeu de test FLEURS, que le modèle n'a jamais vu) | Résultat |
+|---|---|
+| Taux d'erreur sur les mots, chaîne complète | **15,7 %** |
+| Pour comparaison : Whisper small (244 millions de paramètres, et qui a probablement vu ces données), même mesure | 13,3 % |
 
-  <div class="ctc-input-section" style="margin-top:8px;">
-    <label for="ctc-mode">Mode :</label>
-    <select id="ctc-mode" class="vc-btn-secondary" style="padding:4px 8px;">
-      <option value="auto">Nombres et dates en chiffres</option>
-      <option value="texte">Tout en lettres</option>
-    </select>
-  </div>
+La génération actuelle traite le français ; l'anglais est prévu dans la génération suivante.
 
-  <button type="button" id="ctc-transcribe-btn" class="tts-btn">Transcrire</button>
-  <div class="tts-progress-container"><div class="tts-progress" id="ctc-progress"></div></div>
+## À quoi elle sert
 
-  <div class="ctc-output-block">
-    <div class="ctc-output-label">Phonétique (IPA)</div>
-    <pre class="tts-output" id="ctc-output-ipa">Sélectionnez un fichier audio ou enregistrez votre voix, puis cliquez sur Transcrire.</pre>
-  </div>
-  <div class="ctc-output-block">
-    <div class="ctc-output-label">Texte (STT)</div>
-    <pre class="tts-output" id="ctc-output-texte"></pre>
-  </div>
-  <div class="ctc-output-block">
-    <div class="ctc-output-label">Timestamps</div>
-    <table class="tts-timings" id="ctc-timestamps"></table>
-  </div>
-</div>
+- **Apprentissage de la lecture** : écouter un enfant lire, repérer ses erreurs, surligner ce qu'il lit.
+- **Sous-titrage** : aligner un texte connu sur son enregistrement, ou transcrire une vidéo ou un podcast.
+- **Saisie vocale** : dictée dans une application ou un formulaire, avec les nombres et les dates.
+- **Applications embarquées** : une transcription qui tourne sur l'appareil, grâce à la petite taille du modèle.
 
-<script src="{{ '/assets/js/ctc-demo.js' | relative_url }}"></script>
-
----
-
-## Applications
-
-- **Sous-titrage** : transcription automatique de vidéos et podcasts en français.
-- **Saisie vocale** : dictée pour applications et formulaires, avec reconnaissance des nombres et dates.
-- **Analyse de contenu** : indexation et recherche dans des archives audio.
-- **Applications embarquées** : transcription sur appareil, grâce à la taille réduite du décodeur.
-- **Saisie de données structurées** : le modèle STT-Formules reconnaît directement les nombres, mois, devises et lettres pour la saisie vocale de formulaires.
-
----
-
-## En savoir plus
-
-- [Documentation technique STT]({{ '/developpement/modules/metiers/stt/' | relative_url }}) — architecture de la première génération (v0)
-- [Graphémiseur (P2G)]({{ '/developpement/modules/metiers/p2g/' | relative_url }}) — le convertisseur phonèmes vers texte utilisé dans le pipeline
-
----
-
-## Contact
-
-Pour intégrer la reconnaissance vocale dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})
+La documentation de la première génération (v0) reste disponible dans [Développement > Modules]({{ '/developpement/modules/' | relative_url }}). Pour intégrer la reconnaissance vocale dans un produit : [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}) ou [Contact]({{ '/contact/' | relative_url }}).

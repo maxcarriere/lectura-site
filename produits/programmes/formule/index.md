@@ -39,4 +39,4 @@ Tous les types supportés par le module Formules sont disponibles :
 ## En savoir plus
 
 - [Module Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) — le module Python sous-jacent
-- [Analyse du langage]({{ '/solutions/analyse-langage/#formules' | relative_url }}) — démo en ligne
+- [LecturaLingua](https://lingua.lectura.world/g2p) — démo en ligne (les nombres, les dates et les sigles sont lus)

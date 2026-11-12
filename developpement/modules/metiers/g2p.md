@@ -110,7 +110,7 @@ result = analyser_texte("Les enfants sont arrivés à la maison.")
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#phonémisation-orthographe-vers-phonétique' | relative_url }}">Essayer le G2P en ligne →</a>
+  <a href="https://lingua.lectura.world/g2p">Essayer le G2P en ligne (génération actuelle) →</a>
 </div>
 
 ---

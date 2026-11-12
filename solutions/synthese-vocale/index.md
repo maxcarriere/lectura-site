@@ -7,193 +7,38 @@ redirect_from:
   - /solutions/tts/multispeaker/
   - /solutions/tts/monospeaker/
   - /solutions/tts/diphone/
+description: "La synthèse vocale de Lectura : six voix françaises, sept styles, trois moteurs, surlignage synchronisé mot par mot ou syllabe par syllabe, sans carte graphique. Capacités de la génération actuelle."
 ---
 
-Lectura propose trois moteurs de synthèse vocale pour le français, chacun adapté à un usage différent. Tous partagent le même pipeline d'analyse du langage et acceptent une **entrée phonémique directe** (IPA), qui est la base du pipeline de synthèse. Chaque moteur produit des **timestamps par phonème**, permettant un surlignage synchronisé mot à mot et même syllabique (une capacité propre au pipeline Lectura). Trois modes de lecture sont disponibles : **fluide**, **mot à mot** (groupe de lecture par groupe de lecture) et **syllabes**. Un système de **conversion vocale** (changement de timbre, variantes homme/enfant) est combinable avec chaque moteur.
+{% comment %} Réécrite le 12/11/2026 (Maxime) : capacités de la génération actuelle (v1, en service depuis le 15/10), sans démo (les démos sont sur LecturaVoice). Faits : voice.lectura.world/tts (lu le 12/11) et brain/lectura/techno/tts/STATE.md. Ancienne version (démos) : brain/lectura/site/anciennes-pages/solutions_synthese-vocale_2026-11-12.md. {% endcomment %}
 
-La synthèse vocale de la génération actuelle se teste aussi sur [LecturaVoice](https://voice.lectura.world/tts), avec le surlignage du texte lu.
+La synthèse vocale de Lectura lit un texte français à voix haute. Elle ne part pas des lettres mais des sons : le texte passe d'abord par l'[analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}), qui le prononce mot par mot en tenant compte de la grammaire, des liaisons, des nombres et des sigles. La voix n'a donc pas à apprendre l'orthographe, et l'on sait à chaque instant quel son, quelle syllabe et quel mot sont prononcés. Toutes ces capacités s'écoutent sur [LecturaVoice](https://voice.lectura.world/tts).
 
----
+## Ce qu'elle sait faire
 
-## Trois moteurs complémentaires
+**Lire avec plusieurs voix et plusieurs styles.** Six voix sont disponibles, trois féminines et trois masculines, et chacune peut lire selon sept styles : neutre, narratif, dialogue, expressif, méditatif, rapide ou lent. On peut ainsi donner une voix à chaque personnage d'une histoire, ou adapter le ton au contenu.
 
-### Multi-Speaker — six voix
+**Choisir entre trois moteurs.** Un moteur à plusieurs voix, décliné en deux modèles (l'un plus soigné, l'autre plus léger) ; un moteur à une seule voix, de haute qualité ; et un moteur par concaténation, pensé pour la pédagogie, qui prononce chaque syllabe distinctement.
 
-Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). **Six voix françaises** (trois féminines, trois masculines) et des **préréglages de lecture** (neutre, narratif, lent…). Changement de voix dynamique. Sans carte graphique.
+**Surligner le texte pendant la lecture.** Chaque son produit est daté. Le texte peut donc être surligné en même temps que la voix, mot par mot ou syllabe par syllabe, et lu selon trois modes : fluide, mot à mot, ou syllabe par syllabe. C'est ce qui en fait un outil d'apprentissage de la lecture, et pas seulement de lecture à voix haute.
 
-<div class="tts-multi-demo">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <input type="text" class="tts-input" value="Bonjour, je suis la voix de Lectura." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
-    <button class="tts-btn" type="button">Synthétiser</button>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
-    <select class="tts-model">
-      <option value="high" selected>High (Matcha)</option>
-      <option value="light">Light (FastPitch)</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Voix :</span>
-    <select class="tts-voix">
-      <option value="siwis" selected>Siwis (F)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Style :</span>
-    <select class="tts-style">
-      <option value="neutre" selected>Neutre</option>
-      <option value="narratif">Narratif</option>
-      <option value="dialogue">Dialogue</option>
-      <option value="expressif">Expressif</option>
-      <option value="meditatif">Méditatif</option>
-      <option value="rapide">Rapide</option>
-      <option value="lent">Lent</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
-    <select class="tts-mode">
-      <option value="FLUIDE" selected>Fluide</option>
-      <option value="MOT_A_MOT">Mot à mot</option>
-      <option value="SYLLABES">Syllabes</option>
-    </select>
-  </div>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-  <table class="tts-timings"></table>
-</div>
+**Varier le timbre.** Un changement de timbre, combinable avec chaque moteur, permet de transformer une voix (homme, enfant).
 
+**Lire une prononciation donnée.** La synthèse accepte aussi une entrée directement en phonétique, ce qui permet de contrôler exactement ce qui est prononcé.
 
----
+## Comment c'est construit
 
-### Monospeaker — voix haute qualité
+Les moteurs neuronaux reposent sur deux architectures (FastPitch et Matcha-Conformer) et un vocodeur HiFi-GAN, entraînés par Lectura sur des corpus de parole ouverts, transcrits en phonétique par son analyse du langage. Ils tournent sans carte graphique ; le modèle à une voix pèse 127 Mo, le modèle à plusieurs voix 300 Mo.
 
-Deux modèles au choix : **High** (Matcha-Conformer, meilleure qualité) et **Light** (FastPitch, plus rapide). Optimisé pour une voix unique (Siwis) avec des **préréglages de lecture** et des **contrôles prosodiques fins** (pitch, énergie, débit, pauses). Retimbre optionnel via conversion vocale. Sans carte graphique.
+## Les mesures
 
-<div class="tts-demo">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <input type="text" class="tts-input" value="Le soleil brille sur la ville." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
-    <button class="tts-btn" type="button">Synthétiser</button>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
-    <select class="tts-voix">
-      <option value="">Aucun (par défaut)</option>
-      <option value="siwis">Siwis (F)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
-      <span style="opacity:0.7">Homme</span>
-      <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
-      <span style="opacity:0.7">Enfant</span>
-    </label>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Modèle :</span>
-    <select class="tts-model">
-      <option value="high" selected>High (Matcha)</option>
-      <option value="light">Light (FastPitch)</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Style :</span>
-    <select class="tts-style">
-      <option value="neutre" selected>Neutre</option>
-      <option value="narratif">Narratif</option>
-      <option value="dialogue">Dialogue</option>
-      <option value="expressif">Expressif</option>
-      <option value="meditatif">Méditatif</option>
-      <option value="rapide">Rapide</option>
-      <option value="lent">Lent</option>
-    </select>
-    <span style="opacity:0.5;">|</span>
-    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
-    <select class="tts-mode">
-      <option value="FLUIDE" selected>Fluide</option>
-      <option value="MOT_A_MOT">Mot à mot</option>
-      <option value="SYLLABES">Syllabes</option>
-    </select>
-  </div>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-  <table class="tts-timings"></table>
-</div>
+Pour mesurer l'intelligibilité, la reconnaissance vocale de Lectura a relu 100 phrases synthétisées : selon la voix et le moteur, le taux d'erreur sur les sons va de **1,1 % à 3,0 %**, et le taux d'erreur sur les mots de **11,9 % à 14,7 %**. La génération actuelle traite le français ; l'anglais est prévu dans la génération suivante.
 
+## À quoi elle sert
 
----
+- **Apprentissage de la lecture** : lecture syllabe par syllabe, surlignage synchronisé, moteur pédagogique.
+- **Livres audio et narration** : plusieurs voix et plusieurs styles pour les personnages et le récit.
+- **Applications éducatives et accessibilité** : lecture à voix haute de tout contenu, avec le contrôle du débit.
+- **Applications embarquées** : une synthèse qui tourne chez le client, sans carte graphique ni service distant.
 
-### Diphone — lecture adaptée
-
-Un moteur expérimental qui explore la piste non neurale et qui fonctionne par concaténation de diphones (WORLD, 44.1 kHz), basé sur le moyennage des unités pour une prononciation uniforme de chaque syllabe, ce qui en fait une piste pour la **lecture syllabique**. La prosodie se fait par règles (intonation déclarative, interrogative, exclamative), et le timbre peut être restauré ensuite via la technologie de conversion vocale.
-
-<div class="tts-diphone-demo">
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <input type="text" class="tts-input" value="Le chat dort sur le canapé." placeholder="Entrez du texte français..." style="flex:1; min-width:200px;">
-    <button class="tts-btn" type="button">Synthétiser</button>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Changement de timbre :</span>
-    <select class="tts-voix">
-      <option value="">Aucun (par défaut)</option>
-      <option value="siwis">Siwis (F)</option>
-      <option value="ezwa">Ezwa (F)</option>
-      <option value="nadine">Nadine (F)</option>
-      <option value="bernard">Bernard (M)</option>
-      <option value="gilles">Gilles (M)</option>
-      <option value="zeckou">Zeckou (M)</option>
-    </select>
-    <label class="tts-variante-label" style="display:flex; align-items:center; gap:0.3em; font-size:0.85em;">
-      <span style="opacity:0.7">Homme</span>
-      <input type="range" class="tts-variante" min="-1" max="1" step="0.1" value="0" style="width:80px;">
-      <span style="opacity:0.7">Enfant</span>
-    </label>
-  </div>
-  <div style="display: flex; gap: 0.5em; margin: 0.5em 0; flex-wrap: wrap; align-items: center;">
-    <span style="font-size:0.85em; opacity:0.7;">Mode :</span>
-    <select class="tts-mode">
-      <option value="FLUIDE">Fluide</option>
-      <option value="MOT_A_MOT">Mot à mot</option>
-      <option value="SYLLABES">Syllabes</option>
-    </select>
-  </div>
-  <div class="tts-progress-container"><div class="tts-progress"></div></div>
-  <pre class="tts-output">Cliquez sur le bouton pour synthétiser.</pre>
-</div>
-
-
----
-
-<script src="{{ '/assets/js/tts-synthetiser.js' | relative_url }}?v=1"></script>
-
-## Applications
-
-- **Apprentissage de la lecture** : les modes mot à mot et syllabes sont disponibles sur tous les moteurs. Le Diphone est particulièrement précis pour prononcer chaque syllabe séparément. Les timestamps par phonème permettent un surlignage syllabique synchronisé avec l'audio.
-- **Livres audio et narration** : le Multi-Speaker permet de donner une voix différente à chaque personnage, avec des préréglages adaptés (narratif, dialogue, expressif).
-- **Applications éducatives** : voix adaptée au public (enfant, adulte) grâce au curseur de variante vocale.
-- **Applications embarquées** : synthèse légère, sans carte graphique.
-- **Accessibilité** : lecture à voix haute de tout contenu textuel avec contrôle du débit et des pauses.
-
----
-
-## En savoir plus
-
-Documentation technique de chaque moteur, dans sa première génération (v0, publiée sur PyPI et GitHub) :
-
-- [Pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) — page commune (G2P + choix moteur + VC)
-- [TTS Multi-Speaker]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) — modèle neuronal multi-voix
-- [TTS Monospeaker]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) — modèle neuronal mono-voix
-- [TTS Diphone]({{ '/developpement/modules/outils/tts-diphone/' | relative_url }}) — synthèse par concaténation
-- [Conversion vocale]({{ '/developpement/modules/metiers/vc/' | relative_url }}) — changement de timbre
-
----
-
-## Contact
-
-Pour intégrer la synthèse vocale dans votre projet : [nous contacter]({{ '/contact/' | relative_url }})
+La documentation de la première génération (v0, publiée sur PyPI et GitHub) reste disponible dans [Développement > Modules]({{ '/developpement/modules/' | relative_url }}). Pour intégrer la synthèse vocale dans un produit : [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}) ou [Contact]({{ '/contact/' | relative_url }}).

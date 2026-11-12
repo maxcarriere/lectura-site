@@ -44,7 +44,7 @@ Deux modes d'utilisation : **API** (zéro dépendance, zero config) ou **local**
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/synthese-vocale/#monospeaker--voix-haute-qualité-7-styles' | relative_url }}">Essayer la synthèse vocale en ligne →</a>
+  <a href="https://voice.lectura.world/tts">Essayer la synthèse vocale en ligne (génération actuelle) →</a>
 </div>
 
 ---

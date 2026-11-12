@@ -42,7 +42,7 @@ Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLL
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/synthese-vocale/#diphone--lecture-adaptée' | relative_url }}">Essayer la synthèse vocale Diphone en ligne →</a>
+  <a href="https://voice.lectura.world/tts">Essayer la synthèse vocale Diphone en ligne (génération actuelle) →</a>
 </div>
 
 ---

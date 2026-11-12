@@ -100,7 +100,7 @@ print(result["ortho"])   # ['521']  — formules reconnues et fusionnées
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#graphémisation-phonétique-vers-orthographe' | relative_url }}">Essayer le P2G en ligne →</a>
+  <a href="https://lingua.lectura.world/p2g">Essayer le P2G en ligne (génération actuelle) →</a>
 </div>
 
 ---

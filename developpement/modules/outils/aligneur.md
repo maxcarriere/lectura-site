@@ -41,7 +41,7 @@ C'est grâce à cet aligneur que les corpus d'entraînement des modèles [G2P]({
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#aligneur-syllabique' | relative_url }}">Essayer l'Aligneur en ligne →</a>
+  <a href="https://lingua.lectura.world/syllabes">Essayer l'Aligneur en ligne (génération actuelle) →</a>
 </div>
 
 ---

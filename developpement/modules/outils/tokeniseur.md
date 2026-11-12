@@ -63,7 +63,7 @@ pages                      MOT
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#tokenisation' | relative_url }}">Essayer le Tokeniseur en ligne →</a>
+  <a href="https://lingua.lectura.world/g2p">Essayer le Tokeniseur en ligne (génération actuelle) →</a>
 </div>
 
 ---

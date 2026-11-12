@@ -54,7 +54,7 @@ print(result["liaison"])  # ['Lz', 'none', 'Lt', 'none', 'none', 'none', 'none']
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#phonémisation-orthographe-vers-phonétique' | relative_url }}">Essayer la phonémisation en ligne →</a>
+  <a href="https://lingua.lectura.world/g2p">Essayer la phonémisation en ligne (génération actuelle) →</a>
 </div>
 
 ---

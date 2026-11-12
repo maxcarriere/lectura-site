@@ -42,7 +42,7 @@ Le modèle medium supporte les sigles et formules grâce à un fine-tuning spéc
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/reconnaissance-vocale/#essayer-en-ligne' | relative_url }}">Essayer la reconnaissance vocale en ligne →</a>
+  <a href="https://voice.lectura.world/stt">Essayer la reconnaissance vocale en ligne (génération actuelle) →</a>
 </div>
 
 ---

@@ -50,7 +50,7 @@ print(result["pos"])     # ['ART:def', 'NOM', 'AUX', 'VER', 'PRE', 'ART:def', 'N
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/analyse-langage/#graphémisation-phonétique-vers-orthographe' | relative_url }}">Essayer la graphémisation en ligne →</a>
+  <a href="https://lingua.lectura.world/p2g">Essayer la graphémisation en ligne (génération actuelle) →</a>
 </div>
 
 ---

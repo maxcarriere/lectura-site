@@ -43,7 +43,7 @@ Le choix du modèle se fait via le paramètre `model="high"` (défaut) ou `model
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/synthese-vocale/#multi-speaker--6-voix-7-styles' | relative_url }}">Essayer la synthèse vocale Multi-Speaker en ligne →</a>
+  <a href="https://voice.lectura.world/tts">Essayer la synthèse vocale Multi-Speaker en ligne (génération actuelle) →</a>
 </div>
 
 ---
