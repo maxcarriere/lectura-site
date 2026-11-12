@@ -227,6 +227,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.lectura.world/articles/lexik-publie-sur-ortolang/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/articles/lexik-et-wikilexik/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.lectura.world/articles/corpus-de-syllabes/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lectura.world/decouvrir/articles/</loc>
     <priority>0.7</priority>
   </url>

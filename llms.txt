@@ -65,6 +65,9 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/
 - Lexique : https://www.lectura.world/solutions/lexique/
 - Le point de vue phonetique : https://www.lectura.world/articles/le-point-de-vue-phonetique/
+- LeXiK publie sur ORTOLANG : https://www.lectura.world/articles/lexik-publie-sur-ortolang/
+- LeXiK et WiKiLeXiK : https://www.lectura.world/articles/lexik-et-wikilexik/
+- Les syllabes du francais, avec leurs sons : https://www.lectura.world/articles/corpus-de-syllabes/
 - Offres : https://www.lectura.world/offres/
 - Entreprises : https://www.lectura.world/offres/entreprises/
 - Particuliers : https://www.lectura.world/offres/particuliers/

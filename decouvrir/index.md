@@ -22,6 +22,6 @@ description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méth
   </a>
   <a class="dc-carte" href="{{ '/decouvrir/articles/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4M8 11h8M8 15h8M8 19h5"/></svg></span>
-    <span class="dc-sur">Découvrir</span><span class="dc-titre">Les articles</span>
+    <span class="dc-sur">Découvrir</span><span class="dc-titre">Le blog</span>
   </a>
 </div>
