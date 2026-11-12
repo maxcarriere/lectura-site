@@ -72,6 +72,43 @@
   }
 
   /* ------------------------------------------------------------------
+   * 3 bis. Rubrique de la page en cours dépliée (Maxime, 12/11/2026)
+   * Ex. : sur la page Fondateur, « Découvrir » est déplié, dans le menu
+   * latéral comme dans le menu du téléphone. Un article du blog
+   * (/articles/…) déplie Découvrir > Blog.
+   * ----------------------------------------------------------------*/
+  function normaliser(chemin) {
+    chemin = chemin.replace(/index\.html$/, '');
+    return chemin.charAt(chemin.length - 1) === '/' ? chemin : chemin + '/';
+  }
+
+  function ouvrirRubriqueCourante(container, groupSel, childrenSel, toggleSel, openClass, activeClass) {
+    if (!container) return;
+    var ici = normaliser(window.location.pathname);
+    if (ici.indexOf('/articles/') === 0) ici = '/decouvrir/articles/';
+    var liens = container.querySelectorAll('a[href]');
+    for (var i = 0; i < liens.length; i++) {
+      var lien = liens[i];
+      if (normaliser(lien.pathname) !== ici || lien.hostname !== window.location.hostname) continue;
+      if (activeClass) lien.classList.add(activeClass);
+      var el = lien.parentElement;
+      while (el && el !== container) {
+        if (el.matches(groupSel)) {
+          var tete = el.firstElementChild;
+          var enfants = tete ? tete.nextElementSibling : null;
+          var bouton = tete ? tete.querySelector(toggleSel) : null;
+          if (enfants && enfants.matches(childrenSel)) {
+            el.classList.add(openClass);
+            enfants.setAttribute('aria-hidden', 'false');
+            if (bouton) bouton.setAttribute('aria-expanded', 'true');
+          }
+        }
+        el = el.parentElement;
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------
    * 4. Init
    * ----------------------------------------------------------------*/
   function init() {
@@ -93,6 +130,10 @@
 
     // Hamburger
     setupHamburger();
+
+    // Rubrique de la page en cours dépliée
+    ouvrirRubriqueCourante(document.querySelector('.site-sidebar'), '.nav-group', '.nav-children', '.nav-toggle', 'nav-group--open', 'nav-link--active');
+    ouvrirRubriqueCourante(document.getElementById('mobile-nav'), '.mobile-nav-group', '.mobile-nav-children', '.mobile-nav-toggle', 'mobile-nav-group--open', null);
   }
 
   // Mesure au chargement et au resize
