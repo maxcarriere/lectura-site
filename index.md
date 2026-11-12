@@ -36,7 +36,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 <div class="accueil-nouveautes" markdown="0">
   <h2>Nouveautés</h2>
   <ul>
-  {%- for a in site.posts limit: 3 %}
+  {%- for a in site.posts limit: 10 %}
     <li><small><time datetime="{{ a.date | date_to_xmlschema }}">{% include date-fr.html date=a.date %}</time></small> · <a href="{{ a.url | relative_url }}">{{ a.title }}</a></li>
   {%- endfor %}
   </ul>
