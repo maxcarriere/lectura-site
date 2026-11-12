@@ -9,7 +9,7 @@ Le 29 octobre 2026, **LeXiK**, le lexique du français développé par Lectura, 
 
 ## Une première reconnaissance
 
-Lectura n'est pas né dans un laboratoire. Le projet est porté par une seule personne, venue du freelance et du salariat plutôt que de la recherche, qui travaille avec l'intelligence artificielle comme partenaire de production. Voir LeXiK accepté sur une plateforme de la recherche est donc une étape importante : c'est une première reconnaissance académique du travail de Lectura, et la preuve qu'un projet indépendant peut produire une ressource que la communauté scientifique peut citer et réutiliser.
+Lectura n'est pas né dans un laboratoire. Le projet est porté par une seule personne, venue d'un autre horizon, qui travaille avec l'intelligence artificielle comme partenaire de production. Voir LeXiK accepté sur une plateforme de la recherche est donc une étape importante : c'est une première reconnaissance académique du travail de Lectura, et la preuve qu'un projet indépendant peut produire une ressource que la communauté scientifique peut citer et réutiliser.
 
 C'est une petite victoire, mais une victoire : le lexique est désormais **citable**, par un identifiant pérenne, [hdl.handle.net/11403/lexik](https://hdl.handle.net/11403/lexik).
 
