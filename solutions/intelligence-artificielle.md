@@ -1,19 +1,25 @@
 ---
-title: "Organiser le travail avec l'IA"
+title: "Intelligence artificielle"
 layout: default
-permalink: /solutions/travail-ia/
+permalink: /solutions/intelligence-artificielle/
 redirect_from:
   - /a-propos/methode/
-description: "La méthode de travail avec l'IA selon laquelle Lectura a été développé, et ce qu'elle peut apporter à d'autres entreprises."
+  - /solutions/travail-ia/
+description: "L'intelligence artificielle chez Lectura : comprendre l'IA, concevoir et entraîner des modèles, et organiser le travail avec elle."
 ---
 
-{% comment %} Troisième axe des Solutions (Maxime, 11/11/2026) : l'ancienne page « Méthode : le rôle de l'IA », présentée comme une solution. {% endcomment %}
+{% comment %} Troisième axe des Solutions (Maxime, 11/11/2026) : l'ancienne page « Méthode : le rôle de l'IA », présentée comme une solution. Renommé « Intelligence artificielle » et élargi (Maxime, 12/11) : l'organisation du travail en reste une composante importante. Ancienne version : brain/lectura/site/anciennes-pages/solutions_travail-ia_2026-11-12.md. {% endcomment %}
 
-Lectura a été entièrement développé selon une méthode de travail avec l'IA, décrite sur cette page. Cette méthode n'est pas propre à Lectura : elle pourrait profiter à d'autres entreprises. C'est en cela qu'elle est une **solution**, au même titre que la technologie et les outils éducatifs.
+L'intelligence artificielle est présente partout chez Lectura, à deux niveaux :
+
+- **comme technologie** : les voix, la reconnaissance vocale et l'analyse du français reposent sur des modèles que Lectura conçoit et entraîne lui-même. Préparer les données, choisir une architecture, entraîner un modèle, mesurer ce qu'il vaut : c'est une façon de comprendre l'IA de l'intérieur, de savoir ce qu'elle sait faire et ce qu'elle ne sait pas faire ;
+- **comme méthode de travail** : Lectura a été entièrement développé avec l'IA, selon une organisation décrite sur cette page.
+
+Cette expérience n'est pas propre à Lectura : comprendre l'IA, savoir quand et comment entraîner un modèle, organiser un projet avec elle, tout cela peut profiter à d'autres entreprises. C'est en cela qu'elle est une **solution**, au même titre que la technologie et les outils éducatifs.
 
 <span class="status-badge">Axe en cours de structuration</span>
 
-Ce que Lectura envisage de proposer : un environnement de travail préparamétré, un document qui explique l'organisation d'un projet mené avec l'IA, et une formation à l'usage d'outils comme Claude Code. Pour en parler : [Contact]({{ '/contact/' | relative_url }}).
+Ce que Lectura envisage de proposer : un éclairage sur le fonctionnement de l'IA et l'entraînement des modèles, un environnement de travail préparamétré, un document qui explique l'organisation d'un projet mené avec l'IA, et une formation à l'usage d'outils comme Claude Code. Pour en parler : [Contact]({{ '/contact/' | relative_url }}).
 
 ---
 

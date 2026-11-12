@@ -59,7 +59,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Solutions : https://www.lectura.world/solutions/
 - Solutions technologiques : https://www.lectura.world/solutions/technologiques/
 - Solutions educatives : https://www.lectura.world/solutions/educatives/
-- Organiser le travail avec l'IA (methode de Lectura) : https://www.lectura.world/solutions/travail-ia/
+- Intelligence artificielle (comprendre l'IA, entrainer des modeles, organiser le travail avec elle) : https://www.lectura.world/solutions/intelligence-artificielle/
 - Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
 - Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
 - Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/

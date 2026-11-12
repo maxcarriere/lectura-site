@@ -19,9 +19,9 @@ description: "Les solutions de Lectura : une technologie du langage centrée sur
     <a class="more-link" href="{{ '/solutions/educatives/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
-    <h2>Travail avec l'IA</h2>
-    <p>La méthode selon laquelle Lectura a été développé, et ce qu'elle peut apporter à d'autres entreprises.</p>
-    <a class="more-link" href="{{ '/solutions/travail-ia/' | relative_url }}">Découvrir</a>
+    <h2>Intelligence artificielle</h2>
+    <p>Comprendre l'IA, concevoir et entraîner des modèles, organiser le travail avec elle : l'expérience de Lectura, et ce qu'elle peut apporter à d'autres entreprises.</p>
+    <a class="more-link" href="{{ '/solutions/intelligence-artificielle/' | relative_url }}">Découvrir</a>
   </div>
 </div>
 

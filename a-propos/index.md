@@ -8,9 +8,9 @@ Lectura est un écosystème de projets modulaires situé à la croisée de l'éd
 
 <div class="home-grid">
   <div class="home-card">
-    <h2>Organiser le travail avec l'IA</h2>
-    <p>La méthode de développement augmenté par l'IA adoptée par Lectura.</p>
-    <a class="more-link" href="{{ '/solutions/travail-ia/' | relative_url }}">Découvrir</a>
+    <h2>Intelligence artificielle</h2>
+    <p>Comprendre l'IA, entraîner des modèles et travailler avec elle : l'approche de Lectura.</p>
+    <a class="more-link" href="{{ '/solutions/intelligence-artificielle/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
     <h2>Qu'est-ce que Lectura ?</h2>

@@ -7,7 +7,7 @@ redirect_from:
 description: "Lectura, un écosystème de projets autour du langage et de sa lecture : des outils technologiques et éducatifs, la phonétique comme pont entre l'écrit et l'oral, de nouvelles façons de travailler avec l'IA, et l'horizon d'une langue universelle."
 ---
 
-{% comment %} Vision (plan de Maxime, 11/11/2026) : général et philosophique ; les réalisations sont détaillées dans Solutions. Ordre : outils, phonétique, méthodes, langue universelle (1 et 2 inversés, comme Maxime le proposait). {% endcomment %}
+{% comment %} Vision (plan de Maxime, 11/11/2026) : général et philosophique ; les réalisations sont détaillées dans Solutions. Ordre : outils, phonétique, IA (technologie et méthode ; élargi le 12/11), langue universelle (1 et 2 inversés, comme Maxime le proposait). {% endcomment %}
 
 Lectura est un **écosystème de projets** autour d'un thème : le **langage** et sa **lecture**. Le mot « lecture » s'entend ici dans ses deux sens : la **lecture à voix haute**, celle d'une voix de synthèse, et l'**apprentissage de la lecture**, celui d'un enfant. Lectura se place ainsi à la croisée de trois domaines : le traitement automatique du langage (NLP), l'ingénierie vocale (TTS & STT) et les technologies éducatives (EdTech).
 
@@ -32,15 +32,19 @@ Entre la langue écrite et la langue parlée, la phonétique fait le lien : elle
 
 ---
 
-## 3. Explorer de nouvelles façons de travailler
+## 3. Comprendre l'intelligence artificielle et travailler avec elle
 
-Au-delà de la lecture, Lectura explore de nouvelles méthodes de travail, de développement et de recherche avec l'IA. Le but n'est pas de produire plus, mais d'aller plus loin, en répartissant bien les rôles : à l'IA la partie technique, le développement et la production, où elle excelle ; à l'humain ce qui n'est pas remplaçable (l'orientation, la créativité, les idées).
+L'intelligence artificielle est au cœur de Lectura, à deux titres.
+
+**Comme technologie.** Les outils de Lectura reposent sur des modèles qu'il conçoit et entraîne lui-même : les voix, la reconnaissance vocale, l'analyse du français. Construire les données, choisir une architecture, entraîner un modèle et mesurer ce qu'il vaut, c'est comprendre l'IA de l'intérieur, au-delà de ses usages : savoir comment elle apprend, ce qu'elle sait faire, et ce qu'elle ne sait pas faire.
+
+**Comme méthode de travail.** Au-delà de la lecture, Lectura explore de nouvelles méthodes de travail, de développement et de recherche avec l'IA. Le but n'est pas de produire plus, mais d'aller plus loin, en répartissant bien les rôles : à l'IA la partie technique, le développement et la production, où elle excelle ; à l'humain ce qui n'est pas remplaçable (l'orientation, la créativité, les idées).
 
 L'IA permet aujourd'hui de tester en quelques jours des idées qui auraient demandé, hier, des mois ou des années de développement. Pouvoir essayer vite, c'est se donner plus de chances de découvrir.
 
 Le travail est aussi organisé de façon systémique : les projets sont reliés entre eux et l'ensemble progresse d'un même mouvement. Chaque projet donne ses propres résultats, nourrit les autres et sert à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles, et chacun a fait progresser l'autre. C'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site.
 
-La page [Organiser le travail avec l'IA]({{ '/solutions/travail-ia/' | relative_url }}) décrit cette méthode plus en détail.
+La page [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }}) présente cet axe plus en détail, et notamment cette méthode de travail.
 
 ---
 
