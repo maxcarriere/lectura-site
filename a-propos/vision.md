@@ -13,8 +13,6 @@ Lire, c'est faire passer le langage d'une forme à une autre : de signes tracés
 
 Ce rapprochement fonctionne dans les deux sens, et c'est tout l'enjeu de Lectura. D'un côté, il s'agit de mettre l'intelligence artificielle au service de l'apprentissage : une machine qui sait lire peut aider un enfant à lire. De l'autre, il s'agit d'étudier la façon dont l'humain apprend pour mieux comprendre comment apprendre à une machine. Le but est de faciliter cet apprentissage : en décomposant analytiquement la tâche à apprendre, on réduit le chemin entre les données d'entrée et le résultat à produire, afin que la machine apprenne plus vite, avec moins de données et des modèles plus légers. L'apprentissage humain éclaire ainsi l'apprentissage automatique, qui en retour se met à son service.
 
-Ces deux sens ne sont pas réunis par hasard, et leur rencontre trace le fil de ce qui suit : des outils qui servent l'un et l'autre, un principe qui les relie, ce que leur construction apprend de l'intelligence artificielle, et l'horizon vers lequel tout cela conduit.
-
 ---
 
 ## 1. Des outils pour lire, de la machine à l'enfant
