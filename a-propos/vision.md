@@ -17,7 +17,9 @@ Ce rapprochement fonctionne dans les deux sens, et c'est tout l'enjeu de Lectura
 
 ## 1. Des outils pour lire, de la machine à l'enfant
 
-Aux deux sens du mot « lecture » répondent deux familles d'outils. Les premiers sont technologiques : ils apprennent à une machine à lire un texte, à le dire et à l'entendre. Lectura cherche à y faire avancer la technique non par la puissance brute, mais par la justesse de l'approche : un problème posé au bon niveau se résout avec des outils plus précis et plus légers, capables de fonctionner en local, sur l'appareil de l'utilisateur, sans dépendre d'un serveur distant.
+Aux deux sens du mot « lecture » répondent deux familles d'outils.
+
+Les premiers sont technologiques : ils apprennent à une machine à lire un texte, à le dire et à l'entendre. Lectura cherche à y faire avancer la technique non par la puissance brute, mais par la justesse de l'approche : un problème posé au bon niveau se résout avec des outils plus précis et plus légers, capables de fonctionner en local, sur l'appareil de l'utilisateur, sans dépendre d'un serveur distant.
 
 Les seconds sont éducatifs, et ils reposent sur les premiers. Une machine qui sait découper un mot en syllabes, en reconnaître les sons et les prononcer peut accompagner un enfant qui apprend à faire de même. Le numérique y sert l'autonomie de l'apprenant, et le jeu y trouve naturellement sa place, à une condition : ne jamais passer avant l'efficacité, car un outil ludique qui ne fait pas progresser cesse d'être un outil d'apprentissage.
 
