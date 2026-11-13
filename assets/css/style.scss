@@ -1945,7 +1945,8 @@ html[data-darkreader-mode] .parchment-content .dc-carte, html .parchment-content
 @media (max-width: 999px) { .decouvrir-cartes { grid-template-columns: repeat(2, 1fr); } }
 /* Solutions (Maxime, 13/11) : trois blocs, comme Découvrir */
 .decouvrir-cartes.dc-trois { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 699px) { .decouvrir-cartes, .decouvrir-cartes.dc-trois { grid-template-columns: 1fr; } }
+.decouvrir-cartes.dc-deux { grid-template-columns: repeat(2, 1fr); max-width: 32rem; margin-left: auto; margin-right: auto; }
+@media (max-width: 699px) { .decouvrir-cartes, .decouvrir-cartes.dc-trois, .decouvrir-cartes.dc-deux { grid-template-columns: 1fr; } }
 
 /* Articles et Nouveautés (Maxime, 11/11) */
 .article-meta { font-size: 0.9rem; color: #5a5a5a; }
