@@ -29,7 +29,7 @@ Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'é
 - **Analyse grammaticale** (test Universal Dependencies) : catégories justes à 97,7 % depuis le texte et à 97,0 % depuis la phonétique ; lemmes à 98,5 % ; 18 catégories, 17 traits, 65 relations de dépendance.
 - **Alignement graphèmes-phonèmes** : 99,2 % des mots alignés correctement.
 - **Syllabation**, phonétique et orthographique, les deux alignées.
-- **Lettres muettes** identifiées dans chaque mot, ainsi que les consonnes de liaison et le h aspiré.
+- **Identification des lettres particulières** : lettres muettes, consonnes de liaison et h aspiré.
 - **Options de lecture** : élisions, liaisons, enchaînements, e caducs, schwas finaux.
 - **Taille et vitesse** : environ 60 Mo de modèles pour la lecture, lexique compris (110 Mo avec l'écriture) ; environ 25 phrases par seconde sur un serveur à 4 cœurs, sans carte graphique.
 
