@@ -157,8 +157,8 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 **Applications possibles**
 
 - Entraînement et évaluation de modèles de langage et de voix.
-- Jeux de lettres et de mots.
 - Outils d'orthographe, de correction et d'écriture (synonymes, rimes).
+- Jeux de lettres et de mots.
 - Édition : vérification lexicale, listes de vocabulaire.
 - Applications d'apprentissage de la lecture et du français.
 - Recherche en linguistique.
