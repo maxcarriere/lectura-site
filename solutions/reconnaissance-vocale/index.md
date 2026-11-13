@@ -30,7 +30,7 @@ Le modèle acoustique, entraîné par Lectura, ne compte que **13 millions de pa
 | Mesure (jeu de test FLEURS, que le modèle n'a jamais vu) | Résultat |
 |---|---|
 | Taux d'erreur sur les mots, chaîne complète | **15,7 %** |
-| Pour comparaison : Whisper small (244 millions de paramètres, et qui a probablement vu ces données), même mesure | 13,3 % |
+| Pour comparaison : Whisper small (244 millions de paramètres, qui a probablement vu des données de FLEURS à l'entraînement), même mesure | 13,3 % |
 
 La génération actuelle traite le français ; l'anglais est prévu dans la génération suivante.
 

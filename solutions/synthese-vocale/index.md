@@ -18,11 +18,11 @@ La synthèse vocale de Lectura lit un texte français à voix haute. Elle ne par
 
 **Lire avec plusieurs voix et plusieurs styles.** Six voix sont disponibles, trois féminines et trois masculines, et chacune peut lire selon sept styles : neutre, narratif, dialogue, expressif, méditatif, rapide ou lent. On peut ainsi donner une voix à chaque personnage d'une histoire, ou adapter le ton au contenu.
 
-**Choisir entre trois moteurs.** Un moteur à plusieurs voix, décliné en deux modèles (l'un plus soigné, l'autre plus léger) ; un moteur à une seule voix, de haute qualité ; et un moteur par concaténation, pensé pour la pédagogie, qui prononce chaque syllabe distinctement.
+**Choisir entre trois moteurs.** Un moteur à plusieurs voix, décliné en deux modèles (l'un plus soigné, l'autre plus léger) ; un moteur à une seule voix, de haute qualité ; et un moteur expérimental par concaténation de diphones, pensé pour la pédagogie.
 
 **Surligner le texte pendant la lecture.** Chaque son produit est daté. Le texte peut donc être surligné en même temps que la voix, mot par mot ou syllabe par syllabe, et lu selon trois modes : fluide, mot à mot, ou syllabe par syllabe. C'est ce qui en fait un outil d'apprentissage de la lecture, et pas seulement de lecture à voix haute.
 
-**Varier le timbre.** Un changement de timbre, combinable avec chaque moteur, permet de transformer une voix (homme, enfant).
+**Varier le timbre.** Sur le moteur à une voix et le moteur par diphones, un changement de timbre (issu de la génération précédente) transforme la voix (homme, enfant).
 
 **Lire une prononciation donnée.** La synthèse accepte aussi une entrée directement en phonétique, ce qui permet de contrôler exactement ce qui est prononcé.
 
