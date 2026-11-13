@@ -11,7 +11,7 @@ image: /assets/images/og-lectura.png
 
 {% comment %} Accueil (structure de Maxime, 11/11/2026 au soir) : présentation et porteur, projets, plan du site en un paragraphe, contact. Pas de lien « phonétique » pour l'instant (la page pourrait disparaître). {% endcomment %}
 
-Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la phonétique comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais. Son enjeu est double : mettre l'IA au service de l'apprentissage, et s'inspirer de la façon dont l'humain apprend pour mieux apprendre à une machine.
+Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la phonétique comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais. Son enjeu est double : Mettre l'intelligence artificielle au service de l'apprentissage, et s'inspirer de la façon dont l'humain apprend pour mieux apprendre à une machine.
 
 Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à une méthode de développement augmenté par l'IA où l'intelligence artificielle est un partenaire de production à part entière.
 
