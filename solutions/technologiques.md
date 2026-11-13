@@ -145,7 +145,7 @@ Whisper small, près de vingt fois plus gros, a probablement vu des données de 
 
 ## Lexique {#lexique}
 
-Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en réunissant les grandes bases libres du français. Ces bases suivent chacune leurs propres conventions et comportent des erreurs : Lectura en a tiré un **jeu de données uniforme**, aux mêmes conventions pour toutes les entrées (catégories, traits, notation phonétique, syllabation), et **vérifié** dans son contenu.
+Tous ces outils reposent sur un lexique construit en réunissant les grandes bases libres du français, pour en tirer un **jeu de données complet, uniforme et vérifié**, aux conventions unifiées (catégories, traits, notation phonétique, syllabation). Lectura a décidé de publier ce travail gratuitement, afin de proposer pour le français un **cadre de référence** sur lequel d'autres organismes de recherche ou de développement peuvent s'appuyer.
 
 **Fonctionnalités**
 
