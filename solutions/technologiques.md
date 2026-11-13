@@ -72,13 +72,21 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - **Moteur multi-voix** : six voix (trois féminines, trois masculines) et sept styles de lecture (neutre, narratif, dialogue, expressif, méditatif, rapide, lent).
 - **Moteur à une voix**, de qualité supérieure, avec les mêmes styles.
 - **Moteur par diphones**, expérimental, pensé pour la pédagogie.
-- **Surlignage synchronisé** du texte, mot par mot ou syllabe par syllabe, et trois modes de lecture : fluide, mot à mot, syllabe par syllabe.
+- **Entrée phonémique** : la prononciation peut être donnée directement en phonèmes, ce qui permet de corriger celle d'un mot.
+- **Lecture des sigles, des nombres et des formules**, grâce à l'analyse du langage.
+- **Lecture des sons courts** (syllabes, phonèmes), qui permet la lecture syllabique.
+- **Horodatage de chaque phonème**, qui permet un surlignage synchronisé du texte, mot à mot.
 - **Intelligibilité** : relue par la reconnaissance vocale, la voix de synthèse donne entre 1,1 et 3,0 % d'erreurs sur les sons selon les voix (CommonVoice, test).
 - **Vitesse** : 3,5 à 4 fois plus rapide que le temps réel sur un processeur ordinaire, sans carte graphique.
+- **Qualité** proche de celle de Kokoro.
 
 **Applications possibles** : livres et supports lus à voix haute, applications d'apprentissage de la lecture, accessibilité, voix d'un produit embarquée dans l'application.
 
-**Améliorations prévues** : une nouvelle génération de voix, en préparation.
+**Améliorations prévues** : une nouvelle génération de voix, en préparation, qui permettra :
+
+- la **conversion vocale** : changer le timbre ou la prosodie d'une voix ;
+- le **clonage vocal** : reproduire une voix à partir d'un échantillon ;
+- une **qualité supérieure**, avec un modèle qui reste de taille portable.
 
 [Le détail]({{ '/solutions/synthese-vocale/' | relative_url }}) · [Écouter sur LecturaVoice](https://voice.lectura.world/tts)
 
@@ -142,15 +150,6 @@ De ces outils, Lectura sait tirer des supports finis, en réunissant la mise en 
 - **Programmes** : des logiciels de bureau construits sur les modules (édition vocale, consultation du lexique, formules), prototypés en 2026 et en pause.
 - **Applications** : des applications pour Android et iOS, en cours.
 - **Images, audio et vidéo** : banques d'images générées pour l'apprentissage (près de 14 000 images pour les mots illustrés), sons enregistrés par la synthèse (plus de 5 300 fichiers pour le corpus des syllabes), vidéos sous-titrées ou en karaoké synchronisées sur la voix.
-
----
-
-## Compétences visées
-
-Lectura travaille aussi à des compétences qu'il ne propose pas encore dans sa génération en service :
-
-- **Conversion vocale** : changer le timbre ou la prosodie d'une voix, en gardant ce qu'elle dit.
-- **Nouvelles langues**, pour l'analyse comme pour la voix.
 
 ---
 
