@@ -33,8 +33,6 @@ Du côté de la technologie, passer par le son simplifie bien des problèmes. Le
 
 Du côté de la pédagogie, la phonétique rend explicite ce qui est devenu implicite pour un lecteur expérimenté : les sons que l'enfant doit prononcer, syllabe par syllabe, et les lettres qui les portent. Le même alignement entre les lettres et les sons sert ainsi à la machine pour parler et à l'enfant pour apprendre à lire. C'est ce socle commun qui fait de Lectura un ensemble cohérent plutôt qu'une collection d'outils.
 
-Construire ce socle ne se fait pourtant pas à la main : il y faut des données, des modèles, de l'apprentissage automatique. C'est par là que le projet rencontre sa troisième dimension.
-
 ---
 
 ## 3. Comprendre l'intelligence artificielle et apprendre à travailler avec elle
