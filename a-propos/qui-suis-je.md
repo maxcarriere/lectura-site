@@ -20,7 +20,7 @@ Aujourd'hui, je me définis moins comme un développeur au sens classique que co
 
 ## Les projets
 
-**Lectura** est ma suite technologique pour le traitement du langage : conversion graphème-phonème, synthèse vocale, reconnaissance de la parole, correction orthographique, et un lexique de plus de deux millions d'entrées, LeXiK, publié sur ORTOLANG. Dix-sept paquets de la première génération sont publiés sur PyPI ; la génération actuelle fait tourner les démos de LecturaLingua et LecturaVoice. L'architecture repose sur le phonème comme pivot central, un choix technique qui est une passerelle centrale entre la parole et le texte.
+**Lectura** est ma suite technologique pour le traitement du langage : conversion graphème-phonème, synthèse vocale, reconnaissance de la parole, correction orthographique, un lexique de plus de deux millions d'entrées (LeXiK, publié sur ORTOLANG), et bientôt des outils numériques pour l'apprentissage de la lecture.
 
 **Humanuscrit** est un projet parallèle, plus personnel : un ensemble de textes écrits avec l'IA dans des registres variés : science-fiction, éveil spirituel, logique mathématique, systémique, poésie. Un premier roman, *System Down*, est paru en octobre 2026.
 
