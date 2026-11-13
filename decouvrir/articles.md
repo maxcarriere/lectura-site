@@ -7,7 +7,7 @@ description: "Le blog de Lectura : les nouveautés des projets et, au fil des ar
 
 {% comment %} Blog de Découvrir (Maxime, 11/11/2026 ; nommé « Blog » et mis en blocs le 12/11, ancienne version dans brain/lectura/site/anciennes-pages/). Un article = un fichier dans _posts/ (AAAA-MM-JJ-titre.md) ; le résumé du bloc est sa « description ». {% endcomment %}
 
-Les articles de ce blog présentent les nouveautés de Lectura, ou un aspect du projet : les idées qui le portent, ses ressources, ses outils et sa façon de travailler. Chaque nouveauté y est d'abord racontée, avant d'être relayée sur les réseaux.
+Les articles de ce blog présentent les nouveautés de Lectura, ou un aspect du projet : les idées qui le portent, ses ressources, ses outils et sa façon de travailler.
 
 ---
 
