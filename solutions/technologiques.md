@@ -145,7 +145,7 @@ Whisper small, près de vingt fois plus gros, a probablement vu des données de 
 
 ## Lexique
 
-Tous ces outils reposent sur un lexique que Lectura a construit et corrigé lui-même, en réunissant les grandes bases libres du français.
+Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en réunissant les grandes bases libres du français. Ces bases suivent chacune leurs propres conventions et comportent des erreurs : Lectura en a tiré un **jeu de données uniforme**, aux mêmes conventions pour toutes les entrées (catégories, traits, notation phonétique, syllabation), et **vérifié** dans son contenu.
 
 **Fonctionnalités**
 
@@ -154,7 +154,18 @@ Tous ces outils reposent sur un lexique que Lectura a construit et corrigé lui-
 - **Lexicon** : le lexique dans une application, en français et en anglais, de 25 à 73 Mo à télécharger ; validité d'un mot, fréquence, prononciations, homophones, rimes, lemmes, conjugaison, recherche multicritère.
 - **Ressources dérivées** : un corpus des 4 946 syllabes du français avec leur son, et un corpus de 1 553 mots illustrés.
 
-**Applications possibles** : jeux de lettres et de mots, outils d'orthographe, applications d'apprentissage, recherche en linguistique.
+**Applications possibles**
+
+- Entraînement et évaluation de modèles de langage et de voix.
+- Jeux de lettres et de mots.
+- Outils d'orthographe et de correction.
+- Applications d'apprentissage de la lecture et du français.
+- Recherche en linguistique.
+
+**Améliorations prévues**
+
+- Une nouvelle version sur ORTOLANG, avec les corrections signalées depuis la première.
+- D'**autres langues**.
 
 [Le lexique en détail]({{ '/solutions/lexique/' | relative_url }}) · [LecturaLexique](https://lexique.lectura.world)
 
