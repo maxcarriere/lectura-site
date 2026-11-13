@@ -29,7 +29,7 @@ Les seconds sont éducatifs, et ils reposent sur les premiers. Une machine qui s
 
 Entre la langue écrite et la langue parlée, la phonétique fait le lien : elle dit quels sons portent les lettres. C'est précisément l'étape que franchit tout lecteur, humain ou machine, et c'est pourquoi elle se trouve au centre de l'un comme de l'autre.
 
-Du côté de la technologie, passer par le son simplifie bien des problèmes. Les voix de Lectura lisent des sons plutôt que des lettres : elles n'ont pas à apprendre l'orthographe, puisque l'analyse du texte l'a déjà traduite en sons. Le même détour éclaire la correction : on écrit souvent ce que l'on entend, si bien que nombre de fautes d'orthographe s'expliquent par le son, et c'est en repassant par le son que l'on retrouve le plus facilement le mot voulu.
+Du côté de la technologie, passer par le son simplifie bien des problèmes. Les voix de Lectura lisent des sons plutôt que des lettres : elles n'ont pas à apprendre l'orthographe, puisque l'analyse du texte l'a déjà traduite en sons. Le même détour éclaire la correction : on écrit souvent ce que l'on entend, si bien que nombre de fautes d'orthographe peuvent se corriger par le son, qui, lui, est insensible à l'erreur de syntaxe.
 
 Du côté de la pédagogie, la phonétique rend explicite ce qui est devenu implicite pour un lecteur expérimenté : les sons que l'enfant doit prononcer, syllabe par syllabe, et les lettres qui les portent. Le même alignement entre les lettres et les sons sert ainsi à la machine pour parler et à l'enfant pour apprendre à lire. C'est ce socle commun qui fait de Lectura un ensemble cohérent plutôt qu'une collection d'outils.
 
