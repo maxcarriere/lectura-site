@@ -113,6 +113,30 @@
    * Sous le lien de la page en cours, la liste de ses sections (titres h2
    * à identifiant), dans le menu latéral comme dans celui du téléphone.
    * ----------------------------------------------------------------*/
+  /* Section en cours surlignée dans le menu pendant le défilement
+   * (Maxime, 13/11/2026). La page défile dans un conteneur : on écoute
+   * le défilement en phase de capture, partout. */
+  function suivreDefilement(bloc, titres) {
+    var liens = bloc.querySelectorAll('a');
+    var attente = false;
+    function maj() {
+      attente = false;
+      var seuil = window.innerHeight * 0.3;
+      var courant = 0;
+      for (var k = 0; k < titres.length; k++) {
+        if (titres[k].getBoundingClientRect().top <= seuil) courant = k;
+      }
+      for (var n = 0; n < liens.length; n++) {
+        liens[n].classList.toggle('nav-section-link--active', n === courant);
+      }
+    }
+    document.addEventListener('scroll', function () {
+      if (!attente) { attente = true; window.requestAnimationFrame(maj); }
+    }, true);
+    window.addEventListener('resize', maj);
+    maj();
+  }
+
   function ajouterSections(container, prefixe) {
     if (!container) return;
     var ici = normaliser(window.location.pathname);
@@ -139,6 +163,7 @@
       bloc.appendChild(a);
     }
     actif.parentNode.insertBefore(bloc, actif.nextSibling);
+    suivreDefilement(bloc, titres);
     if (prefixe === 'mobile-nav-') {
       bloc.addEventListener('click', function () {
         var menu = document.getElementById('mobile-nav');
