@@ -43,8 +43,6 @@ Mais l'IA n'est pas seulement l'objet du travail ; elle en est aussi l'**instrum
 
 Encore faut-il que ces pistes s'additionnent au lieu de se disperser. C'est le sens de l'**organisation systémique du travail** : les projets de Lectura sont reliés entre eux et progressent d'un même mouvement, chacun donnant ses propres résultats, nourrissant les autres et servant à les vérifier. Le lexique de Lectura, par exemple, s'est construit en même temps que ses modèles d'analyse du langage, et chacun a fait progresser l'autre. On retrouve ici, à l'échelle du travail, la logique qui unit les outils autour de la phonétique : c'est en ce sens qu'il faut entendre « écosystème de projets », et l'extension .world du site. La page [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }}) présente cette expérience plus en détail.
 
-En étudiant le langage, Lectura apprend ainsi à comprendre l'IA ; et en comprenant l'IA, il en vient à regarder le langage autrement. C'est de ce double regard que naît la dernière perspective du projet.
-
 ---
 
 ## 4. Un horizon : une langue universelle
