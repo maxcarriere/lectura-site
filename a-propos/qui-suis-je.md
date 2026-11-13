@@ -30,7 +30,7 @@ Ces projets partagent la même conviction : l'IA ne remplace pas la vision humai
 
 ## Une conviction
 
-Le monde du travail est en pleine mutation, et je pense que dans ce nouveau paysage, la valeur durable ne se situe plus dans l'écriture du code ou dans l'exécution technique, des tâches que l'IA accomplit déjà remarquablement bien. Elle se situe dans la conception, le jugement et l'arbitrage : savoir quoi construire, pourquoi, et être capable de reconnaître quand le résultat est bon ou quand il faut changer de direction. C'est ce rôle que j'occupe dans mes projets, et c'est celui que je souhaite porter professionnellement.
+Le monde du travail est en pleine mutation, et je pense que dans ce nouveau paysage, la valeur durable ne se situe plus dans l'écriture du code ou dans l'exécution technique, des tâches que l'IA accomplit déjà remarquablement bien. Elle se situe dans l'orientation, la conception, le jugement et l'arbitrage : savoir où aller, quoi construire, pourquoi, et être capable de reconnaître quand le résultat est bon ou quand il faut changer de direction. C'est ce rôle que j'occupe dans mes projets, et c'est celui que je souhaite porter professionnellement.
 
 ## Ce que je cherche
 
