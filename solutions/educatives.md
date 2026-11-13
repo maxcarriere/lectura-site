@@ -42,6 +42,19 @@ Un texte peut porter plus que ses mots : sa lecture syllabique, mais aussi la na
 
 ---
 
+## Outils éducatifs interactifs
+
+Le numérique rend l'apprentissage **interactif** : l'élève agit, et l'outil lui répond aussitôt, en le lisant, en le corrigeant ou en le guidant. Les outils de Lectura pour le langage ont de plus une qualité rare : ils sont **explicites**. Ils ne se contentent pas de donner la bonne réponse, ils savent pourquoi elle est bonne, puisque chaque mot y est relié à sa prononciation, à sa nature et à sa fonction. Ils peuvent donc **expliquer**, ce qu'une correction automatique ordinaire ne fait pas.
+
+**Fonctionnalités**
+
+- **Correcteur pédagogique** : il corrige les accords, les conjugaisons et les homophones, et **explique chaque correction**. *En ligne sur [LecturaLingua](https://lingua.lectura.world).* Sur le corpus WiCoPaCo, 60 % de ses corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
+- **Dictionnaire de rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
+
+**Applications possibles** : aide à l'écriture, poésie et chanson à l'école, révision de l'orthographe en autonomie.
+
+---
+
 ## Jeux de sons
 
 Avant de lire, l'enfant doit entendre que les mots sont faits de sons, et apprendre à les manipuler : c'est la conscience phonologique. Des jeux courts, où l'on assemble des syllabes et des sons et où chaque élément touché est lu, développent cette logique sonore.
@@ -56,14 +69,19 @@ Avant de lire, l'enfant doit entendre que les mots sont faits de sons, et appren
 
 ---
 
-## Outils éducatifs
+## Produits
 
-**Fonctionnalités**
+Les produits pédagogiques de Lectura s'appuient sur ces solutions :
 
-- **Correcteur pédagogique** : il corrige les accords, les conjugaisons et les homophones, et **explique chaque correction**. *En ligne sur [LecturaLingua](https://lingua.lectura.world).* Sur le corpus WiCoPaCo, 60 % de ses corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
-- **Dictionnaire de rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
+<div class="table-defilante" markdown="1">
 
-**Applications possibles** : aide à l'écriture, poésie et chanson à l'école, révision de l'orthographe en autonomie.
+| Produit | Solution | Statut |
+|---|---|---|
+| Méthode syllabique (manuel et application) | Lecture syllabique | En cours |
+| Correcteur pédagogique | Outils éducatifs interactifs | En ligne sur [LecturaLingua](https://lingua.lectura.world) |
+| ScrabblePhone, un Scrabble des sons | Jeux de sons | À l'étude |
+
+</div>
 
 ---
 
