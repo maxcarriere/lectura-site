@@ -92,7 +92,8 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 
 - la **conversion vocale** : changer le timbre ou la prosodie d'une voix ;
 - le **clonage vocal** : reproduire une voix à partir d'un échantillon ;
-- une **qualité supérieure**, avec un modèle qui reste de taille portable.
+- une **qualité supérieure**, avec un modèle qui reste de taille portable ;
+- d'**autres langues**.
 
 [Le détail]({{ '/solutions/synthese-vocale/' | relative_url }}) · [Écouter sur LecturaVoice](https://voice.lectura.world/tts)
 
@@ -104,8 +105,9 @@ La reconnaissance vocale décode d'abord les **sons** prononcés, puis l'analyse
 
 **Fonctionnalités**
 
-- **Transcription** d'un enregistrement ou de la voix au micro, en orthographe et en phonétique.
-- **Phonèmes datés**, avec un indice de confiance.
+- **Transcription** d'un enregistrement ou de la voix au micro, en orthographe et en phonétique, avec les nombres écrits en chiffres ou en lettres.
+- **Reconnaissance des sons réellement prononcés**, erreurs de lecture comprises, plutôt que des mots attendus.
+- **Horodatage de chaque phonème**, avec un indice de confiance, qui permet un surlignage synchronisé par mot, par syllabe ou par phonème.
 - **Alignement d'un texte sur sa lecture** : 79 % des débuts de mots placés à 50 ms près, 95 % à 100 ms près.
 - **Sous-titres** synchronisés (SRT, VTT).
 - **Taille** : un modèle acoustique de 13 millions de paramètres (50 Mo), qui tourne sans carte graphique.
@@ -123,9 +125,19 @@ La reconnaissance vocale décode d'abord les **sons** prononcés, puis l'analyse
 
 Whisper small, près de vingt fois plus gros, a probablement vu des données de FLEURS à l'entraînement.
 
-**Applications possibles** : suivi de la lecture à voix haute d'un enfant, sous-titrage, lecture karaoké, alignement de livres audio, phonétisation de corpus de parole.
+**Applications possibles**
 
-**Améliorations prévues** : une nouvelle génération du modèle acoustique, en préparation.
+- Suivi de la lecture à voix haute d'un enfant, avec repérage des erreurs.
+- Sous-titrage synchronisé de vidéos.
+- Lecture karaoké d'un texte sur sa voix.
+- Alignement de livres audio sur leur texte.
+- Saisie vocale dans une application ou un formulaire.
+- Phonétisation de corpus de parole, pour l'ingénierie vocale.
+
+**Améliorations prévues** : une nouvelle génération du modèle acoustique, en préparation, qui permettra :
+
+- une meilleure précision, avec un modèle qui reste de taille portable ;
+- d'**autres langues**.
 
 [Le détail]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) · [Essayer sur LecturaVoice](https://voice.lectura.world/stt)
 
