@@ -80,7 +80,13 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - **Vitesse** : 3,5 à 4 fois plus rapide que le temps réel sur un processeur ordinaire, sans carte graphique.
 - **Qualité** proche de celle de Kokoro.
 
-**Applications possibles** : livres et supports lus à voix haute, applications d'apprentissage de la lecture, accessibilité, voix d'un produit embarquée dans l'application.
+**Applications possibles**
+
+- Création de livres audio.
+- Création de la bande vocale d'une vidéo, avec sous-titrage synchronisé.
+- Applications d'apprentissage de la lecture.
+- Voix embarquée dans une application ou un produit.
+- Modèle de votre propre voix, pour un répondeur automatique ou des messages vocaux (avec la nouvelle génération de voix).
 
 **Améliorations prévues** : une nouvelle génération de voix, en préparation, qui permettra :
 
