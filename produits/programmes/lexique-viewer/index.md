@@ -54,10 +54,10 @@ L'enrichissement s'appuie sur le pipeline d'analyse du langage de Lectura (phon�
 
 ## En savoir plus
 
-- [Lexique — présentation]({{ '/solutions/lexique/' | relative_url }}) — vue d'ensemble de la base LeXiK
+- [Lexique — présentation]({{ '/solutions/technologiques/' | relative_url }}#lexique) — vue d'ensemble de la base LeXiK
 - [Module Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) — documentation technique et API
 - [LeXiK]({{ '/developpement/lexique/' | relative_url }}) — la base lexicale de Lectura
-- [Analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) — pipeline de phonémisation et syllabation
+- [Analyse du langage]({{ '/solutions/technologiques/' | relative_url }}#analyse-du-langage) — pipeline de phonémisation et syllabation
 
 ---
 

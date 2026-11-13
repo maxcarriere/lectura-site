@@ -59,9 +59,9 @@ Le pipeline de reconnaissance vocale de Lectura (décodeur acoustique + converti
 
 Les technologies sous-jacentes sont documentées en détail :
 
-- [Synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) — présentation des trois moteurs TTS
-- [Reconnaissance vocale]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) — pipeline STT
-- [Analyse du langage]({{ '/solutions/analyse-langage/' | relative_url }}) — phonémisation, alignement syllabique, formules
+- [Synthèse vocale]({{ '/solutions/technologiques/' | relative_url }}#synthese-vocale) — présentation des trois moteurs TTS
+- [Reconnaissance vocale]({{ '/solutions/technologiques/' | relative_url }}#reconnaissance-vocale) — pipeline STT
+- [Analyse du langage]({{ '/solutions/technologiques/' | relative_url }}#analyse-du-langage) — phonémisation, alignement syllabique, formules
 
 ---
 

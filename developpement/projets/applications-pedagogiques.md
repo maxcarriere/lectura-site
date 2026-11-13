@@ -20,7 +20,7 @@ Cette approche repose sur les briques techniques développées par Lectura :
 - La [syllabation]({{ '/developpement/recherche/algorithmes/' | relative_url }}) pour découper les mots en unités lisibles
 - Les [groupes de lecture]({{ '/developpement/recherche/algorithmes/' | relative_url }}) pour gérer les liaisons entre mots
 - Le [pipeline G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}) pour produire un texte enrichi (syllabes colorées, lettres muettes grisées, phonèmes affichés)
-- La [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}) pour la lecture audio synchronisée
+- La [synthèse vocale]({{ '/solutions/technologiques/' | relative_url }}#synthese-vocale) pour la lecture audio synchronisée
 
 ---
 

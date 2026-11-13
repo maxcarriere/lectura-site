@@ -185,4 +185,4 @@ Ces limites sont inhérentes à l'approche concaténative par moyennage. Les mod
 
 ## État d'avancement
 
-Le moteur est fonctionnel et intégré au [pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) ; il reste expérimental et se teste dans la démo de la [synthèse vocale]({{ '/solutions/synthese-vocale/' | relative_url }}). Il n'est pas développé en ce moment.
+Le moteur est fonctionnel et intégré au [pipeline TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}) ; il reste expérimental et se teste dans la démo de la [synthèse vocale]({{ '/solutions/technologiques/' | relative_url }}#synthese-vocale). Il n'est pas développé en ce moment.

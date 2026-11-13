@@ -86,7 +86,7 @@ with Lexique("mon_lexique.csv") as lex:
 ## Essayer en ligne
 
 <div class="try-online-btn">
-  <a href="{{ '/solutions/lexique/' | relative_url }}">Essayer le Lexique en ligne →</a>
+  <a href="https://lexique.lectura.world">Essayer le Lexique en ligne →</a>
 </div>
 
 ---

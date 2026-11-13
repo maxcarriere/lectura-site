@@ -22,15 +22,6 @@
   children:
     - title: Technologiques
       url: /solutions/technologiques/
-      children:
-        - title: Analyse du langage
-          url: /solutions/analyse-langage/
-        - title: "Synthèse vocale"
-          url: /solutions/synthese-vocale/
-        - title: Reconnaissance vocale
-          url: /solutions/reconnaissance-vocale/
-        - title: Lexique
-          url: /solutions/lexique/
     - title: "Pédagogiques"
       url: /solutions/educatives/
     - title: "Intelligence artificielle"

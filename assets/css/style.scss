@@ -1997,3 +1997,8 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 .table-defilante table { margin: 0 auto; }
 /* Listes : pas de justification sur téléphone (trous dans les lignes courtes) */
 @media (max-width: 699px) { .parchment-content li { text-align: left; } }
+
+/* Sections de la page en cours dans le menu (Maxime, 13/11) */
+.nav-sections { border-left: 2px solid rgba(255, 255, 255, 0.15); margin: 0.1rem 0 0.4rem 1.6rem; }
+.nav-sections .nav-section-link { font-size: 0.78rem; opacity: 0.85; padding-left: 0.8rem; }
+.nav-sections .nav-section-link:hover { opacity: 1; }

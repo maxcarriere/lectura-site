@@ -60,10 +60,10 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Solutions technologiques : https://www.lectura.world/solutions/technologiques/
 - Solutions educatives : https://www.lectura.world/solutions/educatives/
 - Intelligence artificielle (comprendre l'IA, entrainer des modeles, organiser le travail avec elle) : https://www.lectura.world/solutions/intelligence-artificielle/
-- Analyse du langage : https://www.lectura.world/solutions/analyse-langage/
-- Synthese vocale : https://www.lectura.world/solutions/synthese-vocale/
-- Reconnaissance vocale : https://www.lectura.world/solutions/reconnaissance-vocale/
-- Lexique : https://www.lectura.world/solutions/lexique/
+- Analyse du langage : https://www.lectura.world/solutions/technologiques/#analyse-du-langage
+- Synthese vocale : https://www.lectura.world/solutions/technologiques/#synthese-vocale
+- Reconnaissance vocale : https://www.lectura.world/solutions/technologiques/#reconnaissance-vocale
+- Lexique : https://www.lectura.world/solutions/technologiques/#lexique
 - Le point de vue phonetique : https://www.lectura.world/articles/le-point-de-vue-phonetique/
 - LeXiK publie sur ORTOLANG : https://www.lectura.world/articles/lexik-publie-sur-ortolang/
 - LeXiK et WiKiLeXiK : https://www.lectura.world/articles/lexik-et-wikilexik/

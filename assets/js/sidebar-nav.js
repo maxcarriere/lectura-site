@@ -109,6 +109,47 @@
   }
 
   /* ------------------------------------------------------------------
+   * 3 ter. Sections de la page en cours dans le menu (Maxime, 13/11/2026)
+   * Sous le lien de la page en cours, la liste de ses sections (titres h2
+   * à identifiant), dans le menu latéral comme dans celui du téléphone.
+   * ----------------------------------------------------------------*/
+  function ajouterSections(container, prefixe) {
+    if (!container) return;
+    var ici = normaliser(window.location.pathname);
+    if (ici === '/') return;
+    var titres = document.querySelectorAll('.parchment-content h2[id]');
+    if (titres.length < 2) return;
+    var liens = container.querySelectorAll('a.' + prefixe + 'link[href]');
+    var actif = null;
+    for (var i = 0; i < liens.length; i++) {
+      if (normaliser(liens[i].pathname) === ici && liens[i].hostname === window.location.hostname) { actif = liens[i]; break; }
+    }
+    // Seulement pour une page sans sous-pages dans le menu
+    if (!actif || /header/.test(actif.parentElement.className)) return;
+    var niveau = 2;
+    var m = actif.className.match(new RegExp(prefixe + 'link--l(\\d)'));
+    if (m) niveau = Math.min(parseInt(m[1], 10) + 1, 4);
+    var bloc = document.createElement('div');
+    bloc.className = 'nav-sections';
+    for (var j = 0; j < titres.length; j++) {
+      var a = document.createElement('a');
+      a.href = '#' + titres[j].id;
+      a.className = prefixe + 'link ' + prefixe + 'link--l' + niveau + ' nav-section-link';
+      a.textContent = titres[j].textContent.trim();
+      bloc.appendChild(a);
+    }
+    actif.parentNode.insertBefore(bloc, actif.nextSibling);
+    if (prefixe === 'mobile-nav-') {
+      bloc.addEventListener('click', function () {
+        var menu = document.getElementById('mobile-nav');
+        var btn = document.querySelector('.menu-toggle');
+        if (menu) menu.setAttribute('aria-hidden', 'true');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------
    * 4. Init
    * ----------------------------------------------------------------*/
   function init() {
@@ -134,6 +175,10 @@
     // Rubrique de la page en cours dépliée
     ouvrirRubriqueCourante(document.querySelector('.site-sidebar'), '.nav-group', '.nav-children', '.nav-toggle', 'nav-group--open', 'nav-link--active');
     ouvrirRubriqueCourante(document.getElementById('mobile-nav'), '.mobile-nav-group', '.mobile-nav-children', '.mobile-nav-toggle', 'mobile-nav-group--open', null);
+
+    // Sections de la page en cours
+    ajouterSections(document.querySelector('.site-sidebar'), 'nav-');
+    ajouterSections(document.getElementById('mobile-nav'), 'mobile-nav-');
   }
 
   // Mesure au chargement et au resize

@@ -13,9 +13,9 @@ Les chiffres ci-dessous concernent la génération en service, celle des démos 
 
 ---
 
-## Analyse du langage
+## Analyse du langage {#analyse-du-langage}
 
-L'analyse du français repose sur deux modèles. Un **modèle de phrase** analyse la phrase grammaticalement ; il transmet cette analyse à un **modèle de mot**, qui passe de l'orthographe à la phonétique ou de la phonétique à l'orthographe, en gardant l'alignement entre lettres et sons. Cet alignement guide le modèle dans la conversion elle-même, ce qui explique une part de sa précision. Un lexique embarqué complète le modèle de mot.
+L'analyse du français repose sur deux modèles. Un **modèle de phrase** analyse la phrase grammaticalement ; il transmet cette analyse à un **modèle de mot**, qui passe de l'orthographe à la phonétique ou de la phonétique à l'orthographe, en gardant l'alignement entre lettres et sons. Cet alignement guide le modèle dans la conversion elle-même, ce qui explique une part de sa précision. Un lexique embarqué complète le modèle de mot. Le modèle de phrase compte 21 millions de paramètres et a été pré-entraîné sur environ 6 millions de phrases ; le modèle de mot en compte 4 millions.
 
 Avec 99,8 % des mots bien prononcés, environ 96 % bien écrits à partir de la prononciation et 97,7 % des catégories grammaticales justes, Lectura se place parmi les meilleurs outils du marché pour le français, en phonétisation (G2P), en graphémisation (P2G) et en étiquetage grammatical.
 
@@ -24,16 +24,16 @@ Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'é
 **Fonctionnalités**
 
 - **Tokenisation et normalisation** : découpage de la phrase, ponctuation, formules (sigles et acronymes, nombres, dates, heures, monnaies, unités), avec une table de près de 4 900 abréviations.
-- **Analyse grammaticale** (test Universal Dependencies ; scores depuis l'orthographe / depuis la phonétique) : pour chaque mot de la phrase, sa catégorie grammaticale, parmi 18 (97,7 % / 97,0 %) ; son lemme (98,6 % / 97,8 %) ; sa morphologie, 17 traits comme le genre, le nombre, le temps ou la personne (catégorie et traits justes : 93,5 % / 90,7 %) ; et sa fonction dans la phrase, parmi 65 relations de dépendance (76,7 % / 76,1 %).
+- **Analyse grammaticale** (test Universal Dependencies ; scores depuis l'orthographe / depuis la phonétique) : pour chaque mot de la phrase, sa catégorie grammaticale, parmi 18 (97,7 % / 97,0 %) ; son lemme (98,6 % / 97,8 %) ; sa morphologie, 17 traits comme le genre, le nombre, le temps ou la personne (catégorie et traits justes : 93,5 % / 90,7 %) ; et sa fonction dans la phrase, parmi 65 relations de dépendance (76,7 % / 76,1 %). Les amalgames (*au* = *à* + *le*) sont reconnus.
 - **G2P, de l'écrit à l'oral** : 99,8 % des mots prononcés correctement ; 97,8 % pour les mots que le modèle n'a jamais vus, sans lexique.
-- **P2G, de l'oral à l'écrit** : environ 96 % des mots bien écrits à partir de la prononciation (FLEURS, test), homophones et accords compris.
+- **P2G, de l'oral à l'écrit** : environ 96 % des mots bien écrits à partir de la prononciation (FLEURS, test), homophones et accords compris ; grâce au lemme, une forme jamais vue s'écrit juste (*ils publient*, à partir de *publier*).
 - **Alignement graphèmes-phonèmes** : 99,2 % des mots alignés correctement.
 - **Syllabation**, phonétique et orthographique, les deux alignées.
 - **Identification des lettres particulières** : lettres muettes, consonnes de liaison et h aspiré.
 - **Options de lecture** : élisions, liaisons, enchaînements, e caducs, schwas finaux.
 - **Taille et vitesse** : environ 60 Mo de modèles pour la lecture, lexique compris (110 Mo avec l'écriture) ; environ 25 phrases par seconde sur un serveur à 4 cœurs, sans carte graphique.
 
-Lectura propose également un **correcteur** fondé sur cette technologie. Après une première passe de correction syntaxique, il fait passer la phrase par la phonétique. Ce détour « neutralise » les erreurs d'écriture : l'orthographe correcte est reconstruite à partir de la prononciation (regraphémisation), et l'analyse grammaticale de la phrase est complétée à partir de la phonétique, ce qui permet de corriger des erreurs d'accord et d'homophones. Chaque correction possède en plus un traçage, qui permet de fournir une explication pédagogique.
+Lectura propose également un **correcteur** fondé sur cette technologie. Après une première passe de correction syntaxique, il fait passer la phrase par la phonétique. Ce détour « neutralise » les erreurs d'écriture : l'orthographe correcte est reconstruite à partir de la prononciation (regraphémisation), et l'analyse grammaticale de la phrase est complétée à partir de la phonétique, ce qui permet de corriger des erreurs d'accord et d'homophones. Chaque correction possède en plus un traçage, qui permet de fournir une explication pédagogique. Un mode automatique ne garde que les corrections sûres.
 
 Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois outils, mesure de Lectura) :
 
@@ -47,7 +47,7 @@ Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois out
 
 </div>
 
-**Anglais** : un module équivalent existe pour l'anglais, avec les mêmes fonctionnalités (catégories justes à 95,0 % depuis le texte, 94,9 % depuis la phonétique), et un correcteur anglais. Il peut être complété d'un modèle de traduction anglais ↔ français, qui n'est pas développé par Lectura : OPUS-MT, de l'université d'Helsinki (licence Apache 2.0).
+**Anglais** : un module équivalent existe pour l'anglais, avec les mêmes fonctionnalités (catégories justes à 95,0 % depuis le texte, 94,9 % depuis la phonétique), et un correcteur anglais ; la phonétique y suit l'accent américain et marque l'accent tonique. Il peut être complété d'un modèle de traduction anglais ↔ français, qui n'est pas développé par Lectura : OPUS-MT, de l'université d'Helsinki (licence Apache 2.0).
 
 **Applications possibles**
 
@@ -59,11 +59,11 @@ Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois out
 
 **Améliorations prévues** : extension à d'autres langues.
 
-[Le détail]({{ '/solutions/analyse-langage/' | relative_url }}) · [Essayer sur LecturaLingua](https://lingua.lectura.world)
+[Essayer sur LecturaLingua](https://lingua.lectura.world)
 
 ---
 
-## Synthèse vocale
+## Synthèse vocale {#synthese-vocale}
 
 La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'analyse du langage, et lit donc des sons plutôt que des lettres : elle sait à quel instant chaque son est prononcé.
 
@@ -77,7 +77,7 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - **Lecture des sons courts** (syllabes, phonèmes), qui permet la lecture syllabique.
 - **Horodatage de chaque phonème**, qui permet un surlignage synchronisé du texte, mot à mot.
 - **Intelligibilité** : relue par la reconnaissance vocale, la voix de synthèse donne entre 1,1 et 3,0 % d'erreurs sur les sons selon les voix (CommonVoice, test).
-- **Vitesse** : 3,5 à 4 fois plus rapide que le temps réel sur un processeur ordinaire, sans carte graphique.
+- **Vitesse et taille** : 3,5 à 4 fois plus rapide que le temps réel sur un processeur ordinaire, sans carte graphique ; 127 Mo pour le modèle à une voix, 300 Mo pour le modèle multi-voix (architectures FastPitch et Matcha-Conformer, vocodeur HiFi-GAN).
 - **Qualité** proche de celle de Kokoro.
 
 **Applications possibles**
@@ -95,11 +95,11 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - une **qualité supérieure**, avec un modèle qui reste de taille portable ;
 - d'**autres langues**.
 
-[Le détail]({{ '/solutions/synthese-vocale/' | relative_url }}) · [Écouter sur LecturaVoice](https://voice.lectura.world/tts)
+[Écouter sur LecturaVoice](https://voice.lectura.world/tts)
 
 ---
 
-## Reconnaissance vocale
+## Reconnaissance vocale {#reconnaissance-vocale}
 
 La reconnaissance vocale décode d'abord les **sons** prononcés, puis l'analyse du langage les écrit en orthographe, en tranchant les homophones et les accords par la construction de la phrase. Cette étape phonétique entend ce qui est réellement prononcé, y compris les erreurs de lecture.
 
@@ -109,8 +109,8 @@ La reconnaissance vocale décode d'abord les **sons** prononcés, puis l'analyse
 - **Reconnaissance des sons réellement prononcés**, erreurs de lecture comprises, plutôt que des mots attendus.
 - **Horodatage de chaque phonème**, avec un indice de confiance, qui permet un surlignage synchronisé par mot, par syllabe ou par phonème.
 - **Alignement d'un texte sur sa lecture** : 79 % des débuts de mots placés à 50 ms près, 95 % à 100 ms près.
-- **Sous-titres** synchronisés (SRT, VTT).
-- **Taille** : un modèle acoustique de 13 millions de paramètres (50 Mo), qui tourne sans carte graphique.
+- **Sous-titres** synchronisés (SRT, VTT) et ligne de temps ; relecture en karaoké, ralentie, avec les sons colorés.
+- **Taille** : un modèle acoustique de 13 millions de paramètres (50 Mo), qui tourne sans carte graphique, aidé d'un modèle de langue phonétique pour choisir entre les suites de sons possibles.
 
 **Mesures** (FLEURS, test, 676 phrases, même normalisation pour tous) :
 
@@ -139,18 +139,18 @@ Whisper small, près de vingt fois plus gros, a probablement vu des données de 
 - une meilleure précision, avec un modèle qui reste de taille portable ;
 - d'**autres langues**.
 
-[Le détail]({{ '/solutions/reconnaissance-vocale/' | relative_url }}) · [Essayer sur LecturaVoice](https://voice.lectura.world/stt)
+[Essayer sur LecturaVoice](https://voice.lectura.world/stt)
 
 ---
 
-## Lexique
+## Lexique {#lexique}
 
 Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en réunissant les grandes bases libres du français. Ces bases suivent chacune leurs propres conventions et comportent des erreurs : Lectura en a tiré un **jeu de données uniforme**, aux mêmes conventions pour toutes les entrées (catégories, traits, notation phonétique, syllabation), et **vérifié** dans son contenu.
 
 **Fonctionnalités**
 
-- **LeXiK** : près de 2,9 millions d'entrées de mots (2,2 millions de graphies), plus les locutions et les formes spéciales, dont plus de 400 000 noms propres prononcés ; pour chaque entrée, la prononciation syllabée, l'analyse grammaticale, l'alignement des lettres et des sons, et la fréquence. Publié sous licence libre (CC BY-SA 4.0) sur [ORTOLANG](https://hdl.handle.net/11403/lexik).
-- **WiKiLeXiK** : un dictionnaire en ligne qui relie LeXiK au Wiktionnaire et à Wikidata (688 000 définitions, 2,5 millions d'entités).
+- **LeXiK** : près de 2,9 millions d'entrées de mots (2,2 millions de graphies), plus les locutions et les formes spéciales, dont plus de 400 000 noms propres prononcés ; pour chaque entrée, la prononciation syllabée, l'analyse grammaticale, la conjugaison, l'alignement des lettres et des sons, l'orthocode (l'orthographe annotée des syllabes, des consonnes latentes et des lettres muettes) et la fréquence. Publié sous licence libre (CC BY-SA 4.0) sur [ORTOLANG](https://hdl.handle.net/11403/lexik).
+- **WiKiLeXiK** : un dictionnaire en ligne qui relie LeXiK au Wiktionnaire et à Wikidata (688 000 définitions, avec les sens, les registres et des citations ; synonymes ; 2,5 millions d'entités classées par catégories).
 - **Lexicon** : le lexique dans une application, en français et en anglais, de 25 à 73 Mo à télécharger ; validité d'un mot, fréquence, prononciations, homophones, rimes, lemmes, conjugaison, recherche multicritère.
 - **Ressources dérivées** : un corpus des 4 946 syllabes du français avec leur son, et un corpus de 1 553 mots illustrés.
 
@@ -158,7 +158,8 @@ Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en r�
 
 - Entraînement et évaluation de modèles de langage et de voix.
 - Jeux de lettres et de mots.
-- Outils d'orthographe et de correction.
+- Outils d'orthographe, de correction et d'écriture (synonymes, rimes).
+- Édition : vérification lexicale, listes de vocabulaire.
 - Applications d'apprentissage de la lecture et du français.
 - Recherche en linguistique.
 
@@ -168,11 +169,11 @@ Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en r�
 - Une meilleure catégorisation des entités (noms de personnes, de lieux, d'organisations…).
 - Éventuellement, d'**autres langues**.
 
-[Le lexique en détail]({{ '/solutions/lexique/' | relative_url }}) · [LecturaLexique](https://lexique.lectura.world)
+[LecturaLexique](https://lexique.lectura.world) : documentation, licences et offres · [Le lexique côté développement]({{ '/developpement/lexique/' | relative_url }})
 
 ---
 
-## Fabrication de supports
+## Fabrication de supports {#fabrication-de-supports}
 
 De ces outils, Lectura sait tirer des supports finis, en réunissant la mise en page, la voix, l'image et l'application.
 
@@ -182,5 +183,7 @@ De ces outils, Lectura sait tirer des supports finis, en réunissant la mise en 
 - **Images, audio et vidéo** : banques d'images générées pour l'apprentissage (près de 14 000 images pour les mots illustrés), sons enregistrés par la synthèse (plus de 5 300 fichiers pour le corpus des syllabes), vidéos sous-titrées ou en karaoké synchronisées sur la voix.
 
 ---
+
+La documentation de la première génération de ces outils (v0, publiée sur PyPI et GitHub) reste disponible dans [Développement > Modules]({{ '/developpement/modules/' | relative_url }}).
 
 Pour utiliser ces outils dans un produit, sous licence et chez vous : [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
