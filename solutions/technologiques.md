@@ -17,7 +17,9 @@ Les chiffres ci-dessous concernent la génération en service, celle des démos 
 
 L'analyse du français repose sur deux modèles. Un **modèle de phrase** analyse la phrase grammaticalement ; il transmet cette analyse à un **modèle de mot**, qui passe de l'orthographe à la phonétique ou de la phonétique à l'orthographe, en gardant l'alignement entre lettres et sons. Cet alignement guide le modèle dans la conversion elle-même, ce qui explique une part de sa précision. Un lexique embarqué complète le modèle de mot.
 
-L'analyse peut partir du texte ou de la seule prononciation : Lectura n'a pas trouvé d'équivalent publié de cette analyse grammaticale depuis la phonétique.
+Avec 99,8 % des mots bien prononcés, environ 96 % bien écrits à partir de la prononciation et 97,7 % des catégories grammaticales justes, Lectura se place parmi les meilleurs outils du marché pour le français, en phonétisation (G2P), en graphémisation (P2G) et en étiquetage grammatical.
+
+Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'équivalent publié : l'analyse grammaticale depuis la seule prononciation, l'alignement des lettres et des sons conservé à chaque conversion, et la syllabation alignée de l'orthographe et de la phonétique.
 
 **Fonctionnalités**
 
@@ -26,7 +28,8 @@ L'analyse peut partir du texte ou de la seule prononciation : Lectura n'a pas tr
 - **P2G, de l'oral à l'écrit** : environ 96 % des mots bien écrits à partir de la prononciation (FLEURS, test), homophones et accords compris.
 - **Analyse grammaticale** (test Universal Dependencies) : catégories justes à 97,7 % depuis le texte et à 97,0 % depuis la phonétique ; lemmes à 98,5 % ; 18 catégories, 17 traits, 65 relations de dépendance.
 - **Alignement graphèmes-phonèmes** : 99,2 % des mots alignés correctement.
-- **Syllabation**, phonétique et orthographique.
+- **Syllabation**, phonétique et orthographique, les deux alignées.
+- **Lettres muettes** identifiées dans chaque mot, ainsi que les consonnes de liaison et le h aspiré.
 - **Options de lecture** : élisions, liaisons, enchaînements, e caducs, schwas finaux.
 - **Taille et vitesse** : environ 60 Mo de modèles pour la lecture, lexique compris (110 Mo avec l'écriture) ; environ 25 phrases par seconde sur un serveur à 4 cœurs, sans carte graphique.
 
@@ -47,7 +50,7 @@ L'analyse peut partir du texte ou de la seule prononciation : Lectura n'a pas tr
 **Applications possibles**
 
 - Phonémisation de corpus, notamment pour l'ingénierie vocale.
-- Lecture syllabique pour l'apprentissage de la lecture (voir les [solutions éducatives]({{ '/solutions/educatives/' | relative_url }})).
+- Lecture syllabique pour l'apprentissage de la lecture (voir les [solutions pédagogiques]({{ '/solutions/educatives/' | relative_url }})).
 - Analyse et correction de textes à visée pédagogique.
 - Apprentissage de l'anglais.
 - Aide à l'élaboration de lexiques.
@@ -126,6 +129,17 @@ Tous ces outils reposent sur un lexique que Lectura a construit et corrigé lui-
 **Applications possibles** : jeux de lettres et de mots, outils d'orthographe, applications d'apprentissage, recherche en linguistique.
 
 [Le lexique en détail]({{ '/solutions/lexique/' | relative_url }}) · [LecturaLexique](https://lexique.lectura.world)
+
+---
+
+## Fabrication de supports
+
+De ces outils, Lectura sait tirer des supports finis, en réunissant la mise en page, la voix, l'image et l'application.
+
+- **Livres et documents** : mise en page automatique de textes syllabiques ou enrichis, en page à imprimer ou en PDF ; un manuel de lecture syllabique est en prototype.
+- **Programmes** : des logiciels de bureau construits sur les modules (édition vocale, consultation du lexique, formules), prototypés en 2026 et en pause.
+- **Applications** : des applications pour Android et iOS, en cours.
+- **Images, audio et vidéo** : banques d'images générées pour l'apprentissage (près de 14 000 images pour les mots illustrés), sons enregistrés par la synthèse (plus de 5 300 fichiers pour le corpus des syllabes), vidéos sous-titrées ou en karaoké synchronisées sur la voix.
 
 ---
 
