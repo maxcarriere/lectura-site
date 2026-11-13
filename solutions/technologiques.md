@@ -24,9 +24,9 @@ Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'é
 **Fonctionnalités**
 
 - **Tokenisation et normalisation** : découpage de la phrase, ponctuation, formules (sigles et acronymes, nombres, dates, heures, monnaies, unités), avec une table de près de 4 900 abréviations.
+- **Analyse grammaticale** (test Universal Dependencies ; scores depuis l'orthographe / depuis la phonétique) : pour chaque mot de la phrase, sa catégorie grammaticale, parmi 18 (97,7 % / 97,0 %) ; son lemme (98,6 % / 97,8 %) ; sa morphologie, 17 traits comme le genre, le nombre, le temps ou la personne (catégorie et traits justes : 93,5 % / 90,7 %) ; et sa fonction dans la phrase, parmi 65 relations de dépendance (76,7 % / 76,1 %).
 - **G2P, de l'écrit à l'oral** : 99,8 % des mots prononcés correctement ; 97,8 % pour les mots que le modèle n'a jamais vus, sans lexique.
 - **P2G, de l'oral à l'écrit** : environ 96 % des mots bien écrits à partir de la prononciation (FLEURS, test), homophones et accords compris.
-- **Analyse grammaticale** (test Universal Dependencies) : catégories justes à 97,7 % depuis le texte et à 97,0 % depuis la phonétique ; lemmes à 98,5 % ; 18 catégories, 17 traits, 65 relations de dépendance.
 - **Alignement graphèmes-phonèmes** : 99,2 % des mots alignés correctement.
 - **Syllabation**, phonétique et orthographique, les deux alignées.
 - **Identification des lettres particulières** : lettres muettes, consonnes de liaison et h aspiré.
