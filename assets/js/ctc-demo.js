@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var API_URL = "https://api.lectura.world/stt/transcrire-fichier";
+  var API_URL = "https://voice.lectura.world/stt/transcrire-fichier";
 
   var container = document.querySelector(".ctc-demo");
   if (!container) return;
