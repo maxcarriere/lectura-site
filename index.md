@@ -45,6 +45,8 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 ---
 
+<h2 class="accueil-titre">Objectifs</h2>
+
 L'objectif de Lectura est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; explorer de nouvelles méthodes de travail, en lien étroit avec l'intelligence artificielle.
 
 D'un point de vue technique, Lectura peut être vu comme un écosystème de projets modulaires, dont les différents composants sont présentés dans la section [Développement]({{ '/developpement/' | relative_url }}).
@@ -56,11 +58,11 @@ D'un point de vue technique, Lectura peut être vu comme un écosystème de proj
 ---
 
 <div class="accueil-contact" markdown="0">
-  <h2>Contact</h2>
+  <h2>Contact &amp; Liens</h2>
   <p>Un projet, une question ? Écrivez à
     <a id="ac-email" class="ac-email" href="{{ '/contact/' | relative_url }}" aria-label="Adresse e-mail de Lectura"><span class="ac-rev">moc.liamg<span>&#64;</span>dlrow.arutcel</span></a>
     ou passez par la <a href="{{ '/contact/' | relative_url }}">page Contact</a>.</p>
-  <p>Sites du même auteur : <a href="https://humanuscrit.com/">Humanuscrit</a> (écriture) et <a href="https://www.zmaths.net/">Zmaths</a> (cours de mathématiques).</p>
+  <p>N’hésitez pas à visiter les autres sites du même auteur : <a href="https://humanuscrit.com/">Humanuscrit</a> (écriture) et <a href="https://www.zmaths.net/">Zmaths</a> (cours de mathématiques).</p>
 </div>
 <script>
 (function () {

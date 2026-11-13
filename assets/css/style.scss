@@ -1927,7 +1927,8 @@ html[data-darkreader-mode] .parchment-content .ap-projets a, html .parchment-con
 .accueil-projets .ap-savoir { text-align: center; }
 .ap-savoir.ap-centre { text-align: center; line-height: 1.7; }
 .accueil-contact h2 { text-align: center !important; }
-.accueil-contact p { text-align: center; }
+.accueil-contact p { text-align: left; }  /* Maxime, 13/11 : texte du contact non centré */
+.parchment-content h2.accueil-titre { text-align: center !important; }
 a.ac-email.ac-email { border-bottom: none !important; display: inline-block; vertical-align: middle; }
 .ac-rev { unicode-bidi: bidi-override; direction: rtl; }
 
