@@ -35,17 +35,17 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 <div class="accueil-nouveautes" markdown="0">
   <h2>Nouveautés</h2>
-  <ul>
+  <table class="nouveautes-table">
   {%- for a in site.posts limit: 10 %}
-    <li><small><time datetime="{{ a.date | date_to_xmlschema }}">{% include date-fr.html date=a.date %}</time></small> · <a href="{{ a.url | relative_url }}">{{ a.title }}</a></li>
+    <tr><td class="nt-date"><time datetime="{{ a.date | date_to_xmlschema }}">{% include date-fr.html date=a.date %}</time></td><td class="nt-titre"><a href="{{ a.url | relative_url }}">{{ a.title }}</a></td></tr>
   {%- endfor %}
-  </ul>
+  </table>
   <p class="ap-savoir"><a href="{{ '/decouvrir/articles/' | relative_url }}">Tout le blog</a></p>
 </div>
 
 ---
 
-L'objectif de Lectura est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; élaborer une nouvelle méthode d'organisation du travail, en lien étroit avec l'intelligence artificielle.
+L'objectif de Lectura est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; explorer de nouvelles méthodes de travail, en lien étroit avec l'intelligence artificielle.
 
 D'un point de vue technique, Lectura peut être vu comme un écosystème de projets modulaires, dont les différents composants sont présentés dans la section [Développement]({{ '/developpement/' | relative_url }}).
 
