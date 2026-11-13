@@ -27,7 +27,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
     <a href="https://lingua.lectura.world" title="LecturaLingua : l'écrit"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><span>Lingua</span></a>
     <a href="https://voice.lectura.world" title="LecturaVoice : la voix"><span class="cp-icone">{% include icone-projet.html nom='headphones' %}</span><span>Voice</span></a>
   </div>
-  <p class="ap-projets-suite">Les projets sont régulièrement améliorés et mis à jour. D'autres projets sont encore en phase de recherche ou en cours de développement.</p>
+  <p class="ap-projets-suite">Les projets sont régulièrement améliorés et mis à jour. Les outils sont testables gratuitement et sans inscription. D’autres projets sont encore en phase de recherche ou en cours de développement.</p>
   <p class="ap-savoir"><a href="{{ '/decouvrir/projets/' | relative_url }}">En savoir plus sur les projets</a></p>
 </div>
 
