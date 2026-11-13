@@ -175,12 +175,20 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 
 ## Fabrication de supports {#fabrication-de-supports}
 
-De ces outils, Lectura sait tirer des supports finis, en réunissant la mise en page, la voix, l'image et l'application.
+À partir de ces outils, Lectura crée des supports finis, sous des formes variées.
 
-- **Livres et documents** : mise en page automatique de textes syllabiques ou enrichis, en page à imprimer ou en PDF ; un manuel de lecture syllabique est en prototype.
-- **Programmes** : des logiciels de bureau construits sur les modules (édition vocale, consultation du lexique, formules), prototypés en 2026 et en pause.
-- **Applications** : des applications pour Android et iOS, en cours.
-- **Images, audio et vidéo** : banques d'images générées pour l'apprentissage (près de 14 000 images pour les mots illustrés), sons enregistrés par la synthèse (plus de 5 300 fichiers pour le corpus des syllabes), vidéos sous-titrées ou en karaoké synchronisées sur la voix.
+**Fonctionnalités**
+
+- **Livres** : mise en page de livres papier ou numériques (e-books), jusqu'à leur publication.
+- **Logiciels** : programmes de bureau construits sur les modules.
+- **Applications** : applications mobiles pour Android et iOS.
+- **Contenus multimédias** : images (près de 14 000 générées pour les mots illustrés), audio (plus de 5 300 sons pour le corpus des syllabes), vidéos sous-titrées ou en karaoké, synchronisées sur la voix.
+
+**Applications possibles**
+
+- Services éditoriaux.
+- Développement de logiciels ou de sites web.
+- Création de contenus.
 
 ---
 
