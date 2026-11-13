@@ -23,8 +23,6 @@ Les premiers sont technologiques : ils apprennent à une machine à lire un text
 
 Les seconds sont éducatifs, et ils reposent sur les premiers. Une machine qui sait découper un mot en syllabes, en reconnaître les sons et les prononcer peut accompagner un enfant qui apprend à faire de même. Le numérique y sert l'autonomie de l'apprenant, et le jeu y trouve naturellement sa place, à une condition : ne jamais passer avant l'efficacité, car un outil ludique qui ne fait pas progresser cesse d'être un outil d'apprentissage.
 
-Reste à dire quel est ce « bon niveau » où poser les problèmes. Pour Lectura, la réponse tient en un mot : la phonétique.
-
 ---
 
 ## 2. La phonétique, pont naturel entre l'écrit et l'oral {#phonetique}
