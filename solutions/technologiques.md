@@ -165,6 +165,7 @@ Tous ces outils reposent sur un lexique que Lectura a construit lui-même, en r�
 **Améliorations prévues**
 
 - Une nouvelle version sur ORTOLANG, avec les corrections signalées à la suite d'une collaboration avec d'autres travaux de recherche.
+- Une meilleure catégorisation des entités (noms de personnes, de lieux, d'organisations…).
 - Éventuellement, d'**autres langues**.
 
 [Le lexique en détail]({{ '/solutions/lexique/' | relative_url }}) · [LecturaLexique](https://lexique.lectura.world)
