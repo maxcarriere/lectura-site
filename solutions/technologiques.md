@@ -33,7 +33,7 @@ Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'é
 - **Options de lecture** : élisions, liaisons, enchaînements, e caducs, schwas finaux.
 - **Taille et vitesse** : environ 60 Mo de modèles pour la lecture, lexique compris (110 Mo avec l'écriture) ; environ 25 phrases par seconde sur un serveur à 4 cœurs, sans carte graphique.
 
-Lectura propose également un **correcteur** fondé sur cette technologie. Après une première passe de correction syntaxique, il fait passer la phrase par la phonétique. Ce détour « neutralise » les erreurs d'écriture : l'orthographe correcte est reconstruite à partir de la prononciation (regraphémisation), et l'analyse grammaticale de la phrase est complétée à partir de la phonétique, ce qui permet de corriger des erreurs d'accord et d'homophones. Chaque correction est expliquée.
+Lectura propose également un **correcteur** fondé sur cette technologie. Après une première passe de correction syntaxique, il fait passer la phrase par la phonétique. Ce détour « neutralise » les erreurs d'écriture : l'orthographe correcte est reconstruite à partir de la prononciation (regraphémisation), et l'analyse grammaticale de la phrase est complétée à partir de la phonétique, ce qui permet de corriger des erreurs d'accord et d'homophones. Chaque correction possède en plus un traçage, qui permet de fournir une explication pédagogique.
 
 Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois outils, mesure de Lectura) :
 
