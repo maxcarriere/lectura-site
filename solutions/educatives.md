@@ -26,6 +26,8 @@ Le découpage suit la **prononciation réelle de la phrase**, calculée par l'an
 
 **Applications possibles** : méthodes de lecture, manuels et livres syllabiques, applications d'apprentissage, supports d'orthophonie, adaptation de textes pour les lecteurs en difficulté.
 
+**Produits** : la Méthode syllabique, manuel et application (en cours).
+
 ---
 
 ## Lecture enrichie
@@ -40,6 +42,8 @@ Un texte peut porter plus que ses mots : sa lecture syllabique, mais aussi la na
 
 **Applications possibles** : textes enrichis pour la classe, éditions pédagogiques, apprentissage de la grammaire, apprentissage du français langue étrangère.
 
+**Produits** : une démonstration sur LecturaLingua est en préparation.
+
 ---
 
 ## Outils éducatifs interactifs
@@ -52,6 +56,8 @@ Le numérique rend l'apprentissage **interactif** : l'élève agit, et l'outil l
 - **Dictionnaire de rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
 
 **Applications possibles** : aide à l'écriture, poésie et chanson à l'école, révision de l'orthographe en autonomie.
+
+**Produits** : le Correcteur pédagogique, en ligne sur [LecturaLingua](https://lingua.lectura.world).
 
 ---
 
@@ -67,21 +73,7 @@ Avant de lire, l'enfant doit entendre que les mots sont faits de sons, et appren
 
 **Applications possibles** : mini-jeux d'éveil, jeux de lettres, activités d'orthophonie.
 
----
-
-## Produits
-
-Les produits pédagogiques de Lectura s'appuient sur ces solutions :
-
-<div class="table-defilante" markdown="1">
-
-| Produit | Solution | Statut |
-|---|---|---|
-| Méthode syllabique (manuel et application) | Lecture syllabique | En cours |
-| Correcteur pédagogique | Outils éducatifs interactifs | En ligne sur [LecturaLingua](https://lingua.lectura.world) |
-| ScrabblePhone, un Scrabble des sons | Jeux de sons | À l'étude |
-
-</div>
+**Produits** : ScrabblePhone, un Scrabble des sons (à l'étude).
 
 ---
 
