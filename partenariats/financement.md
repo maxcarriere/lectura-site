@@ -49,7 +49,7 @@ Les contreparties se définissent avec chaque financeur, selon la nature et le m
 
 - **la mention du financeur** sur les produits et les publications ;
 - **la publication du résultat sous licence libre**, dans le cas d'un financement public ;
-- **une licence commerciale offerte** sur les outils développés, si le projet aboutit ;
+- **une licence commerciale offerte**, dans le cas d'un financement privé, sur les outils développés si le projet aboutit ;
 - **un accès anticipé** aux résultats et aux outils ;
 - **une part des revenus** tirés de ce qui a été financé ;
 - pour un investisseur, **une part de la société** à créer.
