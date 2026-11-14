@@ -57,7 +57,9 @@ Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois out
 - Apprentissage de l'anglais.
 - Aide à l'élaboration de lexiques.
 
-**Améliorations prévues** : extension à d'autres langues.
+**Améliorations prévues**
+
+- Extension à d'autres langues.
 
 [Essayer sur LecturaLingua](https://lingua.lectura.world)
 
@@ -88,7 +90,9 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - Voix embarquée dans une application ou un produit.
 - Modèle de votre propre voix, pour un répondeur automatique ou des messages vocaux (avec la nouvelle génération de voix).
 
-**Améliorations prévues** : une nouvelle génération de voix, en préparation, qui permettra :
+**Améliorations prévues**
+
+Une nouvelle génération de voix, en préparation, permettra :
 
 - la **conversion vocale** : changer le timbre ou la prosodie d'une voix ;
 - le **clonage vocal** : reproduire une voix à partir d'un échantillon ;
@@ -134,7 +138,9 @@ Whisper small, près de vingt fois plus gros, a probablement vu des données de 
 - Saisie vocale dans une application ou un formulaire.
 - Phonétisation de corpus de parole, pour l'ingénierie vocale.
 
-**Améliorations prévues** : une nouvelle génération du modèle acoustique, en préparation, qui permettra :
+**Améliorations prévues**
+
+Une nouvelle génération du modèle acoustique, en préparation, permettra :
 
 - une meilleure précision, avec un modèle qui reste de taille portable ;
 - d'**autres langues**.
