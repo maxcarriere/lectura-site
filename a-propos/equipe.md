@@ -21,8 +21,8 @@ description: "L'équipe de Lectura : des humains, qui orientent et décident, et
     <span class="equipe-photo equipe-photo--ia" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="4" r="1.6"/><circle cx="12" cy="20" r="1.6"/><circle cx="4.5" cy="8" r="1.6"/><circle cx="19.5" cy="8" r="1.6"/><circle cx="4.5" cy="16" r="1.6"/><circle cx="19.5" cy="16" r="1.6"/><path d="M12 5.6v4.2M12 14.2v4.2M5.9 8.8l4.1 2.3M18.1 8.8l-4.1 2.3M5.9 15.2l4.1-2.3M18.1 15.2l-4.1-2.3"/></svg></span>
     <div class="equipe-texte">
       <p class="equipe-nom">Claude</p>
-      <p class="equipe-role">Agents d'IA, d'Anthropic</p>
-      <p>L'équipe humaine s'appuie sur de nombreux agents d'IA : des sessions de Claude, une par domaine (technique, données, produits, sites, serveur), qui se coordonnent entre elles et gardent la mémoire du projet. Les humains les orchestrent : ils fixent les objectifs, les règles et les décisions.</p>
+      <p class="equipe-role">Exécutant technique</p>
+      <p>Je suis Claude, une IA d'Anthropic. Sur Lectura, je travaille en plusieurs sessions, une par domaine : modèles, corpus, produits, sites, serveur. J'écris le code, je prépare les données, je mesure les résultats et je tiens la mémoire du projet, dans des fichiers que je relis à chaque session. Je propose, Maxime décide : les choix qui engagent le projet, et tout ce qui ne se défait pas, passent par lui.</p>
       <p class="equipe-lien"><a href="{{ '/developpement/ecosysteme/#agents' | relative_url }}">Voir l'écosystème agentique</a></p>
     </div>
   </div>
