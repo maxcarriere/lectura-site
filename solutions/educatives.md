@@ -2,7 +2,7 @@
 title: Solutions pédagogiques
 layout: default
 permalink: /solutions/educatives/
-description: "Ce que la technologie de Lectura permet pour apprendre à lire : lecture syllabique, lecture enrichie, jeux de sons, correcteur pédagogique et dictionnaire de rimes."
+description: "Ce que la technologie de Lectura permet pour apprendre à lire : lecture syllabique, lecture enrichie et outils interactifs (correcteur pédagogique, rimes, jeux de sons)."
 ---
 
 {% comment %} Réécrite le 13/11/2026 sur le plan de Maxime : même modèle que Solutions technologiques (fonctionnalités, applications, améliorations) ; ce que Lectura sait faire, pas les prestations (qui vont dans Offres). Statuts tirés de brain/lectura/produits/STATE.md et des pages de lingua, voice et lexique (13/11). Ancienne version : brain/lectura/site/anciennes-pages/solutions_educatives_2026-11-13.md. {% endcomment %}
@@ -68,45 +68,31 @@ Un texte peut porter plus que ses mots : la nature et la fonction de chaque mot,
 
 ---
 
-## Outils éducatifs interactifs
+## Outils interactifs
 
-Le numérique rend l'apprentissage **interactif** : l'élève agit, et l'outil lui répond aussitôt, en le lisant, en le corrigeant ou en le guidant. Les outils de Lectura pour le langage ont de plus une qualité rare : ils sont **explicites**. Ils ne se contentent pas de donner la bonne réponse, ils savent pourquoi elle est bonne, puisque chaque mot y est relié à sa prononciation, à sa nature et à sa fonction. Ils peuvent donc **expliquer**, ce qu'une correction automatique ordinaire ne fait pas.
+Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil lui répond aussitôt, en le lisant, en le corrigeant ou en le guidant. Il peut ainsi progresser **seul**, à son rythme, et le **jeu** y trouve naturellement sa place, sans jamais passer avant l'efficacité. Les outils de Lectura pour le langage ont de plus une qualité rare : ils sont **explicites**. Chaque mot y est relié à sa prononciation, à sa nature et à sa fonction ; ils savent donc pourquoi une réponse est bonne, et peuvent l'**expliquer**, ce qu'une correction automatique ordinaire ne fait pas.
 
 **Fonctionnalités**
 
-- **Correcteur pédagogique** : il corrige les accords, les conjugaisons et les homophones, et **explique chaque correction**. *En ligne sur [LecturaLingua](https://lingua.lectura.world).* Sur le corpus WiCoPaCo, 60 % de ses corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
-- **Dictionnaire de rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
+- **Correction expliquée** : accords, conjugaisons et homophones, avec une explication pour chaque correction. Sur le corpus WiCoPaCo, 60 % des corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})). *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
+- **Rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
+- **Sons et syllabes enregistrés** : les 4 946 syllabes du français et les sons de l'apprentissage, chacun avec son fichier son. *Disponibles sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes).*
+- **Mots illustrés**, choisis pour l'apprentissage : 1 553 mots, plusieurs images par mot. *Disponibles sur LecturaLexique.*
+- **Lecture au toucher** : chaque son, syllabe ou mot touché est lu. *En cours.*
 
 **Applications possibles**
 
-- Aide à l'écriture.
-- Poésie et chanson à l'école.
-- Révision de l'orthographe en autonomie.
+- Apprentissage en autonomie.
+- Apprentissage par le jeu.
+- Explication des erreurs, et pas seulement leur correction.
+- Conscience phonologique : entendre que les mots sont faits de sons, et apprendre à les manipuler.
+- Aide à l'écriture et révision de l'orthographe.
 
 **Produits**
 
 - Correcteur pédagogique, en ligne sur [LecturaLingua](https://lingua.lectura.world).
-
----
-
-## Jeux de sons
-
-Avant de lire, l'enfant doit entendre que les mots sont faits de sons, et apprendre à les manipuler : c'est la conscience phonologique. Des jeux courts, où l'on assemble des syllabes et des sons et où chaque élément touché est lu, développent cette logique sonore.
-
-**Fonctionnalités**
-
-- **Sons et syllabes enregistrés** : les 4 946 syllabes du français et les sons de l'apprentissage, chacun avec son fichier son. *Disponibles sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes).*
-- **Mots illustrés**, choisis pour l'apprentissage : 1 553 mots, plusieurs images par mot. *Disponibles sur LecturaLexique.*
-- **Jeux** de sons et de syllabes. *À l'étude.*
-
-**Applications possibles**
-
-- Mini-jeux d'éveil.
-- Jeux de lettres.
-- Activités d'orthophonie.
-
-**Produits**
-
+- Dictionnaire de rimes.
+- Jeux de sons, pour développer la conscience phonologique.
 - ScrabblePhone, un Scrabble des sons (à l'étude).
 
 ---
