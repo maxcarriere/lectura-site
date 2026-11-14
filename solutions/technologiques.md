@@ -9,7 +9,7 @@ description: "Ce que savent faire les outils de Lectura, chiffres à l'appui : a
 
 Les outils de Lectura vont de l'écrit à la voix, et de la voix à l'écrit. Tous reposent sur l'**alignement entre les lettres et les sons** (graphèmes et phonèmes), qui relie l'orthographe à la prononciation. Ils sont compacts, tournent **sans carte graphique** et peuvent être installés chez le client, sur ses serveurs ou dans son application.
 
-Les sites projets en donnent la documentation détaillée : [LecturaLingua](https://lingua.lectura.world) et [LecturaVoice](https://voice.lectura.world) proposent des démos en ligne, et [LecturaLexique](https://lexique.lectura.world) met gratuitement à disposition le lexique LeXiK et le dictionnaire WiKiLeXiK.
+Des démos, des ressources en libre accès et la documentation détaillée de ces solutions sont accessibles sur les sites projets [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world).
 
 ---
 
