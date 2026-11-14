@@ -47,11 +47,15 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 <h2 class="accueil-titre">Plan du site</h2>
 
-- **[Découvrir]({{ '/decouvrir/' | relative_url }})** : la vision, les projets ;
-- **[Solutions]({{ '/solutions/' | relative_url }})** : le savoir-faire de Lectura ;
-- **[Offres]({{ '/offres/' | relative_url }})** : ce que Lectura vend ;
-- **[Développement]({{ '/developpement/' | relative_url }})** : comment Lectura le développe ;
-- **[Partenariat]({{ '/partenariats/' | relative_url }})** : avec qui Lectura travaille, et comment Lectura se finance.
+**[Découvrir]({{ '/decouvrir/' | relative_url }})** : la vision, les projets.
+
+**[Solutions]({{ '/solutions/' | relative_url }})** : le savoir-faire de Lectura. Son objectif est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; explorer de nouvelles méthodes de travail, en lien étroit avec l'intelligence artificielle.
+
+**[Offres]({{ '/offres/' | relative_url }})** : ce que Lectura vend. L'offre commerciale s'adresse à la fois aux [entreprises]({{ '/offres/entreprises/' | relative_url }}), via ses briques logicielles, et aux [particuliers]({{ '/offres/particuliers/' | relative_url }}), via des produits éducatifs finis.
+
+**[Développement]({{ '/developpement/' | relative_url }})** : comment Lectura le développe. D'un point de vue technique, Lectura peut être vu comme un écosystème de projets modulaires.
+
+**[Partenariat]({{ '/partenariats/' | relative_url }})** : avec qui Lectura travaille, et comment Lectura se finance. Lectura est actuellement en recherche active de partenariats, par une [collaboration]({{ '/partenariats/collaboration/' | relative_url }}) avec d'autres acteurs du marché et par la recherche de [financements]({{ '/partenariats/financement/' | relative_url }}).
 
 ---
 
