@@ -7,7 +7,7 @@ description: "Ce que la technologie de Lectura permet pour apprendre à lire : l
 
 {% comment %} Réécrite le 13/11/2026 sur le plan de Maxime : même modèle que Solutions technologiques (fonctionnalités, applications, améliorations) ; ce que Lectura sait faire, pas les prestations (qui vont dans Offres). Statuts tirés de brain/lectura/produits/STATE.md et des pages de lingua, voice et lexique (13/11). Ancienne version : brain/lectura/site/anciennes-pages/solutions_educatives_2026-11-13.md. {% endcomment %}
 
-Les outils technologiques de Lectura, qui relient chaque lettre au son qu'elle produit, permettent de développer des innovations pédagogiques. Certaines sont déjà en ligne ; d'autres sont en cours de développement.
+Les outils technologiques de Lectura, en reliant chaque lettre au son qu'elle produit et en alignant finement le texte et la voix, ont permis de développer des innovations pédagogiques. Certaines sont déjà en ligne ; d'autres sont en cours de développement.
 
 ---
 
