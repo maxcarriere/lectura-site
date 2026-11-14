@@ -3,7 +3,7 @@ title: "LeXiK est publié sur ORTOLANG"
 categories: [article]
 description: "Le lexique de Lectura rejoint ORTOLANG, la plateforme de la recherche française pour les ressources linguistiques : une première reconnaissance académique pour un projet né hors de l'université."
 ---
-{% comment %} Article demandé par Maxime le 12/11/2026 (« une première petite victoire »), d'après le post réseaux du 05/11 (projets/lectura/prospection/lexik-ortolang_2026-11/posts-reseaux.md, n° 1). Faits : publication v1.0 acceptée par les modérateurs le 29/10 (diffusion/LEXIK.md), handle 11403/lexik. {% endcomment %}
+{% comment %} Faits : publication v1.0 acceptée par les modérateurs d'ORTOLANG le 29/10/2026, handle 11403/lexik. {% endcomment %}
 
 Le 29 octobre 2026, **LeXiK**, le lexique du français développé par Lectura, a été publié sur [ORTOLANG](https://www.ortolang.fr/), la plateforme où la recherche française dépose et partage ses ressources linguistiques : corpus, lexiques, outils. Les dépôts y sont examinés par des modérateurs avant d'être publiés.
 

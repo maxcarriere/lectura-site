@@ -3,7 +3,7 @@ title: "Les syllabes du français, avec leurs sons"
 categories: [article]
 description: "Un corpus de 4 946 syllabes du français, tiré de LeXiK : pour chacune, son fichier son, ses graphies et sa fréquence ; avec les sons et syllabes de l'apprentissage de la lecture."
 ---
-{% comment %} Article demandé par Maxime le 12/11/2026, d'après le post réseaux du 08/11 (projets/lectura/prospection/lexik-ortolang_2026-11/posts-reseaux.md, n° 4). Date : mise en vente du corpus, 03/11 (diffusion/STATE.md). {% endcomment %}
+{% comment %} Date : mise en vente du corpus, 03/11/2026. {% endcomment %}
 
 Comment s'écrit le son /o/ ? *au*, *o*, *eau*, *ô*… et dans quel ordre de fréquence ? C'est le genre de question auquel répond le **corpus de syllabes** de Lectura.
 

@@ -3,7 +3,6 @@ title: "LeXiK et WiKiLeXiK : le lexique de Lectura et son dictionnaire"
 categories: [article]
 description: "Ce que LeXiK apporte de nouveau aux lexiques du français, et WiKiLeXiK, le dictionnaire en ligne qui le relie au Wiktionnaire et à Wikidata."
 ---
-{% comment %} Article demandé par Maxime le 12/11/2026, d'après les posts réseaux du 06/11 (LeXiK) et du 07/11 (WiKiLeXiK, version de Maxime) : projets/lectura/prospection/lexik-ortolang_2026-11/posts-reseaux.md, n° 2 et 3. {% endcomment %}
 
 « Les poules couvent au couvent. » Le même mot écrit, deux prononciations. Un lexique qui ne donne qu'une prononciation par mot écrit se trompe une fois sur deux ; **LeXiK** distingue les deux, parce qu'il prononce chaque **analyse** (le nom, le verbe…), et pas seulement chaque mot écrit.
 
