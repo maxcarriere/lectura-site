@@ -74,10 +74,10 @@ Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil
 
 **Fonctionnalités**
 
-- **Interactivité** : c'est le point majeur. Lecture au toucher, surlignage synchronisé avec la voix : la tâche d'apprentissage est présentée directement sous sa forme décomposée, ce qui rend l'apprentissage beaucoup plus efficace et autonome. Le simple fait d'utiliser le produit contribue à l'apprentissage, même quand ce n'est pas l'objectif visé.
-- **Aspect ludique** : la mécanique de certains jeux est détournée au service de l'apprentissage. L'enfant apprend en s'amusant, sans avoir l'impression de faire un effort.
+- **Interactivité** : c'est le point majeur. Lecture au toucher, surlignage synchronisé avec la voix : la tâche d'apprentissage est présentée directement sous sa forme décomposée, ce qui rend l'apprentissage beaucoup plus efficace et autonome. Le simple fait d'utiliser le produit contribue à l'apprentissage, sans que celui-ci soit forcément le seul objectif visé, ni que l'enfant ait à fournir un effort particulier pour cela.
+- **Aspect ludique** : un enfant qui s'amuse utilise davantage le produit, et augmente d'autant son temps d'apprentissage. Le jeu n'est pourtant pas une fin en soi, et ne doit jamais prendre le pas sur l'apprentissage : une application peut captiver un enfant au point de le rendre presque dépendant, avec une mécanique d'apprentissage si pauvre qu'après des heures de jeu, il ne sait guère dire que « thé » et « café ». L'objectif de Lectura est que l'enfant apprenne, pas qu'il consomme le produit.
 - **Caractère explicite** : la matière pédagogique est explicite et non implicite, ce qui permet d'expliquer pourquoi dans n'importe quel contexte, et pas seulement sur quelques exemples préparés à l'avance.
-- **Illustration** : l'image donne accès au sens et rend l'apprentissage plus agréable. 1 553 mots choisis pour l'apprentissage sont déjà illustrés, avec plusieurs images par mot. *Disponibles sur [LecturaLexique](https://lexique.lectura.world).*
+- **Illustration** : l'image donne accès au sens sans passer par l'écrit, et rend l'apprentissage plus agréable. Associé à son image, un mot déchiffré peut être vérifié par l'enfant lui-même, avant même qu'il sache bien lire.
 
 **Applications possibles**
 
@@ -90,6 +90,7 @@ Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil
 
 - Correcteur pédagogique : chaque correction est expliquée ; 60 % de corrections justes sur le corpus WiCoPaCo, contre 35 à 39 % pour Grammalecte et LanguageTool. *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
 - Dictionnaire de rimes (rimes pauvres, suffisantes, riches).
+- Corpus pédagogiques : 1 553 mots choisis pour l'apprentissage, illustrés de plusieurs images chacun, et les 4 946 syllabes du français enregistrées. *Disponibles sur [LecturaLexique](https://lexique.lectura.world).*
 - Jeux de sons : ScrabblePhone, Le Son le plus long.
 - Mini-jeux qui détournent une mécanique de jeu universelle au service de l'apprentissage des syllabes : serpent, jeu de plateforme, casse-briques avec des syllabes.
 
