@@ -19,4 +19,6 @@ description: "L'équipe de Lectura : des humains, qui orientent et décident, et
   </div>
 </div>
 
+L'équipe pourrait s'agrandir : d'autres membres viendraient la compléter au fil des projets et des [partenariats]({{ '/partenariats/' | relative_url }}).
+
 L'équipe humaine s'appuie sur de nombreux agents d'IA, qu'elle orchestre : chacun a son domaine, et les humains fixent les objectifs, les règles et les décisions. Leur organisation est présentée dans l'[écosystème du projet]({{ '/developpement/ecosysteme/#agents' | relative_url }}).
