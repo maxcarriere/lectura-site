@@ -13,7 +13,7 @@ Lectura est une structure légère : ses besoins sont à sa mesure. Un financeme
 
 ## Pourquoi soutenir Lectura {#pourquoi}
 
-Lectura défend une autre façon de faire de l'intelligence artificielle : des modèles légers, qui combinent règles et apprentissage, demandent moins de données et de calcul, et tournent sur l'appareil de l'utilisateur sans dépendre d'un grand serveur. Sur le français, ses outils de phonétisation et d'analyse grammaticale figurent parmi les meilleurs du marché (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})) ; ils ont été développés en un temps record, moins d'un an, par une seule personne, sans moyens techniques particuliers. Ses ressources, comme le lexique LeXiK, sont ouvertes à tous.
+Lectura défend une autre façon de faire de l'intelligence artificielle : des modèles légers, qui combinent règles et apprentissage, demandent moins de données et de calcul, et tournent sur l'appareil de l'utilisateur sans dépendre d'un grand serveur. Sur le français, ses outils de phonétisation et d'analyse grammaticale figurent parmi les meilleurs du marché (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})) ; ils ont été développés en un temps record, moins d'un an, par une seule personne, sans moyens techniques particuliers. Certaines de ses productions ont été publiées gratuitement et sont ouvertes à tous.
 
 Ces outils servent un but concret : apprendre à lire, et apprendre plus facilement. Une structure indépendante peut explorer des pistes que les grands acteurs délaissent ; il lui faut seulement de quoi vivre.
 
