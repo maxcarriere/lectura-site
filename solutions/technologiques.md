@@ -21,7 +21,7 @@ Avec 99,8 % des mots bien prononcés, environ 96 % bien écrits à partir de la 
 
 Plusieurs de ses fonctionnalités n'ont pas, à la connaissance de Lectura, d'équivalent publié : l'analyse grammaticale depuis la seule prononciation, l'alignement des lettres et des sons conservé à chaque conversion, et la syllabation alignée de l'orthographe et de la phonétique.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Tokenisation et normalisation** : découpage de la phrase, ponctuation, formules (sigles et acronymes, nombres, dates, heures, monnaies, unités), avec une table de près de 4 900 abréviations.
 - **Analyse grammaticale** (test Universal Dependencies ; scores depuis l'orthographe / depuis la phonétique) : pour chaque mot de la phrase, sa catégorie grammaticale, parmi 18 (97,7 % / 97,0 %) ; son lemme (98,6 % / 97,8 %) ; sa morphologie, 17 traits comme le genre, le nombre, le temps ou la personne (catégorie et traits justes : 93,5 % / 90,7 %) ; et sa fonction dans la phrase, parmi 65 relations de dépendance (76,7 % / 76,1 %). Les amalgames (*au* = *à* + *le*) sont reconnus.
@@ -69,7 +69,7 @@ Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois out
 
 La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'analyse du langage, et lit donc des sons plutôt que des lettres : elle sait à quel instant chaque son est prononcé.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Moteur multi-voix** : six voix (trois féminines, trois masculines) et sept styles de lecture (neutre, narratif, dialogue, expressif, méditatif, rapide, lent).
 - **Moteur à une voix**, de qualité supérieure, avec les mêmes styles.
@@ -107,7 +107,7 @@ Une nouvelle génération de voix, en préparation, permettra :
 
 La reconnaissance vocale décode d'abord les **sons** prononcés, puis l'analyse du langage les écrit en orthographe, en tranchant les homophones et les accords par la construction de la phrase. Cette étape phonétique entend ce qui est réellement prononcé, y compris les erreurs de lecture.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Transcription** d'un enregistrement ou de la voix au micro, en orthographe et en phonétique, avec les nombres écrits en chiffres ou en lettres.
 - **Reconnaissance des sons réellement prononcés**, erreurs de lecture comprises, plutôt que des mots attendus.
@@ -153,7 +153,7 @@ Une nouvelle génération du modèle acoustique, en préparation, permettra :
 
 Tous ces outils reposent sur un lexique construit en réunissant les grandes bases libres du français, pour en tirer un **jeu de données complet, uniforme et vérifié**, aux conventions unifiées (catégories, traits, notation phonétique, syllabation). Lectura a décidé de publier ce travail gratuitement, afin de proposer pour le français un **cadre de référence** sur lequel d'autres organismes de recherche ou de développement peuvent s'appuyer.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **LeXiK** : près de 2,9 millions d'entrées de mots (2,2 millions de graphies), plus les locutions et les formes spéciales, dont plus de 400 000 noms propres prononcés ; pour chaque entrée, la prononciation syllabée, l'analyse grammaticale, la conjugaison, l'alignement des lettres et des sons, l'orthocode (l'orthographe annotée des syllabes, des consonnes latentes et des lettres muettes) et la fréquence. Publié sous licence libre (CC BY-SA 4.0) sur [ORTOLANG](https://hdl.handle.net/11403/lexik).
 - **WiKiLeXiK** : un dictionnaire en ligne qui relie LeXiK au Wiktionnaire et à Wikidata (688 000 définitions, avec les sens, les registres et des citations ; synonymes ; 2,5 millions d'entités classées par catégories).
@@ -183,7 +183,7 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 
 À partir de ces outils, Lectura élabore des supports finis, sous des formes variées. Les solutions technologiques deviennent ainsi des produits prêts à l'emploi, utilisables par les particuliers.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Livres** : mise en page de livres papier ou numériques (e-books), jusqu'à leur publication ; le texte peut y être mis en forme pour l'apprentissage (syllabes, sons en couleur, lettres muettes).
 - **Logiciels** : programmes de bureau qui utilisent les solutions présentées ci-dessus.

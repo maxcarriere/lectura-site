@@ -17,7 +17,7 @@ Pour apprendre à lire un texte, un enfant doit d'abord savoir déchiffrer les u
 
 L'analyse du langage permet de découper un texte en suivant la **prononciation réelle de la phrase**, de façon générale, et non par une règle appliquée à la main mot par mot. La lecture syllabique devrait fonctionner pour toutes les langues ; Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Mise en forme du texte** pour l'apprentissage : syllabes séparées, sons voyelles et consonnes distingués, sons complexes identifiés par des couleurs, lettres muettes estompées, liaisons marquées ; en page à imprimer ou en PDF. *En ligne sur [LecturaLingua](https://lingua.lectura.world/syllabes).*
 - **Synthèse vocale en mode syllabique**, qui lit le texte syllabe par syllabe. *En ligne sur [LecturaVoice](https://voice.lectura.world/tts).*
@@ -31,7 +31,7 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 - Apprentissage de l'anglais.
 - Aide aux personnes avec troubles dys ou des difficultés de lecture.
 
-**Produits**
+**Produits / Services**
 
 - Méthode de lecture (manuel, web).
 - Application mobile pour apprendre à lire.
@@ -46,7 +46,7 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 
 Un texte peut porter plus que ses mots : la nature et la fonction de chaque mot, son sens, sa traduction. La lecture enrichie fait apparaître ces informations dans le texte lui-même, pour aider le lecteur à le comprendre et à en voir la structure.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Annotation grammaticale** du texte : catégorie, genre, nombre, temps, fonction de chaque mot. *L'analyse est en ligne sur [LecturaLingua](https://lingua.lectura.world) ; sa mise en forme dans le texte est en cours.*
 - **Annotation du sens** (définitions, illustrations), à partir de [WiKiLeXiK](https://lexique.lectura.world/wikilexik). *À l'étude.*
@@ -61,7 +61,7 @@ Un texte peut porter plus que ses mots : la nature et la fonction de chaque mot,
 - Apprentissage du français comme langue étrangère.
 - Apprentissage des autres langues.
 
-**Produits**
+**Produits / Services**
 
 - Extension logicielle qui enrichit le texte affiché à l'écran.
 - Éditions de livres enrichis.
@@ -72,7 +72,7 @@ Un texte peut porter plus que ses mots : la nature et la fonction de chaque mot,
 
 Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil lui répond aussitôt, en le lisant, en le corrigeant ou en le guidant. Il peut ainsi progresser **seul**, à son rythme, et le **jeu** y trouve naturellement sa place, sans jamais passer avant l'efficacité. Les outils de Lectura pour le langage ont de plus une qualité rare : ils sont **explicites**. Chaque mot y est relié à sa prononciation, à sa nature et à sa fonction ; ils savent donc pourquoi une réponse est bonne, et peuvent l'**expliquer**, ce qu'une correction automatique ordinaire ne fait pas.
 
-**Fonctionnalités**
+**Composantes / Fonctionnalités**
 
 - **Interactivité** : c'est le point majeur. Lecture au toucher, surlignage synchronisé avec la voix : la tâche d'apprentissage est présentée directement sous sa forme décomposée, ce qui rend l'apprentissage beaucoup plus efficace et autonome. Le simple fait d'utiliser le produit contribue à l'apprentissage, sans que celui-ci soit forcément le seul objectif visé, ni que l'enfant ait à fournir un effort particulier pour cela.
 - **Aspect ludique** : le jeu incite l'enfant à utiliser davantage le produit, et augmente ainsi son temps d'apprentissage, sans rien céder sur l'efficacité pédagogique.
@@ -86,7 +86,7 @@ Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil
 - Explication des erreurs, et pas seulement leur correction.
 - Conscience phonologique.
 
-**Produits**
+**Produits / Services**
 
 - Correcteur pédagogique : chaque correction est expliquée ; 60 % de corrections justes sur le corpus WiCoPaCo, contre 35 à 39 % pour Grammalecte et LanguageTool. *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
 - Dictionnaire de rimes (rimes pauvres, suffisantes, riches).
