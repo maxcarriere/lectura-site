@@ -37,18 +37,21 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 - Application mobile pour apprendre à lire.
 - Mini-jeux pour enfants, pour apprendre les syllabes.
 - Supports d'orthophonie.
+- Histoires pour enfants, en écriture syllabique et avec lecture interactive.
+- Lecteur syllabique, qui flashe un texte pour en faire une lecture syllabique.
 
 ---
 
 ## Lecture enrichie
 
-Un texte peut porter plus que ses mots : sa lecture syllabique, mais aussi la nature et la fonction de chaque mot, voire son sens.
+Un texte peut porter plus que ses mots : la nature et la fonction de chaque mot, son sens, sa traduction. La lecture enrichie fait apparaître ces informations dans le texte lui-même, pour aider le lecteur à le comprendre et à en voir la structure.
 
 **Fonctionnalités**
 
 - **Annotation grammaticale** du texte : catégorie, genre, nombre, temps, fonction de chaque mot. *L'analyse est en ligne sur [LecturaLingua](https://lingua.lectura.world) ; sa mise en forme dans le texte est en cours.*
-- **Combinaison** de la lecture syllabique et de l'annotation grammaticale dans un même texte. *En cours.*
 - **Annotation du sens** (définitions, illustrations), à partir de [WiKiLeXiK](https://lexique.lectura.world/wikilexik). *À l'étude.*
+- **Annotation de la traduction** dans d'autres langues.
+- **Combinaison** possible avec les enrichissements de la lecture syllabique.
 
 **Applications possibles**
 
@@ -56,10 +59,12 @@ Un texte peut porter plus que ses mots : sa lecture syllabique, mais aussi la na
 - Éditions pédagogiques.
 - Apprentissage de la grammaire.
 - Apprentissage du français comme langue étrangère.
+- Apprentissage des autres langues.
 
 **Produits**
 
-- Démonstration sur LecturaLingua (en préparation).
+- Extension logicielle qui enrichit le texte affiché à l'écran.
+- Éditions de livres enrichis.
 
 ---
 
