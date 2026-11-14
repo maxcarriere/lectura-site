@@ -24,16 +24,20 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 - **Surlignage synchronisé** du texte avec la voix, pour que l'enfant voie quel son est prononcé. *En ligne sur LecturaVoice.*
 - **Tuiles interactives** dans des applications ou sur le web : chaque syllabe touchée est lue. *En cours.*
 
+La lecture syllabique devrait fonctionner pour toutes les langues ; Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
+
 **Applications possibles**
 
 - Apprentissage autonome de la lecture.
 - Apprentissage du français comme langue étrangère.
-- Apprentissage de l'anglais : la lecture syllabique devrait fonctionner pour toutes les langues, et Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
+- Apprentissage de l'anglais.
 - Aide aux personnes atteintes de troubles dys.
 
 **Produits**
 
-- Méthode syllabique, manuel et application (en cours).
+- Méthode de lecture (manuel, web).
+- Application mobile pour apprendre à lire.
+- Mini-jeux pour enfants, pour apprendre les syllabes.
 
 ---
 
