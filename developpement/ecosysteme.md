@@ -33,7 +33,7 @@ Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, m
 
 ## L'organisation du développement {#agents}
 
-Le développement de Lectura est mené par des agents d'IA, une session par domaine, qui se coordonnent entre eux et gardent la mémoire du projet dans des fichiers qu'ils relisent à chaque session. Le fondateur les oriente : il fixe les objectifs, les règles et les décisions, et les décisions irréversibles lui reviennent toujours (voir l'[équipe]({{ '/a-propos/equipe/' | relative_url }})).
+Le développement de Lectura est mené par des agents d'IA, une session par domaine, qui se coordonnent entre eux et gardent la mémoire du projet dans des fichiers qu'ils relisent à chaque session. Le fondateur les oriente : il fixe les objectifs, les règles et les décisions, et les décisions irréversibles lui reviennent toujours (voir l'[équipe]({{ '/a-propos/equipe/' | relative_url }})). Cette organisation évolue : elle se complète d'agents supplémentaires selon les besoins, et un domaine se divise en sous-agents quand ses tâches le demandent.
 
 {% include schema-agents.html %}
 

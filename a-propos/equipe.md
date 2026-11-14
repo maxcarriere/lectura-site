@@ -5,7 +5,7 @@ permalink: /a-propos/equipe/
 description: "L'équipe de Lectura : des humains, qui orientent et décident, et des agents d'IA, qu'ils orchestrent."
 ---
 
-{% comment %} Page créée le 14/11/2026 à la demande de Maxime : un bloc par membre (photo, rôle, présentation courte) ; d'autres membres pourront s'ajouter. Plus tard : deux sections, Humains et Agents (liste des agents et de leur rôle). Photo : photos_moi.zip (communs), PANA4651, recadrée, sans métadonnées. {% endcomment %}
+{% comment %} Page créée le 14/11/2026 à la demande de Maxime : un bloc par membre (photo, rôle, présentation courte) ; d'autres membres pourront s'ajouter. Plus tard : deux sections, Humains et Agents (liste des agents et de leur rôle). Photo : photos_moi.zip (communs), PANA4644, recadrée, sans métadonnées. {% endcomment %}
 
 <div class="equipe-membres" markdown="0">
   <div class="equipe-membre">

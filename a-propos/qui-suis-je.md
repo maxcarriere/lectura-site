@@ -7,7 +7,7 @@ permalink: /a-propos/qui-suis-je/
 ## Qui porte ce projet ?
 
 <figure class="photo-fondateur" markdown="0">
-  <img src="{{ '/assets/images/equipe/maxime-carriere-bureau.webp' | relative_url }}" alt="Maxime Carrière à son bureau" width="600" height="464">
+  <img src="{{ '/assets/images/equipe/maxime-carriere-bureau.webp' | relative_url }}" alt="Maxime Carrière à son bureau" width="600" height="511">
 </figure>
 
 Je m'appelle Maxime Carrière. Je suis agrégé de mathématiques et j'ai enseigné pendant dix ans dans le service public français. En 2025, j'ai entamé une reconversion professionnelle, à un moment où l'intelligence artificielle commençait à transformer en profondeur la manière de travailler et de produire.
