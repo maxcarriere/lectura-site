@@ -15,7 +15,7 @@ Les outils technologiques de Lectura, en reliant chaque lettre au son qu'elle pr
 
 Pour apprendre à lire un texte, un enfant doit d'abord savoir déchiffrer les unités de base de la langue parlée : les **syllabes**. Le travail de Lectura sur l'alignement des lettres et des sons, l'alignement d'un texte sur sa voix, la syllabation et la synthèse des sons courts permet de construire des outils qui accompagnent ce déchiffrage.
 
-Le découpage suit la **prononciation réelle de la phrase**, calculée par l'analyse du langage, et non une règle appliquée mot par mot : les homographes et les liaisons sont lus selon leur contexte.
+L'analyse du langage permet de découper un texte en suivant la **prononciation réelle de la phrase**, de façon générale, et non par une règle appliquée à la main mot par mot : les homographes et les liaisons sont lus selon leur contexte.
 
 **Fonctionnalités**
 
