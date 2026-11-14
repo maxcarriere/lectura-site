@@ -74,26 +74,24 @@ Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil
 
 **Fonctionnalités**
 
-- **Correction expliquée** : accords, conjugaisons et homophones, avec une explication pour chaque correction. Sur le corpus WiCoPaCo, 60 % des corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})). *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
-- **Rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
-- **Sons et syllabes enregistrés** : les 4 946 syllabes du français et les sons de l'apprentissage, chacun avec son fichier son. *Disponibles sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes).*
-- **Mots illustrés**, choisis pour l'apprentissage : 1 553 mots, plusieurs images par mot. *Disponibles sur LecturaLexique.*
-- **Lecture au toucher** : chaque son, syllabe ou mot touché est lu. *En cours.*
+- **Interactivité** : c'est le point majeur. Lecture au toucher, surlignage synchronisé avec la voix : la tâche d'apprentissage est présentée directement sous sa forme décomposée, ce qui rend l'apprentissage beaucoup plus efficace et autonome. Le simple fait d'utiliser le produit contribue à l'apprentissage, même quand ce n'est pas l'objectif visé.
+- **Aspect ludique** : la mécanique de certains jeux est détournée au service de l'apprentissage. L'enfant apprend en s'amusant, sans avoir l'impression de faire un effort.
+- **Caractère explicite** : la matière pédagogique est explicite et non implicite, ce qui permet d'expliquer pourquoi dans n'importe quel contexte, et pas seulement sur quelques exemples préparés à l'avance.
+- **Illustration** : l'image donne accès au sens et rend l'apprentissage plus agréable. 1 553 mots choisis pour l'apprentissage sont déjà illustrés, avec plusieurs images par mot. *Disponibles sur [LecturaLexique](https://lexique.lectura.world).*
 
 **Applications possibles**
 
-- Apprentissage en autonomie.
-- Apprentissage par le jeu.
+- Apprentissage en autonomie, autodidaxie.
+- Apprentissage par le jeu ou par la vidéo.
 - Explication des erreurs, et pas seulement leur correction.
-- Conscience phonologique : entendre que les mots sont faits de sons, et apprendre à les manipuler.
-- Aide à l'écriture et révision de l'orthographe.
+- Conscience phonologique.
 
 **Produits**
 
-- Correcteur pédagogique, en ligne sur [LecturaLingua](https://lingua.lectura.world).
-- Dictionnaire de rimes.
-- Jeux de sons, pour développer la conscience phonologique.
-- ScrabblePhone, un Scrabble des sons (à l'étude).
+- Correcteur pédagogique : chaque correction est expliquée ; 60 % de corrections justes sur le corpus WiCoPaCo, contre 35 à 39 % pour Grammalecte et LanguageTool. *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
+- Dictionnaire de rimes (rimes pauvres, suffisantes, riches).
+- Jeux de sons : ScrabblePhone, Le Son le plus long.
+- Mini-jeux qui détournent une mécanique de jeu universelle au service de l'apprentissage des syllabes : serpent, jeu de plateforme, casse-briques avec des syllabes.
 
 ---
 
