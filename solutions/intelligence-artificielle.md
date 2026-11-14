@@ -5,68 +5,71 @@ permalink: /solutions/intelligence-artificielle/
 redirect_from:
   - /a-propos/methode/
   - /solutions/travail-ia/
-description: "L'intelligence artificielle chez Lectura : comprendre l'IA, concevoir et entraîner des modèles, et organiser le travail avec elle."
+description: "L'intelligence artificielle chez Lectura : des modèles légers, qui orchestrent règles et apprentissage, et un environnement de travail organisé autour de l'IA."
 ---
 
-{% comment %} Troisième axe des Solutions (Maxime, 11/11/2026) : l'ancienne page « Méthode : le rôle de l'IA », présentée comme une solution. Renommé « Intelligence artificielle » et élargi (Maxime, 12/11) : l'organisation du travail en reste une composante importante. Ancienne version : brain/lectura/site/anciennes-pages/solutions_travail-ia_2026-11-12.md. {% endcomment %}
+{% comment %} Troisième axe des Solutions (Maxime, 11/11/2026). Refondue le 14/11 sur le plan de Maxime : deux parties, Modèles et Environnement de travail, avec Fonctionnalités, Applications possibles et Services ; la vision (rôle de l'humain) passe dans « La vision de Lectura ». Ancienne version : brain/lectura/site/anciennes-pages/solutions_intelligence-artificielle_2026-11-14.md. Chiffres : solutions/technologiques.md ; matériel : brain/lectura/techno/STATE.md. {% endcomment %}
 
-L'intelligence artificielle est présente chez Lectura à deux niveaux :
-
-- **comme technologie** : les voix, la reconnaissance vocale et l'analyse du français reposent sur des modèles que Lectura conçoit et entraîne lui-même. Préparer les données, choisir une architecture, entraîner un modèle, mesurer ce qu'il vaut : c'est une façon de comprendre l'IA de l'intérieur, de savoir ce qu'elle sait faire et ce qu'elle ne sait pas faire ;
-- **comme méthode de travail** : Lectura a été entièrement développé avec l'IA, selon une organisation décrite sur cette page.
-
-Cette expérience n'est pas propre à Lectura : comprendre l'IA, savoir quand et comment entraîner un modèle, organiser un projet avec elle, tout cela peut profiter à d'autres entreprises. C'est en cela qu'elle est une **solution**, au même titre que la technologie et les outils éducatifs.
+L'intelligence artificielle est présente chez Lectura à deux niveaux : comme **technologie**, avec des modèles que Lectura conçoit et entraîne lui-même, et comme **méthode de travail**, puisque Lectura a été entièrement développé avec elle. Cette double expérience peut profiter à d'autres entreprises.
 
 <span class="status-badge">Axe en cours de structuration</span>
 
-Ce que Lectura envisage de proposer : un éclairage sur le fonctionnement de l'IA, l'entraînement de modèles, la construction d'un environnement de travail fonctionnel et optimal, et l'organisation d'un projet mené avec l'IA.
+---
+
+## Modèles {#modeles}
+
+Pour réaliser une tâche au mieux, il faut distinguer ce qui peut se faire **analytiquement**, par une opération qui passe d'informations correctes à des informations correctes (une règle, un lexique, un alignement), et ce qui ne peut se faire que **statistiquement**, par inférence à partir d'exemples. Le modèle orchestre ensuite les deux : avancer par la règle là où la tâche suit une logique, laisser l'apprentissage compléter là où elle n'en suit aucune.
+
+Chaque élément analytique réduit l'espace des chemins possibles : le modèle a moins à apprendre, il lui faut moins de données et moins de paramètres. Les modèles de Lectura en sont l'application : la conversion de l'écrit en sons, par exemple, est guidée par l'alignement entre les lettres et les sons.
+
+**Composantes / Fonctionnalités**
+
+- **Modèles légers** : 21 millions de paramètres pour l'analyse de la phrase, 4 millions pour la conversion entre l'écrit et les sons, 13 millions pour la reconnaissance vocale. Ils tournent sans carte graphique, sur un serveur ou dans une application (chiffres détaillés dans les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
+- **Moins de données** : ce que la règle prend en charge n'a pas à être appris ; le modèle se concentre sur ce qui n'obéit à aucune logique.
+- **Moins de ressources matérielles** : les modèles de Lectura sont entraînés sur une seule carte graphique grand public.
+- **Données libres et communautaires** : les modèles sont construits à partir de ressources ouvertes, lexiques libres, Wiktionnaire, Wikidata, corpus de parole publics, plutôt que de données propriétaires.
+- **Modèles lisibles et réglables** : chaque étape a un rôle défini (analyse, conversion, alignement, voix). On peut corriger une étape, une règle ou une entrée du lexique sans toucher au reste : le modèle n'est pas une grande boîte noire.
+
+**Applications possibles**
+
+- **Local et autonome** : des modèles qui tournent directement sur un téléphone ou un ordinateur, sans connexion ni serveur distant.
+- **Économique** : moins de calcul et moins de données à réunir, donc des coûts d'entraînement et d'hébergement réduits.
+- **Écologique** : moins d'énergie consommée, à l'entraînement comme à l'usage.
+- **Peu de données disponibles** : langues régionales ou minoritaires, vocabulaires spécialisés (médical, juridique…), pour lesquels on manque d'exemples pour entraîner un gros modèle.
+
+**Produits / Services**
+
+- Préparation de corpus d'entraînement : nettoyage, phonétisation, alignement, annotation grammaticale.
+- Conception d'architectures de modèles : identifier la part analytique d'une tâche, et ce qu'il reste à apprendre.
+- Entraînement et évaluation de modèles compacts, mesurés sur des jeux de test publics que les modèles n'ont pas vus à l'entraînement.
+- Audit d'un projet d'IA : ce que des règles peuvent prendre en charge, et ce que cela économise.
 
 ---
 
-## Le rôle de l'IA
+## Environnement de travail {#environnement-de-travail}
 
-Les projets Lectura sont développés selon une méthode de **développement augmenté par l'IA** : l'intelligence artificielle intervient comme un partenaire de production à part entière, intégré à l'ensemble du cycle de développement.
+Lectura a été entièrement développé avec l'IA, intégrée comme partenaire de production à tout le cycle de développement : à l'IA la partie technique, à l'humain l'orientation et les décisions (voir [La vision de Lectura]({{ '/a-propos/vision/' | relative_url }})). Le gain ne vient pas de l'outil seul, mais de l'organisation qui l'entoure.
 
-La méthode de travail elle-même fait partie du projet. Comment piloter un écosystème de projets en s'appuyant sur l'IA comme partenaire de production ? Comment maintenir la qualité et la cohérence à cette échelle ? Lectura est aussi un terrain d'apprentissage sur ces questions.
+**Composantes / Fonctionnalités**
 
-### Avec l'IA, pas par l'IA
+- **Écosystème modulaire** : des briques communes à plusieurs projets ; le même traitement phonétique sert la synthèse vocale, la reconnaissance vocale et le correcteur. Les progrès d'une composante profitent aux autres, et ses erreurs se repèrent à travers elles.
+- **Méthode itérative** : c'est la conséquence de l'organisation systémique. On n'avance pas de façon linéaire, une tâche après l'autre, mais de façon arborescente, en structurant le général avant le particulier.
+- **Contexte documenté** : chaque décision et chaque convention sont consignées dans des fichiers que l'IA relit à chaque session ; le projet se documente en avançant.
+- **Agents coordonnés** : une session d'IA par domaine (technologie, site, diffusion…), qui se coordonnent entre elles et laissent à l'humain les décisions irréversibles.
+- **Veille et essais** : tester un outil sans préjugé avant de se faire un avis ; certains projets ambitieux à un moment donné deviennent réalisables quelques mois plus tard.
+- **Éthique** : licences et droits d'auteur respectés, aucune donnée protégée utilisée sans autorisation, transparence sur l'usage de l'IA.
 
-L'utilisation de l'IA dans le projet Lectura ne vise pas la production en masse à moindre coût. L'objectif est de produire mieux, en répartissant les tâches de façon optimale entre l'humain et la machine.
+**Applications possibles**
 
-**L'IA** est mobilisée là où elle est meilleure et plus rapide que l'humain : le paramétrage technique, l'écriture du code, la rédaction des textes, le graphisme, la recherche d'information et de données. Le gain de temps est considérable. Mais l'IA ne se limite pas à une meilleure exécution des tâches : sa capacité de recherche et de synthèse lui permet aussi d'explorer des pistes nouvelles, de toucher des horizons qui seraient restés hors de portée autrement.
+- Mener un projet de développement avec l'IA, seul ou en petite équipe.
+- Piloter plusieurs projets en parallèle sans perdre la cohérence d'ensemble.
+- Documenter, rédiger et rechercher l'information à grande échelle.
+- Raccourcir le délai entre une idée et son premier essai.
 
-**L'humain** reste indispensable, car l'IA ne peut pas travailler de façon totalement autonome. Paradoxalement, les décisions humaines sont peut-être plus importantes qu'avant : l'intuition, les idées, l'évaluation de la qualité, le bon sens, l'orientation des projets : tout cela est essentiel pour arriver à un résultat de qualité. Sans cette vision d'ensemble, le résultat reste générique, car par défaut l'IA renvoie la « moyenne » : quelques bouts de code isolés ou un livrable standard, sans plus-value par rapport à ce qui existe déjà sur Internet et surtout impossible à améliorer ou à imbriquer avec le reste. L'humain est aussi celui qui identifie quand l'IA part dans une mauvaise direction, et cela arrive souvent, notamment lors des réinitialisations de contexte. Sans cette vigilance, ce sont des heures de travail perdues, voire des manipulations aux conséquences plus ou moins désastreuses.
+**Produits / Services**
 
-### Vers une redéfinition du travail humain ?
-
-C'est sans doute le déplacement qui est en train de s'opérer dans le monde du travail. Hier, les profils les plus recherchés étaient des spécialistes qui excellaient dans un domaine technique particulier. Aujourd'hui, ce qui compte davantage, c'est la vision globale : être capable de construire l'architecture d'un projet, de savoir ce qui est possible et ce qui ne l'est pas, de connaître les capacités réelles de l'IA et ce qu'elle ne pourra pas remplacer dans le développement d'un projet.
-
-Une partie des critiques adressées à l'IA trouve sans doute son origine ici. Toute une élite intellectuelle et académique se retrouve soudainement à perdre l'avantage que lui conférait son expertise sur le reste de la population. C'est compréhensible, et ces inquiétudes sont recevables. Mais on peut aussi envisager cette technologie comme un formidable outil de démocratisation, qui donne à chacun, quelle que soit sa formation ou sa position académique, l'accès à des compétences autrefois réservées à quelques-uns. Et si l'expertise technique devient accessible à tous, cela poussera les hommes à développer leurs vraies compétences humaines, celles qui restent hors de portée d'une machine : l'intuition, la créativité, la sensibilité émotionnelle.
-
-Si le monde du travail tel qu'on le connaît est en train de se transformer, à quoi ressemblera celui de demain ? Une partie de la réponse passe par la façon même de structurer les projets.
-
-## Les principes de la méthode
-
-#### Un écosystème modulaire
-
-Pour que le développement avec l'IA soit rentable, il faut paralléliser. Ne plus nécessairement développer un projet isolé, mais anticiper ce qui pourrait être développé en parallèle, afin d'aboutir non pas à un programme, mais à plusieurs, chacun utilisant les mêmes briques de façon différente. Le même pipeline phonétique sert par exemple la synthèse vocale, la reconnaissance vocale et le correcteur. Un corpus construit pour un modèle est réutilisable ailleurs. Une architecture de modèle réalisée une fois est transférable à d'autres projets. La modularité est essentielle pour pouvoir réinvestir.
-
-L'autre avantage d'un écosystème, c'est que les progrès réalisés sur une composante profitent à l'ensemble. Les erreurs, elles, sont plus facilement identifiables : certaines ne se révèlent qu'à travers une des composantes du projet. Et les impasses trouvent parfois une issue imprévue en développant des composantes annexes.
-
-#### Une méthode itérative
-
-Avec l'IA, on ne développe pas de façon linéaire. On itère : on produit, on corrige, on réoriente, et le résultat s'améliore progressivement. Cet aspect itératif se retrouve à toutes les échelles. Sur une tâche simple et ciblée, on affine jusqu'à obtenir le bon résultat. À l'échelle d'un projet, on restructure au fil des retours et des découvertes. À l'échelle de l'écosystème lui-même, l'ensemble se renforce de façon progressive et continue, comme un organisme qui apprend de ses propres cycles.
-
-#### Le contexte, clé de l'efficacité
-
-Pour que l'IA produise un résultat pertinent, elle doit comprendre le projet dans lequel elle intervient. Sans contexte, elle génère du code générique ou des réponses inadaptées, déconnectées de l'architecture existante et des choix déjà faits. Une grande partie du travail d'architecture consiste justement à construire ce contexte et à le préciser au fur et à mesure.
-
-Concrètement, cela passe par une documentation continue en Markdown : chaque décision, chaque convention, chaque structure est consignée dans des fichiers que l'IA peut intégrer à chaque session de travail. Le projet se documente lui-même en avançant, et l'IA devient progressivement plus efficace parce qu'elle dispose d'une vision de plus en plus complète de ce qui a été fait, de ce qui est en cours et de ce qui est visé.
-
-#### Flexibilité et ouverture d'esprit
-
-Avant d'avoir un quelconque avis sur une méthode ou un outil : le tester sans préjugé, observer ses possibilités réelles. Dans un monde technologique qui évolue de semaine en semaine, il faut être réactif et prêt à intégrer de nouveaux outils, même quand les anciens semblent déjà efficaces. Parfois, on peut aussi miser directement sur le progrès : certains projets qui semblaient ambitieux en janvier deviennent tout à fait réalisables en juillet.
-
-#### Éthique
-
-Le recours massif à l'IA dans un processus de production soulève des questions qu'il serait irresponsable d'ignorer. Le respect des licences et des droits d'auteur est une priorité dans tous les projets Lectura. Ce principe est inscrit dans la charte de travail transmise aux différents agents : aucune donnée protégée ne doit être utilisée sans autorisation, aucun contenu ne doit être présenté comme original s'il ne l'est pas. La transparence sur l'utilisation de l'IA, dont cette page est l'illustration, fait également partie de cette exigence.
+- Éclairage sur le fonctionnement de l'IA : ce qu'elle sait faire, et où elle bute.
+- Construction du contexte de l'entreprise : documentation, conventions et règles de travail que l'IA relit à chaque session.
+- Installation d'un environnement de travail préparamétré : outils comme Claude Code, agents, permissions.
+- Accompagnement dans l'organisation d'un projet mené avec l'IA.
+- Formation à l'usage de ces outils.
