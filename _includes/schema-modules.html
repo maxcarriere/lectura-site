@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
-<svg viewBox="0 0 760 545" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 760 562" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="sm-titre">L'écosystème modulaire de Lectura</title>
-  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour : Corrector, Translator, Lexicon, Aligner et Subtitler. Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Aligner puis Subtitler). Ils apprennent sur le lexique LeXiK, des textes annotés et des corpus de parole.</desc>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour : Corrector, Translator, Lexicon, Aligner et Subtitler. Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Aligner puis Subtitler). Le lexique LeXiK entraîne le modèle de mot du Transducer et nourrit Lexicon ; des textes annotés entraînent l'analyse grammaticale ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
@@ -117,9 +117,9 @@
 
   <!-- Ressources -->
   <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.6)">
-    <rect x="20" y="437" width="226" height="80" rx="8"/>
-    <rect x="267" y="437" width="226" height="80" rx="8"/>
-    <rect x="514" y="437" width="226" height="80" rx="8"/>
+    <rect x="20" y="437" width="226" height="94" rx="8"/>
+    <rect x="267" y="437" width="226" height="94" rx="8"/>
+    <rect x="514" y="437" width="226" height="94" rx="8"/>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" text-anchor="middle" fill="#3b2a20">
     <g font-size="15" font-weight="700" fill="#0d0d0d">
@@ -133,11 +133,14 @@
       <text x="627" y="480">SIWIS, M-AILABS…</text>
     </g>
     <g font-size="13.5" font-style="italic" fill="#5a4636">
-      <text x="133" y="503">→ Transducer, Lexicon</text>
-      <text x="380" y="503">→ analyse grammaticale</text>
-      <text x="627" y="503">→ Synthesizer, Decoder</text>
+      <text x="133" y="502">entraîne le modèle de mot</text>
+      <text x="133" y="519">(Transducer) · nourrit Lexicon</text>
+      <text x="380" y="502">entraînent l'analyse</text>
+      <text x="380" y="519">grammaticale (Transducer)</text>
+      <text x="627" y="502">entraînent le Synthesizer</text>
+      <text x="627" y="519">et le Decoder</text>
     </g>
   </g>
-  <text x="380" y="538" font-family="'EB Garamond', Georgia, serif" font-size="13.5" font-style="italic" fill="#5a4636" text-anchor="middle">Les corpus de parole sont eux-mêmes transcrits en phonétique par le Transducer.</text>
+  <text x="380" y="555" font-family="'EB Garamond', Georgia, serif" font-size="13.5" font-style="italic" fill="#5a4636" text-anchor="middle">Les corpus de parole sont eux-mêmes transcrits en phonétique par le Transducer.</text>
 </svg>
 </figure>
