@@ -24,7 +24,7 @@ Chaque élément analytique réduit l'espace des chemins possibles : le modèle 
 
 - **Modèles légers** : 21 millions de paramètres pour l'analyse de la phrase, 4 millions pour la conversion entre l'écrit et les sons, 13 millions pour la reconnaissance vocale. Ils tournent sans carte graphique, sur un serveur ou dans une application (chiffres détaillés dans les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
 - **Moins de données** : ce que la règle prend en charge n'a pas à être appris ; le modèle se concentre sur ce qui n'obéit à aucune logique.
-- **Moins de ressources matérielles** : les modèles de Lectura sont entraînés sur une seule carte graphique grand public.
+- **Moins de ressources matérielles** : les modèles de Lectura sont entraînés sur une seule carte graphique grand public (une RTX 3060 de 12 Go).
 - **Données libres et communautaires** : les modèles sont construits à partir de ressources ouvertes, lexiques libres, Wiktionnaire, Wikidata, corpus de parole publics, plutôt que de données propriétaires.
 - **Modèles lisibles et réglables** : chaque étape a un rôle défini (analyse, conversion, alignement, voix). On peut corriger une étape, une règle ou une entrée du lexique sans toucher au reste : le modèle n'est pas une grande boîte noire.
 
