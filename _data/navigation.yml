@@ -42,7 +42,7 @@
 - title: "Développement"
   url: /developpement/
   children:
-    - title: "L'écosystème du projet"
+    - title: "L'écosystème"
       url: /developpement/ecosysteme/
     - title: Les modules
       url: /developpement/modules/
