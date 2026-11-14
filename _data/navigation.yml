@@ -48,8 +48,6 @@
     - title: "L'écosystème du projet"
       url: /developpement/ecosysteme/
       children:
-        - title: Recherche
-          url: /developpement/recherche/
         - title: Projets transversaux
           url: /developpement/projets/
     - title: Les modules
@@ -70,6 +68,8 @@
           url: /developpement/donnees/
         - title: Ressources produites
           url: /produits/ressources/
+    - title: Recherche
+      url: /developpement/recherche/
 
 - title: "Contact & liens"
   url: /contact/
