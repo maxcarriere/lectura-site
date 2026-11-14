@@ -53,7 +53,7 @@ Lectura a été entièrement développé avec l'IA, intégrée comme partenaire 
 - **Écosystème modulaire** : des briques communes à plusieurs projets ; le même traitement phonétique sert la synthèse vocale, la reconnaissance vocale et le correcteur. Les progrès d'une composante profitent aux autres, et ses erreurs se repèrent à travers elles.
 - **Méthode itérative** : c'est la conséquence de l'organisation systémique. On n'avance pas de façon linéaire, une tâche après l'autre, mais de façon arborescente, en structurant le général avant le particulier.
 - **Contexte documenté** : chaque décision et chaque convention sont consignées dans des fichiers que l'IA relit à chaque session ; le projet se documente en avançant.
-- **Agents coordonnés** : une session d'IA par domaine (technologie, site, diffusion…), qui se coordonnent entre elles et laissent à l'humain les décisions irréversibles.
+- **Agents coordonnés** : une session d'IA par domaine (technologie, données, site…), qui se coordonnent entre elles et laissent à l'humain les décisions irréversibles.
 - **Veille et essais** : tester un outil sans préjugé avant de se faire un avis ; certains projets ambitieux à un moment donné deviennent réalisables quelques mois plus tard.
 - **Éthique** : licences et droits d'auteur respectés, aucune donnée protégée utilisée sans autorisation, transparence sur l'usage de l'IA.
 
