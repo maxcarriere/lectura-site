@@ -23,4 +23,4 @@ Chaque corpus est rangé avec sa provenance et sa licence. Nous le préparons av
 
 ## Ce que Lectura produit
 
-Les données produites par Lectura (le lexique LeXiK, les corpus d'entraînement, les corpus de syllabes et de mots) sont présentées dans [Ressources]({{ '/produits/ressources/' | relative_url }}) et sur [LecturaLexique](https://lexique.lectura.world). Pour un besoin de données particulier, voir le service de [préparation des données]({{ '/solutions/services/preparation-donnees/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
+Les données produites par Lectura (le lexique LeXiK, les corpus d'entraînement, les corpus de syllabes et de mots) sont présentées dans [Ressources]({{ '/developpement/ressources/' | relative_url }}) et sur [LecturaLexique](https://lexique.lectura.world). Pour un besoin de données particulier, voir le service de [préparation des données]({{ '/solutions/services/preparation-donnees/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).

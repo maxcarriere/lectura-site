@@ -50,21 +50,33 @@
     - title: Les modules
       url: /developpement/modules/
       children:
-        - title: Briques outils
-          url: /developpement/modules/outils/
-        - title: Pipelines métiers
-          url: /developpement/modules/metiers/
-        - title: Programmes
-          url: /produits/programmes/
+        - title: "Archives (v0)"
+          url: /developpement/modules/v0/
+          children:
+            - title: Briques outils
+              url: /developpement/modules/outils/
+            - title: Pipelines métiers
+              url: /developpement/modules/metiers/
+        - title: "En cours (v1)"
+          url: /developpement/modules/v1/
+        - title: "À venir (v2)"
+          url: /developpement/modules/v2/
     - title: Les ressources
       url: /developpement/ressources/
       children:
         - title: Lexique
           url: /developpement/lexique/
-        - title: "Données"
+        - title: "Données d'entraînement"
           url: /developpement/donnees/
-        - title: Ressources produites
-          url: /produits/ressources/
+        - title: Corpus
+          url: /developpement/corpus/
+    - title: Les logiciels
+      url: /developpement/logiciels/
+      children:
+        - title: Programmes
+          url: /produits/programmes/
+        - title: Applications
+          url: /produits/applications/
     - title: Recherche
       url: /developpement/recherche/
 

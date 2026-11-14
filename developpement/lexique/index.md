@@ -57,4 +57,4 @@ La première génération du module, `lectura-lexique` (v0, publiée sur PyPI), 
 
 ## Corpus
 
-Des corpus dérivés de LeXiK (syllabes du français avec leur son, mots illustrés) sont présentés sur [LecturaLexique](https://lexique.lectura.world). Les autres ressources de Lectura sont dans [Ressources]({{ '/produits/ressources/' | relative_url }}).
+Des corpus dérivés de LeXiK (syllabes du français avec leur son, mots illustrés) sont présentés dans [Corpus]({{ '/developpement/corpus/' | relative_url }}) et sur [LecturaLexique](https://lexique.lectura.world). Les autres ressources de Lectura sont dans [Ressources]({{ '/developpement/ressources/' | relative_url }}).
