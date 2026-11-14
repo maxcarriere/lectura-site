@@ -19,7 +19,7 @@ Cette expérience n'est pas propre à Lectura : comprendre l'IA, savoir quand et
 
 <span class="status-badge">Axe en cours de structuration</span>
 
-Ce que Lectura envisage de proposer : un éclairage sur le fonctionnement de l'IA et l'entraînement des modèles, un environnement de travail préparamétré, un document qui explique l'organisation d'un projet mené avec l'IA, et une formation à l'usage d'outils comme Claude Code. Pour en parler : [Contact]({{ '/contact/' | relative_url }}).
+Ce que Lectura envisage de proposer : un éclairage sur le fonctionnement de l'IA, l'entraînement de modèles, la construction d'un environnement de travail fonctionnel et optimal, et l'organisation d'un projet mené avec l'IA.
 
 ---
 
