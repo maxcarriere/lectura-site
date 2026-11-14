@@ -2,29 +2,47 @@
 # reconnaissance, etc.). Les noms des régions sont dans _data/carte.yml ; x / y (en %) viendront avec le fond.
 # Outils de Lectura (Maxime, 09/11/2026) : listés dans Accès rapide, groupés par projet ; chacun mène à sa page.
 # Adresses vérifiées (200) le 09/11/2026. À relire à chaque évolution des sites projets.
+# Ordre des outils de LecturaLingua (Maxime, 14/11/2026) : Tagger, G2P, P2G, Correcteur, Traducteur, Lecture syllabique ; Lecture enrichie à ajouter quand elle existera sur LecturaLingua.
 - sigle: "TTS"
   libelle: "synthèse vocale"
   url: https://voice.lectura.world/tts
   projet: voice
   region: synthese
+- sigle: "Tagger"
+  libelle: "analyse grammaticale"
+  url: https://lingua.lectura.world/analyse
+  projet: lingua
+  region: grammaire
 - sigle: "G2P"
   libelle: "phonémiseur"
   url: https://lingua.lectura.world/g2p
   projet: lingua
   region: phonetique
-- libelle: "Correcteur orthographique et grammatical"
+- sigle: "P2G"
+  libelle: "graphémiseur"
+  url: https://lingua.lectura.world/p2g
+  projet: lingua
+  region: phonetique
+- sigle: "Correcteur"
+  libelle: "orthographique et grammatical"
   url: https://lingua.lectura.world/correcteur
   projet: lingua
   region: grammaire
+- sigle: "Traducteur"
+  libelle: "français / anglais"
+  url: https://lingua.lectura.world/traduction
+  projet: lingua
+  region: traduction
+- sigle: "Lecture syllabique"
+  libelle: "mise en forme pour apprendre à lire"
+  url: https://lingua.lectura.world/syllabes
+  projet: lingua
+  region: phonetique
 - sigle: "STT"
   libelle: "reconnaissance vocale"
   url: https://voice.lectura.world/stt
   projet: voice
   region: reconnaissance
-- libelle: "Lecture syllabique"
-  url: https://lingua.lectura.world/syllabes
-  projet: lingua
-  region: phonetique
 - sigle: "WiKiLeXiK"
   libelle: "dictionnaire"
   url: https://lexique.lectura.world/
@@ -34,24 +52,11 @@
   url: https://voice.lectura.world/sous-titrage
   projet: voice
   region: reconnaissance
-- sigle: "P2G"
-  libelle: "graphémiseur"
-  url: https://lingua.lectura.world/p2g
-  projet: lingua
-  region: phonetique
-- libelle: "Analyse grammaticale"
-  url: https://lingua.lectura.world/analyse
-  projet: lingua
-  region: grammaire
 - sigle: "LeXiK"
   libelle: "lexique phonétique du français"
   url: https://lexique.lectura.world/lexik
   projet: lexique
   region: dictionnaires
-- libelle: "Traduction"
-  url: https://lingua.lectura.world/traduction
-  projet: lingua
-  region: traduction
 - sigle: "Corpus"
   libelle: "syllabes enregistrées"
   url: https://lexique.lectura.world/corpus/syllabes
