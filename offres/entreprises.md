@@ -2,41 +2,64 @@
 title: Entreprises
 layout: default
 permalink: /offres/entreprises/
-description: "L'offre de Lectura aux entreprises : licences des modules, corpus et ressources, outils, services, recherche et partenariats."
+description: "L'offre de Lectura aux entreprises : licences et intégration des modules, ressources et outils, services éditoriaux, développement web et applications, expertise en IA."
 ---
 
-Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : Lectura vous propose ses modules, ses ressources et son savoir-faire sur le français écrit et parlé. Tout commence par les démos, gratuites et sans inscription, sur [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world).
+{% comment %} Refonte du 14/11/2026 sur le plan de Maxime : une page à sections (licences et intégration ; ressources et outils ; services éditoriaux ; développement ; expertise IA). Elle remplace les pages Services, Licences, Intégration, Préparation des données, Élaboration de modèles, Services éditoriaux et Autres prestations, gardées dans brain anciennes-pages/ (…_2026-11-14.md). Prix : page Tarifs. {% endcomment %}
 
-## Licences des modules
+Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : Lectura propose ses modules, ses ressources et son savoir-faire sur le français écrit et parlé, et sur le travail avec l'IA. Tout commence par les démos, gratuites et sans inscription, sur [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world). Les prix sont sur la page [Tarifs]({{ '/offres/tarifs/' | relative_url }}).
 
-Les modules de la génération actuelle (analyse du langage, synthèse et reconnaissance vocales) ne sont pas distribués publiquement. Ils s'obtiennent sous licence, pour être intégrés dans votre produit ou installés sur vos serveurs. Le parcours, étape par étape :
+---
 
-1. **La démo** : vous essayez les modules en ligne.
-2. **La licence d'évaluation** : les modules vous sont confiés pour les essayer chez vous, sans diffusion ni usage commercial.
-3. **La licence commerciale**, à l'achat : son périmètre, sa durée et son prix se fixent avec vous.
+## Licences commerciales et intégration logicielle {#licences}
 
-Notre API sert seulement aux démos : nous vendons les modèles, qui tournent chez vous, sur vos serveurs ou dans votre application. Détail : [licences]({{ '/solutions/services/licences/' | relative_url }}).
+La première génération des modules (v0) est publiée sous licence AGPL-3.0, sur [GitHub](https://github.com/maxcarriere/lectura-modules) et PyPI. La génération actuelle (v1 : analyse du texte en français et en anglais, correction, traduction, synthèse et reconnaissance vocales, alignement et sous-titres ; voir les [modules]({{ '/developpement/modules/v1/' | relative_url }})) n'est pas publiée : elle s'obtient sous licence commerciale.
 
-## Corpus et ressources
+- **La démo** : vous essayez les modules en ligne.
+- **L'essai** : un essai dans votre propre code peut être organisé sur demande.
+- **La licence commerciale** : les modèles vous sont livrés et tournent chez vous, sur vos serveurs ou embarqués dans votre application, sans carte graphique (ONNX, Python 3.10+). En option, le code d'entraînement et les données, pour faire évoluer les modèles vous-même.
+- **L'intégration** : aide à l'intégration dans votre environnement, choix d'architecture, chaînes de traitement sur mesure, mise en service sur vos serveurs.
+- **Les modèles sur mesure** : une voix personnalisée, privée et utilisable hors ligne ; une reconnaissance vocale adaptée à un vocabulaire métier ; un phonémiseur pour une autre langue ou une variété régionale.
 
-Le lexique **LeXiK** est libre et gratuit. Le module **Lexicon** (le lexique dans votre application) et nos **corpus** (syllabes du français avec leur son, mots illustrés) sont proposés sous licence commerciale. Leur présentation, leurs licences et leurs modes d'achat sont sur [LecturaLexique](https://lexique.lectura.world).
+Le module **Lexicon** (le lexique dans votre application) et les corpus ont leurs propres licences, présentées sur [LecturaLexique](https://lexique.lectura.world).
 
-## Outils
+---
 
-Les briques de Lectura s'assemblent selon vos besoins : lecture syllabique d'un texte, surlignage synchronisé avec la voix, correction orthographique, alignement d'un enregistrement sur son texte, sous-titres. Elles sont présentées dans [nos solutions technologiques]({{ '/solutions/technologiques/' | relative_url }}) et testables sur les démos.
+## Ressources et outils {#ressources}
 
-## Services
+- **Données d'entraînement** : corpus de texte annotés (phonétique, grammaire, syllabes), corpus vocaux (enregistrement, segmentation, alignement), transcription de vos enregistrements, listes extraites de LeXiK (par fréquence, catégorie, nombre de syllabes, motifs phonétiques). Voir les [données d'entraînement]({{ '/developpement/donnees/' | relative_url }}).
+- **Corpus** : les syllabes du français avec leur son, et 1500 Mots, un corpus de mots illustrés ; d'autres corpus se produisent sur demande. Voir les [corpus]({{ '/developpement/corpus/' | relative_url }}).
+- **Programmes** : des logiciels de bureau construits sur les modules (édition vocale, lecture des formules, consultation du lexique). Voir les [programmes]({{ '/produits/programmes/' | relative_url }}).
 
-Intégration dans vos applications, modèles sur mesure (voix, reconnaissance spécialisée), préparation de données et de corpus, services éditoriaux, autres prestations techniques : voir [les services]({{ '/solutions/services/' | relative_url }}).
+---
 
-## Tarification
+## Services éditoriaux {#editorial}
 
-Licences et prestations se fixent sur devis, selon les modules, l'usage et l'accompagnement. La logique tarifaire : [tarification]({{ '/solutions/tarifs/' | relative_url }}).
+- **Livres** : enrichissement d'un texte pour l'apprentissage de la lecture (syllabes, sons colorés, liaisons, lettres muettes), création d'histoires syllabiques au vocabulaire contrôlé, mise en page professionnelle et ebook (EPUB, PDF).
+- **Livres audio** : production à partir de vos textes, avec une voix de synthèse Lectura ou une voix humaine enregistrée.
+- **Vidéos** : vidéos de lecture guidée, où chaque syllabe s'éclaire au moment où elle est prononcée.
 
-## Recherche et partenariats
+---
 
-LeXiK est publié sur [ORTOLANG](https://hdl.handle.net/11403/lexik/v1.0) et sur [Hugging Face](https://huggingface.co/datasets/lecturaworld/lexik), sous licence CC BY-SA 4.0. Nos choix techniques sont décrits dans la section [Recherche]({{ '/developpement/recherche/' | relative_url }}). Laboratoires, universités : nous sommes ouverts à la discussion, qu'il s'agisse d'utiliser nos ressources dans un travail de recherche, de préparer un corpus ou de travailler sur un sujet commun.
+## Développement {#developpement}
 
-## Nous contacter
+- **Web** : sites vitrines, applications web, intégration de contenus.
+- **Applications** : applications de bureau ou mobiles sur mesure.
+- **Données et automatisation** : bases de données, traitement et analyse de données, automatisation de tâches répétitives.
 
-Décrivez votre projet à **lectura.world@gmail.com** ou par la [page de contact]({{ '/contact/' | relative_url }}) : nous vous répondons avec une démo ciblée ou une proposition.
+---
+
+## Expertise IA {#expertise-ia}
+
+Lectura a été entièrement développé avec l'IA (voir [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }})). Cette expérience se transmet :
+
+- **Installation** : un environnement de travail préparamétré (outils comme Claude Code, agents, permissions).
+- **Audit** : ce que l'IA peut apporter à votre activité, et où elle bute.
+- **Paramétrage** : construction du contexte de l'entreprise (documentation, conventions, règles de travail que l'IA relit à chaque session) et organisation d'un projet mené avec l'IA.
+- **Formation** : à l'usage de ces outils et au fonctionnement de l'IA.
+
+---
+
+## Contact {#contact}
+
+Décrivez votre projet à **lectura.world@gmail.com** ou par la [page de contact]({{ '/contact/' | relative_url }}) : Lectura vous répond avec une démo ciblée ou une proposition.

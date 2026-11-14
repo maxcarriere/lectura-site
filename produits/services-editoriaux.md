@@ -1,4 +1,4 @@
 ---
-redirect_to: /solutions/services/services-editoriaux/
+redirect_to: /offres/entreprises/#editorial
 permalink: /produits/services-editoriaux/
 ---

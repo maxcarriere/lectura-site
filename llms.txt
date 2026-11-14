@@ -73,9 +73,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Offres : https://www.lectura.world/offres/
 - Entreprises : https://www.lectura.world/offres/entreprises/
 - Particuliers : https://www.lectura.world/offres/particuliers/
-- Licences : https://www.lectura.world/solutions/services/licences/
-- Services : https://www.lectura.world/solutions/services/
-- Tarification : https://www.lectura.world/solutions/tarifs/
+- Tarifs : https://www.lectura.world/offres/tarifs/
 - Developpement : https://www.lectura.world/developpement/
 - Ecosysteme du projet : https://www.lectura.world/developpement/ecosysteme/
 - Ressources (lexique, donnees, corpus) : https://www.lectura.world/developpement/ressources/

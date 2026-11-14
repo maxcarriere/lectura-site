@@ -32,15 +32,10 @@
   children:
     - title: Entreprises
       url: /offres/entreprises/
-      children:
-        - title: Licences
-          url: /solutions/services/licences/
-        - title: Services
-          url: /solutions/services/
-        - title: Tarification
-          url: /solutions/tarifs/
     - title: Particuliers
       url: /offres/particuliers/
+    - title: Tarifs
+      url: /offres/tarifs/
 
 - title: "Développement"
   url: /developpement/

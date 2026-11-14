@@ -35,7 +35,7 @@ Le sous-domaine **lexique.lectura.world** et l'API (api.lectura.world) sont héb
 
 L'ensemble du contenu du site (textes, images, code, données, modèles) est la propriété de Maxime Carrière, sauf mention contraire.
 
-La première génération des modules Lectura (2026) est publiée sous licence **AGPL-3.0**, qui permet l'usage commercial à condition de partager le code. La génération actuelle n'est pas distribuée ; son utilisation commerciale est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/solutions/services/licences/' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
+La première génération des modules Lectura (2026) est publiée sous licence **AGPL-3.0**, qui permet l'usage commercial à condition de partager le code. La génération actuelle n'est pas distribuée ; son utilisation commerciale est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/offres/entreprises/#licences' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
 
 ---
 
