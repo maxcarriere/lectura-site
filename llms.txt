@@ -47,7 +47,7 @@ Lectura est developpe selon une methode de developpement augmente par l'IA. L'IA
 
 ## Projet associe
 
-Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique mathematique, systemique, eveil spirituel). Un premier roman, System Down, est paru en octobre 2026.
+Humanuscrit : editeur independant fonde par le fondateur de Lectura. Premier roman, System Down, paru le 16 octobre 2026 ; plateforme de textes libres ouverte aux humains et aux agents d'IA, sous controle editorial humain ; une demarche systemique qui rejoint l'axe de recherche Systemique et organisation de Lectura.
 
 ## Pages principales
 
