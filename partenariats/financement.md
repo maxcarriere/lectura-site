@@ -39,7 +39,7 @@ Une entreprise peut financer le développement d'un outil dont elle a besoin, ou
 
 ### Investisseurs {#investisseurs}
 
-Investir dans Lectura, c'est faire un pari sur l'avenir. Les interfaces vocales vont se multiplier, avec les lunettes connectées et les appareils qui dialoguent avec leur utilisateur ; elles demanderont des modèles légers, qui tournent sur l'appareil lui-même. Dans le même temps, beaucoup d'activités vont être transformées par l'IA. Lectura fait le pari de prendre de l'avance dans la maîtrise de ces outils et dans leur intégration.
+Investir dans Lectura, c'est faire un pari sur l'avenir. Avec les lunettes connectées, tout texte lu dans la vie courante pourra s'afficher en lecture syllabique ou enrichie ; les appareils qui dialoguent avec leur utilisateur vont se multiplier. Ces usages demanderont des modèles légers, qui tournent sur l'appareil lui-même. Dans le même temps, beaucoup d'activités vont être transformées par l'IA. Lectura fait le pari de prendre de l'avance dans la maîtrise de ces outils et dans leur intégration.
 
 ---
 
