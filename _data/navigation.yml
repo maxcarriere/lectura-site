@@ -84,5 +84,12 @@
   children:
     - title: Contact
       url: /contact/
+    - title: Autres sites
+      url: /autres-sites/
+      children:
+        - title: Humanuscrit
+          url: /a-propos/humanuscrit/
+        - title: Zmaths
+          url: /autres-sites/zmaths/
     - title: Liens
       url: /liens/
