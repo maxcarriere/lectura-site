@@ -31,10 +31,16 @@ Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, m
 
 {% include schema-modules.html %}
 
+## L'organisation du développement {#agents}
+
+Le développement de Lectura est mené par des agents d'IA, une session par domaine, qui se coordonnent entre eux et gardent la mémoire du projet dans des fichiers qu'ils relisent à chaque session. Le fondateur les oriente : il fixe les objectifs, les règles et les décisions, et les décisions irréversibles lui reviennent toujours (voir l'[équipe]({{ '/a-propos/equipe/' | relative_url }})).
+
+{% include schema-agents.html %}
+
 ---
 
 ## Pour aller plus loin
 
 - [Les modules]({{ '/developpement/modules/' | relative_url }}) : le détail des briques, génération par génération ;
 - [Les ressources]({{ '/developpement/ressources/' | relative_url }}) : le lexique, les données et les corpus ;
-- [La recherche]({{ '/developpement/recherche/' | relative_url }}) : les axes de recherche et les publications ;
+- [La recherche]({{ '/developpement/recherche/' | relative_url }}) : les axes de recherche et les publications.

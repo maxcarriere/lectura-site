@@ -2006,3 +2006,15 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 /* Schéma de l'écosystème (14/11) */
 .schema-ecosysteme { margin: 1.8rem auto; max-width: 720px; }
 .schema-ecosysteme svg { display: block; width: 100%; height: auto; }
+/* Équipe (14/11) : un bloc par membre, photo ronde, rôle, présentation */
+.equipe-membres { display: grid; gap: 1.4rem; margin: 1.5rem 0 2rem; }
+.parchment-content .equipe-membre { display: flex; gap: 1.4rem; align-items: flex-start; padding: 1.2rem; border: 1px solid rgba(13, 13, 13, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.35); }
+.equipe-photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.parchment-content .equipe-nom { font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem; margin: 0; }
+.parchment-content .equipe-role { font-style: italic; color: #5a4636 !important; margin: 0.1rem 0 0.6rem; }
+.parchment-content .equipe-texte p { margin-top: 0; }
+.parchment-content .equipe-lien { margin-bottom: 0; }
+@media (max-width: 600px) { .parchment-content .equipe-membre { flex-direction: column; align-items: center; text-align: center; } }
+/* Photo du fondateur (14/11) : pas trop grande */
+.photo-fondateur { margin: 1rem auto 1.6rem; max-width: 420px; }
+.photo-fondateur img { display: block; width: 100%; height: auto; border-radius: 6px; }

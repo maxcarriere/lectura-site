@@ -7,7 +7,7 @@ description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méth
 
 {% comment %} Maxime, 11/11/2026 : trois cartes sur une ligne, un titre et une petite icône ; quatrième carte, les articles (blog, 11/11). {% endcomment %}
 
-<div class="decouvrir-cartes" markdown="0">
+<div class="decouvrir-cartes dc-trois" markdown="0">
   <a class="dc-carte" href="{{ '/decouvrir/projets/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
     <span class="dc-sur">Découvrir</span><span class="dc-titre">Les différents projets</span>
@@ -19,6 +19,10 @@ description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méth
   <a class="dc-carte" href="{{ '/a-propos/qui-suis-je/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
     <span class="dc-sur">Découvrir</span><span class="dc-titre">Qui porte le projet ?</span>
+  </a>
+  <a class="dc-carte" href="{{ '/a-propos/equipe/' | relative_url }}">
+    <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M10.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></svg></span>
+    <span class="dc-sur">Découvrir</span><span class="dc-titre">L'équipe</span>
   </a>
   <a class="dc-carte" href="{{ '/decouvrir/articles/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4M8 11h8M8 15h8M8 19h5"/></svg></span>
