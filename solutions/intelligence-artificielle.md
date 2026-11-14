@@ -10,7 +10,7 @@ description: "L'intelligence artificielle chez Lectura : comprendre l'IA, concev
 
 {% comment %} Troisième axe des Solutions (Maxime, 11/11/2026) : l'ancienne page « Méthode : le rôle de l'IA », présentée comme une solution. Renommé « Intelligence artificielle » et élargi (Maxime, 12/11) : l'organisation du travail en reste une composante importante. Ancienne version : brain/lectura/site/anciennes-pages/solutions_travail-ia_2026-11-12.md. {% endcomment %}
 
-L'intelligence artificielle est présente partout chez Lectura, à deux niveaux :
+L'intelligence artificielle est présente chez Lectura à deux niveaux :
 
 - **comme technologie** : les voix, la reconnaissance vocale et l'analyse du français reposent sur des modèles que Lectura conçoit et entraîne lui-même. Préparer les données, choisir une architecture, entraîner un modèle, mesurer ce qu'il vaut : c'est une façon de comprendre l'IA de l'intérieur, de savoir ce qu'elle sait faire et ce qu'elle ne sait pas faire ;
 - **comme méthode de travail** : Lectura a été entièrement développé avec l'IA, selon une organisation décrite sur cette page.
