@@ -49,9 +49,9 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 L'objectif de Lectura est multiple : développer des solutions logicielles qui font avancer les technologies du langage et de la voix ; mettre ces avancées en application dans des produits numériques éducatifs et ludiques, à destination du grand public ; explorer de nouvelles méthodes de travail, en lien étroit avec l'intelligence artificielle.
 
-D'un point de vue technique, Lectura peut être vu comme un écosystème de projets modulaires, dont les différents composants sont présentés dans la section [Développement]({{ '/developpement/' | relative_url }}). Lectura est ouvert aux [partenariats]({{ '/partenariats/' | relative_url }}), pour collaborer ou financer la suite de ses travaux.
+D'un point de vue technique, Lectura peut être vu comme un écosystème de projets modulaires, dont les différents composants sont présentés dans la section [Développement]({{ '/developpement/' | relative_url }}).
 
-L'[offre commerciale]({{ '/offres/' | relative_url }}) de Lectura s'adresse à la fois aux [entreprises]({{ '/offres/entreprises/' | relative_url }}), via ses briques logicielles, et aux [particuliers]({{ '/offres/particuliers/' | relative_url }}), via des produits éducatifs finis.
+L'[offre commerciale]({{ '/offres/' | relative_url }}) de Lectura s'adresse à la fois aux [entreprises]({{ '/offres/entreprises/' | relative_url }}), via ses briques logicielles, et aux [particuliers]({{ '/offres/particuliers/' | relative_url }}), via des produits éducatifs finis. Lectura est actuellement en recherche active de [partenariats]({{ '/partenariats/' | relative_url }}), par une [collaboration]({{ '/partenariats/collaboration/' | relative_url }}) avec d'autres acteurs du marché et par la recherche de [financements]({{ '/partenariats/financement/' | relative_url }}).
 
 <p class="ap-savoir ap-centre"><a href="{{ '/solutions/' | relative_url }}">En savoir plus sur les solutions</a><br>
 <a href="{{ '/offres/' | relative_url }}">En savoir plus sur les offres</a><br>
