@@ -15,7 +15,7 @@ Les outils technologiques de Lectura, en reliant chaque lettre au son qu'elle pr
 
 Pour apprendre à lire un texte, un enfant doit d'abord savoir déchiffrer les unités de base de la langue parlée : les **syllabes**. Le travail de Lectura sur l'alignement des lettres et des sons, l'alignement d'un texte sur sa voix, la syllabation et la synthèse des sons courts permet de construire des outils qui accompagnent ce déchiffrage.
 
-L'analyse du langage permet de découper un texte en suivant la **prononciation réelle de la phrase**, de façon générale, et non par une règle appliquée à la main mot par mot.
+L'analyse du langage permet de découper un texte en suivant la **prononciation réelle de la phrase**, de façon générale, et non par une règle appliquée à la main mot par mot. La lecture syllabique devrait fonctionner pour toutes les langues ; Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
 
 **Fonctionnalités**
 
@@ -23,8 +23,6 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 - **Synthèse vocale en mode syllabique**, qui lit le texte syllabe par syllabe. *En ligne sur [LecturaVoice](https://voice.lectura.world/tts).*
 - **Surlignage synchronisé** du texte avec la voix, pour que l'enfant voie quel son est prononcé. *En ligne sur LecturaVoice.*
 - **Tuiles interactives** dans des applications ou sur le web : chaque syllabe touchée est lue. *En cours.*
-
-La lecture syllabique devrait fonctionner pour toutes les langues ; Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
 
 **Applications possibles**
 
