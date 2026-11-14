@@ -186,10 +186,10 @@ body.sur-carte .header-carte { opacity: 0; pointer-events: none; }
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.8rem;
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header-site-link {

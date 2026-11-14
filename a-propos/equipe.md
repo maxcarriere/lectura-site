@@ -18,7 +18,7 @@ description: "L'équipe de Lectura : des humains, qui orientent et décident, et
     </div>
   </div>
   <div class="equipe-membre equipe-membre--ia">
-    <span class="equipe-photo equipe-photo--ia" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="4" r="1.6"/><circle cx="12" cy="20" r="1.6"/><circle cx="4.5" cy="8" r="1.6"/><circle cx="19.5" cy="8" r="1.6"/><circle cx="4.5" cy="16" r="1.6"/><circle cx="19.5" cy="16" r="1.6"/><path d="M12 5.6v4.2M12 14.2v4.2M5.9 8.8l4.1 2.3M18.1 8.8l-4.1 2.3M5.9 15.2l4.1-2.3M18.1 15.2l-4.1-2.3"/></svg></span>
+    <img class="equipe-photo" src="{{ '/assets/images/equipe/claude.png' | relative_url }}" alt="Logo de Claude" width="180" height="180">
     <div class="equipe-texte">
       <p class="equipe-nom">Claude</p>
       <p class="equipe-role">Exécutant technique</p>
