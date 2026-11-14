@@ -140,7 +140,6 @@
   function ajouterSections(container, prefixe) {
     if (!container) return;
     var ici = normaliser(window.location.pathname);
-    if (ici === '/') return;
     var titres = document.querySelectorAll('.parchment-content h2[id]');
     if (titres.length < 2) return;
     var liens = container.querySelectorAll('a.' + prefixe + 'link[href]');

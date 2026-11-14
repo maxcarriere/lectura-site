@@ -11,7 +11,7 @@ image: /assets/images/og-lectura.png
 
 {% comment %} Accueil (structure de Maxime, 11/11/2026 au soir) : présentation et porteur, projets, plan du site en un paragraphe, contact. Pas de lien « phonétique » pour l'instant (la page pourrait disparaître). {% endcomment %}
 
-<h2 class="accueil-titre">Présentation du site</h2>
+<h2 class="accueil-titre" id="presentation">Présentation du site</h2>
 
 Lectura est un écosystème de projets autour du **langage** et de sa **lecture**, construit sur l'exploitation de la phonétique comme passerelle naturelle entre la langue écrite et la langue parlée. Historiquement tourné vers le **français**, qui constitue son socle de développement, Lectura s'ouvre progressivement à d'autres langues, à commencer par l'anglais. Son enjeu est double : mettre l'intelligence artificielle au service de l'apprentissage, et s'inspirer de la façon dont l'humain apprend pour mieux apprendre à une machine.
 
@@ -25,7 +25,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 ---
 
 <div class="accueil-projets" markdown="0">
-  <h2>Les différents projets</h2>
+  <h2 id="projets">Les différents projets</h2>
   <div class="ap-projets">
     <a href="https://lexique.lectura.world" title="LecturaLexique : le lexique du français"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><span>Lexique</span></a>
     <a href="https://lingua.lectura.world" title="LecturaLingua : l'écrit"><span class="cp-icone">{% include icone-projet.html nom='letters' %}</span><span>Lingua</span></a>
@@ -38,7 +38,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 ---
 
 <div class="accueil-nouveautes" markdown="0">
-  <h2>Nouveautés</h2>
+  <h2 id="nouveautes">Nouveautés</h2>
   <table class="nouveautes-table">
   {%- for a in site.posts limit: 10 %}
     <tr><td class="nt-date"><time datetime="{{ a.date | date_to_xmlschema }}">{% include date-fr.html date=a.date %}</time></td><td class="nt-titre"><a href="{{ a.url | relative_url }}">{{ a.title }}</a></td></tr>
@@ -49,7 +49,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 
 ---
 
-<h2 class="accueil-titre">Plan du site</h2>
+<h2 class="accueil-titre" id="plan">Plan du site</h2>
 
 - **[Découvrir]({{ '/decouvrir/' | relative_url }})** : la vision, les projets ;
 - **[Solutions]({{ '/solutions/' | relative_url }})** : le savoir-faire de Lectura ;
@@ -60,7 +60,7 @@ Lectura est développé par Maxime Carrière, entrepreneur individuel, grâce à
 ---
 
 <div class="accueil-contact" markdown="0">
-  <h2>Contact &amp; Liens</h2>
+  <h2 id="contact">Contact &amp; Liens</h2>
   <p>Un projet, une question ? Écrivez à
     <a id="ac-email" class="ac-email" href="{{ '/contact/' | relative_url }}" aria-label="Adresse e-mail de Lectura"><span class="ac-rev">moc.liamg<span>&#64;</span>dlrow.arutcel</span></a>
     ou passez par la <a href="{{ '/contact/' | relative_url }}">page Contact</a>.</p>
