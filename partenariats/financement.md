@@ -48,7 +48,7 @@ Investir dans Lectura, c'est faire un pari sur l'avenir. Avec les lunettes conne
 Les contreparties se définissent avec chaque financeur, selon la nature et le montant de son apport, par exemple :
 
 - **la mention du financeur** sur les produits et les publications ;
-- **la publication du résultat sous licence libre** ;
+- **la publication du résultat sous licence libre**, dans le cas d'un financement public ;
 - **une licence commerciale offerte** sur les outils développés, si le projet aboutit ;
 - **un accès anticipé** aux résultats et aux outils ;
 - **une part des revenus** tirés de ce qui a été financé ;
