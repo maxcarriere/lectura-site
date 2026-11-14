@@ -6,13 +6,18 @@ permalink: /a-propos/qui-suis-je/
 
 ## Qui porte ce projet ?
 
+<div class="fondateur-intro" markdown="1">
 <figure class="photo-fondateur" markdown="0">
   <img src="{{ '/assets/images/equipe/maxime-carriere-bureau.webp' | relative_url }}" alt="Maxime Carrière à son bureau" width="600" height="511">
 </figure>
+<div class="fondateur-intro-texte" markdown="1">
 
 Je m'appelle Maxime Carrière. Je suis agrégé de mathématiques et j'ai enseigné pendant dix ans dans le service public français. En 2025, j'ai entamé une reconversion professionnelle, à un moment où l'intelligence artificielle commençait à transformer en profondeur la manière de travailler et de produire.
 
 J'ai choisi de me confronter directement à cette transformation, en construisant des projets réels, en apprenant par la pratique, et en documentant le chemin parcouru.
+
+</div>
+</div>
 
 Le thème de ces projets est né d'un point de départ personnel : l'apprentissage de la lecture avec mes enfants. Ce point de départ, a priori modeste, s'est révélé plus structurant qu'il n'y paraissait. Mon intuition de départ pourrait se résumer ainsi : apprendre à lire à une machine et apprendre à lire à un enfant reposent sur des mécanismes étonnamment proches. Dans les deux cas, tout passe par la phonétique, la façon dont les sons du langage sont représentés, segmentés et assemblés. Le premier projet a donc été la lecture syllabique, fondée sur l'alignement entre les lettres et les sons (graphèmes et phonèmes). De nombreuses applications, notamment autour de la voix, s'y sont ensuite greffées naturellement, et sont devenues les projets de [Lectura]({{ '/a-propos/vision/' | relative_url }}).
 
