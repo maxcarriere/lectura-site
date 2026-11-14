@@ -45,7 +45,15 @@ L'organisation du travail dans un système qui relie des agents d'IA et des huma
 
 ## Publications {#publications}
 
+### Parues {#parues}
+
 - **29 octobre 2026** : **LeXiK** v1.0, lexique du français, publié sur [ORTOLANG](https://hdl.handle.net/11403/lexik) avec sa documentation, sous licence CC BY-SA 4.0. Identifiant de citation : hdl.handle.net/11403/lexik.
+
+### En préparation {#en-preparation}
+
+- Les méthodes utilisées pour élaborer le lexique LeXiK.
+- Les algorithmes réalisés : alignement des lettres et des sons, syllabation.
+- Les différentes composantes de la voix humaine : ce qui est dit, comment, par qui et dans quelles conditions.
 
 ---
 

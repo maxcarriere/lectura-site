@@ -13,21 +13,12 @@ Lectura est ouvert à la collaboration avec des chercheurs et des entreprises do
 
 ## Avec qui {#avec-qui}
 
-- **Chercheurs et laboratoires** : phonétique, traitement automatique des langues, didactique de la lecture, apprentissage automatique.
+- **Chercheurs et laboratoires** : phonétique, traitement automatique des langues, didactique de la lecture, apprentissage automatique. Les axes de recherche de Lectura et ses publications, parues ou en préparation, sont présentés sur la page [Recherche]({{ '/developpement/recherche/' | relative_url }}).
 - **Entreprises de la voix** : synthèse et reconnaissance vocales, avec des modèles légers.
 - **Entreprises du traitement du langage** : analyse grammaticale, phonétisation, correction.
 - **EdTech** : outils d'apprentissage de la lecture et des langues.
 - **Éditeurs scolaires** : manuels, éditions syllabiques, supports enrichis.
 - **Fabricants d'appareils à commande vocale** : jouets, GPS, machines qui dialoguent avec leur utilisateur, où un modèle léger et embarqué fait la différence.
-
-### Thèmes de recherche {#themes}
-
-Avec les chercheurs, les travaux de Lectura offrent plusieurs points de rencontre, en particulier :
-
-- **les méthodes utilisées pour élaborer le lexique** [LeXiK](https://hdl.handle.net/11403/lexik), publié sur ORTOLANG ;
-- **les algorithmes réalisés** : alignement des lettres et des sons, syllabation ;
-- **les différentes composantes de la voix humaine** : ce qui est dit, comment, par qui et dans quelles conditions ;
-- plus largement, les [axes de recherche]({{ '/developpement/recherche/' | relative_url }}) de Lectura.
 
 ---
 
