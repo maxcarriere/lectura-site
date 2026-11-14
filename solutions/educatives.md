@@ -24,9 +24,16 @@ L'analyse du langage permet de découper un texte en suivant la **prononciation 
 - **Surlignage synchronisé** du texte avec la voix, pour que l'enfant voie quel son est prononcé. *En ligne sur LecturaVoice.*
 - **Tuiles interactives** dans des applications ou sur le web : chaque syllabe touchée est lue. *En cours.*
 
-**Applications possibles** : méthodes de lecture, manuels et livres syllabiques, applications d'apprentissage, supports d'orthophonie, adaptation de textes pour les lecteurs en difficulté.
+**Applications possibles**
 
-**Produits** : la Méthode syllabique, manuel et application (en cours).
+- Apprentissage autonome de la lecture.
+- Apprentissage du français comme langue étrangère.
+- Apprentissage de l'anglais : la lecture syllabique devrait fonctionner pour toutes les langues, et Lectura dispose déjà, en plus du français, de l'analyse de l'anglais.
+- Aide aux personnes atteintes de troubles dys.
+
+**Produits**
+
+- Méthode syllabique, manuel et application (en cours).
 
 ---
 
@@ -40,9 +47,16 @@ Un texte peut porter plus que ses mots : sa lecture syllabique, mais aussi la na
 - **Combinaison** de la lecture syllabique et de l'annotation grammaticale dans un même texte. *En cours.*
 - **Annotation du sens** (définitions, illustrations), à partir de [WiKiLeXiK](https://lexique.lectura.world/wikilexik). *À l'étude.*
 
-**Applications possibles** : textes enrichis pour la classe, éditions pédagogiques, apprentissage de la grammaire, apprentissage du français langue étrangère.
+**Applications possibles**
 
-**Produits** : une démonstration sur LecturaLingua est en préparation.
+- Textes enrichis pour la classe.
+- Éditions pédagogiques.
+- Apprentissage de la grammaire.
+- Apprentissage du français comme langue étrangère.
+
+**Produits**
+
+- Démonstration sur LecturaLingua (en préparation).
 
 ---
 
@@ -55,9 +69,15 @@ Le numérique rend l'apprentissage **interactif** : l'élève agit, et l'outil l
 - **Correcteur pédagogique** : il corrige les accords, les conjugaisons et les homophones, et **explique chaque correction**. *En ligne sur [LecturaLingua](https://lingua.lectura.world).* Sur le corpus WiCoPaCo, 60 % de ses corrections sont justes, contre 35 à 39 % pour Grammalecte et LanguageTool (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})).
 - **Dictionnaire de rimes** : les rimes d'un mot, pauvres, suffisantes ou riches, sur les derniers sons ou les dernières syllabes. *Dans [Lexicon](https://lexique.lectura.world/lexicon).*
 
-**Applications possibles** : aide à l'écriture, poésie et chanson à l'école, révision de l'orthographe en autonomie.
+**Applications possibles**
 
-**Produits** : le Correcteur pédagogique, en ligne sur [LecturaLingua](https://lingua.lectura.world).
+- Aide à l'écriture.
+- Poésie et chanson à l'école.
+- Révision de l'orthographe en autonomie.
+
+**Produits**
+
+- Correcteur pédagogique, en ligne sur [LecturaLingua](https://lingua.lectura.world).
 
 ---
 
@@ -71,9 +91,15 @@ Avant de lire, l'enfant doit entendre que les mots sont faits de sons, et appren
 - **Mots illustrés**, choisis pour l'apprentissage : 1 553 mots, plusieurs images par mot. *Disponibles sur LecturaLexique.*
 - **Jeux** de sons et de syllabes. *À l'étude.*
 
-**Applications possibles** : mini-jeux d'éveil, jeux de lettres, activités d'orthophonie.
+**Applications possibles**
 
-**Produits** : ScrabblePhone, un Scrabble des sons (à l'étude).
+- Mini-jeux d'éveil.
+- Jeux de lettres.
+- Activités d'orthophonie.
+
+**Produits**
+
+- ScrabblePhone, un Scrabble des sons (à l'étude).
 
 ---
 
