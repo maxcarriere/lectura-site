@@ -49,18 +49,6 @@ L'organisation du travail dans un système qui relie des agents d'IA et des huma
 
 ---
 
-## Collaborations {#collaborations}
+## Partenariat {#partenariat}
 
-Lectura est ouvert à la collaboration avec d'autres chercheurs, lorsque leurs axes de recherche rejoignent ce qui a été développé ou ce qui est en cours de développement, notamment sur :
-
-- les méthodes utilisées pour élaborer le lexique ;
-- les algorithmes réalisés : alignement des lettres et des sons, syllabation ;
-- les différentes composantes de la voix humaine.
-
-Contact : **lectura.world@gmail.com**, ou la [page de contact]({{ '/contact/' | relative_url }}).
-
----
-
-## Financement {#financement}
-
-Lectura recherche des financements pour développer ces axes de recherche : voir [Partenariats]({{ '/partenariats/' | relative_url }}).
+Lectura est ouvert à la [collaboration]({{ '/partenariats/collaboration/' | relative_url }}) avec d'autres chercheurs, et recherche des [financements]({{ '/partenariats/financement/' | relative_url }}) pour développer ces axes.

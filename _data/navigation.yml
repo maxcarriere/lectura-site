@@ -71,6 +71,14 @@
     - title: Recherche
       url: /developpement/recherche/
 
+- title: "Partenariat"
+  url: /partenariats/
+  children:
+    - title: Collaboration
+      url: /partenariats/collaboration/
+    - title: Financement
+      url: /partenariats/financement/
+
 - title: "Contact & liens"
   url: /contact/
   children:
