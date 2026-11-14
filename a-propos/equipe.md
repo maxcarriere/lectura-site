@@ -13,7 +13,7 @@ description: "L'équipe de Lectura : des humains, qui orientent et décident, et
     <div class="equipe-texte">
       <p class="equipe-nom">Maxime Carrière</p>
       <p class="equipe-role">Fondateur, architecte du projet</p>
-      <p>Agrégé de mathématiques, il a enseigné dix ans avant de se consacrer à l'intelligence artificielle. Il a conçu l'écosystème de Lectura et en pilote tout le développement avec l'IA : le lexique LeXiK, publié sur ORTOLANG, les modèles de langage et de voix, les sites et leurs démos. Son rôle est celui qu'il juge le plus précieux aujourd'hui : orienter, concevoir et décider.</p>
+      <p>Agrégé de mathématiques, il a enseigné dix ans avant de se consacrer à l'intelligence artificielle. Il a conçu l'écosystème de Lectura, en pilote tout le développement avec l'IA, et cherche à en faire une entreprise pérenne.</p>
       <p class="equipe-lien"><a href="{{ '/a-propos/qui-suis-je/' | relative_url }}">En savoir plus sur le fondateur</a></p>
     </div>
   </div>
