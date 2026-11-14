@@ -1,98 +1,143 @@
 <figure class="schema-ecosysteme">
-<svg viewBox="0 0 760 560" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="sm-titre">Ressources, modules et productions de Lectura</title>
-  <desc id="sm-desc">À gauche, les ressources : le lexique LeXiK, les textes annotés (Universal Dependencies) et des corpus de parole publics. Au centre, les modules de la génération actuelle : pour le texte, Transducer, Lexicon, Corrector et Translator ; pour la voix, Synthesizer, Decoder, Aligner et Subtitler ; la phonétique passe du texte à la voix. Les modules de texte enrichissent LeXiK et préparent les corpus de parole. À droite, les productions : les corpus produits et les sites de démo.</desc>
+<svg viewBox="0 0 760 545" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="sm-titre">L'écosystème modulaire de Lectura</title>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour : Corrector, Translator, Lexicon, Aligner et Subtitler. Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Aligner puis Subtitler). Ils apprennent sur le lexique LeXiK, des textes annotés et des corpus de parole.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#3b2a20"/>
-    </marker>
-    <marker id="sm-fleche-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
+    </marker>
+    <marker id="sm-fleche-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b2a20"/>
     </marker>
   </defs>
 
-  <!-- En-têtes de colonnes -->
-  <g font-family="'Cinzel', serif" font-weight="700" font-size="17" fill="#5a4636" text-anchor="middle">
-    <text x="115" y="34">Ressources</text>
-    <text x="380" y="34">Modules actuels</text>
-    <text x="645" y="34">Productions</text>
+  <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#5a4636" text-anchor="middle">
+    <text x="380" y="30">Les briques</text>
+    <text x="380" y="288">Les métiers</text>
+    <text x="380" y="425">Les ressources</text>
   </g>
 
-  <!-- Liens -->
-  <g fill="none" stroke="#3b2a20" stroke-width="1.6">
-    <path d="M212,110 L268,110" marker-start="url(#sm-fleche)" marker-end="url(#sm-fleche)"/>
-    <path d="M212,228 L268,228" marker-end="url(#sm-fleche)"/>
-    <path d="M212,420 L268,420" marker-end="url(#sm-fleche)"/>
-    <path d="M270,262 C225,300 190,330 160,368" stroke-dasharray="5 4" marker-end="url(#sm-fleche)"/>
-    <path d="M492,170 L548,170" marker-end="url(#sm-fleche)"/>
-    <path d="M492,420 L548,420" marker-end="url(#sm-fleche)"/>
-    <path d="M492,230 C520,260 530,330 550,375" marker-end="url(#sm-fleche)"/>
+  <!-- Axe texte / phonétique / voix -->
+  <g fill="none" stroke="#2d5a2d" stroke-width="1.8">
+    <path d="M142,95 L318,95" marker-start="url(#sm-fleche)" marker-end="url(#sm-fleche)"/>
+    <path d="M442,80 L618,80" marker-end="url(#sm-fleche)"/>
+    <path d="M618,110 L442,110" marker-end="url(#sm-fleche)"/>
   </g>
-  <path d="M380,282 L380,326" fill="none" stroke="#2d5a2d" stroke-width="1.8" marker-end="url(#sm-fleche-v)"/>
-
-  <!-- Libellés des liens -->
-  <g font-family="'EB Garamond', Georgia, serif" font-size="14" font-style="italic" fill="#3b2a20">
-    <text x="240" y="100" text-anchor="middle">entraîne</text>
-    <text x="240" y="132" text-anchor="middle">enrichit</text>
-    <text x="196" y="318" text-anchor="end">préparation</text>
-    <text x="392" y="309" fill="#2d5a2d" font-style="normal" font-weight="700">phonétique</text>
+  <g stroke="#2d5a2d" stroke-width="1.6" fill="rgba(45,90,45,0.12)">
+    <rect x="20" y="70" width="120" height="50" rx="25"/>
+    <rect x="320" y="70" width="120" height="50" rx="25"/>
+    <rect x="620" y="70" width="120" height="50" rx="25"/>
+  </g>
+  <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#2d5a2d" text-anchor="middle">
+    <text x="80" y="100">Texte</text>
+    <text x="380" y="100">Phonétique</text>
+    <text x="680" y="100">Voix</text>
   </g>
 
-  <!-- Blocs -->
-  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.55)">
-    <rect x="20" y="60" width="192" height="104" rx="8"/>
-    <rect x="20" y="192" width="192" height="72" rx="8"/>
-    <rect x="20" y="370" width="192" height="100" rx="8"/>
-    <rect x="548" y="110" width="192" height="118" rx="8"/>
-    <rect x="548" y="370" width="192" height="100" rx="8"/>
+  <!-- Liens vers les briques complémentaires -->
+  <g fill="none" stroke="#3b2a20" stroke-width="1.3" stroke-dasharray="4 4">
+    <path d="M70,120 L75,168"/>
+    <path d="M110,120 L210,168"/>
+    <path d="M286,102 L375,168"/>
+    <path d="M660,120 L560,168"/>
   </g>
-  <g stroke="#2d5a2d" stroke-width="1.4" fill="rgba(45,90,45,0.07)">
-    <rect x="270" y="60" width="220" height="222" rx="10"/>
-    <rect x="270" y="328" width="220" height="184" rx="10"/>
+  <path d="M600,203 L618,203" fill="none" stroke="#3b2a20" stroke-width="1.6" marker-end="url(#sm-fleche-b)"/>
+
+  <!-- Pastilles des briques sur l'axe -->
+  <g fill="#fbf8f1" stroke="#2d5a2d" stroke-width="1.3">
+    <rect x="172" y="82" width="116" height="26" rx="13"/>
+    <rect x="472" y="67" width="116" height="26" rx="13"/>
+    <rect x="472" y="97" width="116" height="26" rx="13"/>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" font-size="15" font-weight="700" fill="#0d0d0d" text-anchor="middle">
+    <text x="230" y="100">Transducer</text>
+    <text x="530" y="85">Synthesizer</text>
+    <text x="530" y="115">Decoder</text>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" font-size="13" font-style="italic" fill="#5a4636" text-anchor="middle">
+    <text x="230" y="76">G2P, P2G, grammaire</text>
+    <text x="230" y="126">français · anglais</text>
+    <text x="530" y="58">synthèse · six voix</text>
+    <text x="530" y="140">reconnaissance</text>
   </g>
 
-  <!-- Titres des blocs -->
-  <g font-family="'Cinzel', serif" font-weight="700" fill="#0d0d0d" text-anchor="middle" font-size="15">
-    <text x="116" y="86">Le lexique LeXiK</text>
-    <text x="116" y="218">Textes annotés</text>
-    <text x="116" y="396">Corpus de parole</text>
-    <text x="380" y="86" fill="#2d5a2d">Le texte</text>
-    <text x="380" y="354" fill="#2d5a2d">La voix</text>
-    <text x="644" y="136">Corpus produits</text>
-    <text x="644" y="396">Sites de démo</text>
+  <!-- Briques complémentaires -->
+  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.6)">
+    <rect x="20" y="170" width="120" height="66" rx="8"/>
+    <rect x="160" y="170" width="120" height="66" rx="8"/>
+    <rect x="320" y="170" width="120" height="66" rx="8"/>
+    <rect x="480" y="170" width="120" height="66" rx="8"/>
+    <rect x="620" y="170" width="120" height="66" rx="8"/>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" text-anchor="middle" fill="#3b2a20">
+    <g font-size="15" font-weight="700" fill="#0d0d0d">
+      <text x="80" y="196">Corrector</text>
+      <text x="220" y="196">Translator</text>
+      <text x="380" y="196">Lexicon</text>
+      <text x="540" y="196">Aligner</text>
+      <text x="680" y="196">Subtitler</text>
+    </g>
+    <g font-size="13.5">
+      <text x="80" y="218">orthographe, accords</text>
+      <text x="220" y="218">français ⇄ anglais</text>
+      <text x="380" y="218">lexique embarqué</text>
+      <text x="540" y="218">alignement forcé</text>
+      <text x="680" y="218">sous-titres, vidéo</text>
+    </g>
   </g>
 
-  <!-- Contenus -->
-  <g font-family="'EB Garamond', Georgia, serif" font-size="14.5" fill="#3b2a20" text-anchor="middle">
-    <text x="116" y="110">compilé de sources libres,</text>
-    <text x="116" y="128">corrigé et enrichi</text>
-    <text x="116" y="150" font-style="italic" fill="#5a4636">publié sur ORTOLANG</text>
-    <text x="116" y="242">Universal Dependencies</text>
-    <text x="116" y="420">corpus publics</text>
-    <text x="116" y="438">(SIWIS, M-AILABS…)</text>
-    <text x="116" y="458" font-style="italic" fill="#5a4636">rangés avec leur licence</text>
-
-    <text x="644" y="160">Syllabes</text>
-    <text x="644" y="180">1500 Mots</text>
-    <text x="644" y="200">corpus d'entraînement</text>
-    <text x="644" y="420">LecturaLingua</text>
-    <text x="644" y="440">LecturaVoice</text>
-    <text x="644" y="460">LecturaLexique</text>
+  <!-- Métiers -->
+  <g stroke="#2d5a2d" stroke-width="1.3" fill="rgba(45,90,45,0.07)">
+    <rect x="20" y="300" width="165" height="96" rx="8"/>
+    <rect x="205" y="300" width="165" height="96" rx="8"/>
+    <rect x="390" y="300" width="165" height="96" rx="8"/>
+    <rect x="575" y="300" width="165" height="96" rx="8"/>
   </g>
-  <g font-family="'EB Garamond', Georgia, serif" font-size="14.5" fill="#3b2a20">
-    <text x="286" y="116"><tspan font-weight="700">Transducer</tspan> · G2P, P2G,</text>
-    <text x="286" y="134">grammaire, syllabes</text>
-    <text x="286" y="162"><tspan font-weight="700">Lexicon</tspan> · lexique embarqué</text>
-    <text x="286" y="190"><tspan font-weight="700">Corrector</tspan> · orthographe</text>
-    <text x="286" y="218"><tspan font-weight="700">Translator</tspan> · français ⇄ anglais</text>
-    <text x="286" y="262" font-style="italic" fill="#5a4636">métiers NLP-FR · NLP-EN</text>
-
-    <text x="286" y="384"><tspan font-weight="700">Synthesizer</tspan> · synthèse,</text>
-    <text x="286" y="402">six voix</text>
-    <text x="286" y="430"><tspan font-weight="700">Decoder</tspan> · reconnaissance</text>
-    <text x="286" y="458"><tspan font-weight="700">Aligner</tspan>, <tspan font-weight="700">Subtitler</tspan> ·</text>
-    <text x="286" y="476">alignement, sous-titres</text>
-    <text x="286" y="500" font-style="italic" fill="#5a4636">métiers TTS · STT</text>
+  <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#2d5a2d" text-anchor="middle">
+    <text x="102" y="324">NLP-FR · NLP-EN</text>
+    <text x="287" y="324">TTS</text>
+    <text x="472" y="324">STT</text>
+    <text x="657" y="324">STS</text>
   </g>
+  <g font-family="'EB Garamond', Georgia, serif" font-size="13.5" fill="#3b2a20" text-anchor="middle">
+    <text x="102" y="346">Transducer + Lexicon</text>
+    <text x="102" y="363">+ Corrector, Translator</text>
+    <text x="287" y="346">Transducer</text>
+    <text x="287" y="363">→ Synthesizer</text>
+    <text x="472" y="346">Decoder → Transducer</text>
+    <text x="472" y="363">(+ Aligner)</text>
+    <text x="657" y="346">Aligner → Subtitler</text>
+    <g font-style="italic" fill="#5a4636">
+      <text x="102" y="386">LecturaLingua</text>
+      <text x="287" y="386">LecturaVoice</text>
+      <text x="472" y="386">LecturaVoice</text>
+      <text x="657" y="386">sous-titrage synchronisé</text>
+    </g>
+  </g>
+
+  <!-- Ressources -->
+  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.6)">
+    <rect x="20" y="437" width="226" height="80" rx="8"/>
+    <rect x="267" y="437" width="226" height="80" rx="8"/>
+    <rect x="514" y="437" width="226" height="80" rx="8"/>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" text-anchor="middle" fill="#3b2a20">
+    <g font-size="15" font-weight="700" fill="#0d0d0d">
+      <text x="133" y="460">Le lexique LeXiK</text>
+      <text x="380" y="460">Textes annotés</text>
+      <text x="627" y="460">Corpus de parole</text>
+    </g>
+    <g font-size="13.5">
+      <text x="133" y="480">publié sur ORTOLANG</text>
+      <text x="380" y="480">Universal Dependencies</text>
+      <text x="627" y="480">SIWIS, M-AILABS…</text>
+    </g>
+    <g font-size="13.5" font-style="italic" fill="#5a4636">
+      <text x="133" y="503">→ Transducer, Lexicon</text>
+      <text x="380" y="503">→ analyse grammaticale</text>
+      <text x="627" y="503">→ Synthesizer, Decoder</text>
+    </g>
+  </g>
+  <text x="380" y="538" font-family="'EB Garamond', Georgia, serif" font-size="13.5" font-style="italic" fill="#5a4636" text-anchor="middle">Les corpus de parole sont eux-mêmes transcrits en phonétique par le Transducer.</text>
 </svg>
 </figure>
