@@ -17,7 +17,7 @@ Ce rapprochement fonctionne dans les deux sens, et c'est tout l'enjeu de Lectura
 
 ---
 
-## 1. Des outils pour lire, de la machine à l'enfant
+## Des outils pour lire, de la machine à l'enfant
 
 Aux deux sens du mot « lecture » répondent deux familles d'outils.
 
@@ -27,7 +27,7 @@ Les seconds sont **éducatifs**, et ils reposent sur les premiers. Une machine q
 
 ---
 
-## 2. La phonétique, pont naturel entre l'écrit et l'oral {#phonetique}
+## La phonétique, pont naturel entre l'écrit et l'oral {#phonetique}
 
 Entre la langue écrite et la langue parlée, la **phonétique** fait le lien : elle dit quels sons portent les lettres. C'est précisément l'étape que franchit tout lecteur, humain ou machine, et c'est pourquoi elle se trouve au centre de l'un comme de l'autre.
 
@@ -37,7 +37,7 @@ Du côté de la **pédagogie**, la phonétique rend explicite ce qui est devenu 
 
 ---
 
-## 3. Comprendre l'intelligence artificielle et apprendre à travailler avec elle
+## Comprendre l'intelligence artificielle et apprendre à travailler avec elle
 
 Le langage et sa lecture sont le **sujet d'étude** de Lectura ; ils sont aussi un **prétexte pour comprendre l'intelligence artificielle** et apprendre à travailler avec elle. Faire lire une voix, reconnaître la parole, analyser une phrase : rien de tout cela ne se fait aujourd'hui sans IA. Travailler sur le langage oblige donc à la comprendre, et à la comprendre de l'intérieur. Les voix, la reconnaissance vocale et l'analyse du français reposent sur des modèles que Lectura **conçoit et entraîne lui-même** : il faut réunir et préparer les données, choisir une architecture, lancer l'entraînement, puis mesurer ce que vaut le résultat. À chaque étape, on découvre un peu mieux comment une IA apprend, ce qu'elle sait faire et où elle bute. Le langage est pour cela un terrain privilégié : chacun le connaît intimement, et l'on entend tout de suite si une voix sonne faux ou si une analyse se trompe.
 
@@ -49,7 +49,7 @@ Encore faut-il que ces pistes s'additionnent au lieu de se disperser. C'est le s
 
 ---
 
-## 4. La place de l'humain
+## La place de l'humain
 
 Livrée à elle-même, l'IA renvoie par défaut la « **moyenne** » : un résultat générique, sans plus-value par rapport à ce qui existe déjà, et difficile à améliorer ou à imbriquer avec le reste. C'est le revers de son mode statistique. En conséquence, les décisions humaines deviennent peut-être plus importantes qu'avant : orienter le travail, juger de sa qualité, voir quand l'IA part dans une mauvaise direction, ce qui arrive souvent.
 
@@ -59,7 +59,7 @@ Une partie des critiques adressées à l'IA trouve sans doute son origine ici. T
 
 ---
 
-## 5. Un horizon : une langue universelle
+## Un horizon : une langue universelle
 
 Les grands modèles de langage ont appris des centaines de langues, et ils semblent porter, de façon implicite, un **socle commun** à toutes. Si c'est le cas, quelque chose comme une langue universelle existerait déjà, enfoui dans les paramètres d'un réseau de neurones. Mais c'est justement parce que ce socle est implicite qu'on le maîtrise mal. Une **langue explicite** permettrait de reprendre la main, et peut-être de concevoir des modèles plus légers, entraînés sur une langue commune plutôt que sur des centaines.
 
