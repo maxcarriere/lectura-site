@@ -15,7 +15,7 @@ Lectura est une structure légère : ses besoins sont à sa mesure. Un financeme
 
 Lectura défend une autre façon de faire de l'intelligence artificielle : des modèles légers, qui combinent règles et apprentissage, demandent moins de données et de calcul, et tournent sur l'appareil de l'utilisateur sans dépendre d'un grand serveur. Sur le français, ses outils de phonétisation et d'analyse grammaticale figurent parmi les meilleurs du marché (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})), et ses ressources, comme le lexique LeXiK, sont ouvertes à tous.
 
-Ces outils servent un but concret : apprendre à lire, et apprendre plus facilement. Une structure indépendante peut explorer des pistes que les grands acteurs délaissent ; il lui faut seulement de quoi durer.
+Ces outils servent un but concret : apprendre à lire, et apprendre plus facilement. Une structure indépendante peut explorer des pistes que les grands acteurs délaissent ; il lui faut seulement de quoi vivre.
 
 ---
 
