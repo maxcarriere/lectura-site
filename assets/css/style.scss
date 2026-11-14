@@ -2017,10 +2017,4 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 @media (max-width: 600px) { .parchment-content .equipe-membre { flex-direction: column; align-items: center; text-align: center; } }
 /* Photo du fondateur (14/11) : pas trop grande */
 .photo-fondateur { margin: 1rem auto 1.6rem; max-width: 300px; }
-.fondateur-intro { display: flex; gap: 1.6rem; align-items: center; margin: 1rem 0 1.4rem; }
-.fondateur-intro .photo-fondateur { flex: 0 0 280px; margin: 0; }
-.fondateur-intro-texte { flex: 1; }
-.fondateur-intro-texte p:first-child { margin-top: 0; }
-.fondateur-intro-texte p:last-child { margin-bottom: 0; }
-@media (max-width: 760px) { .fondateur-intro { flex-direction: column; } .fondateur-intro .photo-fondateur { flex: none; width: 100%; max-width: 300px; } }
 .photo-fondateur img { display: block; width: 100%; height: auto; border-radius: 6px; }
