@@ -31,13 +31,14 @@ La lecture syllabique devrait fonctionner pour toutes les langues ; Lectura disp
 - Apprentissage autonome de la lecture.
 - Apprentissage du français comme langue étrangère.
 - Apprentissage de l'anglais.
-- Aide aux personnes atteintes de troubles dys.
+- Aide aux personnes avec troubles dys ou des difficultés de lecture.
 
 **Produits**
 
 - Méthode de lecture (manuel, web).
 - Application mobile pour apprendre à lire.
 - Mini-jeux pour enfants, pour apprendre les syllabes.
+- Supports d'orthophonie.
 
 ---
 
