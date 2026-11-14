@@ -47,9 +47,6 @@
   children:
     - title: "L'écosystème du projet"
       url: /developpement/ecosysteme/
-      children:
-        - title: Projets transversaux
-          url: /developpement/projets/
     - title: Les modules
       url: /developpement/modules/
       children:

@@ -25,7 +25,7 @@ La synthèse vocale (TTS) lit des sons plutôt que des lettres : elle reçoit la
 
 ## Les produits
 
-Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, mots illustrés) en sont tirés : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Les [applications pédagogiques]({{ '/developpement/projets/applications-pedagogiques/' | relative_url }}) reposent sur la voix et le surlignage synchronisé. Les [programmes de bureau]({{ '/produits/programmes/' | relative_url }}), prototypés en 2026, assemblaient déjà ces briques.
+Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, mots illustrés) en sont tirés : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Les [applications pédagogiques]({{ '/solutions/educatives/' | relative_url }}) reposent sur la voix et le surlignage synchronisé. Les [programmes de bureau]({{ '/produits/programmes/' | relative_url }}), prototypés en 2026, assemblaient déjà ces briques.
 
 ## L'écosystème modulaire {#modules}
 
@@ -38,4 +38,3 @@ Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, m
 - [Les modules]({{ '/developpement/modules/' | relative_url }}) : le détail des briques, génération par génération ;
 - [Les ressources]({{ '/developpement/ressources/' | relative_url }}) : le lexique, les données et les corpus ;
 - [La recherche]({{ '/developpement/recherche/' | relative_url }}) : les axes de recherche et les publications ;
-- [Les projets transversaux]({{ '/developpement/projets/' | relative_url }}) : le correcteur et les applications pédagogiques.

@@ -29,7 +29,7 @@ Cette approche va à contre-courant de la tendance actuelle, qui privilégie les
 
 L'architecture modulaire de Lectura fait le pari inverse : développer, tester et améliorer chaque couche séparément, et combiner librement les briques selon le besoin (TTS, STT, ou tout pipeline hybride).
 
-En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. En épurant le langage textuel de sa couche orthographique, le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore, qui a pour avantage d'être bijective. De plus, le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio (voir [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }})).
+En isolant la couche phonétique, Lectura tente de factoriser le problème au bon niveau. En épurant le langage textuel de sa couche orthographique, le modèle acoustique, en amont ou en aval, n'a plus qu'à gérer la correspondance entre phonèmes et signal sonore, qui a pour avantage d'être bijective. De plus, le [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (texte → IPA) et le [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (IPA → texte) deviennent des briques réutilisables indépendamment de la modalité audio (voir le [correcteur]({{ '/solutions/technologiques/#analyse-du-langage' | relative_url }})).
 
 Les bénéfices sont concrets :
 
@@ -81,7 +81,7 @@ C'est peut-être l'enseignement le plus surprenant du projet. Le [pipeline P2G](
 
 Autrement dit : le signal du langage parlé **suffit** à comprendre la grammaire et, en grande partie, l'orthographe d'une phrase, à condition de disposer de suffisamment de contexte. Le modèle P2G, entraîné uniquement sur des séquences phonétiques, retrouve les accords, distingue les homophones et reconstruit l'orthographe avec une précision d'environ 95%.
 
-Ce résultat ouvre des perspectives concrètes, notamment pour la **correction orthographique**. Si un modèle peut retrouver l'orthographe correcte à partir de la phonétique, alors un correcteur peut s'appuyer sur la même logique : convertir la phrase en phonétique, puis vérifier si la graphie choisie par l'utilisateur est cohérente avec ce que le modèle attendrait. C'est l'une des approches explorées dans le [projet Correcteur]({{ '/developpement/projets/correcteur/' | relative_url }}).
+Ce résultat ouvre des perspectives concrètes, notamment pour la **correction orthographique**. Si un modèle peut retrouver l'orthographe correcte à partir de la phonétique, alors un correcteur peut s'appuyer sur la même logique : convertir la phrase en phonétique, puis vérifier si la graphie choisie par l'utilisateur est cohérente avec ce que le modèle attendrait. C'est l'une des approches du [correcteur]({{ '/solutions/technologiques/#analyse-du-langage' | relative_url }}) de Lectura.
 
 ---
 
