@@ -12,8 +12,6 @@ description: "L'intelligence artificielle chez Lectura : des modèles légers, q
 
 L'intelligence artificielle est présente chez Lectura à deux niveaux : comme **technologie**, avec des modèles que Lectura conçoit et entraîne lui-même, et comme **méthode de travail**, puisque Lectura a été entièrement développé avec elle. Cette double expérience peut profiter à d'autres entreprises.
 
-<span class="status-badge">Axe en cours de structuration</span>
-
 ---
 
 ## Modèles {#modeles}
