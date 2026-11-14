@@ -58,7 +58,7 @@ Les contreparties se définissent avec chaque financeur, selon la nature et le m
 
 ## Forme juridique {#forme}
 
-Lectura est aujourd'hui porté par une entreprise individuelle, celle de [son fondateur]({{ '/a-propos/qui-suis-je/' | relative_url }}). Il est prêt à devenir une société dès qu'un financement le permet.
+Lectura est aujourd'hui portée par une entreprise individuelle, celle de [son fondateur]({{ '/a-propos/qui-suis-je/' | relative_url }}). Lectura est prête à devenir une société dès qu'un financement le permet.
 
 ---
 
