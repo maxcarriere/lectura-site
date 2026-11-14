@@ -41,10 +41,11 @@ Investir dans Lectura, c'est faire un pari sur l'avenir. Les interfaces vocales 
 
 Les contreparties se définissent avec chaque financeur, selon la nature et le montant de son apport, par exemple :
 
-- **une licence commerciale offerte** sur les outils développés, si le projet aboutit ;
-- **une part des revenus** tirés de ce qui a été financé ;
-- **un accès anticipé** aux résultats et aux outils ;
 - **la mention du financeur** sur les produits et les publications ;
+- **la publication du résultat sous licence libre** ;
+- **une licence commerciale offerte** sur les outils développés, si le projet aboutit ;
+- **un accès anticipé** aux résultats et aux outils ;
+- **une part des revenus** tirés de ce qui a été financé ;
 - pour un investisseur, **une part de la société** à créer.
 
 ---
