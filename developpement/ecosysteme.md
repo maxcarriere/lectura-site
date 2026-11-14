@@ -9,6 +9,8 @@ description: "Comment les projets de Lectura s'appuient les uns sur les autres :
 
 Les projets de Lectura ne sont pas des produits séparés : ils s'appuient les uns sur les autres. Leur pivot commun est la **phonétique**, qui relie le texte écrit et la voix. Chaque projet donne ses propres résultats, nourrit les autres et sert à les vérifier.
 
+{% include schema-ecosysteme.html %}
+
 ## Le lexique, socle commun
 
 [LeXiK]({{ '/developpement/lexique/' | relative_url }}), le lexique du français de Lectura, donne pour chaque mot sa prononciation syllabée, son analyse grammaticale, l'alignement de ses lettres sur ses sons et sa fréquence. Il fournit aux modèles leurs données d'entraînement de base pour la phonétique, et il s'est construit en même temps qu'eux : chacun a fait progresser l'autre. Le dictionnaire WiKiLeXiK le relie au Wiktionnaire et à Wikidata ; le module Lexicon l'embarque dans une application. Projet : [LecturaLexique](https://lexique.lectura.world).
@@ -25,11 +27,15 @@ La synthèse vocale (TTS) lit des sons plutôt que des lettres : elle reçoit la
 
 Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, mots illustrés) en sont tirés : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Les [applications pédagogiques]({{ '/developpement/projets/applications-pedagogiques/' | relative_url }}) reposent sur la voix et le surlignage synchronisé. Les [programmes de bureau]({{ '/produits/programmes/' | relative_url }}), prototypés en 2026, assemblaient déjà ces briques.
 
+## Modules et ressources {#modules-ressources}
+
+{% include schema-modules.html %}
+
 ---
 
 ## Pour aller plus loin
 
 - [Les modules]({{ '/developpement/modules/' | relative_url }}) : le détail des briques, génération par génération ;
 - [Les ressources]({{ '/developpement/ressources/' | relative_url }}) : le lexique, les données et les corpus ;
-- [La recherche]({{ '/developpement/recherche/' | relative_url }}) : les algorithmes développés, le TTS diphonique, l'ingénierie des modèles ;
+- [La recherche]({{ '/developpement/recherche/' | relative_url }}) : les axes de recherche et les publications ;
 - [Les projets transversaux]({{ '/developpement/projets/' | relative_url }}) : le correcteur et les applications pédagogiques.

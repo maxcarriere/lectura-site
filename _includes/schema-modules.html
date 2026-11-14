@@ -1,0 +1,98 @@
+<figure class="schema-ecosysteme">
+<svg viewBox="0 0 760 560" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="sm-titre">Ressources, modules et productions de Lectura</title>
+  <desc id="sm-desc">À gauche, les ressources : le lexique LeXiK, les textes annotés (Universal Dependencies) et des corpus de parole publics. Au centre, les modules de la génération actuelle : pour le texte, Transducer, Lexicon, Corrector et Translator ; pour la voix, Synthesizer, Decoder, Aligner et Subtitler ; la phonétique passe du texte à la voix. Les modules de texte enrichissent LeXiK et préparent les corpus de parole. À droite, les productions : les corpus produits et les sites de démo.</desc>
+  <defs>
+    <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b2a20"/>
+    </marker>
+    <marker id="sm-fleche-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
+    </marker>
+  </defs>
+
+  <!-- En-têtes de colonnes -->
+  <g font-family="'Cinzel', serif" font-weight="700" font-size="17" fill="#5a4636" text-anchor="middle">
+    <text x="115" y="34">Ressources</text>
+    <text x="380" y="34">Modules actuels</text>
+    <text x="645" y="34">Productions</text>
+  </g>
+
+  <!-- Liens -->
+  <g fill="none" stroke="#3b2a20" stroke-width="1.6">
+    <path d="M212,110 L268,110" marker-start="url(#sm-fleche)" marker-end="url(#sm-fleche)"/>
+    <path d="M212,228 L268,228" marker-end="url(#sm-fleche)"/>
+    <path d="M212,420 L268,420" marker-end="url(#sm-fleche)"/>
+    <path d="M270,262 C225,300 190,330 160,368" stroke-dasharray="5 4" marker-end="url(#sm-fleche)"/>
+    <path d="M492,170 L548,170" marker-end="url(#sm-fleche)"/>
+    <path d="M492,420 L548,420" marker-end="url(#sm-fleche)"/>
+    <path d="M492,230 C520,260 530,330 550,375" marker-end="url(#sm-fleche)"/>
+  </g>
+  <path d="M380,282 L380,326" fill="none" stroke="#2d5a2d" stroke-width="1.8" marker-end="url(#sm-fleche-v)"/>
+
+  <!-- Libellés des liens -->
+  <g font-family="'EB Garamond', Georgia, serif" font-size="14" font-style="italic" fill="#3b2a20">
+    <text x="240" y="100" text-anchor="middle">entraîne</text>
+    <text x="240" y="132" text-anchor="middle">enrichit</text>
+    <text x="196" y="318" text-anchor="end">préparation</text>
+    <text x="392" y="309" fill="#2d5a2d" font-style="normal" font-weight="700">phonétique</text>
+  </g>
+
+  <!-- Blocs -->
+  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.55)">
+    <rect x="20" y="60" width="192" height="104" rx="8"/>
+    <rect x="20" y="192" width="192" height="72" rx="8"/>
+    <rect x="20" y="370" width="192" height="100" rx="8"/>
+    <rect x="548" y="110" width="192" height="118" rx="8"/>
+    <rect x="548" y="370" width="192" height="100" rx="8"/>
+  </g>
+  <g stroke="#2d5a2d" stroke-width="1.4" fill="rgba(45,90,45,0.07)">
+    <rect x="270" y="60" width="220" height="222" rx="10"/>
+    <rect x="270" y="328" width="220" height="184" rx="10"/>
+  </g>
+
+  <!-- Titres des blocs -->
+  <g font-family="'Cinzel', serif" font-weight="700" fill="#0d0d0d" text-anchor="middle" font-size="15">
+    <text x="116" y="86">Le lexique LeXiK</text>
+    <text x="116" y="218">Textes annotés</text>
+    <text x="116" y="396">Corpus de parole</text>
+    <text x="380" y="86" fill="#2d5a2d">Le texte</text>
+    <text x="380" y="354" fill="#2d5a2d">La voix</text>
+    <text x="644" y="136">Corpus produits</text>
+    <text x="644" y="396">Sites de démo</text>
+  </g>
+
+  <!-- Contenus -->
+  <g font-family="'EB Garamond', Georgia, serif" font-size="14.5" fill="#3b2a20" text-anchor="middle">
+    <text x="116" y="110">compilé de sources libres,</text>
+    <text x="116" y="128">corrigé et enrichi</text>
+    <text x="116" y="150" font-style="italic" fill="#5a4636">publié sur ORTOLANG</text>
+    <text x="116" y="242">Universal Dependencies</text>
+    <text x="116" y="420">corpus publics</text>
+    <text x="116" y="438">(SIWIS, M-AILABS…)</text>
+    <text x="116" y="458" font-style="italic" fill="#5a4636">rangés avec leur licence</text>
+
+    <text x="644" y="160">Syllabes</text>
+    <text x="644" y="180">1500 Mots</text>
+    <text x="644" y="200">corpus d'entraînement</text>
+    <text x="644" y="420">LecturaLingua</text>
+    <text x="644" y="440">LecturaVoice</text>
+    <text x="644" y="460">LecturaLexique</text>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" font-size="14.5" fill="#3b2a20">
+    <text x="286" y="116"><tspan font-weight="700">Transducer</tspan> · G2P, P2G,</text>
+    <text x="286" y="134">grammaire, syllabes</text>
+    <text x="286" y="162"><tspan font-weight="700">Lexicon</tspan> · lexique embarqué</text>
+    <text x="286" y="190"><tspan font-weight="700">Corrector</tspan> · orthographe</text>
+    <text x="286" y="218"><tspan font-weight="700">Translator</tspan> · français ⇄ anglais</text>
+    <text x="286" y="262" font-style="italic" fill="#5a4636">métiers NLP-FR · NLP-EN</text>
+
+    <text x="286" y="384"><tspan font-weight="700">Synthesizer</tspan> · synthèse,</text>
+    <text x="286" y="402">six voix</text>
+    <text x="286" y="430"><tspan font-weight="700">Decoder</tspan> · reconnaissance</text>
+    <text x="286" y="458"><tspan font-weight="700">Aligner</tspan>, <tspan font-weight="700">Subtitler</tspan> ·</text>
+    <text x="286" y="476">alignement, sous-titres</text>
+    <text x="286" y="500" font-style="italic" fill="#5a4636">métiers TTS · STT</text>
+  </g>
+</svg>
+</figure>

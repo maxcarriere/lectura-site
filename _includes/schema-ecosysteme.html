@@ -1,0 +1,71 @@
+<figure class="schema-ecosysteme">
+<svg viewBox="0 0 720 530" role="img" aria-labelledby="se-titre se-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="se-titre">L'écosystème du projet Lectura</title>
+  <desc id="se-desc">La phonétique au centre relie le texte (LecturaLingua, à gauche) et la voix (LecturaVoice, à droite) : G2P et P2G entre le texte et la phonétique, TTS et STT entre la phonétique et la voix. Le lexique LeXiK, en bas, fournit les données d'entraînement des modules de texte. Les produits, en haut, réutilisent ces briques.</desc>
+  <defs>
+    <marker id="se-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b2a20"/>
+    </marker>
+    <marker id="se-fleche-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
+    </marker>
+  </defs>
+
+  <!-- Liens -->
+  <g fill="none" stroke="#3b2a20" stroke-width="1.6">
+    <path d="M125,198 L205,104" marker-end="url(#se-fleche)"/>
+    <path d="M595,198 L515,104" marker-end="url(#se-fleche)"/>
+    <path d="M360,191 L360,104" marker-end="url(#se-fleche)"/>
+    <path d="M195,418 L128,314" marker-start="url(#se-fleche)" marker-end="url(#se-fleche)"/>
+    <path d="M222,300 Q360,372 498,300" stroke-dasharray="5 4" marker-end="url(#se-fleche)"/>
+  </g>
+  <g fill="none" stroke="#2d5a2d" stroke-width="1.8">
+    <path d="M222,238 L294,238" marker-end="url(#se-fleche-v)"/>
+    <path d="M294,272 L222,272" marker-end="url(#se-fleche-v)"/>
+    <path d="M426,238 L498,238" marker-end="url(#se-fleche-v)"/>
+    <path d="M498,272 L426,272" marker-end="url(#se-fleche-v)"/>
+  </g>
+
+  <!-- Libellés des liens -->
+  <g font-family="'EB Garamond', Georgia, serif" font-size="15" fill="#3b2a20">
+    <text x="258" y="230" text-anchor="middle" fill="#2d5a2d" font-weight="700">G2P</text>
+    <text x="258" y="291" text-anchor="middle" fill="#2d5a2d" font-weight="700">P2G</text>
+    <text x="462" y="230" text-anchor="middle" fill="#2d5a2d" font-weight="700">TTS</text>
+    <text x="462" y="291" text-anchor="middle" fill="#2d5a2d" font-weight="700">STT</text>
+    <text x="370" y="150" font-style="italic">réutilisent les briques</text>
+    <text x="150" y="360" text-anchor="end" font-style="italic">données</text>
+    <text x="150" y="377" text-anchor="end" font-style="italic">d'entraînement</text>
+    <text x="360" y="362" text-anchor="middle" font-style="italic">préparation des corpus de parole</text>
+  </g>
+
+  <!-- Blocs -->
+  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.55)">
+    <rect x="160" y="20" width="400" height="82" rx="8"/>
+    <rect x="20" y="198" width="200" height="114" rx="8"/>
+    <rect x="500" y="198" width="200" height="114" rx="8"/>
+    <rect x="160" y="420" width="400" height="92" rx="8"/>
+  </g>
+  <circle cx="360" cy="255" r="64" fill="rgba(45,90,45,0.12)" stroke="#2d5a2d" stroke-width="1.8"/>
+
+  <!-- Textes des blocs -->
+  <g font-family="'Cinzel', serif" font-weight="700" fill="#0d0d0d" text-anchor="middle">
+    <text x="360" y="52" font-size="19">Les produits</text>
+    <text x="120" y="228" font-size="18">Le texte</text>
+    <text x="600" y="228" font-size="18">La voix</text>
+    <text x="360" y="452" font-size="18">Le lexique LeXiK</text>
+    <text x="360" y="252" font-size="16" fill="#2d5a2d">Phonétique</text>
+  </g>
+  <g font-family="'EB Garamond', Georgia, serif" font-size="15" fill="#3b2a20" text-anchor="middle">
+    <text x="360" y="80">corpus · applications pédagogiques · programmes</text>
+    <text x="120" y="252">NLP-FR · NLP-EN</text>
+    <text x="120" y="272">grammaire · syllabes</text>
+    <text x="120" y="298" font-style="italic" fill="#5a4636">LecturaLingua</text>
+    <text x="600" y="252">synthèse · reconnaissance</text>
+    <text x="600" y="272">alignement · sous-titres</text>
+    <text x="600" y="298" font-style="italic" fill="#5a4636">LecturaVoice</text>
+    <text x="360" y="276" font-size="16" fill="#2d5a2d">/fɔ.ne.tik/</text>
+    <text x="360" y="476">prononciation syllabée · grammaire · lettres et sons · fréquence</text>
+    <text x="360" y="499" font-style="italic" fill="#5a4636">LecturaLexique · WiKiLeXiK</text>
+  </g>
+</svg>
+</figure>

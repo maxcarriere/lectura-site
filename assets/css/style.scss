@@ -2003,3 +2003,6 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 .nav-sections .nav-section-link { font-size: 0.78rem; opacity: 0.85; padding-left: 0.8rem; }
 .nav-sections .nav-section-link:hover { opacity: 1; }
 .nav-sections .nav-section-link--active { opacity: 1; color: #fff; font-weight: 600; box-shadow: inset 2px 0 0 #c9a96e; }
+/* Schéma de l'écosystème (14/11) */
+.schema-ecosysteme { margin: 1.8rem auto; max-width: 720px; }
+.schema-ecosysteme svg { display: block; width: 100%; height: auto; }
