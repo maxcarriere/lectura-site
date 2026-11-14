@@ -5,7 +5,7 @@ permalink: /partenariats/financement/
 description: "Pourquoi soutenir Lectura, et comment : un axe de recherche, un produit ou le projet dans son ensemble, par des acteurs publics, des entreprises ou des investisseurs."
 ---
 
-{% comment %} Jet du 14/11/2026 sur le plan de Maxime. Rôle de la page (Maxime, 14/11) : comment Lectura s'insère dans le paysage économique, et pourquoi c'est intéressant que ce soit le cas. Contreparties à valider par Maxime avant toute mise en ligne (engagement d'argent). {% endcomment %}
+{% comment %} Jet du 14/11/2026 sur le plan de Maxime. Rôle de la page (Maxime, 14/11) : comment Lectura s'insère dans le paysage économique, et pourquoi c'est intéressant que ce soit le cas. Contreparties validées par Maxime le 14/11 (liste et ordre). {% endcomment %}
 
 Lectura est une structure légère : ses besoins sont à sa mesure. Un financement, même modeste, se traduit directement en temps de développement, et un projet financé passe en priorité : il a donc de bien meilleures chances de voir le jour.
 

@@ -34,6 +34,6 @@ Le monde du travail est en pleine mutation, et je pense que dans ce nouveau pays
 
 ## Ce que je cherche
 
-Je suis actuellement autoentrepreneur et je souhaite développer une activité professionnelle autour de l'utilisation de l'IA, en particulier dans les domaines du traitement du langage naturel, de la voix et de l'edtech. Je suis ouvert à toute forme de collaboration : freelance, salariat ou recherche publique.
+Je suis actuellement autoentrepreneur et je souhaite développer une activité professionnelle autour de l'utilisation de l'IA, en particulier dans les domaines du traitement du langage naturel, de la voix et de l'edtech. Je suis ouvert à toute forme de [collaboration]({{ '/partenariats/collaboration/' | relative_url }}) : freelance ou salariat, partenariat privé ou recherche publique.
 
 Pour toute question ou proposition, rendez-vous sur la page [Contact]({{ '/contact/' | relative_url }}), ou retrouvez-moi sur [LinkedIn](https://www.linkedin.com/in/maximecarriere/).

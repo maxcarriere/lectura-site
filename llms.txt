@@ -55,7 +55,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Decouvrir : https://www.lectura.world/decouvrir/
 - Les projets : https://www.lectura.world/decouvrir/projets/
 - La vision de Lectura : https://www.lectura.world/a-propos/vision/
-- Fondateur : https://www.lectura.world/a-propos/qui-suis-je/
+- Le fondateur : https://www.lectura.world/a-propos/qui-suis-je/
 - Solutions : https://www.lectura.world/solutions/
 - Solutions technologiques : https://www.lectura.world/solutions/technologiques/
 - Solutions educatives : https://www.lectura.world/solutions/educatives/
