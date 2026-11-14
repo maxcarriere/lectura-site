@@ -2,71 +2,65 @@
 title: Recherche
 layout: default
 permalink: /developpement/recherche/
-description: "Les domaines de recherche de Lectura (alignement des lettres et des sons, analyse grammaticale depuis la phonétique, moteur vocal, part de la règle et de l'apprentissage) et ce qui en a été publié : LeXiK sur ORTOLANG, modules, articles et notes techniques."
+description: "Les axes de recherche de Lectura (ingénierie vocale, analyse du langage, lecture mathématique, multilinguisme, apprentissage automatique et humain, systémique), ses publications et les collaborations possibles."
 ---
 
-{% comment %} Premier jet du 14/11/2026, sur le plan de Maxime : deux sections, Domaines de recherche et Publications. Sources : brain/lectura/techno/OBJECTIF.md (alignement natif, principe analytique / statistique, calibrage, partition), techno/DECISIONS.md (moteur vocal du 10/11, alignement linéaire du 13/11, analyse grammaticale dans le moteur du 13/11), solutions/technologiques.md (scores depuis la phonétique, fonctionnalités sans équivalent publié), diffusion/LEXIK.md (ORTOLANG, handle), diffusion/PLAN.md (Hugging Face publié le 03/11), liens.md (v0 : 17 paquets PyPI, GitHub, AGPL-3.0). Les quatre anciennes cartes (point de vue phonétique, algorithmes, TTS diphonique, ingénierie des modèles) passent dans Publications. Ancienne version à copier dans anciennes-pages/ avant remplacement. {% endcomment %}
+{% comment %} Deuxième jet du 14/11/2026, sur les consignes de Maxime : seulement les axes encore ouverts (pas ceux déjà résolus), publications officielles seulement (ORTOLANG pour l'instant), une section Collaborations, une section Financement qui renvoie à Partenariats. Les anciennes notes techniques (algorithmes, TTS diphonique, ingénierie des modèles) ne sont plus liées d'ici : à reclasser. {% endcomment %}
 
-Les outils de Lectura reposent sur quelques questions de fond, travaillées dans la durée. Cette page les présente, avec ce qui en a été publié.
+Lectura poursuit plusieurs axes de recherche, qui prolongent ce qui a déjà été développé.
 
 ---
 
 ## Domaines de recherche {#domaines}
 
-### L'alignement des lettres et des sons {#alignement}
+### Ingénierie vocale {#ingenierie-vocale}
 
-Savoir quelles lettres portent quel son est le point de départ de Lectura. L'alignement établit cette correspondance lettre par lettre, lettres muettes comprises ; la syllabation alignée découpe ensuite le mot en syllabes, à la fois dans l'orthographe et dans la phonétique. Dans la génération actuelle des outils, l'alignement est conservé à chaque conversion entre l'écrit et les sons, et les modules savent déjà aligner un enregistrement sur son texte.
+Plutôt que deux modèles séparés, l'un pour dire un texte, l'autre pour l'entendre, Lectura prépare un modèle unifié, qui sait à la fois analyser un son et le produire. Il travaille sur une représentation explicite de la parole : ce qui est dit (les phonèmes), comment c'est dit (la prosodie, le style), qui le dit (le timbre) et dans quelles conditions (bruit, salle, micro). Les compétences visées sont la conversion vocale, le clonage d'une voix et une meilleure qualité, avec un modèle qui reste léger.
 
-Le travail en cours prolonge cet alignement jusqu'à la voix : rattacher chaque lettre d'un texte à son son, à sa coupure (syllabe, liaison, ponctuation…) et à son instant dans l'enregistrement. Les principes de l'alignement et de la syllabation sont décrits dans les [algorithmes développés]({{ '/developpement/recherche/algorithmes/' | relative_url }}).
+### Analyse du langage {#analyse-du-langage}
 
-### L'analyse grammaticale depuis la phonétique {#analyse-phonetique}
+L'analyse grammaticale de Lectura donne, pour chaque mot, sa catégorie, son lemme, ses traits et sa fonction dans la phrase (voir les [solutions technologiques]({{ '/solutions/technologiques/#analyse-du-langage' | relative_url }})). Une analyse sémantique pourrait la compléter : relier chaque mot à son sens dans son contexte.
 
-Lectura analyse une phrase à partir de sa seule prononciation : catégorie de chaque mot, lemme, genre, nombre, temps, fonction dans la phrase. Les scores restent proches de ceux de l'analyse faite depuis l'orthographe : 97,0 % de catégories justes depuis la phonétique, contre 97,7 % depuis le texte (détail dans les [solutions technologiques]({{ '/solutions/technologiques/#analyse-du-langage' | relative_url }})). C'est ce qui permet au correcteur de passer par le son, et à la reconnaissance vocale d'écrire à partir des phonèmes.
+### Lecture mathématique {#lecture-mathematique}
 
-La question étudiée maintenant est celle de la cohérence : jusqu'où la grammaire aide-t-elle à retrouver les mots dans la parole, à placer leurs frontières et à trancher entre deux homophones ?
+Les outils de Lectura savent déjà lire les formules courantes d'un texte : nombres, dates, sigles… Il s'agit d'étendre ce travail à l'ensemble des formules mathématiques, pour que toute expression écrite en notation mathématique puisse être lue à voix haute.
 
-### Un moteur vocal de nouvelle génération {#moteur-vocal}
+### Multilinguisme {#multilinguisme}
 
-Plutôt que deux modèles séparés, l'un pour dire un texte, l'autre pour l'entendre, Lectura prépare un seul moteur qui fait les deux : analyser un son et le produire. Il travaille sur une représentation explicite de la parole, en couches : ce qui est dit (les phonèmes), comment c'est dit (la prosodie, le style), qui le dit (le timbre) et dans quelles conditions (le canal : bruit, salle, micro). Les compétences visées sont la conversion vocale, le clonage d'une voix et une meilleure qualité, avec un modèle qui reste léger.
+Lectura traite aujourd'hui le français et, pour une partie de ses outils, l'anglais. Il s'agit d'étendre à d'autres langues ce qui a été construit : lexique, alignement des lettres et des sons, analyse grammaticale, voix.
 
-Les données, en français et en anglais, sont en cours de préparation ; le premier entraînement vient ensuite. Les approches précédentes de Lectura en synthèse vocale sont décrites dans [TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }}) et [ingénierie des modèles]({{ '/developpement/recherche/ingenierie-modeles/' | relative_url }}).
+### Apprentissage automatique {#apprentissage-automatique}
 
-### La part de la règle et la part de l'apprentissage {#analytique-statistique}
+Les modèles de Lectura distinguent ce qui peut se faire analytiquement, par la règle, et ce qui ne peut se faire que statistiquement, par l'apprentissage (voir [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/#modeles' | relative_url }})). La recherche porte sur la façon d'orchestrer les deux, et sur la mesure de leur équilibre : ce qu'un élément analytique épargne en paramètres et en données.
 
-Les modèles de Lectura avancent par la règle là où une tâche suit une logique, et laissent l'apprentissage compléter là où elle n'en suit aucune (voir [la vision de Lectura]({{ '/a-propos/vision/' | relative_url }}) et [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/#modeles' | relative_url }})). Ce principe reste à éprouver, et l'équilibre entre les deux se mesure : en traçant la qualité d'un modèle selon sa taille et la quantité de données, avec et sans un élément analytique, l'écart entre les courbes chiffre ce que cet élément épargne en paramètres et en heures de données. Les premiers essais sont en cours.
+### Apprentissage humain {#apprentissage-humain}
 
-Une question voisine porte sur la représentation des données : elle doit être assez fine pour ne rien perdre de ce que la tâche doit distinguer, et assez grossière pour ne pas dépenser de paramètres sur ce qui n'importe pas.
+Comment faciliter l'apprentissage humain, et d'abord celui de la lecture : ce qui rend une notion explicite, ce qui aide à la retenir, et la place qu'y prennent l'interactivité, le jeu et l'image (voir les [solutions pédagogiques]({{ '/solutions/educatives/' | relative_url }})).
 
-### Un horizon : une langue explicite {#langue-explicite}
+### Systémique et organisation {#systemique}
 
-Au-delà de ces axes, Lectura s'intéresse à l'idée d'une langue universelle explicite, fondée sur la phonétique : voir [la vision de Lectura]({{ '/a-propos/vision/' | relative_url }}).
+L'organisation du travail dans un système qui relie des agents d'IA et des humains : la répartition des rôles, la mémoire partagée, la coordination, la part des décisions qui reste humaine. Cette réflexion rejoint celle du projet [Humanuscrit]({{ '/a-propos/humanuscrit/' | relative_url }}).
 
 ---
 
 ## Publications {#publications}
 
-### Ressources
-
-- **3 novembre 2026** : copie de LeXiK sur [Hugging Face](https://huggingface.co/datasets/lecturaworld/lexik), identique à la version publiée sur ORTOLANG.
 - **29 octobre 2026** : **LeXiK** v1.0, lexique du français, publié sur [ORTOLANG](https://hdl.handle.net/11403/lexik) avec sa documentation, sous licence CC BY-SA 4.0. Identifiant de citation : hdl.handle.net/11403/lexik.
-
-### Logiciels
-
-- **Juillet 2026** : première génération des modules (v0), dix-sept paquets Python publiés sur [PyPI](https://pypi.org/user/lectura/), avec leur code sur [GitHub](https://github.com/maxcarriere/lectura-modules), sous licence AGPL-3.0. Elle n'est plus développée ; sa documentation reste en ligne dans [les modules]({{ '/developpement/modules/' | relative_url }}).
-
-### Articles
-
-- **11 novembre 2026** : [Le point de vue phonétique]({{ '/articles/le-point-de-vue-phonetique/' | relative_url }}), l'approche fondamentale de Lectura.
-- **3 novembre 2026** : [Les syllabes du français, avec leurs sons]({{ '/articles/corpus-de-syllabes/' | relative_url }}), un corpus de 4 946 syllabes tiré de LeXiK.
-- **30 octobre 2026** : [LeXiK et WiKiLeXiK]({{ '/articles/lexik-et-wikilexik/' | relative_url }}), ce que LeXiK apporte aux lexiques du français.
-- **29 octobre 2026** : [LeXiK est publié sur ORTOLANG]({{ '/articles/lexik-publie-sur-ortolang/' | relative_url }}).
-
-### Notes techniques
-
-- [Algorithmes développés]({{ '/developpement/recherche/algorithmes/' | relative_url }}) : alignement graphème-phonème, syllabation, groupes de lecture et liaisons, lecture des nombres.
-- [TTS diphonique]({{ '/developpement/recherche/tts-diphonique/' | relative_url }}) : un moteur expérimental de synthèse par concaténation de diphones.
-- [Ingénierie des modèles]({{ '/developpement/recherche/ingenierie-modeles/' | relative_url }}) : les choix d'architecture de la première génération, ce qui a fonctionné et ce qui a échoué.
 
 ---
 
-Un partenaire peut faire avancer l'un de ces domaines : voir [Partenariats]({{ '/partenariats/' | relative_url }}).
+## Collaborations {#collaborations}
+
+Lectura est ouvert à la collaboration avec d'autres chercheurs, lorsque leurs axes de recherche rejoignent ce qui a été développé ou ce qui est en cours de développement, notamment sur :
+
+- les méthodes utilisées pour élaborer le lexique ;
+- les algorithmes réalisés : alignement des lettres et des sons, syllabation ;
+- les différentes composantes de la voix humaine.
+
+Contact : **lectura.world@gmail.com**, ou la [page de contact]({{ '/contact/' | relative_url }}).
+
+---
+
+## Financement {#financement}
+
+Lectura recherche des financements pour développer ces axes de recherche : voir [Partenariats]({{ '/partenariats/' | relative_url }}).
