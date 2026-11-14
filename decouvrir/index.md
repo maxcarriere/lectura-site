@@ -14,7 +14,7 @@ description: "Découvrir Lectura : ses sites projets, l'écosystème et sa méth
   </a>
   <a class="dc-carte" href="{{ '/a-propos/vision/' | relative_url }}">
     <span class="cp-icone"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="" width="48" height="48"></span>
-    <span class="dc-sur">Découvrir</span><span class="dc-titre">Qu'est-ce que Lectura ?</span>
+    <span class="dc-sur">Découvrir</span><span class="dc-titre">La vision de Lectura</span>
   </a>
   <a class="dc-carte" href="{{ '/a-propos/qui-suis-je/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
