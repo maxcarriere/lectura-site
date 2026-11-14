@@ -175,20 +175,24 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 
 ## Fabrication de supports {#fabrication-de-supports}
 
-À partir de ces outils, Lectura crée des supports finis, sous des formes variées.
+À partir de ces outils, Lectura élabore des supports finis, sous des formes variées. Les solutions technologiques deviennent ainsi des produits prêts à l'emploi, utilisables par les particuliers.
 
 **Fonctionnalités**
 
-- **Livres** : mise en page de livres papier ou numériques (e-books), jusqu'à leur publication.
-- **Logiciels** : programmes de bureau construits sur les modules.
-- **Applications** : applications mobiles pour Android et iOS.
-- **Contenus multimédias** : images (près de 14 000 générées pour les mots illustrés), audio (plus de 5 300 sons pour le corpus des syllabes), vidéos sous-titrées ou en karaoké, synchronisées sur la voix.
+- **Livres** : mise en page de livres papier ou numériques (e-books), jusqu'à leur publication ; le texte peut y être mis en forme pour l'apprentissage (syllabes, sons en couleur, lettres muettes).
+- **Logiciels** : programmes de bureau qui utilisent les solutions présentées ci-dessus.
+- **Applications** : applications mobiles pour Android et iOS, qui embarquent les sons ou la voix.
+- **Sites web** : mise en forme de contenus pour le web, comme les pages et les démos des sites projets de Lectura.
+- **Contenus multimédias** :
+  - images : près de 14 000 générées pour les mots illustrés ;
+  - audio : production sonore à partir des voix de Lectura, de la lecture d'un texte entier aux sons isolés (plus de 5 300 pour le corpus des syllabes) ;
+  - vidéos sous-titrées ou en karaoké, synchronisées sur la voix.
 
 **Applications possibles**
 
-- Services éditoriaux.
-- Développement de logiciels ou de sites web.
-- Création de contenus.
+- Services éditoriaux : livres, éditions syllabiques, livres audio.
+- Développement de logiciels, d'applications ou de sites web.
+- Création de contenus pédagogiques ou multimédias.
 
 ---
 
