@@ -13,6 +13,12 @@ description: "Zmaths, le site de cours de mathématiques du fondateur de Lectura
 
 ---
 
+## Des capsules pédagogiques {#capsules}
+
+Zmaths envisage de développer des capsules pédagogiques : de courtes vidéos où les formules mathématiques apparaissent dans les sous-titres, lues à voix haute et surlignées au fil de la lecture. Elles s'appuieraient sur les travaux de Lectura sur la [lecture mathématique]({{ '/developpement/recherche/#lecture-mathematique' | relative_url }}).
+
+---
+
 ## Accéder à Zmaths
 
 Zmaths est accessible à l'adresse : [zmaths.net](https://www.zmaths.net/)

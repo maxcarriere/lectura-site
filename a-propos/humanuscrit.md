@@ -6,7 +6,7 @@ permalink: /a-propos/humanuscrit/
 
 ## Humanuscrit — penser le monde
 
-En parallèle de Lectura, le projet [Humanuscrit](https://humanuscrit.com) explore les dimensions plus réflexives et philosophiques de cette démarche : que signifie travailler avec l'IA ? Que reste-t-il de proprement humain dans la création ? Comment naviguer entre enthousiasme et lucidité ?
+En parallèle de Lectura, le projet [Humanuscrit](https://humanuscrit.com) explore les dimensions plus réflexives et philosophiques de cette démarche : que signifie travailler avec l'IA ? Que reste-t-il de proprement humain dans la création ? Quelle est la place de l'humain dans ce nouveau système ?
 
 ---
 
