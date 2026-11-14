@@ -2,26 +2,32 @@
 title: Financement
 layout: default
 permalink: /partenariats/financement/
-description: "Financer Lectura : un axe de recherche, un produit ou le projet dans son ensemble. Pourquoi, par qui, et ce que le financement apporte en retour."
+description: "Pourquoi soutenir Lectura, et comment : un axe de recherche, un produit ou le projet dans son ensemble, par des acteurs publics, des entreprises ou des investisseurs."
 ---
 
-{% comment %} Jet du 14/11/2026 sur le plan de Maxime : quoi, pourquoi, qui, ce que ça apporte, forme juridique (dite franchement). Contreparties à valider par Maxime avant toute mise en ligne (engagement d'argent). {% endcomment %}
+{% comment %} Jet du 14/11/2026 sur le plan de Maxime. Rôle de la page (Maxime, 14/11) : comment Lectura s'insère dans le paysage économique, et pourquoi c'est intéressant que ce soit le cas. Contreparties à valider par Maxime avant toute mise en ligne (engagement d'argent). {% endcomment %}
 
 Lectura est une structure légère : ses besoins sont à sa mesure. Un financement, même modeste, se traduit directement en temps de développement, et un projet financé passe en priorité : il a donc de bien meilleures chances de voir le jour.
 
 ---
 
-## Que financer {#quoi}
+## Pourquoi soutenir Lectura {#pourquoi}
+
+Lectura défend une autre façon de faire de l'intelligence artificielle : des modèles légers, qui combinent règles et apprentissage, demandent moins de données et de calcul, et tournent sur l'appareil de l'utilisateur sans dépendre d'un grand serveur. Sur le français, ses outils de phonétisation et d'analyse grammaticale figurent parmi les meilleurs du marché (voir les [solutions technologiques]({{ '/solutions/technologiques/' | relative_url }})), et ses ressources, comme le lexique LeXiK, sont ouvertes à tous.
+
+Ces outils servent un but concret : apprendre à lire, et apprendre plus facilement. Une structure indépendante peut explorer des pistes que les grands acteurs délaissent ; il lui faut seulement de quoi durer.
+
+---
+
+## Comment {#comment}
+
+### Ce qui peut être financé {#quoi}
 
 - **Un axe de recherche** : l'un des [domaines de recherche]({{ '/developpement/recherche/' | relative_url }}) de Lectura, comme le moteur vocal unifié, la lecture des formules mathématiques ou l'ouverture à d'autres langues.
 - **Un produit** : une application, une méthode de lecture, un outil pédagogique (voir les [solutions pédagogiques]({{ '/solutions/educatives/' | relative_url }})).
 - **Le projet dans son ensemble** : donner à Lectura les moyens d'avancer sur tous ses axes à la fois.
 
 Le financement peut aussi s'inscrire dans une [collaboration]({{ '/partenariats/collaboration/' | relative_url }}) : un projet mené en commun, dont le partenaire finance une partie.
-
----
-
-## Qui peut financer {#qui}
 
 ### Acteurs publics {#acteurs-publics}
 
