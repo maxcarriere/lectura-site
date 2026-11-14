@@ -1,5 +1,5 @@
 ---
-title: "L'écosystème"
+title: "Écosystème"
 layout: default
 permalink: /developpement/ecosysteme/
 description: "Comment les projets de Lectura s'appuient les uns sur les autres : le lexique, le texte, la voix et les produits, avec la phonétique comme pivot commun."
