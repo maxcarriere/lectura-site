@@ -68,6 +68,10 @@
 
   // Départ automatique, une fois la carte chargée (pas si le visiteur a demandé moins d'animations).
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Une seule lecture automatique par visite (Maxime, 14/11/2026) : en revenant sur l'accueil, la phrase ne se rejoue
+  // pas d'elle-même ; un clic sur la phrase la relit toujours.
+  var CLE = 'lectura-phrase-lue';
+  try { if (sessionStorage.getItem(CLE)) return; sessionStorage.setItem(CLE, '1'); } catch (e) {}
   var fond = document.querySelector('.carte-fond');
   function depart() { setTimeout(function () { lire(true); }, 400); }
   if (!fond || fond.complete) depart(); else fond.addEventListener('load', depart, { once: true });

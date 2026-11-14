@@ -3,12 +3,13 @@
 // - Bouton « Afficher la carte des projets » de l'en-tête, ou un coup de molette vers le haut en tête de la
 //   présentation : on remonte à la carte.
 // - Si le défilement s'arrête entre les deux (pavé tactile, doigt), on se cale sur le plus proche.
-// Hors de l'accueil, le bouton de l'en-tête est un simple lien vers l'accueil.
+// Hors de l'accueil, le bouton de l'en-tête ouvre la carte sur place, par-dessus la page (Maxime, 14/11/2026) ;
+// on la ferme par la croix, la touche Échap ou un clic à côté. Sans script, le bouton reste un lien vers l'accueil.
 (function () {
   var zone = document.querySelector('.page-wrapper');
   var haut = document.querySelector('.accueil-haut');
   var suite = document.querySelector('.page-wrapper .parchment');
-  if (!zone || !haut || !suite) return;
+  if (!zone || !haut || !suite) { carteVolante(); return; }
   if (window.matchMedia('(max-width: 699px)').matches) {  // téléphone : pas de carte (Maxime, 11/11), défilement libre
     document.body.classList.remove('sur-carte');
     return;
@@ -51,4 +52,30 @@
       if (st > 0 && st < s) aller(st < s / 2 ? 0 : s);
     }, 120);
   });
+
+  function carteVolante() {
+    var bouton = document.getElementById('header-carte');
+    var cv = document.getElementById('carte-volante');
+    if (!bouton || !cv) return;
+    var img = cv.querySelector('.carte-fond');
+    function ouvrir() {
+      if (img && !img.getAttribute('src')) img.setAttribute('src', img.getAttribute('data-src'));
+      cv.hidden = false;
+      document.body.classList.add('carte-ouverte');
+      cv.querySelector('.cv-fermer').focus();
+    }
+    function fermer() {
+      cv.hidden = true;
+      document.body.classList.remove('carte-ouverte');
+      bouton.focus();
+    }
+    bouton.addEventListener('click', function (e) {
+      if (window.matchMedia('(max-width: 699px)').matches) return;  // téléphone : pas de carte
+      e.preventDefault();
+      ouvrir();
+    });
+    cv.querySelector('.cv-fermer').addEventListener('click', fermer);
+    cv.addEventListener('click', function (e) { if (e.target === cv) fermer(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !cv.hidden) fermer(); });
+  }
 })();

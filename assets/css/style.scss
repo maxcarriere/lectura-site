@@ -2018,3 +2018,16 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 /* Photo du fondateur (14/11) : pas trop grande */
 .photo-fondateur { margin: 1rem auto 1.6rem; max-width: 300px; }
 .photo-fondateur img { display: block; width: 100%; height: auto; border-radius: 6px; }
+/* Carte ouverte sur place hors de l'accueil (Maxime, 14/11) */
+.carte-volante { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center;
+  background: rgba(18, 11, 8, 0.92); padding: calc(var(--header-height) + 1rem) 1.5rem 1.5rem; box-sizing: border-box; }
+.carte-volante[hidden] { display: none !important; }
+.cv-cadre { position: relative; width: min(100%, calc((100vh - var(--header-height) - 2.5rem) * 2)); }
+.carte-volante .carte-monde { width: 100%; }
+.cv-fermer { position: absolute; top: -0.6rem; right: -0.6rem; z-index: 3; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 2px solid #5a3e28; background: #f0e2c4; color: #3a2716; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.cv-fermer svg { width: 55%; height: 55%; stroke: currentColor; stroke-width: 2.4; fill: none; }
+body.carte-ouverte { overflow: hidden; }
+.equipe-photo--ia { display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 35% 30%, #fffaf0, #f0e2c4 70%, #d9c39a); border: 2px solid #5a3e28; color: #3a2716; box-sizing: border-box; }
+.equipe-photo--ia svg { width: 58%; height: 58%; }
+
