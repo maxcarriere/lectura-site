@@ -32,10 +32,10 @@
 - title: Offres
   url: /offres/
   children:
-    - title: Entreprises
-      url: /offres/entreprises/
-    - title: Particuliers
-      url: /offres/particuliers/
+    - title: Pro
+      url: /offres/pro/
+    - title: Perso
+      url: /offres/perso/
     - title: Tarifs
       url: /offres/tarifs/
 

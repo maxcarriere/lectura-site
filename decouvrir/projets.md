@@ -51,7 +51,7 @@ La voix : synthèse vocale avec surlignage synchronisé du texte, reconnaissance
 
 </div>
 
-Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuelle de nos modules (v1), en service sur nos serveurs. Ni son code ni ses modèles ne sont distribués : pour les utiliser dans un produit, voir [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
+Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuelle de nos modules (v1), en service sur nos serveurs. Ni son code ni ses modèles ne sont distribués : pour les utiliser dans un produit, voir [l'offre aux entreprises]({{ '/offres/pro/' | relative_url }}).
 
 ---
 

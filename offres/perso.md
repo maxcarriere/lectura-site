@@ -1,0 +1,57 @@
+---
+title: Perso
+layout: default
+permalink: /offres/perso/
+redirect_from:
+  - /offres/particuliers/
+description: "Lectura pour tous : apprendre à lire, des utilitaires pour lire et écouter, des jeux de sons et de mots, des livres et des histoires. Des outils gratuits dès aujourd'hui."
+---
+
+{% comment %} Maxime, 15/11/2026 : page Perso (ex-Particuliers), une entrée par site projet grand public (Education, Tools, Games, Books). Ces sites ne sont pas encore ouverts : un statut sobre par site, sans pastille par produit. Ancienne version : brain anciennes-pages/offres-particuliers_2026-11-15.md. {% endcomment %}
+
+Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots : les produits de Lectura pour tous sont présentés ici par projet. Chacun aura son site, qui ouvrira avec ses premiers produits. Dès aujourd'hui, plusieurs outils sont gratuits : la [lecture syllabique](https://lingua.lectura.world/syllabes) d'un texte sur LecturaLingua, la [lecture à voix haute avec surlignage](https://voice.lectura.world/tts) sur LecturaVoice et le dictionnaire [WiKiLeXiK](https://lexique.lectura.world/wikilexik).
+
+---
+
+## Lectura Education {#education}
+
+*Éducatif* <span class="status-badge status-cours">En préparation</span>
+
+- **Méthode de lecture** · un manuel syllabique progressif, des sons isolés jusqu'aux graphies complexes.
+- **Applications mobiles** · pour apprendre à lire et à compter, autour de la méthode.
+
+---
+
+## Lectura Tools {#tools}
+
+*Utilitaires* <span class="status-badge status-cours">En préparation</span>
+
+- **Lecteur syllabique** · lire n'importe quel texte syllabe par syllabe, avec un surlignage synchronisé.
+- **Loupe Reader** · enrichir le texte affiché à l'écran d'informations grammaticales et sémantiques.
+- **Voice Edition** · un éditeur vocal qui génère les sous-titres d'une vidéo.
+- **DicoRimes** · un dictionnaire de rimes.
+
+---
+
+## Lectura Games {#games}
+
+*Jeux* <span class="status-badge status-cours">En préparation</span>
+
+- **Mots croisés phonétiques** · un jeu de mots croisés où l'on pose des sons plutôt que des lettres.
+- **MiniGames** · des jeux courts pour manipuler les sons et les syllabes.
+
+---
+
+## Lectura Books {#books}
+
+*Livres et médias* <span class="status-badge status-cours">En préparation</span>
+
+- **Histoires syllabiques** · des histoires dont le vocabulaire suit la progression de la méthode, que l'enfant peut lire seul.
+- **Conte-moi une histoire !** · des histoires en audio.
+- **Mediabooks** · des histoires animées en vidéo.
+
+---
+
+## Contact {#contact}
+
+Une question, une suggestion : **lectura.world@gmail.com** ou la [page de contact]({{ '/contact/' | relative_url }}).

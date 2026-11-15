@@ -1,4 +1,4 @@
 ---
-redirect_to: /offres/entreprises/#developpement
+redirect_to: /offres/pro/#developpement
 permalink: /solutions/services/divers/
 ---

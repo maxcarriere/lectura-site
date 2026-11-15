@@ -204,4 +204,4 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 
 La documentation de la première génération de ces outils (v0, publiée sur PyPI et GitHub) reste disponible dans [Développement > Modules]({{ '/developpement/modules/' | relative_url }}).
 
-Pour utiliser ces outils dans un produit, sous licence et chez vous : [l'offre aux entreprises]({{ '/offres/entreprises/' | relative_url }}).
+Pour utiliser ces outils dans un produit, sous licence et chez vous : [l'offre aux entreprises]({{ '/offres/pro/' | relative_url }}).

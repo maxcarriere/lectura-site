@@ -15,7 +15,7 @@ Les démos de Lectura et le lexique LeXiK sont gratuits, comme le code de la pre
 
 ## Services {#services}
 
-Intégration, modèles sur mesure, préparation de données, services éditoriaux, développement, expertise IA (voir les [offres aux entreprises]({{ '/offres/entreprises/' | relative_url }})) : **base de 500 € par jour**. Le nombre de jours se fixe avec vous, dans un devis.
+Intégration, modèles sur mesure, préparation de données, services éditoriaux, développement, expertise IA (voir les [offres aux entreprises]({{ '/offres/pro/' | relative_url }})) : **base de 500 € par jour**. Le nombre de jours se fixe avec vous, dans un devis.
 
 ---
 

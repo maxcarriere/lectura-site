@@ -1,23 +1,29 @@
 ---
-title: Entreprises
+title: Pro
 layout: default
-permalink: /offres/entreprises/
-description: "Le catalogue de Lectura pour les entreprises : licences des modèles et intégration, voix personnalisée, corpus et données d'entraînement, services éditoriaux, développement web et applications, conseil en IA."
+permalink: /offres/pro/
+redirect_from:
+  - /offres/entreprises/
+description: "L'offre de Lectura aux professionnels : licences commerciales des modules de langage et de voix, corpus de données, outils logiciels, services éditoriaux, développement, conseil en IA."
 ---
 
-{% comment %} Refonte du 14/11/2026 sur le plan de Maxime ; 15/11 : catalogue, chaque produit ou service nommé (le savoir-faire est expliqué dans Solutions). Ancienne version : brain anciennes-pages/offres-entreprises_2026-11-15.md. Prix : page Tarifs. Pastilles : vert = disponible, bleu = en préparation ou en développement. {% endcomment %}
+{% comment %} Maxime, 15/11/2026 : page Pro (ex-Entreprises), par type de produit ou service ; chaque produit renvoie au site projet qui le porte (langage → LecturaLingua, voix → LecturaVoice, Lexicon et corpus → LecturaLexique, logiciels pros → LecturaTools quand il existera). Développement et conseil IA sont transversaux. Les services éditoriaux ne renvoient à LecturaBooks que comme illustration. Anciennes versions : brain anciennes-pages/offres-entreprises_2026-11-15*.md. Prix : page Tarifs. Pastilles : vert = disponible, bleu = en préparation ou en développement. {% endcomment %}
 
-Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : Lectura propose ses modules, ses ressources et son savoir-faire sur le français écrit et parlé, et sur le travail avec l'IA. Tout commence par les démos, gratuites et sans inscription, sur [LecturaLingua](https://lingua.lectura.world), [LecturaVoice](https://voice.lectura.world) et [LecturaLexique](https://lexique.lectura.world). Les prix sont sur la page [Tarifs]({{ '/offres/tarifs/' | relative_url }}).
+Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : Lectura propose ses modules, ses données et son savoir-faire sur le français écrit et parlé, et sur le travail avec l'IA. Chaque produit est présenté en détail, avec sa démo gratuite, sur le site du projet qui le porte. Les prix sont sur la page [Tarifs]({{ '/offres/tarifs/' | relative_url }}).
 
 ---
 
-## Licences commerciales et intégration logicielle {#licences}
+## Licences commerciales {#licences}
 
-Le code d'appel des modules est publié sous licence AGPL-3.0 : celui de la v0 sur [GitHub](https://github.com/maxcarriere/lectura-modules) et PyPI, et celui de la v1 le sera de la même façon. Les modèles, eux, s'obtiennent sous licence commerciale (voir les [modules]({{ '/developpement/modules/v1/' | relative_url }})).
+Le code d'appel des modules est publié sous licence AGPL-3.0 : celui de la v0 sur [GitHub](https://github.com/maxcarriere/lectura-modules) et PyPI, et celui de la v1 le sera de la même façon. Les modèles s'obtiennent sous licence commerciale : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
 
-- **Démo en ligne** <span class="status-badge status-dispo">Gratuit</span> · sans inscription, sur les sites des projets.
+- **Modules de langage** <span class="status-badge status-dispo">Sur devis</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, sur [LecturaLingua](https://lingua.lectura.world).
+- **Modules de voix** <span class="status-badge status-dispo">Sur devis</span> · synthèse et reconnaissance vocales, alignement, sous-titres, sur [LecturaVoice](https://voice.lectura.world).
+- **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, sur [LecturaLexique](https://lexique.lectura.world).
+
+Autour des licences :
+
 - **Clé d'essai API** <span class="status-badge status-dispo">Sur demande</span> · pour tester les modules dans votre propre code.
-- **Licence commerciale des modèles** <span class="status-badge status-dispo">Sur devis</span> · les modèles vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
 - **Intégration logicielle** <span class="status-badge status-dispo">Sur devis</span> · intégration dans votre environnement, chaînes de traitement sur mesure, mise en service.
 - **Voix personnalisée embarquée** <span class="status-badge status-dispo">Sur devis</span> · création de votre propre voix de synthèse, à embarquer directement sur vos appareils, utilisable hors ligne.
 - **Reconnaissance vocale métier** <span class="status-badge status-dispo">Sur devis</span> · une reconnaissance adaptée à votre vocabulaire.
@@ -25,25 +31,24 @@ Le code d'appel des modules est publié sous licence AGPL-3.0 : celui de la v0 s
 
 ---
 
-## Ressources et outils {#ressources}
+## Corpus de données {#corpus}
 
 ### Données d'entraînement
 
-- **Corpus UD phonémisé** <span class="status-badge status-cours">En préparation</span> · les textes annotés d'Universal Dependencies, enrichis de la phonétique et des syllabes.
 - **Corpus SIWIS aligné** <span class="status-badge status-cours">En préparation</span> · le corpus de parole SIWIS avec sa partition : alignement phonétique (phonèmes et durées) et, selon la version, paramètres prosodiques (hauteur, énergie).
+- **Corpus de phrases annotées** <span class="status-badge status-cours">En préparation</span> · des phrases annotées en phonétique, syllabes et grammaire.
 - **Données sur mesure** <span class="status-badge status-dispo">Sur devis</span> · préparation de vos corpus : transcription, phonémisation, alignement.
 
 ### Ressources éducatives
 
 - **Corpus Syllabes** <span class="status-badge status-dispo">En vente</span> · les syllabes du français avec leur son, sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes).
 - **Corpus 1500 Mots** <span class="status-badge status-dispo">En vente</span> · des mots illustrés du vocabulaire de l'enfant, sur [LecturaLexique](https://lexique.lectura.world/corpus/mots).
-- **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, sur [LecturaLexique](https://lexique.lectura.world).
 
-### Programmes
+---
+
+## Outils logiciels {#logiciels}
 
 - **Orthophone** <span class="status-badge status-cours">En développement</span> · un logiciel pour les orthophonistes.
-- **Lecteur enrichi** <span class="status-badge status-cours">En développement</span> · un lecteur de textes enrichis.
-- **Voice Edition** <span class="status-badge status-cours">En développement</span> · un éditeur vocal qui génère les sous-titres d'une vidéo.
 
 ---
 

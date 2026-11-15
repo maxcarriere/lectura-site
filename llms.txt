@@ -38,8 +38,8 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 ## Offre
 
-- Entreprises : demo, puis licence d'evaluation, licence commerciale ; services (integration, modeles sur mesure, preparation de donnees, services editoriaux). L'API sert seulement aux demos ; Lectura vend les modeles, qui tournent chez le client (serveurs ou application).
-- Particuliers : outils gratuits en ligne (lecture syllabique, lecture a voix haute, dictionnaire) ; corpus de syllabes ; produits pour apprendre a lire en preparation.
+- Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), Lexicon et corpus (LecturaLexique), cle d'essai API sur demande, integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. L'API sert aux demos et a l'essai ; les modeles sont livres et tournent chez le client.
+- Perso : par projet, Lectura Education (methode de lecture, applications), Lectura Tools (lecteur syllabique, Loupe Reader, Voice Edition, DicoRimes), Lectura Games, Lectura Books, en preparation ; outils gratuits en ligne des aujourd'hui (lecture syllabique, lecture a voix haute, dictionnaire).
 
 ## Methode de travail
 
@@ -71,8 +71,8 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - LeXiK et WiKiLeXiK : https://www.lectura.world/articles/lexik-et-wikilexik/
 - Les syllabes du francais, avec leurs sons : https://www.lectura.world/articles/corpus-de-syllabes/
 - Offres : https://www.lectura.world/offres/
-- Entreprises : https://www.lectura.world/offres/entreprises/
-- Particuliers : https://www.lectura.world/offres/particuliers/
+- Pro : https://www.lectura.world/offres/pro/
+- Perso : https://www.lectura.world/offres/perso/
 - Tarifs : https://www.lectura.world/offres/tarifs/
 - Developpement : https://www.lectura.world/developpement/
 - Ecosysteme du projet : https://www.lectura.world/developpement/ecosysteme/
