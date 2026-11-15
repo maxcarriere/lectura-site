@@ -136,11 +136,11 @@ result = engine.synthesize(text="Bonjour le monde.", style="narratif")
 # Multi-Speaker — 6 voix
 from lectura_multispeaker import creer_engine
 engine = creer_engine()
-audio = engine.synthesize(text="Bonjour.", speaker="bernard", style="expressif")
+audio = engine.synthesize(text="Bonjour.", speaker="fr-h1", style="expressif")
 
 # Diphone — modes pédagogiques
 from lectura_diphone import synthetiser
-audio = synthetiser("Le chat dort.", voix="siwis")
+audio = synthetiser("Le chat dort.", voix="fr-f1")
 ```
 
 ---

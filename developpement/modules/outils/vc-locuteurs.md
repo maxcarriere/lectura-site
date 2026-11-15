@@ -25,7 +25,7 @@ Brique atomique de conversion vocale basée sur **RVC** (Retrieval-based Voice C
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Voix** | 6 speakers (3F + 3M) : Ezwa, Nadine, Siwis, Bernard, Gilles, Zeckou |
+| **Voix** | 6 voix (3 féminines, 3 masculines) : fr-f1, fr-f2, fr-f3, fr-h1, fr-h2, fr-h3 |
 | **Backend** | HuBERT + RMVPE + Synthesizer — ONNX Runtime pur |
 | **Modèles** | 8 fichiers ONNX (~1.4 Go total) |
 | **Sortie** | Audio @ 48000 Hz |
@@ -48,12 +48,12 @@ Brique atomique de conversion vocale basée sur **RVC** (Retrieval-based Voice C
 
 | Speaker | Genre | Caractère |
 |---------|-------|-----------|
-| siwis | F | Voix féminine claire, studio |
-| ezwa | F | Voix féminine douce, chaleureuse |
-| nadine | F | Voix féminine naturelle |
-| bernard | M | Voix masculine posée |
-| gilles | M | Voix masculine grave |
-| zeckou | M | Voix masculine dynamique |
+| fr-f1 | F | Voix féminine claire, studio |
+| fr-f2 | F | Voix féminine douce, chaleureuse |
+| fr-f3 | F | Voix féminine naturelle |
+| fr-h1 | M | Voix masculine posée |
+| fr-h2 | M | Voix masculine grave |
+| fr-h3 | M | Voix masculine dynamique |
 
 ---
 
@@ -64,21 +64,21 @@ from lectura_vc_locuteurs import creer_engine, RVC_SPEAKERS
 
 engine = creer_engine()
 
-# Conversion vers Bernard
+# Conversion vers fr-h1
 audio, sr = engine.convert(
     audio="input.wav",
-    speaker="bernard",
+    speaker="fr-h1",
 )
 # sr == 48000
 
 # Liste des speakers
 print(RVC_SPEAKERS)
-# ['ezwa', 'nadine', 'bernard', 'gilles', 'zeckou', 'siwis']
+# ['fr-f2', 'fr-f3', 'fr-h1', 'fr-h2', 'fr-h3', 'fr-f1']
 
 # Avec ajustement de pitch
 audio, sr = engine.convert(
     audio="input.wav",
-    speaker="nadine",
+    speaker="fr-f3",
     pitch_modification=2,    # monter de 2 demi-tons
 )
 ```
@@ -87,7 +87,7 @@ audio, sr = engine.convert(
 # Fonction de commodité (crée un engine éphémère)
 from lectura_vc_locuteurs import convertir
 
-audio, sr = convertir("input.wav", speaker="siwis")
+audio, sr = convertir("input.wav", speaker="fr-f1")
 ```
 
 ---

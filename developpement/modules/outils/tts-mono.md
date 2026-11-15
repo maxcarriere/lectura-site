@@ -140,16 +140,16 @@ Avec `lectura-vc-zeroshot` installé (ou via `pip install lectura-tts-mono[retim
 from lectura_monospeaker import synthetiser
 
 # Voix preset
-audio = synthetiser("Bonjour le monde.", voix="bernard")
+audio = synthetiser("Bonjour le monde.", voix="fr-h1")
 
 # Blend de voix
-audio = synthetiser("Bonjour.", voix={"siwis": 0.5, "nadine": 0.5})
+audio = synthetiser("Bonjour.", voix={"fr-f1": 0.5, "fr-f3": 0.5})
 
 # Variante grave/aigu (-1 à +1)
-audio = synthetiser("Bonjour.", voix="ezwa", voix_variante=-0.5)
+audio = synthetiser("Bonjour.", voix="fr-f2", voix_variante=-0.5)
 ```
 
-Presets disponibles : siwis, ezwa, nadine, bernard, gilles, zeckou.
+Presets disponibles : fr-f1, fr-f2, fr-f3, fr-h1, fr-h2, fr-h3.
 
 ---
 

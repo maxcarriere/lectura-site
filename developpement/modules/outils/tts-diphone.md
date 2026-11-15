@@ -76,13 +76,13 @@ from lectura_diphone import synthetiser
 audio = synthetiser("Le soleil brille sur la ville.")
 
 # Avec retimbre OpenVoice
-audio = synthetiser("Bonjour comment allez-vous.", voix="siwis")
+audio = synthetiser("Bonjour comment allez-vous.", voix="fr-f1")
 
 # Blend de presets
-audio = synthetiser("Bonjour.", voix={"siwis": 0.5, "nadine": 0.3, "ezwa": 0.2})
+audio = synthetiser("Bonjour.", voix={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2})
 
 # Variante vocale (formants décalés)
-audio = synthetiser("Bonjour.", voix="siwis", voix_variante=0.3)
+audio = synthetiser("Bonjour.", voix="fr-f1", voix_variante=0.3)
 ```
 
 ---

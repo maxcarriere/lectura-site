@@ -26,7 +26,7 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 | Caractéristique | Valeur |
 |-----------------|--------|
 | **Backend** | OpenVoice v2 — ONNX Runtime pur (pas de PyTorch) |
-| **Presets** | 6 voix pré-calculées : siwis, ezwa, nadine, bernard, gilles, zeckou |
+| **Presets** | 6 voix pré-calculées : fr-f1, fr-f2, fr-f3, fr-h1, fr-h2, fr-h3 |
 | **Blend** | Mélange pondéré de presets ou d'extraits audio |
 | **Trick SR** | Décalage des formants (voix grave/aiguë) via le sample rate |
 | **Modèles** | 2 fichiers ONNX (~126 Mo total) |
@@ -50,12 +50,12 @@ Six voix pré-calculées sont intégrées au package (speaker embeddings moyenn�
 
 | Preset | Genre | Description |
 |--------|-------|-------------|
-| siwis | F | Voix féminine claire (corpus SIWIS) |
-| ezwa | F | Voix féminine douce |
-| nadine | F | Voix féminine naturelle |
-| bernard | M | Voix masculine posée |
-| gilles | M | Voix masculine grave |
-| zeckou | M | Voix masculine dynamique |
+| fr-f1 | F | Voix féminine claire |
+| fr-f2 | F | Voix féminine douce |
+| fr-f3 | F | Voix féminine naturelle |
+| fr-h1 | M | Voix masculine posée |
+| fr-h2 | M | Voix masculine grave |
+| fr-h3 | M | Voix masculine dynamique |
 
 ---
 
@@ -69,7 +69,7 @@ engine = creer_engine()
 # Conversion avec un preset
 audio, sr = engine.convert(
     audio="input.wav",
-    reference="siwis",      # preset par nom
+    reference="fr-f1",      # preset par nom
     sr_in=16000,
 )
 # sr == 22050
@@ -77,14 +77,14 @@ audio, sr = engine.convert(
 # Blend de plusieurs presets (poids égaux)
 audio, sr = engine.convert(
     audio="input.wav",
-    reference=["siwis", "nadine"],
+    reference=["fr-f1", "fr-f3"],
     sr_in=16000,
 )
 
 # Blend pondéré
 audio, sr = engine.convert(
     audio="input.wav",
-    reference={"siwis": 0.5, "nadine": 0.3, "ezwa": 0.2},
+    reference={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2},
     sr_in=16000,
 )
 
@@ -98,7 +98,7 @@ audio, sr = engine.convert(
 # Variante aiguë (formants décalés via trick SR)
 audio, sr = engine.convert(
     audio="input.wav",
-    reference="siwis",
+    reference="fr-f1",
     sr_in=16000,
     sr_override=11025,   # formants x2 (aiguë/enfant)
 )
@@ -119,10 +119,10 @@ Reference     --> OpenVoice SE --> target embedding (1, 256, 1)
 ```
 
 La référence cible est polymorphe :
-- **str** : nom de preset ("siwis") ou chemin vers un fichier audio
+- **str** : nom de preset ("fr-f1") ou chemin vers un fichier audio
 - **ndarray** : audio brut (1D) ou speaker embedding (1, 256, 1)
 - **list** : plusieurs références (poids égaux)
-- **dict** : blend pondéré (`{"siwis": 0.5, "nadine": 0.5}`)
+- **dict** : blend pondéré (`{"fr-f1": 0.5, "fr-f3": 0.5}`)
 
 Les 2 modèles ONNX :
 - `openvoice_se.onnx` (3.2 Mo) — extraction de speaker embedding

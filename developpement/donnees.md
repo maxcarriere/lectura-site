@@ -17,7 +17,7 @@ L'analyse grammaticale s'appuie sur des corpus annotés publics, dont les corpus
 
 ## La parole
 
-Les voix de la génération actuelle ont été entraînées sur des corpus de parole publics, dont SIWIS et M-AILABS. La génération suivante, en préparation, rassemble des corpus publics de parole lue et spontanée, en français et en anglais : Common Voice, Multilingual LibriSpeech, VoxPopuli, SUMM-RE, LibriTTS-R ou VCTK, par exemple.
+Les voix de la génération actuelle ont été entraînées sur des corpus de parole publics, dont SIWIS. La génération suivante, en préparation, rassemble des corpus publics de parole lue et spontanée, en français et en anglais : Common Voice, Multilingual LibriSpeech, VoxPopuli, SUMM-RE, LibriTTS-R ou VCTK, par exemple.
 
 Chaque corpus est rangé avec sa provenance et sa licence. Nous le préparons avec nos propres outils : transcription phonétique, alignement du texte sur l'audio, filtrage des passages mal transcrits. Nos [corpus d'entraînement]({{ '/produits/ressources/corpus-entrainement/' | relative_url }}) sont proposés sur devis ; ce qu'ils peuvent contenir, l'audio en particulier, dépend des licences de leurs sources.
 

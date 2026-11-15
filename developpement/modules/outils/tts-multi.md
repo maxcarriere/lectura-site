@@ -25,7 +25,7 @@ Moteur de synthèse vocale neuronale multi-speaker pour le français, avec **deu
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Voix** | 6 speakers (3F + 3M) : Siwis, Ezwa, Nadine, Bernard, Gilles, Zeckou |
+| **Voix** | 6 voix (3 féminines, 3 masculines) : fr-f1, fr-f2, fr-f3, fr-h1, fr-h2, fr-h3 |
 | **Style** | 7 presets : neutre, narratif, dialogue, expressif, méditatif, rapide, lent |
 | **Modèle High** | Matcha-Conformer (d=384), flow-matching OT-CFM, ~40 Mo INT8 |
 | **Modèle Light** | FastPitch v6 (d=256), FFT decoder, ~40 Mo INT8 |
@@ -61,18 +61,18 @@ for s in liste_speakers():
 engine = creer_engine()
 
 # Synthèse avec choix de timbre et style
-engine.set_speaker("bernard")
+engine.set_speaker("fr-h1")
 audio = engine.synthesize("Bonjour, comment allez-vous ?", style="expressif")
 
 # Découpler prosodie et timbre :
-# voix de Siwis avec la prosodie (pitch, énergie, rythme) de Gilles
-engine.set_speaker("siwis")      # timbre = Siwis
-engine.set_prosody("gilles")     # prosodie = Gilles
+# voix de fr-f1 avec la prosodie (pitch, énergie, rythme) de fr-h2
+engine.set_speaker("fr-f1")      # timbre = fr-f1
+engine.set_prosody("fr-h2")     # prosodie = fr-h2
 audio = engine.synthesize("La prosodie et le timbre sont indépendants.")
 
 # Raccourci avec choix du modèle
 from lectura_multispeaker import synthetiser
-audio = synthetiser("Bonjour.", speaker="siwis", model="light")
+audio = synthetiser("Bonjour.", speaker="fr-f1", model="light")
 ```
 
 ---
@@ -88,7 +88,7 @@ Phonemes IPA + style
   │  → pitch, energy, enc_out           │
   ├─────────────────────────────────────┤
   │  Duration Predictor standalone      │
-  │  → durees (base siwis, 2.6 Mo)     │
+  │  → durees (base fr-f1, 2.6 Mo)     │
   ├─────────────────────────────────────┤
   │  set_speaker(speaker)               │
   │  → spk_emb (timbre, 11 Ko)         │
@@ -104,7 +104,7 @@ Phonemes IPA + style
 ```
 
 Le modele High (Matcha-Conformer) decouple trois dimensions independantes :
-- **Durees** : duration predictor standalone (fixe, base siwis)
+- **Durees** : duration predictor standalone (fixe, base fr-f1)
 - **Prosodie** : encodeur au choix parmi les 6 speakers (pitch, energy, enc_out)
 - **Timbre** : spk_emb au choix parmi les 6 speakers (identite vocale pour le UNet)
 
@@ -149,10 +149,10 @@ Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire).
 - **FastPitch v6** (Light) : d_model=256, FFT decoder, plus rapide et léger
 - **HiFi-GAN** : vocoder universel partagé, signal 22050 Hz
 - **2 backends** : API (zero config) ou ONNX Runtime local (modèles sous licence commerciale)
-- **6 voix** : Siwis, Ezwa, Nadine (F) — Bernard, Gilles, Zeckou (M)
+- **6 voix** : fr-f1, fr-f2, fr-f3 (féminines) — fr-h1, fr-h2, fr-h3 (masculines)
 - **7 presets de style** : neutre, narratif, dialogue, expressif, méditatif, rapide, lent
 - **Contrôles prosodiques** : pitch_shift, pitch_range, energy_scale, duration_scale, pause_scale
-- **Duration predictor standalone** : 601K params, 2.6 Mo, remplace l'encodeur siwis (~150 Mo) pour les durees
+- **Duration predictor standalone** : 601K params, 2.6 Mo, remplace l'encodeur fr-f1 (~150 Mo) pour les durees
 - **Decouplage prosodie/timbre** : `set_prosody()` et `set_speaker()` independants
 - **Factory `creer_engine(model=...)`** : choix explicite du modèle (high par défaut)
 - **`set_speaker()`** : change le timbre (spk_emb) sans recharger l'encodeur
