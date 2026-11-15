@@ -53,12 +53,12 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
     <div class="vc-rvc-options">
       <label for="vc-speaker">Voix cible :</label>
       <select id="vc-speaker">
-        <option value="siwis">Siwis (F)</option>
-        <option value="ezwa">Ezwa (F)</option>
-        <option value="nadine">Nadine (F)</option>
-        <option value="bernard" selected>Bernard (M)</option>
-        <option value="gilles">Gilles (M)</option>
-        <option value="zeckou">Zeckou (M)</option>
+        <option value="fr-f1">Voix féminine 1</option>
+        <option value="fr-f2">Voix féminine 2</option>
+        <option value="fr-f3">Voix féminine 3</option>
+        <option value="fr-h1" selected>Voix masculine 1</option>
+        <option value="fr-h2">Voix masculine 2</option>
+        <option value="fr-h3">Voix masculine 3</option>
       </select>
     </div>
 
@@ -73,12 +73,12 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
       <div id="vc-preset-options">
         <label for="vc-preset">Preset :</label>
         <select id="vc-preset">
-          <option value="siwis" selected>Siwis (F)</option>
-          <option value="ezwa">Ezwa (F)</option>
-          <option value="nadine">Nadine (F)</option>
-          <option value="bernard">Bernard (M)</option>
-          <option value="gilles">Gilles (M)</option>
-          <option value="zeckou">Zeckou (M)</option>
+          <option value="fr-f1" selected>Voix féminine 1</option>
+          <option value="fr-f2">Voix féminine 2</option>
+          <option value="fr-f3">Voix féminine 3</option>
+          <option value="fr-h1">Voix masculine 1</option>
+          <option value="fr-h2">Voix masculine 2</option>
+          <option value="fr-h3">Voix masculine 3</option>
         </select>
       </div>
       <div id="vc-file-reference" style="display:none;">
@@ -131,21 +131,21 @@ from lectura_vc import creer_engine
 engine = creer_engine(mode="auto")
 
 # Mode RVC (voix pré-entraînée)
-audio, sr = engine.convert(audio="input.wav", speaker="bernard", mode="rvc")
+audio, sr = engine.convert(audio="input.wav", speaker="fr-h1", mode="rvc")
 
 # Mode Zero-shot (preset)
-audio, sr = engine.convert(audio="input.wav", reference="siwis", mode="zeroshot")
+audio, sr = engine.convert(audio="input.wav", reference="fr-f1", mode="zeroshot")
 
 # Blend pondéré
 audio, sr = engine.convert(
     audio="input.wav",
-    reference={"siwis": 0.5, "nadine": 0.3, "ezwa": 0.2},
+    reference={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2},
     mode="zeroshot",
 )
 
 # Mode cascade : RVC (proxy genre) + OpenVoice (timbre exact)
 audio, sr = engine.convert(
-    audio="input.wav", speaker="nadine", reference="cible.wav", mode="cascade",
+    audio="input.wav", speaker="fr-f3", reference="cible.wav", mode="cascade",
 )
 ```
 

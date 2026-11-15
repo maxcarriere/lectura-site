@@ -5,7 +5,7 @@ de chaque lettre (coupures de syllabes comprises), puis écrit :
   - assets/sons/accueil-phrase.mp3   l'audio (servi tel quel : la page n'appelle pas l'API) ;
   - _includes/accueil-phrase.html    la phrase en HTML, chaque syllabe (ligne 1) ou mot (ligne 2) avec son minutage.
 À relancer si la phrase ou la voix changent (voix v2, par exemple) :
-  python3 _outils/phrase_accueil.py [--voix siwis]
+  python3 _outils/phrase_accueil.py [--voix fr-f1]
 """
 from __future__ import annotations
 
@@ -115,9 +115,9 @@ def decaler(phrases: list[dict], dt: int) -> dict:
 def main() -> None:
     # Maxime, 10/11 : ligne 1 rapide et expressive, ligne 2 narrative ; deux synthèses enchaînées.
     ap = argparse.ArgumentParser()
-    ap.add_argument("--voix", default="siwis")
+    ap.add_argument("--voix", default="fr-f1")
     ap.add_argument("--ligne2-dans-phrase", action="store_true",
-                    help="ligne 2 tirée de la phrase entière (essai nadine) ; par défaut, lue seule (choix du 10/11, siwis)")
+                    help="ligne 2 tirée de la phrase entière (essai fr-f3) ; par défaut, lue seule (choix du 10/11, fr-f1)")
     ap.add_argument("--style1", default="expressif")
     ap.add_argument("--lenteur1", type=float, default=0.85, help="< 1 : plus rapide")
     ap.add_argument("--style2", default="narratif")
@@ -128,7 +128,7 @@ def main() -> None:
     args = ap.parse_args()
     # La ligne 1 est lue avec « ! » (élan expressif) ; l'affichage garde « : ».
     r1 = synthese(lue(LIGNE1.rstrip(" :.") + " !"), args.voix, args.style1, args.lenteur1)
-    # Ligne 2 (Maxime, 10/11 : « Nadine 3 le premier ») : tirée de la phrase entière lue en narratif, où elle sonne
+    # Ligne 2 (Maxime, 10/11 : « fr-f3 3 le premier ») : tirée de la phrase entière lue en narratif, où elle sonne
     # mieux que lue seule ; on garde l'audio à partir de son premier mot.
     r2 = synthese(lue(f"{LIGNE1} {LIGNE2}" if args.ligne2_dans_phrase else LIGNE2), args.voix, args.style2, args.lenteur2)
     t2 = r2["alignement"]["texte"]
