@@ -45,7 +45,7 @@ Le projet Lectura utilise des corpus et bases de données publiques pour l'entra
 
 - **Lexique383** ([lexique.org](http://www.lexique.org/)) : base lexicale du français, distribuée sous licence CC BY-SA
 - **Common Voice** (Mozilla) : corpus vocal participatif, licence CC-0
-- **SIWIS French Speech Synthesis Database** : corpus vocal studio, licence CC BY 4.0
+- **SIWIS French Speech Synthesis Database**, Pierre-Edouard Honnet, Alexandros Lazaridis, Philip N. Garner et Junichi Yamagishi (Idiap, université d'Édimbourg), 2017, [doi:10.7488/ds/1705](https://doi.org/10.7488/ds/1705), licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr) : corpus vocal studio. Lectura a utilisé ces enregistrements, après transformation (phonémisation, alignement, extraction de traits), pour entraîner ses modèles de synthèse vocale. Ni l'Idiap ni l'université d'Édimbourg n'approuvent ni ne cautionnent ces usages.
 - **LibriVox** : enregistrements audio du domaine public
 
 ---
