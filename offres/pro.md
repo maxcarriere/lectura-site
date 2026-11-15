@@ -49,6 +49,7 @@ Autour des licences :
 ## Outils logiciels {#logiciels}
 
 - **Orthophone** <span class="status-badge status-cours">En développement</span> · un logiciel pour les orthophonistes.
+- **Voice Edition** <span class="status-badge status-cours">En développement</span> · un éditeur vocal qui génère les sous-titres d'une vidéo.
 
 ---
 
