@@ -2031,3 +2031,6 @@ body.carte-ouverte .header-carte { opacity: 0; pointer-events: none; }
 .equipe-photo--ia { display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 35% 30%, #fffaf0, #f0e2c4 70%, #d9c39a); border: 2px solid #5a3e28; color: #3a2716; box-sizing: border-box; }
 .equipe-photo--ia svg { width: 58%; height: 58%; }
 
+
+/* Catalogues à pastilles (Offres, 15/11) : pas de justification, qui creuse des blancs autour des pastilles */
+.parchment-content li:has(> .status-badge) { text-align: left; }
