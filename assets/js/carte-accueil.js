@@ -3,8 +3,9 @@
 // - Bouton « Afficher la carte des projets » de l'en-tête, ou un coup de molette vers le haut en tête de la
 //   présentation : on remonte à la carte.
 // - Si le défilement s'arrête entre les deux (pavé tactile, doigt), on se cale sur le plus proche.
-// Hors de l'accueil, le bouton de l'en-tête ouvre la carte sur place, par-dessus la page (Maxime, 14/11/2026) ;
-// on la ferme par la croix, la touche Échap ou un clic à côté. Sans script, le bouton reste un lien vers l'accueil.
+// Hors de l'accueil, le bouton de l'en-tête fait descendre la carte sur place, comme à l'accueil (Maxime, 14 et 15/11/2026) ;
+// la flèche, un cran de molette vers le bas, Échap ou un glissement du doigt vers le haut la font remonter,
+// et l'on retrouve la page là où on l'avait laissée (elle n'a pas bougé dessous). Sans script, le bouton reste un lien vers l'accueil.
 (function () {
   var zone = document.querySelector('.page-wrapper');
   var haut = document.querySelector('.accueil-haut');
@@ -58,24 +59,43 @@
     var cv = document.getElementById('carte-volante');
     if (!bouton || !cv) return;
     var img = cv.querySelector('.carte-fond');
+    var fleche = cv.querySelector('.cv-fermer');
+    var bloque = false;  // pendant le glissement
     function ouvrir() {
+      if (!cv.hidden || bloque) return;
       if (img && !img.getAttribute('src')) img.setAttribute('src', img.getAttribute('data-src'));
       cv.hidden = false;
+      void cv.offsetHeight;  // pour que le glissement parte du haut
+      cv.classList.add('cv-ouverte');
       document.body.classList.add('carte-ouverte');
-      cv.querySelector('.cv-fermer').focus();
+      bloque = true; setTimeout(function () { bloque = false; fleche.focus({ preventScroll: true }); }, 650);
     }
     function fermer() {
-      cv.hidden = true;
+      if (cv.hidden || bloque) return;
+      cv.classList.remove('cv-ouverte');
       document.body.classList.remove('carte-ouverte');
-      bouton.focus();
+      bloque = true;
+      setTimeout(function () { cv.hidden = true; bloque = false; bouton.focus({ preventScroll: true }); }, 650);
     }
     bouton.addEventListener('click', function (e) {
       if (window.matchMedia('(max-width: 699px)').matches) return;  // téléphone : pas de carte
       e.preventDefault();
       ouvrir();
     });
-    cv.querySelector('.cv-fermer').addEventListener('click', fermer);
-    cv.addEventListener('click', function (e) { if (e.target === cv) fermer(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !cv.hidden) fermer(); });
+    fleche.addEventListener('click', fermer);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(); });
+    // Molette : un cran vers le bas referme, comme à l'accueil ; la page dessous ne défile pas.
+    cv.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      if (e.deltaY > 2 && !e.ctrlKey) fermer();
+    }, { passive: false });
+    // Tablette : un glissement du doigt vers le haut referme.
+    var y0 = null;
+    cv.addEventListener('touchstart', function (e) { y0 = e.touches[0].clientY; }, { passive: true });
+    cv.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+    cv.addEventListener('touchend', function (e) {
+      if (y0 !== null && y0 - e.changedTouches[0].clientY > 40) fermer();
+      y0 = null;
+    });
   }
 })();

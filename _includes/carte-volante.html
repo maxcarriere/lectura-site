@@ -1,13 +1,15 @@
 {%- comment -%}
   Carte des projets ouverte sur place depuis n'importe quelle page (Maxime, 14/11/2026 : on reste sur la page,
-  sans revenir à l'accueil ni rejouer le son). L'image ne se charge qu'à l'ouverture (data-src). Script : carte-accueil.js.
+  sans revenir à l'accueil ni rejouer le son ; 15/11 : même glissement qu'à l'accueil plutôt qu'une image à croix,
+  et retour exactement là où l'on était). La carte descend du haut et remplit l'écran ; la flèche dessous, un cran de
+  molette vers le bas ou Échap la font remonter. L'image ne se charge qu'à l'ouverture (data-src). Script : carte-accueil.js.
 {%- endcomment -%}
 <div class="carte-volante" id="carte-volante" hidden role="dialog" aria-modal="true" aria-label="Carte des projets">
-  <div class="cv-cadre">
-    <button type="button" class="cv-fermer" aria-label="Fermer la carte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg></button>
+  <div class="cv-volet">
     <div class="carte-monde">
       <img class="carte-fond" data-src="{{ '/assets/images/accueil/planisphere.webp' | relative_url }}" alt="Planisphère Lectura World" width="1774" height="887">
       {%- include carte-projets.html -%}
     </div>
+    <button type="button" class="ap-fleche ap-fleche-bas cv-fermer" aria-label="Revenir à la page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8 L12 16 L19 8 Z"/></svg></button>
   </div>
 </div>
