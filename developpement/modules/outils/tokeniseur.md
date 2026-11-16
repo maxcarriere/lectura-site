@@ -93,5 +93,4 @@ pip install lectura-tokeniseur[formules]      # + lectura-formules (enrichisseme
 - **Zéro dépendance** Python (aucune dépendance tierce)
 - **Indépendant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installé)
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 2.3.0
 - **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

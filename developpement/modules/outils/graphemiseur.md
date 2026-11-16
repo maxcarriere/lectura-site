@@ -89,7 +89,7 @@ pip install lectura-graphemiseur[lexique]    # + lectura-lexique (phone_lex_feat
 pip install lectura-graphemiseur[all]        # onnx + numpy + lexique
 ```
 
-Les modèles ne sont pas inclus dans le paquet : par défaut, le module interroge l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Les backends locaux (ONNX, NumPy) supposent des modèles pré-entraînés, qui ne sont pas distribués.
+Les modèles ne sont pas inclus dans le paquet : par défaut, le module interroge l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). En local (ONNX, NumPy), le module fonctionne avec les modèles, sous licence commerciale.
 
 ---
 

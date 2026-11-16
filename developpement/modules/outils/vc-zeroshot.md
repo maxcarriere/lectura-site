@@ -26,7 +26,7 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 | Caractéristique | Valeur |
 |-----------------|--------|
 | **Backend** | OpenVoice v2 — ONNX Runtime pur (pas de PyTorch) |
-| **Presets** | 6 voix pré-calculées : fr-f1, fr-f2, fr-f3, fr-h1, fr-h2, fr-h3 |
+| **Presets** | 6 voix (fr-f1 … fr-h3), disponibles par l'API seulement |
 | **Blend** | Mélange pondéré de presets ou d'extraits audio |
 | **Trick SR** | Décalage des formants (voix grave/aiguë) via le sample rate |
 | **Modèles** | 2 fichiers ONNX (~126 Mo total) |
@@ -44,7 +44,7 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 
 ## Presets de voix
 
-Six voix pré-calculées sont intégrées au package (speaker embeddings moyennées sur 100 échantillons du corpus). Utilisables directement par nom, sans fichier audio de référence.
+Six voix de référence sont disponibles **par l'API seulement** : elles ne sont pas dans le paquet. On les appelle par leur identifiant, sans fichier audio de référence.
 
 | Preset | Genre | Description |
 |--------|-------|-------------|
@@ -148,14 +148,14 @@ Formule : `factor = 22050 / sr_override`
 pip install lectura-vc-zeroshot
 ```
 
-Le paquet contient le code. L'inférence ONNX demande les deux modèles convertis depuis OpenVoice v2 (~126 Mo), qui ne sont pas inclus dans le paquet ; OpenVoice est distribué sous licence MIT.
+Le paquet contient le code : il fonctionne par l'API de Lectura (avec une clé) ou, en local, avec vos propres modèles. Les modèles convertis depuis OpenVoice v2 (~126 Mo) ne sont pas inclus ; OpenVoice est distribué sous licence MIT.
 
 ---
 
 ## Caractéristiques techniques
 
 - **OpenVoice v2 ONNX** : conversion zero-shot, n'importe quelle voix cible
-- **6 presets** : speaker embeddings pré-calculés (moyennes sur 100 échantillons)
+- **6 presets** (fr-f1 … fr-h3), par l'API seulement
 - **Blend pondéré** : mélange linéaire des speaker embeddings
 - **Cache SE** : les embeddings sont cachés pour éviter les ré-extractions
 - **Lazy loading** : sessions ONNX chargées à la première utilisation

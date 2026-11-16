@@ -258,5 +258,4 @@ pip install lectura-formules
 - **Events alignés** : décomposition composant par composant avec positions
 - **Sons WAV optionnels** (~12 Mo, 299 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Version** : 3.6.0
 - **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

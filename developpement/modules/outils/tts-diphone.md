@@ -27,7 +27,7 @@ Moteur de synthèse vocale pour le français basé sur la **concaténation de di
 |-----------------|--------|
 | **Qualité** | Voix féminine claire |
 | **Sortie** | Audio 44100 Hz, float32 |
-| **Taille modèle** | ~15 Mo (diphones compressés) |
+| **Diphones** | non inclus dans le paquet : synthèse par l'API de Lectura (avec une clé), ou en local avec un dictionnaire de diphones sous licence |
 | **Entrée** | Phonèmes IPA (groupes de lecture) |
 | **Prosodie** | Déclaratif, interrogatif, exclamatif, suspensif |
 | **Contrôles** | Vitesse, pauses, expressivité macro/micro, contraste spectral |
@@ -130,8 +130,8 @@ Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) 
 
 ```bash
 # Moteur brut (phonèmes → audio)
-pip install lectura-diphone               # sans dépendance (import seul)
-pip install "lectura-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
+pip install lectura-diphone               # synthèse par l'API (clé dans LECTURA_API_KEY)
+pip install "lectura-diphone[local]"      # en local, avec un dictionnaire de diphones sous licence
 
 # Retimbre multi-voix (OpenVoice)
 pip install lectura-vc-zeroshot
