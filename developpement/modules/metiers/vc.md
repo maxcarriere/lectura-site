@@ -63,13 +63,6 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
     </div>
 
     <div class="vc-zeroshot-options" style="display:none;">
-      <div style="display:flex; gap:0.5em; align-items:center; flex-wrap:wrap; margin-bottom:0.3em;">
-        <label for="vc-zs-source">Source :</label>
-        <select id="vc-zs-source">
-          <option value="preset" selected>Preset</option>
-          <option value="file">Fichier audio</option>
-        </select>
-      </div>
       <div id="vc-preset-options">
         <label for="vc-preset">Preset :</label>
         <select id="vc-preset">
@@ -80,10 +73,6 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
           <option value="fr-h2">Voix masculine 2</option>
           <option value="fr-h3">Voix masculine 3</option>
         </select>
-      </div>
-      <div id="vc-file-reference" style="display:none;">
-        <label for="vc-reference">Audio de référence :</label>
-        <input type="file" id="vc-reference" accept="audio/*">
       </div>
       <div style="display:flex; gap:0.3em; align-items:center; margin-top:0.3em;">
         <label for="vc-sr-override" style="font-size:0.9em;">Variante formants :</label>

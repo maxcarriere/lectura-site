@@ -15,11 +15,7 @@
   var speakerSelect = document.getElementById("vc-speaker");
   var rvcOptions = container.querySelector(".vc-rvc-options");
   var zeroshotOptions = container.querySelector(".vc-zeroshot-options");
-  var zsSourceSelect = document.getElementById("vc-zs-source");
-  var presetOptions = document.getElementById("vc-preset-options");
   var presetSelect = document.getElementById("vc-preset");
-  var fileReferenceDiv = document.getElementById("vc-file-reference");
-  var referenceInput = document.getElementById("vc-reference");
   var srOverrideSelect = document.getElementById("vc-sr-override");
   var audioFileInput = document.getElementById("vc-audio-file");
   var fileBtn = document.getElementById("vc-file-btn");
@@ -48,19 +44,6 @@
       zeroshotOptions.style.display = "";
     }
   });
-
-  // Toggle UI dans zero-shot : preset vs fichier
-  if (zsSourceSelect) {
-    zsSourceSelect.addEventListener("change", function () {
-      if (zsSourceSelect.value === "preset") {
-        presetOptions.style.display = "";
-        fileReferenceDiv.style.display = "none";
-      } else {
-        presetOptions.style.display = "none";
-        fileReferenceDiv.style.display = "";
-      }
-    });
-  }
 
   // Bouton Parcourir -> ouvre le file input cache
   fileBtn.addEventListener("click", function () {
@@ -176,18 +159,8 @@
     if (mode === "rvc") {
       formData.append("speaker", speakerSelect.value);
     } else {
-      // Zero-shot : preset ou fichier de reference
-      var zsSource = zsSourceSelect ? zsSourceSelect.value : "file";
-
-      if (zsSource === "preset") {
-        formData.append("reference_preset", presetSelect.value);
-      } else {
-        if (!referenceInput.files.length) {
-          setStatus("Mode zero-shot : selectionnez un audio de reference.", true);
-          return;
-        }
-        formData.append("reference", referenceInput.files[0], referenceInput.files[0].name);
-      }
+      // Zero-shot : prereglage seulement (fr-f1 ... fr-h3) ; pas d'audio de reference libre dans la demo publique
+      formData.append("reference_preset", presetSelect.value);
 
       // Trick SR (variante formants)
       if (srOverrideSelect && srOverrideSelect.value) {
