@@ -6,7 +6,7 @@ permalink: /cgv/
 
 ## Conditions générales de vente
 
-Version du 3 novembre 2026.
+Version du 16 novembre 2026.
 
 ### Article 1 — Vendeur
 
@@ -23,7 +23,7 @@ Ci-après « le Vendeur ».
 
 ### Article 2 — Champ d'application : une offre réservée aux professionnels
 
-2.1. Les CGV s'appliquent à la vente de **produits numériques** : le **corpus Syllabes**, avec ses fichiers sons en voix de synthèse, et, sur devis, des licences de modules logiciels ou des corpus produits sur demande.
+2.1. Les CGV s'appliquent à la vente de **produits numériques** : le **corpus Syllabes**, avec ses fichiers sons en voix de synthèse, le corpus **1500 Mots**, mots illustrés par des images générées par intelligence artificielle, et, sur devis, des licences de modules logiciels ou des corpus produits sur demande.
 
 2.2. **Les ventes faites sur les sites de Lectura et sur devis sont réservées aux professionnels.** Un professionnel est une personne physique ou morale, publique ou privée, qui achète pour les besoins de son activité commerciale, industrielle, artisanale, libérale ou agricole, ou pour le compte d'un autre professionnel (entreprise, indépendant, association ou établissement pour son activité). En acceptant les présentes CGV avant de payer en ligne (article 4.2), l'acheteur **déclare** acheter pour les besoins de son activité professionnelle.
 
@@ -37,7 +37,7 @@ Ci-après « le Vendeur ».
 
 3.1. Les caractéristiques essentielles de chaque produit (contenu, format, volume, langues) figurent sur sa page et, le cas échéant, dans le devis. Le client est invité à consulter la démonstration ou l'échantillon gratuit avant d'acheter.
 
-3.2. **Aucun produit n'est vendu en pleine propriété.** L'achat donne au client une **licence d'utilisation** non exclusive. Ses droits (usages permis, durée, territoire, redistribution) sont définis par le **contrat de licence** du produit : pour le corpus Syllabes, la licence créateur, qui vaut pour une seule personne physique et des contenus fixes, ou la licence pro, qui vaut pour une entité et les personnes qui travaillent pour elle, applications comprises ; elles sont résumées sur la page [Licences](https://lexique.lectura.world/licences/corpus) de LecturaLexique. Le contrat est présenté avant le paiement, ou joint au devis, puis joint à l'e-mail de confirmation. En cas de contradiction, le contrat de licence prime sur les CGV pour les droits d'utilisation.
+3.2. **Aucun produit n'est vendu en pleine propriété.** L'achat donne au client une **licence d'utilisation** non exclusive. Ses droits (usages permis, durée, territoire, redistribution) sont définis par le **contrat de licence** du produit : pour le corpus Syllabes, la licence créateur, qui vaut pour une seule personne physique et des contenus fixes, ou la licence pro, qui vaut pour une entité et les personnes qui travaillent pour elle, applications comprises ; pour le corpus 1500 Mots, la licence créateur, qui vaut pour une seule personne physique et tout usage, sauf dans un produit vendu ou qui rapporte un revenu et sauf l'entraînement d'un modèle d'intelligence artificielle, ou la licence pro, sans restriction d'usage, qui vaut pour une entité et les personnes qui travaillent pour elle ; elles sont résumées sur la page [Licences](https://lexique.lectura.world/licences/corpus) de LecturaLexique. Le contrat est présenté avant le paiement, ou joint au devis, puis joint à l'e-mail de confirmation. En cas de contradiction, le contrat de licence prime sur les CGV pour les droits d'utilisation.
 
 3.3. **Voix de synthèse.** Les fichiers sons du corpus Syllabes sont produits par une voix de synthèse de Lectura, entraînée sur le corpus SIWIS, diffusé sous licence CC BY 4.0. Le crédit dû à SIWIS est fourni avec le produit, et le client le reproduit dans les conditions prévues par le contrat de licence.
 
@@ -58,7 +58,7 @@ Ci-après « le Vendeur ».
 
 ### Article 5 — Prix
 
-5.1. Les prix sont indiqués en euros, nets, sur la page du produit ou dans le devis : TVA non applicable, art. 293 B du CGI. Le corpus Syllabes coûte 49 € avec la licence créateur et 199 € avec la licence pro.
+5.1. Les prix sont indiqués en euros, nets, sur la page du produit ou dans le devis : TVA non applicable, art. 293 B du CGI. Les corpus Syllabes et 1500 Mots coûtent chacun 49 € avec la licence créateur et 199 € avec la licence pro.
 
 5.2. Le prix applicable est celui affiché au moment de la commande, ou celui du devis accepté. Les frais du prestataire de paiement sont à la charge du Vendeur.
 
