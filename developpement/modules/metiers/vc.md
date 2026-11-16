@@ -1,36 +1,31 @@
 ---
-title: Pipeline VC
+title: Conversion vocale
 layout: default
 permalink: /developpement/modules/metiers/vc/
 redirect_from:
   - /solutions/modules/vc/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Cette page présente la conversion vocale de la première génération de Lectura. Le module publié est [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}), sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
-  <h1>Pipeline VoiceConversion</h1>
-  <p class="module-tagline">Méta-package unifié — sélection automatique ZeroShot (OpenVoice) ou Locuteurs (RVC)</p>
+  <h1>Conversion vocale</h1>
+  <p class="module-tagline">Conversion vocale pour le français — module ZeroShot (OpenVoice) et démo en ligne</p>
   <div class="module-links">
-    <a href="https://pypi.org/project/lectura-vc/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC" class="module-badge">GitHub</a>
-    <code class="module-install">pip install lectura-vc</code>
+    <a href="https://pypi.org/project/lectura-vc-zeroshot/" class="module-badge">PyPI</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
+    <code class="module-install">pip install lectura-vc-zeroshot</code>
   </div>
 </div>
 
 ## Présentation
 
-Méta-package de conversion vocale pour le français, offrant une façade unifiée `VCEngine` qui sélectionne automatiquement le bon sous-module selon le mode demandé :
-
-- **[VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }})** (`lectura-vc-zeroshot`, ~126 Mo) : OpenVoice v2 — conversion vers n'importe quelle voix via un extrait de référence ou un preset
-- **[VC Locuteurs]({{ '/developpement/modules/outils/vc-locuteurs/' | relative_url }})** (`lectura-vc-locuteurs`, ~1.4 Go) : RVC — conversion vers 6 voix françaises pré-entraînées
+Conversion vocale pour le français. Le module publié de la génération v0 est **[VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }})** (`lectura-vc-zeroshot`) : OpenVoice v2 — conversion vers n'importe quelle voix via un extrait de référence ou un preset.
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Modes** | rvc, zeroshot, cascade (RVC + OpenVoice), auto |
-| **Voix RVC** | 6 speakers (3F + 3M) |
 | **Zero-shot** | N'importe quelle voix avec un preset ou 5-10s de référence |
-| **Presets** | 6 voix pré-calculées |
+| **Presets** | 6 voix, par l'API seulement |
 | **Blend** | Mélange pondéré de presets ou d'extraits audio |
 | **Backends** | ONNX Runtime pur (pas de PyTorch) |
 
@@ -42,27 +37,9 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
 
 <div class="vc-demo">
   <div class="vc-controls">
-    <div class="vc-mode-select">
-      <label for="vc-mode">Mode :</label>
-      <select id="vc-mode">
-        <option value="rvc" selected>RVC (voix pré-entraînée)</option>
-        <option value="zeroshot">Zero-shot (voix arbitraire)</option>
-      </select>
-    </div>
+    <input type="hidden" id="vc-mode" value="zeroshot">
 
-    <div class="vc-rvc-options">
-      <label for="vc-speaker">Voix cible :</label>
-      <select id="vc-speaker">
-        <option value="fr-f1">Voix féminine 1</option>
-        <option value="fr-f2">Voix féminine 2</option>
-        <option value="fr-f3">Voix féminine 3</option>
-        <option value="fr-h1" selected>Voix masculine 1</option>
-        <option value="fr-h2">Voix masculine 2</option>
-        <option value="fr-h3">Voix masculine 3</option>
-      </select>
-    </div>
-
-    <div class="vc-zeroshot-options" style="display:none;">
+    <div class="vc-zeroshot-options">
       <div id="vc-preset-options">
         <label for="vc-preset">Preset :</label>
         <select id="vc-preset">
@@ -115,41 +92,22 @@ Méta-package de conversion vocale pour le français, offrant une façade unifi�
 ## Exemple de code
 
 ```python
-from lectura_vc import creer_engine
+from lectura_vc_zeroshot import creer_engine
 
-engine = creer_engine(mode="auto")
+engine = creer_engine()
 
-# Mode RVC (voix pré-entraînée)
-audio, sr = engine.convert(audio="input.wav", speaker="fr-h1", mode="rvc")
-
-# Mode Zero-shot (preset)
-audio, sr = engine.convert(audio="input.wav", reference="fr-f1", mode="zeroshot")
+# Zero-shot (preset)
+audio, sr = engine.convert(audio="input.wav", reference="fr-f1", sr_in=16000)
 
 # Blend pondéré
 audio, sr = engine.convert(
     audio="input.wav",
     reference={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2},
-    mode="zeroshot",
-)
-
-# Mode cascade : RVC (proxy genre) + OpenVoice (timbre exact)
-audio, sr = engine.convert(
-    audio="input.wav", speaker="fr-f3", reference="cible.wav", mode="cascade",
+    sr_in=16000,
 )
 ```
 
----
-
-## Architecture
-
-```
-                    lectura-vc (meta-package)
-                 ┌────────────┴────────────┐
-                 v                         v
-     lectura-vc-zeroshot          lectura-vc-locuteurs
-       OpenVoice v2 ONNX            RVC ONNX (6 voix)
-         ~126 Mo                       ~1.4 Go
-```
+Plus d'exemples sur la page [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}).
 
 ---
 
@@ -158,21 +116,13 @@ audio, sr = engine.convert(
 | Brique | Rôle |
 |--------|------|
 | [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) | OpenVoice v2 — conversion zero-shot |
-| [VC Locuteurs]({{ '/developpement/modules/outils/vc-locuteurs/' | relative_url }}) | RVC — 6 voix pré-entraînées |
 
 ---
 
 ## Installation
 
 ```bash
-# Meta-package complet (RVC + zero-shot)
-pip install lectura-vc
-
-# Sous-module zero-shot seul (léger, ~126 Mo)
 pip install lectura-vc-zeroshot
-
-# Sous-module RVC seul (6 voix, ~1.4 Go)
-pip install lectura-vc-locuteurs
 ```
 
-Les modules publics utilisent l'API Lectura pour l'inférence. Les backends locaux ONNX nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
+Le paquet contient le code ; il fonctionne par l'API de Lectura (avec une clé) ou, en local, avec vos propres modèles convertis depuis OpenVoice v2 (licence MIT) : voir [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}).

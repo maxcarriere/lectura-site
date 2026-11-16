@@ -4,7 +4,7 @@ layout: default
 permalink: /developpement/modules/outils/phonemiseur/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Ses modèles ne sont pas inclus dans le paquet : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura Phonemiseur</h1>
@@ -29,7 +29,7 @@ Brique atomique de phonémisation : un seul modèle **BiLSTM char-level multi-t�
 
 *Performances mesurées sur un corpus de test de phrases françaises complètes (mots en contexte).*
 
-Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zéro dépendance).
+Quatre backends d'inférence : **API** (avec une clé), **ONNX Runtime** (~2 ms/phrase), **NumPy** (~50 ms), ou **pur Python** (~200 ms, zéro dépendance).
 
 > **Brique vs Pipeline** : Le Phonémiseur est le modèle brut (tokens → prédictions). Pour le pipeline complet G2P (texte → phonèmes avec tokenisation, formules et groupes de lecture — syllabation optionnelle via l'extra `[aligneur]`), voir [lectura-g2p]({{ '/developpement/modules/metiers/g2p/' | relative_url }}).
 
@@ -40,7 +40,7 @@ Quatre backends d'inférence : **API** (zero config), **ONNX Runtime** (~2 ms/ph
 ```python
 from lectura_phonemiseur import creer_engine
 
-engine = creer_engine()   # mode API par défaut (zero config)
+engine = creer_engine()   # mode API par défaut (clé dans LECTURA_API_KEY)
 
 result = engine.analyser(["Les", "enfants", "sont", "arrivés", "à", "la", "maison"])
 
@@ -81,24 +81,24 @@ Phrase → Char Embedding (64d) → Shared BiLSTM (2x160h → 320d)
 ## Installation
 
 ```bash
-pip install lectura-phonemiseur             # mode API (zero config, zéro dépendance)
+pip install lectura-phonemiseur             # mode API (clé requise, zéro dépendance)
 pip install lectura-phonemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-phonemiseur[numpy]      # backend NumPy local
 pip install lectura-phonemiseur[lexique]    # + lectura-lexique (features POS)
 pip install lectura-phonemiseur[all]        # onnx + numpy + lexique
 ```
 
-Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
+Les modèles ne sont pas inclus dans le paquet : par défaut, le module interroge l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Les backends locaux (ONNX, NumPy) supposent des modèles pré-entraînés, qui ne sont pas distribués.
 
 ---
 
 ## Caractéristiques techniques
 
 - **1.75M paramètres**, modèle ONNX INT8 = 1.8 Mo
-- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **4 backends** : API (avec une clé), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Factory `creer_engine()`** : détection automatique du meilleur backend
 - **Séparateurs mots composés** : `sep_hyphen=True`, `sep_apos=True` pour conserver les tirets et apostrophes dans l'IPA (`aba-ʒuʁ`, `d'abɔʁ`)
 - **30 000 corrections lexicales** intégrées (table plate + homographes POS-aware)
 - **Features lexicales** (optionnel) : candidats POS via `lectura-lexique` pour améliorer POS/morpho/liaison
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

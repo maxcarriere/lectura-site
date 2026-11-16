@@ -49,11 +49,6 @@
       children:
         - title: "Archives (v0)"
           url: /developpement/modules/v0/
-          children:
-            - title: Briques outils
-              url: /developpement/modules/outils/
-            - title: Pipelines métiers
-              url: /developpement/modules/metiers/
         - title: "En cours (v1)"
           url: /developpement/modules/v1/
         - title: "À venir (v2)"

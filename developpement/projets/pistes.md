@@ -20,9 +20,9 @@ Plutôt que d'utiliser de gros modèles end-to-end, Lectura fait le choix de **m
 |--------|-------------|------------|-------------|
 | [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) (G2P) | BiLSTM multi-tête | 1,75M | 1,8 Mo |
 | [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) (P2G) | BiLSTM V7 + attention cross + lex_select | 3,2M | 4,4 Mo |
-| [Décodeur CTC]({{ '/developpement/modules/outils/ctc/' | relative_url }}) (STT) | CNN-BiGRU-CTC | 13,2M | 49 Mo |
-| [TTS Mono]({{ '/developpement/modules/outils/tts-mono/' | relative_url }}) | Matcha-Conformer + HiFi-GAN | 17,9M | ~29 Mo |
-| [TTS Multi]({{ '/developpement/modules/outils/tts-multi/' | relative_url }}) | FastPitch-Lite v6 + HiFi-GAN | 24,3M | ~40 Mo |
+| Décodeur CTC (STT) | CNN-BiGRU-CTC | 13,2M | 49 Mo |
+| TTS Mono | Matcha-Conformer + HiFi-GAN | 17,9M | ~29 Mo |
+| TTS Multi | FastPitch-Lite v6 + HiFi-GAN | 24,3M | ~40 Mo |
 
 Tous les modèles sont quantifiés en **ONNX INT8** pour le déploiement, ce qui les rend utilisables sur des appareils modestes (smartphone, Raspberry Pi).
 

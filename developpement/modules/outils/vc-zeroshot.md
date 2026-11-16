@@ -7,7 +7,7 @@ redirect_from:
   - /solutions/modules/vc-zeroshot/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura VC ZeroShot</h1>
@@ -31,8 +31,6 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 | **Trick SR** | Décalage des formants (voix grave/aiguë) via le sample rate |
 | **Modèles** | 2 fichiers ONNX (~126 Mo total) |
 | **Sortie** | Audio @ 22050 Hz |
-
-> **Brique vs Meta-package** : Le VC ZeroShot est la brique OpenVoice seule. Pour le méta-package unifié (ZeroShot + RVC Locuteurs), voir [lectura-vc]({{ '/developpement/modules/metiers/vc/' | relative_url }}).
 
 ---
 
@@ -147,10 +145,10 @@ Formule : `factor = 22050 / sr_override`
 ## Installation
 
 ```bash
-pip install lectura-vc-zeroshot   # module public (~7 Ko)
+pip install lectura-vc-zeroshot
 ```
 
-Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX nécessite les modèles pré-entraînés (~126 Mo), disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
+Le paquet contient le code. L'inférence ONNX demande les deux modèles convertis depuis OpenVoice v2 (~126 Mo), qui ne sont pas inclus dans le paquet ; OpenVoice est distribué sous licence MIT.
 
 ---
 
@@ -163,4 +161,4 @@ Le module public utilise l'API Lectura pour l'inférence. Le backend local ONNX 
 - **Lazy loading** : sessions ONNX chargées à la première utilisation
 - **ONNX Runtime pur** : pas de dépendance PyTorch
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé ; modèles OpenVoice v2 sous licence MIT — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

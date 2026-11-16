@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/syllabeur/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura Aligneur-Syllabeur</h1>
@@ -149,21 +149,21 @@ L'Aligneur-Syllabeur est le **pivot central** de Lectura :
 ## Installation
 
 ```bash
-pip install lectura-aligneur                  # mode API (zéro dépendance)
+pip install lectura-aligneur                  # mode API (clé requise, zéro dépendance)
 pip install lectura-aligneur[phonemiseur]     # + lectura-phonemiseur
 ```
 
-**Phonémiseur pluggable** : utilisable avec votre propre phonémiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonémiseur]({{ '/developpement/modules/metiers/g2p/' | relative_url }}). N'importe quel objet avec une méthode `phonemize(word)` ou `predict(word)` est accepté.
+**Phonémiseur pluggable** : utilisable avec votre propre phonémiseur, [eSpeak-NG](https://github.com/espeak-ng/espeak-ng), ou le module [Lectura Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}). N'importe quel objet avec une méthode `phonemize(word)` ou `predict(word)` est accepté.
 
 ---
 
 ## Caractéristiques techniques
 
 - **Zéro dépendance** Python
-- **Bi-modal** : mode API (zéro config) ou mode local avec données embarquées
+- **Bi-modal** : mode API (avec une clé, variable d'environnement `LECTURA_API_KEY`) ou mode local avec données embarquées
 - **Alignement DFS** graphème-phonème avec gestion des lettres muettes et fusionnées
 - **Modèle de sonorité** pour la syllabation (5 classes phonologiques)
 - **Syllabation** des groupes de lecture construits par le Phonémiseur
 - **Phonémiseur pluggable** : eSpeak-NG, Lectura Phonémiseur, ou tout objet compatible
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

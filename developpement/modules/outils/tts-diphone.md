@@ -7,7 +7,7 @@ redirect_from:
   - /solutions/modules/tts-diphone/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura TTS Diphone</h1>
@@ -25,17 +25,17 @@ Moteur de synthèse vocale pour le français basé sur la **concaténation de di
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Qualité** | Voix féminine claire (corpus SIWIS) |
+| **Qualité** | Voix féminine claire |
 | **Sortie** | Audio 44100 Hz, float32 |
 | **Taille modèle** | ~15 Mo (diphones compressés) |
 | **Entrée** | Phonèmes IPA (groupes de lecture) |
 | **Prosodie** | Déclaratif, interrogatif, exclamatif, suspensif |
 | **Contrôles** | Vitesse, pauses, expressivité macro/micro, contraste spectral |
-| **Retimbre** | OpenVoice zero-shot (optionnel) : presets, blend de voix, variantes homme/enfant |
+| **Retimbre** | OpenVoice zero-shot (optionnel, avec `lectura-vc-zeroshot`) : presets, blend de voix, variantes homme/enfant |
 
 Trois modes de lecture : **FLUIDE** (lecture naturelle), **MOT_A_MOT** et **SYLLABES** — adapté à l'apprentissage de la lecture.
 
-> **Brique vs Pipeline** : Ce moteur est la brique acoustique diphonique (phonèmes → audio). Pour le pipeline complet TTS (texte → audio avec G2P intégré et choix de moteur), voir la [page TTS]({{ '/developpement/modules/metiers/tts/' | relative_url }}).
+> **Brique acoustique** : ce moteur transforme des phonèmes en audio. Pour partir du texte, la fonction `synthetiser` s'appuie sur le [G2P]({{ '/developpement/modules/metiers/g2p/' | relative_url }}), dont les modèles tournent sur l'API de Lectura (clé dans la variable d'environnement `LECTURA_API_KEY`).
 
 ---
 
@@ -72,7 +72,7 @@ audio = engine.synthesize_groups(
 ```python
 from lectura_diphone import synthetiser
 
-# Synthèse simple (nécessite lectura-g2p)
+# Synthèse simple (texte → phonèmes par l'API de Lectura, clé requise)
 audio = synthetiser("Le soleil brille sur la ville.")
 
 # Avec retimbre OpenVoice
@@ -107,7 +107,7 @@ Phonemes IPA --> Diphone chain
               Audio final 44100 Hz
 ```
 
-Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) extraits du corpus SIWIS et moyennés par type de transition phonétique. La prosodie est réglée par des contours F0 adaptés au français (chute déclarative, montée interrogative, pauses aux ponctuations).
+Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) extraits d'un corpus de parole et moyennés par type de transition phonétique. La prosodie est réglée par des contours F0 adaptés au français (chute déclarative, montée interrogative, pauses aux ponctuations).
 
 ---
 
@@ -121,7 +121,7 @@ Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) 
 | macro_expressivity | 2.0 | Gestes prosodiques aux ponctuations (0=neutre, 4=exagéré) |
 | micro_expressivity | 5.0 | Micro-variations (0=robot, 10=très expressif) |
 | spectral_contrast | 1.5 | Contraste spectral GV (1.0=off, 2.0=fort) |
-| prosody_style | "regles" | Style prosodique : "regles" (LHiLH*, stable) ou "corpus" (extrait du corpus SIWIS, plus varié) |
+| prosody_style | "regles" | Style prosodique : "regles" (LHiLH*, stable) ou "corpus" (extrait du corpus, plus varié) |
 | seed | None | Graine aléatoire pour micro-prosodie reproductible |
 
 ---
@@ -130,30 +130,26 @@ Les diphones sont des paramètres WORLD (F0 + spectral envelope + aperiodicity) 
 
 ```bash
 # Moteur brut (phonèmes → audio)
-pip install lectura-diphone               # mode API (zero config, zéro dépendance)
+pip install lectura-diphone               # sans dépendance (import seul)
 pip install "lectura-diphone[local]"      # inférence locale (pyworld + numpy + scipy)
 
-# Pipeline complet (texte → audio)
-pip install "lectura-tts-dipho[local]"           # G2P + moteur local
-pip install "lectura-tts-dipho[local,retimbre]"  # + retimbre multi-voix (OpenVoice)
+# Retimbre multi-voix (OpenVoice)
+pip install lectura-vc-zeroshot
 ```
 
 | Extra | Package | Contenu |
 |-------|---------|---------|
 | `[local]` | `lectura-diphone` | Backend local pyworld + numpy + scipy |
-| `[local]` | `lectura-tts-dipho` | Pipeline G2P + moteur local |
-| `[retimbre]` | `lectura-tts-dipho` | Retimbre multi-voix via OpenVoice |
-| `[aligneur]` | `lectura-tts-dipho` | Syllabation pour le mode lecture syllabique (lectura-aligneur) |
 
 ---
 
 ## Caractéristiques techniques
 
 - **Vocoder WORLD** : analyse/synthèse haute qualité à 44100 Hz
-- **1290 diphones** moyennés depuis le corpus SIWIS (~9800 phrases)
+- **1290 diphones** moyennés depuis un corpus de parole (~9800 phrases)
 - **Prosodie française** : déclinaison, chute déclarative non-linéaire, montée interrogative, allongement pré-frontière
 - **GV compensation** : restaure le contraste spectral perdu par le moyennage
 - **3 modes** : FLUIDE, MOT_A_MOT, SYLLABES
-- **Retimbre OpenVoice** (optionnel) : presets, blend pondéré, variantes formantiques
+- **Retimbre OpenVoice** (optionnel, avec `lectura-vc-zeroshot`) : presets, blend pondéré, variantes formantiques
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code) — les modèles sont sous [licence commerciale]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

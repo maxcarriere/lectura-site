@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/g2p/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Ses modèles ne sont pas inclus dans le paquet : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Pipeline G2P</h1>
@@ -87,7 +87,7 @@ Le pipeline G2P Lectura se distingue d'eSpeak-NG par sa prise en compte du **con
 ```python
 from lectura_phonemiseur import creer_engine
 
-engine = creer_engine()   # mode API par défaut (zero config)
+engine = creer_engine()   # mode API par défaut (clé dans LECTURA_API_KEY)
 
 result = engine.analyser(["Les", "enfants", "sont", "arrivés", "à", "la", "maison"])
 
@@ -126,9 +126,6 @@ pip install lectura-g2p[aligneur]
 
 # Phonémiseur seul (modèle brut, sans pipeline)
 pip install lectura-phonemiseur
-
-# Avec backend ONNX local (inférence offline)
-pip install lectura-phonemiseur[onnx]
 ```
 
 | Extra | Contenu |
@@ -136,7 +133,7 @@ pip install lectura-phonemiseur[onnx]
 | *(aucun)* | Pipeline G2P complet (tokeniseur + formules + phonémiseur + groupes de lecture) |
 | `[aligneur]` | + alignement graphème-phonème et syllabation (`lectura-aligneur`) |
 
-Par défaut, les modules utilisent l'API Lectura (aucune configuration nécessaire). Pour l'inférence locale, installez les backends optionnels sur les briques individuelles (`lectura-phonemiseur[onnx]`).
+Les modèles ne sont pas inclus dans les paquets : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}).
 
 ---
 

@@ -4,7 +4,7 @@ layout: default
 permalink: /developpement/modules/outils/graphemiseur/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Ses modèles ne sont pas inclus dans le paquet : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura Graphemiseur</h1>
@@ -26,7 +26,7 @@ Brique atomique P2G : à partir d'une transcription phonétique IPA, reconstruit
 | **POS** | Étiquetage morpho-syntaxique (19 tags) | ~98% accuracy |
 | **Morphologie** | Genre, nombre, temps, mode, personne | 95-98% |
 
-Quatre backends d'inférence : **API** (zero config), **ONNX Runtime**, **NumPy**, ou **pur Python** (zéro dépendance).
+Quatre backends d'inférence : **API** (avec une clé), **ONNX Runtime**, **NumPy**, ou **pur Python** (zéro dépendance).
 
 > **Brique vs Pipeline** : Le Graphémiseur est le modèle core (IPA → orthographe brute). Pour le pipeline complet P2G (avec formules, noms propres, entités), voir [lectura-p2g]({{ '/developpement/modules/metiers/p2g/' | relative_url }}).
 
@@ -37,7 +37,7 @@ Quatre backends d'inférence : **API** (zero config), **ONNX Runtime**, **NumPy*
 ```python
 from lectura_graphemiseur import creer_engine
 
-engine = creer_engine()   # mode API par défaut (zero config)
+engine = creer_engine()   # mode API par défaut (clé dans LECTURA_API_KEY)
 
 result = engine.analyser(["le", "ɑ̃fɑ̃", "sɔ̃", "aʁive", "a", "la", "mɛzɔ̃"])
 
@@ -82,25 +82,25 @@ Phrase IPA → Char Embedding (64d) → Shared BiLSTM (2x192h → 384d)
 
 ```bash
 # Modèle core (zéro dépendance)
-pip install lectura-graphemiseur             # mode API (zero config)
+pip install lectura-graphemiseur             # mode API (clé requise)
 pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local (~2 ms/phrase)
 pip install lectura-graphemiseur[numpy]      # backend NumPy local
 pip install lectura-graphemiseur[lexique]    # + lectura-lexique (phone_lex_features)
 pip install lectura-graphemiseur[all]        # onnx + numpy + lexique
 ```
 
-Par défaut, le module utilise l'API Lectura (aucune configuration nécessaire). Les backends locaux (ONNX, NumPy) nécessitent les modèles pré-entraînés, disponibles sous [licence commerciale]({{ '/contact/' | relative_url }}).
+Les modèles ne sont pas inclus dans le paquet : par défaut, le module interroge l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Les backends locaux (ONNX, NumPy) supposent des modèles pré-entraînés, qui ne sont pas distribués.
 
 ---
 
 ## Caractéristiques techniques
 
 - **3.2M paramètres**, modèle ONNX INT8 = 4.4 Mo
-- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **4 backends** : API (avec une clé), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Word feedback** : les informations POS/morpho enrichissent la prédiction P2G
 - **Phone_lex_features (28d)** : features construites depuis `phone_lexicon.db` (lexique phonétique SQLite)
 - **Lex_select** : sélection lexicale parmi candidats phonétiques
 - **Zéro dépendance** : le graphémiseur core n'importe pas `lectura_formules`
 - **Factory `creer_engine()`** : détection automatique du meilleur backend
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

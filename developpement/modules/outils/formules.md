@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/formules/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura Formules</h1>
@@ -20,7 +20,7 @@ redirect_from:
 
 ## Présentation
 
-Module autonome, **zéro dépendance** externe (aucune dépendance Python tierce). Transforme toute formule écrite en sa lecture française avec transcription phonétique IPA. Fonctionne en local (zéro config) ou via l'API Lectura.
+Module autonome, **zéro dépendance** externe (aucune dépendance Python tierce). Transforme toute formule écrite en sa lecture française avec transcription phonétique IPA. Fonctionne en local (zéro config) ou via l'API Lectura (avec une clé, variable d'environnement `LECTURA_API_KEY`).
 
 Nombres, sigles, dates, téléphones, heures, monnaies, ordinaux, fractions, notations scientifiques, expressions mathématiques, coordonnées GPS — tout est couvert.
 
@@ -259,4 +259,4 @@ pip install lectura-formules
 - **Sons WAV optionnels** (~12 Mo, 299 fichiers) disponibles sur GitHub
 - **Python 3.10+** avec type hints complets (PEP-561)
 - **Version** : 3.6.0
-- **Licence** : AGPL-3.0 (code ouvert : un usage qui ne respecte pas ses conditions demande une licence commerciale) — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

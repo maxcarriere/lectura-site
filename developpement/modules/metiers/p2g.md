@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/p2g/
 ---
 
-> **Archives : première génération (v0).** Cette page documente un module publié en juillet 2026 sur PyPI et GitHub, sous licence AGPL-3.0, qui n'est plus développé. Le mode API qu'elle décrit date de cette génération : l'API de Lectura sert aujourd'hui aux démos et n'est pas proposée comme service. La génération actuelle (v1) n'est pas publiée : voir [Modules]({{ '/developpement/modules/' | relative_url }}).
+> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Ses modèles ne sont pas inclus dans le paquet : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}). Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Pipeline P2G</h1>
@@ -109,12 +109,14 @@ print(result["ortho"])   # ['521']  — formules reconnues et fusionnées
 
 ```bash
 # Modèle core (zéro dépendance)
-pip install lectura-graphemiseur             # mode API (zero config)
+pip install lectura-graphemiseur             # mode API (clé requise)
 pip install lectura-graphemiseur[onnx]       # backend ONNX Runtime local
 
 # Pipeline complet (graphemiseur + formules + noms propres)
 pip install lectura-p2g
 ```
+
+Les modèles ne sont pas inclus dans les paquets : ils tournent sur l'API de Lectura, qui demande une clé (variable d'environnement `LECTURA_API_KEY`), à demander par la [page de contact]({{ '/contact/' | relative_url }}).
 
 Le graphémiseur (couche 1) est **zéro dépendance** — pas d'import de `lectura_formules`. Le pipeline complet (couche 2) orchestre formules, fusion de composés, cohérence morpho, noms propres et reconnaissance d'entités notables.
 
@@ -123,9 +125,9 @@ Le graphémiseur (couche 1) est **zéro dépendance** — pas d'import de `lectu
 ## Caractéristiques techniques
 
 - **3.2M paramètres** (graphémiseur core), ONNX INT8 = 4.4 Mo
-- **4 backends** : API (zero config), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
+- **4 backends** : API (avec une clé), ONNX Runtime (~2 ms), NumPy (~50 ms), pur Python (~200 ms)
 - **Lex_select** : sélection lexicale parmi candidats phonétiques
 - **Pipeline `lectura-p2g`** : formules (mode chiffres, tolerance="stt"), fusion composés, noms propres, ~9000 entités notables
 - **Zéro dépendance** (couche 1) : le graphémiseur n'importe pas `lectura_formules`
 - **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : AGPL-3.0 — licence commerciale sur demande : [nous contacter]({{ '/contact/' | relative_url }})
+- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})

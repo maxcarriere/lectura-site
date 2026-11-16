@@ -51,7 +51,7 @@ La documentation interactive est sur [lexique.lectura.world/lexique/v2/docs](htt
 
 Le module **Lexicon** embarque le lexique dans une application, hors ligne : lectures, validité, fréquences, recherche. Il est présenté et proposé sous licence commerciale sur [LecturaLexique](https://lexique.lectura.world).
 
-La première génération du module, `lectura-lexique` (v0, publiée sur PyPI), reste documentée dans les [archives des modules]({{ '/developpement/modules/outils/lexique/' | relative_url }}).
+La première génération du module, `lectura-lexique` (v0, publiée sur PyPI), reste documentée avec la [génération v0]({{ '/developpement/modules/outils/lexique/' | relative_url }}).
 
 ---
 
