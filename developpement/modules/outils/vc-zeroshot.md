@@ -11,7 +11,7 @@ redirect_from:
 
 <div class="module-header">
   <h1>Lectura VC ZeroShot</h1>
-  <p class="module-tagline">Conversion vocale zero-shot du français par OpenVoice V2, en ONNX, en local, avec filigrane IA</p>
+  <p class="module-tagline">Modificateur de timbre pour voix de synthèse, par OpenVoice V2, en ONNX, en local, avec filigrane IA</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc-zeroshot/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
@@ -22,7 +22,7 @@ redirect_from:
 
 ## Présentation
 
-Conversion vocale zero-shot du français avec **OpenVoice V2**, en inférence ONNX pure (sans PyTorch), entièrement **en local**. Le module change le timbre d'un son : vers un préréglage, vers un mélange pondéré de préréglages, ou vers une voix de référence que vous fournissez.
+Modificateur de timbre pour voix de synthèse, en français, avec **OpenVoice V2**, en inférence ONNX pure (sans PyTorch), entièrement **en local**. Le module change le timbre d'un son : vers un préréglage, vers un mélange pondéré de préréglages, ou vers une voix de référence que vous fournissez.
 
 Toute sortie est marquée comme générée par IA (filigrane **AudioSeal**).
 
@@ -31,6 +31,7 @@ Toute sortie est marquée comme générée par IA (filigrane **AudioSeal**).
 | **Moteur** | OpenVoice V2, ONNX Runtime (sans PyTorch) |
 | **Préréglages** | `fr-f1`, voix mélangée féminine (`melange-f`), voix mélangée masculine (`melange-h`) |
 | **Mélange** | Mélange pondéré de préréglages |
+| **Curseur grave / aigu** | `variante`, de -1 (plus grave) à +1 (plus aigu) |
 | **Voix de référence** | Un enregistrement que vous fournissez, avec consentement (voir plus bas) |
 | **Sortie** | Audio float32 à 22 050 Hz, déjà marqué |
 | **Marquage** | Filigrane AudioSeal inaudible, impossible à désactiver |
