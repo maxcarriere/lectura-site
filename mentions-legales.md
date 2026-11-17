@@ -39,7 +39,7 @@ La première génération des modules Lectura (2026) est publiée en double lice
 
 ---
 
-## Données et corpus tiers
+## Données et corpus tiers {#corpus-tiers}
 
 Le projet Lectura utilise des corpus et bases de données publiques pour l'entraînement des modèles, notamment :
 
