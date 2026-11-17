@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Texte français → phonétique IPA — pipeline complet : tokenisation, formules, phonémiseur neuronal, groupes de lecture, syllabation en option</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-g2p/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/G2P-Pipeline" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-g2p-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-g2p</code>
   </div>
@@ -67,7 +67,7 @@ Texte brut
 | [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) | `lectura-formules` | Lecture des formules détectées |
 | [Phonémiseur]({{ '/developpement/modules/outils/phonemiseur/' | relative_url }}) | `lectura-phonemiseur` | Modèle G2P, catégories, morphologie, liaisons |
 | [Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | `lectura-aligneur` | Alignement et syllabation (option `[aligneur]`) |
-| [Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) | `lectura-lexique` | Features lexicales du Phonémiseur (facultatif) |
+| [Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) | `lectura-lexique` | Lexique utilisé par le Phonémiseur |
 
 ---
 

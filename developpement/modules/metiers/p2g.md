@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Phonétique IPA → texte français — pipeline complet : graphémiseur, formules, cohérence morphologique, noms propres</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-p2g/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G-Pipeline" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-p2g-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-p2g</code>
   </div>
@@ -66,6 +66,7 @@ Phonèmes IPA (mots séparés)
 |--------|--------|-----------------------|
 | [Graphémiseur]({{ '/developpement/modules/outils/graphemiseur/' | relative_url }}) | `lectura-graphemiseur` | Modèle P2G (IPA → orthographe) |
 | [Formules]({{ '/developpement/modules/outils/formules/' | relative_url }}) | `lectura-formules` | Nombres, sigles, dates |
+| [Lexique]({{ '/developpement/modules/outils/lexique/' | relative_url }}) | `lectura-lexique` | Lexique utilisé par le pipeline |
 | [Aligneur-Syllabeur]({{ '/developpement/modules/outils/aligneur/' | relative_url }}) | `lectura-aligneur` | Alignement graphème-phonème (option `[aligneur]`) |
 
 ---

@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/vc/
 ---
 
-> **Génération v0, gratuite.** Cette page présente la conversion vocale de la première génération de Lectura. Le module publié est [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) : code sous AGPL-3.0 ; modèles OpenVoice et AudioSeal sous licence MIT, préréglages de timbre sous CC BY 4.0 (téléchargés depuis Hugging Face au premier usage, puis hors ligne, sans clé). Usage commercial : compris dans toute licence Lectura v1, ou sur demande. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
+> **Démo de conversion vocale.** La démo de cette page passe par le service de démonstration de Lectura et ses voix de démonstration (`fr-f1` à `fr-h3`) : elle ne montre pas le module v0. Le module gratuit, à installer en local, est [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) (code sous AGPL-3.0, OpenVoice et AudioSeal sous licence MIT, préréglages sous CC BY 4.0) ; voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Conversion vocale</h1>

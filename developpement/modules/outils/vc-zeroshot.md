@@ -37,11 +37,6 @@ Toute sortie est marquée comme générée par IA (filigrane **AudioSeal**).
 
 ---
 
-## Essayer en ligne
-
-<div class="try-online-btn">
-  <a href="{{ '/developpement/modules/metiers/vc/#essayer-en-ligne' | relative_url }}">Essayer la conversion vocale en ligne →</a>
-</div>
 
 ---
 
