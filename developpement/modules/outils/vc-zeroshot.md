@@ -7,30 +7,33 @@ redirect_from:
   - /solutions/modules/vc-zeroshot/
 ---
 
-> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
+> **Génération v0, gratuite.** Ce module fait partie de la première génération de Lectura : code sous AGPL-3.0 ; modèles OpenVoice et AudioSeal sous licence MIT, préréglages de timbre sous CC BY 4.0 (téléchargés depuis Hugging Face au premier usage, puis hors ligne, sans clé). Usage commercial : compris dans toute licence Lectura v1, ou sur demande. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura VC ZeroShot</h1>
-  <p class="module-tagline">Conversion vocale zero-shot via OpenVoice v2 — presets, blend de voix, ONNX pur</p>
+  <p class="module-tagline">Conversion vocale zero-shot du français par OpenVoice V2, en ONNX, en local, avec filigrane IA</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc-zeroshot/" class="module-badge">PyPI</a>
     <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
+    <a href="https://huggingface.co/lecturaworld/lectura-vc-zeroshot-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-vc-zeroshot</code>
   </div>
 </div>
 
 ## Présentation
 
-Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX). Transforme n'importe quel audio source vers le timbre d'une voix cible — à partir d'un preset, d'un extrait audio de référence, ou d'un mélange pondéré de plusieurs voix.
+Conversion vocale zero-shot du français avec **OpenVoice V2**, en inférence ONNX pure (sans PyTorch), entièrement **en local**. Le module change le timbre d'un son : vers un préréglage, vers un mélange pondéré de préréglages, ou vers une voix de référence que vous fournissez.
+
+Toute sortie est marquée comme générée par IA (filigrane **AudioSeal**).
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Backend** | OpenVoice v2 — ONNX Runtime pur (pas de PyTorch) |
-| **Presets** | 6 voix (fr-f1 … fr-h3), disponibles par l'API seulement |
-| **Blend** | Mélange pondéré de presets ou d'extraits audio |
-| **Trick SR** | Décalage des formants (voix grave/aiguë) via le sample rate |
-| **Modèles** | 2 fichiers ONNX (~126 Mo total) |
-| **Sortie** | Audio @ 22050 Hz |
+| **Moteur** | OpenVoice V2, ONNX Runtime (sans PyTorch) |
+| **Préréglages** | `fr-f1`, voix mélangée féminine (`melange-f`), voix mélangée masculine (`melange-h`) |
+| **Mélange** | Mélange pondéré de préréglages |
+| **Voix de référence** | Un enregistrement que vous fournissez, avec consentement (voir plus bas) |
+| **Sortie** | Audio float32 à 22 050 Hz, déjà marqué |
+| **Marquage** | Filigrane AudioSeal inaudible, impossible à désactiver |
 
 ---
 
@@ -42,103 +45,68 @@ Brique atomique de conversion vocale zero-shot basée sur **OpenVoice v2** (ONNX
 
 ---
 
-## Presets de voix
-
-Six voix de référence sont disponibles **par l'API seulement** : elles ne sont pas dans le paquet. On les appelle par leur identifiant, sans fichier audio de référence.
-
-| Preset | Genre | Description |
-|--------|-------|-------------|
-| fr-f1 | F | Voix féminine claire |
-| fr-f2 | F | Voix féminine douce |
-| fr-f3 | F | Voix féminine naturelle |
-| fr-h1 | M | Voix masculine posée |
-| fr-h2 | M | Voix masculine grave |
-| fr-h3 | M | Voix masculine dynamique |
-
----
-
 ## Exemple de code
 
 ```python
 from lectura_vc_zeroshot import creer_engine, PRESET_SPEAKERS
 
 engine = creer_engine()
+print(PRESET_SPEAKERS)                      # ['fr-f1', 'melange-f', 'melange-h']
 
-# Conversion avec un preset
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference="fr-f1",      # preset par nom
-    sr_in=16000,
-)
-# sr == 22050
+# vers un préréglage
+audio, sr = engine.convert("source.wav", "melange-h")
 
-# Blend de plusieurs presets (poids égaux)
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference=["fr-f1", "fr-f3"],
-    sr_in=16000,
-)
+# mélange pondéré de préréglages
+audio, sr = engine.convert("source.wav", {"fr-f1": 0.5, "melange-f": 0.5})
 
-# Blend pondéré
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2},
-    sr_in=16000,
-)
-
-# Depuis un fichier audio de référence
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference="reference_5s.wav",
-    sr_in=16000,
-)
-
-# Variante aiguë (formants décalés via trick SR)
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference="fr-f1",
-    sr_in=16000,
-    sr_override=11025,   # formants x2 (aiguë/enfant)
-)
+# vers une voix de référence que vous fournissez (zero-shot)
+audio, sr = engine.convert("source.wav", "ma_voix.wav")
 ```
+
+`audio` est un tableau float32 à 22 050 Hz, déjà marqué. Pour des conversions répétées, gardez le même `engine` (la fonction `convertir(...)` en crée un à chaque appel). Un nom qui n'est ni un préréglage ni un fichier existant lève `PresetInconnu`.
 
 ---
 
-## Architecture
+## Préréglages
 
-```
-Audio source  --> OpenVoice SE --> source embedding (1, 256, 1)
-Reference     --> OpenVoice SE --> target embedding (1, 256, 1)
-                                        |
-                           OpenVoice VC (ONNX)
-                           (source audio + src_se + tgt_se + tau)
-                                        |
-                                 Audio converti @ 22050 Hz
-```
+Trois vecteurs de timbre ; aucun son n'est livré.
 
-La référence cible est polymorphe :
-- **str** : nom de preset ("fr-f1") ou chemin vers un fichier audio
-- **ndarray** : audio brut (1D) ou speaker embedding (1, 256, 1)
-- **list** : plusieurs références (poids égaux)
-- **dict** : blend pondéré (`{"fr-f1": 0.5, "fr-f3": 0.5}`)
+| Identifiant | Voix | Licence du vecteur |
+|-------------|------|--------------------|
+| `fr-f1` | féminine, corpus SIWIS | CC BY 4.0 |
+| `melange-f` | voix mélangée féminine (plusieurs voix, dont SIWIS) | CC BY 4.0 |
+| `melange-h` | voix mélangée masculine (plusieurs voix) | CC BY 4.0 |
 
-Les 2 modèles ONNX :
-- `openvoice_se.onnx` (3.2 Mo) — extraction de speaker embedding
-- `openvoice_vc.onnx` (123 Mo) — conversion zero-shot
+Les voix mélangées sont des vecteurs moyens, mesurés pour ne ressembler à aucune des voix dont elles sont tirées. Le décalage de formants (`sr_override`) ne s'applique qu'aux références audio : avec un préréglage, il est ignoré.
 
 ---
 
-## Trick SR (décalage de formants)
+## Voix de référence et consentement
 
-Le paramètre `sr_override` trompe OpenVoice sur le sample rate de la référence, ce qui décale les formants sans changer le pitch. Cela permet de créer des variantes homme/enfant à partir d'un même preset.
+Convertir vers une voix de référence quelconque est la fonction même d'un outil zero-shot : le module l'accepte, en local.
 
-| sr_override | Factor | Effet |
-|-------------|--------|-------|
-| 44100 | 0.5x | Formants baissés (voix grave/masculine) |
-| 22050 | 1.0x | Neutre (pas de décalage) |
-| 11025 | 2.0x | Formants montés (voix aiguë/enfant) |
+**N'utilisez que votre propre voix, ou celle d'une personne qui vous a donné son accord écrit.** Imiter la voix d'une personne sans son consentement peut porter atteinte à ses droits (Code civil, art. 9). Diffuser un tel contenu sans qu'il soit évident, ou expressément indiqué, qu'il est généré par un algorithme peut aussi constituer un délit (Code pénal, art. 226-8).
 
-Formule : `factor = 22050 / sr_override`
+---
+
+## Marquage IA
+
+Toute sortie de conversion porte un filigrane inaudible **AudioSeal** (Meta, licence MIT). Aucune option ne le désactive : si le modèle du filigrane manque ou est altéré, la conversion échoue et ne rend aucun son.
+
+**Ne retirez pas ce marquage** : le règlement européen sur l'IA (art. 50) l'exige.
+
+Pour vérifier un son, sans PyTorch :
+
+```python
+import soundfile as sf
+from lectura_vc_zeroshot._filigrane import detecter, marque_retrouvee
+
+audio, sr = sf.read("sortie.wav", dtype="float32")
+p, bits = detecter(audio, sr)
+print(marque_retrouvee(p, bits))   # True : marque Lectura retrouvée
+```
+
+Le détecteur public d'AudioSeal (`audioseal_detector_16bits`, PyTorch) retrouve aussi la marque.
 
 ---
 
@@ -148,17 +116,22 @@ Formule : `factor = 22050 / sr_override`
 pip install lectura-vc-zeroshot
 ```
 
-Le paquet contient le code : il fonctionne par l'API de Lectura (avec une clé) ou, en local, avec vos propres modèles. Les modèles convertis depuis OpenVoice v2 (~126 Mo) ne sont pas inclus ; OpenVoice est distribué sous licence MIT.
+Au premier usage, le paquet télécharge depuis Hugging Face ([lecturaworld/lectura-vc-zeroshot-v0](https://huggingface.co/lecturaworld/lectura-vc-zeroshot-v0)) ce qui lui manque, et vérifie chaque fichier par son empreinte SHA-256 :
+
+| Fichier | Taille | Rôle | Licence |
+|---------|--------|------|---------|
+| `openvoice_se.onnx`, `openvoice_vc.onnx` | 3,3 Mo, 128 Mo | extracteur de timbre et convertisseur OpenVoice V2 | MIT (MyShell.ai) |
+| `generator_base.onnx` | 58,9 Mo | générateur du filigrane AudioSeal | MIT (Meta) |
+| `detector_base.onnx` | 34,7 Mo | détecteur AudioSeal (seulement si vous appelez `detecter`) | MIT (Meta) |
+| `fr-f1.npy`, `melange-f.npy`, `melange-h.npy` | 1 Ko chacun | vecteurs de timbre des préréglages | CC BY 4.0 |
+
+Les modèles vont dans `~/.lectura/models/vc/` (ou `$LECTURA_MODELS_DIR/vc/`, ou `models_dir=`). `LECTURA_HORS_LIGNE=1` interdit tout téléchargement ; le message d'erreur dit alors quoi poser à la main.
 
 ---
 
-## Caractéristiques techniques
+## Licence
 
-- **OpenVoice v2 ONNX** : conversion zero-shot, n'importe quelle voix cible
-- **6 presets** (fr-f1 … fr-h3), par l'API seulement
-- **Blend pondéré** : mélange linéaire des speaker embeddings
-- **Cache SE** : les embeddings sont cachés pour éviter les ré-extractions
-- **Lazy loading** : sessions ONNX chargées à la première utilisation
-- **ONNX Runtime pur** : pas de dépendance PyTorch
-- **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé ; modèles OpenVoice v2 sous licence MIT — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})
+- **Code** : AGPL-3.0-or-later.
+- **Modèles** : OpenVoice V2 (MyShell.ai) et AudioSeal (Meta), sous licence MIT.
+- **Préréglages de timbre** : CC BY 4.0 ; crédits dans le fichier NOTICE du paquet.
+- **Usage commercial ou intégration dans un produit fermé** : compris dans toute licence Lectura v1, ou sur demande par la [page Contact]({{ '/contact/' | relative_url }}). Les modèles de tiers et les préréglages gardent leur propre licence.

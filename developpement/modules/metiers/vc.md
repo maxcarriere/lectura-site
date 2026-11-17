@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/vc/
 ---
 
-> **Génération v0.** Cette page présente la conversion vocale de la première génération de Lectura. Le module publié est [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}), sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
+> **Génération v0, gratuite.** Cette page présente la conversion vocale de la première génération de Lectura. Le module publié est [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) : code sous AGPL-3.0 ; modèles OpenVoice et AudioSeal sous licence MIT, préréglages de timbre sous CC BY 4.0 (téléchargés depuis Hugging Face au premier usage, puis hors ligne, sans clé). Usage commercial : compris dans toute licence Lectura v1, ou sur demande. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Conversion vocale</h1>
@@ -20,20 +20,20 @@ redirect_from:
 
 ## Présentation
 
-Conversion vocale pour le français. Le module publié de la génération v0 est **[VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }})** (`lectura-vc-zeroshot`) : OpenVoice v2 — conversion vers n'importe quelle voix via un extrait de référence ou un preset.
+Conversion vocale pour le français. Le module publié de la génération v0 est **[VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }})** (`lectura-vc-zeroshot`) : OpenVoice V2, en local, vers un préréglage ou vers une voix de référence. N'utilisez que votre propre voix, ou celle d'une personne qui vous a donné son accord écrit. Toute sortie porte un filigrane IA (AudioSeal) qu'il est interdit de retirer (règlement européen sur l'IA, art. 50).
 
 | Caractéristique | Valeur |
 |-----------------|--------|
-| **Zero-shot** | N'importe quelle voix avec un preset ou 5-10s de référence |
-| **Presets** | 6 voix, par l'API seulement |
-| **Blend** | Mélange pondéré de presets ou d'extraits audio |
+| **Zero-shot** | Un préréglage, ou un enregistrement de référence fourni avec consentement |
+| **Préréglages** | 3 timbres : `fr-f1`, voix mélangée féminine (`melange-f`), voix mélangée masculine (`melange-h`) |
+| **Mélange** | Mélange pondéré de préréglages |
 | **Backends** | ONNX Runtime pur (pas de PyTorch) |
 
 ---
 
 ## Essayer en ligne
 
-*La démo utilise l'API Lectura — aucun téléchargement nécessaire.*
+*La démo tourne sur le serveur de Lectura : rien à installer. Le module, lui, tourne en local.*
 
 <div class="vc-demo">
   <div class="vc-controls">
@@ -96,15 +96,11 @@ from lectura_vc_zeroshot import creer_engine
 
 engine = creer_engine()
 
-# Zero-shot (preset)
-audio, sr = engine.convert(audio="input.wav", reference="fr-f1", sr_in=16000)
+# vers un préréglage
+audio, sr = engine.convert("source.wav", "melange-h")
 
-# Blend pondéré
-audio, sr = engine.convert(
-    audio="input.wav",
-    reference={"fr-f1": 0.5, "fr-f3": 0.3, "fr-f2": 0.2},
-    sr_in=16000,
-)
+# mélange pondéré de préréglages
+audio, sr = engine.convert("source.wav", {"fr-f1": 0.5, "melange-f": 0.5})
 ```
 
 Plus d'exemples sur la page [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}).
@@ -115,7 +111,7 @@ Plus d'exemples sur la page [VC ZeroShot]({{ '/developpement/modules/outils/vc-z
 
 | Brique | Rôle |
 |--------|------|
-| [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) | OpenVoice v2 — conversion zero-shot |
+| [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}) | OpenVoice V2, conversion zero-shot en local |
 
 ---
 
@@ -125,4 +121,4 @@ Plus d'exemples sur la page [VC ZeroShot]({{ '/developpement/modules/outils/vc-z
 pip install lectura-vc-zeroshot
 ```
 
-Le paquet contient le code ; il fonctionne par l'API de Lectura (avec une clé) ou, en local, avec vos propres modèles convertis depuis OpenVoice v2 (licence MIT) : voir [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}).
+Au premier usage, le paquet télécharge depuis Hugging Face ([lecturaworld/lectura-vc-zeroshot-v0](https://huggingface.co/lecturaworld/lectura-vc-zeroshot-v0)) les modèles OpenVoice V2 et AudioSeal (licence MIT) et les préréglages (CC BY 4.0), puis tout tourne hors ligne, sans clé : voir [VC ZeroShot]({{ '/developpement/modules/outils/vc-zeroshot/' | relative_url }}).

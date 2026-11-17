@@ -6,7 +6,7 @@ redirect_from:
   - /solutions/modules/tokeniseur/
 ---
 
-> **Génération v0.** Ce module fait partie de la première génération de Lectura, publiée en 2026 sous double licence : AGPL-3.0, ou licence commerciale pour l'intégrer à un produit fermé. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
+> **Génération v0, gratuite.** Ce module fait partie de la première génération de Lectura : code sous AGPL-3.0, sans modèle à télécharger. Tout tourne en local, sans clé. Usage commercial : compris dans toute licence Lectura v1, ou sur demande. Voir [Génération v0]({{ '/developpement/modules/v0/' | relative_url }}).
 
 <div class="module-header">
   <h1>Lectura Tokeniseur</h1>
@@ -20,43 +20,47 @@ redirect_from:
 
 ## Présentation
 
-Module autonome, **zéro dépendance** externe. Normalise le texte français (typographie, espaces, Unicode) et le découpe en tokens structurés : mots, ponctuation et **formules** détectées automatiquement.
+Module autonome, **zéro dépendance** externe. Il normalise le texte français (typographie, espaces, Unicode), puis le découpe en tokens : mots, ponctuation, séparateurs et **formules**.
 
-Le Tokeniseur identifie et classifie plus de 15 types de formules :
+Les formules sont détectées et classées :
 
-- Nombres (entiers, décimaux, négatifs)
-- Dates, heures, téléphones
-- Sigles et acronymes
-- Ordinaux, fractions, pourcentages
-- Monnaies, unités de mesure
-- Expressions mathématiques
-- Chiffres romains
+- nombres (entiers, décimaux, négatifs) ;
+- dates, heures, téléphones, numéros ;
+- sigles ;
+- ordinaux, fractions, pourcentages ;
+- monnaies, unités de mesure, notations scientifiques ;
+- expressions mathématiques ;
+- chiffres romains.
 
 ---
 
 ## Exemple
 
 ```python
-from lectura_tokeniseur import tokenise, Formule
+from lectura_tokeniseur import tokenise
 
-tokens = tokenise("Le 25/12/2024, il a lu 42 pages.")
+tokens = tokenise("Le 25 décembre 2024, il faisait -3°C à Paris.")
 
 for token in tokens:
-    detail = token.formule_type.name if isinstance(token, Formule) else ""
-    print(f"{token.text:25s}  {token.type.name:12s}  {detail}")
+    if token.type.name != "SEPARATEUR":
+        print(f"{token.text:20s}  {token.type.name}")
 ```
 
 ```
-Le                         MOT
-25/12/2024                 FORMULE       DATE
-,                          PONCTUATION
-il                         MOT
-a                          MOT
-lu                         MOT
-42                         FORMULE       NOMBRE
-pages                      MOT
-.                          PONCTUATION
+Le                    MOT
+25                    FORMULE
+décembre              MOT
+2024                  FORMULE
+,                     PONCTUATION
+il                    MOT
+faisait               MOT
+-3°C                  FORMULE
+à                     MOT
+Paris                 MOT
+.                     PONCTUATION
 ```
+
+`tokenise()` renvoie une liste plate de tokens (`Mot`, `Ponctuation`, `Separateur`, `Formule`), avec leur position (`span`) dans le texte. `normalise(texte)` prépare le texte (typographie, espaces, Unicode) avant la tokenisation.
 
 ---
 
@@ -71,8 +75,7 @@ pages                      MOT
 ## Installation
 
 ```bash
-pip install lectura-tokeniseur                # zéro dépendance
-pip install lectura-tokeniseur[formules]      # + lectura-formules (enrichissement automatique)
+pip install lectura-tokeniseur
 ```
 
 ---
@@ -81,16 +84,15 @@ pip install lectura-tokeniseur[formules]      # + lectura-formules (enrichisseme
 
 | Fonction | Description |
 |----------|-------------|
-| **Normalisation** | Typographie française, espaces, nettoyage Unicode |
-| **Tokenisation** | Découpage en mots, ponctuation, séparateurs |
-| **Détection de formules** | 15+ types : nombres, dates, heures, sigles, monnaies... |
-| **API simple** | `tokenise(texte)` renvoie une liste de tokens |
+| **Normalisation** | Typographie, espaces, Unicode |
+| **Tokenisation** | Mots, ponctuation, séparateurs |
+| **Détection de formules** | Nombres, dates, heures, téléphones, sigles, ordinaux, fractions, pourcentages, monnaies, unités de mesure, expressions mathématiques, chiffres romains |
+| **API simple** | `tokenise(texte)` renvoie la liste des tokens |
 
 ---
 
-## Caractéristiques techniques
+## Licence
 
-- **Zéro dépendance** Python (aucune dépendance tierce)
-- **Indépendant** de Formules (fonctionne seul, enrichissement optionnel si `lectura-formules` est installé)
-- **Python 3.10+** avec type hints complets (PEP-561)
-- **Licence** : double licence, AGPL-3.0 ou licence commerciale pour l'intégrer à un produit fermé — licence commerciale sur demande : [contacter Lectura]({{ '/contact/' | relative_url }})
+- **Code** : AGPL-3.0-or-later.
+- **Table de données** : la liste des sigles lus comme des mots (`acronymes_mots.json`), tirée du Wiktionnaire et modifiée par Lectura, est sous CC BY-SA 4.0. Source et crédits dans le fichier NOTICE du paquet.
+- **Usage commercial ou intégration dans un produit fermé** : compris dans toute licence Lectura v1, ou sur demande par la [page Contact]({{ '/contact/' | relative_url }}).
