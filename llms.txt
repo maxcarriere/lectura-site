@@ -17,7 +17,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 ## Generations des modules
 
-- v0 : premiere generation, publiee en 2026 sur PyPI et GitHub (https://github.com/maxcarriere/lectura-modules), en double licence AGPL-3.0 ou commerciale ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G (modeles servis par l'API de Lectura, avec une cle), voix diphonique et conversion vocale (OpenVoice).
+- v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice). Usage commercial compris dans toute licence Lectura v1.
 - v1 : generation actuelle, en service sur les serveurs de Lectura pour les demos ; non publiee (ni le code ni les modeles ne sont distribues) ; proposee sous licence.
 - v2 : generation suivante, en preparation, centree sur la voix, en francais et en anglais.
 
@@ -87,6 +87,6 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 
 ## Licences
 
-- Code de la premiere generation (v0) : AGPL-3.0, ou licence commerciale pour un produit ferme.
+- Premiere generation (v0) : code AGPL-3.0, modeles CC BY-NC 4.0 ; usage commercial compris dans toute licence Lectura v1.
 - Generation actuelle (v1) : non publiee ; licence commerciale, sur demande.
 - LeXiK : CC BY-SA 4.0.

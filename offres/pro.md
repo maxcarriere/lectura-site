@@ -15,7 +15,7 @@ description: "L'offre de Lectura aux professionnels : licences commerciales des 
 
 ## Licences commerciales {#licences}
 
-Le code de la v0 est publié sur [GitHub](https://github.com/maxcarriere/lectura-modules) et PyPI en double licence, AGPL-3.0 ou commerciale ; le code d'appel de la v1 le sera sous licence AGPL-3.0. Les modèles s'obtiennent sous licence commerciale : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
+La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite (code sous AGPL-3.0, modèles sous CC BY-NC 4.0) et toute licence v1 en couvre l'usage commercial ; le code d'appel de la v1 sera publié sous licence AGPL-3.0. Les modèles s'obtiennent sous licence commerciale : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
 
 - **Modules de langage** <span class="status-badge status-dispo">Sur devis</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, sur [LecturaLingua](https://lingua.lectura.world).
 - **Modules de voix** <span class="status-badge status-dispo">Sur devis</span> · synthèse et reconnaissance vocales, alignement, sous-titres, sur [LecturaVoice](https://voice.lectura.world).

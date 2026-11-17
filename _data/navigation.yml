@@ -47,7 +47,7 @@
     - title: Les modules
       url: /developpement/modules/
       children:
-        - title: "Archives (v0)"
+        - title: "Gratuite (v0)"
           url: /developpement/modules/v0/
         - title: "En cours (v1)"
           url: /developpement/modules/v1/
