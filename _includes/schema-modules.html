@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
 <svg viewBox="0 0 760 562" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="sm-titre">L'écosystème modulaire de Lectura</title>
-  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (au Transducer ; Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler. Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Aligner puis Subtitler). Le lexique LeXiK entraîne le modèle de mot du Transducer et nourrit Lexicon ; des textes annotés entraînent l'analyse grammaticale ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (au Transducer ; Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le modèle de mot du Transducer et nourrit Lexicon ; des textes annotés entraînent l'analyse grammaticale ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
@@ -34,12 +34,14 @@
     <text x="680" y="100">Voix</text>
   </g>
 
-  <!-- Liens entre modules : Transducer vers Translator, Corrector et Lexicon ; Decoder vers Aligner -->
+  <!-- Liens entre modules : Transducer vers Translator, Corrector et Lexicon ; Decoder vers Aligner et Subtitler ; Synthesizer vers Subtitler -->
   <g fill="none" stroke="#3b2a20" stroke-width="1.3" stroke-dasharray="4 4">
     <path d="M188,108 L95,168"/>
     <path d="M222,132 L220,168"/>
     <path d="M286,102 L375,168"/>
     <path d="M530,146 L538,168"/>
+    <path d="M575,126 L640,168"/>
+    <path d="M592,90 L660,168"/>
   </g>
   <path d="M600,203 L618,203" fill="none" stroke="#3b2a20" stroke-width="1.6" marker-end="url(#sm-fleche-b)"/>
   <path d="M320,203 L282,203" fill="none" stroke="#3b2a20" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#sm-fleche-b)"/>
@@ -107,12 +109,14 @@
     <text x="287" y="363">→ Synthesizer</text>
     <text x="472" y="346">Decoder → Transducer</text>
     <text x="472" y="363">(+ Aligner)</text>
-    <text x="657" y="346">Aligner → Subtitler</text>
+    <text x="657" y="342">Decoder + Aligner</text>
+    <text x="657" y="357">ou Synthesizer</text>
+    <text x="657" y="372">→ Subtitler</text>
     <g font-style="italic" fill="#5a4636">
       <text x="102" y="386">LecturaLingua</text>
       <text x="287" y="386">LecturaVoice</text>
       <text x="472" y="386">LecturaVoice</text>
-      <text x="657" y="386">sous-titrage synchronisé</text>
+      <text x="657" y="390">sous-titrage synchronisé</text>
     </g>
   </g>
 
