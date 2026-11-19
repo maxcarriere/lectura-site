@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
 <svg viewBox="0 0 760 562" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="sm-titre">L'écosystème modulaire de Lectura</title>
-  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Tagger (la phrase) et le Transducer (les mots) passent du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : Lingua (Analyseur = Tagger + Transducer + Lexicon, Correcteur, Traducteur), TTS (Analyseur puis Synthesizer), STT (Decoder puis Analyseur), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le Transducer et nourrit Lexicon ; des textes annotés entraînent le Tagger ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Tagger (la phrase) et le Transducer (les mots) passent du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : NLP, en trois niveaux (Analyseur = Tagger + Transducer + Lexicon, Correcteur, Traducteur), TTS (Analyseur puis Synthesizer), STT (Decoder puis Analyseur), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le Transducer et nourrit Lexicon ; des textes annotés entraînent le Tagger ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
@@ -97,7 +97,7 @@
     <rect x="575" y="300" width="165" height="96" rx="8"/>
   </g>
   <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#2d5a2d" text-anchor="middle">
-    <text x="102" y="324">Lingua</text>
+    <text x="102" y="324">NLP</text>
     <text x="287" y="324">TTS</text>
     <text x="472" y="324">STT</text>
     <text x="657" y="324">STS</text>
