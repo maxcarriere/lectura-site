@@ -19,9 +19,9 @@ description: "L'offre de Lectura aux professionnels : licences commerciales des 
 
 La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite : code sous AGPL-3.0, modèles sous CC BY-NC 4.0. Toute licence v1 en couvre l'usage commercial.
 
-### v1 : licence commerciale, embarquement compris {#v1}
+### v1 : licence commerciale, embarquement illimité {#v1}
 
-Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle, embarquement compris : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
+Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Propre à cette première version, la licence comprend l'embarquement sans limite : le modèle peut être intégré dans autant d'applications et d'appareils que vous le souhaitez. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
 
 - **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
 - **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 490 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
@@ -34,7 +34,7 @@ La génération suivante est en cours de développement. Elle vise des modèles 
 - **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
 - **licence perpétuelle** : passage gratuit à la v2.
 
-<small>À noter : cet avantage porte sur la licence commerciale de la v2. L'embarquement est une autre affaire : intégrer la v2 dans une application ou un appareil diffusé pourra demander un complément, une redevance par exemple, calculé selon le nombre d'appareils, pour que chacun paie selon son usage. Ces conditions d'embarquement ne font pas partie de l'avantage.</small>
+<small>L'avantage porte sur le volet « utilisation commerciale » de la licence v2, et non sur celui de l'embarquement du modèle. Ce dernier pourra, pour des raisons d'équité des prix, être soumis à une redevance selon le nombre d'appareils sur lesquels le modèle est embarqué.</small>
 
 ### Autour des licences
 
@@ -47,6 +47,13 @@ La génération suivante est en cours de développement. Elle vise des modèles 
 ---
 
 ## Corpus de données {#corpus}
+
+Les corpus se vendent sous deux licences :
+
+- **Créateur** : pour une seule personne, tout usage, y compris professionnel, sauf l'intégration dans un produit vendu et l'entraînement d'un modèle d'IA ;
+- **Pro** : pour l'entité qui l'acquiert et les personnes qui travaillent pour elle, sans restriction d'usage, produits vendus et entraînement compris.
+
+Dans les deux cas, les fichiers eux-mêmes ne peuvent être ni revendus ni redistribués. Les données d'entraînement se vendent en licence Pro.
 
 ### Données d'entraînement
 
