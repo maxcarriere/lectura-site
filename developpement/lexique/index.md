@@ -25,17 +25,6 @@ La documentation complète (structure, colonnes, sources, statistiques) est sur 
 
 <p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world/documentation" class="module-badge" style="font-size:1.1em;">» Documentation — lexique.lectura.world «</a></p>
 
-----------|-------------|
-| `GET /lexique/v2/rechercher?q=…&mode=…` | Recherche de formes (modes : exact, prefixe, contient, suffixe) |
-| `GET /lexique/v2/mot/{graphie}` | Tout sur un mot : lemmes, sens et définitions, relations (synonymes, antonymes…), entités |
-| `GET /lexique/v2/formes/{lemme}` | Formes fléchies d'un lemme |
-| `GET /lexique/v2/entite/{qid}` | Détail d'une entité (QID Wikidata) |
-| `GET /lexique/v2/entites?q=…` | Recherche d'entités par mot-clé |
-| `GET /lexique/v2/categories` | Liste des catégories sémantiques |
-| `GET /lexique/v2/categories/{id}/entites` | Entités d'une catégorie |
-
-La documentation interactive est sur [lexique.lectura.world/lexique/v2/docs](https://lexique.lectura.world/lexique/v2/docs).
-
 ---
 
 ## Ce que LeXiK alimente
