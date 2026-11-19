@@ -2,12 +2,12 @@
 title: Offres
 layout: default
 permalink: /offres/
-description: "Les offres de Lectura : pour les professionnels, pour tous, et les tarifs."
+description: "Les offres de Lectura : pour les professionnels, pour tous, les licences et les tarifs."
 ---
 
 {% comment %} Maxime, 13/11/2026 : comme Découvrir et Solutions, un sommaire minimaliste en blocs. Ancienne version (introduction, cartes à texte, lien vers les CGV, qui sont dans le pied de page) : brain/lectura/site/anciennes-pages/offres_index_2026-11-13.md. {% endcomment %}
 
-<div class="decouvrir-cartes dc-trois" markdown="0">
+<div class="decouvrir-cartes dc-deux" markdown="0">
   <a class="dc-carte" href="{{ '/offres/pro/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2v18M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/></svg></span>
     <span class="dc-sur">Offres</span><span class="dc-titre">Pro</span>
@@ -15,6 +15,10 @@ description: "Les offres de Lectura : pour les professionnels, pour tous, et les
   <a class="dc-carte" href="{{ '/offres/perso/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21a6 6 0 0 1 12 0"/><circle cx="17.5" cy="10" r="2.2"/><path d="M15.5 21a4.5 4.5 0 0 1 6.5-3.5"/></svg></span>
     <span class="dc-sur">Offres</span><span class="dc-titre">Perso</span>
+  </a>
+  <a class="dc-carte" href="{{ '/offres/licences/' | relative_url }}">
+    <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+    <span class="dc-sur">Offres</span><span class="dc-titre">Licences</span>
   </a>
   <a class="dc-carte" href="{{ '/offres/tarifs/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>

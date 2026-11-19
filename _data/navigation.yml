@@ -36,6 +36,8 @@
       url: /offres/pro/
     - title: Perso
       url: /offres/perso/
+    - title: Licences
+      url: /offres/licences/
     - title: Tarifs
       url: /offres/tarifs/
 

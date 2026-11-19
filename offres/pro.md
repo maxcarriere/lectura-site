@@ -36,6 +36,8 @@ La génération suivante est en cours de développement. Elle vise des modèles 
 
 <small>L'avantage porte sur le volet « utilisation commerciale » de la licence v2, et non sur celui de l'embarquement du modèle. Ce dernier pourra, pour des raisons d'équité des prix, être soumis à une redevance selon le nombre d'appareils sur lesquels le modèle est embarqué.</small>
 
+Toutes les licences, modèles et ressources, sont détaillées sur la page [Licences]({{ '/offres/licences/' | relative_url }}).
+
 ### Autour des licences
 
 - **Clé d'essai API** <span class="status-badge status-dispo">Sur demande</span> · pour tester les modules dans votre propre code.

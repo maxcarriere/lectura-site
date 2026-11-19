@@ -73,6 +73,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Offres : https://www.lectura.world/offres/
 - Pro : https://www.lectura.world/offres/pro/
 - Perso : https://www.lectura.world/offres/perso/
+- Licences : https://www.lectura.world/offres/licences/
 - Tarifs : https://www.lectura.world/offres/tarifs/
 - Developpement : https://www.lectura.world/developpement/
 - Ecosysteme du projet : https://www.lectura.world/developpement/ecosysteme/
@@ -88,5 +89,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 ## Licences
 
 - Premiere generation (v0) : code AGPL-3.0, modeles CC BY-NC 4.0 ; usage commercial compris dans toute licence Lectura v1.
-- Generation actuelle (v1) : non publiee ; licence commerciale, sur demande.
+- Generation actuelle (v1) : licence commerciale, annuelle ou perpetuelle, embarquement illimite ; prix sur lingua.lectura.world et voice.lectura.world.
+- Generation suivante (v2) : en developpement ; avantage pour les acheteurs v1 (annuelle : 50 % de remise ; perpetuelle : passage gratuit), hors embarquement.
+- Ressources (corpus, sons, images) : licence Createur ou Pro : https://www.lectura.world/offres/licences/
 - LeXiK : CC BY-SA 4.0.
