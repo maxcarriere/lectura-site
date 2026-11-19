@@ -38,7 +38,7 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 *Jeux* <span class="status-badge status-cours">En préparation</span>
 
 - **Mots croisés phonétiques** · un jeu de mots croisés où l'on pose des sons plutôt que des lettres.
-- **MiniGames** · des jeux courts pour manipuler les sons et les syllabes.
+- **MiniGames** · des jeux courts bâtis sur des mécaniques universelles (serpent, casse-briques, arcade…), pour manipuler les sons et les syllabes.
 
 ---
 
