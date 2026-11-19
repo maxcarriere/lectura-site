@@ -2006,6 +2006,7 @@ html[data-darkreader-mode] .parchment-content a.projet-logo.projet-logo, html .p
 /* Schéma de l'écosystème (14/11) */
 .schema-ecosysteme { margin: 1.8rem auto; max-width: 720px; }
 .schema-ecosysteme svg { display: block; width: 100%; height: auto; }
+.schema-ecosysteme figcaption { margin-top: .6rem; font-size: .9rem; line-height: 1.5; text-align: center; color: #5a4636; }
 /* Équipe (14/11) : un bloc par membre, photo ronde, rôle, présentation */
 .equipe-membres { display: grid; gap: 1.4rem; margin: 1.5rem 0 2rem; }
 .parchment-content .equipe-membre { display: flex; gap: 1.4rem; align-items: flex-start; padding: 1.2rem; border: 1px solid rgba(13, 13, 13, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.35); }
