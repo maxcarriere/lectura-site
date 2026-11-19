@@ -7,7 +7,7 @@ description: "Les licences de Lectura en un coup d'œil : modèles v0 (gratuits,
 
 {% comment %} Maxime, 19/11/2026 : une page qui regroupe tous les cas de licence, comme Tarifs pour les prix. Sources : DECISIONS du 19/11 (v1 en vente, avantage v2, embarquement), règle des licences des ressources du 16/11 (lectura/CLAUDE.md), grille des modules (prix sur les sites projets). La page Pro garde un résumé et renvoie ici. {% endcomment %}
 
-Lectura ne vend jamais la propriété de ses produits : l'achat donne une licence d'utilisation. Cette page rassemble les cas ; pour chaque produit, le contrat de licence, présenté avant l'achat, fait foi.
+Lectura ne vend pas la propriété de ses produits : l'achat donne une licence d'utilisation. Cette page rassemble les cas ; pour chaque produit, le contrat de licence, présenté avant l'achat, fait foi.
 
 ---
 
