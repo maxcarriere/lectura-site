@@ -34,7 +34,7 @@ La génération suivante est en cours de développement. Elle vise des modèles 
 - **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
 - **licence perpétuelle** : passage gratuit à la v2.
 
-Dans les deux cas, l'avantage porte sur l'usage de la v2 sans embarquement : l'intégrer dans une application ou un service diffusé demande une licence à part.
+Dans les deux cas, l'avantage ne comprend pas l'embarquement de la v2. L'intégrer dans une application ou un appareil diffusé demande une licence à part, dont le prix dépend du nombre d'appareils sur lesquels le modèle est embarqué : chacun paie ainsi selon l'usage qu'il en fait.
 
 ### Autour des licences
 
