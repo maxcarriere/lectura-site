@@ -39,7 +39,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 ## Offre
 
 - Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), Lexicon et corpus (LecturaLexique), cle d'essai API sur demande, integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. L'API sert aux demos et a l'essai ; les modeles sont livres et tournent chez le client.
-- Perso : par projet, Lectura Education (methode de lecture, applications), Lectura Tools (lecteur syllabique, Loupe Reader, Voice Edition, DicoRimes), Lectura Games, Lectura Books, en preparation ; outils gratuits en ligne des aujourd'hui (lecture syllabique, lecture a voix haute, dictionnaire).
+- Perso : par projet, Lectura Education (methode de lecture, applications), Lectura Tools (lecteur syllabique, Text Analyser, Voice Edition, DicoRimes), Lectura Games, Lectura Books, en preparation ; outils gratuits en ligne des aujourd'hui (lecture syllabique, lecture a voix haute, dictionnaire).
 
 ## Methode de travail
 
