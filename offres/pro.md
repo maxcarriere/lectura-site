@@ -77,11 +77,18 @@ Pour les éditeurs jeunesse et scolaires : transformer vos livres en supports p�
 
 Des compétences transversales, en prolongement d'un autre service ou comme une prestation à part entière.
 
+### Développement de supports
+
+- **Réalisation de maquettes** <span class="status-badge status-dispo">Sur devis</span>
 - **Création de site web** <span class="status-badge status-dispo">Sur devis</span>
-- **Application mobile** <span class="status-badge status-dispo">Sur devis</span>
+- **Développement d'une application mobile** <span class="status-badge status-dispo">Sur devis</span>
 - **Réalisation d'interface** <span class="status-badge status-dispo">Sur devis</span> · web ou bureau, pour un modèle ou un outil.
+
+### Ingénierie des modèles
+
 - **Préparation de données** <span class="status-badge status-dispo">Sur devis</span>
 - **Automatisation de tâches** <span class="status-badge status-dispo">Sur devis</span>
+- **Entraînement complet d'un modèle** <span class="status-badge status-dispo">Sur devis</span> · des données au modèle livré.
 
 ---
 
