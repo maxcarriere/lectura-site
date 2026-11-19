@@ -26,7 +26,7 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 
 *Utilitaires* <span class="status-badge status-cours">En préparation</span>
 
-- **Lecteur syllabique** · lire n'importe quel texte syllabe par syllabe, avec un surlignage synchronisé.
+- **Lecteur syllabique** · une application mobile qui photographie n'importe quel texte et en propose une lecture syllabique, avec un surlignage synchronisé : livres, emballages, mots écrits à la main… tout ce que l'enfant a sous les yeux devient un support d'apprentissage.
 - **Loupe Reader** · enrichir le texte affiché à l'écran d'informations grammaticales et sémantiques.
 - **Voice Edition** · un éditeur vocal qui génère les sous-titres d'une vidéo.
 - **DicoRimes** · un dictionnaire de rimes.
