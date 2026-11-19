@@ -29,7 +29,7 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 - **Lecteur syllabique** · une application mobile qui photographie n'importe quel texte et en propose une lecture syllabique, avec un surlignage synchronisé : livres, emballages, mots écrits à la main… tout ce que l'enfant a sous les yeux devient un support d'apprentissage.
 - **Text Analyser** · un programme de bureau qui enrichit le texte affiché à l'écran, ou saisi par l'utilisateur, d'informations grammaticales et sémantiques, tirées des modèles d'analyse du langage de Lectura et du dictionnaire [WiKiLeXiK](https://lexique.lectura.world), et qui en propose une correction pédagogique.
 - **Voice Edition** · un programme de bureau, éditeur vocal qui génère les sous-titres d'une vidéo.
-- **DicoRimes** · un dictionnaire de rimes.
+- **DiCoMo** · une application mobile à l'interface simplifiée, pour trouver instantanément les rimes, les synonymes, la conjugaison et la grammaire d'un mot.
 
 ---
 
