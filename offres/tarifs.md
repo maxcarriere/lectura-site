@@ -21,7 +21,7 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 ## Licences {#licences}
 
-Les modèles v1 se vendent en licence pro, annuelle ou perpétuelle (2,5 fois le prix annuel), embarquement compris. Les prix sont affichés sur les sites projets : modules de langage **à partir de 499 € HT par an** sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix **à partir de 490 € HT par an** sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Chaque licence v1 donne un avantage sur la [v2]({{ '/offres/pro/' | relative_url }}#v2) : 50 % de remise pour une licence annuelle, passage gratuit pour une licence perpétuelle.
+Les modules v1 se vendent en licence commerciale, annuelle ou perpétuelle (2,5 fois le prix annuel), embarquement illimité. Le module complet, qui tourne en local et prêt à embarquer, s'obtient par téléchargement une fois la licence réglée. Les prix sont affichés sur les sites projets : modules de langage **à partir de 499 € HT par an** sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix **à partir de 490 € HT par an** sur [LecturaVoice](https://voice.lectura.world/modeles/licences), module Lexicon **290 € HT par an** sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr), offert avec les modules de langage. Chaque licence v1 donne un avantage sur la [v2]({{ '/offres/pro/' | relative_url }}#v2) : 50 % de remise pour une licence annuelle, passage gratuit pour une licence perpétuelle.
 
 Sur devis : l'option code d'entraînement et données, l'accompagnement dans l'intégration logicielle.
 
@@ -31,7 +31,7 @@ Ce que couvre chaque licence : page [Licences]({{ '/offres/licences/' | relative
 
 ## Produits {#produits}
 
-Les produits ont leur prix affiché sur leur site projet, où ils s'achètent directement : le module Lexicon et les corpus (syllabes, mots illustrés) sur [LecturaLexique](https://lexique.lectura.world). Les produits pour apprendre à lire auront le leur sur LecturaEducation.
+Les produits ont leur prix affiché sur leur site projet, où ils s'achètent directement : les corpus (syllabes, mots illustrés) sur [LecturaLexique](https://lexique.lectura.world). Les produits pour apprendre à lire auront le leur sur LecturaEducation.
 
 ---
 

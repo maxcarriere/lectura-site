@@ -25,7 +25,7 @@ Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle 
 
 - **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
 - **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 490 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
-- **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, sur [LecturaLexique](https://lexique.lectura.world).
+- **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, 290 € HT par an (offert avec les modules de langage), sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
 ### v2 : licence commerciale, embarquement à part {#v2}
 
