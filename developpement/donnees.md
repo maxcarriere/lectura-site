@@ -2,12 +2,16 @@
 title: "Corpus d'entraînement"
 layout: default
 permalink: /developpement/donnees/
-description: "Les corpus d'entraînement de Lectura : textes annotés en grammaire et en phonétique, parole alignée, et leurs sources publiques."
+description: "Les corpus d'entraînement de Lectura : une base de mots tirée de LeXiK, des textes annotés en grammaire et en phonétique, de la parole alignée, et leurs sources publiques."
 ---
 
 {% comment %} Réécrite le 19/11/2026 (Maxime : uniformiser les ressources sur le schéma de l'écosystème ; LeXiK n'est plus présenté deux fois). Faits repris des pages Corpus de LecturaLingua et LecturaVoice (en ligne le 19/11). Ancienne version : brain anciennes-pages/developpement_donnees_2026-11-19.md. {% endcomment %}
 
-Les modèles de Lectura apprennent sur deux sortes de données : des textes annotés et de la parole enregistrée. Lectura les rassemble à partir de sources publiques, puis les prépare avec ses propres modules : transcription phonétique, syllabes, alignement des lettres et des sons, alignement du texte sur l'audio, filtrage des passages mal transcrits. La phonétique de base vient du lexique [LeXiK]({{ '/developpement/lexique/' | relative_url }}).
+Les modèles de Lectura apprennent sur trois sortes de données : des mots, des textes annotés et de la parole enregistrée. Lectura les rassemble à partir de sources publiques, puis les prépare avec ses propres modules : transcription phonétique, syllabes, alignement des lettres et des sons, alignement du texte sur l'audio, filtrage des passages mal transcrits. La phonétique de base vient du lexique [LeXiK]({{ '/developpement/lexique/' | relative_url }}).
+
+## Les mots {#mots}
+
+Une base de mots tirée de LeXiK : chaque mot et chaque locution, avec sa prononciation, ses syllabes et l'alignement de ses lettres sur ses sons, pondérés par leur fréquence. Elle entraîne le modèle de mot des modules de texte.
 
 ## Les textes annotés {#textes}
 

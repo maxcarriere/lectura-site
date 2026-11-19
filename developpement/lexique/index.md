@@ -25,16 +25,7 @@ La documentation complète (structure, colonnes, sources, statistiques) est sur 
 
 <p style="text-align:center; margin:1.5em 0;"><a href="https://lexique.lectura.world/documentation" class="module-badge" style="font-size:1.1em;">» Documentation — lexique.lectura.world «</a></p>
 
-### L'API du dictionnaire
-
-Les pages de WiKiLeXiK s'appuient sur une API, documentée ici pour la transparence. Elle sert le dictionnaire et ses démos ; elle n'est pas proposée comme service.
-
-```
-https://lexique.lectura.world/lexique/v2/
-```
-
-| Endpoint | Description |
-|----------|-------------|
+----------|-------------|
 | `GET /lexique/v2/rechercher?q=…&mode=…` | Recherche de formes (modes : exact, prefixe, contient, suffixe) |
 | `GET /lexique/v2/mot/{graphie}` | Tout sur un mot : lemmes, sens et définitions, relations (synonymes, antonymes…), entités |
 | `GET /lexique/v2/formes/{lemme}` | Formes fléchies d'un lemme |
