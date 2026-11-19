@@ -24,7 +24,7 @@ La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite : code s
 Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Propre à cette première version, la licence comprend l'embarquement illimité du modèle : il peut être intégré dans autant d'applications et d'appareils que vous le souhaitez. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
 
 - **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
-- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 490 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
+- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 999 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
 - **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, 290 € HT par an (offert avec les modules de langage), sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
 ### v2 : licence commerciale, embarquement à part {#v2}

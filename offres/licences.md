@@ -36,7 +36,7 @@ Les modèles v1 s'obtiennent sous licence commerciale :
 
 **Lexicon.** Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0) et se télécharge gratuitement ; le code de Lexicon sera publié sous AGPL-3.0. Le module Lexicon (le code, des lexiques allégés et optimisés, prêts à embarquer, et la licence commerciale) coûte 290 € HT par an seul ; il est offert avec tout module de langage de LecturaLingua, qui l'intègre. Comme toute licence v1, il couvre l'usage commercial de la v0.
 
-Prix : modules de langage à partir de 499 € HT par an sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix à partir de 490 € HT par an sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
+Prix : modules de langage à partir de 499 € HT par an sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix à partir de 999 € HT par an sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
 
 ### v2 : licence commerciale, embarquement à part {#v2}
 
