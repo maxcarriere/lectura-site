@@ -24,7 +24,7 @@ Module d'accès à une base lexicale du français : lemmes, formes fléchies ave
 
 Le paquet ne contient que le code d'accès. **Aucune base lexicale n'est incluse** : `Lexique` ouvre le fichier que vous lui indiquez, au format SQLite, CSV ou TSV (détection par l'extension). Les résultats dépendent de la base fournie.
 
-La base lexicale de Lectura (lemmes, formes fléchies, définitions, entités, relations sémantiques) n'est pas distribuée avec ce paquet. Pour y accéder, passez par la [page Contact]({{ '/contact/' | relative_url }}).
+Ce paquet ne contient pas de base lexicale. Le lexique LeXiK, lui, est libre (CC BY-SA 4.0) et se télécharge gratuitement sur [LecturaLexique](https://lexique.lectura.world/lexik) ; les données du dictionnaire WiKiLeXiK (définitions, entités, relations sémantiques) ne sont pas distribuées : pour en parler, passez par la [page Contact]({{ '/contact/' | relative_url }}).
 
 ---
 

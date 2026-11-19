@@ -18,8 +18,8 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 ## Generations des modules
 
 - v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice). Usage commercial compris dans toute licence Lectura v1.
-- v1 : generation actuelle, en service sur les serveurs de Lectura pour les demos ; non publiee (ni le code ni les modeles ne sont distribues) ; proposee sous licence.
-- v2 : generation suivante, en preparation, centree sur la voix, en francais et en anglais.
+- v1 : generation actuelle, en service pour les demos ; en vente sous licence commerciale (annuelle ou perpetuelle, embarquement illimite), modules livres et utilises en local.
+- v2 : generation suivante, en developpement : moteur vocal unifie, modeles de texte plus legers, autres langues.
 
 ## Technologie (v1)
 
@@ -60,7 +60,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Zmaths : https://www.lectura.world/autres-sites/zmaths/
 - Solutions : https://www.lectura.world/solutions/
 - Solutions technologiques : https://www.lectura.world/solutions/technologiques/
-- Solutions educatives : https://www.lectura.world/solutions/educatives/
+- Solutions pedagogiques : https://www.lectura.world/solutions/educatives/
 - Intelligence artificielle (comprendre l'IA, entrainer des modeles, organiser le travail avec elle) : https://www.lectura.world/solutions/intelligence-artificielle/
 - Analyse du langage : https://www.lectura.world/solutions/technologiques/#analyse-du-langage
 - Synthese vocale : https://www.lectura.world/solutions/technologiques/#synthese-vocale
@@ -80,7 +80,6 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Ressources (lexique, donnees, corpus) : https://www.lectura.world/developpement/ressources/
 - Modules (v1 et archives v0) : https://www.lectura.world/developpement/modules/
 - Logiciels (bureau, applications), prevus pour 2027 : https://www.lectura.world/developpement/logiciels/
-- Ressources : https://www.lectura.world/produits/ressources/
 - Donnees : https://www.lectura.world/developpement/donnees/
 - Recherche : https://www.lectura.world/developpement/recherche/
 - Conditions generales de vente : https://www.lectura.world/cgv/

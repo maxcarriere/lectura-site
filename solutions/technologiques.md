@@ -47,7 +47,7 @@ Comparaison sur le corpus WiCoPaCo (4 820 phrases, même banc pour les trois out
 
 </div>
 
-**Anglais** : un module équivalent existe pour l'anglais, avec les mêmes fonctionnalités (catégories justes à 95,0 % depuis le texte, 94,9 % depuis la phonétique), et un correcteur anglais ; la phonétique y suit l'accent américain et marque l'accent tonique. Il peut être complété d'un modèle de traduction anglais ↔ français, qui n'est pas développé par Lectura : OPUS-MT, de l'université d'Helsinki (licence Apache 2.0).
+**Anglais** : un module équivalent existe pour l'anglais, avec les mêmes fonctionnalités (catégories justes à 95,0 % depuis le texte, 94,9 % depuis la phonétique), et un correcteur anglais ; la phonétique y suit l'accent américain et marque l'accent tonique. Il peut être complété du Translator, la traduction anglais ↔ français de Lectura : la traduction elle-même repose sur OPUS-MT, de l'université d'Helsinki (licence Apache 2.0), et Lectura y ajoute l'alignement mot à mot, le glossaire en contexte et la conversion des dates, heures et monnaies.
 
 **Applications possibles**
 
@@ -186,7 +186,7 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 **Composantes / Fonctionnalités**
 
 - **Livres** : mise en page de livres papier ou numériques (e-books), jusqu'à leur publication ; le texte peut y être mis en forme pour l'apprentissage (syllabes, sons en couleur, lettres muettes).
-- **Logiciels** : programmes de bureau qui utilisent les solutions présentées ci-dessus.
+- **Logiciels** : logiciels de bureau et applications qui utilisent les solutions présentées ci-dessus.
 - **Applications** : applications mobiles pour Android et iOS, qui embarquent les sons ou la voix.
 - **Sites web** : mise en forme de contenus pour le web, comme les pages et les démos des sites projets de Lectura.
 - **Contenus multimédias** :

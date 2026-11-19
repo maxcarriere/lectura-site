@@ -38,6 +38,6 @@ Au printemps et à l'été 2026, Lectura a prototypé plusieurs programmes sur c
   <figcaption>L'explorateur lexical, prototype de 2026 : recherche par orthographe, phonétique, rimes ou anagrammes, fiches des mots et des lemmes.</figcaption>
 </figure>
 
-Ces essais ont été **mis en pause en juillet 2026** pour concentrer le travail sur les modules eux-mêmes, devenus la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}). Leur développement reprend sur cette base, pour 2027. Les produits qui en sortiront seront présentés quand ils seront en développement.
+Ces essais ont été **mis en pause en juillet 2026** pour concentrer le travail sur les modules eux-mêmes, devenus la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}). Leur développement reprend sur cette base, pour 2027. Les produits qui en sortiront seront présentés au fil de leur développement.
 
 En attendant, leurs fonctions principales s'essaient en ligne : la synthèse et le sous-titrage sur [LecturaVoice](https://voice.lectura.world), l'analyse et la correction sur [LecturaLingua](https://lingua.lectura.world), le dictionnaire sur [LecturaLexique](https://lexique.lectura.world).

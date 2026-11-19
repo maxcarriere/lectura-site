@@ -35,7 +35,7 @@ Le sous-domaine **lexique.lectura.world** et l'API (api.lectura.world) sont héb
 
 L'ensemble du contenu du site (textes, images, code, données, modèles) est la propriété de Maxime Carrière, sauf mention contraire.
 
-La première génération des modules Lectura (v0) est gratuite : son code est publié sous licence **AGPL-3.0** et ses modèles sous licence **CC BY-NC 4.0**, sans usage commercial ; l'usage commercial est compris dans toute licence Lectura v1. La génération actuelle n'est pas distribuée librement ; son utilisation commerciale est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/offres/pro/#licences' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
+La première génération des modules Lectura (v0) est gratuite : son code est publié sous licence **AGPL-3.0** et ses modèles sous licence **CC BY-NC 4.0**, sans usage commercial ; l'usage commercial est compris dans toute licence Lectura v1. La génération actuelle n'est pas distribuée librement ; son utilisation commerciale est soumise à une licence commerciale. Pour en savoir plus, consultez la page [Licences]({{ '/offres/licences/' | relative_url }}) ou [contacter Lectura]({{ '/contact/' | relative_url }}).
 
 ---
 
@@ -58,4 +58,4 @@ Les informations présentes sur ce site sont fournies à titre indicatif. Maxime
 
 ## Contact
 
-Pour toute question relative aux mentions légales : [nous contacter]({{ '/contact/' | relative_url }})
+Pour toute question relative aux mentions légales : [contacter Lectura]({{ '/contact/' | relative_url }})

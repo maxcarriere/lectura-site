@@ -60,4 +60,4 @@ Le site contient des liens vers des sites tiers (GitHub, lexique.org, etc.). Lec
 
 ## Contact
 
-Pour toute question relative à la confidentialité : [nous contacter]({{ '/contact/' | relative_url }})
+Pour toute question relative à la confidentialité : [contacter Lectura]({{ '/contact/' | relative_url }})

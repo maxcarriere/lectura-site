@@ -6,7 +6,7 @@ permalink: /contact/
 
 ## Contact
 
-Pour toute question, retour ou proposition de collaboration autour du projet Lectura, vous pouvez nous écrire directement ou utiliser le formulaire ci-dessous.
+Pour toute question, retour ou proposition de collaboration autour du projet Lectura, vous pouvez écrire directement à Lectura ou utiliser le formulaire ci-dessous.
 
 ---
 
@@ -51,7 +51,7 @@ Pour toute question, retour ou proposition de collaboration autour du projet Lec
 
 ---
 
-### Retrouvez-nous
+### Retrouver Lectura
 
 - **GitHub** (première génération des modules) : [github.com/maxcarriere/lectura-modules](https://github.com/maxcarriere/lectura-modules)
 - **LinkedIn** : [linkedin.com/in/maximecarriere](https://www.linkedin.com/in/maximecarriere/)

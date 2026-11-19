@@ -66,10 +66,10 @@ Des données prêtes à l'emploi, pour entraîner vos modèles ou nourrir vos pr
 
 Les corpus se vendent sous deux licences :
 
-- **Créateur** : pour une seule personne, tout usage, y compris professionnel, sauf l'intégration dans un produit vendu et l'entraînement d'un modèle d'IA ;
+- **Créateur** : pour une seule personne, tout usage, y compris professionnel, sauf l'intégration dans un produit vendu ou qui rapporte un revenu, et sauf l'entraînement d'un modèle d'IA ;
 - **Pro** : pour l'entité qui l'acquiert et les personnes qui travaillent pour elle, sans restriction d'usage, produits vendus et entraînement compris.
 
-Dans les deux cas, les fichiers eux-mêmes ne peuvent être ni revendus ni redistribués. Les données d'entraînement se vendent en licence Pro.
+Dans les deux cas, les fichiers eux-mêmes ne peuvent être ni revendus, ni redistribués, ni mis à disposition. Les données d'entraînement se vendent en licence Pro.
 
 ### Données d'entraînement
 

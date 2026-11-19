@@ -89,9 +89,9 @@ Le numérique rend l'apprentissage **interactif** : l'apprenant agit, et l'outil
 **Produits / Services**
 
 - Correcteur pédagogique : chaque correction est expliquée ; 60 % de corrections justes sur le corpus WiCoPaCo, contre 35 à 39 % pour Grammalecte et LanguageTool. *En ligne sur [LecturaLingua](https://lingua.lectura.world).*
-- Dictionnaire de rimes (rimes pauvres, suffisantes, riches).
+- Dictionnaire de rimes (rimes pauvres, suffisantes, riches), base de l'application DiCoMo.
 - Corpus pédagogiques : 1 553 mots choisis pour l'apprentissage, illustrés de plusieurs images chacun, et les 4 946 syllabes du français enregistrées. *Disponibles sur [LecturaLexique](https://lexique.lectura.world).*
-- Jeux de sons : ScrabblePhone, Le Son le plus long.
+- Jeux de sons : mots croisés phonétiques, Le Son le plus long.
 - Mini-jeux qui détournent une mécanique de jeu universelle au service de l'apprentissage des syllabes : serpent, jeu de plateforme, casse-briques avec des syllabes.
 
 ---

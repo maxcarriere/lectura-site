@@ -51,7 +51,7 @@ La voix : synthèse vocale avec surlignage synchronisé du texte, reconnaissance
 
 </div>
 
-Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuelle de nos modules (v1), en service sur nos serveurs. Ni son code ni ses modèles ne sont distribués : pour les utiliser dans un produit, voir [l'offre aux entreprises]({{ '/offres/pro/' | relative_url }}).
+Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuelle des modules de Lectura (v1). Elle est en vente sous licence commerciale : les modules sont livrés et tournent chez le client (voir l'[offre Pro]({{ '/offres/pro/' | relative_url }})).
 
 ---
 
@@ -61,7 +61,7 @@ Les démos de LecturaLingua et de LecturaVoice utilisent la génération actuell
 
 <h3 class="projet-titre" id="lecturaeducation"><span class="cp-icone">{% include icone-projet.html nom='ardoise' %}</span>LecturaEducation</h3>
 
-Le site de nos produits pour apprendre à lire : une méthode de lecture (manuel et application), des applications et des jeux, des histoires syllabiques. **En préparation** : nous construisons d'abord les ressources communes à ces produits, une liste de mots illustrés et la progression des leçons. Le site ouvrira avec le premier produit.
+Le site des produits de Lectura pour apprendre à lire : une méthode de lecture (manuel et application), des applications et des jeux, des histoires syllabiques. **En préparation** : Lectura construit d'abord les ressources communes à ces produits, une liste de mots illustrés et la progression des leçons. Le site ouvrira avec le premier produit.
 
 </div>
 
@@ -79,4 +79,4 @@ D'autres sites sont à l'étude :
 
 ---
 
-Une question sur un projet : [nous contacter]({{ '/contact/' | relative_url }}).
+Une question sur un projet : [contacter Lectura]({{ '/contact/' | relative_url }}).

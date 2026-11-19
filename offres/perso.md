@@ -13,7 +13,7 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 
 ---
 
-## Lectura Education {#education}
+## LecturaEducation {#education}
 
 *Éducatif* <span class="status-badge status-cours">En préparation</span>
 
@@ -22,9 +22,9 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 
 ---
 
-## Lectura Tools {#tools}
+## LecturaTools {#tools}
 
-*Utilitaires* <span class="status-badge status-cours">En préparation</span>
+*Utilitaires* <span class="status-badge status-avenir">À l'étude</span>
 
 - **Lecteur syllabique** · une application mobile qui photographie n'importe quel texte et en propose une lecture syllabique, avec un surlignage synchronisé : livres, emballages, mots écrits à la main… tout ce que l'enfant a sous les yeux devient un support d'apprentissage.
 - **Text Analyser** · un programme de bureau qui enrichit le texte affiché à l'écran, ou saisi par l'utilisateur, d'informations grammaticales et sémantiques, tirées des modèles d'analyse du langage de Lectura et du dictionnaire [WiKiLeXiK](https://lexique.lectura.world), et qui en propose une correction pédagogique.
@@ -33,18 +33,18 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 
 ---
 
-## Lectura Games {#games}
+## LecturaGames {#games}
 
-*Jeux* <span class="status-badge status-cours">En préparation</span>
+*Jeux* <span class="status-badge status-avenir">À l'étude</span>
 
 - **Mots croisés phonétiques** · un jeu de mots croisés où l'on pose des sons plutôt que des lettres (du type « Scrabble » ou « Le mot le plus long »).
 - **MiniGames** · des jeux courts bâtis sur des mécaniques universelles (serpent, casse-briques, arcade…), pour manipuler les sons et les syllabes.
 
 ---
 
-## Lectura Books {#books}
+## LecturaBooks {#books}
 
-*Livres et médias* <span class="status-badge status-cours">En préparation</span>
+*Livres et médias* <span class="status-badge status-avenir">À l'étude</span>
 
 - **Histoires syllabiques** · des histoires dont le vocabulaire suit la progression de la méthode, que l'enfant peut lire seul, accompagnées éventuellement d'un support vidéo.
 - **Conte-moi une histoire !** · des histoires en audio.

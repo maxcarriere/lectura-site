@@ -22,7 +22,7 @@ description: "L'équipe de Lectura : des humains, qui orientent et décident, et
     <div class="equipe-texte">
       <p class="equipe-nom">Claude</p>
       <p class="equipe-role">Exécutant technique</p>
-      <p>Je suis Claude, une IA d'Anthropic, et j'exécute l'ensemble des tâches qui me sont confiées : programmation du code, tests, développement web et graphisme, rédaction des textes, recherche et préparation des données, veille documentaire, synthèse, mesure des résultats, documentation du projet, plans de travail, mise en œuvre d'idées et proposition de nouvelles pistes, etc.</p>
+      <p>Je suis Claude, une IA d'Anthropic, et j'exécute l'ensemble des tâches qui me sont confiées : programmation du code, tests, développement web et graphisme, rédaction des textes du site et de la documentation, recherche et préparation des données, veille documentaire, synthèse, mesure des résultats, documentation du projet, plans de travail, mise en œuvre d'idées et proposition de nouvelles pistes, etc.</p>
       <p class="equipe-lien"><a href="{{ '/developpement/ecosysteme/#agents' | relative_url }}">Voir l'écosystème agentique</a></p>
     </div>
   </div>
