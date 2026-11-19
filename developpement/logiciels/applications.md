@@ -24,4 +24,6 @@ Une application test a été réalisée en 2026 pour valider la chaîne de fabri
   <img src="{{ '/assets/images/logiciels/numreader-2.png' | relative_url }}" alt="NumReader pendant la lecture de 1054 : « cinquante » est surligné, avec le chiffre 5 et la lettre L correspondants" width="216" height="257" loading="lazy">
 </div>
 
-Elle tourne sur Android ; le même code est prévu pour iOS.
+Elle tourne sur Android ; le même code est prévu pour iOS. Ses sons sont produits par une voix de synthèse (Google Cloud Text-to-Speech).
+
+[Télécharger NumReader pour Android]({{ '/assets/telechargements/numreader-0.1.0.apk' | relative_url }}) (version test 0.1.0, fichier APK, 50 Mo). L'application n'est pas sur le Play Store : pour l'installer, autorisez l'installation depuis cette source quand Android le demande.

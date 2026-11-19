@@ -28,6 +28,11 @@ Les logiciels de bureau de Lectura assemblent ses [modules]({{ '/developpement/m
 
 Au printemps et à l'été 2026, Lectura a prototypé plusieurs programmes sur ce modèle : un éditeur qui donne une voix et des sous-titres synchronisés à une vidéo, un outil d'enrichissement de texte (phonétique, grammaire, fréquences, définitions) avec correction, un assistant de saisie, et un lecteur de formules (nombres, dates, heures, sigles). Ils ont montré que les modules pouvaient porter un logiciel complet.
 
+<figure class="capture-logiciel">
+  <img src="{{ '/assets/images/logiciels/explorateur-lexical.png' | relative_url }}" alt="Prototype d'explorateur lexical : recherche de mots par orthographe, phonétique, rimes ou anagrammes, avec filtres de catégorie, de fréquence et d'âge d'acquisition" width="960" height="600" loading="lazy">
+  <figcaption>L'explorateur lexical, prototype de 2026 : recherche par orthographe, phonétique, rimes ou anagrammes, fiches des mots et des lemmes.</figcaption>
+</figure>
+
 Ces essais ont été **mis en pause en juillet 2026** pour concentrer le travail sur les modules eux-mêmes, devenus la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}). Leur développement reprend sur cette base, pour 2027. Les produits qui en sortiront seront présentés quand ils seront en développement.
 
 En attendant, leurs fonctions principales s'essaient en ligne : la synthèse et le sous-titrage sur [LecturaVoice](https://voice.lectura.world), l'analyse et la correction sur [LecturaLingua](https://lingua.lectura.world), le dictionnaire sur [LecturaLexique](https://lexique.lectura.world).
