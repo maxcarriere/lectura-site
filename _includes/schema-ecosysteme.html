@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
-<svg viewBox="0 0 720 530" role="img" aria-labelledby="se-titre se-desc" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 784 640" role="img" aria-labelledby="se-titre se-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="se-titre">L'écosystème du projet Lectura</title>
-  <desc id="se-desc">La phonétique au centre relie le texte (LecturaLingua, à gauche) et la voix (LecturaVoice, à droite) : G2P et P2G entre le texte et la phonétique, TTS et STT entre la phonétique et la voix. Le lexique LeXiK, en bas, fournit les données d'entraînement des modules de texte. Les produits, en haut, réutilisent ces briques.</desc>
+  <desc id="se-desc">Trois couches. En haut, les produits : outils (programmes, applications), éducatif (méthode, applications), divertissement (jeux, livres). Au milieu, les modules : la phonétique au centre relie le texte (LecturaLingua, à gauche) et la voix (LecturaVoice, à droite), par G2P et P2G d'un côté, TTS et STT de l'autre ; les produits réutilisent ces modules. En bas, les données : le lexique LeXiK, qui entraîne les modules de texte, les corpus d'entraînement, qui servent au texte et à la voix, et les corpus pédagogiques, faits avec les voix de synthèse et utilisés par les produits.</desc>
   <defs>
     <marker id="se-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#3b2a20"/>
@@ -11,62 +11,94 @@
     </marker>
   </defs>
 
+  <!-- Couches -->
+  <g fill="rgba(59,42,32,0.045)" stroke="rgba(59,42,32,0.25)" stroke-width="1" stroke-dasharray="4 4">
+    <rect x="6" y="6" width="734" height="150" rx="10"/>
+    <rect x="6" y="178" width="734" height="238" rx="10"/>
+    <rect x="6" y="438" width="734" height="196" rx="10"/>
+  </g>
+  <g font-family="'Cinzel', serif" font-weight="700" font-size="13" fill="#5a4636" letter-spacing="1.5">
+    <text x="20" y="27">PRODUITS</text>
+    <text x="20" y="199">MODULES</text>
+    <text x="20" y="459">DONNÉES</text>
+  </g>
+
   <!-- Liens -->
   <g fill="none" stroke="#3b2a20" stroke-width="1.6">
-    <path d="M125,198 L205,104" marker-end="url(#se-fleche)"/>
-    <path d="M595,198 L515,104" marker-end="url(#se-fleche)"/>
-    <path d="M360,191 L360,104" marker-end="url(#se-fleche)"/>
-    <path d="M195,418 L128,314" marker-start="url(#se-fleche)" marker-end="url(#se-fleche)"/>
-    <path d="M222,300 Q360,372 498,300" stroke-dasharray="5 4" marker-end="url(#se-fleche)"/>
+    <path d="M140,234 L140,140" marker-end="url(#se-fleche)"/>
+    <path d="M380,220 L380,140" marker-end="url(#se-fleche)"/>
+    <path d="M620,234 L620,140" marker-end="url(#se-fleche)"/>
+    <path d="M140,478 L140,352" marker-end="url(#se-fleche)"/>
+    <path d="M330,478 L232,352" marker-end="url(#se-fleche)"/>
+    <path d="M430,478 L528,352" marker-end="url(#se-fleche)"/>
+    <path d="M620,352 L620,478" marker-end="url(#se-fleche)"/>
+    <path d="M720,532 L756,532 L756,32 L380,32 L380,48" marker-end="url(#se-fleche)"/>
   </g>
   <g fill="none" stroke="#2d5a2d" stroke-width="1.8">
-    <path d="M222,238 L294,238" marker-end="url(#se-fleche-v)"/>
-    <path d="M294,272 L222,272" marker-end="url(#se-fleche-v)"/>
-    <path d="M426,238 L498,238" marker-end="url(#se-fleche-v)"/>
-    <path d="M498,272 L426,272" marker-end="url(#se-fleche-v)"/>
+    <path d="M242,276 L314,276" marker-end="url(#se-fleche-v)"/>
+    <path d="M314,306 L242,306" marker-end="url(#se-fleche-v)"/>
+    <path d="M446,276 L518,276" marker-end="url(#se-fleche-v)"/>
+    <path d="M518,306 L446,306" marker-end="url(#se-fleche-v)"/>
   </g>
 
   <!-- Libellés des liens -->
   <g font-family="'EB Garamond', Georgia, serif" font-size="15" fill="#3b2a20">
-    <text x="258" y="230" text-anchor="middle" fill="#2d5a2d" font-weight="700">G2P</text>
-    <text x="258" y="291" text-anchor="middle" fill="#2d5a2d" font-weight="700">P2G</text>
-    <text x="462" y="230" text-anchor="middle" fill="#2d5a2d" font-weight="700">TTS</text>
-    <text x="462" y="291" text-anchor="middle" fill="#2d5a2d" font-weight="700">STT</text>
-    <text x="370" y="150" font-style="italic">réutilisent les briques</text>
-    <text x="150" y="360" text-anchor="end" font-style="italic">données</text>
-    <text x="150" y="377" text-anchor="end" font-style="italic">d'entraînement</text>
-    <text x="360" y="362" text-anchor="middle" font-style="italic">préparation des corpus de parole</text>
+    <text x="278" y="268" text-anchor="middle" fill="#2d5a2d" font-weight="700">G2P</text>
+    <text x="278" y="325" text-anchor="middle" fill="#2d5a2d" font-weight="700">P2G</text>
+    <text x="482" y="268" text-anchor="middle" fill="#2d5a2d" font-weight="700">TTS</text>
+    <text x="482" y="325" text-anchor="middle" fill="#2d5a2d" font-weight="700">STT</text>
+    <text x="390" y="176" font-style="italic">réutilisent les modules</text>
+    <text x="148" y="420" font-style="italic">entraînement</text>
+    <text x="380" y="432" text-anchor="middle" font-style="italic">entraînement</text>
+    <text x="628" y="420" font-style="italic">sons de synthèse</text>
+    <text x="772" y="300" text-anchor="middle" font-style="italic" font-size="14" transform="rotate(-90 772 300)">contenus des produits</text>
   </g>
 
   <!-- Blocs -->
-  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.55)">
-    <rect x="160" y="20" width="400" height="82" rx="8"/>
-    <rect x="20" y="198" width="200" height="114" rx="8"/>
-    <rect x="500" y="198" width="200" height="114" rx="8"/>
-    <rect x="160" y="420" width="400" height="92" rx="8"/>
+  <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.6)">
+    <rect x="40" y="48" width="200" height="90" rx="8"/>
+    <rect x="280" y="48" width="200" height="90" rx="8"/>
+    <rect x="520" y="48" width="200" height="90" rx="8"/>
+    <rect x="40" y="236" width="200" height="114" rx="8"/>
+    <rect x="520" y="236" width="200" height="114" rx="8"/>
+    <rect x="40" y="480" width="200" height="104" rx="8"/>
+    <rect x="280" y="480" width="200" height="104" rx="8"/>
+    <rect x="520" y="480" width="200" height="104" rx="8"/>
   </g>
-  <circle cx="360" cy="255" r="64" fill="rgba(45,90,45,0.12)" stroke="#2d5a2d" stroke-width="1.8"/>
+  <circle cx="380" cy="290" r="64" fill="rgba(45,90,45,0.12)" stroke="#2d5a2d" stroke-width="1.8"/>
 
   <!-- Textes des blocs -->
   <g font-family="'Cinzel', serif" font-weight="700" fill="#0d0d0d" text-anchor="middle">
-    <text x="360" y="52" font-size="19">Les produits</text>
-    <text x="120" y="228" font-size="18">Le texte</text>
-    <text x="600" y="228" font-size="18">La voix</text>
-    <text x="360" y="452" font-size="18">Le lexique LeXiK</text>
-    <text x="360" y="252" font-size="16" fill="#2d5a2d">Phonétique</text>
+    <text x="140" y="84" font-size="17">Outils</text>
+    <text x="380" y="84" font-size="17">Éducatif</text>
+    <text x="620" y="84" font-size="17">Divertissement</text>
+    <text x="140" y="266" font-size="18">Le texte</text>
+    <text x="620" y="266" font-size="18">La voix</text>
+    <text x="380" y="287" font-size="16" fill="#2d5a2d">Phonétique</text>
+    <text x="140" y="512" font-size="17">LeXiK</text>
+    <text x="380" y="512" font-size="14">Corpus d'entraînement</text>
+    <text x="620" y="512" font-size="14">Corpus pédagogiques</text>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" font-size="15" fill="#3b2a20" text-anchor="middle">
-    <text x="360" y="80">corpus · applications pédagogiques · programmes</text>
-    <text x="120" y="250">NLP-FR · NLP-EN</text>
-    <text x="120" y="268">grammaire · syllabes</text>
-    <text x="120" y="286">correcteur</text>
-    <text x="120" y="305" font-style="italic" fill="#5a4636">LecturaLingua</text>
-    <text x="600" y="252">synthèse · reconnaissance</text>
-    <text x="600" y="272">alignement · sous-titres</text>
-    <text x="600" y="298" font-style="italic" fill="#5a4636">LecturaVoice</text>
-    <text x="360" y="276" font-size="16" fill="#2d5a2d">/fɔ.ne.tik/</text>
-    <text x="360" y="476">prononciation syllabée · grammaire · lettres et sons · fréquence</text>
-    <text x="360" y="499" font-style="italic" fill="#5a4636">LecturaLexique · WiKiLeXiK</text>
+    <text x="140" y="110">programmes · applications</text>
+    <text x="380" y="110">méthode · applications</text>
+    <text x="620" y="110">jeux · livres</text>
+    <text x="140" y="285">NLP-FR · NLP-EN</text>
+    <text x="140" y="302">grammaire · syllabes</text>
+    <text x="140" y="319">correcteur</text>
+    <text x="140" y="339" font-style="italic" fill="#5a4636">LecturaLingua</text>
+    <text x="620" y="290">synthèse · reconnaissance</text>
+    <text x="620" y="310">alignement · sous-titres</text>
+    <text x="620" y="336" font-style="italic" fill="#5a4636">LecturaVoice</text>
+    <text x="380" y="311" font-size="16" fill="#2d5a2d">/fɔ.ne.tik/</text>
+    <text x="140" y="536">prononciation · grammaire</text>
+    <text x="140" y="555">lettres et sons · fréquence</text>
+    <text x="140" y="575" font-style="italic" fill="#5a4636">LecturaLexique</text>
+    <text x="380" y="538">phrases annotées</text>
+    <text x="380" y="557">parole alignée</text>
+    <text x="620" y="538">syllabes enregistrées</text>
+    <text x="620" y="557">mots illustrés</text>
+    <text x="620" y="575" font-style="italic" fill="#5a4636">LecturaLexique</text>
   </g>
 </svg>
 </figure>
