@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
 <svg viewBox="0 0 760 562" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="sm-titre">L'écosystème modulaire de Lectura</title>
-  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Transducer passe du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (au Transducer ; Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : NLP (Transducer, Lexicon, Corrector, Translator), TTS (Transducer puis Synthesizer), STT (Decoder puis Transducer), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le modèle de mot du Transducer et nourrit Lexicon ; des textes annotés entraînent l'analyse grammaticale ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Tagger (la phrase) et le Transducer (les mots) passent du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : Lingua (Analyseur = Tagger + Transducer + Lexicon, Correcteur, Traducteur), TTS (Analyseur puis Synthesizer), STT (Decoder puis Analyseur), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le Transducer et nourrit Lexicon ; des textes annotés entraînent le Tagger ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
@@ -38,7 +38,7 @@
   <g fill="none" stroke="#3b2a20" stroke-width="1.3" stroke-dasharray="4 4">
     <path d="M188,108 L95,168"/>
     <path d="M222,132 L220,168"/>
-    <path d="M286,102 L375,168"/>
+    <path d="M300,108 L375,168"/>
     <path d="M530,146 L538,168"/>
     <path d="M575,126 L640,168"/>
     <path d="M592,90 L660,168"/>
@@ -48,12 +48,12 @@
 
   <!-- Pastilles des briques sur l'axe -->
   <g fill="#fbf8f1" stroke="#2d5a2d" stroke-width="1.3">
-    <rect x="172" y="82" width="116" height="26" rx="13"/>
+    <rect x="150" y="82" width="160" height="26" rx="13"/>
     <rect x="472" y="67" width="116" height="26" rx="13"/>
     <rect x="472" y="97" width="116" height="26" rx="13"/>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" font-size="15" font-weight="700" fill="#0d0d0d" text-anchor="middle">
-    <text x="230" y="100">Transducer</text>
+    <text x="230" y="100">Tagger · Transducer</text>
     <text x="530" y="85">Synthesizer</text>
     <text x="530" y="115">Decoder</text>
   </g>
@@ -97,17 +97,17 @@
     <rect x="575" y="300" width="165" height="96" rx="8"/>
   </g>
   <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#2d5a2d" text-anchor="middle">
-    <text x="102" y="324">NLP-FR · NLP-EN</text>
+    <text x="102" y="324">Lingua</text>
     <text x="287" y="324">TTS</text>
     <text x="472" y="324">STT</text>
     <text x="657" y="324">STS</text>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" font-size="13.5" fill="#3b2a20" text-anchor="middle">
-    <text x="102" y="346">Transducer + Lexicon</text>
-    <text x="102" y="363">+ Corrector, Translator</text>
-    <text x="287" y="346">Transducer</text>
+    <text x="102" y="346">Analyseur (FR, EN)</text>
+    <text x="102" y="363">+ Correcteur, Traducteur</text>
+    <text x="287" y="346">Analyseur</text>
     <text x="287" y="363">→ Synthesizer</text>
-    <text x="472" y="346">Decoder → Transducer</text>
+    <text x="472" y="346">Decoder → Analyseur</text>
     <text x="472" y="363">(+ Aligner)</text>
     <text x="657" y="342">Decoder + Aligner</text>
     <text x="657" y="357">ou Synthesizer</text>
@@ -141,7 +141,7 @@
       <text x="133" y="502">entraîne le modèle de mot</text>
       <text x="133" y="519">(Transducer) · nourrit Lexicon</text>
       <text x="380" y="502">entraînent l'analyse</text>
-      <text x="380" y="519">grammaticale (Transducer)</text>
+      <text x="380" y="519">grammaticale (Tagger)</text>
       <text x="627" y="502">entraînent le Synthesizer</text>
       <text x="627" y="519">et le Decoder</text>
     </g>
