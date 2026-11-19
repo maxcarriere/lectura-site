@@ -46,7 +46,7 @@ Apprendre à lire, lire et écouter des textes, jouer avec les sons et les mots 
 
 *Livres et médias* <span class="status-badge status-cours">En préparation</span>
 
-- **Histoires syllabiques** · des histoires dont le vocabulaire suit la progression de la méthode, que l'enfant peut lire seul.
+- **Histoires syllabiques** · des histoires dont le vocabulaire suit la progression de la méthode, que l'enfant peut lire seul, accompagnées éventuellement d'un support vidéo.
 - **Conte-moi une histoire !** · des histoires en audio.
 - **Mediabooks** · des histoires animées en vidéo.
 
