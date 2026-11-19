@@ -15,15 +15,21 @@ description: "L'offre de Lectura aux professionnels : licences commerciales des 
 
 ## Licences commerciales {#licences}
 
-La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite (code sous AGPL-3.0, modèles sous CC BY-NC 4.0) et toute licence v1 en couvre l'usage commercial ; le code d'appel de la v1 sera publié sous licence AGPL-3.0. Les modèles s'obtiennent sous licence commerciale : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
+### v0 : gratuite {#v0}
+
+La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite : code sous AGPL-3.0, modèles sous CC BY-NC 4.0. Toute licence v1 en couvre l'usage commercial.
+
+### v1 : en vente {#v1}
+
+Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle, embarquement compris : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
 
 - **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
 - **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 490 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
 - **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, sur [LecturaLexique](https://lexique.lectura.world).
 
-### La v2, en développement {#v2}
+### v2 : en développement {#v2}
 
-La génération suivante, la v2, est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
+La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
 
 - **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
 - **licence perpétuelle** : passage gratuit à la v2.
