@@ -10,12 +10,12 @@ Les produits de Lectura s'appuient sur sa technologie du langage. Les produits p
   <div class="home-card">
     <h2>Programmes</h2>
     <p>Logiciels de bureau prototypés au printemps et à l'été 2026 (Voice Edition, Lexique Viewer, Formule), aujourd'hui en pause. Une partie de leurs fonctions est en ligne.</p>
-    <a class="more-link" href="{{ '/produits/programmes/' | relative_url }}">Découvrir</a>
+    <a class="more-link" href="{{ '/developpement/logiciels/bureau/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
     <h2>Applications mobiles</h2>
     <p>Des applications pour apprendre à lire : une idée, un prototype, et le travail en cours sur les ressources qu'elles partageront.</p>
-    <a class="more-link" href="{{ '/produits/applications/' | relative_url }}">Découvrir</a>
+    <a class="more-link" href="{{ '/developpement/logiciels/applications/' | relative_url }}">Découvrir</a>
   </div>
   <div class="home-card">
     <h2>Livres & Médias</h2>

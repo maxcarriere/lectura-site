@@ -47,14 +47,8 @@ La documentation interactive est sur [lexique.lectura.world/lexique/v2/docs](htt
 
 ---
 
-## Lexicon — le lexique dans votre application
+## Ce que LeXiK alimente
 
-Le module **Lexicon** embarque le lexique dans une application, hors ligne : lectures, validité, fréquences, recherche. Il est présenté et proposé sous licence commerciale sur [LecturaLexique](https://lexique.lectura.world).
-
-La première génération du module, `lectura-lexique` (v0, publiée sur PyPI), reste documentée avec la [génération v0]({{ '/developpement/modules/outils/lexique/' | relative_url }}).
-
----
-
-## Corpus
-
-Des corpus dérivés de LeXiK (syllabes du français avec leur son, mots illustrés) sont présentés dans [Corpus]({{ '/developpement/corpus/' | relative_url }}) et sur [LecturaLexique](https://lexique.lectura.world). Les autres ressources de Lectura sont dans [Ressources]({{ '/developpement/ressources/' | relative_url }}).
+- **Les modules de texte**, qu'il entraîne et qui l'enrichissent en retour ; le module **Lexicon** l'embarque dans une application, hors ligne (voir la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}) et [LecturaLexique](https://lexique.lectura.world/lexicon/fr)).
+- **Les [corpus d'entraînement]({{ '/developpement/donnees/' | relative_url }})**, dont il fournit la phonétique de base.
+- **Les [corpus pédagogiques]({{ '/developpement/corpus/' | relative_url }})**, dont les listes de mots ou de syllabes suivent ses fréquences et portent sa phonétique et sa grammaire.

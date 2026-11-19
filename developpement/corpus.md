@@ -1,13 +1,13 @@
 ---
-title: Corpus
+title: "Corpus pédagogiques"
 layout: default
 permalink: /developpement/corpus/
-description: "Les corpus de Lectura : les syllabes du français avec leur son, et 1500 Mots, un corpus de mots illustrés du vocabulaire de l'enfant."
+description: "Les corpus pédagogiques de Lectura : les syllabes du français avec leur son, et 1500 Mots, des mots illustrés du vocabulaire de l'enfant."
 ---
 
 {% comment %} Page créée le 14/11/2026 (plan de Maxime). Faits repris des pages lexique.lectura.world/corpus/syllabes et /corpus/mots, lues le 14/11. Les prix et les licences restent sur LecturaLexique (règle : le détail n'est écrit qu'une fois, sur le site projet). {% endcomment %}
 
-Les corpus de Lectura sont tirés de ses modules et de son lexique : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Ils sont présentés, avec une démo, un échantillon gratuit et leurs licences, sur [LecturaLexique](https://lexique.lectura.world).
+Les corpus pédagogiques sont faits pour apprendre à lire et pour les produits qui l'enseignent. Leurs listes de mots ou de syllabes suivent les fréquences du lexique [LeXiK]({{ '/developpement/lexique/' | relative_url }}) et en portent la phonétique et la grammaire ; leurs sons sont dits par les voix de synthèse de Lectura. Ils sont présentés, avec une démo, un échantillon gratuit et leurs licences, sur [LecturaLexique](https://lexique.lectura.world).
 
 ## Syllabes {#syllabes}
 

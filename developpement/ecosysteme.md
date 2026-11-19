@@ -27,7 +27,7 @@ La synthèse vocale (TTS) lit des sons plutôt que des lettres : elle reçoit la
 
 ### Les produits {#produits}
 
-Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, mots illustrés) en sont tirés : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Les [applications pédagogiques]({{ '/solutions/educatives/' | relative_url }}) reposent sur la voix et le surlignage synchronisé. Les [programmes de bureau]({{ '/produits/programmes/' | relative_url }}), prototypés en 2026, assemblaient déjà ces briques.
+Les produits réutilisent ces briques. Les corpus de LecturaLexique (syllabes, mots illustrés) en sont tirés : la phonétique, les syllabes et l'alignement des lettres sur les sons viennent des modules de texte, les données lexicales de LeXiK. Les [applications pédagogiques]({{ '/solutions/educatives/' | relative_url }}) reposent sur la voix et le surlignage synchronisé. Les [logiciels de bureau]({{ '/developpement/logiciels/bureau/' | relative_url }}), prototypés en 2026, assemblaient déjà ces briques.
 
 ## L'écosystème modulaire {#modules}
 

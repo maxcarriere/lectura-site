@@ -58,19 +58,19 @@
     - title: Les ressources
       url: /developpement/ressources/
       children:
-        - title: Lexique
+        - title: LeXiK
           url: /developpement/lexique/
-        - title: "Données d'entraînement"
+        - title: "Corpus d'entraînement"
           url: /developpement/donnees/
-        - title: Corpus
+        - title: "Corpus pédagogiques"
           url: /developpement/corpus/
     - title: Les logiciels
       url: /developpement/logiciels/
       children:
-        - title: Programmes
-          url: /produits/programmes/
+        - title: Logiciels de bureau
+          url: /developpement/logiciels/bureau/
         - title: Applications
-          url: /produits/applications/
+          url: /developpement/logiciels/applications/
     - title: Recherche
       url: /developpement/recherche/
 

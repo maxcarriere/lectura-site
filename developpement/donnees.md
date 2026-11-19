@@ -1,26 +1,26 @@
 ---
-title: Données
+title: "Corpus d'entraînement"
 layout: default
 permalink: /developpement/donnees/
-description: "Les données sur lesquelles reposent les modèles de Lectura : lexique, textes annotés, corpus de parole publics, et leur préparation."
+description: "Les corpus d'entraînement de Lectura : textes annotés en grammaire et en phonétique, parole alignée, et leurs sources publiques."
 ---
 
-Les modèles de Lectura apprennent sur deux sortes de données : des données écrites (lexique, textes annotés) et de la parole enregistrée. Cette page présente leurs catégories et leurs sources.
+{% comment %} Réécrite le 19/11/2026 (Maxime : uniformiser les ressources sur le schéma de l'écosystème ; LeXiK n'est plus présenté deux fois). Faits repris des pages Corpus de LecturaLingua et LecturaVoice (en ligne le 19/11). Ancienne version : brain anciennes-pages/developpement_donnees_2026-11-19.md. {% endcomment %}
 
-## Le lexique
+Les modèles de Lectura apprennent sur deux sortes de données : des textes annotés et de la parole enregistrée. Lectura les rassemble à partir de sources publiques, puis les prépare avec ses propres modules : transcription phonétique, syllabes, alignement des lettres et des sons, alignement du texte sur l'audio, filtrage des passages mal transcrits. La phonétique de base vient du lexique [LeXiK]({{ '/developpement/lexique/' | relative_url }}).
 
-**LeXiK**, notre lexique du français, est compilé à partir de sources libres, corrigé et enrichi : prononciation, syllabes, alignement des lettres et des sons. Il fournit aux modèles leurs données d'entraînement de base pour la phonétique. Le dictionnaire **WiKiLeXiK** y ajoute des données ouvertes : le Wiktionnaire (par l'extraction Kaikki) et Wikidata. Les sources et leurs licences sont détaillées sur [LecturaLexique](https://lexique.lectura.world/licences).
+## Les textes annotés {#textes}
 
-## Les textes annotés
+L'analyse grammaticale s'appuie sur des corpus annotés publics, dont les corpus français du projet Universal Dependencies. Lectura y ajoute la phonétique et l'étend à des phrases qu'elle annote elle-même.
 
-L'analyse grammaticale s'appuie sur des corpus annotés publics, dont les corpus français du projet Universal Dependencies.
+- **Corpus Phrases** : 128 715 phrases françaises avec leur grammaire et leur phonétique (syllabes, liaisons, correspondances lettres-sons) ; 28 715 phrases de six banques Universal Dependencies, dont la grammaire est annotée à la main, et 100 000 phrases annotées par Lectura (œuvres du domaine public, Common Voice, Tatoeba). Disponible sur demande, sur [LecturaLingua](https://lingua.lectura.world/corpus).
 
-## La parole
+## La parole {#parole}
 
-Les voix de la génération actuelle ont été entraînées sur des corpus de parole publics, dont SIWIS. La génération suivante, en préparation, rassemble des corpus publics de parole lue et spontanée, en français et en anglais : Common Voice, Multilingual LibriSpeech, VoxPopuli, SUMM-RE, LibriTTS-R ou VCTK, par exemple.
+Les voix de la génération actuelle ont été entraînées sur des corpus de parole publics, dont SIWIS. La [génération suivante]({{ '/developpement/modules/v2/' | relative_url }}) rassemble des corpus publics de parole lue et spontanée, en français et en anglais : Common Voice, Multilingual LibriSpeech, VoxPopuli, SUMM-RE, LibriTTS-R ou VCTK, par exemple. Chaque corpus est rangé avec sa provenance et sa licence ; ce qu'un corpus livré peut contenir, l'audio en particulier, dépend des licences de ses sources.
 
-Chaque corpus est rangé avec sa provenance et sa licence. Nous le préparons avec nos propres outils : transcription phonétique, alignement du texte sur l'audio, filtrage des passages mal transcrits. Nos [corpus d'entraînement]({{ '/produits/ressources/corpus-entrainement/' | relative_url }}) sont proposés sur devis ; ce qu'ils peuvent contenir, l'audio en particulier, dépend des licences de leurs sources.
+- **Corpus SIWIS aligné** : les annotations de Lectura sur la SIWIS French Speech Synthesis Database (transcription phonétique, alignement des mots et des sons sur l'enregistrement), prêtes pour l'entraînement ; l'audio n'est pas livré, un script le télécharge depuis sa source officielle. Disponible sur demande, sur [LecturaVoice](https://voice.lectura.world/corpus).
 
-## Ce que Lectura produit
+## Sur mesure {#sur-mesure}
 
-Les données produites par Lectura (le lexique LeXiK, les corpus d'entraînement, les corpus de syllabes et de mots) sont présentées dans [Ressources]({{ '/developpement/ressources/' | relative_url }}) et sur [LecturaLexique](https://lexique.lectura.world). Pour un besoin de données particulier, voir le service de [préparation des données]({{ '/offres/pro/#corpus' | relative_url }}) ou [nous contacter]({{ '/contact/' | relative_url }}).
+Lectura prépare aussi vos propres corpus : transcription, phonémisation, alignement (voir les [offres]({{ '/offres/pro/#corpus' | relative_url }}) ou la [page de contact]({{ '/contact/' | relative_url }})).

@@ -24,7 +24,7 @@ Module autonome, **zéro dépendance** externe. Il lit à voix haute les formule
 
 Chaque lecture est donnée en toutes lettres (`display_fr`) et en phonétique IPA (`phone`). La lecture se fait par règles, sans modèle.
 
-*Voir aussi le programme [Lectura Formule]({{ '/produits/programmes/formule/' | relative_url }}).*
+*Voir aussi les [logiciels de bureau]({{ '/developpement/logiciels/bureau/' | relative_url }}).*
 
 ---
 
