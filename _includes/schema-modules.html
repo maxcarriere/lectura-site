@@ -1,7 +1,7 @@
 <figure class="schema-ecosysteme">
-<svg viewBox="0 0 760 562" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 760 590" role="img" aria-labelledby="sm-titre sm-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="sm-titre">L'écosystème modulaire de Lectura</title>
-  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Tagger (la phrase) et le Transducer (les mots) passent du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : NLP, en trois niveaux (Analyseur = Tagger + Transducer + Lexicon, Correcteur, Traducteur), TTS (Analyseur puis Synthesizer), STT (Decoder puis Analyseur), STS (Decoder et Aligner, ou Synthesizer, puis Subtitler). Le lexique LeXiK entraîne le Transducer et nourrit Lexicon ; des textes annotés entraînent le Tagger ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
+  <desc id="sm-desc">Trois représentations : le texte, la phonétique et la voix. Le Tagger (la phrase) et le Transducer (les mots) passent du texte à la phonétique et inversement ; le Synthesizer de la phonétique à la voix ; le Decoder de la voix à la phonétique. Autour, reliés aux modules dont ils dépendent : Translator, Corrector et Lexicon (Lexicon sert aussi au Corrector), Aligner (au Decoder) et Subtitler (au Decoder ou au Synthesizer). Les métiers composent ces briques : NLP-FR et NLP-EN, en trois niveaux, Analyseur, Correcteur, Traducteur (Tagger + Transducer + Lexicon, plus Corrector et Translator), sur LecturaLingua ; TTS, la synthèse vocale (Tagger + Transducer puis Synthesizer), STT, la reconnaissance vocale (Decoder puis Transducer et Tagger, Aligner en option), STS, le sous-titrage (Decoder et Aligner, ou Synthesizer, puis Subtitler), sur LecturaVoice. Le lexique LeXiK entraîne le Transducer et nourrit Lexicon ; des textes annotés entraînent le Tagger ; des corpus de parole entraînent le Synthesizer et le Decoder.</desc>
   <defs>
     <marker id="sm-fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#2d5a2d"/>
@@ -14,7 +14,7 @@
   <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#5a4636" text-anchor="middle">
     <text x="380" y="30">Les briques</text>
     <text x="380" y="288">Les métiers</text>
-    <text x="380" y="425">Les ressources</text>
+    <text x="380" y="453">Les ressources</text>
   </g>
 
   <!-- Axe texte / phonétique / voix -->
@@ -91,61 +91,69 @@
 
   <!-- Métiers -->
   <g stroke="#2d5a2d" stroke-width="1.3" fill="rgba(45,90,45,0.07)">
-    <rect x="20" y="300" width="165" height="96" rx="8"/>
-    <rect x="205" y="300" width="165" height="96" rx="8"/>
-    <rect x="390" y="300" width="165" height="96" rx="8"/>
-    <rect x="575" y="300" width="165" height="96" rx="8"/>
+    <rect x="20" y="300" width="165" height="124" rx="8"/>
+    <rect x="205" y="300" width="165" height="124" rx="8"/>
+    <rect x="390" y="300" width="165" height="124" rx="8"/>
+    <rect x="575" y="300" width="165" height="124" rx="8"/>
   </g>
   <g font-family="'Cinzel', serif" font-weight="700" font-size="15" fill="#2d5a2d" text-anchor="middle">
-    <text x="102" y="324">NLP</text>
-    <text x="287" y="324">TTS</text>
-    <text x="472" y="324">STT</text>
-    <text x="657" y="324">STS</text>
+    <text x="102" y="322">NLP-FR · NLP-EN</text>
+    <text x="287" y="322">TTS</text>
+    <text x="472" y="322">STT</text>
+    <text x="657" y="322">STS</text>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" font-size="13.5" fill="#3b2a20" text-anchor="middle">
-    <text x="102" y="346">Analyseur (FR, EN)</text>
-    <text x="102" y="363">+ Correcteur, Traducteur</text>
-    <text x="287" y="346">Analyseur</text>
-    <text x="287" y="363">→ Synthesizer</text>
-    <text x="472" y="346">Decoder → Analyseur</text>
-    <text x="472" y="363">(+ Aligner)</text>
-    <text x="657" y="342">Decoder + Aligner</text>
-    <text x="657" y="357">ou Synthesizer</text>
-    <text x="657" y="372">→ Subtitler</text>
+    <g font-weight="700">
+      <text x="102" y="340">Analyseur · Correcteur</text>
+      <text x="102" y="355">· Traducteur</text>
+      <text x="287" y="340">Synthèse vocale</text>
+      <text x="472" y="340">Reconnaissance vocale</text>
+      <text x="657" y="340">Sous-titrage</text>
+    </g>
+    <text x="102" y="370">Tagger + Transducer</text>
+    <text x="102" y="384">+ Lexicon</text>
+    <text x="102" y="398">(+ Corrector, Translator)</text>
+    <text x="287" y="362">Tagger + Transducer</text>
+    <text x="287" y="377">→ Synthesizer</text>
+    <text x="472" y="362">Decoder → Transducer</text>
+    <text x="472" y="377">+ Tagger (+ Aligner)</text>
+    <text x="657" y="360">Decoder + Aligner</text>
+    <text x="657" y="375">ou Synthesizer</text>
+    <text x="657" y="390">→ Subtitler</text>
     <g font-style="italic" fill="#5a4636">
-      <text x="102" y="386">LecturaLingua</text>
-      <text x="287" y="386">LecturaVoice</text>
-      <text x="472" y="386">LecturaVoice</text>
-      <text x="657" y="390">sous-titrage synchronisé</text>
+      <text x="102" y="414">LecturaLingua</text>
+      <text x="287" y="414">LecturaVoice</text>
+      <text x="472" y="414">LecturaVoice</text>
+      <text x="657" y="414">LecturaVoice</text>
     </g>
   </g>
 
   <!-- Ressources -->
   <g stroke="rgba(13,13,13,0.35)" stroke-width="1.2" fill="rgba(255,255,255,0.6)">
-    <rect x="20" y="437" width="226" height="94" rx="8"/>
-    <rect x="267" y="437" width="226" height="94" rx="8"/>
-    <rect x="514" y="437" width="226" height="94" rx="8"/>
+    <rect x="20" y="465" width="226" height="94" rx="8"/>
+    <rect x="267" y="465" width="226" height="94" rx="8"/>
+    <rect x="514" y="465" width="226" height="94" rx="8"/>
   </g>
   <g font-family="'EB Garamond', Georgia, serif" text-anchor="middle" fill="#3b2a20">
     <g font-size="15" font-weight="700" fill="#0d0d0d">
-      <text x="133" y="460">Le lexique LeXiK</text>
-      <text x="380" y="460">Textes annotés</text>
-      <text x="627" y="460">Corpus de parole</text>
+      <text x="133" y="488">Le lexique LeXiK</text>
+      <text x="380" y="488">Textes annotés</text>
+      <text x="627" y="488">Corpus de parole</text>
     </g>
     <g font-size="13.5">
-      <text x="133" y="480">publié sur ORTOLANG</text>
-      <text x="380" y="480">Universal Dependencies</text>
-      <text x="627" y="480">SIWIS…</text>
+      <text x="133" y="508">publié sur ORTOLANG</text>
+      <text x="380" y="508">Universal Dependencies</text>
+      <text x="627" y="508">SIWIS…</text>
     </g>
     <g font-size="13.5" font-style="italic" fill="#5a4636">
-      <text x="133" y="502">entraîne le modèle de mot</text>
-      <text x="133" y="519">(Transducer) · nourrit Lexicon</text>
-      <text x="380" y="502">entraînent l'analyse</text>
-      <text x="380" y="519">grammaticale (Tagger)</text>
-      <text x="627" y="502">entraînent le Synthesizer</text>
-      <text x="627" y="519">et le Decoder</text>
+      <text x="133" y="530">entraîne le modèle de mot</text>
+      <text x="133" y="547">(Transducer) · nourrit Lexicon</text>
+      <text x="380" y="530">entraînent l'analyse</text>
+      <text x="380" y="547">grammaticale (Tagger)</text>
+      <text x="627" y="530">entraînent le Synthesizer</text>
+      <text x="627" y="547">et le Decoder</text>
     </g>
   </g>
-  <text x="380" y="555" font-family="'EB Garamond', Georgia, serif" font-size="13.5" font-style="italic" fill="#5a4636" text-anchor="middle">Les corpus de parole sont eux-mêmes transcrits en phonétique par le Transducer.</text>
+  <text x="380" y="583" font-family="'EB Garamond', Georgia, serif" font-size="13.5" font-style="italic" fill="#5a4636" text-anchor="middle">Les corpus de parole sont eux-mêmes transcrits en phonétique par le Transducer.</text>
 </svg>
 </figure>
