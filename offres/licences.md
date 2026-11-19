@@ -30,7 +30,7 @@ Les modèles v1 s'obtiennent sous licence commerciale :
 - une licence pour l'organisation qui l'acquiert et les personnes qui travaillent pour elle ;
 - les modèles vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique ;
 - annuelle, ou perpétuelle (2,5 fois le prix annuel) ;
-- **embarquement illimité**, propre à cette première version : le modèle peut être intégré dans autant d'applications et d'appareils que vous le souhaitez ;
+- **l'embarquement illimité du modèle**, propre à cette première version : il peut être intégré dans autant d'applications et d'appareils que vous le souhaitez ;
 - le lexique embarqué (Lexicon) est compris dans les licences des modules de langage ;
 - les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés).
 
