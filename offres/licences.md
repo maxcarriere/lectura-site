@@ -34,7 +34,7 @@ Les modèles v1 s'obtiennent sous licence commerciale :
 - le lexique embarqué (Lexicon) est compris dans les licences des modules de langage ;
 - les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés).
 
-Prix : modules de langage à partir de 499 € HT par an sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix à partir de 490 € HT par an sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Sur devis : le code d'entraînement et les données, un grand volume d'utilisation.
+Prix : modules de langage à partir de 499 € HT par an sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix à partir de 490 € HT par an sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
 
 ### v2 : licence commerciale, embarquement à part {#v2}
 

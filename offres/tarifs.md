@@ -23,7 +23,9 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 Les modèles v1 se vendent en licence pro, annuelle ou perpétuelle (2,5 fois le prix annuel), embarquement compris. Les prix sont affichés sur les sites projets : modules de langage **à partir de 499 € HT par an** sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix **à partir de 490 € HT par an** sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Chaque licence v1 donne un avantage sur la [v2]({{ '/offres/pro/' | relative_url }}#v2) : 50 % de remise pour une licence annuelle, passage gratuit pour une licence perpétuelle.
 
-Sur devis : un grand volume d'utilisation, l'option code d'entraînement et données, l'accompagnement. Ce que couvre chaque licence : page [Licences]({{ '/offres/licences/' | relative_url }}).
+Sur devis : l'option code d'entraînement et données, l'accompagnement dans l'intégration logicielle.
+
+Ce que couvre chaque licence : page [Licences]({{ '/offres/licences/' | relative_url }}).
 
 ---
 
