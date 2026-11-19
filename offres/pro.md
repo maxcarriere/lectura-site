@@ -17,11 +17,20 @@ description: "L'offre de Lectura aux professionnels : licences commerciales des 
 
 La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite (code sous AGPL-3.0, modèles sous CC BY-NC 4.0) et toute licence v1 en couvre l'usage commercial ; le code d'appel de la v1 sera publié sous licence AGPL-3.0. Les modèles s'obtiennent sous licence commerciale : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. En option : le code d'entraînement et les données.
 
-- **Modules de langage** <span class="status-badge status-dispo">Sur devis</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, sur [LecturaLingua](https://lingua.lectura.world).
-- **Modules de voix** <span class="status-badge status-dispo">Sur devis</span> · synthèse et reconnaissance vocales, alignement, sous-titres, sur [LecturaVoice](https://voice.lectura.world).
+- **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
+- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 490 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
 - **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, sur [LecturaLexique](https://lexique.lectura.world).
 
-Autour des licences :
+### La v2, en développement {#v2}
+
+La génération suivante, la v2, est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
+
+- **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
+- **licence perpétuelle** : passage gratuit à la v2.
+
+Dans les deux cas, l'avantage porte sur l'usage de la v2 sans embarquement : l'intégrer dans une application ou un service diffusé demande une licence à part.
+
+### Autour des licences
 
 - **Clé d'essai API** <span class="status-badge status-dispo">Sur demande</span> · pour tester les modules dans votre propre code.
 - **Intégration logicielle** <span class="status-badge status-dispo">Sur devis</span> · intégration dans votre environnement, chaînes de traitement sur mesure, mise en service.
@@ -35,8 +44,8 @@ Autour des licences :
 
 ### Données d'entraînement
 
-- **Corpus SIWIS aligné** <span class="status-badge status-cours">En préparation</span> · le corpus de parole SIWIS avec sa partition : alignement phonétique (phonèmes et durées) et, selon la version, paramètres prosodiques (hauteur, énergie).
-- **Corpus de phrases annotées** <span class="status-badge status-cours">En préparation</span> · des phrases annotées en phonétique, syllabes et grammaire.
+- **Corpus SIWIS aligné** <span class="status-badge status-dispo">Sur demande</span> · les annotations de Lectura sur le corpus de parole SIWIS : transcription phonétique, alignement des mots et des sons, sur [LecturaVoice](https://voice.lectura.world/corpus).
+- **Corpus de phrases annotées** <span class="status-badge status-dispo">Sur demande</span> · 128 715 phrases annotées en phonétique et en grammaire, sur [LecturaLingua](https://lingua.lectura.world/corpus).
 - **Données sur mesure** <span class="status-badge status-dispo">Sur devis</span> · préparation de vos corpus : transcription, phonémisation, alignement.
 
 ### Ressources éducatives
@@ -59,7 +68,7 @@ Pour les éditeurs jeunesse et scolaires : transformer vos livres en supports p�
 
 - **Édition syllabique** <span class="status-badge status-dispo">Sur devis</span> · pour l'apprentissage de la lecture : syllabes, sons colorés, liaisons, lettres muettes.
 - **Édition enrichie** <span class="status-badge status-dispo">Sur devis</span> · pour la compréhension du texte, en classe.
-- **Supports complémentaires** <span class="status-badge status-dispo">Sur devis</span> · page web, vidéo de lecture guidée où chaque syllabe s'éclaire au moment où elle est prononcée.
+- **Supports complémentaires** <span class="status-badge status-dispo">Sur devis</span> · page web, vidéo de lecture guidée accompagnant un livre papier et qui enrichit le produit.
 - **Livres audio** <span class="status-badge status-cours">En développement</span> · avec le nouveau moteur vocal (v2).
 
 ---

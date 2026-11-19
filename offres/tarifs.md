@@ -21,13 +21,9 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 ## Licences {#licences}
 
-Une licence commerciale des modules coûte de **quelques centaines à plusieurs milliers d'euros par an**. Le prix dépend :
+Les modèles v1 se vendent en licence pro, annuelle ou perpétuelle (2,5 fois le prix annuel), embarquement compris. Les prix sont affichés sur les sites projets : modules de langage **à partir de 499 € HT par an** sur [LecturaLingua](https://lingua.lectura.world/modeles/licences), modules de voix **à partir de 490 € HT par an** sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Chaque licence v1 donne un avantage sur la [v2]({{ '/offres/pro/' | relative_url }}#v2) : 50 % de remise pour une licence annuelle, passage gratuit pour une licence perpétuelle.
 
-- des modules concernés ;
-- du volume d'utilisation (nombre d'utilisateurs ou d'appareils) ;
-- du mode d'intégration : sur vos serveurs, ou embarqué dans votre application ;
-- de l'option code d'entraînement et données ;
-- de la durée de la licence et de l'accompagnement.
+Sur devis : un grand volume d'utilisation, l'option code d'entraînement et données, l'accompagnement.
 
 ---
 
