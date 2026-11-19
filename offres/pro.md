@@ -9,11 +9,21 @@ description: "L'offre de Lectura aux professionnels : licences commerciales des 
 
 {% comment %} Maxime, 15/11/2026 : page Pro (ex-Entreprises), par type de produit ou service ; chaque produit renvoie au site projet qui le porte (langage → LecturaLingua, voix → LecturaVoice, Lexicon et corpus → LecturaLexique, logiciels pros → LecturaTools quand il existera). Développement et conseil IA sont transversaux. Les services éditoriaux ne renvoient à LecturaBooks que comme illustration. Anciennes versions : brain anciennes-pages/offres-entreprises_2026-11-15*.md. Prix : page Tarifs. Pastilles : vert = disponible, bleu = en préparation ou en développement. {% endcomment %}
 
-Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : Lectura propose ses modules, ses données et son savoir-faire sur le français écrit et parlé, et sur le travail avec l'IA. Chaque produit est présenté en détail, avec sa démo gratuite, sur le site du projet qui le porte. Les prix sont sur la page [Tarifs]({{ '/offres/tarifs/' | relative_url }}).
+**Des outils pour le français écrit et parlé, qui tournent chez vous.** Lectura conçoit des modèles compacts d'analyse du texte et de la voix, qui fonctionnent sur un simple processeur, sans carte graphique ni service en ligne ; pour la phonétique et l'analyse grammaticale du français, ils se placent parmi les meilleurs du marché. Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : intégrez-les à vos produits, entraînez vos propres modèles sur ses données, ou confiez à Lectura un projet sur mesure.
+
+Chaque produit s'essaie gratuitement, avec sa démo, sur le site du projet qui le porte. Les prix sont sur la page [Tarifs]({{ '/offres/tarifs/' | relative_url }}).
 
 ---
 
 ## Licences commerciales {#licences}
+
+Des modèles mesurés, pas seulement promis :
+
+- **99,8 %** de mots prononcés correctement et **97,7 %** de catégories grammaticales justes (Analyseur français) ;
+- un correcteur qui se trompe nettement moins : **60,2 %** de corrections justes parmi celles qu'il propose, contre 35 à 39 % pour Grammalecte et LanguageTool ;
+- une reconnaissance vocale proche de Whisper small, avec un modèle **près de vingt fois plus petit**.
+
+Et une licence simple : à l'année ou pour toujours, avec l'embarquement illimité du modèle dans vos applications.
 
 ### v0 : licence non commerciale, gratuite {#v0}
 
@@ -23,13 +33,13 @@ La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite : code s
 
 Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Propre à cette première version, la licence comprend l'embarquement illimité du modèle : il peut être intégré dans autant d'applications et d'appareils que vous le souhaitez. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
 
-- **Modules de langage** <span class="status-badge status-dispo">En vente</span> · analyse du texte en français et en anglais (phonétique, syllabes, grammaire), correction, traduction, à partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modeles/licences).
-- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse et reconnaissance vocales, alignement, sous-titres, à partir de 999 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/licences).
+- **Modules de langage** <span class="status-badge status-dispo">En vente</span> · Analyseur, Correcteur et Traducteur, en français et en anglais, et les briques Tagger et Transducer : phonétique, syllabes, grammaire, correction, traduction. À partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modules/v1).
+- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage. À partir de 999 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/v1).
 - **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, 290 € HT par an (offert avec les modules de langage), sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
 ### v2 : licence commerciale, embarquement à part {#v2}
 
-La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
+La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai là où la v1 bute encore), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
 
 - **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
 - **licence perpétuelle** : passage gratuit à la v2.
@@ -46,9 +56,13 @@ Toutes les licences, modèles et ressources, sont détaillées sur la page [Lice
 - **Reconnaissance vocale métier** <span class="status-badge status-dispo">Sur devis</span> · une reconnaissance adaptée à votre vocabulaire.
 - **Nouvelle langue ou variété régionale** <span class="status-badge status-dispo">Sur devis</span> · un phonémiseur sur mesure.
 
+→ [Essayer les démos de LecturaLingua](https://lingua.lectura.world) · [de LecturaVoice](https://voice.lectura.world) · [Demander une évaluation ou un devis]({{ '/contact/' | relative_url }})
+
 ---
 
 ## Corpus de données {#corpus}
+
+Des données prêtes à l'emploi, pour entraîner vos modèles ou nourrir vos produits pédagogiques, préparées avec les outils de Lectura et vérifiées.
 
 Les corpus se vendent sous deux licences :
 
@@ -68,9 +82,13 @@ Dans les deux cas, les fichiers eux-mêmes ne peuvent être ni revendus ni redis
 - **Corpus Syllabes** <span class="status-badge status-dispo">En vente</span> · les syllabes du français avec leur son, sur [LecturaLexique](https://lexique.lectura.world/corpus/syllabes).
 - **Corpus 1500 Mots** <span class="status-badge status-dispo">En vente</span> · des mots illustrés du vocabulaire de l'enfant, sur [LecturaLexique](https://lexique.lectura.world/corpus/mots).
 
+→ [Télécharger un échantillon gratuit](https://lexique.lectura.world/corpus) · [Demander un corpus sur mesure]({{ '/contact/' | relative_url }})
+
 ---
 
 ## Outils logiciels {#logiciels}
+
+Les modules de Lectura réunis dans des logiciels prêts à l'emploi, prévus pour 2027 (voir les [logiciels]({{ '/developpement/logiciels/' | relative_url }})).
 
 - **Orthophone** <span class="status-badge status-cours">En développement</span> · un logiciel pour les orthophonistes.
 - **Voice Edition** <span class="status-badge status-cours">En développement</span> · un programme de bureau, éditeur vocal qui génère les sous-titres d'une vidéo.
@@ -79,18 +97,20 @@ Dans les deux cas, les fichiers eux-mêmes ne peuvent être ni revendus ni redis
 
 ## Services éditoriaux {#editorial}
 
-Pour les éditeurs jeunesse et scolaires : transformer vos livres en supports pédagogiques, dans le livre papier lui-même ou par un support complémentaire.
+Pour les éditeurs jeunesse et scolaires : faites de chaque livre un outil pour apprendre à lire, dans le livre papier lui-même ou par un support complémentaire. Lectura maîtrise toute la chaîne, de l'analyse du texte à la mise en page et à la voix.
 
 - **Édition syllabique** <span class="status-badge status-dispo">Sur devis</span> · pour l'apprentissage de la lecture : syllabes, sons colorés, liaisons, lettres muettes.
 - **Édition enrichie** <span class="status-badge status-dispo">Sur devis</span> · pour la compréhension du texte, en classe.
 - **Supports complémentaires** <span class="status-badge status-dispo">Sur devis</span> · page web, vidéo de lecture guidée accompagnant un livre papier et qui enrichit le produit.
 - **Livres audio** <span class="status-badge status-cours">En développement</span> · avec le nouveau moteur vocal (v2).
 
+→ [Demander un exemple sur l'un de vos titres]({{ '/contact/' | relative_url }})
+
 ---
 
 ## Développement {#developpement}
 
-Des compétences transversales, en prolongement d'un autre service ou comme une prestation à part entière.
+Du modèle au produit fini : Lectura sait concevoir l'interface, l'application ou le site qui met un modèle entre les mains de ses utilisateurs, et préparer les données qui le font progresser. En prolongement d'un autre service, ou comme une prestation à part entière.
 
 ### Développement de supports
 
@@ -105,19 +125,23 @@ Des compétences transversales, en prolongement d'un autre service ou comme une 
 - **Automatisation de tâches** <span class="status-badge status-dispo">Sur devis</span>
 - **Entraînement complet d'un modèle** <span class="status-badge status-dispo">Sur devis</span> · des données au modèle livré.
 
+→ [Décrire votre projet]({{ '/contact/' | relative_url }})
+
 ---
 
 ## Conseil en IA {#conseil-ia}
 
-Lectura met à votre service l'expérience acquise en développant tout son écosystème avec l'IA (voir [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }})).
+Tout l'écosystème de Lectura, modèles, sites et données, a été développé avec l'IA. Lectura met cette expérience à votre service, pour que l'IA travaille vraiment pour votre activité (voir [Intelligence artificielle]({{ '/solutions/intelligence-artificielle/' | relative_url }})).
 
 - **Audit** <span class="status-badge status-dispo">Sur devis</span> · ce que l'IA peut apporter à votre activité, et où elle bute.
 - **Installation** <span class="status-badge status-dispo">Sur devis</span> · un environnement de travail préparamétré (outils comme Claude Code, agents, permissions).
 - **Paramétrage** <span class="status-badge status-dispo">Sur devis</span> · le contexte de l'entreprise (documentation, conventions, règles de travail) et l'organisation d'un projet mené avec l'IA.
 - **Formation** <span class="status-badge status-dispo">Sur devis</span> · à l'usage des outils et au fonctionnement de l'IA.
 
+→ [Demander un audit ou une formation]({{ '/contact/' | relative_url }})
+
 ---
 
-## Contact {#contact}
+## Parlons de votre projet {#contact}
 
 Décrivez votre projet à **lectura.world@gmail.com** ou par la [page de contact]({{ '/contact/' | relative_url }}) : Lectura vous répond avec une démo ciblée, une clé d'essai ou un devis.
