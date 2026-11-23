@@ -7,9 +7,9 @@ redirect_from:
 description: "Les tarifs de Lectura : services à la journée, licences des modules, produits, et demande de devis."
 ---
 
-{% comment %} Refonte du 14/11/2026 sur le plan de Maxime (services, licences, produits, devis). Montants repris tels quels de l'ancienne page Tarification (déjà validés et en ligne) : 500 €/jour, licences de quelques centaines à plusieurs milliers d'euros par an. Aucun nouveau prix. Les prix des produits restent sur leur site projet. Ancienne version : brain anciennes-pages/solutions_tarifs_2026-11-14.md. {% endcomment %}
+{% comment %} Refonte du 14/11/2026 sur le plan de Maxime (services, licences, produits, devis). Montants repris tels quels de l'ancienne page Tarification (déjà validés et en ligne) : 500 €/jour, licences de quelques centaines à plusieurs milliers d'euros par an. Aucun nouveau prix. Licences réécrites le 23/11 (infra/DISTRIBUTION.md, grille indicative de Maxime du 23/11 ; ancienne version : anciennes-pages/offres_tarifs_2026-11-23.md). Les prix des produits restent sur leur site projet. Ancienne version : brain anciennes-pages/solutions_tarifs_2026-11-14.md. {% endcomment %}
 
-Les démos de Lectura et le lexique LeXiK sont gratuits, comme le code de la première génération des modules (AGPL-3.0, sur [GitHub](https://github.com/maxcarriere/lectura-modules) ; une licence commerciale permet de l'intégrer à un produit fermé). Les usages commerciaux relèvent d'une licence, d'un produit ou d'une prestation.
+Les démos de Lectura et le lexique LeXiK sont gratuits, comme le code de la première génération des modules (AGPL-3.0, sur [GitHub](https://github.com/maxcarriere/lectura-modules)). Les usages commerciaux relèvent d'une licence, d'un produit ou d'une prestation.
 
 ---
 
@@ -21,7 +21,7 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 ## Licences {#licences}
 
-Les modules v1 se vendent en licence commerciale, annuelle ou perpétuelle (2,5 fois le prix annuel), embarquement illimité. Le module complet, qui tourne en local et prêt à embarquer, s'obtient par téléchargement une fois la licence réglée. Les prix sont affichés sur les sites projets : modules de langage **à partir de 499 € HT par an** sur [LecturaLingua](https://lingua.lectura.world/licences/v1), modules de voix **à partir de 999 € HT par an** sur [LecturaVoice](https://voice.lectura.world/modeles/licences), module Lexicon **290 € HT par an** sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr), offert avec les modules de langage. Chaque licence v1 donne un avantage sur la [v2]({{ '/offres/pro/' | relative_url }}#v2) : 50 % de remise pour une licence annuelle, passage gratuit pour une licence perpétuelle.
+La v0 est gratuite, comme le sera l'usage de la v1 par l'[API publique]({{ '/developpement/api/' | relative_url }}), en préparation. La licence commerciale et les modèles v1 en local sont sur demande : à titre indicatif, les modules de langage vont de **999 à 1 999 € HT** sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; les modules de voix sont sur demande.
 
 Sur devis : l'option code d'entraînement et données, l'accompagnement dans l'intégration logicielle.
 

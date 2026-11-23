@@ -55,6 +55,8 @@
           url: /developpement/modules/v1/
         - title: "À venir (v2)"
           url: /developpement/modules/v2/
+    - title: "L'API publique"
+      url: /developpement/api/
     - title: Les ressources
       url: /developpement/ressources/
       children:

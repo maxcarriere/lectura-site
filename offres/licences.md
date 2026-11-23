@@ -2,10 +2,10 @@
 title: Licences
 layout: default
 permalink: /offres/licences/
-description: "Les licences de Lectura en un coup d'œil : modèles v0 (gratuits, non commerciaux), v1 (licence commerciale, embarquement illimité) et v2 (en développement), ressources en licence Créateur ou Pro, essai et conditions de vente."
+description: "Les licences de Lectura en un coup d'œil : modèles v0 (gratuits, en local), v1 (gratuite par l'API publique en préparation, licence commerciale et modèles sur demande) et v2 (en développement), ressources en licence Créateur ou Pro, conditions de vente."
 ---
 
-{% comment %} Maxime, 19/11/2026 : une page qui regroupe tous les cas de licence, comme Tarifs pour les prix. Sources : DECISIONS du 19/11 (v1 en vente, avantage v2, embarquement), règle des licences des ressources du 16/11 (lectura/CLAUDE.md), grille des modules (prix sur les sites projets). La page Pro garde un résumé et renvoie ici. {% endcomment %}
+{% comment %} Maxime, 19/11/2026 : une page qui regroupe tous les cas de licence, comme Tarifs pour les prix. Sources : DECISIONS du 19/11 (v1 en vente, avantage v2, embarquement), règle des licences des ressources du 16/11 (lectura/CLAUDE.md), grille des modules (prix sur les sites projets). La page Pro garde un résumé et renvoie ici. Modèles réécrits le 23/11 selon infra/DISTRIBUTION.md (ancienne version : anciennes-pages/offres_licences_2026-11-23.md). {% endcomment %}
 
 Lectura ne vend pas la propriété de ses produits : l'achat donne une licence d'utilisation. Cette page rassemble les cas ; pour chaque produit, le contrat de licence, présenté avant l'achat, fait foi.
 
@@ -13,43 +13,29 @@ Lectura ne vend pas la propriété de ses produits : l'achat donne une licence d
 
 ## Modèles {#modeles}
 
-### v0 : licence non commerciale, gratuite {#v0}
+### v0 : gratuite, en local {#v0}
 
 La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et s'installe en local :
 
-- code sous AGPL-3.0 ;
-- modèles neuronaux sous CC BY-NC 4.0 (usage non commercial) ;
+- code sous AGPL-3.0, sur GitHub et PyPI ;
+- modèles neuronaux publics sur Hugging Face, sous CC BY-NC 4.0 (usage non commercial) ;
 - tables lexicales sous CC BY-SA 4.0 ; banque de diphones et timbres de voix sous CC BY 4.0.
 
-Toute licence v1 en cours de validité couvre l'usage commercial de la v0.
+### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 
-### v1 : licence commerciale, embarquement illimité {#v1}
+La [v1]({{ '/developpement/modules/v1/' | relative_url }}) s'utilisera gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, en préparation, sans clé, avec des quotas par service ; d'ici là, elle s'essaie dans les démos des sites. Son code sera publié sous AGPL-3.0 ; ses modèles restent privés, sur le serveur de Lectura.
 
-Les modèles v1 s'obtiennent sous licence commerciale :
+Pour faire tourner les modèles v1 chez vous, sur vos serveurs ou dans votre application ou pour les utiliser dans un produit vendu, sans limite de quotas, la licence commerciale et les modèles sont **sur demande** ([contact]({{ '/contact/' | relative_url }})) :
 
 - une licence pour l'organisation qui l'acquiert et les personnes qui travaillent pour elle ;
-- le module complet, qui tourne en local et prêt à embarquer, s'obtient par téléchargement une fois la licence réglée ; il tourne chez vous, sur vos serveurs ou dans votre application, sans carte graphique ;
-- annuelle, ou perpétuelle (2,5 fois le prix annuel) ;
-- **l'embarquement illimité du modèle**, propre à cette première version : il peut être intégré dans autant d'applications et d'appareils que vous le souhaitez ;
-- le lexique embarqué (Lexicon) est compris dans les licences des modules de langage ;
-- les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés).
+- les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés) ;
+- sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
 
-**Lexicon.** Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0) et se télécharge gratuitement ; le code de Lexicon sera publié sous AGPL-3.0. Le module Lexicon (le code, des lexiques allégés et optimisés, prêts à embarquer, et la licence commerciale) coûte 290 € HT par an seul ; il est offert avec tout module de langage de LecturaLingua, qui l'intègre. Comme toute licence v1, il couvre l'usage commercial de la v0.
+Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0) et se télécharge gratuitement ; le module Lexicon est présenté sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
-Prix : modules de langage à partir de 499 € HT par an sur [LecturaLingua](https://lingua.lectura.world/licences/v1), modules de voix à partir de 999 € HT par an sur [LecturaVoice](https://voice.lectura.world/modeles/licences). Sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
+### v2 : en développement {#v2}
 
-### v2 : licence commerciale, embarquement à part {#v2}
-
-La v2 est en cours de développement : des modèles plus performants, de nouvelles fonctionnalités comme le clonage de voix, des modèles plus légers. Chaque licence v1 y donne un avantage :
-
-- **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
-- **licence perpétuelle** : passage gratuit à la v2.
-
-L'avantage porte sur le volet « utilisation commerciale » de la licence v2, et non sur celui de l'embarquement du modèle. Ce dernier pourra, pour des raisons d'équité des prix, être soumis à une redevance selon le nombre d'appareils sur lesquels le modèle est embarqué.
-
-### Essai {#essai}
-
-Pour évaluer un modèle dans votre propre code avant l'achat : une clé d'essai gratuite, pour l'évaluation seulement, sans mise en production ([sur demande]({{ '/contact/' | relative_url }})).
+La [v2]({{ '/developpement/modules/v2/' | relative_url }}) est en cours de développement : des modèles plus performants, de nouvelles fonctionnalités comme le clonage de voix, des modèles plus légers.
 
 ---
 

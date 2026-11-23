@@ -7,7 +7,7 @@ redirect_from:
 description: "L'offre de Lectura aux professionnels : licences commerciales des modules de langage et de voix, corpus de données, outils logiciels, services éditoriaux, développement, conseil en IA."
 ---
 
-{% comment %} Maxime, 15/11/2026 : page Pro (ex-Entreprises), par type de produit ou service ; chaque produit renvoie au site projet qui le porte (langage → LecturaLingua, voix → LecturaVoice, Lexicon et corpus → LecturaLexique, logiciels pros → LecturaTools quand il existera). Développement et conseil IA sont transversaux. Les services éditoriaux ne renvoient à LecturaBooks que comme illustration. Anciennes versions : brain anciennes-pages/offres-entreprises_2026-11-15*.md. Prix : page Tarifs. Pastilles : vert = disponible, bleu = en préparation ou en développement. {% endcomment %}
+{% comment %} Maxime, 15/11/2026 : page Pro (ex-Entreprises), par type de produit ou service ; chaque produit renvoie au site projet qui le porte (langage → LecturaLingua, voix → LecturaVoice, Lexicon et corpus → LecturaLexique, logiciels pros → LecturaTools quand il existera). Développement et conseil IA sont transversaux. Les services éditoriaux ne renvoient à LecturaBooks que comme illustration. Anciennes versions : brain anciennes-pages/offres-entreprises_2026-11-15*.md. Prix : page Tarifs. Pastilles : vert = disponible, bleu = en préparation ou en développement. Licences réécrites le 23/11 selon infra/DISTRIBUTION.md (ancienne version : anciennes-pages/offres_pro_2026-11-23.md). {% endcomment %}
 
 **Des outils pour le français écrit et parlé, qui tournent chez vous.** Lectura conçoit des modèles compacts d'analyse du texte et de la voix, qui fonctionnent sur un simple processeur, sans carte graphique ni service en ligne ; pour la phonétique et l'analyse grammaticale du français, ils se placent parmi les meilleurs du marché. Éditeurs, entreprises de l'edtech ou de la voix, organismes de formation, laboratoires : intégrez-les à vos produits, entraînez vos propres modèles sur ses données, ou confiez à Lectura un projet sur mesure.
 
@@ -23,40 +23,35 @@ Des modèles mesurés, pas seulement promis :
 - un correcteur qui se trompe nettement moins : **60,2 %** de corrections justes parmi celles qu'il propose, contre 35 à 39 % pour Grammalecte et LanguageTool ;
 - une reconnaissance vocale proche de Whisper small, avec un modèle **près de vingt fois plus petit**.
 
-Et une licence simple : à l'année ou pour toujours, avec l'embarquement illimité du modèle dans vos applications.
+Pour les essayer dans votre code : l'[API publique]({{ '/developpement/api/' | relative_url }}), gratuite et sans clé, en préparation. Pour les faire tourner chez vous : les modèles et la licence commerciale, sur demande.
 
-### v0 : licence non commerciale, gratuite {#v0}
+### v0 : gratuite, en local {#v0}
 
-La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite : code sous AGPL-3.0, modèles sous CC BY-NC 4.0. Toute licence v1 en couvre l'usage commercial.
+La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et tourne chez vous : code sous AGPL-3.0, modèles publics sur Hugging Face, sous CC BY-NC 4.0.
 
-### v1 : licence commerciale, embarquement illimité {#v1}
+### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 
-Les modèles v1 s'obtiennent sous licence commerciale, annuelle ou perpétuelle : ils vous sont livrés et tournent chez vous, sur vos serveurs ou dans votre application, sans carte graphique. Propre à cette première version, la licence comprend l'embarquement illimité du modèle : il peut être intégré dans autant d'applications et d'appareils que vous le souhaitez. Le code d'appel de la v1 sera publié sous licence AGPL-3.0. En option : le code d'entraînement et les données.
+La v1 s'utilisera gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, en préparation, sans clé, avec des quotas par service ; son code sera publié sous AGPL-3.0 et ses modèles restent privés. Pour faire tourner les modèles chez vous, sur vos serveurs ou dans votre application, sans carte graphique, ou pour les intégrer à un produit vendu : la licence commerciale et les modèles se discutent avec Lectura. En option : le code d'entraînement et les données.
 
-- **Modules de langage** <span class="status-badge status-dispo">En vente</span> · Analyseur, Correcteur et Traducteur, en français et en anglais, et les briques Tagger et Transducer : phonétique, syllabes, grammaire, correction, traduction. À partir de 499 € HT par an, sur [LecturaLingua](https://lingua.lectura.world/modules/v1).
-- **Modules de voix** <span class="status-badge status-dispo">En vente</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage. À partir de 999 € HT par an, sur [LecturaVoice](https://voice.lectura.world/modeles/v1).
-- **Lexicon** <span class="status-badge status-dispo">En vente</span> · le lexique du français embarqué dans votre application, 290 € HT par an (offert avec les modules de langage), sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
+- **Modules de langage** <span class="status-badge status-dispo">Sur demande</span> · Analyseur, Correcteur et Traducteur, en français et en anglais : phonétique, syllabes, grammaire, correction, traduction. Prix indicatifs de 999 à 1 999 € HT, sur [LecturaLingua](https://lingua.lectura.world/offre/licences).
+- **Modules de voix** <span class="status-badge status-dispo">Sur demande</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage, sur [LecturaVoice](https://voice.lectura.world/modeles/v1).
+- **Lexicon** · le lexique du français, compris dans l'API publique et dans les modules de langage, présenté sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
-### v2 : licence commerciale, embarquement à part {#v2}
+### v2 : en développement {#v2}
 
-La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai là où la v1 bute encore), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers. Son développement avancera d'autant plus vite que la v1 trouvera ses acheteurs ; c'est pourquoi chaque licence v1 donne un avantage sur la v2 :
-
-- **licence annuelle** : 50 % de remise sur la licence v2 à sa sortie ;
-- **licence perpétuelle** : passage gratuit à la v2.
-
-<small>L'avantage porte sur le volet « utilisation commerciale » de la licence v2, et non sur celui de l'embarquement du modèle. Ce dernier pourra, pour des raisons d'équité des prix, être soumis à une redevance selon le nombre d'appareils sur lesquels le modèle est embarqué.</small>
+La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai là où la v1 bute encore), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers.
 
 Toutes les licences, modèles et ressources, sont détaillées sur la page [Licences]({{ '/offres/licences/' | relative_url }}).
 
 ### Autour des licences
 
-- **Clé d'essai API** <span class="status-badge status-dispo">Sur demande</span> · pour tester les modules dans votre propre code.
+- **API publique** <span class="status-badge status-cours">En préparation</span> · gratuite et sans clé, pour essayer les modules dans votre propre code ([en savoir plus]({{ '/developpement/api/' | relative_url }})).
 - **Intégration logicielle** <span class="status-badge status-dispo">Sur devis</span> · intégration dans votre environnement, chaînes de traitement sur mesure, mise en service.
 - **Voix personnalisée embarquée** <span class="status-badge status-dispo">Sur devis</span> · création de votre propre voix de synthèse, à embarquer directement sur vos appareils, utilisable hors ligne.
 - **Reconnaissance vocale métier** <span class="status-badge status-dispo">Sur devis</span> · une reconnaissance adaptée à votre vocabulaire.
 - **Nouvelle langue ou variété régionale** <span class="status-badge status-dispo">Sur devis</span> · un phonémiseur sur mesure.
 
-→ [Essayer les démos de LecturaLingua](https://lingua.lectura.world) · [de LecturaVoice](https://voice.lectura.world) · [Demander une évaluation ou un devis]({{ '/contact/' | relative_url }})
+→ [Essayer les démos de LecturaLingua](https://lingua.lectura.world) · [de LecturaVoice](https://voice.lectura.world) · [Demander une démo ou un devis]({{ '/contact/' | relative_url }})
 
 ---
 
@@ -144,4 +139,4 @@ Tout l'écosystème de Lectura, modèles, sites et données, a été développé
 
 ## Parlons de votre projet {#contact}
 
-Décrivez votre projet à **lectura.world@gmail.com** ou par la [page de contact]({{ '/contact/' | relative_url }}) : Lectura vous répond avec une démo ciblée, une clé d'essai ou un devis.
+Décrivez votre projet à **lectura.world@gmail.com** ou par la [page de contact]({{ '/contact/' | relative_url }}) : Lectura vous répond avec une démo ciblée ou un devis.

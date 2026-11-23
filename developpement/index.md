@@ -2,10 +2,10 @@
 title: Développement
 layout: default
 permalink: /developpement/
-description: "La partie technique de Lectura : l'écosystème du projet, les modules, les ressources, les logiciels et la recherche."
+description: "La partie technique de Lectura : l'écosystème du projet, les modules, l'API publique, les ressources, les logiciels et la recherche."
 ---
 
-{% comment %} Plan de Maxime (14/11/2026) : Écosystème, Modules (v0, v1, v2), Ressources, Logiciels, Recherche. Sommaire minimaliste en blocs, comme Découvrir (Maxime, 13/11). Anciennes versions : brain/lectura/site/anciennes-pages/developpement_index_2026-11-11.md et _2026-11-13.md. {% endcomment %}
+{% comment %} Plan de Maxime (14/11/2026) : Écosystème, Modules (v0, v1, v2), API publique (ajoutée le 23/11, décision de Maxime), Ressources, Logiciels, Recherche. Sommaire minimaliste en blocs, comme Découvrir (Maxime, 13/11). Anciennes versions : brain/lectura/site/anciennes-pages/developpement_index_2026-11-11.md et _2026-11-13.md. {% endcomment %}
 
 <div class="decouvrir-cartes dc-trois" markdown="0">
   <a class="dc-carte" href="{{ '/developpement/ecosysteme/' | relative_url }}">
@@ -15,6 +15,10 @@ description: "La partie technique de Lectura : l'écosystème du projet, les mod
   <a class="dc-carte" href="{{ '/developpement/modules/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M4 6.5l8 4.5 8-4.5M12 11v9"/></svg></span>
     <span class="dc-sur">Développement</span><span class="dc-titre">Les modules</span>
+  </a>
+  <a class="dc-carte" href="{{ '/developpement/api/' | relative_url }}">
+    <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></span>
+    <span class="dc-sur">Développement</span><span class="dc-titre">L'API publique</span>
   </a>
   <a class="dc-carte" href="{{ '/developpement/ressources/' | relative_url }}">
     <span class="cp-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>

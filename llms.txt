@@ -17,8 +17,8 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 ## Generations des modules
 
-- v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice). Usage commercial compris dans toute licence Lectura v1.
-- v1 : generation actuelle, en service pour les demos ; en vente sous licence commerciale (annuelle ou perpetuelle, embarquement illimite), modules livres et utilises en local.
+- v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice).
+- v1 : generation actuelle, utilisable gratuitement par l'API publique de Lectura (en preparation ; sans cle, quotas par service : https://www.lectura.world/developpement/api/) ; code sous AGPL-3.0, publication en preparation ; modeles prives ; licence commerciale et modeles en local sur demande.
 - v2 : generation suivante, en developpement : moteur vocal unifie, modeles de texte plus legers, autres langues.
 
 ## Technologie (v1)
@@ -34,11 +34,11 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 - LeXiK : lexique du francais publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0) et sur Hugging Face (https://huggingface.co/datasets/lecturaworld/lexik), telechargeable sur https://lexique.lectura.world/lexik ; prononciation syllabee, analyse grammaticale, alignement lettres-sons, frequences.
 - WiKiLeXiK : dictionnaire en ligne, interface web de LeXiK reliee au Wiktionnaire (par Kaikki) et a Wikidata.
-- Sous licence commerciale, sur LecturaLexique : le module Lexicon, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
+- Sur LecturaLexique : le module Lexicon (compris dans l'usage gratuit de la v1) ; sous licence commerciale, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
 
 ## Offre
 
-- Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), Lexicon et corpus (LecturaLexique), cle d'essai API sur demande, integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. L'API sert aux demos et a l'essai ; les modeles sont livres et tournent chez le client.
+- Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), Lexicon et corpus (LecturaLexique), API publique gratuite (en preparation), integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. Licence commerciale et modeles v1 sur demande (prix indicatifs des modules de langage sur lingua.lectura.world).
 - Perso : par projet, Lectura Education (methode de lecture, applications), Lectura Tools (lecteur syllabique, Text Analyser, Voice Edition, DiCoMo), Lectura Games, Lectura Books, en preparation ; outils gratuits en ligne des aujourd'hui (lecture syllabique, lecture a voix haute, dictionnaire).
 
 ## Methode de travail
@@ -79,6 +79,7 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 - Ecosysteme du projet : https://www.lectura.world/developpement/ecosysteme/
 - Ressources (lexique, donnees, corpus) : https://www.lectura.world/developpement/ressources/
 - Modules (v1 et archives v0) : https://www.lectura.world/developpement/modules/
+- API publique (en preparation) : https://www.lectura.world/developpement/api/
 - Logiciels (bureau, applications), prevus pour 2027 : https://www.lectura.world/developpement/logiciels/
 - Donnees : https://www.lectura.world/developpement/donnees/
 - Recherche : https://www.lectura.world/developpement/recherche/
@@ -87,8 +88,8 @@ Humanuscrit : projet d'ecriture avec l'IA (science-fiction, poesie, logique math
 
 ## Licences
 
-- Premiere generation (v0) : code AGPL-3.0, modeles CC BY-NC 4.0 ; usage commercial compris dans toute licence Lectura v1.
-- Generation actuelle (v1) : licence commerciale, annuelle ou perpetuelle, embarquement illimite ; prix sur lingua.lectura.world et voice.lectura.world.
-- Generation suivante (v2) : en developpement ; avantage pour les acheteurs v1 (annuelle : 50 % de remise ; perpetuelle : passage gratuit), hors embarquement.
+- Premiere generation (v0) : gratuite, en local ; code AGPL-3.0, modeles publics sur Hugging Face sous CC BY-NC 4.0.
+- Generation actuelle (v1) : gratuite par l'API publique (en preparation) ; code AGPL-3.0 (publication en preparation), modeles prives ; licence commerciale et modeles en local sur demande.
+- Generation suivante (v2) : en developpement.
 - Ressources (corpus, sons, images) : licence Createur ou Pro : https://www.lectura.world/offres/licences/
 - LeXiK : CC BY-SA 4.0.
