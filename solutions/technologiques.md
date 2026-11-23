@@ -78,7 +78,6 @@ La synthèse vocale lit un texte français à voix haute. Elle s'appuie sur l'an
 - **Lecture des sigles, des nombres et des formules**, grâce à l'analyse du langage.
 - **Lecture des sons courts** (syllabes, phonèmes), qui permet la lecture syllabique.
 - **Horodatage de chaque phonème**, qui permet un surlignage synchronisé du texte, mot à mot.
-- **Intelligibilité** : relue par la reconnaissance vocale, la voix de synthèse donne entre 1,1 et 3,0 % d'erreurs sur les sons selon les voix (CommonVoice, test).
 - **Vitesse et taille** : 3,5 à 4 fois plus rapide que le temps réel sur un processeur ordinaire, sans carte graphique ; 127 Mo pour le modèle à une voix, 300 Mo pour le modèle multi-voix (architectures FastPitch et Matcha-Conformer, vocodeur HiFi-GAN).
 - **Qualité** proche de celle de Kokoro.
 
