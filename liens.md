@@ -19,7 +19,7 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 
 ### Services Lectura
 
-- [LecturaLexique](https://lexique.lectura.world) — LeXiK, le dictionnaire WiKiLeXiK, Lexicon et les corpus
+- [LecturaLexique](https://lexique.lectura.world) — LeXiK, le dictionnaire WiKiLeXiK, le module et la base Lexicon, et les corpus
 - [LecturaLingua](https://lingua.lectura.world) — démos de l'analyse de l'écrit
 - [LecturaVoice](https://voice.lectura.world) — démos de la voix : synthèse, reconnaissance, sous-titrage
 - [LeXiK sur ORTOLANG](https://hdl.handle.net/11403/lexik) et sur [Hugging Face](https://huggingface.co/datasets/lecturaworld/lexik) — le lexique, sous licence CC BY-SA 4.0

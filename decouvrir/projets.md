@@ -15,7 +15,7 @@ Chaque projet de Lectura a son propre site. On y trouve la présentation détail
 
 <h3 class="projet-titre" id="lecturalexique"><span class="cp-icone">{% include icone-projet.html nom='dictionary' %}</span><a class="projet-logo" href="https://lexique.lectura.world"><img src="{{ '/assets/images/projets/lecturalexique.svg' | relative_url }}" width="768" height="276" alt="LecturaLexique"></a></h3>
 
-Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gratuitement en ligne ; le lexique **LeXiK** se télécharge gratuitement, sous licence libre, et a fait l'objet d'une publication sur ORTOLANG. Le site propose aussi, sous licence commerciale, le module **Lexicon** et des **corpus de syllabes et de mots** tirés de LeXiK.
+Le lexique du français de Lectura. Le dictionnaire **WiKiLeXiK** se consulte gratuitement en ligne ; le lexique **LeXiK** se télécharge gratuitement, sous licence libre, et a fait l'objet d'une publication sur ORTOLANG. Le site présente aussi le **module Lexicon** (code AGPL) et la **base Lexicon** tirée de LeXiK, et propose, sous licence commerciale, des **corpus de syllabes et de mots**.
 
 <div class="cta-links">
   <a href="https://lexique.lectura.world">lexique.lectura.world</a>

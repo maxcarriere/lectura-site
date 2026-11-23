@@ -34,11 +34,11 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 - LeXiK : lexique du francais publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0) et sur Hugging Face (https://huggingface.co/datasets/lecturaworld/lexik), telechargeable sur https://lexique.lectura.world/lexik ; prononciation syllabee, analyse grammaticale, alignement lettres-sons, frequences.
 - WiKiLeXiK : dictionnaire en ligne, interface web de LeXiK reliee au Wiktionnaire (par Kaikki) et a Wikidata.
-- Sur LecturaLexique : le module Lexicon (compris dans l'usage gratuit de la v1) ; sous licence commerciale, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
+- Sur LecturaLexique : le module Lexicon (code lectura-lexicon, AGPL) et la base Lexicon (tiree de LeXiK, CC BY-SA), compris dans l'usage gratuit de la v1 ; sous licence commerciale, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
 
 ## Offre
 
-- Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), Lexicon et corpus (LecturaLexique), API publique gratuite (en preparation), integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. Licence commerciale et modeles v1 sur demande (prix indicatifs des modules de langage sur lingua.lectura.world).
+- Pro : licences commerciales des modules de langage (LecturaLingua) et de voix (LecturaVoice), corpus (LecturaLexique), API publique gratuite (en preparation), integration, voix personnalisee, corpus de donnees, outils logiciels, services editoriaux, developpement, conseil en IA. Licence commerciale et modeles v1 sur demande (prix indicatifs des modules de langage sur lingua.lectura.world).
 - Perso : par projet, Lectura Education (methode de lecture, applications), Lectura Tools (lecteur syllabique, Text Analyser, Voice Edition, DiCoMo), Lectura Games, Lectura Books, en preparation ; outils gratuits en ligne des aujourd'hui (lecture syllabique, lecture a voix haute, dictionnaire).
 
 ## Methode de travail
