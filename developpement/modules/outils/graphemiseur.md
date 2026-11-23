@@ -27,7 +27,7 @@ Brique P2G : à partir d'une transcription phonétique IPA, elle reconstruit l'o
 | **POS** | Étiquetage morphosyntaxique (19 étiquettes) | 98,3 % |
 | **Morphologie** | Genre, nombre, temps, mode, personne, forme verbale | 94,7 à 99,7 % |
 
-*Mesures de Lectura sur le jeu de développement (modèle V7). Pour la transcription elle-même, la mesure de référence est celle de la chaîne complète : 6,9 % de mots faux sur la partie test de FLEURS.*
+*Mesures de Lectura sur le jeu de développement (modèle V7).*
 
 Tout tourne **en local**, avec ONNX Runtime (environ 2 ms par phrase sur CPU) : aucun appel à un serveur Lectura.
 

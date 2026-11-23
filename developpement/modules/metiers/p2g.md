@@ -71,14 +71,6 @@ Phonèmes IPA (mots séparés)
 
 ---
 
-## Ce qu'il vaut
-
-- **6,9 %** de mots faux (taux d'erreur sur les mots) sur la partie test de FLEURS.
-
-*Mesure de Lectura, novembre 2026.*
-
----
-
 ## Exemple de code
 
 ```python
