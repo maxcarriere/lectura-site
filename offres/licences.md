@@ -19,7 +19,8 @@ La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et s'ins
 
 - code sous AGPL-3.0, sur GitHub et PyPI ;
 - modèles neuronaux publics sur Hugging Face, sous CC BY-NC 4.0 (usage non commercial) ;
-- tables lexicales sous CC BY-SA 4.0 ; banque de diphones et timbres de voix sous CC BY 4.0.
+- tables lexicales sous CC BY-SA 4.0 ; banque de diphones et timbres de voix sous CC BY 4.0 ;
+- usage commercial (intégration dans un produit fermé, modèles hors du cadre non commercial) : sur demande ; toute licence Lectura v1 couvre aussi la v0.
 
 ### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 

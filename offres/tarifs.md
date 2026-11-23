@@ -9,7 +9,7 @@ description: "Les tarifs de Lectura : services à la journée, licences des modu
 
 {% comment %} Refonte du 14/11/2026 sur le plan de Maxime (services, licences, produits, devis). Montants repris tels quels de l'ancienne page Tarification (déjà validés et en ligne) : 500 €/jour, licences de quelques centaines à plusieurs milliers d'euros par an. Aucun nouveau prix. Licences réécrites le 23/11 (infra/DISTRIBUTION.md, grille indicative de Maxime du 23/11 ; ancienne version : anciennes-pages/offres_tarifs_2026-11-23.md). Les prix des produits restent sur leur site projet. Ancienne version : brain anciennes-pages/solutions_tarifs_2026-11-14.md. {% endcomment %}
 
-Les démos de Lectura et le lexique LeXiK sont gratuits, comme le code de la première génération des modules (AGPL-3.0, sur [GitHub](https://github.com/maxcarriere/lectura-modules)). Les usages commerciaux relèvent d'une licence, d'un produit ou d'une prestation.
+Les démos de Lectura et le lexique LeXiK sont gratuits, comme le code de la première génération des modules (AGPL-3.0, sur [GitHub](https://github.com/maxcarriere/lectura-modules) ; usage commercial sur demande, et compris dans toute licence Lectura v1). Les usages commerciaux relèvent d'une licence, d'un produit ou d'une prestation.
 
 ---
 

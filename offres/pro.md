@@ -27,7 +27,7 @@ Pour les essayer dans votre code : l'[API publique]({{ '/developpement/api/' | r
 
 ### v0 : gratuite, en local {#v0}
 
-La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et tourne chez vous : code sous AGPL-3.0, modèles publics sur Hugging Face, sous CC BY-NC 4.0.
+La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et tourne chez vous : code sous AGPL-3.0, modèles publics sur Hugging Face, sous CC BY-NC 4.0. Usage commercial sur demande ; toute licence Lectura v1 couvre aussi la v0.
 
 ### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 
