@@ -73,10 +73,10 @@ Texte brut
 
 ## Ce qu'il vaut
 
-- **99,1 %** de mots justes en contexte de phrase, sur un corpus de français parlé (ParisStories).
-- Les liaisons obligatoires sont faites dans **86 %** des cas.
+- Lecture de phrases sur CSF18 (238 phrases à la phonétique corrigée à la main) : **6,65 %** d'erreurs sur les sons, et **2,76 %** en confondant les timbres proches (é / è, o ouvert / fermé, eu ouvert / fermé).
+- Sur les mêmes phrases, espeak-ng fait 12,85 % et 8,90 %.
 
-*Mesures de Lectura, novembre 2026.*
+*Mesure de Lectura du 23/11/2026, par la chaîne complète lectura-g2p. Source : CSF18, Sankar et al., ICASSP 2022 ([DOI 10.5281/zenodo.5554849](https://doi.org/10.5281/zenodo.5554849), CC BY 4.0).*
 
 ---
 
