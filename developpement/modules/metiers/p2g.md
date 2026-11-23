@@ -71,6 +71,15 @@ Phonèmes IPA (mots séparés)
 
 ---
 
+## Ce qu'il vaut
+
+- Écriture de phrases sur CSF18 (238 phrases), à partir de leur phonétique corrigée à la main : **25,3 %** de mots faux.
+- Sur les mêmes phrases, une base naïve, qui écrit chaque mot avec l'orthographe la plus fréquente de sa prononciation, sans contexte, fait 41,2 %.
+
+*Mesure de Lectura du 23/11/2026, par la chaîne complète lectura-p2g. Source : CSF18, Sankar et al., ICASSP 2022 ([DOI 10.5281/zenodo.5554849](https://doi.org/10.5281/zenodo.5554849), CC BY 4.0).*
+
+---
+
 ## Exemple de code
 
 ```python
