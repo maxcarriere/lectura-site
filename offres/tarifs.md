@@ -21,7 +21,7 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 ## Licences {#licences}
 
-La v0 est gratuite, comme le sera l'usage de la v1 par l'[API publique]({{ '/developpement/api/' | relative_url }}), en préparation. La licence commerciale et les modèles v1 en local sont sur demande : à titre indicatif, les modules de langage vont de **999 à 1 999 € HT** sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; les modules de voix sont sur demande. Le module Lexicon v1, en préparation, avec ses bases optimisées : 290 € HT à titre indicatif, sur [LecturaLexique](https://lexique.lectura.world).
+La v0 est gratuite, comme le sera l'usage de la v1 par l'[API publique]({{ '/developpement/api/' | relative_url }}), en préparation. La licence commerciale et les modèles v1 en local sont sur demande : à titre indicatif, les modules de langage vont de **999 à 1 999 € HT** sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; les modules de voix sont sur demande.
 
 Sur devis : l'option code d'entraînement et données, l'accompagnement dans l'intégration logicielle.
 
