@@ -32,7 +32,7 @@ Pour faire tourner les modèles v1 chez vous, sur vos serveurs ou dans votre app
 - les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés) ;
 - sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
 
-Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0) et se télécharge gratuitement ; le module Lexicon (code AGPL) et la base Lexicon, qui en est tirée, sont présentés sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
+Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0) et se télécharge gratuitement ; le module Lexicon (code sous AGPL, à publier) et la base Lexicon, qui en est tirée, sont présentés sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
 ### v2 : en développement {#v2}
 

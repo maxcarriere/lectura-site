@@ -34,7 +34,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 - LeXiK : lexique du francais publie sur ORTOLANG (https://hdl.handle.net/11403/lexik, CC BY-SA 4.0) et sur Hugging Face (https://huggingface.co/datasets/lecturaworld/lexik), telechargeable sur https://lexique.lectura.world/lexik ; prononciation syllabee, analyse grammaticale, alignement lettres-sons, frequences.
 - WiKiLeXiK : dictionnaire en ligne, interface web de LeXiK reliee au Wiktionnaire (par Kaikki) et a Wikidata.
-- Sur LecturaLexique : le module Lexicon (code lectura-lexicon, AGPL) et la base Lexicon (tiree de LeXiK, CC BY-SA), compris dans l'usage gratuit de la v1 ; sous licence commerciale, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
+- Sur LecturaLexique : le module Lexicon (code lectura-lexicon sous AGPL, a publier) et la base Lexicon (tiree de LeXiK, CC BY-SA), compris dans l'usage gratuit de la v1 ; sous licence commerciale, un corpus de syllabes du francais avec leur son, un corpus de mots illustres.
 
 ## Offre
 

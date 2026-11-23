@@ -35,7 +35,7 @@ La v1 s'utilisera gratuitement par l'[API publique]({{ '/developpement/api/' | r
 
 - **Modules de langage** <span class="status-badge status-dispo">Sur demande</span> · Analyseur, Correcteur et Traducteur, en français et en anglais : phonétique, syllabes, grammaire, correction, traduction. Prix indicatifs de 999 à 1 999 € HT, sur [LecturaLingua](https://lingua.lectura.world/offre/licences).
 - **Modules de voix** <span class="status-badge status-dispo">Sur demande</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage, sur [LecturaVoice](https://voice.lectura.world/modeles/v1).
-- **Module et base Lexicon** · le module Lexicon (code AGPL) et la base Lexicon, tirée de LeXiK, compris dans l'API publique et dans les modules de langage, présentés sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
+- **Module et base Lexicon** · le module Lexicon (code sous AGPL, à publier) et la base Lexicon, tirée de LeXiK, compris dans l'API publique et dans les modules de langage, présentés sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
 
 ### v2 : en développement {#v2}
 
