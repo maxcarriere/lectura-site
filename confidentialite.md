@@ -39,13 +39,13 @@ Le sous-domaine **lexique.lectura.world**, hébergé sur un serveur dédié, enr
 ## Démonstrations en ligne {#demonstrations}
 
 {% comment %}Texte de Lectura Droit (droit/CONFIDENTIALITE-API-PUBLIQUE.md, 24/11/2026) : remplace « traités en temps réel
-et ne sont pas stockés. Aucun historique de requêtes n'est conservé », inexact. À aligner sur la v1 quand le sel tournant
-sera déployé.{% endcomment %}
+et ne sont pas stockés. Aucun historique de requêtes n'est conservé », inexact. Ligne « Limitation de l'usage » alignée sur la v1 (sel tournant
+déployé sur l'ancienne API le 24/11, Droit).{% endcomment %}
 
 Les sites LecturaLingua, LecturaVoice et LecturaLexique proposent des démonstrations (analyse du langage, synthèse et reconnaissance vocales, recherche dans le dictionnaire). Les textes et les sons que vous y envoyez servent uniquement à produire le résultat (base légale : l'exécution du service que vous demandez, RGPD, art. 6.1 b). Ils ne sont pas conservés : un son peut être placé dans un fichier temporaire le temps du calcul, effacé aussitôt après. Ils ne servent pas à entraîner des modèles.
 
 - **Journaux techniques du serveur** : adresse IP, date, adresse appelée et code de réponse, conservés 14 jours au plus pour la sécurité (intérêt légitime). Pour une recherche dans le dictionnaire, ou toute requête passée dans l'adresse, l'adresse appelée peut contenir le mot cherché.
-- **Limitation de l'usage** : pour prévenir les abus, le serveur garde votre adresse IP, sous forme d'empreinte, et le nombre de vos requêtes, pendant 90 jours (intérêt légitime).
+- **Limitation de l'usage** : pour prévenir les abus, le serveur compte vos requêtes de la journée. Il ne garde pas votre adresse IP, seulement une empreinte calculée avec une clé aléatoire qui change chaque jour. Cette empreinte, la clé et les compteurs sont effacés au bout de deux jours (intérêt légitime).
 - **Hébergement** : OVH, au Canada (décision d'adéquation de la Commission européenne). Ces données ne sont transmises à aucune autre entreprise.
 - **Vos droits** : accès, rectification, effacement, limitation et opposition, en écrivant à lectura.world@gmail.com. Vous pouvez aussi saisir la CNIL ([www.cnil.fr](https://www.cnil.fr)).
 
