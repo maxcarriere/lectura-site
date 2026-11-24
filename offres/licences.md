@@ -34,6 +34,8 @@ Pour faire tourner les modèles v1 chez vous, sur vos serveurs ou dans votre app
 
 Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/modules/obtenir) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0, usage commercial permis) et se télécharge gratuitement ; le module Lexicon (code sous AGPL, à publier) et la base Lexicon, qui en est tirée et que sert l'API publique, sont présentés sur [LecturaLexique](https://lexique.lectura.world/modules/v1).
 
+*TVA non applicable, art. 293 B du CGI.*
+
 ### v2 : en développement {#v2}
 
 La [v2]({{ '/developpement/modules/v2/' | relative_url }}) est en cours de développement : des modèles plus performants, de nouvelles fonctionnalités comme le clonage de voix, des modèles plus légers.

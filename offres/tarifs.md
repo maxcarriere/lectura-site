@@ -23,6 +23,8 @@ Intégration, modèles sur mesure, préparation de données, services éditoriau
 
 La v0 est gratuite, comme l'usage de la v1 par l'[API publique]({{ '/developpement/api/' | relative_url }}). La licence commerciale et les modèles v1 en local sont sur demande : à titre indicatif, les modules de langage vont de **999 à 1 999 € HT** sur [LecturaLingua](https://lingua.lectura.world/modules/obtenir) ; les modules de voix sont sur demande.
 
+*TVA non applicable, art. 293 B du CGI.*
+
 Sur devis : l'option code d'entraînement et données, l'accompagnement dans l'intégration logicielle.
 
 Ce que couvre chaque licence : page [Licences]({{ '/offres/licences/' | relative_url }}).

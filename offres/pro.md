@@ -37,6 +37,8 @@ La v1 s'utilise gratuitement par l'[API publique]({{ '/developpement/api/' | rel
 - **Modules de voix** <span class="status-badge status-dispo">Sur demande</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage, sur [LecturaVoice](https://voice.lectura.world/modules/v1).
 - **Module Lexicon v1** <span class="status-badge status-cours">En préparation</span> · le module Lexicon (code sous AGPL, à publier), avec ses bases optimisées, en français (tirées de LeXiK) et en anglais ; utilisable par l'API publique et compris dans les modules de langage. Base sur mesure sur devis, sur [LecturaLexique](https://lexique.lectura.world).
 
+*TVA non applicable, art. 293 B du CGI.*
+
 ### v2 : en développement {#v2}
 
 La génération suivante est en cours de développement. Elle vise des modèles plus performants (de meilleurs résultats aux bancs d'essai là où la v1 bute encore), de nouvelles fonctionnalités comme le clonage de voix, et des modèles plus légers.
