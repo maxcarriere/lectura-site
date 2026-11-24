@@ -156,7 +156,7 @@ Tous ces outils reposent sur un lexique construit en réunissant les grandes bas
 
 - **LeXiK** : près de 2,9 millions d'entrées de mots (2,2 millions de graphies), plus les locutions et les formes spéciales, dont plus de 400 000 noms propres prononcés ; pour chaque entrée, la prononciation syllabée, l'analyse grammaticale, la conjugaison, l'alignement des lettres et des sons, l'orthocode (l'orthographe annotée des syllabes, des consonnes latentes et des lettres muettes) et la fréquence. Publié sous licence libre (CC BY-SA 4.0) sur [ORTOLANG](https://hdl.handle.net/11403/lexik).
 - **WiKiLeXiK** : un dictionnaire en ligne qui relie LeXiK au Wiktionnaire et à Wikidata (688 000 définitions, avec les sens, les registres et des citations ; synonymes ; 2,5 millions d'entités classées par catégories).
-- **Module et base Lexicon** : le module Lexicon (code sous AGPL, en cours de publication) lit dans une application la base Lexicon, en français (tirée de LeXiK) et en anglais, de 3 à 44 Mo à télécharger selon la taille ; validité d'un mot, fréquence, prononciations, homophones, rimes, lemmes, conjugaison, recherche multicritère.
+- **Module et base Lexicon** : le module Lexicon (code sous AGPL, publié sur [PyPI](https://pypi.org/project/lectura-lexicon/)) lit dans une application la base Lexicon, en français (tirée de LeXiK) et en anglais, de 3 à 44 Mo à télécharger selon la taille ; validité d'un mot, fréquence, prononciations, homophones, rimes, lemmes, conjugaison, recherche multicritère.
 - **Ressources dérivées** : un corpus des 4 946 syllabes du français avec leur son, et un corpus de 1 553 mots illustrés.
 
 **Applications possibles**
