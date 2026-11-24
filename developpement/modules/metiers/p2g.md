@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Phonétique IPA → texte français — pipeline complet : graphémiseur, formules, cohérence morphologique, noms propres</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-p2g/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/P2G-Pipeline" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/P2G-Pipeline" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-p2g-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-p2g</code>
   </div>

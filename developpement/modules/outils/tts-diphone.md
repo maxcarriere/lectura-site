@@ -14,7 +14,7 @@ redirect_from:
   <p class="module-tagline">Synthèse vocale du français par concaténation de diphones (vocodeur WORLD), en local, 44,1 kHz</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-diphone/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Diphone" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Diphone" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-diphone-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-diphone</code>
   </div>

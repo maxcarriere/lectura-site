@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Aligneur graphème-phonème et syllabeur phonologique du français</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-aligneur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Aligneur" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Aligneur" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-aligneur</code>
   </div>
 </div>

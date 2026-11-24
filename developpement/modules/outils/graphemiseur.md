@@ -11,7 +11,7 @@ permalink: /developpement/modules/outils/graphemiseur/
   <p class="module-tagline">Modèle BiLSTM V7 multi-tête — P2G + POS + Morphologie avec attention cross et lex_select</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-graphemiseur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Graphemiseur" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Graphemiseur" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-p2g-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-graphemiseur</code>
   </div>

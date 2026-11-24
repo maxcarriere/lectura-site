@@ -53,7 +53,7 @@ Pour toute question, retour ou proposition de collaboration autour du projet Lec
 
 ### Retrouver Lectura
 
-- **GitHub** (première génération des modules) : [github.com/maxcarriere/lectura-modules](https://github.com/maxcarriere/lectura-modules)
+- **GitHub** (première génération des modules) : [github.com/maxcarriere/lectura-modules-v0](https://github.com/maxcarriere/lectura-modules-v0)
 - **LinkedIn** : [linkedin.com/in/maximecarriere](https://www.linkedin.com/in/maximecarriere/)
 - **PyPI** : [pypi.org/user/lectura](https://pypi.org/user/lectura/)
 

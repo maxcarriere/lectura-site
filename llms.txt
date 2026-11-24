@@ -17,7 +17,7 @@ Maxime Carriere, agrege de mathematiques, autoentrepreneur specialise dans l'uti
 
 ## Generations des modules
 
-- v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice).
+- v0 : premiere generation, gratuite : code sous AGPL-3.0 et modeles sous CC BY-NC 4.0, sur PyPI, Hugging Face et GitHub (https://github.com/maxcarriere/lectura-modules-v0), tout en local, sans cle ; dix paquets : briques de texte (tokeniseur, formules, aligneur-syllabeur, phonemiseur, graphemiseur, lexique), chaines G2P et P2G, voix diphonique et conversion vocale (OpenVoice).
 - v1 : generation actuelle, utilisable gratuitement par l'API publique de Lectura (en preparation ; sans cle, quotas par service : https://www.lectura.world/developpement/api/) ; code sous AGPL-3.0, publication en preparation ; modeles prives ; licence commerciale et modeles en local sur demande.
 - v2 : generation suivante, en developpement : moteur vocal unifie, modeles de texte plus legers, autres langues.
 

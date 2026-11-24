@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Lecture algorithmique des formules pour le français</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-formules/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Formules" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Formules" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-formules</code>
   </div>
 </div>

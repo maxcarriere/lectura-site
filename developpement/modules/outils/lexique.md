@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Accès à une base lexicale du français : lemmes, formes fléchies avec phonétique IPA, syllabation et morphologie</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-lexique/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Lexique" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Lexique" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-lexique</code>
   </div>
 </div>

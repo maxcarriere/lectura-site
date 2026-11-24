@@ -14,7 +14,7 @@ redirect_from:
   <p class="module-tagline">Modificateur de timbre pour voix de synthèse, par OpenVoice V2, en ONNX, en local, avec filigrane IA</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc-zeroshot/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-vc-zeroshot-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-vc-zeroshot</code>
   </div>

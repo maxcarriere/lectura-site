@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Conversion vocale pour le français — module ZeroShot (OpenVoice) et démo en ligne</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-vc-zeroshot/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/VC-ZeroShot" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-vc-zeroshot</code>
   </div>
 </div>

@@ -23,7 +23,7 @@ Ressources, projets et outils en lien avec l'écosystème Lectura.
 - [LecturaLingua](https://lingua.lectura.world) — démos de l'analyse de l'écrit
 - [LecturaVoice](https://voice.lectura.world) — démos de la voix : synthèse, reconnaissance, sous-titrage
 - [LeXiK sur ORTOLANG](https://hdl.handle.net/11403/lexik) et sur [Hugging Face](https://huggingface.co/datasets/lecturaworld/lexik) — le lexique, sous licence CC BY-SA 4.0
-- [GitHub](https://github.com/maxcarriere/lectura-modules) — code source de la première génération des modules (v0, juillet 2026)
+- [GitHub](https://github.com/maxcarriere/lectura-modules-v0) — code source de la première génération des modules (v0, juillet 2026)
 - [PyPI](https://pypi.org/user/lectura/) — paquets de la première génération (v0)
 
 ---

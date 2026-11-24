@@ -13,7 +13,7 @@ redirect_from:
   <p class="module-tagline">Normalisateur et tokeniseur complet pour le français</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-tokeniseur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Tokeniseur" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Tokeniseur" class="module-badge">GitHub</a>
     <code class="module-install">pip install lectura-tokeniseur</code>
   </div>
 </div>

@@ -11,7 +11,7 @@ permalink: /developpement/modules/outils/phonemiseur/
   <p class="module-tagline">Modèle BiLSTM char-level multi-tête — G2P + POS + Morphologie + Liaison</p>
   <div class="module-links">
     <a href="https://pypi.org/project/lectura-phonemiseur/" class="module-badge">PyPI</a>
-    <a href="https://github.com/maxcarriere/lectura-modules/tree/main/Phonemiseur" class="module-badge">GitHub</a>
+    <a href="https://github.com/maxcarriere/lectura-modules-v0/tree/main/Phonemiseur" class="module-badge">GitHub</a>
     <a href="https://huggingface.co/lecturaworld/lectura-g2p-v0" class="module-badge">Hugging Face</a>
     <code class="module-install">pip install lectura-phonemiseur</code>
   </div>
