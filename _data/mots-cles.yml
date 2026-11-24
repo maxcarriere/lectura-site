@@ -64,6 +64,6 @@
   region: donnees
 - sigle: "Lexicon"
   libelle: "le lexique dans votre application"
-  url: https://lexique.lectura.world/lexicon/fr
+  url: https://lexique.lectura.world/modules/v1
   projet: lexique
   region: donnees

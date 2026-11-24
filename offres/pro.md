@@ -23,7 +23,7 @@ Des modèles mesurés, pas seulement promis :
 - un correcteur qui se trompe nettement moins : **60,2 %** de corrections justes parmi celles qu'il propose, contre 35 à 39 % pour Grammalecte et LanguageTool ;
 - une reconnaissance vocale proche de Whisper small, avec un modèle **près de vingt fois plus petit**.
 
-Pour les essayer dans votre code : l'[API publique]({{ '/developpement/api/' | relative_url }}), gratuite et sans clé, en préparation. Pour les faire tourner chez vous : les modèles et la licence commerciale, sur demande.
+Pour les essayer dans votre code : l'[API publique]({{ '/developpement/api/' | relative_url }}), gratuite et sans clé. Pour les faire tourner chez vous : les modèles et la licence commerciale, sur demande.
 
 ### v0 : gratuite, en local {#v0}
 
@@ -31,11 +31,11 @@ La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et tourn
 
 ### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 
-La v1 s'utilisera gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, en préparation, sans clé, avec des quotas par service ; son code sera publié sous AGPL-3.0 et ses modèles restent privés. Pour faire tourner les modèles chez vous, sur vos serveurs ou dans votre application, sans carte graphique, ou pour les intégrer à un produit vendu : la licence commerciale et les modèles se discutent avec Lectura. En option : le code d'entraînement et les données.
+La v1 s'utilise gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, sans clé, avec un usage limité ; son code sera publié sous AGPL-3.0 et ses modèles restent privés. Pour faire tourner les modèles chez vous, sur vos serveurs ou dans votre application, sans carte graphique, ou pour les intégrer à un produit vendu : la licence commerciale et les modèles se discutent avec Lectura. En option : le code d'entraînement et les données.
 
-- **Modules de langage** <span class="status-badge status-dispo">Sur demande</span> · Analyseur, Correcteur et Traducteur, en français et en anglais : phonétique, syllabes, grammaire, correction, traduction. Prix indicatifs de 999 à 1 999 € HT, sur [LecturaLingua](https://lingua.lectura.world/offre/licences).
-- **Modules de voix** <span class="status-badge status-dispo">Sur demande</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage, sur [LecturaVoice](https://voice.lectura.world/modeles/v1).
-- **Module Lexicon v1** <span class="status-badge status-cours">En préparation</span> · le module Lexicon (code sous AGPL, à publier), avec ses bases optimisées tirées de LeXiK, pour le français ; utilisable par l'API publique et compris dans les modules de langage. Base sur mesure sur devis, sur [LecturaLexique](https://lexique.lectura.world).
+- **Modules de langage** <span class="status-badge status-dispo">Sur demande</span> · Analyseur, Correcteur et Traducteur, en français et en anglais : phonétique, syllabes, grammaire, correction, traduction. Prix indicatifs de 999 à 1 999 € HT, sur [LecturaLingua](https://lingua.lectura.world/modules/obtenir).
+- **Modules de voix** <span class="status-badge status-dispo">Sur demande</span> · synthèse vocale (TTS), reconnaissance vocale (STT), alignement forcé, sous-titrage, sur [LecturaVoice](https://voice.lectura.world/modules/v1).
+- **Module Lexicon v1** <span class="status-badge status-cours">En préparation</span> · le module Lexicon (code sous AGPL, à publier), avec ses bases optimisées, en français (tirées de LeXiK) et en anglais ; utilisable par l'API publique et compris dans les modules de langage. Base sur mesure sur devis, sur [LecturaLexique](https://lexique.lectura.world).
 
 ### v2 : en développement {#v2}
 

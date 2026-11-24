@@ -2,7 +2,7 @@
 title: Licences
 layout: default
 permalink: /offres/licences/
-description: "Les licences de Lectura en un coup d'œil : modèles v0 (gratuits, en local), v1 (gratuite par l'API publique en préparation, licence commerciale et modèles sur demande) et v2 (en développement), ressources en licence Créateur ou Pro, conditions de vente."
+description: "Les licences de Lectura en un coup d'œil : modèles v0 (gratuits, en local), v1 (gratuite par l'API publique, licence commerciale et modèles sur demande) et v2 (en développement), ressources en licence Créateur ou Pro, conditions de vente."
 ---
 
 {% comment %} Maxime, 19/11/2026 : une page qui regroupe tous les cas de licence, comme Tarifs pour les prix. Sources : DECISIONS du 19/11 (v1 en vente, avantage v2, embarquement), règle des licences des ressources du 16/11 (lectura/CLAUDE.md), grille des modules (prix sur les sites projets). La page Pro garde un résumé et renvoie ici. Modèles réécrits le 23/11 selon infra/DISTRIBUTION.md (ancienne version : anciennes-pages/offres_licences_2026-11-23.md). {% endcomment %}
@@ -24,7 +24,7 @@ La [v0]({{ '/developpement/modules/v0/' | relative_url }}) est gratuite et s'ins
 
 ### v1 : gratuite par l'API, licence et modèles sur demande {#v1}
 
-La [v1]({{ '/developpement/modules/v1/' | relative_url }}) s'utilisera gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, en préparation, sans clé, avec des quotas par service ; d'ici là, elle s'essaie dans les démos des sites. Son code sera publié sous AGPL-3.0 ; ses modèles restent privés, sur le serveur de Lectura.
+La [v1]({{ '/developpement/modules/v1/' | relative_url }}) s'utilise gratuitement par l'[API publique]({{ '/developpement/api/' | relative_url }}) de Lectura, sans clé, avec un usage limité ; elle fait aussi tourner les démos des sites. Son code sera publié sous AGPL-3.0 ; ses modèles restent privés, sur le serveur de Lectura.
 
 Pour faire tourner les modèles v1 chez vous, sur vos serveurs ou dans votre application ou pour les utiliser dans un produit vendu, sans limite de quotas, la licence commerciale et les modèles sont **sur demande** ([contact]({{ '/contact/' | relative_url }})) :
 
@@ -32,7 +32,7 @@ Pour faire tourner les modèles v1 chez vous, sur vos serveurs ou dans votre app
 - les voix livrées sont des voix de synthèse, sans nom de personne ; la licence en encadre l'usage (pas de recherche des voix d'origine, mention de l'IA pour les sons diffusés) ;
 - sur devis : le code d'entraînement et les données, l'accompagnement dans l'intégration logicielle.
 
-Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/offre/licences) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0, usage commercial permis) et se télécharge gratuitement, comme les bases Lexicon qui en sont tirées. ; le module Lexicon (code sous AGPL, à publier) et la base Lexicon, qui en est tirée, sont présentés sur [LecturaLexique](https://lexique.lectura.world/lexicon/fr).
+Prix indicatifs des modules de langage, de 999 à 1 999 € HT selon les modules, sur [LecturaLingua](https://lingua.lectura.world/modules/obtenir) ; modules de voix sur demande. Le lexique [LeXiK](https://lexique.lectura.world) est libre (CC BY-SA 4.0, usage commercial permis) et se télécharge gratuitement ; le module Lexicon (code sous AGPL, à publier) et la base Lexicon, qui en est tirée et que sert l'API publique, sont présentés sur [LecturaLexique](https://lexique.lectura.world/modules/v1).
 
 ### v2 : en développement {#v2}
 

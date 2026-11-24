@@ -29,6 +29,6 @@ La documentation complète (structure, colonnes, sources, statistiques) est sur 
 
 ## Ce que LeXiK alimente
 
-- **Les modules de texte**, qu'il entraîne et qui l'enrichissent en retour ; le **module Lexicon** le lit dans une application, hors ligne, sous la forme de la base Lexicon (voir la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}) et [LecturaLexique](https://lexique.lectura.world/lexicon/fr)).
+- **Les modules de texte**, qu'il entraîne et qui l'enrichissent en retour ; le **module Lexicon** le lit dans une application, hors ligne, sous la forme de la base Lexicon (voir la [génération v1]({{ '/developpement/modules/v1/' | relative_url }}) et [LecturaLexique](https://lexique.lectura.world/modules/v1)).
 - **Les [corpus d'entraînement]({{ '/developpement/donnees/' | relative_url }})**, dont il fournit la phonétique de base.
 - **Les [corpus pédagogiques]({{ '/developpement/corpus/' | relative_url }})**, dont les listes de mots ou de syllabes suivent ses fréquences et portent sa phonétique et sa grammaire.
