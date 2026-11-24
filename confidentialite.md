@@ -51,9 +51,24 @@ Les sites LecturaLingua, LecturaVoice et LecturaLexique proposent des démonstra
 
 ---
 
-## API Lectura
+## API publique v1 (api.lectura.world/v1) {#api}
 
-L'API publique (api.lectura.world) peut enregistrer des logs de requêtes à des fins de maintenance et de surveillance du service. Ces logs ne contiennent pas de données personnelles identifiantes au-delà de l'adresse IP.
+{% comment %}Version définitive de Lectura Droit (droit/CONFIDENTIALITE-API-PUBLIQUE.md, 24/11/2026, relue). Ne pas
+publier avant les cinq conditions en tête de ce fichier (zz-v1.conf, api-v1.log, minuteur du relevé, tampon nginx,
+mode local sans réseau), puis le oui de Maxime.{% endcomment %}
+
+L'API publique de Lectura permet d'analyser des textes et de produire de la voix. Les modules Lectura publiés en code libre l'appellent par défaut. Vous pouvez aussi l'appeler directement. Elle est gratuite, sans compte ni clé, avec un usage limité. Ce paragraphe vaut pour les adresses qui commencent par /v1 ; les autres services du site sont décrits dans la section « [Démonstrations en ligne](#demonstrations) ».
+
+- **Responsable du traitement** : Maxime Carrière EI (Lectura), lectura.world@gmail.com.
+- **Ce que vous envoyez** : les textes et, pour les services vocaux, les sons que vous ou votre programme transmettez à l'API. Ils sont traités en mémoire, uniquement pour produire le résultat demandé (base légale : l'exécution du service que vous demandez, RGPD, art. 6.1 b). **Ils ne sont enregistrés nulle part**, ni sur disque ni dans les journaux, même en cas d'erreur, et ne servent pas à entraîner des modèles.
+- **Limitation de l'usage** : pour répartir la capacité du serveur et prévenir les abus, l'API compte vos requêtes de la journée, pour chaque service. Elle ne garde pas votre adresse IP, seulement une empreinte calculée avec une clé aléatoire qui change chaque jour (pour IPv6, sur le préfixe /64). Cette empreinte, la clé et les compteurs sont effacés au bout de deux jours ; après ce délai, plus rien ne relie ces données à votre adresse. Base légale : l'intérêt légitime de Lectura à assurer le fonctionnement du service (RGPD, art. 6.1 f).
+- **Statistiques** : un relevé quotidien donne, pour chaque service, des totaux (requêtes, refus, temps de calcul, nombre de visiteurs). Il ne contient ni adresse IP, ni empreinte, ni contenu. Ces totaux ne contiennent aucune donnée personnelle et sont conservés pour le suivi du service.
+- **Journaux techniques du serveur** : date, service appelé (sans le contenu de la requête), code de réponse, taille de la réponse, durée de traitement, logiciel client utilisé (user-agent) et adresse IP tronquée (dernier octet effacé en IPv4, seuls les trois premiers groupes gardés en IPv6). Ils sont conservés 14 jours, pour la sécurité (intérêt légitime).
+- **Sons produits** : ils portent un marquage invisible qui signale qu'ils ont été générés par IA. Ce marquage est le même pour tous les sons : il ne contient aucune donnée sur vous ni sur votre requête.
+- **Hébergement** : le serveur est hébergé par OVH au Canada, pays qui bénéficie d'une décision d'adéquation de la Commission européenne. Les données de l'API ne sont transmises à aucune autre entreprise.
+- **Ce qu'il ne faut pas envoyer** : des données sensibles (santé, opinions, etc.), des données qui permettent d'identifier un enfant, ou la voix d'une personne sans son accord.
+- **Si vous changez l'adresse de l'API** dans un module, vos données partent vers le serveur que vous avez choisi : Lectura n'en est plus responsable. En mode local, rien ne quitte votre machine.
+- **Vos droits** : accès, rectification, effacement, limitation et opposition, en écrivant à lectura.world@gmail.com. Lectura ne garde pas votre adresse IP complète et ne peut donc pas, seule, retrouver vos requêtes (RGPD, art. 11). Si vous indiquez votre adresse IP et la date, elle peut retrouver et effacer ce qui reste. Sans demande de votre part, tout s'efface seul : en deux jours pour les compteurs, en quatorze jours pour les journaux. Vous pouvez aussi saisir la CNIL ([www.cnil.fr](https://www.cnil.fr)).
 
 ---
 
